@@ -1,0 +1,304 @@
+
+
+body {
+	padding: 70px 0;
+	font: 400 15px "Proxima Nova", sans-serif;
+	background: #ecf0f3;
+	top: 90px;
+	color: #212124;
+	line-height: 1.66;
+}
+
+input, textarea, button, select {
+	font: 400 15px "Proxima Nova", sans-serif;
+	color: #212124;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 200;
+	margin-bottom: 5px;
+	color: #212124;
+	line-height: 1.15;
+}
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5 {
+	color: #fff;
+}
+h1 {
+	font-size: 36px;
+	line-height: 44px;
+}
+h2 {
+	font-size: 30px;
+	line-height: 38px;
+	margin-bottom: 20px;
+}
+h3 {
+	font-size: 24px;
+	line-height: 30px;
+}
+h4 {
+	font-size: 20px;
+	line-height: 26px;
+}
+h5 {
+	font-size: 18px;
+	line-height: 24px;
+}
+h6 {
+	font-size: 17px;
+	line-height: 23px;
+}
+
+ul.nav li.main {
+	font-weight: bold;
+}
+
+div.col-md-3 {
+	padding-left: 0;
+}
+
+div.source-links {
+	float: right;
+}
+
+/*
+ * Side navigation
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ */
+
+/* By default it's not affixed in mobile views, so undo that */
+.bs-sidebar.affix {
+	position: static;
+}
+
+.bs-sidebar.well {
+	padding: 0;
+}
+
+/* First level of nav */
+.bs-sidenav {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-top:    10px;
+	padding-bottom: 10px;
+	border-radius: 5px;
+}
+
+
+/* All levels of nav */
+.bs-sidebar .nav > li > a {
+	display: block;
+	padding: 5px 30px;
+}
+
+.bs-sidebar .nav > li.main > a {
+	padding: 5px 20px;
+}
+
+.bs-sidebar .nav > li > a:hover,
+.bs-sidebar .nav > li > a:focus {
+	text-decoration: none;
+	border-right: none;
+}
+
+.bs-sidebar .nav > .active > a,
+.bs-sidebar .nav > .active:hover > a,
+.bs-sidebar .nav > .active:focus > a {
+	background-color: #eee;
+	border-left: 5px solid #2A94D6;
+	margin-left: -5px;
+}
+
+/* Nav: second level (shown on .active) */
+.bs-sidebar .nav .nav {
+	display: none; /* Hide by default, but at >768px, show it */
+	margin-bottom: 8px;
+}
+.bs-sidebar .nav .nav > li > a {
+	padding-top:    3px;
+	padding-bottom: 3px;
+	padding-left: 30px;
+	font-size: 90%;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+	.bs-sidebar .nav > .active > ul {
+		display: block;
+	}
+	/* Widen the fixed sidebar */
+	.bs-sidebar.affix,
+	.bs-sidebar.affix-bottom {
+		width: 213px;
+	}
+	.bs-sidebar.affix {
+		position: fixed; /* Undo the static from mobile first approach */
+		top: 80px;
+	}
+	.bs-sidebar.affix-bottom {
+		position: absolute; /* Undo the static from mobile first approach */
+	}
+	.bs-sidebar.affix-bottom .bs-sidenav,
+	.bs-sidebar.affix .bs-sidenav {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+@media (min-width: 1200px) {
+	/* Widen the fixed sidebar again */
+	.bs-sidebar.affix-bottom,
+	.bs-sidebar.affix {
+		width: 263px;
+	}
+}
+
+
+.col-md-9 {
+	background: #fff;
+	-webkit-box-shadow: 0 3px 8px -5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 3px 8px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 3px 8px -5px rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+	margin-top: 20px;
+	border: 1px solid #dfe0e1;
+}
+
+.navbar-default {
+	background-color: #fff;
+	border: none;
+	color: #7e7f80;
+	-webkit-box-shadow: 0 3px 8px -5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 3px 8px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 3px 8px -5px rgba(0, 0, 0, 0.3);
+
+}
+
+.navbar-default .navbar-toggle {
+	color: #7e7f80;
+	border-color: #dfe0e1;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+	background-color: #dfe0e1;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #dfe0e1;
+}
+
+@media ( max-width: 767px ) {
+
+	.navbar > .container .navbar-brand {
+		margin-left: 15px;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		color: #7e7f80;
+		background-color: #fff;
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+		color: #344A5F;
+	}
+}
+
+
+.navbar-default .navbar-toggle .icon-bar {
+	color: #dfe0e1;
+	background-color: #7e7f80;
+}
+
+.navbar-default .navbar-brand {
+	color: #7e7f80;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #7e7f80;
+	background-color: #ecf0f3;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+	color: #7e7f80;
+	background-color: #ecf0f3;
+}
+
+.bs-sidebar .nav > li > a:hover,
+.bs-sidebar .nav > li > a:focus {
+	text-decoration: none;
+	border-right: none;
+	background-color: inherit;
+}
+
+.dropdown-menu {
+	border: none;
+	background: #ecf0f3;
+}
+.dropdown-menu > li > a,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+	color: #7e7f80;
+	background-color: #ecf0f3;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: #999;
+}
+
+.navbar>.container .navbar-brand {
+	background: url('../img/pardot-logo.png') no-repeat center left;
+	text-indent: -9999px;
+	width: 115px;
+	background-size: 100px;
+}
+
+a {
+	color: #2A94D6;
+}
+
+a:hover,
+a:focus {
+	color: #344A5F;
+	background: #eee;
+}
+
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus {
+	color: #344A5F;
+	background-color: transparent;
+}
+
+.well {
+	background: #fff;
+	-webkit-box-shadow: 0 3px 8px -5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 3px 8px -5px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 3px 8px -5px rgba(0, 0, 0, 0.3);
+	border-radius: 4px;
+	border: 1px solid #dfe0e1;
+}
+
+pre.well {
+	box-shadow: none;
+	background: #F0F1F2;
+}
+
+pre,
+code {
+	background: #F0F1F2;
+}
+
+@media (min-width: 992px) {
+	.bs-sidebar.affix {
+		position: fixed;
+		top: 90px;
+	}
+}

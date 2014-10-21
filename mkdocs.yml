@@ -1,0 +1,34 @@
+site_name: Pardot Docs
+
+pages:
+- ['index.md', 'Home']
+
+- ['kb/api-version-3/overview.md', 'API Version 3', 'Overview']
+- ['kb/api-version-3/introduction-table-of-contents.md', 'API Version 3', 'Introduction & Table of Contents']
+- ['kb/api-version-3/using-the-pardot-api.md', 'API Version 3', 'Using the Pardot API']
+- ['kb/api-version-3/authentication.md', 'API Version 3', 'Authentication']
+- ['kb/api-version-3/using-opportunities.md', 'API Version 3', 'Using Opportunities']
+- ['kb/api-version-3/using-prospects.md', 'API Version 3', 'Using Prospects']
+- ['kb/api-version-3/using-prospect-accounts.md', 'API Version 3', 'Using Prospect Accounts']
+- ['kb/api-version-3/using-users.md', 'API Version 3', 'Using Users']
+- ['kb/api-version-3/using-lists.md', 'API Version 3', 'Using Lists']
+- ['kb/api-version-3/using-list-memberships.md', 'API Version 3', 'Using List Memberships']
+- ['kb/api-version-3/using-visits.md', 'API Version 3', 'Using Visits']
+- ['kb/api-version-3/using-visitors.md', 'API Version 3', 'Using Visitors']
+- ['kb/api-version-3/using-visitor-activities.md', 'API Version 3', 'Using Visitor Activities']
+- ['kb/api-version-3/querying-prospects.md', 'API Version 3', 'Querying Prospects']
+- ['kb/api-version-3/querying-opportunities.md', 'API Version 3', 'Querying Opportunities']
+- ['kb/api-version-3/querying-visitors.md', 'API Version 3', 'Querying Visitors']
+- ['kb/api-version-3/querying-users.md', 'API Version 3', 'Querying Users']
+- ['kb/api-version-3/querying-lists.md', 'API Version 3', 'Querying Lists']
+- ['kb/api-version-3/querying-list-memberships.md', 'API Version 3', 'Querying List Memberships']
+- ['kb/api-version-3/querying-visits.md', 'API Version 3', 'Querying Visits']
+- ['kb/api-version-3/querying-visitor-activities.md', 'API Version 3', 'Querying Visitor Activities']
+- ['kb/api-version-3/querying-prospect-accounts.md', 'API Version 3', 'Querying Prospect Accounts']
+- ['kb/api-version-3/reading-emails.md', 'API Version 3', 'Reading Emails']
+- ['kb/api-version-3/sending-one-to-one-emails.md', 'API Version 3', 'Sending One to One Emails']
+- ['kb/api-version-3/object-field-references.md', 'API Version 3', 'Object Field References']
+- ['kb/api-version-3/error-codes-messages.md', 'API Version 3', 'Error Codes & Messages']
+
+
+theme_dir: 'pardot_theme'
