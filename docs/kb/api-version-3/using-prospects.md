@@ -150,7 +150,7 @@ XML responses to `assign` requests are identical to `read` requests, but reflect
 
 ## [](#creating-prospects-)Creating Prospects
 
-To create a propsect via the API, only a valid and unique email address is required. Values for any other prospect fields may also be provided in the `create` request. Developers are responsible for substituting specific values for parameters denoted by `<carets>`.
+To create a prospect via the API, only a valid and unique email address is required. Values for any other prospect fields may also be provided in the `create` request. Developers are responsible for substituting specific values for parameters denoted by `<carets>`.
 
 _**Example:** Creating a new prospect_/api/prospect/version/3/do/create/email/[new_prospect@pardot.com](mailto:new_prospect@pardot.com)?first_name=New&amp;last_name=Prospect&amp;api_key=&amp;user_key=
 
