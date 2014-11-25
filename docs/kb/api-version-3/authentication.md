@@ -7,7 +7,7 @@ connection to the API.
 1.  All requests to the Pardot API must be made via SSL encrypted
 connection.
 2.  Authentication requests must use HTTP POST.
-3.  Obtain the `email`, `password`, and `user_key` (available in the application under **My Settings**) for the Pardot user account that will be submitting API requests. If you need assistance in acquiring your user key, contact your Pardot support representative.
+3.  Obtain the `email`, `password`, and `user_key` (available in Pardot under **{your email address} > Settings** in the API User Key row) for the Pardot user account that will be submitting API requests. If you need assistance in acquiring your user key, contact your Pardot support representative.
 
 With these requirements met, an API key must be acquired. Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely. To authenticate, issue the following request (having replaced the values denoted by `<carets>` with values for your account):
 
