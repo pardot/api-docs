@@ -302,3 +302,20 @@ code {
 		top: 90px;
 	}
 }
+
+table {
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+}
+table th {
+	border-bottom: 1px solid #ccc;
+	padding: .5em;
+	background: #eee;
+}
+table td {
+	border-bottom: 1px solid #ccc;
+	padding: .5em;
+}
+table code {
+	white-space: normal;
+}

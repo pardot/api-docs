@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-        <title>Authentication - Pardot Docs</title>
+        <title>Querying Visits - Pardot Docs</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -62,8 +62,8 @@
                             <a href="../using-the-pardot-api">Using the Pardot API</a>
                         </li>
                     
-                        <li class="active">
-                            <a href=".">Authentication</a>
+                        <li >
+                            <a href="../authentication">Authentication</a>
                         </li>
                     
                         <li >
@@ -126,8 +126,8 @@
                             <a href="../querying-list-memberships">Querying List Memberships</a>
                         </li>
                     
-                        <li >
-                            <a href="../querying-visits">Querying Visits</a>
+                        <li class="active">
+                            <a href=".">Querying Visits</a>
                         </li>
                     
                         <li >
@@ -165,15 +165,15 @@
                 
                 
                 <li>
-                    <a rel="next" href="../using-the-pardot-api">
-                    <i class="fa fa-arrow-left"></i> Using the Pardot API
+                    <a rel="next" href="../querying-list-memberships">
+                    <i class="fa fa-arrow-left"></i> Querying List Memberships
                     </a>
                 </li>
                 
                 
                 <li>
-                    <a rel="prev" href="../using-opportunities">
-                    Using Opportunities <i class="fa fa-arrow-right"></i>
+                    <a rel="prev" href="../querying-visitor-activities">
+                    Querying Visitor Activities <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
                 
@@ -187,69 +187,133 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#api-version-3-authentication">API (version 3) - Authentication</a></li>
+        <li class="main active"><a href="#querying-visits">Querying Visits</a></li>
+        
+            <li><a href="#supported-search-criteria">Supported Search Criteria</a></li>
+        
+            <li><a href="#manipulating-the-result-set">Manipulating the Result Set</a></li>
+        
+            <li><a href="#sort-order">Sort Order</a></li>
+        
+            <li><a href="#xml-response-format">XML Response Format</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="api-version-3-authentication">API (version 3) - Authentication</h1>
-<p>A few prerequisites must be met to successfully authenticate a
-connection to the API.</p>
-<ol>
-<li>All requests to the Pardot API must be made via SSL encrypted
-connection.</li>
-<li>Authentication requests must use HTTP POST.</li>
-<li>Obtain the <code>email</code>, <code>password</code>, and <code>user_key</code> (available in Pardot under <strong>{your email address} &gt; Settings</strong> in the API User Key row) for the Pardot user account that will be submitting API requests. If you need assistance in acquiring your user key, contact your Pardot support representative.</li>
-</ol>
-<p>With these requirements met, an API key must be acquired. Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely. To authenticate, issue the following request (having replaced the values denoted by <code>&lt;carets&gt;</code> with values for your account):</p>
-<pre><code>POST: https://pi.pardot.com/api/login/version/3
-message body: email=&lt;email&gt;&amp;password=&lt;password&gt;&amp;user_key=&lt;user_key&gt;
-</code></pre>
-
+<h1 id="querying-visits">Querying Visits</h1>
+<h2 id="supported-operations">Supported Operations<a name="20559-supported-operations" id="supported-operations"></a></h2>
 <table>
 <thead>
 <tr>
-<th><strong>Parameter</strong></th>
-<th><strong>Required</strong></th>
+<th><strong>Operation</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Required Parameters</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>email</code></td>
-<td>X</td>
-<td>The email address of your user account</td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>X</td>
-<td>The password of your user account</td>
-</tr>
-<tr>
-<td><code>user_key</code></td>
-<td>X</td>
-<td>The 32-bit hexadecimal user key for your user account</td>
+<td><code>query</code></td>
+<td><code>/api/visit/version/3/do/query?...</code></td>
+<td><code>user_key, api_key, (ids, visitor_ids, prospect_ids)</code></td>
+<td>Returns the visits matching the specified criteria parameters. See the <a href="../../../../using-visits">Using Visits</a> section for a complete description of visit <a href="../../../../using-visits#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../../object-field-references#visit">Visit</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>
-<p>If authentication was successful, a 32-character hexadecimal API
-key will be returned in the following format:</p>
+<h2 id="supported-search-criteria">Supported Search Criteria</h2>
+<p>One of the following parameters must be used when issuing a visits query. A maximum of 200 visits will be returned with each query request. Since these parameter values could be quite large, we recommend using a POST request due to GET request URL character limits.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Datatype</strong></th>
+<th><strong>Options</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ids</code></td>
+<td><code>array</code></td>
+<td><code>&lt;comma_separated_ids&gt;</code></td>
+<td>Selects visits with the given IDs. The IDs should be comma separated positive integers (no spaces). We recommend using a POST request when providing this criteria.</td></td>
+</tr>
+<tr>
+<td><code>visitor_ids</code></td>
+<td><code>array</code></td>
+<td><code>&lt;comma_separated_ids&gt;</code></td>
+<td>Selects visits with the given Visitor IDs. The IDs should be comma separated positive integers (no spaces). We recommend using a POST request when providing this criteria.</td>
+</tr>
+<tr>
+<td><code>prospect_ids</code></td>
+<td><code>array</code></td>
+<td><code>&lt;comma_separated_ids&gt;</code></td>
+<td>Selects visits with the given Prospect IDs. The IDs should be comma separated positive integers (no spaces). We recommend using a POST request when providing this criteria.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="manipulating-the-result-set">Manipulating the Result Set</h2>
+<p>Since <code>query</code> result sets are limited to 200 results each, the results returned may not include all the visits matched by the query. To retrieve the remaining results, the following criteria can be used to navigate through the result set.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Datatype</strong></th>
+<th><strong>Options</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>limit</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Specifies the number of results to be returned. <em>Default value:</em> <code>200</code>. <strong><em>Note:</em></strong> This number cannot be larger than 200.</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Specifies the first matching visit to be returned in the query response. The first <code>offset</code> matching visits will be omitted from the response. <em>Default value:</em> <code>0</code>. <strong><em>Example:</em></strong> Specifying <code>offset=400</code> will return the results starting with the 401st visit matched by the provided criteria.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sort-order">Sort Order</h2>
+<p>Visits are returned in order of ascending IDs.</p>
+<h2 id="xml-response-format">XML Response Format</h2>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
-    &lt;api_key&gt;5a1698a233e73d7c8ccd60d775fbc68a&lt;/api_key&gt;
+    &lt;result&gt;
+        &lt;total_results&gt;...&lt;/total_results&gt;
+        &lt;visit&gt;...&lt;/visit&gt;
+            ...
+    &lt;/result&gt;
 &lt;/rsp&gt;
 </code></pre>
 
-<p>Otherwise, the response will contain the following:</p>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;15&quot;&gt;Login failed&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p>Subsequent authentication requests will return either the
-current valid API key or a newly generated API key if the previous
-one had expired.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;result&gt;</code></td>
+<td>Contains the resulting visits for the specified query.</td>
+</tr>
+<tr>
+<td><code>&lt;total_results&gt;</code></td>
+<td>Contains the number of visits selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched visits.</td>
+</tr>
+<tr>
+<td><code>&lt;visit&gt;</code></td>
+<td>The data for an individual visit. See <a href="../../../../using-visits">Using Visits</a> for complete descriptions of visit <a href="../../../../using-visits#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../../object-field-references#visit">Visit</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+</tr>
+</tbody>
+</table>
 </div>
         </div>
 

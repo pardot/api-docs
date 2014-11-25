@@ -50,77 +50,108 @@
             <ul class="nav navbar-nav">
             
             
-                <li >
-                    <a href="../../..">Home</a>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Knowledge Base <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../subpage/">Sub Page</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Querying Prospects <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../querying-prospects/">Querying prospects</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">All <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                        <li >
-                            <a href="../../all/">All</a>
-                        </li>
-                    
-                    </ul>
-                </li>
-            
-            
-            
                 <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">API Version 3 <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="../overview/">Overview</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../using-opportunities/">Using Opportunities</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../using-prospects/">Using Prospects</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../using-users/">Using Users</a>
-                        </li>
-                    
-                        <li >
-                            <a href="../authentication/">Authentication</a>
+                            <a href="../overview">Overview</a>
                         </li>
                     
                         <li class="active">
-                            <a href="./">Using the Pardot API</a>
+                            <a href=".">Using the Pardot API</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../authentication">Authentication</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../using-opportunities">Using Opportunities</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../using-prospects">Using Prospects</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../using-prospect-accounts">Using Prospect Accounts</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../using-users">Using Users</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../using-lists">Using Lists</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../using-list-memberships">Using List Memberships</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../using-visits">Using Visits</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../using-visitors">Using Visitors</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../using-visitor-activities">Using Visitor Activities</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../querying-prospects">Querying Prospects</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../querying-opportunities">Querying Opportunities</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../querying-visitors">Querying Visitors</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../querying-users">Querying Users</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../querying-lists">Querying Lists</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../querying-list-memberships">Querying List Memberships</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../querying-visits">Querying Visits</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../querying-visitor-activities">Querying Visitor Activities</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../querying-prospect-accounts">Querying Prospect Accounts</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../reading-emails">Reading Emails</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../sending-one-to-one-emails">Sending One to One Emails</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../object-field-references">Object Field References</a>
+                        </li>
+                    
+                        <li >
+                            <a href="../error-codes-messages">Error Codes & Messages</a>
                         </li>
                     
                     </ul>
@@ -132,16 +163,20 @@
             <!-- Search, Navigation and Repo links -->
             <ul class="nav navbar-nav navbar-right">
                 
-                <li >
-                    <a rel="next" href="../authentication/">
-                        <i class="fa fa-arrow-left"></i> Previous
+                
+                <li>
+                    <a rel="next" href="../overview">
+                    <i class="fa fa-arrow-left"></i> Overview
                     </a>
                 </li>
-                <li class="disabled">
-                    <a rel="prev" >
-                        Next <i class="fa fa-arrow-right"></i>
+                
+                
+                <li>
+                    <a rel="prev" href="../authentication">
+                    Authentication <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
+                
                 
             </ul>
         </div>
@@ -170,97 +205,75 @@ to the use of SSL, we recommend using POST, with sensitive or
 lengthy parameter values being part of the POST message body.
 Developers are responsible for issuing requests with the following
 components:</p>
-<p>`POST: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>
-message body: api_key=<your_api_key>&amp;user_key=<your_user_key>&amp;<parameters_for_request></p>
-<p>GET: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>?api_key=<your_api_key>&amp;user_key=<your_user_key>&amp;<parameters_for_request>`</p>
+<pre><code>POST: https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;operator&gt;/&lt;identifier_field&gt;/&lt;identifier&gt;
+message body: api_key=&lt;your_api_key&gt;&amp;user_key=&lt;your_user_key&gt;&amp;&lt;parameters_for_request&gt;
+
+GET: https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;operator&gt;/&lt;identifier_field&gt;/&lt;identifier&gt;?api_key=&lt;your_api_key&gt;&amp;user_key=&lt;your_user_key&gt;&amp;&lt;parameters_for_request&gt;
+</code></pre>
+
 <table>
+<thead>
 <tr>
-<td>**Parameter&nbsp;**</td>
-<td>**Required&nbsp;**</td>
-<td>**Description&nbsp;**</td>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>`object`</td>
+<td><code>object</code></td>
 <td>X</td>
 <td>The object type to be returned by the API request</td>
 </tr>
 <tr>
-<td>`operator`</td>
+<td><code>operator</code></td>
 <td>X</td>
 <td>The operation to be performed on the specified object type</td>
 </tr>
 <tr>
-<td>`identifier_field`</td>
+<td><code>identifier_field</code></td>
 <td>X</td>
-<td>The field to be used as the identifier for the specified object
-type</td>
+<td>The field to be used as the identifier for the specified object</td>
 </tr>
 <tr>
-<td>`identifier`</td>
+<td><code>identifier</code></td>
 <td>X</td>
 <td>The identifier for the specified object(s)</td>
 </tr>
 <tr>
-<td>`your_api_key`</td>
+<td><code>your_api_key</code></td>
 <td>X</td>
-<td>The API key that was obtained during [Authentication](authentication)</td>
+<td>The API key that was obtained during <a href="../../../../authentication">Authentication</a></td>
 </tr>
 <tr>
-<td>`your_user_key`</td>
+<td><code>your_user_key</code></td>
 <td>X</td>
-<td>The user key that was used during [Authentication](authentication)</td>
+<td>The user key that was used during <a href="../../../../authentication">Authentication</a></td>
 </tr>
 <tr>
-<td>`format`</td>
+<td><code>format</code></td>
 <td></td>
 <td>The API data format. Either xml or json (xml is default)</td>
 </tr>
 <tr>
-<td>`parameters_for_request`</td>
+<td><code>your_user_key</code></td>
 <td></td>
-<td>Parameters specific to your request; See the articles listed
-under [Using the Pardot API](using-the-pardot-api) in
-the [Table of
-Contents](intro-and-table-of-contents#contents)</td>
+<td>Parameters specific to your request; See the articles listed under <a href="../../../../using-the-pardot-api">Using the Pardot API</a> in the <a href="../../../../intro-and-table-of-contents#contents">Table of Contents</a></td>
 </tr>
+</tbody>
 </table>
-
-<p>The ordering of parameters is arbitrary. Parameters are passed
-using conventional HTML parameter syntax, with <code>'?'</code>
-indicating the start of the parameter string (for GET requests
-only) and <code>'&amp;'</code> as the separator between parameters.
-With the exception of <code>&lt;format&gt;</code> and
-<code>&lt;parameters_for_request&gt;</code>, all components are
-required. Data returned from the API is formatted using JSON or XML
-1.0 with UTF-8 character encoding. Keep in mind that some
-characters in the response may be encoded as HTML entities,
-requiring client-side decoding. Also, keep in mind that all
-parameters specified in an API request MUST be URL-encoded before
-they are submitted.</p>
-<p>In general, the API will return XML or JSON containing a current
-version of the target object's data. However, unsuccessful requests
-will return a short response containing an error code and message.
-See <a href="error-codes-and-messages">Error Codes &amp;
-Messages</a> for error descriptions and suggested remedies.</p>
+<p>The ordering of parameters is arbitrary. Parameters are passed using conventional HTML parameter syntax, with <code>'?'</code> indicating the start of the parameter string (for GET requests only) and <code>'&amp;'</code> as the separator between parameters. With the exception of <code>&lt;format&gt;</code> and <code>&lt;parameters_for_request&gt;</code>, all components are required. Data returned from the API is formatted using JSON or XML 1.0 with UTF-8 character encoding. Keep in mind that some characters in the response may be encoded as HTML entities, requiring client-side decoding. Also, keep in mind that all parameters specified in an API request MUST be URL-encoded before they are submitted.</p>
+<p>In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See <a href="../../../../error-codes-and-messages">Error Codes &amp; Messages</a> for error descriptions and suggested remedies.</p>
 <p><a name="14767-changing-xml-response-format" id=
 "changing-xml-response-format"></a></p>
 <h2 id="changing-the-api-response-format">Changing the API Response Format</h2>
-<p>The Pardot API supports several output formats, each of which
-returns different levels of detail in the XML or JSON response.
-Output formats are defined by specifying the <code>output</code>
-request parameter. Supported output formats include:</p>
+<p>The Pardot API supports several output formats, each of which returns different levels of detail in the XML or JSON response. Output formats are defined by specifying the <code>output</code> request parameter. Supported output formats include:</p>
 <ul>
-<li><code>full</code> -- Returns all supported data for the Pardot
-object and all objects associated with it.</li>
-<li><code>simple</code> -- Returns all supported data for the data
-for the Pardot object.</li>
-<li><code>mobile</code> -- Returns an abbreviated version of the
-object data. This output format is ideal for mobile
-applications.</li>
+<li><code>full</code> -- Returns all supported data for the Pardot object and all objects associated with it.</li>
+<li><code>simple</code> -- Returns all supported data for the data for the Pardot object.</li>
+<li><code>mobile</code> -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.</li>
 </ul>
-<p>If the output request parameter is not defined, the output
-format defaults to <code>full</code>. See the XML Response Format
-sections for each object for details about the formats.</p>
+<p>If the output request parameter is not defined, the output format defaults to <code>full</code>. See the XML Response Format sections for each object for details about the formats.</p>
 </div>
         </div>
 

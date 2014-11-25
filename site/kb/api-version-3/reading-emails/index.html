@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-        <title>Authentication - Pardot Docs</title>
+        <title>Reading Emails - Pardot Docs</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -62,8 +62,8 @@
                             <a href="../using-the-pardot-api">Using the Pardot API</a>
                         </li>
                     
-                        <li class="active">
-                            <a href=".">Authentication</a>
+                        <li >
+                            <a href="../authentication">Authentication</a>
                         </li>
                     
                         <li >
@@ -138,8 +138,8 @@
                             <a href="../querying-prospect-accounts">Querying Prospect Accounts</a>
                         </li>
                     
-                        <li >
-                            <a href="../reading-emails">Reading Emails</a>
+                        <li class="active">
+                            <a href=".">Reading Emails</a>
                         </li>
                     
                         <li >
@@ -165,15 +165,15 @@
                 
                 
                 <li>
-                    <a rel="next" href="../using-the-pardot-api">
-                    <i class="fa fa-arrow-left"></i> Using the Pardot API
+                    <a rel="next" href="../querying-prospect-accounts">
+                    <i class="fa fa-arrow-left"></i> Querying Prospect Accounts
                     </a>
                 </li>
                 
                 
                 <li>
-                    <a rel="prev" href="../using-opportunities">
-                    Using Opportunities <i class="fa fa-arrow-right"></i>
+                    <a rel="prev" href="../sending-one-to-one-emails">
+                    Sending One to One Emails <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
                 
@@ -187,69 +187,58 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#api-version-3-authentication">API (version 3) - Authentication</a></li>
+        <li class="main active"><a href="#reading-emails">Reading Emails</a></li>
+        
+            <li><a href="#xml-response-format">XML Response Format</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="api-version-3-authentication">API (version 3) - Authentication</h1>
-<p>A few prerequisites must be met to successfully authenticate a
-connection to the API.</p>
-<ol>
-<li>All requests to the Pardot API must be made via SSL encrypted
-connection.</li>
-<li>Authentication requests must use HTTP POST.</li>
-<li>Obtain the <code>email</code>, <code>password</code>, and <code>user_key</code> (available in Pardot under <strong>{your email address} &gt; Settings</strong> in the API User Key row) for the Pardot user account that will be submitting API requests. If you need assistance in acquiring your user key, contact your Pardot support representative.</li>
-</ol>
-<p>With these requirements met, an API key must be acquired. Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely. To authenticate, issue the following request (having replaced the values denoted by <code>&lt;carets&gt;</code> with values for your account):</p>
-<pre><code>POST: https://pi.pardot.com/api/login/version/3
-message body: email=&lt;email&gt;&amp;password=&lt;password&gt;&amp;user_key=&lt;user_key&gt;
-</code></pre>
-
+<h1 id="reading-emails">Reading Emails</h1>
+<h2 id="supported-operations">Supported Operations<a name="71862-supported-operations" id="supported-operations"></a></h2>
+<p>For a complete list of fields involved in user operations, see the <a href="../../../../object-field-references#email">User</a> section of <a href="../../../../object-field-references">Object Field References</a>.</p>
 <table>
 <thead>
 <tr>
-<th><strong>Parameter</strong></th>
-<th><strong>Required</strong></th>
+<th><strong>Operation</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Required Parameters</strong></th>
 <th><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>email</code></td>
-<td>X</td>
-<td>The email address of your user account</td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>X</td>
-<td>The password of your user account</td>
-</tr>
-<tr>
-<td><code>user_key</code></td>
-<td>X</td>
-<td>The 32-bit hexadecimal user key for your user account</td>
+<td><code>read</code></td>
+<td><code>/api/email/version/3/do/read/id/**_&lt;email id&gt;_**?...</code></td>
+<td><code>user_key, api_key, email</code></td>
+<td>Returns the data for the email specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target target email.</td>
 </tr>
 </tbody>
 </table>
-<p>If authentication was successful, a 32-character hexadecimal API
-key will be returned in the following format:</p>
+<h2 id="xml-response-format">XML Response Format</h2>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
-    &lt;api_key&gt;5a1698a233e73d7c8ccd60d775fbc68a&lt;/api_key&gt;
+    &lt;email&gt;
+        ...
+    &lt;/email&gt;
 &lt;/rsp&gt;
 </code></pre>
 
-<p>Otherwise, the response will contain the following:</p>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;15&quot;&gt;Login failed&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<p>Subsequent authentication requests will return either the
-current valid API key or a newly generated API key if the previous
-one had expired.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;email&gt;</code></td>
+<td>Parent tag. Contains data fields for target email. For complete field listing, see <a href="../../../../object-field-references#email">email</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+</tr>
+</tbody>
+</table>
 </div>
         </div>
 
