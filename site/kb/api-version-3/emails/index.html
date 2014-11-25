@@ -189,6 +189,15 @@
             <li><a href="#xml-response-format_1">XML Response Format</a></li>
         
     
+        <li class="main "><a href="#sending-list-emails">Sending List Emails</a></li>
+        
+            <li><a href="#supported-parameters_1">Supported Parameters</a></li>
+        
+            <li><a href="#example-requests_1">Example Requests</a></li>
+        
+            <li><a href="#xml-response-format_2">XML Response Format</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9 main-content" role="main">
@@ -395,6 +404,207 @@ provided.</p>
 </code></pre>
 
 <h2 id="xml-response-format_1"><a href="#xml-response-format-"></a>XML Response Format</h2>
+<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+    &lt;email&gt;
+        ...
+    &lt;/email&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th><strong>Tag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;email&gt;</code></td>
+<td>Parent tag. Contains data fields for target email. For complete field listing, see <a href="../../../../object-field-references#email">email</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="sending-list-emails">Sending List Emails</h1>
+<h2 id="supported-operations_2"><a href="#supported-operations-a-name-supported-operations-id-supported-operations-a-"></a>Supported Operations<a name="82871-supported-operations" id="supported-operations"></a></h2>
+<p>For a complete list of fields involved in user operations, see the <a href="../../../../object-field-references#email">User</a> section of <a href="../../../../object-field-references">Object Field References</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Required Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>send</code></td>
+<td><code>/api/email/version/3/do/send</code></td>
+<td><code>user_key, api_key, list_ids[], campaign_id, (email_template_id OR (text_content, name, subject, &amp; ((from_email &amp; from_name) OR from_user_id)))</code></td>
+<td>Sends an email to all the prospects in a list identified by <code>list_ids[]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-parameters_1"><a href="#supported-parameters-"></a>Supported Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_key</td>
+<td>x</td>
+<td>string</td>
+<td>Your API user key. Required for all API requests.</td>
+</tr>
+<tr>
+<td>api_key</td>
+<td>x</td>
+<td>string</td>
+<td>Your api_key. Provided by authentication request. Required for all API requests.</td>
+</tr>
+<tr>
+<td>campaign_id</td>
+<td>x</td>
+<td>integer</td>
+<td>The id of the campaign you'd like this email associated with.</td>
+</tr>
+<tr>
+<td>from_name</td>
+<td>x**</td>
+<td>string</td>
+<td>The name of the sending user.</td>
+</tr>
+<tr>
+<td>from_email</td>
+<td>x**</td>
+<td>string</td>
+<td>The email of the sending user.</td>
+</tr>
+<tr>
+<td>from_user_id</td>
+<td>x**</td>
+<td>string</td>
+<td>The user id of the sending user.</td>
+</tr>
+<tr>
+<td>from_assigned_user</td>
+<td></td>
+<td>boolean</td>
+<td>If the prospect has an assigned user, send the email from that user.</td>
+</tr>
+<tr>
+<td>from_account_owner</td>
+<td></td>
+<td>boolean</td>
+<td>If the prospect has an account owner, send the email from that user.</td>
+</tr>
+<tr>
+<td>replyto_email</td>
+<td></td>
+<td>string</td>
+<td>The email address where replies should be sent.</td>
+</tr>
+<tr>
+<td>list_ids[]</td>
+<td>x</td>
+<td>integer</td>
+<td>The id of the list you'd like to mail to. You can post multiple list_ids[] for multiple lists</td>
+</tr>
+<tr>
+<td>suppression_list_ids[]</td>
+<td></td>
+<td>integer</td>
+<td>The id of the list you'd like to suppress mailing to. You can post multiple suppression_list_ids[] for multiple lists.</td>
+</tr>
+<tr>
+<td>tags[]</td>
+<td></td>
+<td>string</td>
+<td>The name of the tag you'd like to create or associate with this email. You can post multiple tags[] for multiple tags.</td>
+</tr>
+<tr>
+<td>operational_email</td>
+<td></td>
+<td>boolean</td>
+<td>When set, the email will be sent to the prospect regardless of opt-out status. Your account must have this feature enabled to use this setting.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>x*</td>
+<td>string</td>
+<td>The name of the email within Pardot.</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>x*</td>
+<td>string</td>
+<td>The subject of the email.</td>
+</tr>
+<tr>
+<td>text_content</td>
+<td>x*</td>
+<td>string</td>
+<td>The text body of the email. This must contain either %%unsubscribe%% or %%email_preference_center%%.</td>
+</tr>
+<tr>
+<td>html_content</td>
+<td></td>
+<td>string</td>
+<td>The html body of the email. This must contain either %%unsubscribe%% or %%email_preference_center%%.</td>
+</tr>
+<tr>
+<td>email_template_id</td>
+<td>x***</td>
+<td>integer</td>
+<td>The id of the email template to use.</td>
+</tr>
+<tr>
+<td>scheduled_time</td>
+<td></td>
+<td>ISO8601 string</td>
+<td>The ISO8601 date and time which the email should be sent.</td>
+</tr>
+<tr>
+<td>format</td>
+<td></td>
+<td>(xml or json)</td>
+<td>The format which the response will be sent. Xml is default.</td>
+</tr>
+</tbody>
+</table>
+<p>* field is required if an <code>email_template_id</code> is not
+provided.</p>
+<p>** (<code>from_email</code> &amp; <code>from_name</code>) or <code>from_user_id</code> is required if an <code>email_template_id</code> is not provided.</p>
+<p>*** if provided, the email template will be used first, then <code>name</code>, <code>from_assigned_user</code>, <code>replyto_email</code>, <code>subject</code>, <code>text_content</code>, and <code>html_content</code> will override the template contents if they're provided.</p>
+<h2 id="example-requests_1"><a href="#example-requests-"></a>Example Requests</h2>
+<p>This API request example made with cURL, will schedule an email based on a template to be sent on October 31st at 5pm GMT-4 to 4 prospect lists with 2 suppression lists. It will be sent from the assigned user, if one is assigned, and it also assigns 3 tags to the email.</p>
+<pre><code>curl https://pi.pardot.com/api/email/version/3/do/send \
+--data-urlencode user_key={user_key} \
+--data-urlencode api_key={api_key} \
+--data-urlencode campaign_id=54321 \
+--data-urlencode from_assigned_user=1 \
+--data-urlencode email_template_id=6789 \
+--data-urlencode list_ids[]=123 \
+--data-urlencode list_ids[]=456 \
+--data-urlencode list_ids[]=789 \
+--data-urlencode list_ids[]=101 \
+--data-urlencode suppression_list_ids[]=987 \
+--data-urlencode suppression_list_ids[]=654 \
+--data-urlencode tags[]=new_prospect_email \
+--data-urlencode tags[]=cart_abandoned \
+--data-urlencode tags[]=subtotal_over_200 \
+--data-urlencode scheduled_time=2013-10-31T17:00:00-0400 \
+--data-urlencode format=json
+</code></pre>
+
+<h2 id="xml-response-format_2"><a href="#xml-response-format-"></a>XML Response Format</h2>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;email&gt;
         ...
