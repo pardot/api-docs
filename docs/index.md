@@ -1,153 +1,106 @@
-# Welcome to Pardot Docs
+# Pardot API Documentation
 
-For full documentation visit [developer.pardot.com](/kb/api-version-3/http://developer.pardot.com).
+Welcome!
 
-## Commands
+## Overview
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+The Pardot API allows your application to access current data within Pardot. Through the API, several common operations can be performed on Pardot objects. Operations include:
 
-## Project layout
+*   `create` -- Creates a new object with the specified parameters.
+*   `read` -- Retrieves information about the specified object.
+*   `query` -- Retrieves objects that match specified criteria.
+*   `update` -- Updates elements of an existing object.
+*   `upsert` -- Updates elements of an existing object if it exists.  If the object does not exist, one is created using the supplied parameters.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Developers must authenticate with the API before issuing requests.  Refer to the [Authentication](../authentication) section for details about this procedure. For more information about proper request syntax, see the [Using the Pardot API](../using-the-pardot-api) section.
+
+Some considerations must be taken while performing requests. When performing `update` requests, only the fields specified in the request are updated, and all others are left unchanged. If a required field is cleared during an `update`, the request will be declined.
+
+## Authentication
+
+A few prerequisites must be met to successfully authenticate a
+connection to the API.
+
+1.  All requests to the Pardot API must be made via SSL encrypted
+connection.
+2.  Authentication requests must use HTTP POST.
+3.  Obtain the `email`, `password`, and `user_key` (available in Pardot under **{your email address} > Settings** in the API User Key row) for the Pardot user account that will be submitting API requests. If you need assistance in acquiring your user key, contact your Pardot support representative.
+
+With these requirements met, an API key must be acquired. Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely. To authenticate, issue the following request (having replaced the values denoted by `<carets>` with values for your account):
+
+```
+POST: https://pi.pardot.com/api/login/version/3
+message body: email=<email>&password=<password>&user_key=<user_key>
+```
+
+| **Parameter** | **Required**   | **Description**                                        |
+| ------------- | :------------: | ----------------------------------------------------- |
+| `email`       | X              | The email address of your user account                 |
+| `password`    | X              | The password of your user account                      |
+| `user_key`    | X              | The 32-bit hexadecimal user key for your user account  |
+
+If authentication was successful, a 32-character hexadecimal API
+key will be returned in the following format:
+
+```
+<rsp stat="ok" version="1.0">
+    <api_key>5a1698a233e73d7c8ccd60d775fbc68a</api_key>
+</rsp>
+```
+
+Otherwise, the response will contain the following:
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="15">Login failed</err>
+</rsp>
+```
+
+Subsequent authentication requests will return either the current valid API key or a newly generated API key if the previous one had expired.
 
 
-Pages are created within mkdocs.yml, and are structured like this:
+## Using the API
 
-	pages:
-	- ['index.md', 'Home']
-	- ['kb/overview.md', 'Knowledge Base', 'Overview']
-	- ['kb/subpage.md', 'Knowledge Base', 'Sub Page']
-	- ['kb/querying-prospects.md', 'Querying Prospects']
+The Pardot API handles a variety of requests for many of the
+objects available through the Pardot user interface. Most requests
+to the API use the following standardized format. All requests must
+use either HTTP GET or POST. Although GET requests are secure due
+to the use of SSL, we recommend using POST, with sensitive or
+lengthy parameter values being part of the POST message body.
+Developers are responsible for issuing requests with the following
+components:
 
-"KB" itself is not a page, but a directory hierarchy. Within the docs folder, add a hierarchy to fit and create markdown files for each.
+```
+POST: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>
+message body: api_key=<your_api_key>&user_key=<your_user_key>&<parameters_for_request>
 
-H1s and H2s will automatically enter the sidebar format and use scrollspy to highlight the section of the document.
+GET: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_field>/<identifier>?api_key=<your_api_key>&user_key=<your_user_key>&<parameters_for_request>
+```
 
-More information on project structure and deployment can be found at [MakeDocs.org](/kb/api-version-3/http://www.mkdocs.org/)
+| **Parameter** | **Required**   | **Description**                                        |
+| ------------- | :------------: | ----------------------------------------------------- |
+| `object`       | X              | The object type to be returned by the API request                |
+| `operator`    | X              | The operation to be performed on the specified object type                    |
+| `identifier_field`    | X              | The field to be used as the identifier for the specified object  |
+| `identifier`       | X              | The identifier for the specified object(s)              |
+| `your_api_key`    | X              | The API key that was obtained during [Authentication](../authentication)                   |
+| `your_user_key`    | X              | The user key that was used during [Authentication](../authentication)  |
+| `format`    |               | The API data format. Either xml or json (xml is default)                   |
+| `parameters_for_request`    |               | Parameters specific to your request; See the articles listed under [Using the Pardot API](../using-the-pardot-api) in the [Table of Contents](../intro-and-table-of-contents#contents) |
 
+The ordering of parameters is arbitrary. Parameters are passed using conventional HTML parameter syntax, with `'?'` indicating the start of the parameter string (for GET requests only) and `'&'` as the separator between parameters. With the exception of `<format>` and `<parameters_for_request>`, all components are required. Data returned from the API is formatted using JSON or XML 1.0 with UTF-8 character encoding. Keep in mind that some characters in the response may be encoded as HTML entities, requiring client-side decoding. Also, keep in mind that all parameters specified in an API request MUST be URL-encoded before they are submitted.
 
-## [](/kb/api-version-3/#introduction-a-name-intro-id-intro-a-)Introduction
+In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See [Error Codes &amp; Messages](../error-codes-and-messages) for error descriptions and suggested remedies.
 
-This reference provides an in-depth explanation of Pardot's
-API's functionality. Each section of this reference describes an
-individual feature of the API in detail. To most effectively
-navigate this guide, begin by studying the [Overview](/kb/api-version-3/overview), [Authentication](/kb/api-version-3/authentication), and [Using the Pardot API](/kb/api-version-3/using-the-pardot-api) sections. After
-doing so, refer to the sections listed after [Using the Pardot API](/kb/api-version-3/using-the-pardot-api) in the [Table of Contents](/kb/api-version-3/#contents) to leverage the desired features.
-Each of these sections is designed to be consulted independently
-and in any order. References for [Object Fields](/kb/api-version-3/object-field-references) and [Error Codes &amp; Messages](/kb/api-version-3/error-codes-and-messages) are also
-provided.
+<a name="14767-changing-xml-response-format" id=
+"changing-xml-response-format"></a>
 
-## [](/kb/api-version-3/#table-of-contents-)Table of Contents
+## Changing the API Response Format
 
-*   **[Overview](/kb/api-version-3/overview)**
-*   **[Authentication](/kb/api-version-3/authentication)**
-*   **[Using the Pardot API](/kb/api-version-3/using-the-pardot-api)**
-* Emails
-    *   **[Reading Emails](/kb/api-version-3/reading-emails)**
-    *   **[Sending One To One Emails](/kb/api-version-3/sending-one-to-one-emails)**
-    *   **[Sending List Emails](/kb/api-version-3/sending-list-emails)**
-* Lists
-    *   **[Querying Lists](/kb/api-version-3/querying-lists)**
-        *   [Supported Operations](/kb/api-version-3/querying-lists#supported-operations)
-        *   [Supported Search Criteria](/kb/api-version-3/querying-lists#supported-search-criteria)
-        *   [Manipulating the Result Set](/kb/api-version-3/querying-lists#manipulating-the-result-set)
-        *   [Supported Sorting Operations](/kb/api-version-3/querying-lists#supported-sorting-options)
-        *   [XML Response Format](/kb/api-version-3/querying-lists#xml-response-format)
-    *   **[Using Lists](/kb/api-version-3/using-lists)**
-         *   [Supported Operations](/kb/api-version-3/using-lists#supported-operations)
-         *   [XML Response Formats](/kb/api-version-3/using-lists#xml-response-formats)
-         *   [Updating Field Values](/kb/api-version-3/using-lists#updating-field-values)
-*   Opportunities
-    *   **[Querying Opportunities](/kb/api-version-3/querying-opportunities)**
-        *   [Supported Operations](/kb/api-version-3/querying-opportunities#supported-operations)
-        *   [Supported Search Criteria](/kb/api-version-3/querying-opportunities#supported-search-criteria)
-        *   [Manipulating the Result Set](/kb/api-version-3/querying-opportunities#manipulating-the-result-set)
-        *   [Supported Sorting Operations](/kb/api-version-3/querying-opportunities#supported-sorting-options)
-        *   [XML Response Format](/kb/api-version-3/querying-opportunities#xml-response-format)
-    *   **[Using Opportunities](/kb/api-version-3/using-opportunities)**
-        *   [Supported Operations](/kb/api-version-3/using-opportunities#supported-operations)
-        *   [XML Response Formats](/kb/api-version-3/using-opportunities#xml-response-formats)
-        *   [Updating Field Values](/kb/api-version-3/using-opportunities#updating-field-values)
-*   Prospects
-    *   **[Querying Prospects](/kb/api-version-3/querying-prospects)**
-        *   [Supported Operations](/kb/api-version-3/querying-prospects#supported-operations)
-        *   [Supported Search Criteria](/kb/api-version-3/querying-prospects#supported-search-criteria)
-        *   [Manipulating the Result Set](/kb/api-version-3/querying-prospects#manipulating-the-result-set)
-        *   [Supported Sorting Options](/kb/api-version-3/querying-prospects#supported-sorting-options)
-        *   [XML Response Format](/kb/api-version-3/querying-prospects#xml-response-format)
+The Pardot API supports several output formats, each of which returns different levels of detail in the XML or JSON response. Output formats are defined by specifying the `output` request parameter. Supported output formats include:
 
-        *   **[Using Prospects](/kb/api-version-3/using-prospects)**
-            *   [Supported Operations](/kb/api-version-3/using-prospects#supported-operations)
-            *   [XML Response Formats](/kb/api-version-3/using-prospects#xml-response-formats)
-            *   [Assigning and Reassigning Prospects](/kb/api-version-3/using-prospects#assigning-and-reassigning-prospects)
-            *   [Creating Prospects](/kb/api-version-3/using-prospects#creating-prospects)
-            *   [Updating Field Values](/kb/api-version-3/using-prospects#updating-field-values)
-            *   [Updating Fields with Predefined Values](/kb/api-version-3/using-prospects#updating-fields-with-predefined-values)
-            *   [Updating Fields with Multiple Values](/kb/api-version-3/using-prospects#updating-fields-with-multiple-values)
-            *   [Updating List Subscriptions](/kb/api-version-3/using-prospects#updating-list-memberships)
-            *   [Updating Profile Criteria Matching Statuses](/kb/api-version-3/using-prospects#updating-profile-criteria-matching-statuses)
-*   Prospect Accounts
-    *   **[Querying Prospect Accounts](/kb/api-version-3/querying-prospect-accounts)**
-    *   [Supported Operations](/kb/api-version-3/querying-prospect-accounts#supported-operations)
-    *   [Supported Search Criteria](/kb/api-version-3/querying-prospect-accounts#supported-search-criteria)
-        *   [Manipulating the Result Set](/kb/api-version-3/querying-prospect-accounts#manipulating-the-result-set)
-        *   [Supported Sorting Options](/kb/api-version-3/querying-prospect-accounts#supported-sorting-options)
-        *   [XML Response Format](/kb/api-version-3/querying-prospect-accounts#xml-response-format)
+*   `full` -- Returns all supported data for the Pardot object and all objects associated with it.
+*   `simple` -- Returns all supported data for the data for the Pardot object.
+*   `mobile` -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.
 
-            *   **[Using Prospect Accounts](/kb/api-version-3/using-prospect-accounts)**
-
-                *   [Supported Operations](/kb/api-version-3/using-prospect-accounts#supported-operations)
-                *   [XML Response Formats](/kb/api-version-3/using-prospect-accounts#xml-response-formats)
-                *   [Creating Prospect Accounts](/kb/api-version-3/using-prospect-accounts#creating-prospect-accounts)
-*   Users
-     *   **[Querying Users](/kb/api-version-3/querying-users)**
-        *   [Supported Operations](/kb/api-version-3/querying-users#supported-operations)
-        *   [Supported Search Criteria](/kb/api-version-3/querying-users#supported-search-criteria)
-        *   [Manipulating the Result Set](/kb/api-version-3/querying-users#manipulating-the-result-set)
-        *   [Supported Sorting Options](/kb/api-version-3/querying-users#supported-sorting-options)
-        *   [XML Response Format](/kb/api-version-3/querying-users#xml-response-format)
-            *   **[Using Users](/kb/api-version-3/using-users)**
-                *   [Supported Operations](/kb/api-version-3/using-users#supported-operations)
-                *   [XML Response Format](/kb/api-version-3/using-users#xml-response-format)
-*   Vists
-    *   **[Querying Visits](/kb/api-version-3/querying-visits)**
-        *   [Supported Operations](/kb/api-version-3/querying-visits#sort-order)
-        *   [Supported Search Criteria](/kb/api-version-3/querying-visits#supported-search-criteria)
-        *   [Manipulating the Result Set](/kb/api-version-3/querying-visits#manipulating-the-result-set)
-        *   [Sort Order](/kb/api-version-3/querying-visits#sort-order)
-        *   [XML Response Format](/kb/api-version-3/querying-visits#xml-response-format)
-    *   **[Using Visits](/kb/api-version-3/using-visits)**
-        *   [Supported Operations](/kb/api-version-3/using-visits#supported-operations)
-        *   [XML Response Formats](/kb/api-version-3/using-visits#xml-response-formats)
-    *   **[Querying Visitors](/kb/api-version-3/querying-visitors)**
-        *   [Supported Operations](/kb/api-version-3/querying-visitors#supported-operations)
-        *   [Supported Search Criteria](/kb/api-version-3/querying-visitors#supported-search-criteria)
-        *   [Manipulating the Result Set](/kb/api-version-3/querying-visitors#manipulating-the-result-set)
-        *   [Supported Sorting Options](/kb/api-version-3/querying-visitors#supported-sorting-options)
-        *   [XML Response Format](/kb/api-version-3/querying-visitors#xml-response-format)
-    *   **[Using Visitors](/kb/api-version-3/using-visitors)**
-        *   [Supported Operations](/kb/api-version-3/using-visitors#supported-operations)
-        *   [XML Response Formats](/kb/api-version-3/using-visitors#xml-response-formats)
-        *   [Assigning and Reassigning Visitors](/kb/api-version-3/using-visitors#assigning-and-reassigning-visitors)
-    *   **[Object Field References](/kb/api-version-3/object-field-references)**
-        *   [Identified Company](/kb/api-version-3/object-field-references#identified-company)
-        *   [List](/kb/api-version-3/object-field-references#list)
-        *   [List Membership](/kb/api-version-3/object-field-references#list-membership)
-        *   [Opportunity](/kb/api-version-3/object-field-references#opportunity)
-        *   [Profile](/kb/api-version-3/object-field-references#profile)
-        *   [Profile Criteria](/kb/api-version-3/object-field-references#profile-criteria)
-        *   [Prospect](/kb/api-version-3/object-field-references#prospect)
-        *   [Prospect Account](/kb/api-version-3/object-field-references#prospectAccount)
-        *   [User](/kb/api-version-3/object-field-references#user)
-        *   [Visit](/kb/api-version-3/object-field-references#visit)
-        *   [Visitor](/kb/api-version-3/object-field-references#visitor)
-        *   [Visitor Activity](/kb/api-version-3/object-field-references#visitor-activity)
-        *   [Visitor Referrer](/kb/api-version-3/object-field-references#visitor-referrer)
-
-*   **[Error Codes &amp; Messages](/kb/api-version-3/error-codes-and-messages)**
+If the output request parameter is not defined, the output format defaults to `full`. See the XML Response Format sections for each object for details about the formats.

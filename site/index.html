@@ -55,15 +55,11 @@
                     <ul class="dropdown-menu">
                     
                         <li >
-                            <a href="kb/api-version-3/overview/">Overview</a>
+                            <a href="kb/api-version-3/reading-emails/">Reading Emails</a>
                         </li>
                     
                         <li >
-                            <a href="kb/api-version-3/using-the-pardot-api/">Using the Pardot API</a>
-                        </li>
-                    
-                        <li >
-                            <a href="kb/api-version-3/authentication/">Authentication</a>
+                            <a href="kb/api-version-3/sending-one-to-one-emails/">Sending One to One Emails</a>
                         </li>
                     
                         <li >
@@ -139,14 +135,6 @@
                         </li>
                     
                         <li >
-                            <a href="kb/api-version-3/reading-emails/">Reading Emails</a>
-                        </li>
-                    
-                        <li >
-                            <a href="kb/api-version-3/sending-one-to-one-emails/">Sending One to One Emails</a>
-                        </li>
-                    
-                        <li >
                             <a href="kb/api-version-3/object-field-references/">Object Field References</a>
                         </li>
                     
@@ -166,8 +154,8 @@
                 
                 
                 <li>
-                    <a rel="prev" href="kb/api-version-3/overview/">
-                    Overview <i class="fa fa-arrow-right"></i>
+                    <a rel="prev" href="kb/api-version-3/reading-emails/">
+                    Reading Emails <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
                 
@@ -181,218 +169,166 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#welcome-to-pardot-docs">Welcome to Pardot Docs</a></li>
+        <li class="main active"><a href="#pardot-api-documentation">Pardot API Documentation</a></li>
         
-            <li><a href="#commands">Commands</a></li>
+            <li><a href="#overview">Overview</a></li>
         
-            <li><a href="#project-layout">Project layout</a></li>
+            <li><a href="#authentication">Authentication</a></li>
         
-            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#using-the-api">Using the API</a></li>
         
-            <li><a href="#table-of-contents">Table of Contents</a></li>
+            <li><a href="#changing-the-api-response-format">Changing the API Response Format</a></li>
         
     
     </ul>
 </div></div>
             <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-pardot-docs">Welcome to Pardot Docs</h1>
-<p>For full documentation visit <a href=".//kb/api-version-3/http://developer.pardot.com">developer.pardot.com</a>.</p>
-<h2 id="commands">Commands</h2>
+<h1 id="pardot-api-documentation">Pardot API Documentation</h1>
+<p>Welcome!</p>
+<h2 id="overview">Overview</h2>
+<p>The Pardot API allows your application to access current data within Pardot. Through the API, several common operations can be performed on Pardot objects. Operations include:</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs help</code> - Print this help message.</li>
+<li><code>create</code> -- Creates a new object with the specified parameters.</li>
+<li><code>read</code> -- Retrieves information about the specified object.</li>
+<li><code>query</code> -- Retrieves objects that match specified criteria.</li>
+<li><code>update</code> -- Updates elements of an existing object.</li>
+<li><code>upsert</code> -- Updates elements of an existing object if it exists.  If the object does not exist, one is created using the supplied parameters.</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<p>Developers must authenticate with the API before issuing requests.  Refer to the <a href="./../authentication">Authentication</a> section for details about this procedure. For more information about proper request syntax, see the <a href="./../using-the-pardot-api">Using the Pardot API</a> section.</p>
+<p>Some considerations must be taken while performing requests. When performing <code>update</code> requests, only the fields specified in the request are updated, and all others are left unchanged. If a required field is cleared during an <code>update</code>, the request will be declined.</p>
+<h2 id="authentication">Authentication</h2>
+<p>A few prerequisites must be met to successfully authenticate a
+connection to the API.</p>
+<ol>
+<li>All requests to the Pardot API must be made via SSL encrypted
+connection.</li>
+<li>Authentication requests must use HTTP POST.</li>
+<li>Obtain the <code>email</code>, <code>password</code>, and <code>user_key</code> (available in Pardot under <strong>{your email address} &gt; Settings</strong> in the API User Key row) for the Pardot user account that will be submitting API requests. If you need assistance in acquiring your user key, contact your Pardot support representative.</li>
+</ol>
+<p>With these requirements met, an API key must be acquired. Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely. To authenticate, issue the following request (having replaced the values denoted by <code>&lt;carets&gt;</code> with values for your account):</p>
+<pre><code>POST: https://pi.pardot.com/api/login/version/3
+message body: email=&lt;email&gt;&amp;password=&lt;password&gt;&amp;user_key=&lt;user_key&gt;
 </code></pre>
-<p>Pages are created within mkdocs.yml, and are structured like this:</p>
-<pre><code>pages:
-- ['index.md', 'Home']
-- ['kb/overview.md', 'Knowledge Base', 'Overview']
-- ['kb/subpage.md', 'Knowledge Base', 'Sub Page']
-- ['kb/querying-prospects.md', 'Querying Prospects']
+
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>X</td>
+<td>The email address of your user account</td>
+</tr>
+<tr>
+<td><code>password</code></td>
+<td>X</td>
+<td>The password of your user account</td>
+</tr>
+<tr>
+<td><code>user_key</code></td>
+<td>X</td>
+<td>The 32-bit hexadecimal user key for your user account</td>
+</tr>
+</tbody>
+</table>
+<p>If authentication was successful, a 32-character hexadecimal API
+key will be returned in the following format:</p>
+<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+    &lt;api_key&gt;5a1698a233e73d7c8ccd60d775fbc68a&lt;/api_key&gt;
+&lt;/rsp&gt;
 </code></pre>
-<p>"KB" itself is not a page, but a directory hierarchy. Within the docs folder, add a hierarchy to fit and create markdown files for each.</p>
-<p>H1s and H2s will automatically enter the sidebar format and use scrollspy to highlight the section of the document.</p>
-<p>More information on project structure and deployment can be found at <a href=".//kb/api-version-3/http://www.mkdocs.org/">MakeDocs.org</a></p>
-<h2 id="introduction"><a href=".//kb/api-version-3/#introduction-a-name-intro-id-intro-a-"></a>Introduction</h2>
-<p>This reference provides an in-depth explanation of Pardot's
-API's functionality. Each section of this reference describes an
-individual feature of the API in detail. To most effectively
-navigate this guide, begin by studying the <a href=".//kb/api-version-3/overview">Overview</a>, <a href=".//kb/api-version-3/authentication">Authentication</a>, and <a href=".//kb/api-version-3/using-the-pardot-api">Using the Pardot API</a> sections. After
-doing so, refer to the sections listed after <a href=".//kb/api-version-3/using-the-pardot-api">Using the Pardot API</a> in the <a href=".//kb/api-version-3/#contents">Table of Contents</a> to leverage the desired features.
-Each of these sections is designed to be consulted independently
-and in any order. References for <a href=".//kb/api-version-3/object-field-references">Object Fields</a> and <a href=".//kb/api-version-3/error-codes-and-messages">Error Codes &amp; Messages</a> are also
-provided.</p>
-<h2 id="table-of-contents"><a href=".//kb/api-version-3/#table-of-contents-"></a>Table of Contents</h2>
+
+<p>Otherwise, the response will contain the following:</p>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;15&quot;&gt;Login failed&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p>Subsequent authentication requests will return either the current valid API key or a newly generated API key if the previous one had expired.</p>
+<h2 id="using-the-api">Using the API</h2>
+<p>The Pardot API handles a variety of requests for many of the
+objects available through the Pardot user interface. Most requests
+to the API use the following standardized format. All requests must
+use either HTTP GET or POST. Although GET requests are secure due
+to the use of SSL, we recommend using POST, with sensitive or
+lengthy parameter values being part of the POST message body.
+Developers are responsible for issuing requests with the following
+components:</p>
+<pre><code>POST: https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;operator&gt;/&lt;identifier_field&gt;/&lt;identifier&gt;
+message body: api_key=&lt;your_api_key&gt;&amp;user_key=&lt;your_user_key&gt;&amp;&lt;parameters_for_request&gt;
+
+GET: https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;operator&gt;/&lt;identifier_field&gt;/&lt;identifier&gt;?api_key=&lt;your_api_key&gt;&amp;user_key=&lt;your_user_key&gt;&amp;&lt;parameters_for_request&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>object</code></td>
+<td>X</td>
+<td>The object type to be returned by the API request</td>
+</tr>
+<tr>
+<td><code>operator</code></td>
+<td>X</td>
+<td>The operation to be performed on the specified object type</td>
+</tr>
+<tr>
+<td><code>identifier_field</code></td>
+<td>X</td>
+<td>The field to be used as the identifier for the specified object</td>
+</tr>
+<tr>
+<td><code>identifier</code></td>
+<td>X</td>
+<td>The identifier for the specified object(s)</td>
+</tr>
+<tr>
+<td><code>your_api_key</code></td>
+<td>X</td>
+<td>The API key that was obtained during <a href="./../authentication">Authentication</a></td>
+</tr>
+<tr>
+<td><code>your_user_key</code></td>
+<td>X</td>
+<td>The user key that was used during <a href="./../authentication">Authentication</a></td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td></td>
+<td>The API data format. Either xml or json (xml is default)</td>
+</tr>
+<tr>
+<td><code>parameters_for_request</code></td>
+<td></td>
+<td>Parameters specific to your request; See the articles listed under <a href="./../using-the-pardot-api">Using the Pardot API</a> in the <a href="./../intro-and-table-of-contents#contents">Table of Contents</a></td>
+</tr>
+</tbody>
+</table>
+<p>The ordering of parameters is arbitrary. Parameters are passed using conventional HTML parameter syntax, with <code>'?'</code> indicating the start of the parameter string (for GET requests only) and <code>'&amp;'</code> as the separator between parameters. With the exception of <code>&lt;format&gt;</code> and <code>&lt;parameters_for_request&gt;</code>, all components are required. Data returned from the API is formatted using JSON or XML 1.0 with UTF-8 character encoding. Keep in mind that some characters in the response may be encoded as HTML entities, requiring client-side decoding. Also, keep in mind that all parameters specified in an API request MUST be URL-encoded before they are submitted.</p>
+<p>In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See <a href="./../error-codes-and-messages">Error Codes &amp; Messages</a> for error descriptions and suggested remedies.</p>
+<p><a name="14767-changing-xml-response-format" id=
+"changing-xml-response-format"></a></p>
+<h2 id="changing-the-api-response-format">Changing the API Response Format</h2>
+<p>The Pardot API supports several output formats, each of which returns different levels of detail in the XML or JSON response. Output formats are defined by specifying the <code>output</code> request parameter. Supported output formats include:</p>
 <ul>
-<li><strong><a href=".//kb/api-version-3/overview">Overview</a></strong></li>
-<li><strong><a href=".//kb/api-version-3/authentication">Authentication</a></strong></li>
-<li><strong><a href=".//kb/api-version-3/using-the-pardot-api">Using the Pardot API</a></strong></li>
-<li>Emails<ul>
-<li><strong><a href=".//kb/api-version-3/reading-emails">Reading Emails</a></strong></li>
-<li><strong><a href=".//kb/api-version-3/sending-one-to-one-emails">Sending One To One Emails</a></strong></li>
-<li><strong><a href=".//kb/api-version-3/sending-list-emails">Sending List Emails</a></strong></li>
+<li><code>full</code> -- Returns all supported data for the Pardot object and all objects associated with it.</li>
+<li><code>simple</code> -- Returns all supported data for the data for the Pardot object.</li>
+<li><code>mobile</code> -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.</li>
 </ul>
-</li>
-<li>Lists<ul>
-<li><strong><a href=".//kb/api-version-3/querying-lists">Querying Lists</a></strong><ul>
-<li><a href=".//kb/api-version-3/querying-lists#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/querying-lists#supported-search-criteria">Supported Search Criteria</a></li>
-<li><a href=".//kb/api-version-3/querying-lists#manipulating-the-result-set">Manipulating the Result Set</a></li>
-<li><a href=".//kb/api-version-3/querying-lists#supported-sorting-options">Supported Sorting Operations</a></li>
-<li><a href=".//kb/api-version-3/querying-lists#xml-response-format">XML Response Format</a></li>
-</ul>
-</li>
-<li><strong><a href=".//kb/api-version-3/using-lists">Using Lists</a></strong><ul>
-<li><a href=".//kb/api-version-3/using-lists#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/using-lists#xml-response-formats">XML Response Formats</a></li>
-<li><a href=".//kb/api-version-3/using-lists#updating-field-values">Updating Field Values</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Opportunities<ul>
-<li><strong><a href=".//kb/api-version-3/querying-opportunities">Querying Opportunities</a></strong><ul>
-<li><a href=".//kb/api-version-3/querying-opportunities#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/querying-opportunities#supported-search-criteria">Supported Search Criteria</a></li>
-<li><a href=".//kb/api-version-3/querying-opportunities#manipulating-the-result-set">Manipulating the Result Set</a></li>
-<li><a href=".//kb/api-version-3/querying-opportunities#supported-sorting-options">Supported Sorting Operations</a></li>
-<li><a href=".//kb/api-version-3/querying-opportunities#xml-response-format">XML Response Format</a></li>
-</ul>
-</li>
-<li><strong><a href=".//kb/api-version-3/using-opportunities">Using Opportunities</a></strong><ul>
-<li><a href=".//kb/api-version-3/using-opportunities#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/using-opportunities#xml-response-formats">XML Response Formats</a></li>
-<li><a href=".//kb/api-version-3/using-opportunities#updating-field-values">Updating Field Values</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Prospects</p>
-<ul>
-<li>
-<p><strong><a href=".//kb/api-version-3/querying-prospects">Querying Prospects</a></strong></p>
-<ul>
-<li><a href=".//kb/api-version-3/querying-prospects#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/querying-prospects#supported-search-criteria">Supported Search Criteria</a></li>
-<li><a href=".//kb/api-version-3/querying-prospects#manipulating-the-result-set">Manipulating the Result Set</a></li>
-<li><a href=".//kb/api-version-3/querying-prospects#supported-sorting-options">Supported Sorting Options</a></li>
-<li>
-<p><a href=".//kb/api-version-3/querying-prospects#xml-response-format">XML Response Format</a></p>
-</li>
-<li>
-<p><strong><a href=".//kb/api-version-3/using-prospects">Using Prospects</a></strong></p>
-<ul>
-<li><a href=".//kb/api-version-3/using-prospects#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/using-prospects#xml-response-formats">XML Response Formats</a></li>
-<li><a href=".//kb/api-version-3/using-prospects#assigning-and-reassigning-prospects">Assigning and Reassigning Prospects</a></li>
-<li><a href=".//kb/api-version-3/using-prospects#creating-prospects">Creating Prospects</a></li>
-<li><a href=".//kb/api-version-3/using-prospects#updating-field-values">Updating Field Values</a></li>
-<li><a href=".//kb/api-version-3/using-prospects#updating-fields-with-predefined-values">Updating Fields with Predefined Values</a></li>
-<li><a href=".//kb/api-version-3/using-prospects#updating-fields-with-multiple-values">Updating Fields with Multiple Values</a></li>
-<li><a href=".//kb/api-version-3/using-prospects#updating-list-memberships">Updating List Subscriptions</a></li>
-<li><a href=".//kb/api-version-3/using-prospects#updating-profile-criteria-matching-statuses">Updating Profile Criteria Matching Statuses</a></li>
-</ul>
-</li>
-<li>Prospect Accounts<ul>
-<li><strong><a href=".//kb/api-version-3/querying-prospect-accounts">Querying Prospect Accounts</a></strong></li>
-<li><a href=".//kb/api-version-3/querying-prospect-accounts#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/querying-prospect-accounts#supported-search-criteria">Supported Search Criteria</a></li>
-</ul>
-</li>
-<li><a href=".//kb/api-version-3/querying-prospect-accounts#manipulating-the-result-set">Manipulating the Result Set</a></li>
-<li><a href=".//kb/api-version-3/querying-prospect-accounts#supported-sorting-options">Supported Sorting Options</a></li>
-<li>
-<p><a href=".//kb/api-version-3/querying-prospect-accounts#xml-response-format">XML Response Format</a></p>
-<ul>
-<li>
-<p><strong><a href=".//kb/api-version-3/using-prospect-accounts">Using Prospect Accounts</a></strong></p>
-<ul>
-<li><a href=".//kb/api-version-3/using-prospect-accounts#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/using-prospect-accounts#xml-response-formats">XML Response Formats</a></li>
-<li><a href=".//kb/api-version-3/using-prospect-accounts#creating-prospect-accounts">Creating Prospect Accounts</a></li>
-<li>Users<ul>
-<li><strong><a href=".//kb/api-version-3/querying-users">Querying Users</a></strong><ul>
-<li><a href=".//kb/api-version-3/querying-users#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/querying-users#supported-search-criteria">Supported Search Criteria</a></li>
-<li><a href=".//kb/api-version-3/querying-users#manipulating-the-result-set">Manipulating the Result Set</a></li>
-<li><a href=".//kb/api-version-3/querying-users#supported-sorting-options">Supported Sorting Options</a></li>
-<li><a href=".//kb/api-version-3/querying-users#xml-response-format">XML Response Format</a><ul>
-<li><strong><a href=".//kb/api-version-3/using-users">Using Users</a></strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href=".//kb/api-version-3/using-users#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/using-users#xml-response-format">XML Response Format</a></li>
-<li>Vists<ul>
-<li><strong><a href=".//kb/api-version-3/querying-visits">Querying Visits</a></strong><ul>
-<li><a href=".//kb/api-version-3/querying-visits#sort-order">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/querying-visits#supported-search-criteria">Supported Search Criteria</a></li>
-<li><a href=".//kb/api-version-3/querying-visits#manipulating-the-result-set">Manipulating the Result Set</a></li>
-<li><a href=".//kb/api-version-3/querying-visits#sort-order">Sort Order</a></li>
-<li><a href=".//kb/api-version-3/querying-visits#xml-response-format">XML Response Format</a></li>
-</ul>
-</li>
-<li><strong><a href=".//kb/api-version-3/using-visits">Using Visits</a></strong><ul>
-<li><a href=".//kb/api-version-3/using-visits#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/using-visits#xml-response-formats">XML Response Formats</a></li>
-</ul>
-</li>
-<li><strong><a href=".//kb/api-version-3/querying-visitors">Querying Visitors</a></strong><ul>
-<li><a href=".//kb/api-version-3/querying-visitors#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/querying-visitors#supported-search-criteria">Supported Search Criteria</a></li>
-<li><a href=".//kb/api-version-3/querying-visitors#manipulating-the-result-set">Manipulating the Result Set</a></li>
-<li><a href=".//kb/api-version-3/querying-visitors#supported-sorting-options">Supported Sorting Options</a></li>
-<li><a href=".//kb/api-version-3/querying-visitors#xml-response-format">XML Response Format</a></li>
-</ul>
-</li>
-<li><strong><a href=".//kb/api-version-3/using-visitors">Using Visitors</a></strong><ul>
-<li><a href=".//kb/api-version-3/using-visitors#supported-operations">Supported Operations</a></li>
-<li><a href=".//kb/api-version-3/using-visitors#xml-response-formats">XML Response Formats</a></li>
-<li><a href=".//kb/api-version-3/using-visitors#assigning-and-reassigning-visitors">Assigning and Reassigning Visitors</a></li>
-</ul>
-</li>
-<li><strong><a href=".//kb/api-version-3/object-field-references">Object Field References</a></strong><ul>
-<li><a href=".//kb/api-version-3/object-field-references#identified-company">Identified Company</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#list">List</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#list-membership">List Membership</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#opportunity">Opportunity</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#profile">Profile</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#profile-criteria">Profile Criteria</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#prospect">Prospect</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#prospectAccount">Prospect Account</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#user">User</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#visit">Visit</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#visitor">Visitor</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#visitor-activity">Visitor Activity</a></li>
-<li><a href=".//kb/api-version-3/object-field-references#visitor-referrer">Visitor Referrer</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong><a href=".//kb/api-version-3/error-codes-and-messages">Error Codes &amp; Messages</a></strong></p>
-</li>
-</ul>
+<p>If the output request parameter is not defined, the output format defaults to <code>full</code>. See the XML Response Format sections for each object for details about the formats.</p>
 </div>
         </div>
 

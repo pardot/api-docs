@@ -3,9 +3,8 @@ site_name: Pardot Docs
 pages:
 - ['index.md', 'Home']
 
-- ['kb/api-version-3/overview.md', 'API Version 3', 'Overview']
-- ['kb/api-version-3/using-the-pardot-api.md', 'API Version 3', 'Using the Pardot API']
-- ['kb/api-version-3/authentication.md', 'API Version 3', 'Authentication']
+- ['kb/api-version-3/reading-emails.md', 'API Version 3', 'Reading Emails']
+- ['kb/api-version-3/sending-one-to-one-emails.md', 'API Version 3', 'Sending One to One Emails']
 - ['kb/api-version-3/using-opportunities.md', 'API Version 3', 'Using Opportunities']
 - ['kb/api-version-3/using-prospects.md', 'API Version 3', 'Using Prospects']
 - ['kb/api-version-3/using-prospect-accounts.md', 'API Version 3', 'Using Prospect Accounts']
@@ -24,8 +23,6 @@ pages:
 - ['kb/api-version-3/querying-visits.md', 'API Version 3', 'Querying Visits']
 - ['kb/api-version-3/querying-visitor-activities.md', 'API Version 3', 'Querying Visitor Activities']
 - ['kb/api-version-3/querying-prospect-accounts.md', 'API Version 3', 'Querying Prospect Accounts']
-- ['kb/api-version-3/reading-emails.md', 'API Version 3', 'Reading Emails']
-- ['kb/api-version-3/sending-one-to-one-emails.md', 'API Version 3', 'Sending One to One Emails']
 - ['kb/api-version-3/object-field-references.md', 'API Version 3', 'Object Field References']
 - ['kb/api-version-3/error-codes-messages.md', 'API Version 3', 'Error Codes & Messages']
 
