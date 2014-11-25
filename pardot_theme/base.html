@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        {% if page_description %}<meta name="description" content="{{ page_description }}">{% endif %}
+        {% if site_description %}<meta name="description" content="{{ site_description }}">{% endif %}
         {% if site_author %}<meta name="author" content="{{ site_author }}">{% endif %}
         {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
         {% if favicon %}<link rel="shortcut icon" href="{{ favicon }}">
@@ -43,8 +43,12 @@
         {% include "nav.html" %}
 
         <div class="container">
-            <div class="col-md-3">{% include "toc.html" %}</div>
-            <div class="col-md-9" role="main">{% include "content.html" %}</div>
+            {% if page_title != 'Error Codes & Messages - Pardot API Documentation' %}
+                <div class="col-md-3">{% include "toc.html" %}</div>
+                <div class="col-md-9 main-content" role="main">{% include "content.html" %}</div>
+            {% else %}
+                <div class="col-md-12 main-content" role="main">{% include "content.html" %}</div>
+            {% endif %}
         </div>
 
         {% if include_search %}{% include "search.html" %}{% endif %}

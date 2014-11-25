@@ -1,43 +1,45 @@
-site_name: Pardot Docs
+site_name: Pardot API Documentation
+
+site_url: http://developer.pardot.com
+site_description: Official documentation for the Pardot API
+site_favicon: favicon.ico
+
+repo_url: https://github.com/Pardot/api-docs
 
 pages:
-- ['index.md', 'Home']
 
-- ['kb/api-version-3/reading-emails.md', 'API Version 3', 'Reading Emails']
-- ['kb/api-version-3/sending-one-to-one-emails.md', 'API Version 3', 'Sending One to One Emails']
+- ['index.md', 'Overview']
 
-- ['kb/api-version-3/querying-lists.md', 'API Version 3', 'Querying Lists']
-- ['kb/api-version-3/using-lists.md', 'API Version 3', 'Using Lists']
+- ['index.md', 'API', 'Using the API']
+- ['kb/api-version-3/object-field-references.md', 'API', 'Object Field References']
+- ['kb/api-version-3/error-codes-messages.md', 'API', 'Error Codes & Messages']
 
-- ['kb/api-version-3/querying-opportunities.md', 'API Version 3', 'Querying Opportunities']
-- ['kb/api-version-3/using-opportunities.md', 'API Version 3', 'Using Opportunities']
+- ['kb/api-version-3/custom-redirects.md', 'Methods', 'Custom Redirects']
 
-- ['kb/api-version-3/querying-prospects.md', 'API Version 3', 'Querying Prospects']
-- ['kb/api-version-3/using-prospects.md', 'API Version 3', 'Using Prospects']
+- ['kb/api-version-3/dynamic-content.md', 'Methods', 'Dynamic Content']
 
-- ['kb/api-version-3/querying-prospect-accounts.md', 'API Version 3', 'Querying Prospect Accounts']
-- ['kb/api-version-3/using-prospect-accounts.md', 'API Version 3', 'Using Prospect Accounts']
+- ['kb/api-version-3/emails.md', 'Methods', 'Email']
 
-- ['kb/api-version-3/querying-users.md', 'API Version 3', 'Querying Users']
-- ['kb/api-version-3/using-users.md', 'API Version 3', 'Using Users']
+- ['kb/api-version-3/forms.md', 'Methods', 'Forms']
 
-- ['kb/api-version-3/using-list-memberships.md', 'API Version 3', 'Using List Memberships']
-- ['kb/api-version-3/querying-list-memberships.md', 'API Version 3', 'Querying List Memberships']
+- ['kb/api-version-3/lists.md', 'Methods', 'Lists']
 
-- ['kb/api-version-3/querying-visits.md', 'API Version 3', 'Querying Visits']
-- ['kb/api-version-3/using-visits.md', 'API Version 3', 'Using Visits']
+- ['kb/api-version-3/list-memberships.md', 'Methods', 'List Memberships']
 
-- ['kb/api-version-3/querying-visitors.md', 'API Version 3', 'Querying Visitors']
-- ['kb/api-version-3/using-visitors.md', 'API Version 3', 'Using Visitors']
+- ['kb/api-version-3/opportunities.md', 'Methods', 'Opportunities']
 
-- ['kb/api-version-3/using-visitor-activities.md', 'API Version 3', 'Using Visitor Activities']
-- ['kb/api-version-3/querying-visitor-activities.md', 'API Version 3', 'Querying Visitor Activities']
+- ['kb/api-version-3/prospects.md', 'Methods', 'Prospects']
 
-- ['kb/api-version-3/using-tag-objects.md', 'API Version 3', 'Using Visitor Activities']
-- ['kb/api-version-3/querying-tag-objects.md', 'API Version 3', 'Querying Visitor Activities']
+- ['kb/api-version-3/prospect-accounts.md', 'Methods', 'Prospect Accounts']
 
-- ['kb/api-version-3/object-field-references.md', 'API Version 3', 'Object Field References']
-- ['kb/api-version-3/error-codes-messages.md', 'API Version 3', 'Error Codes & Messages']
+- ['kb/api-version-3/visitor-activities.md', 'Methods', 'Tag Objects']
 
+- ['kb/api-version-3/users.md', 'Methods', 'Users']
+
+- ['kb/api-version-3/visitors.md', 'Methods', 'Visitors']
+
+- ['kb/api-version-3/visitor-activities.md', 'Methods', 'Visitor Activities']
+
+- ['kb/api-version-3/visits.md', 'Methods', 'Visits']
 
 theme_dir: 'pardot_theme'
