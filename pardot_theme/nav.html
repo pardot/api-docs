@@ -46,7 +46,7 @@
                     <a href="#searchModal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
                 </li>
                 {% endif %}
-                {% if previous_page %}
+                {% if previous_page and page_title != 'Pardot API Documentation' %}
                 <li>
                     <a rel="next" {% if previous_page %}href="{{ previous_page.url }}"{% endif %}>
                     <i class="fa fa-arrow-left"></i> {{ previous_page.title }}
