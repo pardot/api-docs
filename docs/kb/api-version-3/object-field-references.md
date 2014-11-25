@@ -1241,14 +1241,14 @@ Visitor Activities may have the following values for
 <li>24 - Attended Webinar</li>
 <li>25 - Registered for Webinar</li>
 <li>26 - Social Post Click</li>
-<li>27 - Video Views</li>
-<li>28 - Events Registration</li>
-<li>29 - Events Checkins</li>
-<li>30 - Video Conversions</li>
-<li>31 - UserVoice Suggestions</li>
-<li>32 - UserVoice Comments</li>
-<li>33 - UserVoice Tickets</li>
-<li>34 - Videos Watched (≥ 75% watched)</li>
+<li>27 - Video View</li>
+<li>28 - Event Registered</li>
+<li>29 - Event Checked In</li>
+<li>30 - Video Conversion</li>
+<li>31 - UserVoice Suggestion</li>
+<li>32 - UserVoice Comment</li>
+<li>33 - UserVoice Ticket</li>
+<li>34 - Video Watched (≥ 75% watched)</li>
 <li>Other - Unknown</li>
 </ul>
 ## Visitor Page View
