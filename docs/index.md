@@ -50,8 +50,8 @@ provided.
 *   **[Using the Pardot API](/kb/api-version-3/using-the-pardot-api)**
 * Emails
     *   **[Reading Emails](/kb/api-version-3/reading-emails)**
-    *   **[Sending One To One Emails](/kb/api-version-3/#api-version-3-sending-one-to-one-emails)**
-    *   **[Sending List Emails](/kb/api-version-3/#api-version-3-sending-list-emails)**
+    *   **[Sending One To One Emails](/kb/api-version-3/sending-one-to-one-emails)**
+    *   **[Sending List Emails](/kb/api-version-3/sending-list-emails)**
 * Lists
     *   **[Querying Lists](/kb/api-version-3/querying-lists)**
         *   [Supported Operations](/kb/api-version-3/querying-lists#supported-operations)
