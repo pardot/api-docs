@@ -975,76 +975,11 @@ user's preferred timezone</td>
 <td>Pardot ID for this visitor</td>
 </tr>
 <tr>
-<td>&lt;browser&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's web browser</td>
-</tr>
-<tr>
-<td>&lt;browser_version&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's web browser version</td>
-</tr>
-<tr>
-<td>&lt;operating_system&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's operating system</td>
-</tr>
-<tr>
-<td>&lt;operating_system_version&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's operating system version</td>
-</tr>
-<tr>
-<td>&lt;language&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's language setting</td>
-</tr>
-<tr>
-<td>&lt;screen_height&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Visitor's screen height in pixels</td>
-</tr>
-<tr>
-<td>&lt;screen_width&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Visitor's screen width in pixels</td>
-</tr>
-<tr>
 <td>&lt;page_view_count&gt;</td>
 <td>integer</td>
 <td></td>
 <td></td>
 <td>Number of page views by this visitor</td>
-</tr>
-<tr>
-<td>&lt;is_flash_enabled&gt;</td>
-<td>boolean</td>
-<td></td>
-<td></td>
-<td>If value is 1, Adobe Flash is enabled in this visitor's web
-browser</td>
-</tr>
-<tr>
-<td>&lt;is_java_enabled&gt;</td>
-<td>boolean</td>
-<td></td>
-<td></td>
-<td>If value is 1, JAVA is enabled in this visitor's web
-browser</td>
 </tr>
 <tr>
 <td>&lt;ip_address&gt;</td>
