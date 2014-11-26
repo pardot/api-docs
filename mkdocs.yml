@@ -14,6 +14,8 @@ pages:
 - ['kb/api-version-3/object-field-references.md', 'API', 'Object Field References']
 - ['kb/api-version-3/error-codes-messages.md', 'API', 'Error Codes & Messages']
 
+- ['kb/api-version-3/campaigns.md', 'Methods', 'Campaigns']
+
 - ['kb/api-version-3/custom-redirects.md', 'Methods', 'Custom Redirects']
 
 - ['kb/api-version-3/dynamic-content.md', 'Methods', 'Dynamic Content']
