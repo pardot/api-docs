@@ -85,7 +85,7 @@ For a complete list of fields involved in visitor activity operations, see the [
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/visitorActivity/version/3/do/read/id/**_<id>_**?...` | `user_key, api_key, id` | Returns the data for the visitor activity specified by `<id>`. is the Pardot ID for the target visitor activity. |
+| `read` | `/api/visitorActivity/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the visitor activity specified by `<id>`. is the Pardot ID for the target visitor activity. |
 
 ## XML Response Formats
 

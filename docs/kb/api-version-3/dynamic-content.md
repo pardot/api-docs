@@ -75,7 +75,7 @@ For a complete list of fields involved in user operations, see the [Dynamic Cont
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/dynamicContent/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the dynamic content specified by `<id>`. `<id>` is the Pardot ID of the target dynamic content. |
+| `read` | `/api/dynamicContent/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the dynamic content specified by `<id>`. `<id>` is the Pardot ID of the target dynamic content. |
 
 
 ## XML Response Format

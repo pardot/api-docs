@@ -74,7 +74,7 @@ For a complete list of fields involved in user operations, see the [Custom Redir
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/customRedirect/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the custom redirect specified by `<id>`. `<id>` is the Pardot ID of the target custom redirect. |
+| `read` | `/api/customRedirect/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the custom redirect specified by `<id>`. `<id>` is the Pardot ID of the target custom redirect. |
 
 
 ## XML Response Format

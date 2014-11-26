@@ -76,10 +76,10 @@ For a complete list of fields involved in user operations, see the [List](../obj
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/list/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the list specified by `<id>`. `<id>` is the Pardot ID of the target list. |
-| `update` | `/api/list/version/3/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the list specified by `<id>`.  `<id>` is the Pardot ID of the list. Refer to [List](../object-field-references#list) in [Object Field References](../object-field-references) for more details. Returns the updated version of the list. |
+| `read` | `/api/list/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the list specified by `<id>`. `<id>` is the Pardot ID of the target list. |
+| `update` | `/api/list/version/3/do/update/id/<id>?...` | `user_key, api_key, id` | Updates the provided data for the list specified by `<id>`.  `<id>` is the Pardot ID of the list. Refer to [List](../object-field-references#list) in [Object Field References](../object-field-references) for more details. Returns the updated version of the list. |
 | `create` | `/api/list/version/3/do/create?...` | `user_key, api_key` | Creates a new list using the specified data. |
-| `delete` | `/api/list/version/3/do/delete/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Deletes the list specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Lists may only be deleted using HTTP methods POST or DELETE. |
+| `delete` | `/api/list/version/3/do/delete/id/<id>?...` | `user_key, api_key, id` | Deletes the list specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Lists may only be deleted using HTTP methods POST or DELETE. |
 
 
 ## XML Response Format

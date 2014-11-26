@@ -60,7 +60,7 @@ For a complete list of fields involved in visitor operations, see the [Visit](..
 
 | **Operation** | **URL Format**   | **Required Parameters** | **Description**  |
 | ------------- | ---------------- | ----------------------- | -----------------|
-| `read` | `/api/visit/version/3/do/read/id/**_<id>_**?...` | `user_key, api_key, id` | Returns the data for the visit specified by `<id>`, including associated visitor page views. `<id>` is the Pardot ID for the target visit. |
+| `read` | `/api/visit/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the visit specified by `<id>`, including associated visitor page views. `<id>` is the Pardot ID for the target visit. |
 
 <a name="14846-xml-response-formats"></a>
 

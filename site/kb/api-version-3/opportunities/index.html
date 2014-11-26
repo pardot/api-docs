@@ -117,7 +117,7 @@
                             </li>
                         
                             <li >
-                                <a href="../tag-objects">Tag Objects</a>
+                                <a href="../tag-objects">TagObjects</a>
                             </li>
                         
                             <li >
@@ -420,37 +420,37 @@
 <tbody>
 <tr>
 <td><code>create</code></td>
-<td><code>/api/opportunity /version/3/do/create /prospect_email /**__**?...</code></td>
+<td><code>/api/opportunity /version/3/do/create /prospect_email /&lt;prospect_email&gt;?...</code></td>
 <td><code>user_key, api_key, prospect_email, name, value, probability</code></td>
 <td>Creates a new opportunity using the specified data. <code>prospect_email</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../../../object-field-references#opportunity">Opportunity</a> in <a href="../../../../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 </tr>
 <tr>
 <td><code>create</code></td>
-<td><code>/api/opportunity /version/3/do/create /prospect_id /**__**?...</code></td>
+<td><code>/api/opportunity /version/3/do/create /prospect_id /&lt;prospect_id&gt;?...</code></td>
 <td><code>user_key, api_key, prospect_id, name, value, probability</code></td>
 <td>Creates a new opportunity using the specified data. <code>prospect_id</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../../../object-field-references#opportunity">Opportunity</a> in <a href="../../../../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 </tr>
 <tr>
 <td><code>read</code></td>
-<td><code>/api/opportunity /version/3/do/read /id/**__**?...</code></td>
+<td><code>/api/opportunity /version/3/do/read /id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
 <td>Returns the data for the opportunity specified by <code>id</code>, including campaign assignment and associated visitor activities. <code>id</code> is the Pardot ID for the target opportunity.</td>
 </tr>
 <tr>
 <td><code>update</code></td>
-<td><code>/api/opportunity /version/3/do/update /id/**__**?...</code></td>
+<td><code>/api/opportunity /version/3/do/update /id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
 <td>Updates the provided data for the opportunity specified by <code>id</code>. <code>id</code> is the Pardot ID for the target opportunity. Fields that are not updated by the request remain unchanged. Returns an updated version of the opportunity.</td>
 </tr>
 <tr>
 <td><code>delete</code></td>
-<td><code>/api/opportunity /version/3/do/delete /id/**__**?...</code></td>
+<td><code>/api/opportunity /version/3/do/delete /id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
 <td>Deletes the opportunity specified by <code>id</code>. <code>id</code> is the Pardot ID for the target opportunity. Returns no response on success. <strong><em>Note:</em></strong> Deleting an opportunity, whether via the API or within Pardot, will not delete the Visitor Activities or Score changes for the Prospect to whom the Opportunity is linked.</td>
 </tr>
 <tr>
 <td><code>undelete</code></td>
-<td><code>/api/opportunity /version/3/do/undelete /id/**__**?...</code></td>
+<td><code>/api/opportunity /version/3/do/undelete /id/&lt;id&gt;?...</code></td>
 <td><code>user_key, api_key, id</code></td>
 <td>Undeletes the opportunity specified by <code>id</code>. <code>id</code> is the Pardot ID for the target opportunity. Returns no response on success.</td>
 </tr>
