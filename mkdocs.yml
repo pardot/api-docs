@@ -16,6 +16,8 @@ pages:
 
 - ['kb/api-version-3/campaigns.md', 'Methods', 'Campaigns']
 
+- ['kb/api-version-3/custom-fields.md', 'Methods', 'Custom Fields']
+
 - ['kb/api-version-3/custom-redirects.md', 'Methods', 'Custom Redirects']
 
 - ['kb/api-version-3/dynamic-content.md', 'Methods', 'Dynamic Content']
@@ -23,6 +25,10 @@ pages:
 - ['kb/api-version-3/emails.md', 'Methods', 'Email']
 
 - ['kb/api-version-3/forms.md', 'Methods', 'Forms']
+
+- ['kb/api-version-3/lifecycle-histories.md', 'Methods', 'Lifecycle Histories']
+
+- ['kb/api-version-3/lifecycle-stages.md', 'Methods', 'Lifecycle Stages']
 
 - ['kb/api-version-3/lists.md', 'Methods', 'Lists']
 
@@ -33,6 +39,8 @@ pages:
 - ['kb/api-version-3/prospects.md', 'Methods', 'Prospects']
 
 - ['kb/api-version-3/prospect-accounts.md', 'Methods', 'Prospect Accounts']
+
+- ['kb/api-version-3/tags.md', 'Methods', 'Tags']
 
 - ['kb/api-version-3/tag-objects.md', 'Methods', 'TagObjects']
 

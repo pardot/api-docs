@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/tagObject/version/3/do/query?...` | `user_key, api_key` | Returns the tagObject matching the specified criteria parameters. See the [Using tagObjects](../using-tag-objects) section for a complete description of the tagObject [XML Response Format](../using-tag-objects#xml-response-format). Also see [TagObject](../object-field-references#tag-object) in [Object Field References](../object-field-references) |
+| `query` | `/api/tagObject/version/3/do/query?...` | `user_key, api_key` | Returns the tagObject matching the specified criteria parameters. See the [Using tagObjects](#using-tag-objects) section for a complete description of the tagObject [XML Response Format](#xml-response-format). Also see [TagObject](../object-field-references#tag-object) in [Object Field References](../object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -62,8 +62,8 @@ The ordering of the results returned by a `query` request can be changed by spec
 | **Tag** | **Description** |
 | ------- | --------------- |
 | `<result>` | Contains the resulting tagObjects for the specified query |
-| `<total_results>` | Contains the number of tagObjects selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched tagObject |
-| `<tagObject>` | The data for an individual tagObject. See [Using tagObjects](../using-tag-objects) for a complete description of the tagObject [XML Response Format](../using-tag-objects#xml-response-format). Also see [TagObject](../object-field-references#tag-object) in [Object Field References](../object-field-references) |
+| `<total_results>` | Contains the number of tagObjects selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched tagObjects |
+| `<tagObject>` | The data for an individual tagObject. See [Using tagObjects](#using-tag-objects) for a complete description of the tagObject [XML Response Format](#xml-response-format). Also see [TagObject](../object-field-references#tag-object) in [Object Field References](../object-field-references) |
 
 
 # Using TagObjects
@@ -95,4 +95,4 @@ For a complete list of fields involved in user operations, see the [tagObject](.
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<tagObject>` | Parent tag. Contains data fields for target tagObject. For complete field listing, see [TagObject](../object-field-references#tagObject) in [Object Field References](../object-field-references). |
+| `<tagObject>` | Parent tag. Contains data fields for target tagObject. For complete field listing, see [TagObject](../object-field-references#tag-object) in [Object Field References](../object-field-references). |
