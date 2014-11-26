@@ -24,6 +24,8 @@ pages:
 
 - ['kb/api-version-3/emails.md', 'Methods', 'Email']
 
+- ['kb/api-version-3/email-templates.md', 'Methods', 'Email Templates']
+
 - ['kb/api-version-3/forms.md', 'Methods', 'Forms']
 
 - ['kb/api-version-3/lifecycle-histories.md', 'Methods', 'Lifecycle Histories']
