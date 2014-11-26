@@ -59,7 +59,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `listOneToOne` | `/api/emailTemplate/version/3/do/listOneToOne` | `user_key, api_key` | `Returns a list of email templates which are enabled for use in one to one emails.` |
+| `listOneToOne` | `/api/emailTemplate/version/3/do/listOneToOne` | `user_key, api_key` | Returns a list of email templates which are enabled for use in one to one emails. |
 
 ## XML Response Format
 
