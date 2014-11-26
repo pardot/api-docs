@@ -6,11 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="http://developer.pardot.com/kb/api-version-3/lifecycle-stages/">
+        <link rel="canonical" href="http://developer.pardot.com/kb/api-version-3/email-templates/">
         <link rel="shortcut icon" href="../../../favicon.ico">
         
 
-        <title>Lifecycle Stages - Pardot API Documentation</title>
+        <title>Email Templates - Pardot API Documentation</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -96,8 +96,8 @@
                                 <a href="../emails">Email</a>
                             </li>
                         
-                            <li >
-                                <a href="../email-templates">Email Templates</a>
+                            <li class="active">
+                                <a href=".">Email Templates</a>
                             </li>
                         
                             <li >
@@ -108,8 +108,8 @@
                                 <a href="../lifecycle-histories">Lifecycle Histories</a>
                             </li>
                         
-                            <li class="active">
-                                <a href=".">Lifecycle Stages</a>
+                            <li >
+                                <a href="../lifecycle-stages">Lifecycle Stages</a>
                             </li>
                         
                             <li >
@@ -167,15 +167,15 @@
                 
                 
                 <li>
-                    <a rel="next" href="../lifecycle-histories">
-                    <i class="fa fa-arrow-left"></i> Lifecycle Histories
+                    <a rel="next" href="../emails">
+                    <i class="fa fa-arrow-left"></i> Email
                     </a>
                 </li>
                 
                 
                 <li>
-                    <a rel="prev" href="../lists">
-                    Lists <i class="fa fa-arrow-right"></i>
+                    <a rel="prev" href="../forms">
+                    Forms <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
                 
@@ -199,18 +199,12 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#querying-lifecycle-stages">Querying Lifecycle Stages</a></li>
-        
-            <li><a href="#supported-search-criteria">Supported Search Criteria</a></li>
-        
-            <li><a href="#manipulating-the-result-set">Manipulating the Result Set</a></li>
-        
-            <li><a href="#supported-sorting-options">Supported Sorting Options</a></li>
+        <li class="main active"><a href="#reading-email-templates">Reading Email Templates</a></li>
         
             <li><a href="#xml-response-format">XML Response Format</a></li>
         
     
-        <li class="main "><a href="#using-lifecycle-stages">Using Lifecycle Stages</a></li>
+        <li class="main "><a href="#list-one-to-one-email-templates">List One to One Email Templates</a></li>
         
             <li><a href="#xml-response-format_1">XML Response Format</a></li>
         
@@ -219,150 +213,8 @@
 </div></div>
                 <div class="col-md-9 main-content" role="main">
 
-<h1 id="querying-lifecycle-stages">Querying Lifecycle Stages</h1>
-<h2 id="supported-operations">Supported Operations<a name="62781-supported-operations" id="supported-operations"></a></h2>
-<table>
-<thead>
-<tr>
-<th><strong>Operation</strong></th>
-<th><strong>URL Format</strong></th>
-<th><strong>Required Parameters</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>query</code></td>
-<td><code>/api/lifecycleStage/version/3/do/query?...</code></td>
-<td><code>user_key, api_key</code></td>
-<td>Returns the lifecycle stage matching the specified criteria parameters. See the <a href="#using-lifecycle-stages">Using Lifecycle Stages</a> section for a complete description of the lifecycle stage <a href="#xml-response-format">XML Response Format</a>. Also see <a href="../../../kb/api-version-3/object-field-references#lifecycle-stage">Lifecycle Stage</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a></td>
-</tr>
-</tbody>
-</table>
-<p><a name="62781-supported-search-criteria" id="supported-search-criteria"></a></p>
-<h2 id="supported-search-criteria">Supported Search Criteria</h2>
-<p>Search criteria may be used together in any combination and/or order unless otherwise specified. Unless <code>output=mobile</code> is specified, 200 lifecycle stages will be returned with each query request. This limit is not enforced for responses formatted for mobile devices.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Parameter</strong></th>
-<th><strong>Datatype</strong></th>
-<th><strong>Options</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id_greater_than</code></td>
-<td><code>integer</code></td>
-<td><code>&lt;any_positive_integer&gt;</code></td>
-<td>Searches for lifecycle stages with IDs greater than the specified integer</td>
-</tr>
-<tr>
-<td><code>id_less_than</code></td>
-<td><code>integer</code></td>
-<td><code>&lt;any_positive_integer&gt;</code></td>
-<td>Searches for lifecycle stages with IDs less than the specified integer</td>
-</tr>
-</tbody>
-</table>
-<h2 id="manipulating-the-result-set">Manipulating the Result Set</h2>
-<p>Since <code>query</code> result sets are limited to 200 results each, the results returned may not include all the lifecycle stages matched by the query. To retrieve the remaining results, the following criteria can be used to navigate through the result set.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Parameter</strong></th>
-<th><strong>Datatype</strong></th>
-<th><strong>Options</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>limit</code></td>
-<td><code>integer</code></td>
-<td><code>&lt;any_positive_integer&gt;</code></td>
-<td>Specifies the number of results to be returned. <em>Default value:</em> <code>200</code>. <strong><em>Note:</em></strong> This number cannot be larger than 200. If a number larger than 200 is specified, 200 will be used</td>
-</tr>
-<tr>
-<td><code>offset</code></td>
-<td><code>integer</code></td>
-<td><code>&lt;any_positive_integer&gt;</code></td>
-<td>Specifies the first matching lifecycle stage (according to the specified sorting order) to be returned in the <code>query</code> response. The first <code>offset</code> matching lifecycle stage will be omitted from the response. <em>Default value:</em> <code>0</code>. <strong><em>Example:</em></strong> Specifying <code>offset=10</code> will return the results starting with the 11th lifecycle stage matched by the provided criteria</td>
-</tr>
-<tr>
-<td><code>sort_by</code></td>
-<td><code>string</code></td>
-<td><code>created_at, id</code></td>
-<td>Specifies the field that should be used to sort the results of the query. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details. <em>Default value:</em> <code>id</code></td>
-</tr>
-<tr>
-<td><code>sort_order</code></td>
-<td><code>string</code></td>
-<td><code>ascending, descending</code></td>
-<td>Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the <code>sort_by</code> parameter. See <a href="#supported-sorting-options">Supporting Sorting Options</a> for more details</td>
-</tr>
-</tbody>
-</table>
-<h2 id="supported-sorting-options">Supported Sorting Options</h2>
-<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in lifecycle stage queries, see Lifecycle Stage in Object Field References.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Value</strong></th>
-<th><strong>Default Sort Order</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>position</code></td>
-<td><code>ascending</code></td>
-<td>Specifies that the query results should be sorted by the Lifecycle Stages' <code>position</code> fields</td>
-</tr>
-<tr>
-<td><code>id</code></td>
-<td><code>ascending</code></td>
-<td>Specifies that the query results should be sorted by the Lifecycle Stages' <code>id</code> fields</td>
-</tr>
-</tbody>
-</table>
-<h2 id="xml-response-format">XML Response Format</h2>
-<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
-    &lt;result&gt;
-        &lt;total_results&gt;...&lt;/total_results&gt;
-        &lt;lifecycleStage&gt;...&lt;/lifecycleStage&gt;
-        &lt;lifecycleStage&gt;...&lt;/lifecycleStage&gt;
-        &lt;lifecycleStage&gt;...&lt;/lifecycleStage&gt;
-    &lt;/result&gt;
-&lt;/rsp&gt;
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th><strong>Tag</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&lt;result&gt;</code></td>
-<td>Contains the resulting lifecycle stages for the specified query</td>
-</tr>
-<tr>
-<td><code>&lt;total_results&gt;</code></td>
-<td>Contains the number of lifecycle stages selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched lifecycle stages</td>
-</tr>
-<tr>
-<td><code>&lt;lifecycleStage&gt;</code></td>
-<td>The data for an individual lifecycle stage. See <a href="#using-lifecycle-stages">Using Lifecycle Stages</a> for a complete description of the lifecycle stage <a href="#xml-response-format">XML Response Format</a>. Also see <a href="../../../kb/api-version-3/object-field-references#lifecycle-stage">Lifecycle Stage</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="using-lifecycle-stages">Using Lifecycle Stages</h1>
-<h2 id="supported-operations_1">Supported Operations<a name="62780-supported-operations" id="supported-operations"></a></h2>
-<p>For a complete list of fields involved in user operations, see the <a href="../../../kb/api-version-3/object-field-references#lifecycle-stage">Lifecycle Stage</a> section of <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</p>
+<h1 id="reading-email-templates">Reading Email Templates</h1>
+<h2 id="supported-operations">Supported Operations<a name="71862-supported-operations" id="supported-operations"></a></h2>
 <table>
 <thead>
 <tr>
@@ -375,20 +227,34 @@
 <tbody>
 <tr>
 <td><code>read</code></td>
-<td><code>/api/lifecycleStage/version/3/do/read/id/&lt;id&gt;?...</code></td>
-<td><code>user_key, api_key, id</code></td>
-<td>Returns the data for the lifecycle stage specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target lifecycle stage.</td>
+<td><code>/api/emailTemplate/version/3/do/read/id/&lt;email template id&gt;</code></td>
+<td><code>user_key, api_key, emailTemplateId</code></td>
+<td>Returns the data for the email template specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target email template.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="xml-response-format_1">XML Response Format</h2>
+<h2 id="xml-response-format">XML Response Format</h2>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
-    &lt;lifecycleStage&gt;
-        &lt;id&gt;912&lt;/id&gt;
-        &lt;name&gt;Prospects&lt;/name&gt;
-        &lt;position&gt;0&lt;/position&gt;
-        &lt;is_locked&gt;true&lt;/is_locked&gt;
-    &lt;/lifecycleStage&gt;
+    &lt;emailTemplate&gt;
+        &lt;error&gt;&lt;/error&gt;
+        &lt;errorCode&gt;&lt;/errorCode&gt;
+        &lt;errorMessage&gt;&lt;/errorMessage&gt;
+    &lt;/emailTemplate&gt;
+    --- or ---
+    &lt;emailTemplate&gt;
+        &lt;error&gt;&lt;/error&gt;
+        &lt;sendOptions&gt;
+            &lt;replyToAddress&gt;&lt;/replyToAddress&gt;
+            &lt;sendFromData&gt;&lt;/sendFromData&gt;
+        &lt;/sendOptions&gt;
+        &lt;id&gt;&lt;/id&gt;
+        &lt;name&gt;&lt;/name&gt;
+        &lt;htmlMessage&gt;&lt;/htmlMessage&gt;
+        &lt;textMessage&gt;&lt;/textMessage&gt;
+        &lt;isDripEmail&gt;&lt;/isDripEmail&gt;
+        &lt;isListEmail&gt;&lt;/isListEmail&gt;
+        &lt;subject&gt;&lt;/subject&gt;
+    &lt;/emailTemplate&gt;
 &lt;/rsp&gt;
 </code></pre>
 
@@ -401,8 +267,149 @@
 </thead>
 <tbody>
 <tr>
-<td><code>&lt;lifecycleStage&gt;</code></td>
-<td>Parent tag. Contains data fields for target lifecycle stage. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#lifecycle-stage">Lifecycle Stage</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
+<td><code>&lt;emailTemplate&gt;</code></td>
+<td>Parent tag. Contains data fields for target email template.</td>
+</tr>
+<tr>
+<td><code>&lt;error&gt;</code></td>
+<td>Flag if an error occurred.</td>
+</tr>
+<tr>
+<td><code>&lt;errorCode&gt;</code></td>
+<td>Code for the error which occurred.</td>
+</tr>
+<tr>
+<td><code>&lt;errorMessage&gt;</code></td>
+<td>The error description.</td>
+</tr>
+<tr>
+<td><code>&lt;sendOptions&gt;</code></td>
+<td>The associated send options object. Contains sender specific data.</td>
+</tr>
+<tr>
+<td><code>&lt;replyToAddress&gt;</code></td>
+<td>The email address set for the email's Reply-To header.</td>
+</tr>
+<tr>
+<td><code>&lt;sendFromData&gt;</code></td>
+<td>A JSON array representing the sender hierarchy tied to the email template.</td>
+</tr>
+<tr>
+<td><code>&lt;id&gt;</code></td>
+<td>The Pardot ID of the email template.</td>
+</tr>
+<tr>
+<td><code>&lt;name&gt;</code></td>
+<td>The name of the email template.</td>
+</tr>
+<tr>
+<td><code>&lt;htmlMessage&gt;</code></td>
+<td>The HTML version of the email template body.</td>
+</tr>
+<tr>
+<td><code>&lt;textMessage&gt;</code></td>
+<td>The plain text version of the email template body.</td>
+</tr>
+<tr>
+<td><code>&lt;isDripEmail&gt;</code></td>
+<td>Flag if the template is available for use in drip programs.</td>
+</tr>
+<tr>
+<td><code>&lt;isListEmail&gt;</code></td>
+<td>Flag if the template is available for use in list emails.</td>
+</tr>
+<tr>
+<td><code>&lt;subject&gt;</code></td>
+<td>The subject of the email message.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="list-one-to-one-email-templates">List One to One Email Templates</h1>
+<h2 id="supported-operations_1">Supported Operations<a name="71862-supported-operations" id="supported-operations"></a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Required Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>listOneToOne</code></td>
+<td><code>/api/emailTemplate/version/3/do/listOneToOne</code></td>
+<td><code>user_key, api_key</code></td>
+<td><code>Returns a list of email templates which are enabled for use in one to one emails.</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="xml-response-format_1">XML Response Format</h2>
+<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+    &lt;emailTemplates&gt;
+        &lt;templates&gt;
+            &lt;id&gt;&lt;/id&gt;
+            &lt;name&gt;&lt;/name&gt;
+            &lt;isOneToOneEmail&gt;&lt;/isOneToOneEmail&gt;
+            &lt;isArchived&gt;&lt;/isArchived&gt;
+            &lt;isAutoResponderEmail&gt;&lt;/isAutoResponderEmail&gt;
+            &lt;isDripEmail&gt;&lt;/isDripEmail&gt;
+            &lt;isListEmail&gt;&lt;/isListEmail&gt;
+            &lt;subject&gt;&lt;/subject&gt;
+        &lt;/templates&gt;
+        &lt;templates&gt;...&lt;/templates&gt;
+        &lt;templates&gt;...&lt;/templates&gt;
+    &lt;/emailTemplates&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th><strong>Tag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;emailTemplates&gt;</code></td>
+<td>Parent tag. Contains individual email template records.</td>
+</tr>
+<tr>
+<td><code>&lt;templates&gt;</code></td>
+<td>Individual template parent tag.</td>
+</tr>
+<tr>
+<td><code>&lt;id&gt;</code></td>
+<td>The Pardot ID of the email template.</td>
+</tr>
+<tr>
+<td><code>&lt;name&gt;</code></td>
+<td>The name of the email template.</td>
+</tr>
+<tr>
+<td><code>&lt;isOneToOneEmail&gt;</code></td>
+<td>Flag if the email template is available for use in one to one emails (always true).</td>
+</tr>
+<tr>
+<td><code>&lt;isArchived&gt;</code></td>
+<td>Flag if the email template is currently in the Recycle Bin in Pardot.</td>
+</tr>
+<tr>
+<td><code>&lt;isAutoResponderEmail&gt;</code></td>
+<td>Flag if the email template is available for use as an auto response from a form submission.</td>
+</tr>
+<tr>
+<td><code>&lt;isDripEmail&gt;</code></td>
+<td>Flag if the email template is available for use in a drip program.</td>
+</tr>
+<tr>
+<td><code>&lt;isListEmail&gt;</code></td>
+<td>Flag if the email template is available for use in a list email.</td>
+</tr>
+<tr>
+<td><code>&lt;subject&gt;</code></td>
+<td>The subject of the email message.</td>
 </tr>
 </tbody>
 </table>
