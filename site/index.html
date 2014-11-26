@@ -218,7 +218,7 @@
 <li><code>update</code> -- Updates elements of an existing object.</li>
 <li><code>upsert</code> -- Updates elements of an existing object if it exists.  If the object does not exist, one is created using the supplied parameters.</li>
 </ul>
-<p>Developers must authenticate with the API before issuing requests.  Refer to the <a href="./../authentication">Authentication</a> section for details about this procedure. For more information about proper request syntax, see the <a href="./../using-the-pardot-api">Using the Pardot API</a> section.</p>
+<p>Developers must authenticate with the API before issuing requests.  Refer to the <a href="#authentication">Authentication</a> section for details about this procedure.</p>
 <p>Some considerations must be taken while performing requests. When performing <code>update</code> requests, only the fields specified in the request are updated, and all others are left unchanged. If a required field is cleared during an <code>update</code>, the request will be declined.</p>
 <p>The Pardot API handles a variety of requests for many of the
 objects available through the Pardot user interface. Most requests
@@ -266,12 +266,12 @@ GET: https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;operator&gt;/&lt;
 <tr>
 <td><code>your_api_key</code></td>
 <td>X</td>
-<td>The API key that was obtained during <a href="./../authentication">Authentication</a></td>
+<td>The API key that was obtained during <a href="#authentication">Authentication</a></td>
 </tr>
 <tr>
 <td><code>your_user_key</code></td>
 <td>X</td>
-<td>The user key that was used during <a href="./../authentication">Authentication</a></td>
+<td>The user key that was used during <a href="#authentication">Authentication</a></td>
 </tr>
 <tr>
 <td><code>format</code></td>
@@ -281,12 +281,12 @@ GET: https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;operator&gt;/&lt;
 <tr>
 <td><code>parameters_for_request</code></td>
 <td></td>
-<td>Parameters specific to your request; See the articles listed under <a href="./../using-the-pardot-api">Using the Pardot API</a> in the <a href="./../intro-and-table-of-contents#contents">Table of Contents</a></td>
+<td>Parameters specific to your request; See individual methods for details</td>
 </tr>
 </tbody>
 </table>
 <p>The ordering of parameters is arbitrary. Parameters are passed using conventional HTML parameter syntax, with <code>'?'</code> indicating the start of the parameter string (for GET requests only) and <code>'&amp;'</code> as the separator between parameters. With the exception of <code>&lt;format&gt;</code> and <code>&lt;parameters_for_request&gt;</code>, all components are required. Data returned from the API is formatted using JSON or XML 1.0 with UTF-8 character encoding. Keep in mind that some characters in the response may be encoded as HTML entities, requiring client-side decoding. Also, keep in mind that all parameters specified in an API request MUST be URL-encoded before they are submitted.</p>
-<p>In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See <a href="./../error-codes-and-messages">Error Codes &amp; Messages</a> for error descriptions and suggested remedies.</p>
+<p>In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See <a href="./kb/api-version-3/error-codes-messages">Error Codes &amp; Messages</a> for error descriptions and suggested remedies.</p>
 <p><a name="14767-changing-xml-response-format" id=
 "changing-xml-response-format"></a></p>
 <h2 id="changing-the-api-response-format">Changing the API Response Format</h2>

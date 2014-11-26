@@ -12,7 +12,7 @@ The Pardot API allows your application to access current data within Pardot. Thr
 *   `update` -- Updates elements of an existing object.
 *   `upsert` -- Updates elements of an existing object if it exists.  If the object does not exist, one is created using the supplied parameters.
 
-Developers must authenticate with the API before issuing requests.  Refer to the [Authentication](../authentication) section for details about this procedure. For more information about proper request syntax, see the [Using the Pardot API](../using-the-pardot-api) section.
+Developers must authenticate with the API before issuing requests.  Refer to the [Authentication](kb/api-version-3/authentication) section for details about this procedure. For more information about proper request syntax, see the [Using the Pardot API](kb/api-version-3/using-the-pardot-api) section.
 
 Some considerations must be taken while performing requests. When performing `update` requests, only the fields specified in the request are updated, and all others are left unchanged. If a required field is cleared during an `update`, the request will be declined.
 
@@ -83,14 +83,14 @@ GET: https://pi.pardot.com/api/<object>/version/3/do/<operator>/<identifier_fiel
 | `operator`    | X              | The operation to be performed on the specified object type                    |
 | `identifier_field`    | X              | The field to be used as the identifier for the specified object  |
 | `identifier`       | X              | The identifier for the specified object(s)              |
-| `your_api_key`    | X              | The API key that was obtained during [Authentication](../authentication)                   |
-| `your_user_key`    | X              | The user key that was used during [Authentication](../authentication)  |
+| `your_api_key`    | X              | The API key that was obtained during [Authentication](kb/api-version-3/authentication)                   |
+| `your_user_key`    | X              | The user key that was used during [Authentication](kb/api-version-3/authentication)  |
 | `format`    |               | The API data format. Either xml or json (xml is default)                   |
-| `parameters_for_request`    |               | Parameters specific to your request; See the articles listed under [Using the Pardot API](../using-the-pardot-api) in the [Table of Contents](../intro-and-table-of-contents#contents) |
+| `parameters_for_request`    |               | Parameters specific to your request; See the articles listed under [Using the Pardot API](kb/api-version-3/using-the-pardot-api) in the [Table of Contents](kb/api-version-3/intro-and-table-of-contents#contents) |
 
 The ordering of parameters is arbitrary. Parameters are passed using conventional HTML parameter syntax, with `'?'` indicating the start of the parameter string (for GET requests only) and `'&'` as the separator between parameters. With the exception of `<format>` and `<parameters_for_request>`, all components are required. Data returned from the API is formatted using JSON or XML 1.0 with UTF-8 character encoding. Keep in mind that some characters in the response may be encoded as HTML entities, requiring client-side decoding. Also, keep in mind that all parameters specified in an API request MUST be URL-encoded before they are submitted.
 
-In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See [Error Codes &amp; Messages](../error-codes-and-messages) for error descriptions and suggested remedies.
+In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See [Error Codes &amp; Messages](kb/api-version-3/error-codes-and-messages) for error descriptions and suggested remedies.
 
 <a name="14767-changing-xml-response-format" id=
 "changing-xml-response-format"></a>

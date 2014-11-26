@@ -1,32 +1,32 @@
 @font-face {
 	font-family: "Proxima Nova";
-	src: url(../fonts/ProximaNova-Bold.otf);
+	src: url(kb/api-version-3/fonts/ProximaNova-Bold.otf);
 	font-weight: 600;
 }
 @font-face {
 	font-family: "Proxima Nova";
-	src: url(../fonts/ProximaNova-Semibold.otf);
+	src: url(kb/api-version-3/fonts/ProximaNova-Semibold.otf);
 	font-weight: 500;
 }
 @font-face {
 	font-family: "Proxima Nova";
-	src: url(../fonts/ProximaNova-Regular.otf);
+	src: url(kb/api-version-3/fonts/ProximaNova-Regular.otf);
 	font-weight: 400;
 }
 @font-face {
 	font-family: "Proxima Nova";
-	src: url(../fonts/ProximaNova-RegItalic.otf);
+	src: url(kb/api-version-3/fonts/ProximaNova-RegItalic.otf);
 	font-weight: 400;
 	font-style: italic;
 }
 @font-face {
 	font-family: "Proxima Nova";
-	src: url(../fonts/ProximaNova-Light.otf);
+	src: url(kb/api-version-3/fonts/ProximaNova-Light.otf);
 	font-weight: 200;
 }
 @font-face {
 	font-family: "Proxima Nova";
-	src: url(../fonts/ProximaNova-Thin.otf);
+	src: url(kb/api-version-3/fonts/ProximaNova-Thin.otf);
 	font-weight: 100;
 }
 
@@ -2514,8 +2514,8 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 
 @font-face {
 	font-family:'Glyphicons Halflings';
-	src:url(../fonts/glyphicons-halflings-regular.eot);
-	src:url(../fonts/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype)","url(../fonts/glyphicons-halflings-regular.woff") format("woff)","url(../fonts/glyphicons-halflings-regular.ttf") format("truetype)","url(../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg");
+	src:url(kb/api-version-3/fonts/glyphicons-halflings-regular.eot);
+	src:url(kb/api-version-3/fonts/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype)","url(kb/api-version-3/fonts/glyphicons-halflings-regular.woff") format("woff)","url(kb/api-version-3/fonts/glyphicons-halflings-regular.ttf") format("truetype)","url(kb/api-version-3/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg");
 }
 
 .glyphicon {

@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/dynamicContent/version/3/do/query?...` | `user_key, api_key` | Returns the dynamic content matching the specified criteria parameters. See the [Using Dynamic Content](../using-dynamic content) section for a complete description of the dynamic content [XML Response Format](../using-dynamic-content#xml-response-format). Also see [Dynamic Content](../object-field-references#dynamic-content) in [Object Field References](../object-field-references) |
+| `query` | `/api/dynamicContent/version/3/do/query?...` | `user_key, api_key` | Returns the dynamic content matching the specified criteria parameters. See the [Using Dynamic Content](#using-dynamic-content) section for a complete description of the dynamic content [XML Response Format](#xml-response-format). Also see [Dynamic Content](kb/api-version-3/object-field-references#dynamic-content) in [Object Field References](kb/api-version-3/object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -43,7 +43,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | --------- | ---------------------- | --------------- |
 | `created_at` | `descending` | Specifies that the query results should be sorted by the dynamic content's `created_at` timestamps |
 | `id` | `ascending` | Specifies that the query results should be sorted by the dynamic content's `id` fields |
-| `updated_at` | `ascending` | Specifies that the query results should be sorted by the dynamic content's `updated_at` timestamps |
+| `updated_at` | `descending` | Specifies that the query results should be sorted by the dynamic content's `updated_at` timestamps |
 
 
 ## XML Response Format
@@ -63,7 +63,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting dynamic content for the specified query |
 | `<total_results>` | Contains the number of dynamic content selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched dynamic content |
-| `<dynamicContent>` | The data for an individual dynamic content. See [Using Dynamic Content](../using-dynamic-content) for a complete description of the dynamic content [XML Response Format](../using-dynamic-content#xml-response-format). Also see [Dynamic Content](../object-field-references#dynamic-content) in [Object Field References](../object-field-references) |
+| `<dynamicContent>` | The data for an individual dynamic content. See [Using Dynamic Content](#using-dynamic-content) for a complete description of the dynamic content [XML Response Format](#xml-response-format). Also see [Dynamic Content](kb/api-version-3/object-field-references#dynamic-content) in [Object Field References](kb/api-version-3/object-field-references) |
 
 
 # Using Dynamic Content
@@ -71,11 +71,11 @@ The ordering of the results returned by a `query` request can be changed by spec
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Dynamic Content](../object-field-references#dynamic-content) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Dynamic Content](kb/api-version-3/object-field-references#dynamic-content) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/dynamicContent/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the dynamic content specified by `<id>`. `<id>` is the Pardot ID of the target dynamic content. |
+| `read` | `/api/dynamicContent/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the dynamic content specified by `<id>`. `<id>` is the Pardot ID of the target dynamic content. |
 
 
 ## XML Response Format
@@ -111,7 +111,7 @@ For a complete list of fields involved in user operations, see the [Dynamic Cont
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<form>` | Parent tag. Contains data fields for target form. For complete field listing, see [Form](../object-field-references#form) in [Object Field References](../object-field-references). |
+| `<form>` | Parent tag. Contains data fields for target form. For complete field listing, see [Form](kb/api-version-3/object-field-references#form) in [Object Field References](kb/api-version-3/object-field-references). |
 | `<embedCode>` | Contains `<script>` of the dynamic content which you can use to embed the dynamic content on your webpage. |
 | `<variation>` | Contains `<comparison>` and `<content>` of the variation for the dynamic content. |
 | `<content>` | Contains the content that is shown for the specific variation. |

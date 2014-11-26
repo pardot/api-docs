@@ -197,9 +197,23 @@
     
         <li class="main active"><a href="#object-field-references">Object Field References</a></li>
         
+            <li><a href="#campaign">Campaign</a></li>
+        
+            <li><a href="#custom-field">Custom Field</a></li>
+        
+            <li><a href="#custom-redirect">Custom Redirect</a></li>
+        
+            <li><a href="#dynamic-content">Dynamic Content</a></li>
+        
             <li><a href="#email">Email</a></li>
         
+            <li><a href="#form">Form</a></li>
+        
             <li><a href="#identified-company">Identified Company</a></li>
+        
+            <li><a href="#lifecycle-history">Lifecycle History</a></li>
+        
+            <li><a href="#lifecycle-stage">Lifecycle Stage</a></li>
         
             <li><a href="#list">List</a></li>
         
@@ -214,6 +228,10 @@
             <li><a href="#prospect">Prospect</a></li>
         
             <li><a href="#prospect-account">Prospect Account</a></li>
+        
+            <li><a href="#tag">Tag</a></li>
+        
+            <li><a href="#tag-object">Tag Object</a></li>
         
             <li><a href="#user">User</a></li>
         
@@ -239,6 +257,264 @@
 <li>'Required' denotes that the specified field cannot be left without a value during <code>insert</code> and some <code>upsert</code> requests. <code>update</code> requests that clear a required field will be declined.</li>
 <li>During <code>update</code> requests, the parameter names submitted to the API and tag names in the API's response will match field names within the Pardot user interface unless otherwise specified.</li>
 </ul>
+
+<h2 id="campaign">Campaign</h2>
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this campaign</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Campaign's name</td>
+</tr>
+<tr>
+<td>&lt;cost&gt;</td>
+<td>integer</td>
+<td></td>
+<td>X</td>
+<td>Cost associated to the campaign</td>
+</tr>
+<tr>
+</tr>
+</table>
+
+<h2 id="custom-field">Custom Field</h2>
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this custom field</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Custom field's name</td>
+</tr>
+<tr>
+<td>&lt;field_id&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>API ID for custom field</td>
+</tr>
+<tr>
+<td>&lt;type&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>type of field</td>
+</tr>
+<tr>
+<td>&lt;type_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for custom field's type</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time custom field was created in Pardot; Time is reported in API user's
+        preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time custom field was updated; Time is reported in API user's
+        preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;is_record_multiple_responses&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If true, this custom field will record multiple responses</td>
+</tr>
+<tr>
+<td>&lt;crm_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td>X</td>
+<td>The CRM ID of the field you would like to map to this custom field</td>
+</tr>
+<tr>
+<td>&lt;is_use_values&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If true, this custom field will use predefined values</td>
+</tr>
+</table>
+
+<h2 id="custom-redirect">Custom Redirect</h2>
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this custom redirect</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Custom redirect's name</td>
+</tr>
+<tr>
+<td>&lt;Url&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>URL for the custom redirect</td>
+</tr>
+<tr>
+<td>&lt;destination&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>URL the custom redirect leads to</td>
+</tr>
+<tr>
+<td>&lt;campaign&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>The campaign associated with this custom redirect</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time custom redirect was created in Pardot; Time is reported in API user's
+        preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time custom redirect was updated; Time is reported in API user's
+        preferred timezone</td>
+</tr>
+</table>
+
+<h2 id="dynamic-content">Dynamic Content</h2>
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this dynamic content</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Dynamic content's name</td>
+</tr>
+<tr>
+<td>&lt;embedCode&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Code to embed this dynamic content onto your webpage</td>
+</tr>
+<tr>
+<td>&lt;embedUrl&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>URL to embed this dynamic content</td>
+</tr>
+<tr>
+<td>&lt;baseContent&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>The default dynamic content</td>
+</tr>
+<tr>
+<td>&lt;basedOn&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Field that this dynamic content is based on</td>
+</tr>
+<tr>
+<td>&lt;variation&gt;</td>
+<td>node</td>
+<td></td>
+<td></td>
+<td>The variation of content prospect will see based on the field's value<br>
+    <strong><em>Note:</em></strong> Information about a variation is returned in a &lt;variation&gt; node in the
+    XML response.  It contains the value of the field in the &lt;comparison&gt; tag and the content of the variation
+     in the &lt;content&gt; tag</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time dynamic content was created in Pardot; Time is reported in API user's
+        preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time dynamic content was updated; Time is reported in API user's
+        preferred timezone</td>
+</tr>
+</table>
 
 <h2 id="email">Email</h2>
 <table>
@@ -282,7 +558,62 @@
 <td>Timestamp</td>
 <td></td>
 <td></td>
-<td>Time the Email Was Created At</td>
+<td>Time the Email Was Created</td>
+</tr>
+</table>
+
+<h2 id="form">Form</h2>
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this form</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Form's name</td>
+</tr>
+<tr>
+<td>&lt;campaign_id&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the campaign associated with this form</td>
+</tr>
+<tr>
+<td>&lt;embed_code&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>The code used to embed the form on your webpage</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time form was created in Pardot; Time is reported in API user's
+    preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time form was updated; Time is reported in API user's
+    preferred timezone</td>
 </tr>
 </table>
 
@@ -352,6 +683,97 @@
 <td>Identified Company's email address</td>
 </tr>
 </table></p>
+<h2 id="lifecycle-history">Lifecycle History</h2>
+<p><table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of this lifecycle history</td>
+</tr>
+<tr>
+<td>&lt;prospect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot's ID for the prospect in this stage</td>
+</tr>
+<tr>
+<td>&lt;previous_stage_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the stage this prospect was previously in</td>
+</tr>
+<tr>
+<td>&lt;next_stage_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the stage this prospect will be in next</td>
+</tr>
+<tr>
+<td>&lt;seconds_elapsed&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Number of seconds for prospect to get to current stage</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time lifecycle history was created in Pardot; Time is reported in API user's
+preferred timezone</td>
+</tr>
+</table></p>
+<h2 id="lifecycle-stage">Lifecycle Stage</h2>
+<p><table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of this lifecycle stage</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Lifecycle stage's name</td>
+</tr>
+<tr>
+<td>&lt;position&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Lifcycle stage's position in lifecycle</td>
+</tr>
+<tr>
+<td>&lt;is_locked&gt;</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>If true, lifecycle stage is locked</td>
+</tr>
+</table></p>
 <h2 id="list">List</h2>
 <p><table>
 <tr>
@@ -372,22 +794,43 @@
 <td>&lt;name&gt;</td>
 <td>string</td>
 <td></td>
-<td></td>
+<td>X</td>
 <td>List's name (internal to Pardot)</td>
+</tr>
+<tr>
+<td>&lt;is_public&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If true, list will show on EPC pages to prospects</td>
+</tr>
+<tr>
+<td>&lt;is_dynamic&gt;</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>If true, list has prospects dynamically added to it via a set of chosen rules</td>
 </tr>
 <tr>
 <td>&lt;title&gt;</td>
 <td>string</td>
 <td></td>
-<td></td>
+<td>X</td>
 <td>List's title (visible to subscribers)</td>
 </tr>
 <tr>
 <td>&lt;description&gt;</td>
 <td>string</td>
 <td></td>
-<td></td>
+<td>X</td>
 <td>List's description</td>
+</tr>
+<tr>
+<td>&lt;is_crm_visible&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If true, list will be visible in CRM to add or remove from</td>
 </tr>
 <tr>
 <td>&lt;created_at&gt;</td>
@@ -488,8 +931,8 @@ API user's preferred timezone</td>
 campaign association is returned in a &lt;campaign&gt; node in the
 XML response. However, updates to campaign associations are done by
 providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt;
-request. See <a href="../../../../using-opportunities#xml-response-formats">XML
-Response Formats</a> in <a href="../../../../using-opportunities">Using
+request. See <a href="../../../kb/api-version-3/opportunities#xml-response-formats">XML
+Response Formats</a> in <a href="../../../kb/api-version-3/opportunities">Using
 Opportunities</a> for more details.</td>
 </tr>
 <tr>
@@ -655,8 +1098,8 @@ using the values match, nomatch, or unknown</td>
 campaign association is returned in a &lt;campaign&gt; node in the
 XML response. However, updates to campaign associations are done by
 providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt;
-request. See <a href="../../../../using-prospects#xml-response-formats">XML
-Response Formats</a> in <a href="../../../../using-prospects">Using
+request. See <a href="../../../kb/api-version-3/prospects#xml-response-formats">XML
+Response Formats</a> in <a href="../../../kb/api-version-3/prospects">Using
 Prospects</a> for more details.</td>
 </tr>
 <tr>
@@ -994,6 +1437,94 @@ describe operation on the prospectAccount API endpoint.</p>
 <td>X</td>
 <td></td>
 <td>The name prospect account</td>
+</tr>
+</table>
+
+<h2 id="tag">Tag</h2>
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this tag</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Tag's name</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time tag was created in Pardot; Time is reported in API user's
+        preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time tag was updated; Time is reported in API user's
+        preferred timezone</td>
+</tr>
+</table>
+
+<h2 id="tag-object">Tag Object</h2>
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of the tag object</td>
+</tr>
+<tr>
+<td>&lt;tag_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>The Pardot ID of the tag</td>
+</tr>
+<tr>
+<td>&lt;type&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>The type of object associated with the tag</td>
+</tr>
+<tr>
+<td>&lt;object_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>The Pardot ID of the object</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time tag was associated with the object in Pardot; Time is reported in API user's
+preferred timezone</td>
 </tr>
 </table>
 

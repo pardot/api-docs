@@ -74,8 +74,8 @@ provided search parameters.
 **Solution**: Check parameter spellings. Also, ensure
 that the specified search parameter is supported by the API. See
 [Supported
-Search Criteria](../querying-prospects#supported-search-criteria) in [Querying
-Prospects](../querying-prospects) for more details.
+Search Criteria](kb/api-version-3/prospects#supported-search-criteria) in [Querying
+Prospects](kb/api-version-3/prospects) for more details.
 
 ## [](#error-code-6)Error Code: 6
 
@@ -91,7 +91,7 @@ Prospects](../querying-prospects) for more details.
 **Solution**: Check for misspellings in the
 `timeframe` value. Also, verify that the provided value
 is supported by the API. See [Supported Search
-Criteria](../querying-prospects#supported-search-criteria) in [Querying Prospects](../querying-prospects)
+Criteria](kb/api-version-3/prospects#supported-search-criteria) in [Prospects](kb/api-version-3/prospects)
 for supported `timeframe` values.
 
 ## [](#error-code-7)Error Code: 7
@@ -109,7 +109,7 @@ timestamp.
 standards for date and time input. See [
 GNU Date Input Format &amp; Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) for more information. Also,
 ensure all characters in the timestamp are URL safe. See [Supported Search
-Criteria](../querying-prospects#supported-search-criteria) in [Querying Prospects](../querying-prospects)
+Criteria](kb/api-version-3/prospects#supported-search-criteria) in [Prospects](kb/api-version-3/prospects)
 for supported values.
 
 ## [](#error-code-8)Error Code: 8
@@ -198,7 +198,7 @@ for this type of request are missing.
 
 **Solution**: Verify that all of the required
 parameters have been provided. Check that all parameter names were
-spelled accurately and as specified in [Object Field References](../object-field-references). Ensure the
+spelled accurately and as specified in [Object Field References](kb/api-version-3/object-field-references). Ensure the
 proper URL punctuation was used, including `?` before
 parameters and `&` between parameters.
 
@@ -474,7 +474,7 @@ for the prospect's score has been specified.
 
 **Solution**: Check for typos that may prevent
 `grade` from being interpreted correctly. See [Supported Search
-Criteria](../querying-prospects#supported-search-criteria) in [Querying Prospects](../querying-prospects)
+Criteria](kb/api-version-3/prospects#supported-search-criteria) in [Prospects](kb/api-version-3/prospects)
 for supported values. Also, ensure that the specified grades are
 URL-encoded.
 
@@ -820,7 +820,7 @@ field's type of Date, it is an invalid format.
 standards for date and time input. See [
 GNU Date Input Format &amp; Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) for more information. Also,
 ensure all characters in the timestamp are URL safe. See [Supported Search
-Criteria](../querying-prospects#supported-search-criteria) in [Querying Prospects](../querying-prospects)
+Criteria](kb/api-version-3/prospects#supported-search-criteria) in [Prospects](kb/api-version-3/prospects)
 for supported values.
 
 ## [](#error-code-58)Error Code: 58

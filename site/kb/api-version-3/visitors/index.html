@@ -234,7 +234,7 @@
 <td><code>query</code></td>
 <td><code>/api/visitor/version/3/do/query?...</code></td>
 <td><code>user_key, api_key</code></td>
-<td>Returns the visitors matching the specified criteria parameters. See the <a href="../../../../using-visitors">Using Visitors</a> section for a complete description of visitor <a href="../../../../using-visitors#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../../object-field-references#visitor">Visitor</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+<td>Returns the visitors matching the specified criteria parameters. See the <a href="../../../kb/api-version-3/visitors">Using Visitors</a> section for a complete description of visitor <a href="../../../kb/api-version-3/visitors#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../kb/api-version-3/object-field-references#visitor">Visitor</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -328,7 +328,7 @@
 <td><code>output</code></td>
 <td><code>string</code></td>
 <td><code>simple, mobile</code></td>
-<td>Specifies the format to be used when returning the results of the query. See <a href="../../../../using-visitors#xml-response-formats">XML Response Formats</a> in <a href="../../../../using-visitors">Using Visitors</a> for more details.</td>
+<td>Specifies the format to be used when returning the results of the query. See <a href="../../../kb/api-version-3/visitors#xml-response-formats">XML Response Formats</a> in <a href="../../../kb/api-version-3/visitors">Using Visitors</a> for more details.</td>
 </tr>
 <tr>
 <td><code>sort_by</code></td>
@@ -345,7 +345,7 @@
 </tbody>
 </table>
 <h2 id="supported-sorting-options"><a href="#supported-sorting-options-"></a>Supported Sorting Options</h2>
-<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in visitor queries, see <a href="../../../../object-field-references#visitor">Visitor</a> in <a href="../../../../object-field-references">Object Field References</a>.</p>
+<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in visitor queries, see <a href="../../../kb/api-version-3/object-field-references#visitor">Visitor</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</p>
 <table>
 <thead>
 <tr>
@@ -400,13 +400,13 @@
 </tr>
 <tr>
 <td><code>&lt;visitor&gt;</code></td>
-<td>The data for an individual visitor. See <a href="../../../../using-visitors">Using Visitors</a> for complete descriptions of visitor <a href="../../../../using-visitors#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../../object-field-references#visitor">Visitor</a> in <a href="../../../../object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning a visitor's identified company, referrers, or activities will NOT be included in a <code>query</code> response. To retrieve this data, use a <code>read</code> request to retrieve the data for the visitor of interest.</td>
+<td>The data for an individual visitor. See <a href="../../../kb/api-version-3/visitors">Using Visitors</a> for complete descriptions of visitor <a href="../../../kb/api-version-3/visitors#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../kb/api-version-3/object-field-references#visitor">Visitor</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning a visitor's identified company, referrers, or activities will NOT be included in a <code>query</code> response. To retrieve this data, use a <code>read</code> request to retrieve the data for the visitor of interest.</td>
 </tr>
 </tbody>
 </table>
 <h1 id="using-visitors">Using Visitors</h1>
 <h2 id="supported-operations">Supported Operations<a name="20547-supported-operations"></a></h2>
-<p>For a complete list of fields involved in visitor operations, see the <a href="../../../../object-field-references#visitor">Visitor</a> section of <a href="../../../../object-field-references">Object Field References</a>.</p>
+<p>For a complete list of fields involved in visitor operations, see the <a href="../../../kb/api-version-3/object-field-references#visitor">Visitor</a> section of <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</p>
 <table>
 <thead>
 <tr>
@@ -487,7 +487,7 @@
 <tbody>
 <tr>
 <td><code>&lt;visitor&gt;</code></td>
-<td>Parent tag. Contains data fields for target visitor.  For complete field listing, see <a href="../../../../object-field-references#visitor">Visitor</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+<td>Parent tag. Contains data fields for target visitor.  For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#visitor">Visitor</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;prospect&gt;</code></td>
@@ -495,11 +495,11 @@
 </tr>
 <tr>
 <td><code>&lt;identified_company&gt;</code></td>
-<td>Contains data about the identified company associated with this visitor.  This leaf only appears if an identified company is associated with this visitor.  See <a href="../../../../object-field-references#identified-company">Identified Company</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+<td>Contains data about the identified company associated with this visitor.  This leaf only appears if an identified company is associated with this visitor.  See <a href="../../../kb/api-version-3/object-field-references#identified-company">Identified Company</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;visitor_referrer&gt;</code></td>
-<td>Contains data about this visitor's referrer.  This leaf only appears if this visitor has an associated visitor referrer.  For complete field listing, see <a href="../../../../object-field-references#visitor-referrer">Visitor Referrer</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+<td>Contains data about this visitor's referrer.  This leaf only appears if this visitor has an associated visitor referrer.  For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#visitor-referrer">Visitor Referrer</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;visitor_activities&gt;</code></td>
@@ -507,7 +507,7 @@
 </tr>
 <tr>
 <td><code>&lt;visitor_activity&gt;</code></td>
-<td>Contains data fields for a visitor activity.  For complete field listing, see <a href="../../../../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for a visitor activity.  For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>

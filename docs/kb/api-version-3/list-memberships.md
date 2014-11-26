@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/listMembership/version/3/do/query?...` | `user_key, api_key` | Returns the list memberships matching the specified criteria parameters. See the [Using Lists](../using-lists) section for a complete description of the list membership [XML Response Format](../using-list-memberships#xml-response-format). Also see [List Membership](../object-field-references#list-membership) in [Object Field References](../object-field-references). |
+| `query` | `/api/listMembership/version/3/do/query?...` | `user_key, api_key` | Returns the list memberships matching the specified criteria parameters. See the [Using Lists](kb/api-version-3/lists) section for a complete description of the list membership [XML Response Format](kb/api-version-3/list-memberships#xml-response-format). Also see [List Membership](kb/api-version-3/object-field-references#list-membership) in [Object Field References](kb/api-version-3/object-field-references). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria
@@ -63,14 +63,14 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting list memberships for the specified query. |
 | `<total_results>` | Contains the number of list memberships selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched list memberships. |
-| `<list_membership>` | The data for an individual list membership. See [Using List Memberships](../using-list-memberships) for a complete description of the list membership [XML Response Format](../using-list-memberships#xml-response-format). Also see [List Membership](../object-field-references#list-membership) in [Object Field References](../object-field-references). |
+| `<list_membership>` | The data for an individual list membership. See [Using List Memberships](kb/api-version-3/list-memberships) for a complete description of the list membership [XML Response Format](kb/api-version-3/list-memberships#xml-response-format). Also see [List Membership](kb/api-version-3/object-field-references#list-membership) in [Object Field References](kb/api-version-3/object-field-references). |
 
 # Using List Memberships
 
 
 ## [](#supported-operations-a-name-supported-operations-id-supported-operations-a-)Supported Operations<a name="85559-supported-operations" id="supported-operations"></a>
 
-List Membership can be controlled on a Prospect and List basis. In additon, the membership can reflect the opted "in" or opted "out" status for that Prospect and List combination. For a complete list of fields involved in list membership operations, see the [ListMembership](../object-field-references#list-membership) section of [Object Field References](../object-field-references).
+List Membership can be controlled on a Prospect and List basis. In additon, the membership can reflect the opted "in" or opted "out" status for that Prospect and List combination. For a complete list of fields involved in list membership operations, see the [ListMembership](kb/api-version-3/object-field-references#list-membership) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                                                                            | **Required Parameters**                    | **Description**  |
 | ------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------ | -----------------|
@@ -100,4 +100,4 @@ List Membership can be controlled on a Prospect and List basis. In additon, the 
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<list_membership>` | Parent tag. Contains data fields for target list. For complete field listing, see [List Membership](../object-field-references#list-membership) in [Object Field References](../object-field-references). |
+| `<list_membership>` | Parent tag. Contains data fields for target list. For complete field listing, see [List Membership](kb/api-version-3/object-field-references#list-membership) in [Object Field References](kb/api-version-3/object-field-references). |

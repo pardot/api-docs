@@ -3,7 +3,7 @@
 
 ## Supported Operations<a name="71862-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [User](../object-field-references#email) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Email](kb/api-version-3/object-field-references#email) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
@@ -22,14 +22,14 @@ For a complete list of fields involved in user operations, see the [User](../obj
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<email>` | Parent tag. Contains data fields for target email. For complete field listing, see [email](../object-field-references#email) in [Object Field References](../object-field-references). |
+| `<email>` | Parent tag. Contains data fields for target email. For complete field listing, see [email](kb/api-version-3/object-field-references#email) in [Object Field References](kb/api-version-3/object-field-references). |
 
 # Sending One To One Emails
 
 
 ## [](#supported-operations-a-name-supported-operations-id-supported-operations-a-)Supported Operations<a name="82871-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [User](../object-field-references#email) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Email](kb/api-version-3/object-field-references#email) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
@@ -93,14 +93,14 @@ curl https://pi.pardot.com/api/email/version/3/do/send \
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<email>` | Parent tag. Contains data fields for target email. For complete field listing, see [email](../object-field-references#email) in [Object Field References](../object-field-references). |
+| `<email>` | Parent tag. Contains data fields for target email. For complete field listing, see [email](kb/api-version-3/object-field-references#email) in [Object Field References](kb/api-version-3/object-field-references). |
 
 # Sending List Emails
 
 
 ## [](#supported-operations-a-name-supported-operations-id-supported-operations-a-)Supported Operations<a name="82871-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [User](../object-field-references#email) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Email](kb/api-version-3/object-field-references#email) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
@@ -174,4 +174,4 @@ curl https://pi.pardot.com/api/email/version/3/do/send \
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<email>` | Parent tag. Contains data fields for target email. For complete field listing, see [email](../object-field-references#email) in [Object Field References](../object-field-references). |
+| `<email>` | Parent tag. Contains data fields for target email. For complete field listing, see [email](kb/api-version-3/object-field-references#email) in [Object Field References](kb/api-version-3/object-field-references). |

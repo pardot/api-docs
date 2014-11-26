@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/form/version/3/do/query?...` | `user_key, api_key` | Returns the forms matching the specified criteria parameters. See the [Using Forms](../using-forms) section for a complete description of the form [XML Response Format](../using-forms#xml-response-format). Also see [Form](../object-field-references#form) in [Object Field References](../object-field-references) |
+| `query` | `/api/form/version/3/do/query?...` | `user_key, api_key` | Returns the forms matching the specified criteria parameters. See the [Using Forms](#using-forms) section for a complete description of the form [XML Response Format](#xml-response-format). Also see [Form](kb/api-version-3/object-field-references#form) in [Object Field References](kb/api-version-3/object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -43,7 +43,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | --------- | ---------------------- | --------------- |
 | `created_at` | `descending` | Specifies that the query results should be sorted by the forms' `created_at` timestamps |
 | `id` | `ascending` | Specifies that the query results should be sorted by the forms' `id` fields |
-| `updated_at` | `ascending` | Specifies that the query results should be sorted by the forms' `updated_at` timestamps |
+| `updated_at` | `descending` | Specifies that the query results should be sorted by the forms' `updated_at` timestamps |
 
 
 ## XML Response Format
@@ -63,18 +63,18 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting forms for the specified query |
 | `<total_results>` | Contains the number of forms selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched forms |
-| `<form>` | The data for an individual form. See [Using Forms](../using-forms) for a complete description of the form [XML Response Format](../using-forms#xml-response-format). Also see [Form](../object-field-references#form) in [Object Field References](../object-field-references) |
+| `<form>` | The data for an individual form. See [Using Forms](#using-forms) for a complete description of the form [XML Response Format](#xml-response-format). Also see [Form](kb/api-version-3/object-field-references#form) in [Object Field References](kb/api-version-3/object-field-references) |
 
 # Using Forms
 
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Form](../object-field-references#form) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Form](kb/api-version-3/object-field-references#form) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/form/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the form specified by `<id>`. `<id>` is the Pardot ID of the target list. |
+| `read` | `/api/form/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the form specified by `<id>`. `<id>` is the Pardot ID of the target list. |
 
 
 ## XML Response Format
@@ -99,6 +99,6 @@ For a complete list of fields involved in user operations, see the [Form](../obj
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<form>` | Parent tag. Contains data fields for target form. For complete field listing, see [Form](../object-field-references#form) in [Object Field References](../object-field-references). |
+| `<form>` | Parent tag. Contains data fields for target form. For complete field listing, see [Form](kb/api-version-3/object-field-references#form) in [Object Field References](kb/api-version-3/object-field-references). |
 | `<campaign>` | Contains `<id>` and `<name>` of the campaign to which this form has been assigned. |
 | `<embedCode>` | Contains `<iframe>` of the form which you can use to embed the form on your webpage. |

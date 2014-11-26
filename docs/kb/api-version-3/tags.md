@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/tag/version/3/do/query?...` | `user_key, api_key` | Returns the tag matching the specified criteria parameters. See the [Using Tags](#using-tags) section for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](../object-field-references#tag) in [Object Field References](../object-field-references) |
+| `query` | `/api/tag/version/3/do/query?...` | `user_key, api_key` | Returns the tag matching the specified criteria parameters. See the [Using Tags](#using-tags) section for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](kb/api-version-3/object-field-references#tag) in [Object Field References](kb/api-version-3/object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -45,7 +45,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | `created_at` | `descending` | Specifies that the query results should be sorted by the tags' `created_at` timestamps |
 | `id` | `ascending` | Specifies that the query results should be sorted by the tags' `id` fields |
 | `name` | `ascending` | Specifies that the query results should be sorted by the tags' `name` fields |
-| `updated_at` | `ascending` | Specifies that the query results should be sorted by the tags' `updated_at` timestamps |
+| `updated_at` | `descending` | Specifies that the query results should be sorted by the tags' `updated_at` timestamps |
 
 
 ## XML Response Format
@@ -65,7 +65,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting tags for the specified query |
 | `<total_results>` | Contains the number of tags selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched tags |
-| `<tag>` | The data for an individual tag. See [Using Tags](#using-tags) for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](../object-field-references#tag) in [Object Field References](../object-field-references) |
+| `<tag>` | The data for an individual tag. See [Using Tags](#using-tags) for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](kb/api-version-3/object-field-references#tag) in [Object Field References](kb/api-version-3/object-field-references) |
 
 
 # Using Tags
@@ -73,11 +73,11 @@ The ordering of the results returned by a `query` request can be changed by spec
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Tag](../object-field-references#tag) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Tag](kb/api-version-3/object-field-references#tag) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/tag/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the tag specified by `<id>`. `<id>` is the Pardot ID of the target tag. |
+| `read` | `/api/tag/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the tag specified by `<id>`. `<id>` is the Pardot ID of the target tag. |
 
 
 ## XML Response Format
@@ -95,4 +95,4 @@ For a complete list of fields involved in user operations, see the [Tag](../obje
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<tag>` | Parent tag. Contains data fields for target tag. For complete field listing, see [Tag](../object-field-references#tag) in [Object Field References](../object-field-references). |
+| `<tag>` | Parent tag. Contains data fields for target tag. For complete field listing, see [Tag](kb/api-version-3/object-field-references#tag) in [Object Field References](kb/api-version-3/object-field-references). |

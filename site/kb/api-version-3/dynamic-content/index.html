@@ -231,7 +231,7 @@
 <td><code>query</code></td>
 <td><code>/api/dynamicContent/version/3/do/query?...</code></td>
 <td><code>user_key, api_key</code></td>
-<td>Returns the dynamic content matching the specified criteria parameters. See the <a href="../../../../using-dynamic content">Using Dynamic Content</a> section for a complete description of the dynamic content <a href="../../../../using-dynamic-content#xml-response-format">XML Response Format</a>. Also see <a href="../../../../object-field-references#dynamic-content">Dynamic Content</a> in <a href="../../../../object-field-references">Object Field References</a></td>
+<td>Returns the dynamic content matching the specified criteria parameters. See the <a href="#using-dynamic-content">Using Dynamic Content</a> section for a complete description of the dynamic content <a href="#xml-response-format">XML Response Format</a>. Also see <a href="../../../kb/api-version-3/object-field-references#dynamic-content">Dynamic Content</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a></td>
 </tr>
 </tbody>
 </table>
@@ -347,7 +347,7 @@
 </tr>
 <tr>
 <td><code>updated_at</code></td>
-<td><code>ascending</code></td>
+<td><code>descending</code></td>
 <td>Specifies that the query results should be sorted by the dynamic content's <code>updated_at</code> timestamps</td>
 </tr>
 </tbody>
@@ -381,13 +381,13 @@
 </tr>
 <tr>
 <td><code>&lt;dynamicContent&gt;</code></td>
-<td>The data for an individual dynamic content. See <a href="../../../../using-dynamic-content">Using Dynamic Content</a> for a complete description of the dynamic content <a href="../../../../using-dynamic-content#xml-response-format">XML Response Format</a>. Also see <a href="../../../../object-field-references#dynamic-content">Dynamic Content</a> in <a href="../../../../object-field-references">Object Field References</a></td>
+<td>The data for an individual dynamic content. See <a href="#using-dynamic-content">Using Dynamic Content</a> for a complete description of the dynamic content <a href="#xml-response-format">XML Response Format</a>. Also see <a href="../../../kb/api-version-3/object-field-references#dynamic-content">Dynamic Content</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a></td>
 </tr>
 </tbody>
 </table>
 <h1 id="using-dynamic-content">Using Dynamic Content</h1>
 <h2 id="supported-operations_1">Supported Operations<a name="62780-supported-operations" id="supported-operations"></a></h2>
-<p>For a complete list of fields involved in user operations, see the <a href="../../../../object-field-references#dynamic-content">Dynamic Content</a> section of <a href="../../../../object-field-references">Object Field References</a>.</p>
+<p>For a complete list of fields involved in user operations, see the <a href="../../../kb/api-version-3/object-field-references#dynamic-content">Dynamic Content</a> section of <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</p>
 <table>
 <thead>
 <tr>
@@ -400,7 +400,7 @@
 <tbody>
 <tr>
 <td><code>read</code></td>
-<td><code>/api/dynamicContent/version/3/do/read/id/&lt;id&gt;?...</code></td>
+<td><code>/api/dynamicContent/version/3/do/read/id/</code><strong><em><code>&lt;id&gt;</code></em></strong><code>?...</code></td>
 <td><code>user_key, api_key, id</code></td>
 <td>Returns the data for the dynamic content specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target dynamic content.</td>
 </tr>
@@ -445,7 +445,7 @@
 <tbody>
 <tr>
 <td><code>&lt;form&gt;</code></td>
-<td>Parent tag. Contains data fields for target form. For complete field listing, see <a href="../../../../object-field-references#form">Form</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+<td>Parent tag. Contains data fields for target form. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#form">Form</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;embedCode&gt;</code></td>

@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/list/version/3/do/query?...` | `user_key, api_key` | Returns the lists matching the specified criteria parameters. See the [Using Lists](#using-lists) section for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](../object-field-references#list) in [Object Field References](../object-field-references) |
+| `query` | `/api/list/version/3/do/query?...` | `user_key, api_key` | Returns the lists matching the specified criteria parameters. See the [Using Lists](#using-lists) section for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](kb/api-version-3/object-field-references#list) in [Object Field References](kb/api-version-3/object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -45,7 +45,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | `created_at` | `descending` | Specifies that the query results should be sorted by the lists' `created_at` timestamps |
 | `id` | `ascending` | Specifies that the query results should be sorted by the lists' `id` fields |
 | `name` | `ascending` | Specifies that the query results should be sorted by the lists' `name` fields |
-| `updated_at` | `ascending` | Specifies that the query results should be sorted by the lists' `updated_at` timestamps |
+| `updated_at` | `descending` | Specifies that the query results should be sorted by the lists' `updated_at` timestamps |
 
 
 ## XML Response Format
@@ -65,21 +65,21 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting lists for the specified query |
 | `<total_results>` | Contains the number of lists selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched lists |
-| `<list>` | The data for an individual list. See [Using Lists](#using-lists) for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](../object-field-references#list) in [Object Field References](../object-field-references) |
+| `<list>` | The data for an individual list. See [Using Lists](#using-lists) for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](kb/api-version-3/object-field-references#list) in [Object Field References](kb/api-version-3/object-field-references) |
 
 # Using Lists
 
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [List](../object-field-references#list) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [List](kb/api-version-3/object-field-references#list) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/list/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the list specified by `<id>`. `<id>` is the Pardot ID of the target list. |
-| `update` | `/api/list/version/3/do/update/id/<id>?...` | `user_key, api_key, id` | Updates the provided data for the list specified by `<id>`.  `<id>` is the Pardot ID of the list. Refer to [List](../object-field-references#list) in [Object Field References](../object-field-references) for more details. Returns the updated version of the list. |
+| `read` | `/api/list/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the list specified by `<id>`. `<id>` is the Pardot ID of the target list. |
+| `update` | `/api/list/version/3/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the list specified by `<id>`.  `<id>` is the Pardot ID of the list. Refer to [List](kb/api-version-3/object-field-references#list) in [Object Field References](kb/api-version-3/object-field-references) for more details. Returns the updated version of the list. |
 | `create` | `/api/list/version/3/do/create?...` | `user_key, api_key` | Creates a new list using the specified data. |
-| `delete` | `/api/list/version/3/do/delete/id/<id>?...` | `user_key, api_key, id` | Deletes the list specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Lists may only be deleted using HTTP methods POST or DELETE. |
+| `delete` | `/api/list/version/3/do/delete/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Deletes the list specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Lists may only be deleted using HTTP methods POST or DELETE. |
 
 
 ## XML Response Format
@@ -87,18 +87,19 @@ For a complete list of fields involved in user operations, see the [List](../obj
 ```
 <rsp stat="ok" version="1.0">
     <list>
-        <id>2387</id>
-        <name>Awesome Prospects</name>
+        <id>752</id>
+        <name>Monthly Newsletter</name>
         <is_public>true</is_public>
-        <title>A longer title for this list</title>
+        <is_dynamic>false</is_dynamic>
+        <title>Newsletter</title>
         <description>For public lists, an optional description may be used to explain to the prospect why they might want to include this list in their subscription preferences.</description>
-        <is_crm_visible>true</is_crm_visible>
-        <created_at>2012-03-21 17:20:30</created_at>
-        <updated_at>2012-05-15 09:57:11</updated_at>
+        <is_crm_visible>false</is_crm_visible>
+        <created_at>2014-02-11 15:42:36</created_at>
+        <updated_at>2014-03-06 15:28:41</updated_at>
     </list>
 </rsp>
 ```
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<list>` | Parent tag. Contains data fields for target list. For complete field listing, see [List](../object-field-references#list) in [Object Field References](../object-field-references). |
+| `<list>` | Parent tag. Contains data fields for target list. For complete field listing, see [List](kb/api-version-3/object-field-references#list) in [Object Field References](kb/api-version-3/object-field-references). |

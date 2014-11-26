@@ -233,7 +233,7 @@
 <td><code>query</code></td>
 <td><code>/api/opportunity/version/3/do/query?...</code></td>
 <td><code>user_key, api_key</code></td>
-<td>Returns the opportunities matching the specified criteria parameters. See [Using Opportunities (using-opportunities) for complete descriptions of opportunity <a href="../../../../using-opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../../object-field references#opportunity">Opportunity</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+<td>Returns the opportunities matching the specified criteria parameters. See [Using Opportunities (using-opportunities) for complete descriptions of opportunity <a href="../../../kb/api-version-3/opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../kb/api-version-3/object-field references#opportunity">Opportunity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -339,7 +339,7 @@
 <td><code>output</code></td>
 <td><code>simple, mobile</code></td>
 <td></td>
-<td>Specifies the format to be used when returning the results of the query. See <a href="../../../../using-opportunities#xml-response-formats">XML Response Formats</a> in <a href="../../../../using-opportunities">Using Opportunities</a> for more details.</td>
+<td>Specifies the format to be used when returning the results of the query. See <a href="../../../kb/api-version-3/opportunities#xml-response-formats">XML Response Formats</a> in <a href="../../../kb/api-version-3/opportunities">Using Opportunities</a> for more details.</td>
 </tr>
 <tr>
 <td><code>sort_by</code></td>
@@ -356,7 +356,7 @@
 </tbody>
 </table>
 <h2 id="supported-sorting-options">Supported Sorting Options</h2>
-<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in Opportunity queries, see <a href="../../../../object-field-references#opportunity">Opportunity</a> in <a href="../../../../object-field-references">Object Field References</a>.</p>
+<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in Opportunity queries, see <a href="../../../kb/api-version-3/object-field-references#opportunity">Opportunity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</p>
 <table>
 <thead>
 <tr>
@@ -416,13 +416,13 @@
 </tr>
 <tr>
 <td><code>&lt;opportunity&gt;</code></td>
-<td>The data for an individual Opportunity. See <a href="../../../../using-opportunities">Using Opportunities</a> for complete descriptions of opportunity <a href="../../../../using-opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../../object-field-references#opportunity">Opportunity</a> in <a href="../../../../object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning an opportunity's activities will NOT be included in a <code>query</code> response. To retrieve this data, use a <code>read</code> request for individual opportunities of interest.</td>
+<td>The data for an individual Opportunity. See <a href="../../../kb/api-version-3/opportunities">Using Opportunities</a> for complete descriptions of opportunity <a href="../../../kb/api-version-3/opportunities#xml-response-formats">XML Response Formats</a>. Also see <a href="../../../kb/api-version-3/object-field-references#opportunity">Opportunity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>. <strong><em>Note:</em></strong> Data concerning an opportunity's activities will NOT be included in a <code>query</code> response. To retrieve this data, use a <code>read</code> request for individual opportunities of interest.</td>
 </tr>
 </tbody>
 </table>
 <h1 id="using-opportunities">Using Opportunities</h1>
 <h2 id="supported-operations_1"><a href="#supported-operations-a-name-supported-operations-id-supported-operations-a-"></a>Supported Operations<a name="14772-supported-operations" id="supported-operations"></a></h2>
-<p>For a complete list of fields involved in Opportunities operations, see the <a href="../../../../object-field-references#opportunity">Opportunity</a> section of <a href="../../../../object-field-references">Object Field References</a>.</p>
+<p>For a complete list of fields involved in Opportunities operations, see the <a href="../../../kb/api-version-3/object-field-references#opportunity">Opportunity</a> section of <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</p>
 <p><strong><em>Note:</em></strong> If a salesforce.com or SugarCRM connector is present in the API user's account, Opportunities can be read, but they cannot be modified (created, updated, deleted or undeleted).</p>
 <table>
 <thead>
@@ -438,13 +438,13 @@
 <td><code>create</code></td>
 <td><code>/api/opportunity /version/3/do/create /prospect_email /&lt;prospect_email&gt;?...</code></td>
 <td><code>user_key, api_key, prospect_email, name, value, probability</code></td>
-<td>Creates a new opportunity using the specified data. <code>prospect_email</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../../../object-field-references#opportunity">Opportunity</a> in <a href="../../../../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
+<td>Creates a new opportunity using the specified data. <code>prospect_email</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../../kb/api-version-3/object-field-references#opportunity">Opportunity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 </tr>
 <tr>
 <td><code>create</code></td>
 <td><code>/api/opportunity /version/3/do/create /prospect_id /&lt;prospect_id&gt;?...</code></td>
 <td><code>user_key, api_key, prospect_id, name, value, probability</code></td>
-<td>Creates a new opportunity using the specified data. <code>prospect_id</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../../../object-field-references#opportunity">Opportunity</a> in <a href="../../../../object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
+<td>Creates a new opportunity using the specified data. <code>prospect_id</code> must correspond to an existing prospect. <code>name</code>, <code>value</code>, and <code>probability</code> must also be specified. See <a href="../../../kb/api-version-3/object-field-references#opportunity">Opportunity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a> for other field requirements. <strong><em>Note:</em></strong> If both <code>prospect_email</code> and <code>prospect_id</code> are specified, both must correspond to the same prospect. Otherwise, the API will return an error.</td>
 </tr>
 <tr>
 <td><code>read</code></td>
@@ -529,7 +529,7 @@
 <tbody>
 <tr>
 <td><code>&lt;opportunity&gt;</code></td>
-<td>Parent tag. Contains data fields for target opportunity. Forcomplete field listing, see <a href="../../../../object-field-references#opportunity">Opportunity</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+<td>Parent tag. Contains data fields for target opportunity. Forcomplete field listing, see <a href="../../../kb/api-version-3/object-field-references#opportunity">Opportunity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 <tr>
 <td><code>&lt;campaign&gt;</code></td>
@@ -545,7 +545,7 @@
 </tr>
 <tr>
 <td><code>&lt;visitor_activity&gt;</code></td>
-<td>Contains data fields for a visitor activity. For complete field listing, see <a href="../../../../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../../../object-field-references">Object Field References</a>.</td>
+<td>Contains data fields for a visitor activity. For complete field listing, see <a href="../../../kb/api-version-3/object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../../kb/api-version-3/object-field-references">Object Field References</a>.</td>
 </tr>
 </tbody>
 </table>
