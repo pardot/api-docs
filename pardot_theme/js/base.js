@@ -4,6 +4,19 @@ $( document ).ready(function() {
     prettyPrint();
 });
 
+if ( $('.bs-sidebar').outerHeight(true) < $(window).height() ) {
+	$('.bs-sidebar').addClass('affix');
+}
+
+$(window).resize(function(){
+	if ( $('.bs-sidebar').outerHeight(true) < $(window).height() ) {
+		$('.bs-sidebar').addClass('affix');
+	} else {
+		$('.bs-sidebar').removeClass('affix');
+	}
+});
+
+
 
 /* Scrollspy */
 var navHeight = $('.navbar').outerHeight(true) + 10

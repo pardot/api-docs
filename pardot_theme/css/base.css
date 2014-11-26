@@ -67,9 +67,14 @@ div.source-links {
  * sections of docs content.
  */
 
+.bs-sidebar {
+    margin-top: 20px;
+}
+
 /* By default it's not affixed in mobile views, so undo that */
 .bs-sidebar.affix {
 	position: static;
+    margin-top: 0;
 }
 
 .bs-sidebar.well {
@@ -78,8 +83,6 @@ div.source-links {
 
 /* First level of nav */
 .bs-sidenav {
-	margin-top: 30px;
-	margin-bottom: 30px;
 	padding-top:    10px;
 	padding-bottom: 10px;
 	border-radius: 5px;
