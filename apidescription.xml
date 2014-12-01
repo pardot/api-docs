@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Apigee WADL for the Pardot API --><!-- Please see http://developer.pardot.com for more information --><application xsi:schemaLocation="http://wadl.dev.java.net/2009/02 http://apigee.com/schemas/wadl-schema.xsd http://api.apigee.com/wadl/2010/07/ http://apigee.com/schemas/apigee-wadl-extensions.xsd" xmlns="http://wadl.dev.java.net/2009/02" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:apigee="http://api.apigee.com/wadl/2010/07/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!-- Base defines the domain and base path of the endpoint -->
+  <resources base="https://pi.pardot.com/api/">
+
+	<!-- Authentication -->
+	<!-- Use this method to acquire an API key, which expires after 60 minutes. Your API and User keys need to be included as parameters in each API request. More information can be found at http://developer.pardot.com/kb/api-version-3/authentication -->
+    <resource path="login/version/3">
+      <method apigee:displayName="Login" id="login" name="POST">
+
+        <!-- Tags are used to organize the list of methods. Primary tag will list the default placement. -->
+        <apigee:tags>
+          <apigee:tag primary="true">Authentication</apigee:tag>
+        </apigee:tags>
+
+        <!-- Is authentication required for this method? -->
+        <apigee:authentication required="false"/>
+
+        <!-- Example element is used to specify the sample URL to display in the Console's request URL field. -->
+        <apigee:example url="/login/version/3?email={email}&amp;password={password}&amp;user_key={user_key}"/>
+
+        <!-- The content of the doc element is shown as a tooltip in the Console's method list. -->
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/authentication" title="login">
+		  Authenticate a connection to the API. 
+	    </doc>
+
+  	  </method>
+    </resource>
+
+	<!--               -->
+	<!-- OPPORTUNITIES --> 
+	<!--               -->
+
+	<!-- Query Opportunities -->
+    <resource path="opportunity/version/3/do/query">
+      <method apigee:displayName="Query" id="opportunities_query" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Opportunities</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/opportunity/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-opportunities" title="opportunities_query">
+		   Returns the opportunities matching the specified criteria parameters. 
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Create an Opportunity specified by email address -->
+    <resource path="opportunity/version/3/do/create">
+      <method apigee:displayName="Create by Email" id="opportunity_create_byemail" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Opportunities</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/opportunity/version/3/do/create/prospect_email/{prospect_email}?user_key={user_key}&amp;api_key={api_key}&amp;name={name}&amp;value={value}&amp;probability={probability}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-opportunities" title="opportunity_create_byemail">
+		  Creates a new opportunity using a prospect email address.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Create an Opportunity specified by ID -->
+    <resource path="opportunity/version/3/do/create">
+      <method apigee:displayName="Create by ID" id="opportunity_create_byid" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Opportunities</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/opportunity/version/3/do/create/prospect_id/{prospect_id}?user_key={user_key}&amp;api_key={api_key}&amp;name={name}&amp;value={value}&amp;probability={probability}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-opportunities" title="opportunity_create_byid">
+		  Creates a new opportunity using a prospect ID.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Read an Opportunity -->
+    <resource path="opportunity/version/3/do/query">
+      <method apigee:displayName="Read" id="opportunity_read" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Opportunities</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/opportunity/version/3/do/read/{id}?id={id}&amp;user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-opportunities" title="opportunity_read">
+		  Returns the data for the opportunity specified by ID.
+	    </doc>
+      </method>
+    </resource>
+
+	<!--           -->
+	<!-- PROSPECTS -->
+	<!--           -->
+
+	<!-- Query Prospects -->
+    <resource path="prospect/version/3/do/query">
+      <method apigee:displayName="Query" id="prospects_query" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-prospects" title="prospects_query">
+		  Returns the prospects matching the specified criteria parameters. 
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Assign a Prospect specified by email address -->
+    <resource path="prospect/version/3/do/assign">
+      <method apigee:displayName="Assign by Email" id="prospect_assign_byemail" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/assign/email/{email}?user_key={user_key}&amp;api_key={api_key}&amp;user_email={user_email}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_assign_byemail">
+		  Assigns or reassigns the prospect specified by email address to a specified Pardot user or group.
+	    </doc>
+      </method>
+    </resource>
+	
+	<!-- Assign a Prospect specified by ID -->
+    <resource path="prospect/version/3/do/assign">
+      <method apigee:displayName="Assign by ID" id="prospect_assign_byid" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/assign/id/{id}?user_key={user_key}&amp;api_key={api_key}&amp;user_email={user_email}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_assign_byid">
+		  Assigns or reassigns the prospect specified by ID to a specified Pardot user or group.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Create a Prospect specified by email address -->
+    <resource path="prospect/version/3/do/create">
+      <method apigee:displayName="Create" id="prospect_create" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/create/email/{email}?user_key={user_key}&amp;api_key={api_key}&amp;email={email}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_create">
+		  Creates a new prospect using the specified data.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Read a Prospect specified by ID -->
+    <resource path="prospect/version/3/do/read">
+      <method apigee:displayName="Read by ID" id="prospect_read_byid" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/read/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_read_byid">
+		  Returns the data for the prospect specified by ID.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Read a Prospect specified by email address -->
+    <resource path="prospect/version/3/do/read">
+      <method apigee:displayName="Read by Email" id="prospect_read_byemail" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/read/email/{email}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_read_byemail">
+		  Returns the data for the prospect specified by email address.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Update a Prospect specified by ID -->
+    <resource path="prospect/version/3/do/update">
+      <method apigee:displayName="Update by ID" id="prospect_update_byid" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/update/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_update_byid">
+		  Updates the provided data for a prospect specified by ID.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Update a Prospect specified by email address -->
+    <resource path="prospect/version/3/do/update">
+      <method apigee:displayName="Update by Email" id="prospect_update_byemail" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/update/email/{email}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_update_byemail">
+		  Updates the provided data for a prospect specified by email address.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Update a Prospect specified by ID, Create if nonexistent -->
+    <resource path="prospect/version/3/do/upsert">
+      <method apigee:displayName="Update/Create by ID" id="prospect_upsert_byid" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/upsert/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_upsert_byid">
+		  Updates the provided data for a prospect specified by ID, crates a new prospect if one does not exist.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Update a Prospect specified by email address, Create if nonexistent -->
+    <resource path="prospect/version/3/do/upsert">
+      <method apigee:displayName="Update/Create by Email" id="prospect_upsert_byemail" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Prospects</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/prospect/version/3/do/upsert/email/{email}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_upsert_byemail">
+		  Updates the provided data for a prospect specified by email address, creates a new prospect if one does not exist.
+	    </doc>
+      </method>
+    </resource>
+
+	<!--       -->
+	<!-- USERS -->
+	<!--       -->
+
+	<!-- Query Users -->
+    <resource path="users/version/3/do/query">
+      <method apigee:displayName="Query" id="users_query" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Users</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/user/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-users" title="users_query">
+		  Returns the users matching the specified criteria parameters. 
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Read a User specified by ID -->
+    <resource path="user/version/3/do/read">
+      <method apigee:displayName="Read by ID" id="user_read_byid" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Users</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/user/version/3/do/read/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-users" title="user_read_byid">
+		  Returns the data for the user specified by ID.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Read a User specified by email address -->
+    <resource path="user/version/3/do/read">
+      <method apigee:displayName="Read by Email" id="user_read_byemail" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Users</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/user/version/3/do/read/email/{email}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-users" title="user_read_byemail">
+		  Returns the data for the user specified by email address.
+	    </doc>
+      </method>
+    </resource>
+
+	<!--        -->
+	<!-- VISITS -->
+	<!--        -->
+
+	<!-- Query Visits -->
+    <resource path="visit/version/3/do/query">
+      <method apigee:displayName="Query" id="visits_query" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Visits</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/visit/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-visits" title="visits_query">
+		  Returns the visits matching the specified criteria parameters. 
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Read a Visit specified by ID -->
+    <resource path="visit/version/3/do/read">
+      <method apigee:displayName="Read by ID" id="visit_read" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Visits</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/visit/version/3/do/read/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-visits" title="visit_read">
+		  Returns the data for the visit specified by ID.
+	    </doc>
+      </method>
+    </resource>
+
+	<!--          -->
+	<!-- VISITORS -->
+	<!--          -->
+
+	<!-- Query Visitors -->
+    <resource path="visitor/version/3/do/query">
+      <method apigee:displayName="Query" id="visitors_query" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Visitors</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/visitor/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-visitors" title="visitors_query">
+		  Returns the visitors matching the specified criteria parameters. 
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Read a Visitor specified by ID -->
+    <resource path="visit/version/3/do/read">
+      <method apigee:displayName="Read by ID" id="visitor_read" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Visitors</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/visitor/version/3/do/read/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-visitors" title="visitor_read">
+		  Returns the data for the visitor specified by ID.
+	    </doc>
+      </method>
+    </resource>
+
+	<!-- Assign a Visitor specified by ID -->
+    <resource path="visitor/version/3/do/assign">
+      <method apigee:displayName="Assign by ID" id="visitor_assign_byid" name="POST">
+        <apigee:tags>
+          <apigee:tag primary="true">Visitors</apigee:tag>
+        </apigee:tags>
+        <apigee:authentication required="false"/>
+        <apigee:example url="/visitor/version/3/do/assign/id/{id}?user_key={user_key}&amp;api_key={api_key}&amp;user_email={user_email}"/>
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-visitors" title="prospect_assign_byid">
+		  Assigns or reassigns the visitor specified by ID to a specified Pardot user or group.
+	    </doc>
+      </method>
+    </resource>
+
+  </resources>
+</application>
