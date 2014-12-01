@@ -106,4 +106,6 @@ Otherwise, the response will contain the following:
 
 Subsequent authentication requests will return either the current valid API key or a newly generated API key if the previous one had expired.
 
+## API Console
 
+You can explore Pardot's API in the [API Console](http://www.pardot.com/api/). Please note that we're in the process of adding new methods.
