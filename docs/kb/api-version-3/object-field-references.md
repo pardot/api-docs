@@ -642,7 +642,7 @@ preferred timezone</td>
 <td>&lt;opted_out&gt;</td>
 <td>integer</td>
 <td></td>
-<td></td>
+<td>X</td>
 <td>If value is 1, the prospect is unsubscribed from receiving
 emails from this list</td>
 </tr>
