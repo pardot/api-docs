@@ -700,7 +700,7 @@ Opportunities</a> for more details.</td>
 <td>string</td>
 <td>X</td>
 <td>X</td>
-<td>Opporutnity's name</td>
+<td>Opportunity's name</td>
 </tr>
 <tr>
 <td>&lt;value&gt;</td>
@@ -725,14 +725,14 @@ numeric value between 0 and 100 inclusive</td>
 <td>string</td>
 <td></td>
 <td>X</td>
-<td>Opporutnity's type</td>
+<td>Opportunity's type</td>
 </tr>
 <tr>
 <td>&lt;stage&gt;</td>
 <td>string</td>
 <td></td>
 <td>X</td>
-<td>Opporutnity's stage</td>
+<td>Opportunity's stage</td>
 </tr>
 <tr>
 <td>&lt;status&gt;</td>
