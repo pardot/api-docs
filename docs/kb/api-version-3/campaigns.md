@@ -3,7 +3,7 @@
 
 ## Supported Operations<a name="62781-supported-operations" id="supported-operations"></a>
 
-| **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
+| **Operations** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `query` | `/api/campaign/version/3/do/query?...` | `user_key, api_key` | Returns the campaigns matching the specified criteria parameters. See the [Using Campaigns](#using-campaigns) section for a complete description of the campaign [XML Response Format](#xml-response-format). Also see [Campaign](kb/api-version-3/object-field-references#campaign) in [Object Field References](kb/api-version-3/object-field-references) |
 
