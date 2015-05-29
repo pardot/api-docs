@@ -15,3 +15,13 @@
 * `open http://127.0.0.1:8000/`
 
 See the [mkdocs](http://www.mkdocs.org/#getting-started) website for more information.
+
+## Deploying
+
+If you don't know what you're doing, ask someone to help you out.
+
+* `git checkout master`
+* `mkdocs gh-deploy --clean`
+* `git reset --hard && git clean -fd`
+
+See the [mkdocs](http://www.mkdocs.org/user-guide/deploying-your-docs/) website for more information.
