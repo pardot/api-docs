@@ -220,10 +220,15 @@ To assign/reassign a prospect, both the prospect to be assigned and the target u
 **_Examples:_**
 
 /api/prospect/version/3/do/assign/email/?user_email=&amp;api_key=&amp;user_key=
+
 /api/prospect/version/3/do/assign/email/?user_id=&amp;api_key=&amp;user_key=
+
 /api/prospect/version/3/do/assign/email/?group_id=&amp;api_key=&amp;user_key=
+
 /api/prospect/version/3/do/assign/id/?user_email=&amp;api_key=&amp;user_key=
+
 /api/prospect/version/3/do/assign/id/?user_id=&amp;api_key=&amp;user_key=
+
 /api/prospect/version/3/do/assign/id/?group_id=&amp;api_key=&amp;user_key=
 
 XML responses to `assign` requests are identical to `read` requests, but reflect the new prospect assignment in the `<assigned_to>` node.
@@ -297,4 +302,3 @@ To modify a prospect's matching status for associated prospect account, the Pard
 _**Example:** Setting a prospect account for a prospect whose email address is_ `bob@pardot.com` _to_ `match`: /api/prospect/version/3/do/update/email/[bob@pardot.com](mailto:bob@pardot.com)?prospect_account_id=&amp;api_key=&amp;user_key=
 
 A prospect account with the id must exist, and can not be set if a CRM connector is set up in the account.
-
