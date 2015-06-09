@@ -63,15 +63,16 @@ The ordering of the results returned by a `query` request can be changed by spec
 
 # Using Lifecycle Stages
 
-
+<!-- Due to issue #28, we should leave this operation out for now
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
+
 
 For a complete list of fields involved in user operations, see the [Lifecycle Stage](kb/api-version-3/object-field-references#lifecycle-stage) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `read` | `/api/lifecycleStage/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the lifecycle stage specified by `<id>`. `<id>` is the Pardot ID of the target lifecycle stage. |
-
+-->
 
 ## XML Response Format
 
