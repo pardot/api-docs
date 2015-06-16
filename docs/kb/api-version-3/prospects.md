@@ -96,12 +96,15 @@ Note: Prospect email addresses cannot be updated using this method.
 | `unassign`        | `/api/prospect /version/3 /do/unassign/ email/<email>?...` | `user_key, api_key, email` | Unassigns the prospect specified by `<email>`. Returns an updated version of the prospect. **_Note:_**Prospect assignments and reassignments do not overwrite existing assignments in CRMs. **_Note:_** Prospect assignments and reassignments do not overwrite existing assignments in CRMs. |
 | `unassign`   | `/api/prospect /version/3 /do/unassign/ id/<id>?...`   | `user_key, api_key, id` | Unassigns the prospect specified by `<id>`. Returns an updated version of the prospect. **_Note:_** Prospect assignments and reassignments do not overwrite existing assignments in CRMs. **_Note:_** Prospect assignments and reassignments do not overwrite existing assignments in CRMs. |
 | `create`   | `/api/prospect /version/3 /do/create/ email/<email>?...` | `user_key, api_key, email` | Creates a new prospect using the specified data. `<email>` must be a unique email address. Email list subscriptions and custom field data may also be added with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details.
+| `batchCreate`   | `/api/prospect /version/3 /do/batchCreate? prospects=<data>...` | `user_key, api_key, prospects` | Creates new prospects using the provided `<data>` in either XML or JSON. See [Endpoints for Batch Processing](#endpoints-for-batch-processing)
 | `read` | `/api/prospect /version/3 /do/read/ email/<email>?...` | `user_key, api_key, email` | Returns data for the prospect specified by `<email>`, including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. `` is the email address of the target prospect. |
 | `read`      | `/api/prospect /version/3 /do/read/ id/<id>?...` | `user_key, api_key, id` | Returns data for the prospect specified by `<id>`, including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. `` is the Pardot ID of the target prospect. |
 | `update`      | `/api/prospect /version/3 /do/update/ email/<email>?...` | `user_key, api_key, email` | Updates the provided data for a prospect specified by `<email>`. `<email>` is the email address of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. Returns an updated version of the prospect. **_Note:_** Prospect email addresses cannot be updated using this method. |
 | `update`        | `/api/prospect /version/3 /do/update/ id/<id>?...` | `user_key, api_key, id` | Updates the provided data for a prospect specified by `<id>`. `<id>` is the Pardot ID of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. Returns an updated version of the prospect. |
+| `batchUpdate`   | `/api/prospect /version/3 /do/batchUpdate? prospects=<data>...` | `user_key, api_key, prospects` | Updates prospects using the provided `<data>` in either XML or JSON. See [Endpoints for Batch Processing](#endpoints-for-batch-processing)
 | `upsert`   | `/api/prospect /version/3 /do/upsert/ email/<email>?...`   | `user_key, api_key, email` | Updates the provided data for the prospect specified by `<email>`. If a prospect with the provided email address does not yet exist, a new prospect is created using the `<email>` value. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the [Updating Email List Subscriptions](#14833-updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. Returns an updated version of the prospect. |
 | `upsert`   | `/api/prospect /version/3 /do/upsert/ id/<id>?...` | `user_key, api_key, (id OR email)` | Updates the provided data for the prospect specified by `<id>`. If an `<email>` value is provided, it is used to update the prospect's email address. If a prospect with the provided ID is not found, Pardot searches for a prospect identified by `<email>`. If a prospect with the provided email address does not yet exist, a new prospect is created using `<email>` value. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. Returns an updated version of the prospect.
+| `batchUpsert`   | `/api/prospect /version/3 /do/batchUpsert? prospects=<data>...` | `user_key, api_key, prospects` | Updates prospects using the provided `<data>` in either XML or JSON. See [Endpoints for Batch Processing](#endpoints-for-batch-processing)
 | `delete` | `/api/prospect /version/3 /do/delete/ email/<email>?...` | `user_key, api_key, email` | Deletes the prospect specified by `<email>`. Returns HTTP 204 No Content on success. **_Note:_** Prospects may only be deleted using HTTP methods POST or DELETE. |
 | `delete` | `/api/prospect /version/3 /do/delete/ id/<id>?...` | `user_key, api_key, id` | Deletes the prospect specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Prospects may only be deleted using HTTP methods POST or DELETE. |
 
@@ -244,6 +247,65 @@ _**Example:** Creating a new prospect_/api/prospect/version/3/do/create/email/[n
 XML responses to `create` requests are identical to `update` and `read` requests. If no `campaign_id` value is provided, the new prospect will be automatically assigned to the oldest existing campaign.
 
 <a name="14833-updating-field-values" id="updating-field-values"></a>
+
+## [](#enpoints-batch-processing-)Endpoints for Batch Processing
+
+There are 3 endpoints available for batch processing up to 50 prospects at a time:
+
+/api/prospect/version/3/do/batchCreate
+
+/api/prospect/version/3/do/batchUpdate
+
+/api/prospect/version/3/do/batchUpsert
+
+These endpoints expect a POST or GET variable called "prospects" which holds either JSON or XML encoded data.
+
+JSON Example:
+
+```
+{
+    "prospects": {
+        "1234": {
+            "first_name": "New first name",
+            "last_name": "New last name"
+        },
+        "some@email.com": {
+            "first_name": "New first name",
+            "last_name": "New last name"
+        },
+            "some.other@email.com": {
+            "first_name": "New first name",
+            "last_name": "New last name"
+        }
+    }
+}
+```
+XML Example:
+``` 
+<prospects>
+    <prospect identifier="1234">
+        <first_name>New first name</first_name>
+        <last_name>New last name</last_name>
+    </prospect>
+    <prospect identifier="some@email.com">
+        <first_name>New first name</first_name>
+        <last_name>New last name</last_name>
+    </prospect>
+    <prospect identifier="some.other@email.com">
+        <first_name>New first name</first_name>
+        <last_name>New last name</last_name>
+    </prospect>
+</prospects>
+```
+
+If using `batchCreate`, you'll need to provide a valid and unique email address for each prospect. The `batchUpdate` and `batchUpsert` endpoints allow the use of a prospect ID or prospect email address.
+
+**_Example:_**
+
+/api/prospect/version/3/do/batchUpdate?prospects={"prospects":{"some@email.com":{"first_name":"New first name","last_name":"New last name"},"1234":{"first_name":"New first name","last_name":"New last name"}}}&api_key=&user_key=
+
+**Note:** The return value will either be XML or JSON (XML by default. If you want JSON, then add "&format=json" to your HTTP query).
+
 
 ## [](#updating-field-values-)Updating Field Values
 
