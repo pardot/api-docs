@@ -258,7 +258,7 @@ There are 3 endpoints available for batch processing up to 50 prospects at a tim
 
 /api/prospect/version/3/do/batchUpsert
 
-These endpoints expect a POST or GET variable called "prospects" which holds either JSON or XML encoded data.
+These endpoints expect a query variable called "prospects" which holds either JSON or XML encoded data.
 
 JSON Example:
 
