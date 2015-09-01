@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/customRedirect/version/3/do/query?...` | `user_key, api_key` | Returns the custom redirects matching the specified criteria parameters. See the [Using Custom Redirects](#using-custom-redirects) section for a complete description of the custom redirect [XML Response Format](#xml-response-format). Also see [Custom Redirect](object-field-references#custom-redirect) in [Object Field References](object-field-references) |
+| `query` | `/api/customRedirect/version/3/do/query?...` | `user_key, api_key` | Returns the custom redirects matching the specified criteria parameters. See the [Using Custom Redirects](#using-custom-redirects) section for a complete description of the custom redirect [XML Response Format](#xml-response-format). Also see [Custom Redirect](kb/api-version-3/object-field-references#custom-redirect) in [Object Field References](kb/api-version-3/object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -63,14 +63,14 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting custom redirects for the specified query |
 | `<total_results>` | Contains the number of custom redirects selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched custom redirects |
-| `<customRedirect>` | The data for an individual custom redirect. See [Using Custom Redirects](#using-custom-redirects) for a complete description of the custom redirect [XML Response Format](#xml-response-format). Also see [Custom Redirect](object-field-references#custom-redirect) in [Object Field References](object-field-references) |
+| `<customRedirect>` | The data for an individual custom redirect. See [Using Custom Redirects](#using-custom-redirects) for a complete description of the custom redirect [XML Response Format](#xml-response-format). Also see [Custom Redirect](kb/api-version-3/object-field-references#custom-redirect) in [Object Field References](kb/api-version-3/object-field-references) |
 
 # Using Custom Redirects
 
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Custom Redirect](object-field-references#custom-redirect) section of [Object Field References](object-field-references).
+For a complete list of fields involved in user operations, see the [Custom Redirect](kb/api-version-3/object-field-references#custom-redirect) section of [Object Field References](kb/api-version-3/object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
@@ -98,5 +98,5 @@ For a complete list of fields involved in user operations, see the [Custom Redir
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<form>` | Parent tag. Contains data fields for target form. For complete field listing, see [Form](object-field-references#form) in [Object Field References](object-field-references). |
+| `<form>` | Parent tag. Contains data fields for target form. For complete field listing, see [Form](kb/api-version-3/object-field-references#form) in [Object Field References](kb/api-version-3/object-field-references). |
 | `<campaign>` | Contains `<id>` and `<name>` of the campaign to which this custom redirect has been assigned. |
