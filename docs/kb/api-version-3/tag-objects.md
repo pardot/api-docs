@@ -76,7 +76,6 @@ For a complete list of fields involved in user operations, see the [tagObject](o
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `read` | `/api/tagObject/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the tagObject specified by `<id>`. `<id>` is the Pardot ID of the target tagObject. |
-| `removed` | `/api/tagObject/version/3/do/delete/id/<id>?...` | `user_key, api_key, id` | Returns the data for the tagObject specified by `<id>`. Returns the tagObject ID and date the tagObject was removed. |
 
 
 ## XML Response Format
