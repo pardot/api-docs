@@ -273,7 +273,7 @@ JSON Example:
             "first_name": "New first name",
             "last_name": "New last name"
         },
-            "some.other@email.com": {
+        "some.other@email.com": {
             "first_name": "New first name",
             "last_name": "New last name"
         }
@@ -281,7 +281,7 @@ JSON Example:
 }
 ```
 XML Example:
-``` 
+```
 <prospects>
     <prospect identifier="1234">
         <first_name>New first name</first_name>
