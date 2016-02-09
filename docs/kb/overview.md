@@ -104,3 +104,7 @@ The Pardot API supports several output formats, each of which returns different 
 *   `mobile` -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.
 
 If the output request parameter is not defined, the output format defaults to `full`. See the XML Response Format sections for each object for details about the formats.
+
+## Supported API wrappers
+
+* [ruby-pardot](https://www.github.com/Pardot/ruby-pardot)
