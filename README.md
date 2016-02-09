@@ -14,7 +14,7 @@
 * `mkdocs serve`
 * `open http://127.0.0.1:8000/`
 
-Make sure your MkDocs is up-to-date. Current Version: 0.14.0. To upgrade:
+Make sure your MkDocs is up-to-date. Current Version: 0.15.2. To upgrade:
 * `pip install -U mkdocs`
 
 See the [mkdocs](http://www.mkdocs.org/#getting-started) website for more information.
