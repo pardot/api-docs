@@ -11,8 +11,8 @@ pages:
 - ['index.md', 'Overview']
 
 - ['index.md', 'API', 'Using the API']
-- ['kb/api-version-3/object-field-references.md', 'API', 'Object Field References']
-- ['kb/api-version-3/error-codes-messages.md', 'API', 'Error Codes & Messages']
+- ['kb/object-field-references.md', 'API', 'Object Field References']
+- ['kb/error-codes-messages.md', 'API', 'Error Codes & Messages']
 
 - ['kb/api-version-3/campaigns.md', 'Version 3', 'Campaigns']
 
@@ -54,9 +54,6 @@ pages:
 
 - ['kb/api-version-3/visits.md', 'Version 3', 'Visits']
 
-
-- ['kb/api-version-4/object-field-references.md', 'API', 'Object Field References']
-- ['kb/api-version-4/error-codes-messages.md', 'API', 'Error Codes & Messages']
 
 - ['kb/api-version-4/campaigns.md', 'Version 4', 'Campaigns']
 
