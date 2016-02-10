@@ -193,3 +193,7 @@ echo callPardotApi('https://pi.pardot.com/api/login/version/3',
     )
 );
 ```
+
+## Supported API wrappers
+
+* [ruby-pardot](https://www.github.com/Pardot/ruby-pardot)
