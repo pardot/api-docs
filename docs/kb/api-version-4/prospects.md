@@ -220,7 +220,7 @@ For `output=mobile`:
 
 ## [](#assigning-and-reassigning-prospects-)Assigning and Reassigning Prospects
 
-To assign/reassign a prospect, both the prospect to be assigned and the target user or group of the assignment must be defined. Prospects can only be specified by their Pardot ID=. Users or groups can be specified by their Pardot user ID, email address, or Pardot group ID. Possible combinations of parameters are shown below. Developers are responsible for substituting specific values for parameters denoted by `<carets>`.
+To assign/reassign a prospect, both the prospect to be assigned and the target user or group of the assignment must be defined. Prospects can be specified by their Pardot ID or CRM FID. Users or groups can be specified by their Pardot user ID, email address, or Pardot group ID. Possible combinations of parameters are shown below. Developers are responsible for substituting specific values for parameters denoted by `<carets>`.
 
 **_Examples:_**
 
