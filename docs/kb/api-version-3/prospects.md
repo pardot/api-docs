@@ -257,46 +257,69 @@ There are 3 endpoints available for batch processing up to 50 prospects at a tim
 
 /api/prospect/version/3/do/batchUpsert
 
-These endpoints expect a query variable called "prospects" which holds either JSON or XML encoded data.
+These endpoints expect a query variable called "prospects" which holds either JSON or XML encoded data. Each prospect should have a unique identifier which will be used in the return output.
 
-JSON Example:
-
+JSON Create Example:
 ```
 {
-    "prospects": {
-        "1234": {
-            "first_name": "New first name",
-            "last_name": "New last name"
-        },
-        "some@email.com": {
-            "first_name": "New first name",
-            "last_name": "New last name"
-        },
-        "some.other@email.com": {
-            "first_name": "New first name",
-            "last_name": "New last name"
-        }
-    }
+    "prospects": [
+        {"email":"some@email.com","first_name":"First name","last_name":"Last name"},
+        {"email":"some@email.com","first_name":"First name","last_name":"Last name"},
+        {"email":"some@email.com","first_name":"First name","last_name":"Last name"}
+    ]
 }
 ```
-XML Example:
+XML Create Example:
 ```
 <prospects>
-    <prospect identifier="1234">
+    <prospect>
+        <email>some@email.com</email>
         <first_name>New first name</first_name>
         <last_name>New last name</last_name>
     </prospect>
-    <prospect identifier="some@email.com">
+    <prospect>
+        <email>some@email.com</email>
         <first_name>New first name</first_name>
         <last_name>New last name</last_name>
     </prospect>
-    <prospect identifier="some.other@email.com">
+    <prospect>
+        <email>some2@email.com</email>
         <first_name>New first name</first_name>
         <last_name>New last name</last_name>
     </prospect>
 </prospects>
 ```
 
+JSON Upsert Example
+```
+{
+    "prospects": [
+        {"email":"some@email.com","first_name":"First name","last_name":"Last name"},
+        {"fid":"1234","first_name":"First name","last_name":"Last name"},
+        {"id":"10","first_name":"First name","last_name":"Last name"}
+    ]
+}
+```
+XML Upsert Example:
+```
+<prospects>
+    <prospect>
+        <email>some@email.com</email>
+        <first_name>New first name</first_name>
+        <last_name>New last name</last_name>
+    </prospect>
+    <prospect>
+        <fid>1234</fid>
+        <first_name>New first name</first_name>
+        <last_name>New last name</last_name>
+    </prospect>
+    <prospect>
+        <id>10</id>
+        <first_name>New first name</first_name>
+        <last_name>New last name</last_name>
+    </prospect>
+</prospects>
+```
 If using `batchCreate`, you'll need to provide a valid and unique email address for each prospect. The `batchUpdate` and `batchUpsert` endpoints allow the use of a prospect ID or prospect email address.
 
 **_Example:_**
