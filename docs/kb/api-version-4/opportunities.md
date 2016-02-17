@@ -20,7 +20,7 @@ Search criteria may be used together in any combination and/or order unless othe
 | `id_less_than` | `integer` | Selects opportunities with IDs less than the specified integer. |
 | `probability_greater_than` | `integer` | Selects opportunities with probabilities greater than the specified number. |
 | `probability_less_than` | `integer` | Selects opportunities with probabilities less than the specified number. |
-| `prospect_email` | `string` | Selects opportunities associated with the specified prospect. `prospect_email` must correspond to an existing prospect. **_Note:_** If both `prospect_email` and `prospect_id` are specified, both must correspond to the same prospect. Otherwise, the API will return an error. |
+| `prospect_email` | `string` | Selects opportunities associated with the specified prospect(s). `prospect_email` must correspond to an existing prospect or prospects. **_Note:_** If both `prospect_email` and `prospect_id` are specified, both must correspond to the same prospect. Otherwise, the API will return an error. |
 | `prospect_id` | `integer` | Selects opportunities associated with the specified prospect. `prospect_id` must correspond to an existing prospect. **_Note:_** If both `prospect_email` and `prospect_id` are specified, both must correspond to the same prospect. Otherwise, the API will return an error. |
 | `value_greater_than` | `integer` | Selects opportunities that have a value greater than a specified integer. |
 | `value_less_than` | `integer` | Selects opportunities that have a value less than a specified integer. |
