@@ -145,12 +145,11 @@ For `output=mobile`:
 
 ## Assigning and Reassigning Visitors
 
-To assign/reassign a visitor, both the visitor to be assigned and the target prospect of the assignment must be defined.  Visitors are specified by their Pardot ID.  Prospects can be specified by their Pardot user ID or by their email address.  Possible combinations of parameters are shown below.  Developers are responsible for substituting specific values for parameters denoted by `<carets>`.
+To assign/reassign a visitor, both the visitor to be assigned and the target prospect of the assignment must be defined.  Visitors are specified by their Pardot ID.  Prospects can be specified by their Pardot user ID.  Possible combinations of parameters are shown below.  Developers are responsible for substituting specific values for parameters denoted by `<carets>`.
 
 **_Examples:_**
 
 ```
-/api/visitor/version/3/do/assign/id/<visitor_id>?prospect_email=<prospect_email>&api_key=<api_key>&user_key=<user_key>
 /api/visitor/version/3/do/assign/id/<visitor_id>?prospect_id=<prospect_id>&api_key=<api_key>&user_key=<user_key>
 ```
 
