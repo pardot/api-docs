@@ -268,11 +268,11 @@ JSON Example:
             "first_name": "New first name",
             "last_name": "New last name"
         },
-        "1337": {
+        ""some@email.com": {
             "first_name": "New first name",
             "last_name": "New last name"
         },
-        "9": {
+        ""some.other@email.com": {
             "first_name": "New first name",
             "last_name": "New last name"
         }
@@ -286,11 +286,11 @@ XML Example:
         <first_name>New first name</first_name>
         <last_name>New last name</last_name>
     </prospect>
-    <prospect identifier="1337">
+    <prospect identifier=""some@email.com">
         <first_name>New first name</first_name>
         <last_name>New last name</last_name>
     </prospect>
-    <prospect identifier="9">
+    <prospect identifier=""some.other@email.com">
         <first_name>New first name</first_name>
         <last_name>New last name</last_name>
     </prospect>
