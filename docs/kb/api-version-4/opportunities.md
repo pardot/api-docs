@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/opportunity/version/3/do/query?...` | `user_key, api_key` | Returns the opportunities matching the specified criteria parameters. See [Using Opportunities (using-opportunities) for complete descriptions of opportunity [XML Response Formats](opportunities#xml-response-formats). Also see [Opportunity](object-field references#opportunity) in [Object Field References](object-field-references). |
+| `query` | `/api/opportunity/version/4/do/query?...` | `user_key, api_key` | Returns the opportunities matching the specified criteria parameters. See [Using Opportunities (using-opportunities) for complete descriptions of opportunity [XML Response Formats](opportunities#xml-response-formats). Also see [Opportunity](object-field references#opportunity) in [Object Field References](object-field-references). |
 
 ## Supported Search Criteria
 
@@ -81,12 +81,12 @@ For a complete list of fields involved in Opportunities operations, see the [Opp
 
 | **Operation** | **URL Format**   | **Required Parameters** | **Description**  |
 | ------------- | ---------------- | ----------------------- | -----------------|
-| `create`      | `/api/opportunity /version/3/do/create /prospect_email /<prospect_email>?...` | `user_key, api_key, prospect_email, name, value, probability` | Creates a new opportunity using the specified data. `prospect_email` must correspond to an existing prospect. `name`, `value`, and `probability` must also be specified. See [Opportunity](object-field-references#opportunity) in [Object Field References](object-field-references) for other field requirements. **_Note:_** If both `prospect_email` and `prospect_id` are specified, both must correspond to the same prospect. Otherwise, the API will return an error. |
-| `create`      | `/api/opportunity /version/3/do/create /prospect_id /<prospect_id>?...` | `user_key, api_key, prospect_id, name, value, probability` | Creates a new opportunity using the specified data. `prospect_id` must correspond to an existing prospect. `name`, `value`, and `probability` must also be specified. See [Opportunity](object-field-references#opportunity) in [Object Field References](object-field-references) for other field requirements. **_Note:_** If both `prospect_email` and `prospect_id` are specified, both must correspond to the same prospect. Otherwise, the API will return an error. |
-| `read`        | `/api/opportunity /version/3/do/read /id/<id>?...` | `user_key, api_key, id` | Returns the data for the opportunity specified by `id`, including campaign assignment and associated visitor activities. `id` is the Pardot ID for the target opportunity. |
-| `update`   | `/api/opportunity /version/3/do/update /id/<id>?...`   | `user_key, api_key, id` | Updates the provided data for the opportunity specified by `id`. `id` is the Pardot ID for the target opportunity. Fields that are not updated by the request remain unchanged. Returns an updated version of the opportunity. |
-| `delete`   | `/api/opportunity /version/3/do/delete /id/<id>?...`   | `user_key, api_key, id` | Deletes the opportunity specified by `id`. `id` is the Pardot ID for the target opportunity. Returns no response on success. **_Note:_** Deleting an opportunity, whether via the API or within Pardot, will not delete the Visitor Activities or Score changes for the Prospect to whom the Opportunity is linked.
-| `undelete` | `/api/opportunity /version/3/do/undelete /id/<id>?...` | `user_key, api_key, id` | Undeletes the opportunity specified by `id`. `id` is the Pardot ID for the target opportunity. Returns no response on success. |
+| `create`      | `/api/opportunity /version/4/do/create /prospect_email /<prospect_email>?...` | `user_key, api_key, prospect_email, name, value, probability` | Creates a new opportunity using the specified data. `prospect_email` must correspond to an existing prospect. `name`, `value`, and `probability` must also be specified. See [Opportunity](object-field-references#opportunity) in [Object Field References](object-field-references) for other field requirements. **_Note:_** If both `prospect_email` and `prospect_id` are specified, both must correspond to the same prospect. Otherwise, the API will return an error. |
+| `create`      | `/api/opportunity /version/4/do/create /prospect_id /<prospect_id>?...` | `user_key, api_key, prospect_id, name, value, probability` | Creates a new opportunity using the specified data. `prospect_id` must correspond to an existing prospect. `name`, `value`, and `probability` must also be specified. See [Opportunity](object-field-references#opportunity) in [Object Field References](object-field-references) for other field requirements. **_Note:_** If both `prospect_email` and `prospect_id` are specified, both must correspond to the same prospect. Otherwise, the API will return an error. |
+| `read`        | `/api/opportunity /version/4/do/read /id/<id>?...` | `user_key, api_key, id` | Returns the data for the opportunity specified by `id`, including campaign assignment and associated visitor activities. `id` is the Pardot ID for the target opportunity. |
+| `update`   | `/api/opportunity /version/4/do/update /id/<id>?...`   | `user_key, api_key, id` | Updates the provided data for the opportunity specified by `id`. `id` is the Pardot ID for the target opportunity. Fields that are not updated by the request remain unchanged. Returns an updated version of the opportunity. |
+| `delete`   | `/api/opportunity /version/4/do/delete /id/<id>?...`   | `user_key, api_key, id` | Deletes the opportunity specified by `id`. `id` is the Pardot ID for the target opportunity. Returns no response on success. **_Note:_** Deleting an opportunity, whether via the API or within Pardot, will not delete the Visitor Activities or Score changes for the Prospect to whom the Opportunity is linked.
+| `undelete` | `/api/opportunity /version/4/do/undelete /id/<id>?...` | `user_key, api_key, id` | Undeletes the opportunity specified by `id`. `id` is the Pardot ID for the target opportunity. Returns no response on success. |
 
 <a name="14772-xml-response-formats" id="xml-response-formats"></a>
 
@@ -160,9 +160,9 @@ Modifying values of opportunity data fields is done by submitting an `update` re
 **_Example:_** _Updating the value of a opportunity (whose Pardot ID is 27):_
 
 ```
-POST: /api/opportunity/version/3/do/update/id/27 message body: value=50000&amp;api_key=&amp;user_key=
+POST: /api/opportunity/version/4/do/update/id/27 message body: value=50000&amp;api_key=&amp;user_key=
 
-GET: /api/opportunity/version/3/do/update/id/27?value=50000&api_key=<api_key>&user_key=<user_key>
+GET: /api/opportunity/version/4/do/update/id/27?value=50000&api_key=<api_key>&user_key=<user_key>
 ```
 
 Only values that are specifically named in the request are updated. All others are left unchanged. To clear a value, submit an `update` request containing a parameter with no specified value, such as `status=`.

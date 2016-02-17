@@ -7,7 +7,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/visitorActivity/version/3/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the visitor activities matching the specified criteria parameters. See the [Using Visitor Activities](visitors) section for a complete description of visitor activities [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](object-field-references#visitor activity) in [Object Field References](object-field-references). |
+| `query` | `/api/visitorActivity/version/4/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the visitor activities matching the specified criteria parameters. See the [Using Visitor Activities](visitors) section for a complete description of visitor activities [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](object-field-references#visitor activity) in [Object Field References](object-field-references). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria
@@ -85,7 +85,7 @@ For a complete list of fields involved in visitor activity operations, see the [
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/visitorActivity/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the visitor activity specified by `<id>`. is the Pardot ID for the target visitor activity. |
+| `read` | `/api/visitorActivity/version/4/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the visitor activity specified by `<id>`. is the Pardot ID for the target visitor activity. |
 
 ## XML Response Formats
 

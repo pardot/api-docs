@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/prospectAccount/version/3/do/query?...` | `user_key, api_key` | Returns the prospect accounts matching the specified criteria parameters. See the [Using Prospect Accounts](prospect-accounts) section for a complete description of the prospect account [XML Response Format](prospect-accounts#xml-response-format). Also see [Prospect Account](object-field-references#prospectAccount) in [Object Field References](object-field-references). |
+| `query` | `/api/prospectAccount/version/4/do/query?...` | `user_key, api_key` | Returns the prospect accounts matching the specified criteria parameters. See the [Using Prospect Accounts](prospect-accounts) section for a complete description of the prospect account [XML Response Format](prospect-accounts#xml-response-format). Also see [Prospect Account](object-field-references#prospectAccount) in [Object Field References](object-field-references). |
 
 ## [](#supported-search-criteria-)Supported Search Criteria
 
@@ -74,10 +74,10 @@ For a complete list of fields involved in user operations, see the [Prospect Acc
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------
-| `create` | `/api/prospectAccount/version/3/do/create?...` | `user_key, api_key` | Create a new prospect account. |
-| `describe` | `/api/prospectAccount/version/3/do/describe?...` | `user_key, api_key` | Returns the field metadata for prospect accounts, explaining what fields are available, their types, whether they are required, and their options (for dropdowns, radio buttons, etc) |
-| `read` | `/api/prospectAccount/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the prospect account specified by `<id>`. `<id>` is the Pardot ID of the target prospect account. |
-| `update` | `/api/prospectAccount/version/3/do/update/id/<id>?...` | `user_key, api_key, id` | Update the data for the prospect account specified by `<id>`. `<id>` is the Pardot ID of the target prospect account. |
+| `create` | `/api/prospectAccount/version/4/do/create?...` | `user_key, api_key` | Create a new prospect account. |
+| `describe` | `/api/prospectAccount/version/4/do/describe?...` | `user_key, api_key` | Returns the field metadata for prospect accounts, explaining what fields are available, their types, whether they are required, and their options (for dropdowns, radio buttons, etc) |
+| `read` | `/api/prospectAccount/version/4/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the prospect account specified by `<id>`. `<id>` is the Pardot ID of the target prospect account. |
+| `update` | `/api/prospectAccount/version/4/do/update/id/<id>?...` | `user_key, api_key, id` | Update the data for the prospect account specified by `<id>`. `<id>` is the Pardot ID of the target prospect account. |
 
 
 ## [](#xml-response-format-)XML Response Format

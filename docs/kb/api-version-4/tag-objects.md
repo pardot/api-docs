@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/tagObject/version/3/do/query?...` | `user_key, api_key` | Returns the tagObject matching the specified criteria parameters. See the [Using tagObjects](#using-tag-objects) section for a complete description of the tagObject [XML Response Format](#xml-response-format). Also see [TagObject](object-field-references#tag-object) in [Object Field References](object-field-references) |
+| `query` | `/api/tagObject/version/4/do/query?...` | `user_key, api_key` | Returns the tagObject matching the specified criteria parameters. See the [Using tagObjects](#using-tag-objects) section for a complete description of the tagObject [XML Response Format](#xml-response-format). Also see [TagObject](object-field-references#tag-object) in [Object Field References](object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -75,7 +75,7 @@ For a complete list of fields involved in user operations, see the [tagObject](o
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/tagObject/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the tagObject specified by `<id>`. `<id>` is the Pardot ID of the target tagObject. |
+| `read` | `/api/tagObject/version/4/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the tagObject specified by `<id>`. `<id>` is the Pardot ID of the target tagObject. |
 
 
 ## XML Response Format

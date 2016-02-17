@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/lifecycleStage/version/3/do/query?...` | `user_key, api_key` | Returns the lifecycle stage matching the specified criteria parameters. See the [Using Lifecycle Stages](#using-lifecycle-stages) section for a complete description of the lifecycle stage [XML Response Format](#xml-response-format). Also see [Lifecycle Stage](object-field-references#lifecycle-stage) in [Object Field References](object-field-references) |
+| `query` | `/api/lifecycleStage/version/4/do/query?...` | `user_key, api_key` | Returns the lifecycle stage matching the specified criteria parameters. See the [Using Lifecycle Stages](#using-lifecycle-stages) section for a complete description of the lifecycle stage [XML Response Format](#xml-response-format). Also see [Lifecycle Stage](object-field-references#lifecycle-stage) in [Object Field References](object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 

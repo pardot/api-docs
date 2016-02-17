@@ -6,7 +6,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/emailTemplate/version/3/do/read/id/<email template id>` | `user_key, api_key, emailTemplateId` | Returns the data for the email template specified by `<id>`. `<id>` is the Pardot ID of the target email template. |
+| `read` | `/api/emailTemplate/version/4/do/read/id/<email template id>` | `user_key, api_key, emailTemplateId` | Returns the data for the email template specified by `<id>`. `<id>` is the Pardot ID of the target email template. |
 
 
 ## XML Response Format
@@ -59,7 +59,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `listOneToOne` | `/api/emailTemplate/version/3/do/listOneToOne` | `user_key, api_key` | Returns a list of email templates which are enabled for use in one to one emails. |
+| `listOneToOne` | `/api/emailTemplate/version/4/do/listOneToOne` | `user_key, api_key` | Returns a list of email templates which are enabled for use in one to one emails. |
 
 ## XML Response Format
 
