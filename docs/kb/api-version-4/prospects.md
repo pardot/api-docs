@@ -364,7 +364,7 @@ _**Example:** Modifying the values of a custom field with field name_ `past_jobs
 
 To modify email list subscriptions for a prospect, the Pardot ID of the email list is required. Once the ID is obtained, an `update` is submitted with parameters formatted as `list_<list_id>=1` to create a subscription and `list_<list_id>=0` to end a subscription.
 
-_**Example:** Adding a prospect whose Pardot ID is_ `300` _to an email list with Pardot ID_ `8`: /api/prospect/version/4/do/update/300?list_8=1&amp;api_key=&amp;user_key=
+_**Example:** Adding a prospect whose Pardot ID is_ `300` _to an email list with Pardot ID_ 8`: /api/prospect/version/4/do/update/id/300?list_8=1&amp;api_key=&amp;user_key=
 
 
 Requests that attempt to subscribe a prospect to lists that it is already subscribed to are ignored. Unsubscribe requests are handled similarly.
@@ -375,7 +375,7 @@ Requests that attempt to subscribe a prospect to lists that it is already subscr
 
 To modify a prospect's matching status for associated profile criteria, the Pardot ID of the profile criteria is required. Once the ID is obtained, an `update` is submitted with parameters formatted as `profile_criteria_<profile_criteria_id>=<status>`. The value of `<status>` may be either `match`, `nomatch`, or `unknown`.
 
-_**Example:** Setting a profile criteria for a prospect whose Pardot ID is_ `58` _to_ `match`: /api/prospect/version/4/do/update/id/58?profile_criteria_8=match&amp;api_key=&amp;user_key=
+_**Example:** Setting a profile criteria for a prospect with Pardot ID_ `58` _to_ `match`: /api/prospect/version/4/do/update/id/58?profile_criteria_8=match&amp;api_key=&amp;user_key=
 
 _**Example:** Setting a profile criteria for a prospect with Pardot ID_ `58` _to_ `nomatch`: /api/prospect/version/4/do/update/id/58?profile_criteria_8=nomatch&amp;api_key=&amp;user_key=
 
