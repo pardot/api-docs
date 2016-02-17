@@ -11,47 +11,50 @@ pages:
 - ['index.md', 'Overview']
 
 - ['index.md', 'API', 'Using the API']
-- ['kb/api-version-3/object-field-references.md', 'API', 'Object Field References']
-- ['kb/api-version-3/error-codes-messages.md', 'API', 'Error Codes & Messages']
+- ['kb/object-field-references.md', 'API', 'Object Field References']
+- ['kb/error-codes-messages.md', 'API', 'Error Codes & Messages']
 
-- ['kb/api-version-3/campaigns.md', 'Methods', 'Campaigns']
+- ['kb/api-version-3/campaigns.md', 'Version 3', 'Campaigns']
+- ['kb/api-version-3/custom-fields.md', 'Version 3', 'Custom Fields']
+- ['kb/api-version-3/custom-redirects.md', 'Version 3', 'Custom Redirects']
+- ['kb/api-version-3/dynamic-content.md', 'Version 3', 'Dynamic Content']
+- ['kb/api-version-3/emails.md', 'Version 3', 'Email']
+- ['kb/api-version-3/email-templates.md', 'Version 3', 'Email Templates']
+- ['kb/api-version-3/forms.md', 'Version 3', 'Forms']
+- ['kb/api-version-3/lifecycle-histories.md', 'Version 3', 'Lifecycle Histories']
+- ['kb/api-version-3/lifecycle-stages.md', 'Version 3', 'Lifecycle Stages']
+- ['kb/api-version-3/lists.md', 'Version 3', 'Lists']
+- ['kb/api-version-3/list-memberships.md', 'Version 3', 'List Memberships']
+- ['kb/api-version-3/opportunities.md', 'Version 3', 'Opportunities']
+- ['kb/api-version-3/prospects.md', 'Version 3', 'Prospects']
+- ['kb/api-version-3/prospect-accounts.md', 'Version 3', 'Prospect Accounts']
+- ['kb/api-version-3/tags.md', 'Version 3', 'Tags']
+- ['kb/api-version-3/tag-objects.md', 'Version 3', 'TagObjects']
+- ['kb/api-version-3/users.md', 'Version 3', 'Users']
+- ['kb/api-version-3/visitors.md', 'Version 3', 'Visitors']
+- ['kb/api-version-3/visitor-activities.md', 'Version 3', 'Visitor Activities']
+- ['kb/api-version-3/visits.md', 'Version 3', 'Visits']
 
-- ['kb/api-version-3/custom-fields.md', 'Methods', 'Custom Fields']
 
-- ['kb/api-version-3/custom-redirects.md', 'Methods', 'Custom Redirects']
-
-- ['kb/api-version-3/dynamic-content.md', 'Methods', 'Dynamic Content']
-
-- ['kb/api-version-3/emails.md', 'Methods', 'Email']
-
-- ['kb/api-version-3/email-templates.md', 'Methods', 'Email Templates']
-
-- ['kb/api-version-3/forms.md', 'Methods', 'Forms']
-
-- ['kb/api-version-3/lifecycle-histories.md', 'Methods', 'Lifecycle Histories']
-
-- ['kb/api-version-3/lifecycle-stages.md', 'Methods', 'Lifecycle Stages']
-
-- ['kb/api-version-3/lists.md', 'Methods', 'Lists']
-
-- ['kb/api-version-3/list-memberships.md', 'Methods', 'List Memberships']
-
-- ['kb/api-version-3/opportunities.md', 'Methods', 'Opportunities']
-
-- ['kb/api-version-3/prospects.md', 'Methods', 'Prospects']
-
-- ['kb/api-version-3/prospect-accounts.md', 'Methods', 'Prospect Accounts']
-
-- ['kb/api-version-3/tags.md', 'Methods', 'Tags']
-
-- ['kb/api-version-3/tag-objects.md', 'Methods', 'TagObjects']
-
-- ['kb/api-version-3/users.md', 'Methods', 'Users']
-
-- ['kb/api-version-3/visitors.md', 'Methods', 'Visitors']
-
-- ['kb/api-version-3/visitor-activities.md', 'Methods', 'Visitor Activities']
-
-- ['kb/api-version-3/visits.md', 'Methods', 'Visits']
+- ['kb/api-version-4/campaigns.md', 'Version 4', 'Campaigns']
+- ['kb/api-version-4/custom-fields.md', 'Version 4', 'Custom Fields']
+- ['kb/api-version-4/custom-redirects.md', 'Version 4', 'Custom Redirects']
+- ['kb/api-version-4/dynamic-content.md', 'Version 4', 'Dynamic Content']
+- ['kb/api-version-4/emails.md', 'Version 4', 'Email']
+- ['kb/api-version-4/email-templates.md', 'Version 4', 'Email Templates']
+- ['kb/api-version-4/forms.md', 'Version 4', 'Forms']
+- ['kb/api-version-4/lifecycle-histories.md', 'Version 4', 'Lifecycle Histories']
+- ['kb/api-version-4/lifecycle-stages.md', 'Version 4', 'Lifecycle Stages']
+- ['kb/api-version-4/lists.md', 'Version 4', 'Lists']
+- ['kb/api-version-4/list-memberships.md', 'Version 4', 'List Memberships']
+- ['kb/api-version-4/opportunities.md', 'Version 4', 'Opportunities']
+- ['kb/api-version-4/prospects.md', 'Version 4', 'Prospects']
+- ['kb/api-version-4/prospect-accounts.md', 'Version 4', 'Prospect Accounts']
+- ['kb/api-version-4/tags.md', 'Version 4', 'Tags']
+- ['kb/api-version-4/tag-objects.md', 'Version 4', 'TagObjects']
+- ['kb/api-version-4/users.md', 'Version 4', 'Users']
+- ['kb/api-version-4/visitors.md', 'Version 4', 'Visitors']
+- ['kb/api-version-4/visitor-activities.md', 'Version 4', 'Visitor Activities']
+- ['kb/api-version-4/visits.md', 'Version 4', 'Visits']
 
 theme_dir: 'pardot_theme'
