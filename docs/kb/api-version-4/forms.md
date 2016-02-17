@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/form/version/3/do/query?...` | `user_key, api_key` | Returns the forms matching the specified criteria parameters. See the [Using Forms](#using-forms) section for a complete description of the form [XML Response Format](#xml-response-format). Also see [Form](object-field-references#form) in [Object Field References](object-field-references) |
+| `query` | `/api/form/version/4/do/query?...` | `user_key, api_key` | Returns the forms matching the specified criteria parameters. See the [Using Forms](#using-forms) section for a complete description of the form [XML Response Format](#xml-response-format). Also see [Form](object-field-references#form) in [Object Field References](object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -74,7 +74,7 @@ For a complete list of fields involved in user operations, see the [Form](object
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/form/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the form specified by `<id>`. `<id>` is the Pardot ID of the target list. |
+| `read` | `/api/form/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the form specified by `<id>`. `<id>` is the Pardot ID of the target list. |
 
 
 ## XML Response Format

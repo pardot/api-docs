@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/lifecycleHistory/version/3/do/query?...` | `user_key, api_key` | Returns the lifecycle history matching the specified criteria parameters. See the [Using Lifecycle Histories](#using-lifecycle-histories) section for a complete description of the lifecycle history [XML Response Format](#xml-response-format). Also see [Lifecycle History](object-field-references#lifecycle-history) in [Object Field References](object-field-references) |
+| `query` | `/api/lifecycleHistory/version/4/do/query?...` | `user_key, api_key` | Returns the lifecycle history matching the specified criteria parameters. See the [Using Lifecycle Histories](#using-lifecycle-histories) section for a complete description of the lifecycle history [XML Response Format](#xml-response-format). Also see [Lifecycle History](object-field-references#lifecycle-history) in [Object Field References](object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -72,7 +72,7 @@ For a complete list of fields involved in user operations, see the [Lifecycle Hi
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/lifecycleHistory/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the lifecycle history specified by `<id>`. `<id>` is the Pardot ID of the target lifecycle history. |
+| `read` | `/api/lifecycleHistory/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the lifecycle history specified by `<id>`. `<id>` is the Pardot ID of the target lifecycle history. |
 
 
 ## XML Response Format

@@ -7,7 +7,7 @@ For a complete list of fields involved in user operations, see the [Email](objec
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/email/version/3/do/read/id/<email id>?...` | `user_key, api_key, email` | Returns the data for the email specified by `<id>`. `<id>` is the Pardot ID of the target target email. |
+| `read` | `/api/email/version/4/do/read/id/<email id>?...` | `user_key, api_key, email` | Returns the data for the email specified by `<id>`. `<id>` is the Pardot ID of the target target email. |
 
 
 ## XML Response Format
@@ -72,7 +72,7 @@ provided.
 This API request example made with cURL, will immediately send an email based on a template to a single prospect.
 
 ```
-curl https://pi.pardot.com/api/email/version/3/do/send \
+curl https://pi.pardot.com/api/email/version/4/do/send \
 --data-urlencode user_key={user_key} \
 --data-urlencode api_key={api_key} \
 --data-urlencode campaign_id=54321 \
@@ -104,7 +104,7 @@ For a complete list of fields involved in user operations, see the [Email](objec
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `send` | `/api/email/version/3/do/send` | `user_key, api_key, list_ids[], campaign_id, (email_template_id OR (text_content, name, subject, & ((from_email & from_name) OR from_user_id)))` | Sends an email to all the prospects in a list identified by `list_ids[]` |
+| `send` | `/api/email/version/4/do/send` | `user_key, api_key, list_ids[], campaign_id, (email_template_id OR (text_content, name, subject, & ((from_email & from_name) OR from_user_id)))` | Sends an email to all the prospects in a list identified by `list_ids[]` |
 
 ## [](#supported-parameters-)Supported Parameters
 
@@ -143,7 +143,7 @@ provided.
 This API request example made with cURL, will schedule an email based on a template to be sent on October 31st at 5pm GMT-4 to 4 prospect lists with 2 suppression lists. It will be sent from the assigned user, if one is assigned, and it also assigns 3 tags to the email.
 
 ```
-curl https://pi.pardot.com/api/email/version/3/do/send \
+curl https://pi.pardot.com/api/email/version/4/do/send \
 --data-urlencode user_key={user_key} \
 --data-urlencode api_key={api_key} \
 --data-urlencode campaign_id=54321 \

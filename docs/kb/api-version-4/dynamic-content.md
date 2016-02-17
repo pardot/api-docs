@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/dynamicContent/version/3/do/query?...` | `user_key, api_key` | Returns the dynamic content matching the specified criteria parameters. See the [Using Dynamic Content](#using-dynamic-content) section for a complete description of the dynamic content [XML Response Format](#xml-response-format). Also see [Dynamic Content](object-field-references#dynamic-content) in [Object Field References](object-field-references) |
+| `query` | `/api/dynamicContent/version/4/do/query?...` | `user_key, api_key` | Returns the dynamic content matching the specified criteria parameters. See the [Using Dynamic Content](#using-dynamic-content) section for a complete description of the dynamic content [XML Response Format](#xml-response-format). Also see [Dynamic Content](object-field-references#dynamic-content) in [Object Field References](object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -75,7 +75,7 @@ For a complete list of fields involved in user operations, see the [Dynamic Cont
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/dynamicContent/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the dynamic content specified by `<id>`. `<id>` is the Pardot ID of the target dynamic content. |
+| `read` | `/api/dynamicContent/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the dynamic content specified by `<id>`. `<id>` is the Pardot ID of the target dynamic content. |
 
 
 ## XML Response Format

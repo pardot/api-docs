@@ -6,7 +6,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/visit/version/3/do/query?...` | `user_key, api_key, (ids, visitor_ids, prospect_ids)` | Returns the visits matching the specified criteria parameters. See the [Using Visits](visits) section for a complete description of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](object-field-references#visit) in [Object Field References](object-field-references). |
+| `query` | `/api/visit/version/4/do/query?...` | `user_key, api_key, (ids, visitor_ids, prospect_ids)` | Returns the visits matching the specified criteria parameters. See the [Using Visits](visits) section for a complete description of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](object-field-references#visit) in [Object Field References](object-field-references). |
 
 ## Supported Search Criteria
 
@@ -60,7 +60,7 @@ For a complete list of fields involved in visitor operations, see the [Visit](ob
 
 | **Operation** | **URL Format**   | **Required Parameters** | **Description**  |
 | ------------- | ---------------- | ----------------------- | -----------------|
-| `read` | `/api/visit/version/3/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the visit specified by `<id>`, including associated visitor page views. `<id>` is the Pardot ID for the target visit. |
+| `read` | `/api/visit/version/4/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the visit specified by `<id>`, including associated visitor page views. `<id>` is the Pardot ID for the target visit. |
 
 <a name="14846-xml-response-formats"></a>
 

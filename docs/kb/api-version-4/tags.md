@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/tag/version/3/do/query?...` | `user_key, api_key` | Returns the tag matching the specified criteria parameters. See the [Using Tags](#using-tags) section for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](object-field-references#tag) in [Object Field References](object-field-references) |
+| `query` | `/api/tag/version/4/do/query?...` | `user_key, api_key` | Returns the tag matching the specified criteria parameters. See the [Using Tags](#using-tags) section for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](object-field-references#tag) in [Object Field References](object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -77,7 +77,7 @@ For a complete list of fields involved in user operations, see the [Tag](object-
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/tag/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the tag specified by `<id>`. `<id>` is the Pardot ID of the target tag. |
+| `read` | `/api/tag/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the tag specified by `<id>`. `<id>` is the Pardot ID of the target tag. |
 
 
 ## XML Response Format

@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/listMembership/version/3/do/query?...` | `user_key, api_key` | Returns the list memberships matching the specified criteria parameters. See the [Using Lists](lists) section for a complete description of the list membership [XML Response Format](list-memberships#xml-response-format). Also see [List Membership](object-field-references#list-membership) in [Object Field References](object-field-references). |
+| `query` | `/api/listMembership/version/4/do/query?...` | `user_key, api_key` | Returns the list memberships matching the specified criteria parameters. See the [Using Lists](lists) section for a complete description of the list membership [XML Response Format](list-memberships#xml-response-format). Also see [List Membership](object-field-references#list-membership) in [Object Field References](object-field-references). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria

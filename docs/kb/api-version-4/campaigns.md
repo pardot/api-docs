@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/campaign/version/3/do/query?...` | `user_key, api_key` | Returns the campaigns matching the specified criteria parameters. See the [Using Campaigns](#using-campaigns) section for a complete description of the campaign [XML Response Format](#xml-response-format). Also see [Campaign](object-field-references#campaign) in [Object Field References](object-field-references) |
+| `query` | `/api/campaign/version/4/do/query?...` | `user_key, api_key` | Returns the campaigns matching the specified criteria parameters. See the [Using Campaigns](#using-campaigns) section for a complete description of the campaign [XML Response Format](#xml-response-format). Also see [Campaign](object-field-references#campaign) in [Object Field References](object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -78,9 +78,9 @@ For a complete list of fields involved in user operations, see the [Campaign](ob
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/campaign/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the campaign specified by `<id>`. `<id>` is the Pardot ID of the target campaign. |
-| `update` | `/api/campaign/version/3/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the campaign specified by `<id>`.  `<id>` is the Pardot ID of the campaign. Refer to [Campaign](object-field-references#campaign) in [Object Field References](object-field-references) for more details. Returns the updated version of the campaign. |
-| `create` | `/api/campaign/version/3/do/create?...` | `user_key, api_key` | Creates a new campaign using the specified data. |
+| `read` | `/api/campaign/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the campaign specified by `<id>`. `<id>` is the Pardot ID of the target campaign. |
+| `update` | `/api/campaign/version/4/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the campaign specified by `<id>`.  `<id>` is the Pardot ID of the campaign. Refer to [Campaign](object-field-references#campaign) in [Object Field References](object-field-references) for more details. Returns the updated version of the campaign. |
+| `create` | `/api/campaign/version/4/do/create?...` | `user_key, api_key` | Creates a new campaign using the specified data. |
 
 
 ## XML Response Format

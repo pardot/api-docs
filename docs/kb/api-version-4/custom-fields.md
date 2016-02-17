@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/customField/version/3/do/query?...` | `user_key, api_key` | Returns the custom fields matching the specified criteria parameters. See the [Using Custom Fields](#using-custom-fields) section for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](object-field-references#custom-field) in [Object Field References](object-field-references) |
+| `query` | `/api/customField/version/4/do/query?...` | `user_key, api_key` | Returns the custom fields matching the specified criteria parameters. See the [Using Custom Fields](#using-custom-fields) section for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](object-field-references#custom-field) in [Object Field References](object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -72,10 +72,10 @@ For a complete list of fields involved in user operations, see the [Custom Field
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/customField/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the custom field specified by `<id>`. `<id>` is the Pardot ID of the target custom field. |
-| `update` | `/api/customField/version/3/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the custom field specified by `<id>`.  `<id>` is the Pardot ID of the custom field. Refer to [Custom Field](object-field-references#custom-field) in [Object Field References](object-field-references) for more details. Returns the updated version of the custom field. |
-| `create` | `/api/customField/version/3/do/create?...` | `user_key, api_key` | Creates a new custom field using the specified data. |
-| `delete` | `/api/customField/version/3/do/delete/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Deletes the custom field specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Custom Fields may only be deleted using HTTP methods POST or DELETE. |
+| `read` | `/api/customField/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the custom field specified by `<id>`. `<id>` is the Pardot ID of the target custom field. |
+| `update` | `/api/customField/version/4/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the custom field specified by `<id>`.  `<id>` is the Pardot ID of the custom field. Refer to [Custom Field](object-field-references#custom-field) in [Object Field References](object-field-references) for more details. Returns the updated version of the custom field. |
+| `create` | `/api/customField/version/4/do/create?...` | `user_key, api_key` | Creates a new custom field using the specified data. |
+| `delete` | `/api/customField/version/4/do/delete/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Deletes the custom field specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Custom Fields may only be deleted using HTTP methods POST or DELETE. |
 
 
 ## XML Response Format
