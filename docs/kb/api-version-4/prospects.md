@@ -318,7 +318,7 @@ XML Upsert Example:
 </prospects>
 ```
 
-If using `batchCreate`, you'll need to provide a valid address for each prospect. The `batchUpdate`  endpoints allow the use of prospect IDs and CRM FIDs and `batchUpsert` allows the use of prospect IDs, CRM FIDs, and prospect Email Addresses.
+If using `batchCreate`, you'll need to provide a valid email address for each prospect. The `batchUpdate`  endpoints allow the use of prospect IDs and CRM FIDs and `batchUpsert` allows the use of prospect IDs, CRM FIDs, and prospect Email Addresses.
 
 **_Example:_**
 
