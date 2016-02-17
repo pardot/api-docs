@@ -268,11 +268,11 @@ JSON Example:
             "first_name": "New first name",
             "last_name": "New last name"
         },
-        ""some@email.com": {
+        "some@email.com": {
             "first_name": "New first name",
             "last_name": "New last name"
         },
-        ""some.other@email.com": {
+        "some.other@email.com": {
             "first_name": "New first name",
             "last_name": "New last name"
         }
@@ -286,16 +286,17 @@ XML Example:
         <first_name>New first name</first_name>
         <last_name>New last name</last_name>
     </prospect>
-    <prospect identifier=""some@email.com">
+    <prospect identifier="some@email.com">
         <first_name>New first name</first_name>
         <last_name>New last name</last_name>
     </prospect>
-    <prospect identifier=""some.other@email.com">
+    <prospect identifier="some.other@email.com">
         <first_name>New first name</first_name>
         <last_name>New last name</last_name>
     </prospect>
 </prospects>
 ```
+
 If using `batchCreate`, you'll need to provide a valid and unique email address for each prospect. The `batchUpdate` and `batchUpsert` endpoints allow the use of a prospect ID or prospect email address.
 
 **_Example:_**
