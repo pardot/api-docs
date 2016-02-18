@@ -951,6 +951,190 @@ time period.
 **Solution**: Wait a little before making more
 requests.
 
+## [](#error-code-67)Error Code: 67
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="67">You have reached or exceeded the limit of how many of this type of object you may have.</err>
+</rsp>
+```
+
+**Problem**: You have too many of this object type to create more
+
+**Solution**: Delete some of the object if you need to make more
+
+## [](#error-code-68)Error Code: 68
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="68">Template with this id does not exist.</err>
+</rsp>
+```
+
+**Problem**: The template you are trying to access does not exist
+
+**Solution**: Make sure you are using the correct template ID or create a new one to use.
+
+## [](#error-code-70)Error Code: 70
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="70">Batch processing is limited to 50 prospects at once.</err>
+</rsp>
+```
+
+**Problem**: You are requesting to batch more prospects in an operation than we allow
+
+**Solution**: Ensure that your batch request has 50 or fewer prospects
+
+## [](#error-code-71)Error Code: 71
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="71">Input needs to be valid JSON or XML</err>
+</rsp>
+```
+
+**Problem**: You've inputted invalid JSON or XML
+
+**Solution**: Ensure that your request is properly formatted
+
+## [](#error-code-72)Error Code: 72
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="72">JSON has been corrupted, hash does not match</err>
+</rsp>
+```
+
+
+## [](#error-code-73)Error Code: 73
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="73">Currently there is not an Email Plug-in Campaign associated to successfully track this email. Please contact your Pardot administrator to ensure there is a proper campaign associated with the Account Settings in Pardot.</err>
+</rsp>
+```
+
+## [](#error-code-74)Error Code: 74
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="74">The email client is not supported by the plugin API</err>
+</rsp>
+```
+
+## [](#error-code-75)Error Code: 75
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="75">There was an error processing the request for the account variable tags</err>
+</rsp>
+```
+
+## [](#error-code-76)Error Code: 76
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="76">API access was disabled</err>
+</rsp>
+```
+
+**Solution**: Contact customer support
+
+## [](#error-code-77)Error Code: 77
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="77">Invalid prospect fid</err>
+</rsp>
+```
+
+**Problem**: The provided Prospect FID was invalid
+
+## [](#error-code-79)Error Code: 79
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="79">Invalid CRM_FID</err>
+</rsp>
+```
+
+## [](#error-code-80)Error Code: 80
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="80">Invalid CRM_TYPE</err>
+</rsp>
+```
+
+## [](#error-code-81)Error Code: 81
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="81">Prospect ID and FID do not match</err>
+</rsp>
+```
+
+**Problem**: The provided Prospect ID and FID do not match a single prospect
+
+## [](#error-code-85)Error Code: 85
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="85">Unable to save the prospect</err>
+</rsp>
+```
+
+## [](#error-code-86)Error Code: 86
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="86">Invalid Template id</err>
+</rsp>
+```
+
+## [](#error-code-88)Error Code: 88
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="88">Your account must use version 4 of the API.</err>
+</rsp>
+```
+
+**Problem**: You have requested version 3 of the API, but your account must use version 4.
+
+**Solution**: Please make the request using `/version/4` in place of `/version/3`
+
+## [](#error-code-89)Error Code: 89
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="89">Your account is unable to use version 4 of the API.</err>
+</rsp>
+```
+
+**Problem**: You have requested version 4 of the API, but your account must use version 3.
+
+**Solution**: Please make the request using `/version/3` in place of `/version/4`
+
+## [](#error-code-90)Error Code: 90
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="90">Prospect array should be a flat array of attributes</err>
+</rsp>
+```
+
+## [](#error-code-91)Error Code: 91
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="91">Prospect array must be keyed by email address</err>
+</rsp>
+```
+
+
 ## [](#error-code-10000)Error Code: 10000
 
 ```
