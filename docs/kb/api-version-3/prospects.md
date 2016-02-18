@@ -87,7 +87,6 @@ The ordering of the results returned by a `query` request can be changed by spec
 
 For a complete list of fields involved in Prospect operations, see the [Prospect](object-field-references#prospect) section of [Object Field References](object-field-references).
 
-Note: Prospect email addresses cannot be updated using this method.
 
 | **Operation** | **URL Format**   | **Required Parameters** | **Description**  |
 | ------------- | ---------------- | ----------------------- | -----------------|
@@ -248,7 +247,7 @@ XML responses to `create` requests are identical to `update` and `read` requests
 
 <a name="14833-updating-field-values" id="updating-field-values"></a>
 
-## [](#enpoints-batch-processing-)Endpoints for Batch Processing
+## [](#endpoints-batch-processing-)Endpoints for Batch Processing
 
 There are 3 endpoints available for batch processing up to 50 prospects at a time:
 
@@ -258,7 +257,7 @@ There are 3 endpoints available for batch processing up to 50 prospects at a tim
 
 /api/prospect/version/3/do/batchUpsert
 
-These endpoints expect a query variable called "prospects" which holds either JSON or XML encoded data.
+These endpoints expect a query variable called "prospects" which holds either JSON or XML encoded data. Each prospect should have a unique identifier which will be used in the return output.
 
 JSON Example:
 
