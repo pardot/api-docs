@@ -1177,7 +1177,7 @@ requests.
 
 **Problem**: The prospect array given was not a flat array, and it should have been
 
-**Solution**: Resubmit the request with a flat array
+**Solution**: Resubmit the request with a flat array. [example](/kb/api-version-4/prospects#endpoints-for-batch-processing)
 
 ## [](#error-code-91)Error Code: 91
 
@@ -1189,7 +1189,7 @@ requests.
 
 **Problem**: The prospect array given was not keyed by email addresses, but should have been
 
-**Solution**: Resubmit the request with an array keyed by email addresses
+**Solution**: Resubmit the request with an array keyed by email addresses [example](/kb/api-version-3/prospects#endpoints-for-batch-processing)
 
 ## [](#error-code-10000)Error Code: 10000
 
