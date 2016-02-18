@@ -102,9 +102,7 @@ For a complete list of fields involved in Prospect operations, see the [Prospect
 | `update`      | `/api/prospect /version/4 /do/update/ id/<id>?...` | `user_key, api_key, id` | Updates the provided data for a prospect specified by `<id>`. `<id>` is the Pardot ID of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. Returns an updated version of the prospect. |
 | `update`      | `/api/prospect /version/4 /do/update/ fid/<fid>?...` | `user_key, api_key, fid` | Updates the provided data for a prospect specified by `<fid>`. `<fid>` is the Pardot CRM FID of the prospect, as provided by Salesforce. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. Returns an updated version of the prospect. |
 | `batchUpdate` | `/api/prospect /version/4 /do/batchUpdate? prospects=<data>...` | `user_key, api_key, prospects` | Updates prospects using the provided `<data>` in either XML or JSON. See [Endpoints for Batch Processing](#endpoints-for-batch-processing)
-| `upsert`      | `/api/prospect /version/4 /do/upsert/ email/<email>?...`   | `user_key, api_key, email` | Creates a new prospect using the specified data. `<email>` must be a valid email address. May optionally include a crm fid `<fid>`. Email list subscriptions and custom field data may also be added with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details.
-| `upsert`      | `/api/prospect /version/4 /do/upsert/ id/<id>?...` | `user_key, api_key, (id OR email)` | Updates the provided data for the prospect specified by `<id>`. If an `<email>` value is provided, it is used to create a prospect with the email address. If a prospect with the provided ID is not found, an error will return. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. Returns an updated version of the prospect.
-| `upsert`      | `/api/prospect /version/4 /do/upsert/ fid/<fid>?...` | `user_key, api_key, (fid)` | Updates the provided data for the prospect specified by `<fid>`, where `<fid>` corresponds to the prospect's CRM FID. If a prospect with the provided CRM FID is not found, an error will return. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. Returns an updated version of the prospect.
+| `upsert`      | `/api/prospect /version/4 /do/upsert/ {id/<id> AND/OR fid/<fid> AND/OR email/<email>}?...`   | `user_key, api_key, (id, fid, email)` | [Upserting a Prospect](#upserting-prospects)
 | `batchUpsert` | `/api/prospect /version/4 /do/batchUpsert? prospects=<data>...` | `user_key, api_key, prospects` | Updates prospects using the provided `<data>` in either XML or JSON. See [Endpoints for Batch Processing](#endpoints-for-batch-processing)
 | `delete`      | `/api/prospect /version/4 /do/delete/ id/<id>?...` | `user_key, api_key, id` | Deletes the prospect specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Prospects may only be deleted using HTTP methods POST or DELETE. |
 | `delete`      | `/api/prospect /version/4 /do/delete/ fid/<fid>?...` | `user_key, api_key, fid` | Deletes the prospect specified by `<fid>`, where `<fid>` corresponds to the prospect's CRM FID. Returns HTTP 204 No Content on success. **_Note:_** Prospects may only be deleted using HTTP methods POST or DELETE. |
@@ -242,9 +240,18 @@ _**Example:** Creating a new prospect_/api/prospect/version/4/do/create/email/[n
 
 XML responses to `create` requests are identical to `update` and `read` requests. If no `campaign_id` value is provided, the new prospect will be automatically assigned to the oldest existing campaign.
 
+## [](#upserting-prospects-)Upserting Prospects
+
+The Pardot Prospect Upsert API can be used to create, update, or unarchive/update prospects in your account. Whether your call to the Upsert API will result in prospect creation, update, or unarchive/update depends on the parameters given in the request, and whether they match corresponding prospects already in your account. The following rules govern the behavior of the upsert API:
+If ID and/or FID parameters are included in the request and they match an existing prospect in your account, that prospect will be updated with the given information. If the matching prospect is archived, it will be unarchived, and then have the updates applied to it.
+
+If an email address is provided in the request, but ID and FID are not given, a prospect will be created with the given email address.
+
+If an email address and an FID are provided in the request, a prospect will be created with the given email address/FID combination, so long as no prospect already exists in the account with the same FID.
+
 <a name="14833-updating-field-values" id="updating-field-values"></a>
 
-## [](#enpoints-batch-processing-)Endpoints for Batch Processing
+## [](#endpoints-batch-processing-)Endpoints for Batch Processing
 
 There are 3 endpoints available for batch processing up to 50 prospects at a time:
 
