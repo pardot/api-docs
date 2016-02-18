@@ -247,7 +247,7 @@ XML responses to `create` requests are identical to `update` and `read` requests
 
 <a name="14833-updating-field-values" id="updating-field-values"></a>
 
-## [](#enpoints-batch-processing-)Endpoints for Batch Processing
+## [](#endpoints-batch-processing-)Endpoints for Batch Processing
 
 There are 3 endpoints available for batch processing up to 50 prospects at a time:
 
