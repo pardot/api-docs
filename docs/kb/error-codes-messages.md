@@ -1007,6 +1007,9 @@ requests.
 </rsp>
 ```
 
+**Problem**: The encoded JSON has been corrupted at some point
+
+**Solution**: Please ensure that you are sending the correct information
 
 ## [](#error-code-73)Error Code: 73
 
@@ -1016,6 +1019,10 @@ requests.
 </rsp>
 ```
 
+**Problem**: Currently there is not an Email Plug-in Campaign associated to successfully track this email
+
+**Solution**: Please contact your Pardot administrator to ensure there is a proper campaign associated with the Account Settings in Pardot
+
 ## [](#error-code-74)Error Code: 74
 
 ```
@@ -1023,6 +1030,10 @@ requests.
     <err code="74">The email client is not supported by the plugin API</err>
 </rsp>
 ```
+
+**Problem**: The email client used is not supported by this API
+
+**Solution**: Please use an appropriate email client
 
 ## [](#error-code-75)Error Code: 75
 
@@ -1032,6 +1043,10 @@ requests.
 </rsp>
 ```
 
+**Problem**: There was an error processing the request for the account variable tags
+
+**Solution**: Please review the variable tags, and resubmit the request
+
 ## [](#error-code-76)Error Code: 76
 
 ```
@@ -1039,6 +1054,8 @@ requests.
     <err code="76">API access was disabled</err>
 </rsp>
 ```
+
+**Problem**: API access for your account has been disabled
 
 **Solution**: Contact customer support
 
@@ -1052,6 +1069,8 @@ requests.
 
 **Problem**: The provided Prospect FID was invalid
 
+**Solution**: Please provide a valid Prospect FID
+
 ## [](#error-code-79)Error Code: 79
 
 ```
@@ -1060,6 +1079,10 @@ requests.
 </rsp>
 ```
 
+**Problem**: The CRM FID provided is invalid
+
+**Solution**: Please provide a valid CRM FID that can be accessed by your account, or is already attached to a prospect
+
 ## [](#error-code-80)Error Code: 80
 
 ```
@@ -1067,6 +1090,10 @@ requests.
     <err code="80">Invalid CRM_TYPE</err>
 </rsp>
 ```
+
+**Problem**: The CRM type provided or used is invalid
+
+**Solution**: Please specify a correct CRM type
 
 ## [](#error-code-81)Error Code: 81
 
@@ -1078,6 +1105,20 @@ requests.
 
 **Problem**: The provided Prospect ID and FID do not match a single prospect
 
+**Solution**: Please provide a prospect ID and FID that match a single prospect
+
+## [](#error-code-83)Error Code: 83
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="83">No valid CRM connectors available</err>
+</rsp>
+```
+
+**Problem**: Your account does not have an available CRM connector
+
+**Solution**: Please add a CRM connector to your account
+
 ## [](#error-code-85)Error Code: 85
 
 ```
@@ -1086,6 +1127,10 @@ requests.
 </rsp>
 ```
 
+**Problem**: For some reason, the prospect was not saved
+
+**Solution**: Please resubmit the request or review the original request for errors
+
 ## [](#error-code-86)Error Code: 86
 
 ```
@@ -1093,6 +1138,10 @@ requests.
     <err code="86">Invalid Template id</err>
 </rsp>
 ```
+
+**Problem**: The template ID provided does not correspond to a template
+
+**Solution**: Please provide a template ID that is valid
 
 ## [](#error-code-88)Error Code: 88
 
@@ -1126,6 +1175,10 @@ requests.
 </rsp>
 ```
 
+**Problem**: The prospect array given was not a flat array, and it should have been
+
+**Solution**: Resubmit the request with a flat array
+
 ## [](#error-code-91)Error Code: 91
 
 ```
@@ -1134,6 +1187,9 @@ requests.
 </rsp>
 ```
 
+**Problem**: The prospect array given was not keyed by email addresses, but should have been
+
+**Solution**: Resubmit the request with an array keyed by email addresses
 
 ## [](#error-code-10000)Error Code: 10000
 
