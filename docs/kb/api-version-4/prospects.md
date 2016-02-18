@@ -242,12 +242,14 @@ XML responses to `create` requests are identical to `update` and `read` requests
 
 ## [](#upserting-prospects-)Upserting Prospects
 
-The Pardot Prospect Upsert API can be used to create, update, or unarchive/update prospects in your account. Whether your call to the Upsert API will result in prospect creation, update, or unarchive/update depends on the parameters given in the request, and whether they match corresponding prospects already in your account. The following rules govern the behavior of the upsert API:
-If ID and/or FID parameters are included in the request and they match an existing prospect in your account, that prospect will be updated with the given information. If the matching prospect is archived, it will be unarchived, and then have the updates applied to it.
+* The Pardot Prospect Upsert API can be used to create, update, or unarchive/update prospects in your account. Whether your call to the Upsert API will result in prospect creation, update, or unarchive/update depends on the parameters given in the request, and whether they match corresponding prospects already in your account. The following rules govern the behavior of the upsert API:
+    * If ID and/or FID parameters are included in the request and they match an existing prospect in your account, that prospect will be updated with the given information. If the matching prospect is archived, it will be unarchived, and then have the updates applied to it.
 
-If an email address is provided in the request, but ID and FID are not given, a prospect will be created with the given email address.
+    * If an email address is provided in the request, but ID and FID are not given, a prospect will be created with the given email address.
 
-If an email address and an FID are provided in the request, a prospect will be created with the given email address/FID combination, so long as no prospect already exists in the account with the same FID.
+    * If an email address and an FID are provided in the request, a prospect will be created with the given email address/FID combination, so long as no prospect already exists in the account with the same FID.
+
+* Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. Returns an updated version of the prospect.
 
 <a name="14833-updating-field-values" id="updating-field-values"></a>
 
