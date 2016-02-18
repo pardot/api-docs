@@ -1189,7 +1189,7 @@ requests.
 
 **Problem**: The prospect array given was not keyed by email addresses, but should have been
 
-**Solution**: Resubmit the request with an array keyed by email addresses [example](/kb/api-version-3/prospects#endpoints-for-batch-processing)
+**Solution**: Resubmit the request with an array keyed by email addresses. [example](/kb/api-version-3/prospects#endpoints-for-batch-processing)
 
 ## [](#error-code-10000)Error Code: 10000
 
