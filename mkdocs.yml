@@ -34,6 +34,8 @@ pages:
 - ['kb/api-version-3/visitors.md', 'Version 3', 'Visitors']
 - ['kb/api-version-3/visitor-activities.md', 'Version 3', 'Visitor Activities']
 - ['kb/api-version-3/visits.md', 'Version 3', 'Visits']
+- ['kb/api-version-3/object-field-references.md', 'API', 'Object Field References']
+- ['kb/api-version-3/error-codes-messages.md', 'API', 'Error Codes & Messages']
 
 
 #- ['kb/api-version-4/campaigns.md', 'Version 4', 'Campaigns']
