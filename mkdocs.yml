@@ -11,6 +11,7 @@ pages:
 - ['index.md', 'Overview']
 
 - ['index.md', 'API', 'Using the API']
+#- ['kb/api-version-4.md', 'API', 'Version 4']
 - ['kb/object-field-references.md', 'API', 'Object Field References']
 - ['kb/error-codes-messages.md', 'API', 'Error Codes & Messages']
 - ['kb/api-version-3/object-field-references.md', '**HIDDEN**']
@@ -38,7 +39,6 @@ pages:
 - ['kb/api-version-3/visits.md', 'Version 3', 'Visits']
 
 
-#- ['kb/api-version-4/index.md', 'Version 4']
 #- ['kb/api-version-4/campaigns.md', 'Version 4', 'Campaigns']
 #- ['kb/api-version-4/custom-fields.md', 'Version 4', 'Custom Fields']
 #- ['kb/api-version-4/custom-redirects.md', 'Version 4', 'Custom Redirects']
