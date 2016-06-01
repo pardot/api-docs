@@ -3,7 +3,6 @@
 In order to accommodate a new feature related to prospects,
 we have created a new version of our APIs - version 4.
 We are now allowing multiple prospects to share an email address on some Pardot accounts.
-This will eventually be available for all Pardot accounts.
 If your account has this feature active now, then you MUST use version 4.
 Everyone else can continue using version 3.
 
