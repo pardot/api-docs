@@ -24,6 +24,63 @@ For a complete list of fields involved in user operations, see the [Email](objec
 | ------- | --------------- |
 | `<email>` | Parent tag. Contains data fields for target email. For complete field listing, see [email](object-field-references#email) in [Object Field References](object-field-references). |
 
+# Querying Email Stats
+
+
+## Supported Operations<a name="25691-supported-operations" id="supported-operations"></a>
+For a complete list of fields involved in user operations, see the [Email](object-field-references#email) section of [Object Field References](object-field-references).
+
+| **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
+| ------------- | ------------------------------------------ | ----------------------- | -----------------|
+| `stats` | `/api/email/version/4/do/stats/id/<email id>?...` | `user_key, api_key, email` | Returns the statistical data for the email specified by <id>. <id> is the Pardot ID of the target target email.
+
+## [](#xml-response-format-)XML Response Format
+
+```
+<rsp stat="ok" version="1.0">
+    <stats>
+        <sent>...</sent>
+        <delivered>...</delivered>
+        <total_clicks>...</total_clicks>
+        <unique_clicks>...</unique_clicks>
+        <soft_bounced>...</soft_bounced>
+        <hard_bounced>...</hard_bounced>
+        <opt_outs>...</opt_outs>
+        <spam_complaints>...</spam_complaints>
+        <opens>...</opens>
+        <unique_opens>...</unique_opens>
+        <delivery_rate>...</delivery_rate>
+        <opens_rate>...</opens_rate>
+        <click_through_rate>...</click_through_rate>
+        <unique_click_through_rate>...</unique_click_through_rate>
+        <click_open_ratio>...</click_open_ratio>
+        <opt_out_rate>...</opt_out_rate>
+        <spam_complaint_rate>...</spam_complaint_rate>
+    </stats>
+</rsp>
+```
+
+| **Tag** | **Description** |
+| ------- | --------------- |
+| `<stats>` | Contains the resulting email stats for the specified email id. |
+| `<sent>` | Contains the number of emails sent. |
+| `<delivered>` | Contains the number of emails delivered. |
+| `<total_clicks>` | Contains the number of total clicks for the email. |
+| `<unique_clicks>` | Contains the number of unique clicks for the email. |
+| `<soft_bounced>` | Contains the number of soft bounces for the email. |
+| `<hard_bounced>` | Contains the number of hard bounces for the email. |
+| `<opt_outs>` | Contains the number of opt outs for the email |
+| `<spam_complaints>` | Contains the number of spam complaints for the email. |
+| `<opens>` | Contains the number of opens for the email. |
+| `<unique_opens>` | Contains the number of unique opens for the email. |
+| `<delivery_rate>` | Contains the delivery rate based on the number of emails sent |
+| `<opens_rate>` | Contains the open rate based on the number of emails delivered |
+| `<click_through_rate>` | Contains the click through rate based on the number of emails delivered |
+| `<unique_click_through_rate>` | Contains the unique click through rate based on the number of emails delivered |
+| `<click_open_ratio>` | Contains the ratio between email clicks and opens |
+| `<opt_out_rate>` | Contains the opt out rate based on the number of emails delivered |
+| `<spam_complaint_rate>` | Contains the spam complaint rate based on the number of emails delivered |
+
 # Sending One To One Emails
 
 
