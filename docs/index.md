@@ -54,11 +54,21 @@ In general, the API will return XML or JSON containing a current version of the 
 <a name="14767-changing-xml-response-format" id=
 "changing-xml-response-format"></a>
 
-<!--## Version 3 and Version 4 differences-->
+## Version 3 and Version 4 differences
 
-<!--In order to accommodate a new feature related to prospects, we have created a new version of our APIs - version 4. We are now allowing multiple prospects to share an email address on some Pardot accounts. Eventually this will be available for all Pardot accounts. If your account has this feature active now, then you MUST use version 4. Everyone else can continue using version 3. Version 4 may use slightly different input syntax where prospects are involved, and may return multiple prospects where version 3 returned one. Please check out the appropriate version's documentation for more exact usage details. -->
+In order to accommodate a new feature related to prospects,
+we have created a new version of our APIs - version 4.
+We are now allowing multiple prospects to share an email address on some Pardot accounts.
+Eventually this will be available for all Pardot accounts.
+If your account has this feature active now, then you MUST use version 4.
+Everyone else can continue using version 3.
+Version 4 may use slightly different input syntax where prospects are involved,
+and may return multiple prospects where version 3 returned one.
+Please check out the appropriate version's documentation for more exact usage details.
 
-<!--If your account uses v4, then upon login to the APIs, a data tag will be returned as such: `<version>4</version>`. If your account requires version 3, you will not see this tag.-->
+If your account uses v4, then upon login to the APIs,
+a data tag will be returned as such: `<version>4</version>`.
+If your account requires version 3, you will not see this tag.
 
 ## Changing the API Response Format
 
