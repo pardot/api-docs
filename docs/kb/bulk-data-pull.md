@@ -41,7 +41,9 @@ curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=12345
 			<visitor_id>14692</visitor_id>
 			<prospect_id>621</prospect_id>
 			<type>1</type>
-			<type_name>Email Tracker</type_name> <details>http://www.pardot.com/products/demos/flash-demo.html</details> <email_id>764</email_id>
+			<type_name>Email Tracker</type_name>
+			<details>http://www.pardot.com/products/demos/flash-demo.html</details>
+			<email_id>764</email_id>
 			<campaign_id>1</campaign_id>
 			<created_at>2007-08-09 19:29:07</created_at>
 			</visitor_activity> <visitor_activity>
@@ -49,7 +51,9 @@ curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=12345
 			<visitor_id>14692</visitor_id>
 			<prospect_id>621</prospect_id>
 			<type>1</type>
-			<type_name>Email Tracker</type_name> <details>http://www.pardot.com/products/demos/flash-demo.html</details> <email_id>764</email_id>
+			<type_name>Email Tracker</type_name>
+			<details>http://www.pardot.com/products/demos/flash-demo.html</details>
+			<email_id>764</email_id>
 			<campaign_id>1</campaign_id>
 			<created_at>2007-08-09 20:13:40</created_at>
 		</visitor_activity>
@@ -77,7 +81,8 @@ curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=12345
 			"prospect_id": 621,
 			"type": 1,
 			"type_name": "Email Tracker",
-			"details": "http:\/\/www.pardot.com\/products\/demos\/flash-demo.html", "email_id": 764,
+			"details": "http:\/\/www.pardot.com\/products\/demos\/flash-demo.html",
+			"email_id": 764,
 			"campaign_id": 1,
 			"created_at": "2007-08-09 19:29:07"
 		}, {
@@ -86,7 +91,8 @@ curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=12345
 			"prospect_id": 621,
 			"type": 1,
 			"type_name": "Email Tracker",
-			"details": "http:\/\/www.pardot.com\/products\/demos\/flash-demo.html", "email_id": 764,
+			"details": "http:\/\/www.pardot.com\/products\/demos\/flash-demo.html",
+			"email_id": 764,
 			"campaign_id": 1,
 			"created_at": "2007-08-09 20:13:40"
 		}]
