@@ -10,10 +10,10 @@ pages:
 
 - ['index.md', 'Overview']
 
-- ['index.md', 'API', 'Using the API']
 - ['kb/api-version-4.md', 'API', 'Version 4']
 - ['kb/object-field-references.md', 'API', 'Object Field References']
 - ['kb/error-codes-messages.md', 'API', 'Error Codes & Messages']
+- ['kb/bulk-data-pull.md', 'API', 'Bulk Data Pull']
 - ['kb/api-version-3/object-field-references.md', '**HIDDEN**']
 - ['kb/api-version-3/error-codes-messages.md', '**HIDDEN**']
 
