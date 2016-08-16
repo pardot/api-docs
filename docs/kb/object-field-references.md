@@ -704,7 +704,7 @@ Opportunities</a> for more details.</td>
 </tr>
 <tr>
 <td>&lt;value&gt;</td>
-<td>integer</td>
+<td>float</td>
 <td>X</td>
 <td>X</td>
 <td>Opportunity's value<br>

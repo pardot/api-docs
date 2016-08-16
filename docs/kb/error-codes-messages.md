@@ -53,12 +53,12 @@ accurate.
 </rsp>
 ```
 
-**Problem**: Pardot could not find a prospect with
-the provided email address.
+**Problem**: Pardot could not find a prospect with the provided email address (for read/update/delete),
+or the prospect email address is too long (> 255 characters) or has invalid syntax
+(does not match `/^[^ @]{1,64}@[^ @]{1,255}\.[^ @]{2,13}$/`) (for create/upsert).
 
-**Solution**: Verify that the email address is
-accurate. If the address is valid, verify that this prospect exists
-in your Pardot account.
+**Solution**: If running create/upsert, verify the email address is valid.
+If running read/update/delete, verify the a prospect with this email address exists in your Pardot account.
 
 ## [](#error-code-5)Error Code: 5
 

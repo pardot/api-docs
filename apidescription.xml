@@ -22,14 +22,14 @@
 
         <!-- The content of the doc element is shown as a tooltip in the Console's method list. -->
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/authentication" title="login">
-		  Authenticate a connection to the API. 
+		  Authenticate a connection to the API.
 	    </doc>
 
   	  </method>
     </resource>
 
 	<!--               -->
-	<!-- OPPORTUNITIES --> 
+	<!-- OPPORTUNITIES -->
 	<!--               -->
 
 	<!-- Query Opportunities -->
@@ -40,8 +40,8 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/opportunity/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-opportunities" title="opportunities_query">
-		   Returns the opportunities matching the specified criteria parameters. 
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/opportunities/#querying-opportunities" title="opportunities_query">
+		   Returns the opportunities matching the specified criteria parameters.
 	    </doc>
       </method>
     </resource>
@@ -54,7 +54,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/opportunity/version/3/do/create/prospect_email/{prospect_email}?user_key={user_key}&amp;api_key={api_key}&amp;name={name}&amp;value={value}&amp;probability={probability}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-opportunities" title="opportunity_create_byemail">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/opportunities/#supported-operations_1" title="opportunity_create_byemail">
 		  Creates a new opportunity using a prospect email address.
 	    </doc>
       </method>
@@ -68,7 +68,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/opportunity/version/3/do/create/prospect_id/{prospect_id}?user_key={user_key}&amp;api_key={api_key}&amp;name={name}&amp;value={value}&amp;probability={probability}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-opportunities" title="opportunity_create_byid">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/opportunities/#supported-operations_1" title="opportunity_create_byid">
 		  Creates a new opportunity using a prospect ID.
 	    </doc>
       </method>
@@ -82,7 +82,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/opportunity/version/3/do/read/{id}?id={id}&amp;user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-opportunities" title="opportunity_read">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/opportunities/#supported-operations_1" title="opportunity_read">
 		  Returns the data for the opportunity specified by ID.
 	    </doc>
       </method>
@@ -100,8 +100,8 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-prospects" title="prospects_query">
-		  Returns the prospects matching the specified criteria parameters. 
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#querying-prospects" title="prospects_query">
+		  Returns the prospects matching the specified criteria parameters.
 	    </doc>
       </method>
     </resource>
@@ -114,12 +114,12 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/assign/email/{email}?user_key={user_key}&amp;api_key={api_key}&amp;user_email={user_email}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_assign_byemail">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_assign_byemail">
 		  Assigns or reassigns the prospect specified by email address to a specified Pardot user or group.
 	    </doc>
       </method>
     </resource>
-	
+
 	<!-- Assign a Prospect specified by ID -->
     <resource path="prospect/version/3/do/assign">
       <method apigee:displayName="Assign by ID" id="prospect_assign_byid" name="POST">
@@ -128,7 +128,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/assign/id/{id}?user_key={user_key}&amp;api_key={api_key}&amp;user_email={user_email}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_assign_byid">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_assign_byid">
 		  Assigns or reassigns the prospect specified by ID to a specified Pardot user or group.
 	    </doc>
       </method>
@@ -142,7 +142,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/create/email/{email}?user_key={user_key}&amp;api_key={api_key}&amp;email={email}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_create">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_create">
 		  Creates a new prospect using the specified data.
 	    </doc>
       </method>
@@ -156,7 +156,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/read/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_read_byid">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_read_byid">
 		  Returns the data for the prospect specified by ID.
 	    </doc>
       </method>
@@ -170,7 +170,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/read/email/{email}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_read_byemail">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_read_byemail">
 		  Returns the data for the prospect specified by email address.
 	    </doc>
       </method>
@@ -184,7 +184,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/update/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_update_byid">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_update_byid">
 		  Updates the provided data for a prospect specified by ID.
 	    </doc>
       </method>
@@ -198,7 +198,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/update/email/{email}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_update_byemail">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_update_byemail">
 		  Updates the provided data for a prospect specified by email address.
 	    </doc>
       </method>
@@ -212,7 +212,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/upsert/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_upsert_byid">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_upsert_byid">
 		  Updates the provided data for a prospect specified by ID, crates a new prospect if one does not exist.
 	    </doc>
       </method>
@@ -226,7 +226,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/prospect/version/3/do/upsert/email/{email}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-prospects" title="prospect_upsert_byemail">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_upsert_byemail">
 		  Updates the provided data for a prospect specified by email address, creates a new prospect if one does not exist.
 	    </doc>
       </method>
@@ -244,8 +244,8 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/user/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-users" title="users_query">
-		  Returns the users matching the specified criteria parameters. 
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/users/#querying-users" title="users_query">
+		  Returns the users matching the specified criteria parameters.
 	    </doc>
       </method>
     </resource>
@@ -258,7 +258,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/user/version/3/do/read/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-users" title="user_read_byid">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/users/#supported-operations_1" title="user_read_byid">
 		  Returns the data for the user specified by ID.
 	    </doc>
       </method>
@@ -272,7 +272,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/user/version/3/do/read/email/{email}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-users" title="user_read_byemail">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/users/#supported-operations_1" title="user_read_byemail">
 		  Returns the data for the user specified by email address.
 	    </doc>
       </method>
@@ -290,8 +290,8 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/visit/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-visits" title="visits_query">
-		  Returns the visits matching the specified criteria parameters. 
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/visits/#querying-visits" title="visits_query">
+		  Returns the visits matching the specified criteria parameters.
 	    </doc>
       </method>
     </resource>
@@ -304,7 +304,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/visit/version/3/do/read/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-visits" title="visit_read">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/visits/#supported-operations_1" title="visit_read">
 		  Returns the data for the visit specified by ID.
 	    </doc>
       </method>
@@ -322,8 +322,8 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/visitor/version/3/do/query?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/querying-visitors" title="visitors_query">
-		  Returns the visitors matching the specified criteria parameters. 
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/visitors/#querying-visitors" title="visitors_query">
+		  Returns the visitors matching the specified criteria parameters.
 	    </doc>
       </method>
     </resource>
@@ -336,7 +336,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/visitor/version/3/do/read/id/{id}?user_key={user_key}&amp;api_key={api_key}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-visitors" title="visitor_read">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/visitors/#supported-operations" title="visitor_read">
 		  Returns the data for the visitor specified by ID.
 	    </doc>
       </method>
@@ -350,7 +350,7 @@
         </apigee:tags>
         <apigee:authentication required="false"/>
         <apigee:example url="/visitor/version/3/do/assign/id/{id}?user_key={user_key}&amp;api_key={api_key}&amp;user_email={user_email}"/>
-	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/using-visitors" title="prospect_assign_byid">
+	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/visitors/#supported-operations" title="prospect_assign_byid">
 		  Assigns or reassigns the visitor specified by ID to a specified Pardot user or group.
 	    </doc>
       </method>
