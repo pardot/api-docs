@@ -315,6 +315,78 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <td>Time the Email Was Created</td>
 </tr>
 </table>
+
+
+## Email Clicks
+
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this email click</td>
+</tr>
+<tr>
+<td>&lt;prospect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated prospect</td>
+</tr>
+<tr>
+<td>&lt;url&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>URL of the email click</td>
+</tr>
+<tr>
+<td>&lt;list_email_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated list email. Value not present if null.</td>
+</tr>
+<tr>
+<td>&lt;drip_program_action_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated drip program action. Value not present if null.</td>
+</tr>
+<tr>
+<td>&lt;email_template_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated email template. Value not present if null.</td>
+</tr>
+<tr>
+<td>&lt;tracker_redirect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated tracker redirect. Value not present if null.</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time that email click occurred; Time is reported in API
+user's preferred timezone</td>
+</tr>
+</table>
+
+
 ## Form
 
 <table>
