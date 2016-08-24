@@ -2,10 +2,10 @@
 
 In order to accommodate multiple prospects with the same email address,
 we have created a new version of our APIs - version 4.
-If your account has this feature active now, then you MUST use version 4.
-Otherwise you can continue to use version 3.
+If your Pardot org has this feature enabled now, then you must use version 4. 
+If your Pardot org does not have this featured enabled, you must use version 3.
 
-For help determining if you have access to version 4, [check out this guide.](http://help.pardot.com/customer/portal/articles/2461386-how-can-i-find-out-if-my-account-allows-multiple-prospects-with-the-same-email-address-)
+To determine if your Pardot org has this feature enabled, [check out this guide.](http://help.pardot.com/customer/portal/articles/2461386-how-can-i-find-out-if-my-account-allows-multiple-prospects-with-the-same-email-address-)
 
 For more information on the API in general, check out the [Overview Page](/).
 
@@ -13,14 +13,13 @@ For specific API endpoints, please select from the "Version 4" list above.
 
 
 # Transitioning from version 3 to version 4
-
-If you are looking to upgrade your account to 
-[allow multiple prospects with the same email address](http://help.pardot.com/customer/portal/articles/2461386-how-can-i-find-out-if-my-account-allows-multiple-prospects-with-the-same-email-address-),
-and you use the api, you will need to follow this guide.
+If you are going to
+[upgrade your Pardot org to allow multiple prospects with the same email address,](http://help.pardot.com/customer/portal/articles/2518686-enabling-multiple-prospects-with-the-same-email-address)
+and you use the api, you will need to follow and you use the api, you will need to follow this guide.
 
 ## Determining when these changes are applicable
 
-When your account has access to version 4, your API session will be cleared and you must log in again.
+As soon your Pardot org is upgraded to allow multiple prospects with the same email address, your current API session will be cleared and you must log in again.
 Upon logging in, a new field will be returned in the login response. 
 This will be your indication that you may no longer use version 3 (or any other previous version), and must now use the version 4 syntax.
 Here's what that will look like:
