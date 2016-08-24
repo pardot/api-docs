@@ -1,12 +1,11 @@
 # What is Version 4?
 
-In order to accommodate a new feature related to prospects,
+In order to accommodate multiple prospects with the same email address,
 we have created a new version of our APIs - version 4.
-We are now allowing multiple prospects to share an email address on some Pardot accounts.
 If your account has this feature active now, then you MUST use version 4.
-Everyone else can continue using version 3.
+Otherwise you can continue to use version 3.
 
-For help determining if you have access to version 4, check for the "Enabled" status following [this guide.](http://help.pardot.com/customer/portal/articles/2461386-how-can-i-find-out-if-my-account-allows-multiple-prospects-with-the-same-email-address-)
+For help determining if you have access to version 4, [check out this guide.](http://help.pardot.com/customer/portal/articles/2461386-how-can-i-find-out-if-my-account-allows-multiple-prospects-with-the-same-email-address-)
 
 For more information on the API in general, check out the [Overview Page](/).
 
@@ -42,7 +41,7 @@ Response (Before transition):
 Response (After transition):
 ```
 <rsp stat="ok" version="1.0">
-  <api_key>1234abcd</api_key>
+  <api_key>5678qwertyuiop</api_key>
   <version>4</version>
 </rsp>
 ```
@@ -69,7 +68,10 @@ Most of the changes in version 4 occur around the prospect APIs.
 When you begin using the version 4 APIs, your logic should know about these changes ([full documentation can be found here](/kb/api-version-4/prospects))
 
 * **New reference field:**  Prospects can now be referenced using the Salesforce CRM Identifier, known to the api as the `fid` field.
-This `fid` field refers to the Salesforce identifier applied to Leads or Contacts. 
+This `fid` field refers to the id of the Lead or Contact record in Salesforce. 
+You can find the lead id (begins with 00Q) or the contact id (begins with 003) in the URL when viewing a lead or contact as seen below. 
+Or, you can get multiple contacts or lead ids from Salesforce using the export tool.
+<img src="/img/lead_identifier_example.png" width="100%">
 * **Create:** Prospects can still be created with a referenced `email` address.
 If you call the create api with the same email address multiple times, each call will create a new prospect.
 Previously, you would get an error.
@@ -77,6 +79,7 @@ Previously, you would get an error.
 Querying by Pardot `id` or Salesforce `fid` will only return the one matching prospect.
 * **Update:** Prospects can no longer be updated when referenced via `email` alone. 
 This is because there may now be multiple prospects with the same email address.
+Instead, you must use either the Pardot `id` or Salesforce `fid` references.
 * **Upsert:** Upsert query by `email` will *always* create a new prospect.
 Upsert by Pardot `id` or Salesforce `fid` will update or create as needed.
 See [Upserting Prospects](/kb/api-version-4/prospects/#upserting-prospects) for more details.
@@ -88,9 +91,10 @@ See [Upserting Prospects](/kb/api-version-4/prospects/#upserting-prospects) for 
 [Full documentation can be found here.](/kb/api-version-4/opportunities/)
 
 * **Create:** Creating an opportunity using a `prospect_email` reference must correspond to an existing prospect.
-If there are multiple prospects with that email address, the prospect with the most recent activity date will be used. 
+If there are multiple prospects with that email address, the prospect with the most recent activity date will be used.
+If you want to apply the opportunity to a specific prospect, then you must reference the prospect using `prospect_id`.
 * **Query:** If you query using a `prospect_email` reference, you will receive opportunities that correspond with any prospects that share that email address.
-
+if you want a specific prospect then query by the `prospect_id`.
 ## Visitor API changes
 
 [Full documentation can be found here.](/kb/api-version-4/visitors/)
