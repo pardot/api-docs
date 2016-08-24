@@ -95,6 +95,7 @@ If there are multiple prospects with that email address, the prospect with the m
 If you want to apply the opportunity to a specific prospect, then you must reference the prospect using `prospect_id`.
 * **Query:** If you query using a `prospect_email` reference, you will receive opportunities that correspond with any prospects that share that email address.
 if you want a specific prospect then query by the `prospect_id`.
+
 ## Visitor API changes
 
 [Full documentation can be found here.](/kb/api-version-4/visitors/)
