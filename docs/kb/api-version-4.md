@@ -15,7 +15,7 @@ For specific API endpoints, please select from the "Version 4" list above.
 # Transitioning from version 3 to version 4
 If you are going to
 [upgrade your Pardot org to allow multiple prospects with the same email address,](http://help.pardot.com/customer/portal/articles/2518686-enabling-multiple-prospects-with-the-same-email-address)
-and you use the api, you will need to follow this guide.
+and you use the api, you will need to follow the guidelines below.
 
 ## Determining when these changes are applicable
 
