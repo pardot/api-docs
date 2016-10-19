@@ -15,6 +15,7 @@ pages:
 - ['kb/error-codes-messages.md', 'API', 'Error Codes & Messages']
 - ['kb/bulk-data-pull.md', 'API', 'Bulk Data Pull']
 - ['kb/api-version-3/object-field-references.md', '**HIDDEN**']
+- ['kb/api-version-4/object-field-references.md', '**HIDDEN**']
 - ['kb/api-version-3/error-codes-messages.md', '**HIDDEN**']
 
 - ['kb/api-version-3/campaigns.md', 'Version 3', 'Campaigns']
