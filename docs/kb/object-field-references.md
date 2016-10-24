@@ -113,7 +113,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 </tr>
 <tr>
 <td>&lt;crm_id&gt;</td>
-<td>integer</td>
+<td>string</td>
 <td></td>
 <td>X</td>
 <td>The CRM ID of the field you would like to map to this custom field</td>
