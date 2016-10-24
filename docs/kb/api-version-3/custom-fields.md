@@ -88,6 +88,9 @@ For a complete list of fields involved in user operations, see the [Custom Field
         <field_id>Checkbox_Field</field_id>
         <type>Checkbox</type>
         <type_id>3</type_id>
+        <crm_id>Alt_Email__c</crm_id>
+        <is_record_multiple_responses>true</is_record_multiple_responses>
+        <is_use_values>false</is_use_values>
         <created_at>2014-09-19 11:43:36</created_at>
         <updated_at>2014-11-19 05:04:17</updated_at>
     </customField>
