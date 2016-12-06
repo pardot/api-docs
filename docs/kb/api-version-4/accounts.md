@@ -6,7 +6,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/account/version/3/do/read` | `user_key, api_key` | Returns the data for the account of the currently logged in user. |
+| `read` | `/api/account/version/4/do/read` | `user_key, api_key` | Returns the data for the account of the currently logged in user. |
 
 
 ## XML Response Format
