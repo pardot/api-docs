@@ -9,6 +9,123 @@ Each field returned by the API maps to a field within the Pardot user interface.
 </ul>
 
 
+## Account
+
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+    <td>&lt;id&gt;</td>
+    <td>integer</td>
+    <td></td>
+    <td></td>
+    <td>Pardot ID for this account</td>
+</tr>
+<tr>
+    <td>&lt;level&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>The level of product for the account</td>
+</tr>
+<tr>
+    <td>&lt;website&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Account website</td>
+</tr>
+<tr>
+    <td>&lt;vanity_domain&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Custom vanity domain name</td>
+</tr>
+<tr>
+    <td>&lt;plugin_campaign_id&gt;</td>
+    <td>integer</td>
+    <td></td>
+    <td></td>
+    <td>Plugin ID for account campaign</td>
+</tr>
+<tr>
+    <td>&lt;tracking_code_template&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Markup and code for use in tracking templates</td>
+</tr>
+<tr>
+    <td>&lt;address1&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Account contact address, line 1</td>
+</tr>
+<tr>
+    <td>&lt;address2&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Account contact address, line 2</td>
+</tr>
+<tr>
+    <td>&lt;city&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Account contact city</td>
+</tr>
+<tr>
+    <td>&lt;state&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Account contact state</td>
+</tr>
+<tr>
+    <td>&lt;territory&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Account contact territory</td>
+</tr>
+<tr>
+    <td>&lt;zip&gt;</td>
+    <td>integer</td>
+    <td></td>
+    <td></td>
+    <td>Account contact zip code</td>
+</tr>
+<tr>
+    <td>&lt;country&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Account contact country (full string)</td>
+</tr>
+<tr>
+    <td>&lt;phone&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Account contact phone number</td>
+</tr>
+<tr>
+    <td>&lt;fax&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>Account contact fax number</td>
+</tr>
+</table>
+
 ## Campaign
 
 <table>
