@@ -18,6 +18,7 @@ pages:
 - ['kb/api-version-4/object-field-references.md', '**HIDDEN**']
 - ['kb/api-version-3/error-codes-messages.md', '**HIDDEN**']
 
+- ['kb/api-version-3/accounts.md', 'Version 3', 'Accounts']
 - ['kb/api-version-3/campaigns.md', 'Version 3', 'Campaigns']
 - ['kb/api-version-3/custom-fields.md', 'Version 3', 'Custom Fields']
 - ['kb/api-version-3/custom-redirects.md', 'Version 3', 'Custom Redirects']
@@ -41,6 +42,7 @@ pages:
 - ['kb/api-version-3/visits.md', 'Version 3', 'Visits']
 
 
+- ['kb/api-version-4/accounts.md', 'Version 4', 'Accounts']
 - ['kb/api-version-4/campaigns.md', 'Version 4', 'Campaigns']
 - ['kb/api-version-4/custom-fields.md', 'Version 4', 'Custom Fields']
 - ['kb/api-version-4/custom-redirects.md', 'Version 4', 'Custom Redirects']
