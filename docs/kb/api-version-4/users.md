@@ -68,7 +68,7 @@ For a complete list of fields involved in user operations, see the [User](object
 
 | **Operation** | **URL Format** | **Required Parameters** | **Description** |
 | ------------- | -------------- | ----------------------- | --------------- |
-| `read` | `/api/user/version/4/do/read/email/<email>?...` | `user_key, api_key, id` | Returns the data for the user specified by `<email>`. `<email>` is the email address of the target user. |
+| `read` | `/api/user/version/4/do/read/email/<email>?...` | `user_key, api_key, email` | Returns the data for the user specified by `<email>`. `<email>` is the email address of the target user. |
 | `read` | `/api/user/version/4/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the user specified by `<id>`. `<id>` is the Pardot ID of the target user. |
 
 ## XML Response Format

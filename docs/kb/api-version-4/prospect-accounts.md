@@ -78,7 +78,7 @@ For a complete list of fields involved in user operations, see the [Prospect Acc
 | `describe` | `/api/prospectAccount/version/4/do/describe?...` | `user_key, api_key` | Returns the field metadata for prospect accounts, explaining what fields are available, their types, whether they are required, and their options (for dropdowns, radio buttons, etc) |
 | `read` | `/api/prospectAccount/version/4/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the prospect account specified by `<id>`. `<id>` is the Pardot ID of the target prospect account. |
 | `update` | `/api/prospectAccount/version/4/do/update/id/<id>?...` | `user_key, api_key, id` | Update the data for the prospect account specified by `<id>`. `<id>` is the Pardot ID of the target prospect account. |
-
+| `assign` | `/api/prospectAccount/version/4/do/assign/id/<id>?...` | `user_key, api_key, id, user_id` | Assigns the prospect account to a user specified by `<user_id>`. `<id>` is the Pardot ID of the target prospect account. |
 
 ## [](#xml-response-format-)XML Response Format
 

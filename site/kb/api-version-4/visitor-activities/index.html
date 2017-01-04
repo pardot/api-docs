@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://developer.pardot.com/kb/api-version-4/visitor-activities/">
+        <link rel="shortcut icon" href="../../../favicon.ico">
+        
+
+        <title>Visitor Activities - Pardot API Documentation</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Pardot API Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                
+                    <li >
+                        <a href="../../..">Overview</a>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../">Version 4</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../object-field-references/">Object Field References</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../error-codes-messages/">Error Codes & Messages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../bulk-data-pull/">Bulk Data Pull</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../../api-version-3/accounts/">Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/campaigns/">Campaigns</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/custom-fields/">Custom Fields</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/custom-redirects/">Custom Redirects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/dynamic-content/">Dynamic Content</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/emails/">Email</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/batch-email-clicks/">Email Clicks</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/email-templates/">Email Templates</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/forms/">Forms</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/lifecycle-histories/">Lifecycle Histories</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/lifecycle-stages/">Lifecycle Stages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/lists/">Lists</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/list-memberships/">List Memberships</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/opportunities/">Opportunities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/prospects/">Prospects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/prospect-accounts/">Prospect Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/tags/">Tags</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/tag-objects/">TagObjects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/users/">Users</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/visitors/">Visitors</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/visitor-activities/">Visitor Activities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/visits/">Visits</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../accounts/">Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../campaigns/">Campaigns</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../custom-fields/">Custom Fields</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../custom-redirects/">Custom Redirects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../dynamic-content/">Dynamic Content</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../emails/">Email</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../batch-email-clicks/">Email Clicks</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../email-templates/">Email Templates</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../forms/">Forms</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../lifecycle-histories/">Lifecycle Histories</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../lifecycle-stages/">Lifecycle Stages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../lists/">Lists</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../list-memberships/">List Memberships</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../opportunities/">Opportunities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../prospects/">Prospects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../prospect-accounts/">Prospect Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../tags/">Tags</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../tag-objects/">TagObjects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../users/">Users</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../visitors/">Visitors</a>
+                            </li>
+                        
+                            <li class="active">
+                                <a href="./">Visitor Activities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../visits/">Visits</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a rel="next" href="../visitors/">
+                    <i class="fa fa-arrow-left"></i> Visitors
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="prev" href="../visits/">
+                    Visits <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/Pardot/api-docs" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#querying-visitor-activities">Querying Visitor Activities</a></li>
+        
+            <li><a href="#supported-search-criteria">Supported Search Criteria</a></li>
+        
+            <li><a href="#manipulating-the-result-set">Manipulating the Result Set</a></li>
+        
+            <li><a href="#supported-sorting-options">Supported Sorting Options</a></li>
+        
+            <li><a href="#xml-response-format">XML Response Format</a></li>
+        
+    
+        <li class="main "><a href="#using-visitor-activities">Using Visitor Activities</a></li>
+        
+            <li><a href="#supported-operations">Supported Operations</a></li>
+        
+            <li><a href="#xml-response-formats">XML Response Formats</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9 main-content" role="main">
+
+
+
+<a href="../../../kb/api-version-3/visitor-activities">Looking for version 3?</a>
+
+
+<h1 id="querying-visitor-activities">Querying Visitor Activities</h1>
+<h2 id="_1"></h2>
+<p><a href="#supported-operations-a-name-supported-operations-id-supported-operations-a-"></a>Supported Operations<a name="25691-supported-operations" id="supported-operations"></a></p>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Required Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>query</code></td>
+<td><code>/api/visitorActivity/version/4/do/query?...</code></td>
+<td><code>user_key, api_key, search_criteria, result_set_criteria</code></td>
+<td>Returns the visitor activities matching the specified criteria parameters. See the <a href="../visitors">Using Visitor Activities</a> section for a complete description of visitor activities <a href="../visitor-activities#xml-response-formats">XML Response Formats</a>. Also see <a href="../object-field-references#visitor activity">Visitor Activity</a> in <a href="../object-field-references">Object Field References</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-search-criteria"><a href="#supported-search-criteria-"></a>Supported Search Criteria</h2>
+<p>Search criteria may be used together in any combination and/or order unless otherwise specified. 200 visitor activities will be returned with each query request.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Datatype</strong></th>
+<th><strong>Options</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>created_after</code></td>
+<td><code>string</code></td>
+<td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
+<td>Selects visitor activities that were created after the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
+</tr>
+<tr>
+<td><code>created_before</code></td>
+<td><code>string</code></td>
+<td><code>today, yesterday, last_7_days, this_month, last_month, &lt;custom_time&gt;</code></td>
+<td>Selects visitor activities that were created before the specified time. If a <code>&lt;custom_time&gt;</code> is used, ensure that the specified date is formatted using <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a>.</td>
+</tr>
+<tr>
+<td><code>id_greater_than</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects visitor activities with IDs greater than the specified integer.</td>
+</tr>
+<tr>
+<td><code>id_less_than</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects visitor activities with IDs less than the specified integer.</td>
+</tr>
+<tr>
+<td><code>prospect_only</code></td>
+<td><code>boolean</code></td>
+<td><code>true or false</code></td>
+<td>Selects visitor activities with associated prospects.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>array</code></td>
+<td><code>&lt;comma_separated_visitor_activity_types&gt;</code></td>
+<td>Selects visitor activities of the specified types. See a list of available <a href="../object-field-references#visitor-activity-types">Visitor Activity Types</a> in <a href="../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../object-field-references">Object Field References</a>.</td>
+</tr>
+<tr>
+<td><strong>Relationships</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>campaign_id</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects only visitor activities generated by assets whose campaign matches the specified ID.</td>
+</tr>
+<tr>
+<td><code>custom_url_id</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects only visitor activities generated by the custom redirect with the specified ID.</td>
+</tr>
+<tr>
+<td><code>email_id</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects only visitor activities generated by the email with the specified ID.</td>
+</tr>
+<tr>
+<td><code>file_id</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects only visitor activities generated by the file with the specified ID.</td>
+</tr>
+<tr>
+<td><code>form_id</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects only visitor activities generated by the form with the specified ID.</td>
+</tr>
+<tr>
+<td><code>form_handler_id</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects only visitor activities generated by the form handler with the specified ID.</td>
+</tr>
+<tr>
+<td><code>landing_page_id</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects only visitor activities generated by the landing page with the specified ID.</td>
+</tr>
+<tr>
+<td><code>prospect_id</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects only visitor activities associated with the prospect with the specified ID.</td>
+</tr>
+<tr>
+<td><code>visitor_id</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Selects only visitor activities associated with the visitor with the specified ID.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="manipulating-the-result-set"><a href="#manipulating-the-result-set-"></a>Manipulating the Result Set</h2>
+<p>Since <code>query</code> result sets are limited to 200 results each, the results returned may not include all the visitor activities matched by the query. To retrieve the remaining results, the following criteria can be used to navigate through the result set.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Datatype</strong></th>
+<th><strong>Options</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>limit</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Specifies the number of results to be returned. <em>Default value:</em> <code>200</code>. <strong><em>Note:</em></strong> This number cannot be larger than 200.</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>integer</code></td>
+<td><code>&lt;any_positive_integer&gt;</code></td>
+<td>Specifies the first matching visitor (according to the specified sorting order) to be returned in the query response. The first <code>offset</code> matching visitors will be omitted from the response. <em>Default value:</em> <code>0</code>. <strong><em>Example:</em></strong> Specifying <code>offset=400</code> will return the results starting with the 401st visitor matched by the provided criteria.</td>
+</tr>
+<tr>
+<td><code>output</code></td>
+<td><code>string</code></td>
+<td><code>simple, mobile</code></td>
+<td>Specifies the format to be used when returning the results of the query. See <a href="../visitor-activities#xml-response-formats">XML Response Formats</a> in <a href="../visitors">Using Visitor Activities</a> for more details.</td>
+</tr>
+<tr>
+<td><code>sort_by</code></td>
+<td><code>string</code></td>
+<td><code>created_at, id, prospect_id, visitor_id</code></td>
+<td>Specifies the field that should be used to sort the results of the query. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details. <em>Default value:</em> <code>id</code>.</td>
+</tr>
+<tr>
+<td><code>sort_order</code></td>
+<td><code>string</code></td>
+<td><code>ascending, descending</code></td>
+<td>Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the <code>sort_by</code> parameter. See <a href="#supported-sorting-options">Supported Sorting Options</a> for more details.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-sorting-options"><a href="#supported-sorting-options-"></a>Supported Sorting Options</h2>
+<p>The ordering of the results returned by a <code>query</code> request can be changed by specifying <code>sort_by</code> and <code>sort_order</code> parameters. Any of the following values are valid when specifying the <code>sort_by</code> parameter. For a complete list of fields involved in visitor activity queries, see <a href="../object-field-references#visitor-activity">VisitorActivity</a> in <a href="../object-field-references">Object Field References</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Value</strong></th>
+<th><strong>Default Sort Order</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>created_at</code></td>
+<td><code>descending</code></td>
+<td>Specifies that the query results should be sorted by the visitor activities' <code>created_at</code> timestamps.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>ascending</code></td>
+<td>Specifies that the query results should be sorted by the visitor activities' <code>id</code> fields.</td>
+</tr>
+<tr>
+<td><code>prospect_id</code></td>
+<td><code>descending</code></td>
+<td>Specifies that the query results should be sorted by the visitor activities' related prospects.</td>
+</tr>
+<tr>
+<td><code>prospect_id</code></td>
+<td><code>descending</code></td>
+<td>Specifies that the query results should be sorted by the visitor activities' related visitors.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xml-response-format"><a href="#xml-response-format-"></a>XML Response Format</h2>
+<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+    &lt;result&gt;
+        &lt;total_results&gt;...&lt;/total_results&gt;
+        &lt;visitorActivity&gt;...&lt;/visitorActivity&gt;
+            ...
+    &lt;/result&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th><strong>Tag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;result&gt;</code></td>
+<td>Contains the resulting visitor activities for the specified query.</td>
+</tr>
+<tr>
+<td><code>&lt;total_results&gt;</code></td>
+<td>Contains the number of visitor activities selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched visitor activities.</td>
+</tr>
+<tr>
+<td><code>&lt;visitorActivity&gt;</code></td>
+<td>The data for an individual visitor activity. See <a href="../visitors-activities">Using Visitor Activities</a> for complete descriptions of visitor activity <a href="../visitor-activities#xml-response-formats">XML Response Formats</a>. Also see <a href="../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../object-field-references">Object Field References</a>.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="using-visitor-activities">Using Visitor Activities</h1>
+<h2 id="supported-operations">Supported Operations<a name="25688-supported-operations"></a></h2>
+<p>For a complete list of fields involved in visitor activity operations, see the <a href="../object-field-references#visitor-activity">VisitorActivity</a> section of <a href="../object-field-references">Object Field References</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Required Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>read</code></td>
+<td><code>/api/visitorActivity/version/4/do/read/id/&lt;id&gt;?...</code></td>
+<td><code>user_key, api_key, id</code></td>
+<td>Returns the data for the visitor activity specified by <code>&lt;id&gt;</code>. is the Pardot ID for the target visitor activity.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xml-response-formats">XML Response Formats</h2>
+<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+    &lt;visitorActivity&gt;
+        ...
+    &lt;/visitorActivity&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th><strong>Tag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;visitorActivity&gt;</code></td>
+<td>Parent tag. Contains data fields for target visitorActivity. For complete field listing, see <a href="../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../object-field-references">Object Field References</a>.</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script src="../../../js/base.js"></script>
+    </body>
+</html>

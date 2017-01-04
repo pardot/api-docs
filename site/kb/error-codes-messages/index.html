@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://developer.pardot.com/kb/error-codes-messages/">
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
+
+        <title>Error Codes & Messages - Pardot API Documentation</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Pardot API Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                
+                    <li >
+                        <a href="../..">Overview</a>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../api-version-4/">Version 4</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../object-field-references/">Object Field References</a>
+                            </li>
+                        
+                            <li class="active">
+                                <a href="./">Error Codes & Messages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../bulk-data-pull/">Bulk Data Pull</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../api-version-3/accounts/">Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/campaigns/">Campaigns</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/custom-fields/">Custom Fields</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/custom-redirects/">Custom Redirects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/dynamic-content/">Dynamic Content</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/emails/">Email</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/batch-email-clicks/">Email Clicks</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/email-templates/">Email Templates</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/forms/">Forms</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/lifecycle-histories/">Lifecycle Histories</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/lifecycle-stages/">Lifecycle Stages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/lists/">Lists</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/list-memberships/">List Memberships</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/opportunities/">Opportunities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/prospects/">Prospects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/prospect-accounts/">Prospect Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/tags/">Tags</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/tag-objects/">TagObjects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/users/">Users</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/visitors/">Visitors</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/visitor-activities/">Visitor Activities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/visits/">Visits</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../api-version-4/accounts/">Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/campaigns/">Campaigns</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/custom-fields/">Custom Fields</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/custom-redirects/">Custom Redirects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/dynamic-content/">Dynamic Content</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/emails/">Email</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/batch-email-clicks/">Email Clicks</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/email-templates/">Email Templates</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/forms/">Forms</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/lifecycle-histories/">Lifecycle Histories</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/lifecycle-stages/">Lifecycle Stages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/lists/">Lists</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/list-memberships/">List Memberships</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/opportunities/">Opportunities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/prospects/">Prospects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/prospect-accounts/">Prospect Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/tags/">Tags</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/tag-objects/">TagObjects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/users/">Users</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/visitors/">Visitors</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/visitor-activities/">Visitor Activities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/visits/">Visits</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a rel="next" href="../object-field-references/">
+                    <i class="fa fa-arrow-left"></i> Object Field References
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="prev" href="../bulk-data-pull/">
+                    Bulk Data Pull <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/Pardot/api-docs" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#error-codes-messages">Error Codes &amp; Messages</a></li>
+        
+            <li><a href="#error-code-1">Error Code: 1</a></li>
+        
+            <li><a href="#error-code-2">Error Code: 2</a></li>
+        
+            <li><a href="#error-code-3">Error Code: 3</a></li>
+        
+            <li><a href="#error-code-4">Error Code: 4</a></li>
+        
+            <li><a href="#error-code-5">Error Code: 5</a></li>
+        
+            <li><a href="#error-code-6">Error Code: 6</a></li>
+        
+            <li><a href="#error-code-7">Error Code: 7</a></li>
+        
+            <li><a href="#error-code-8">Error Code: 8</a></li>
+        
+            <li><a href="#error-code-9">Error Code: 9</a></li>
+        
+            <li><a href="#error-code-10">Error Code: 10</a></li>
+        
+            <li><a href="#error-code-11">Error Code: 11</a></li>
+        
+            <li><a href="#error-code-12">Error Code: 12</a></li>
+        
+            <li><a href="#error-code-13">Error Code: 13</a></li>
+        
+            <li><a href="#error-code-14">Error Code: 14</a></li>
+        
+            <li><a href="#error-code-15">Error Code: 15</a></li>
+        
+            <li><a href="#error-code-16">Error Code: 16</a></li>
+        
+            <li><a href="#error-code-17">Error Code: 17</a></li>
+        
+            <li><a href="#error-code-18">Error Code: 18</a></li>
+        
+            <li><a href="#error-code-19">Error Code: 19</a></li>
+        
+            <li><a href="#error-code-20">Error Code: 20</a></li>
+        
+            <li><a href="#error-code-21">Error Code: 21</a></li>
+        
+            <li><a href="#error-code-22">Error Code: 22</a></li>
+        
+            <li><a href="#error-code-23">Error Code: 23</a></li>
+        
+            <li><a href="#error-code-24">Error Code: 24</a></li>
+        
+            <li><a href="#error-code-25">Error Code: 25</a></li>
+        
+            <li><a href="#error-code-26">Error Code: 26</a></li>
+        
+            <li><a href="#error-code-27">Error Code: 27</a></li>
+        
+            <li><a href="#error-code-28">Error Code: 28</a></li>
+        
+            <li><a href="#error-code-29">Error Code: 29</a></li>
+        
+            <li><a href="#error-code-30">Error Code: 30</a></li>
+        
+            <li><a href="#error-code-31">Error Code: 31</a></li>
+        
+            <li><a href="#error-code-32">Error Code: 32</a></li>
+        
+            <li><a href="#error-code-33">Error Code: 33</a></li>
+        
+            <li><a href="#error-code-34">Error Code: 34</a></li>
+        
+            <li><a href="#error-code-35">Error Code: 35</a></li>
+        
+            <li><a href="#error-code-36">Error Code: 36</a></li>
+        
+            <li><a href="#error-code-37">Error Code: 37</a></li>
+        
+            <li><a href="#error-code-38">Error Code: 38</a></li>
+        
+            <li><a href="#error-code-39">Error Code: 39</a></li>
+        
+            <li><a href="#error-code-40">Error Code: 40</a></li>
+        
+            <li><a href="#error-code-41">Error Code: 41</a></li>
+        
+            <li><a href="#error-code-42">Error Code: 42</a></li>
+        
+            <li><a href="#error-code-43">Error Code: 43</a></li>
+        
+            <li><a href="#error-code-44">Error Code: 44</a></li>
+        
+            <li><a href="#error-code-45">Error Code: 45</a></li>
+        
+            <li><a href="#error-code-46">Error Code: 46</a></li>
+        
+            <li><a href="#error-code-47">Error Code: 47</a></li>
+        
+            <li><a href="#error-code-48">Error Code: 48</a></li>
+        
+            <li><a href="#error-code-50">Error Code: 50</a></li>
+        
+            <li><a href="#error-code-51">Error Code: 51</a></li>
+        
+            <li><a href="#error-code-53">Error Code: 53</a></li>
+        
+            <li><a href="#error-code-54">Error Code: 54</a></li>
+        
+            <li><a href="#error-code-55">Error Code: 55</a></li>
+        
+            <li><a href="#error-code-56">Error Code: 56</a></li>
+        
+            <li><a href="#error-code-57">Error Code: 57</a></li>
+        
+            <li><a href="#error-code-58">Error Code: 58</a></li>
+        
+            <li><a href="#error-code-59">Error Code: 59</a></li>
+        
+            <li><a href="#error-code-60">Error Code: 60</a></li>
+        
+            <li><a href="#error-code-61">Error Code: 61</a></li>
+        
+            <li><a href="#error-code-62">Error Code: 62</a></li>
+        
+            <li><a href="#error-code-63">Error Code: 63</a></li>
+        
+            <li><a href="#error-code-64">Error Code: 64</a></li>
+        
+            <li><a href="#error-code-65">Error Code: 65</a></li>
+        
+            <li><a href="#error-code-66">Error Code: 66</a></li>
+        
+            <li><a href="#error-code-67">Error Code: 67</a></li>
+        
+            <li><a href="#error-code-68">Error Code: 68</a></li>
+        
+            <li><a href="#error-code-70">Error Code: 70</a></li>
+        
+            <li><a href="#error-code-71">Error Code: 71</a></li>
+        
+            <li><a href="#error-code-72">Error Code: 72</a></li>
+        
+            <li><a href="#error-code-73">Error Code: 73</a></li>
+        
+            <li><a href="#error-code-74">Error Code: 74</a></li>
+        
+            <li><a href="#error-code-75">Error Code: 75</a></li>
+        
+            <li><a href="#error-code-76">Error Code: 76</a></li>
+        
+            <li><a href="#error-code-77">Error Code: 77</a></li>
+        
+            <li><a href="#error-code-79">Error Code: 79</a></li>
+        
+            <li><a href="#error-code-80">Error Code: 80</a></li>
+        
+            <li><a href="#error-code-81">Error Code: 81</a></li>
+        
+            <li><a href="#error-code-83">Error Code: 83</a></li>
+        
+            <li><a href="#error-code-85">Error Code: 85</a></li>
+        
+            <li><a href="#error-code-86">Error Code: 86</a></li>
+        
+            <li><a href="#error-code-88">Error Code: 88</a></li>
+        
+            <li><a href="#error-code-89">Error Code: 89</a></li>
+        
+            <li><a href="#error-code-90">Error Code: 90</a></li>
+        
+            <li><a href="#error-code-91">Error Code: 91</a></li>
+        
+            <li><a href="#error-code-10000">Error Code: 10000</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9 main-content" role="main">
+
+
+
+
+<h1 id="error-codes-messages">Error Codes &amp; Messages</h1>
+<h2 id="error-code-1"><a href="#error-code-1"></a>Error Code: 1</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;1&quot;&gt;Invalid API key or user key&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Either the user and/or API keys are
+incorrect, or the API key has expired.</p>
+<p><strong>Solution</strong>: Check the user and API keys in the
+request. If the user key was entered accurately, then submit a
+request for a new API key.</p>
+<h2 id="error-code-2"><a href="#error-code-2"></a>Error Code: 2</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;2&quot;&gt;Invalid action&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The requested operation was not
+recognized by the API.</p>
+<p><strong>Solution</strong>: Verify that the requested operation is
+valid for the target object type. If that operation is allowed,
+then check for misspellings and other typos.</p>
+<h2 id="error-code-3"><a href="#error-code-3"></a>Error Code: 3</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;3&quot;&gt;Invalid prospect ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Pardot could not find a match for the
+provided prospect ID.</p>
+<p><strong>Solution</strong>: Verify that the prospect ID is
+accurate.</p>
+<h2 id="error-code-4"><a href="#error-code-4"></a>Error Code: 4</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;4&quot;&gt;Invalid prospect email address&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Pardot could not find a prospect with the provided email address (for read/update/delete),
+or the prospect email address is too long (&gt; 255 characters) or has invalid syntax
+(does not match <code>/^[^ @]{1,64}@[^ @]{1,255}\.[^ @]{2,13}$/</code>) (for create/upsert).</p>
+<p><strong>Solution</strong>: If running create/upsert, verify the email address is valid.
+If running read/update/delete, verify the a prospect with this email address exists in your Pardot account.</p>
+<h2 id="error-code-5"><a href="#error-code-5"></a>Error Code: 5</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;5&quot;&gt;Invalid query parameters&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Pardot did not recognize any of the
+provided search parameters.</p>
+<p><strong>Solution</strong>: Check parameter spellings. Also, ensure
+that the specified search parameter is supported by the API. See
+<a href="../prospects#supported-search-criteria">Supported
+Search Criteria</a> in <a href="../prospects">Querying
+Prospects</a> for more details.</p>
+<h2 id="error-code-6"><a href="#error-code-6"></a>Error Code: 6</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;6&quot;&gt;Invalid time frame&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The value of the
+<code>timeframe</code> search parameter was not recognized.</p>
+<p><strong>Solution</strong>: Check for misspellings in the
+<code>timeframe</code> value. Also, verify that the provided value
+is supported by the API. See <a href="../prospects#supported-search-criteria">Supported Search
+Criteria</a> in <a href="../prospects">Prospects</a>
+for supported <code>timeframe</code> values.</p>
+<h2 id="error-code-7"><a href="#error-code-7"></a>Error Code: 7</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;7&quot;&gt;Invalid timestamp&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Pardot could not decipher a specified
+timestamp.</p>
+<p><strong>Solution</strong>: Verify that the timestamp adheres to GNU
+standards for date and time input. See <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">
+GNU Date Input Format &amp; Syntax</a> for more information. Also,
+ensure all characters in the timestamp are URL safe. See <a href="../prospects#supported-search-criteria">Supported Search
+Criteria</a> in <a href="../prospects">Prospects</a>
+for supported values.</p>
+<h2 id="error-code-8"><a href="#error-code-8"></a>Error Code: 8</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;8&quot;&gt;Invalid time range&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided start timestamp is later
+than the end timestamp.</p>
+<p><strong>Solution</strong>: Swap the values of the timestamps.</p>
+<h2 id="error-code-9"><a href="#error-code-9"></a>Error Code: 9</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;9&quot;&gt;A prospect with the specified email address already exists&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided email address is already
+assigned to a prospect within Pardot. This can occur if a
+<code>create</code> request with the same email address is
+submitted more than once.</p>
+<p><strong>Solution</strong>: Check the existing prospect record to
+see if data can be merged through an <code>update</code>
+request.</p>
+<h2 id="error-code-10"><a href="#error-code-10"></a>Error Code: 10</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;10&quot;&gt;Invalid user ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided user ID does not exist in
+Pardot.</p>
+<p><strong>Solution</strong>: Verify that the user ID was typed
+correctly and matches the intended user in Pardot.</p>
+<h2 id="error-code-11"><a href="#error-code-11"></a>Error Code: 11</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;11&quot;&gt;Invalid user email address&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided user email address could
+not be found in Pardot.</p>
+<p><strong>Solution</strong>: Verify that the provided email address
+belongs to a registered Pardot user and that it was typed
+correctly.</p>
+<h2 id="error-code-12"><a href="#error-code-12"></a>Error Code: 12</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;12&quot;&gt;Invalid group ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided group ID does not exist
+in Pardot.</p>
+<p><strong>Solution</strong>: Verify that the group ID was typed
+correctly and matches the intended group in Pardot.</p>
+<h2 id="error-code-13"><a href="#error-code-13"></a>Error Code: 13</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;13&quot;&gt;One or more required parameters are missing&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: One or more of the required parameters
+for this type of request are missing.</p>
+<p><strong>Solution</strong>: Verify that all of the required
+parameters have been provided. Check that all parameter names were
+spelled accurately and as specified in <a href="../object-field-references">Object Field References</a>. Ensure the
+proper URL punctuation was used, including <code>?</code> before
+parameters and <code>&amp;</code> between parameters.</p>
+<h2 id="error-code-14"><a href="#error-code-14"></a>Error Code: 14</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;14&quot;&gt;Non-existent prospect ID; No email address provided&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The ID provided for the
+<code>upsert</code> was not valid, and no email address was
+provided for a new prospect to be created.</p>
+<p><strong>Solution</strong>: Verify the provided ID. If creating a
+new prospect was intended, ensure that an email address was
+provided.</p>
+<h2 id="error-code-15"><a href="#error-code-15"></a>Error Code: 15</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;15&quot;&gt;Login failed&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided email address, password,
+or user key is invalid.</p>
+<p><strong>Solution</strong>: Check the provided credentials for
+typos. Also, ensure that the specified user account has at least
+"Marketing" access privileges.</p>
+<h2 id="error-code-16"><a href="#error-code-16"></a>Error Code: 16</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;16&quot;&gt;Invalid ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided ID is not valid.</p>
+<p><strong>Solution</strong>: Ensure that only valid integer values
+were provided.</p>
+<h2 id="error-code-17"><a href="#error-code-17"></a>Error Code: 17</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;17&quot;&gt;Invalid ID range&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided ID range is not
+valid.</p>
+<p><strong>Solution</strong>: Swap the values of the specified
+IDs.</p>
+<h2 id="error-code-18"><a href="#error-code-18"></a>Error Code: 18</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;18&quot;&gt;Invalid value for profile criteria matching status&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided value for a profile
+criteria's matching status was not recognized.</p>
+<p><strong>Solution</strong>: Ensure that only the values
+<code>match</code>, <code>nomatch</code>, or <code>unknown</code>
+are being used.</p>
+<h2 id="error-code-19"><a href="#error-code-19"></a>Error Code: 19</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;19&quot;&gt;Invalid value specified for sort_by&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided value for the
+<code>sort_by</code> is not a supported sorting order.</p>
+<p><strong>Solution</strong>: Check that the specified sorting values
+are listed in Using (Object Type): Supported Sorting Options
+section for the target object.</p>
+<h2 id="error-code-20"><a href="#error-code-20"></a>Error Code: 20</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;20&quot;&gt;Invalid value specified for sort_order&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided value for the
+<code>sort_order</code> is not a supported sorting order.</p>
+<p><strong>Solution</strong>: Ensure that only the values
+<code>ascending</code> or <code>descending</code> are being
+used.</p>
+<h2 id="error-code-21"><a href="#error-code-21"></a>Error Code: 21</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;21&quot;&gt;Invalid value specified for offset&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided value for
+<code>offset</code> could not be interpreted as an integer.</p>
+<p><strong>Solution</strong>: Check for typos that may prevent the
+value from being interpreted.</p>
+<h2 id="error-code-22"><a href="#error-code-22"></a>Error Code: 22</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;22&quot;&gt;Unsupported feature in this version of the API&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The feature requested by the API call
+is not implemented in this version of the API.</p>
+<p><strong>Solution</strong>: Update the request to use the necessary
+API version.</p>
+<h2 id="error-code-23"><a href="#error-code-23"></a>Error Code: 23</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;23&quot;&gt;Invalid value specified for limit&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided value for
+<code>limit</code> is invalid.</p>
+<p><strong>Solution</strong>: Ensure that the provided value is an
+integer and is no larger than 200.</p>
+<h2 id="error-code-24"><a href="#error-code-24"></a>Error Code: 24</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;24&quot;&gt;Invalid visitor ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided visitor ID does not exist
+in Pardot.</p>
+<p><strong>Solution</strong>: Verify that the visitor ID was typed
+correctly and matches the intended visitor in Pardot.</p>
+<h2 id="error-code-25"><a href="#error-code-25"></a>Error Code: 25</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;25&quot;&gt;Parameter is_starred must be true or false&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The value specified for
+<code>is_starred</code> could not be interpreted as a boolean.</p>
+<p><strong>Solution</strong>: Verify that only the values
+<code>true</code> or <code>false</code> were specified.</p>
+<h2 id="error-code-26"><a href="#error-code-26"></a>Error Code: 26</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;26&quot;&gt;Parameter assigned must be true or false&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The value specified for
+<code>assigned</code> could not be interpreted as a boolean.</p>
+<p><strong>Solution</strong>: Verify that only the values
+<code>true</code> or <code>false</code> were specified.</p>
+<h2 id="error-code-27"><a href="#error-code-27"></a>Error Code: 27</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;27&quot;&gt;Parameter deleted must be true or false&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem:</strong> The value specified for
+<code>deleted</code> could not be interpreted as a boolean.</p>
+<p><strong>Solution:</strong> Verify that only the values
+<code>true</code> or <code>false</code> were specified.</p>
+<h2 id="error-code-28"><a href="#error-code-28"></a>Error Code: 28</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;28&quot;&gt;Parameter new must be true or false&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem:</strong> The value specified for
+<code>new</code> could not be interpreted as a boolean.</p>
+<p><strong>Solution:</strong> Verify that only the values
+<code>true</code> or <code>false</code> were specified.</p>
+<h2 id="error-code-29"><a href="#error-code-29"></a>Error Code: 29</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;29&quot;&gt;Invalid value specified for score&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The value specified for
+<code>score</code> could not be interpreted as an integer.</p>
+<p><strong>Solution</strong>: Check for typos that may prevent the
+value from being interpreted correctly.</p>
+<h2 id="error-code-30"><a href="#error-code-30"></a>Error Code: 30</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;30&quot;&gt;Invalid score range specified&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided score range is not
+valid.</p>
+<p><strong>Solution</strong>: Swap the values of the specified
+scores.</p>
+<h2 id="error-code-31"><a href="#error-code-31"></a>Error Code: 31</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;31&quot;&gt;Invalid combination of parameters for score&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: A conflicting set of query criteria
+for the prospect's score has been specified.</p>
+<p><strong>Solution</strong>: Make sure that
+<code>score_equal_to</code> is not being used in combination with
+<code>score_greater_than</code> or
+<code>score_less_than</code>.</p>
+<h2 id="error-code-32"><a href="#error-code-32"></a>Error Code: 32</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;32&quot;&gt;Invalid value specified for grade&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The value specified for
+<code>grade</code> is not one of the allowed options.</p>
+<p><strong>Solution</strong>: Check for typos that may prevent
+<code>grade</code> from being interpreted correctly. See <a href="../prospects#supported-search-criteria">Supported Search
+Criteria</a> in <a href="../prospects">Prospects</a>
+for supported values. Also, ensure that the specified grades are
+URL-encoded.</p>
+<h2 id="error-code-33"><a href="#error-code-33"></a>Error Code: 33</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;33&quot;&gt;Invalid grade range specified&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided grade range is not
+valid.</p>
+<p><strong>Solution</strong>: Swap the values of the specified
+grades.</p>
+<h2 id="error-code-34"><a href="#error-code-34"></a>Error Code: 34</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;34&quot;&gt;Invalid combination of parameters for grade&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: A conflicting set of query criteria
+for the grade has been specified.</p>
+<p><strong>Solution</strong>: Make sure that
+<code>grade_equal_to</code> is not being used in combination with
+<code>grade_greater_than</code> or
+<code>grade_less_than</code>.</p>
+<h2 id="error-code-35"><a href="#error-code-35"></a>Error Code: 35</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;35&quot;&gt;Invalid opportunity ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Pardot could not find a match for the
+provided opportunity ID.</p>
+<p><strong>Solution</strong>: Verify that the opportunity ID is
+accurate.</p>
+<h2 id="error-code-36"><a href="#error-code-36"></a>Error Code: 36</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;36&quot;&gt;One or more required parameter values are missing&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Some of the parameters necessary to
+complete the specified API request were omitted from the
+request.</p>
+<p><strong>Solution</strong>: Ensure that all required parameters have
+been included. In addition, check from typos in the parameter
+names. Also check that the request has been properly formatted.</p>
+<h2 id="error-code-37"><a href="#error-code-37"></a>Error Code: 37</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;37&quot;&gt;A SalesForce connector was detected&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Your Pardot account has a SalesForce
+connector. When a SalesForce connector is present, opportunities
+cannot be modified by Pardot.</p>
+<p><strong>Solution</strong>: <strong><em>(NOT
+RECOMMENDED)</em></strong> Deleting the SalesForce connector will
+allow for opportunity modification to be done through the API.
+However, doing so will disable synchronization with SalesForce. If
+a SalesForce connector is present, modifications to opportunities
+must be done within SalesForce.</p>
+<h2 id="error-code-38"><a href="#error-code-38"></a>Error Code: 38</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;38&quot;&gt;Invalid campaign ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Pardot could not find a match for the
+provided campaign ID.</p>
+<p><strong>Solution</strong>: Verify that the campaign ID is
+accurate.</p>
+<h2 id="error-code-39"><a href="#error-code-39"></a>Error Code: 39</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;39&quot;&gt;Invalid profile ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Pardot could not find a match for the
+provided profile ID.</p>
+<p><strong>Solution</strong>: Verify that the profile ID is
+accurate.</p>
+<h2 id="error-code-40"><a href="#error-code-40"></a>Error Code: 40</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;40&quot;&gt;Invalid opportunity probability&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The value specified for
+<code>probability</code> is not valid.</p>
+<p><strong>Solution</strong>: Ensure that the specified value is a
+number between 0 and 100 inclusive.</p>
+<h2 id="error-code-41"><a href="#error-code-41"></a>Error Code: 41</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;41&quot;&gt;Invalid probability range specified&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The specified probability range is not
+valid.</p>
+<p><strong>Solution</strong>: Ensure that the specified values are
+numbers between 0 and 100 inclusive. It may also be necessary to
+swap the values of the specified probabilities.</p>
+<h2 id="error-code-42"><a href="#error-code-42"></a>Error Code: 42</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;42&quot;&gt;Invalid opportunity value&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The value specified for
+<code>value</code> is not valid.</p>
+<p><strong>Solution</strong>: Ensure that the specified value is a
+non-negative number.</p>
+<h2 id="error-code-43"><a href="#error-code-43"></a>Error Code: 43</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;43&quot;&gt;Invalid opportunity value range specified&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The specified value range is not
+valid.</p>
+<p><strong>Solution</strong>: Ensure that the specified values are
+non-negative numbers. It may also be necessary to swap the
+specified values.</p>
+<h2 id="error-code-44"><a href="#error-code-44"></a>Error Code: 44</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;44&quot;&gt;The provided prospect_id and prospect_email parameters do not match&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The specified
+<code>prospect_email</code> and <code>prospect_id</code> parameters
+do not correspond to the same prospect.</p>
+<p><strong>Solution</strong>: Ensure that the specified email address
+and the ID both correspond to the desired prospect. (Note:
+Typically, only one of these parameters is required. Consider
+omitting one of them.)</p>
+<h2 id="error-code-45"><a href="#error-code-45"></a>Error Code: 45</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;45&quot;&gt;The provided user_id and user_email parameters do not match&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The specified <code>user_id</code> and
+<code>user_email</code> parameters do not correspond to the same
+user.</p>
+<p><strong>Solution</strong>: Ensure that the specified email address
+and the ID both correspond to the desired user. (Note: Typically,
+only one of these parameters is required. Consider omitting one of
+them.)</p>
+<h2 id="error-code-46"><a href="#error-code-46"></a>Error Code: 46</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;46&quot;&gt;This API user lacks sufficient permissions for the requested operation&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The currently authenticated API user
+has does not have the necessary permissions to perform the
+requested operation.</p>
+<p><strong>Solution</strong>: Some API operations are only available
+to users with Administrative permissions. If the requested
+operation has such a requirement, re-authenticate as an
+administrative user and resubmit the request. See the <a href="../authentication">Authentication</a> section for more
+information.</p>
+<h2 id="error-code-47"><a href="#error-code-47"></a>Error Code: 47</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;47&quot;&gt;Multiple assignment targets were specified&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: More than one object was specified as
+a target for this <code>ASSIGN</code> request. For example, both a
+group and user may have been specified as targets of a prospect
+assignment.</p>
+<p><strong>Solution</strong>: Ensure that only one target is specified
+when submitting an <code>ASSIGN</code> request.</p>
+<h2 id="error-code-48"><a href="#error-code-48"></a>Error Code: 48</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;48&quot;&gt;Invalid visit ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided visit ID does not exist
+in Pardot.</p>
+<p><strong>Solution</strong>: Verify that the visit ID was typed
+correctly and matches the intended visit in Pardot.</p>
+<h2 id="error-code-50"><a href="#error-code-50"></a>Error Code: 50</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;50&quot;&gt;Invalid boolean&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Need a valid boolean value, like
+true.</p>
+<p><strong>Solution</strong>: Make sure to use lowercase.</p>
+<h2 id="error-code-51"><a href="#error-code-51"></a>Error Code: 51</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;51&quot;&gt;Invalid parameter&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Object type is invalid.</p>
+<p><strong>Solution</strong>: Change the object type to one of the
+allowed types.</p>
+<h2 id="error-code-53"><a href="#error-code-53"></a>Error Code: 53</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;53&quot;&gt;Client IP address/location must be activated before accessing API&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: IP is not whitelisted.</p>
+<p><strong>Solution</strong>: Whitelist IP address to access the
+API</p>
+<h2 id="error-code-54"><a href="#error-code-54"></a>Error Code: 54</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;54&quot;&gt;Email address is already in use&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Email address is already being used by
+other prospect</p>
+<p><strong>Solution</strong>: Use different email address.</p>
+<h2 id="error-code-55"><a href="#error-code-55"></a>Error Code: 55</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;55&quot;&gt;Invalid list ID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: You either did not specify the list
+ID, or that List ID doesn't exist.</p>
+<p><strong>Solution</strong>: Specify an ID, or check to make sure
+using the correct ID.</p>
+<h2 id="error-code-56"><a href="#error-code-56"></a>Error Code: 56</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;56&quot;&gt;Invalid number entered for field&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The value entered doesn't match the
+field's type of Number.</p>
+<p><strong>Solution</strong>: Verify that there are no characters in
+the value.</p>
+<h2 id="error-code-57"><a href="#error-code-57"></a>Error Code: 57</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;57&quot;&gt;Invalid date entered for field&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The value entered doesn't match the
+field's type of Date, it is an invalid format.</p>
+<p><strong>Solution</strong>: Verify that the timestamp adheres to GNU
+standards for date and time input. See <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">
+GNU Date Input Format &amp; Syntax</a> for more information. Also,
+ensure all characters in the timestamp are URL safe. See <a href="../prospects#supported-search-criteria">Supported Search
+Criteria</a> in <a href="../prospects">Prospects</a>
+for supported values.</p>
+<h2 id="error-code-58"><a href="#error-code-58"></a>Error Code: 58</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;58&quot;&gt;That prospect is already a memeber of that list. Update the membership instead.&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The prospect is a member of the list
+already.</p>
+<p><strong>Solution</strong>: Update the membership.</p>
+<h2 id="error-code-59"><a href="#error-code-59"></a>Error Code: 59</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;59&quot;&gt;A CRM connector was detected/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Your Pardot account has a CRM
+connector. When a CRM connector is present, opportunities cannot be
+modified by Pardot.</p>
+<p><strong>Solution</strong>: <strong><em>(NOT
+RECOMMENDED)</em></strong> Deleting the CRM connector will allow
+for opportunity modification to be done through the API. However,
+doing so will disable synchronization with your CRM. If a CRM
+connector is present, modifications to opportunities must be done
+within your CRM.</p>
+<h2 id="error-code-60"><a href="#error-code-60"></a>Error Code: 60</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;60&quot;&gt;Invalid HTTP request method&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Cannot delete with this method.</p>
+<p><strong>Solution</strong>: Use methods POST or DELETE.</p>
+<h2 id="error-code-61"><a href="#error-code-61"></a>Error Code: 61</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;61&quot;&gt;Invalid prospect account id&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Prospect Account ID was incorrect or
+doesn't exist.</p>
+<p><strong>Solution</strong>: Verify that the prospect account ID was
+typed correctly and matches the intended Propsect Account in
+Pardot.</p>
+<h2 id="error-code-62"><a href="#error-code-62"></a>Error Code: 62</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;62&quot;&gt;Conflicting Update&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Another update is occurring at the
+same time.</p>
+<p><strong>Solution</strong>: Wait before performing this action.</p>
+<h2 id="error-code-63"><a href="#error-code-63"></a>Error Code: 63</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;63&quot;&gt;Too many IDs specified&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: There is a limit on how many IDs you
+can specify for this query</p>
+<p><strong>Solution</strong>: Lower the amount of IDs you are querying
+for.</p>
+<h2 id="error-code-64"><a href="#error-code-64"></a>Error Code: 64</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;64&quot;&gt;Email content missing required variables&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The content of the email is missing
+required variables</p>
+<p><strong>Solution</strong>: Ensure that all required variables, such
+as unsubscribe link, are present</p>
+<h2 id="error-code-65"><a href="#error-code-65"></a>Error Code: 65</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;65&quot;&gt;Invalide email format&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Doesn't have all required fields
+present or are not in proper format, such as from address</p>
+<p><strong>Solution</strong>: Ensure all fields are present,
+populated, and in proper format.</p>
+<h2 id="error-code-66"><a href="#error-code-66"></a>Error Code: 66</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;66&quot;&gt;You have exceeded your concurrent request limit.  Please wait, before trying again&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Have made too many requests in this
+time period.</p>
+<p><strong>Solution</strong>: Wait a little before making more
+requests.</p>
+<h2 id="error-code-67"><a href="#error-code-67"></a>Error Code: 67</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;67&quot;&gt;You have reached or exceeded the limit of how many of this type of object you may have.&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: You have too many of this object type to create more</p>
+<p><strong>Solution</strong>: Delete some of the object if you need to make more</p>
+<h2 id="error-code-68"><a href="#error-code-68"></a>Error Code: 68</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;68&quot;&gt;Template with this id does not exist.&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The template you are trying to access does not exist</p>
+<p><strong>Solution</strong>: Make sure you are using the correct template ID or create a new one to use.</p>
+<h2 id="error-code-70"><a href="#error-code-70"></a>Error Code: 70</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;70&quot;&gt;Batch processing is limited to 50 prospects at once.&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: You are requesting to batch more prospects in an operation than we allow</p>
+<p><strong>Solution</strong>: Ensure that your batch request has 50 or fewer prospects</p>
+<h2 id="error-code-71"><a href="#error-code-71"></a>Error Code: 71</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;71&quot;&gt;Input needs to be valid JSON or XML&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: You've inputted invalid JSON or XML</p>
+<p><strong>Solution</strong>: Ensure that your request is properly formatted</p>
+<h2 id="error-code-72"><a href="#error-code-72"></a>Error Code: 72</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;72&quot;&gt;JSON has been corrupted, hash does not match&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The encoded JSON has been corrupted at some point</p>
+<p><strong>Solution</strong>: Please ensure that you are sending the correct information</p>
+<h2 id="error-code-73"><a href="#error-code-73"></a>Error Code: 73</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;73&quot;&gt;Currently there is not an Email Plug-in Campaign associated to successfully track this email. Please contact your Pardot administrator to ensure there is a proper campaign associated with the Account Settings in Pardot.&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Currently there is not an Email Plug-in Campaign associated to successfully track this email</p>
+<p><strong>Solution</strong>: Please contact your Pardot administrator to ensure there is a proper campaign associated with the Account Settings in Pardot</p>
+<h2 id="error-code-74"><a href="#error-code-74"></a>Error Code: 74</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;74&quot;&gt;The email client is not supported by the plugin API&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The email client used is not supported by this API</p>
+<p><strong>Solution</strong>: Please use an appropriate email client</p>
+<h2 id="error-code-75"><a href="#error-code-75"></a>Error Code: 75</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;75&quot;&gt;There was an error processing the request for the account variable tags&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: There was an error processing the request for the account variable tags</p>
+<p><strong>Solution</strong>: Please review the variable tags, and resubmit the request</p>
+<h2 id="error-code-76"><a href="#error-code-76"></a>Error Code: 76</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;76&quot;&gt;API access was disabled&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: API access for your account has been disabled</p>
+<p><strong>Solution</strong>: Contact customer support</p>
+<h2 id="error-code-77"><a href="#error-code-77"></a>Error Code: 77</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;77&quot;&gt;Invalid prospect fid&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided Prospect FID was invalid</p>
+<p><strong>Solution</strong>: Please provide a valid Prospect FID</p>
+<h2 id="error-code-79"><a href="#error-code-79"></a>Error Code: 79</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;79&quot;&gt;Invalid CRM_FID&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The CRM FID provided is invalid</p>
+<p><strong>Solution</strong>: Please provide a valid CRM FID that can be accessed by your account, or is already attached to a prospect</p>
+<h2 id="error-code-80"><a href="#error-code-80"></a>Error Code: 80</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;80&quot;&gt;Invalid CRM_TYPE&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The CRM type provided or used is invalid</p>
+<p><strong>Solution</strong>: Please specify a correct CRM type</p>
+<h2 id="error-code-81"><a href="#error-code-81"></a>Error Code: 81</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;81&quot;&gt;Prospect ID and FID do not match&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The provided Prospect ID and FID do not match a single prospect</p>
+<p><strong>Solution</strong>: Please provide a prospect ID and FID that match a single prospect</p>
+<h2 id="error-code-83"><a href="#error-code-83"></a>Error Code: 83</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;83&quot;&gt;No valid CRM connectors available&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: Your account does not have an available CRM connector</p>
+<p><strong>Solution</strong>: Please add a CRM connector to your account</p>
+<h2 id="error-code-85"><a href="#error-code-85"></a>Error Code: 85</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;85&quot;&gt;Unable to save the prospect&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: For some reason, the prospect was not saved</p>
+<p><strong>Solution</strong>: Please resubmit the request or review the original request for errors</p>
+<h2 id="error-code-86"><a href="#error-code-86"></a>Error Code: 86</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;86&quot;&gt;Invalid Template id&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The template ID provided does not correspond to a template</p>
+<p><strong>Solution</strong>: Please provide a template ID that is valid</p>
+<h2 id="error-code-88"><a href="#error-code-88"></a>Error Code: 88</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;88&quot;&gt;Your account must use version 4 of the API.&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: You have requested version 3 of the API, but your account must use version 4.</p>
+<p><strong>Solution</strong>: Please make the request using <code>/version/4</code> in place of <code>/version/3</code></p>
+<h2 id="error-code-89"><a href="#error-code-89"></a>Error Code: 89</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;89&quot;&gt;Your account is unable to use version 4 of the API.&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: You have requested version 4 of the API, but your account must use version 3.</p>
+<p><strong>Solution</strong>: Please make the request using <code>/version/3</code> in place of <code>/version/4</code></p>
+<h2 id="error-code-90"><a href="#error-code-90"></a>Error Code: 90</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;90&quot;&gt;Prospect array should be a flat array of attributes&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The prospect array given was not a flat array, and it should have been</p>
+<p><strong>Solution</strong>: Resubmit the request with a flat array. <a href="../../kb/api-version-4/prospects#endpoints-for-batch-processing">example</a></p>
+<h2 id="error-code-91"><a href="#error-code-91"></a>Error Code: 91</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    &lt;err code=&quot;91&quot;&gt;Prospect array must be keyed by email address&lt;/err&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: The prospect array given was not keyed by email addresses, but should have been</p>
+<p><strong>Solution</strong>: Resubmit the request with an array keyed by email addresses. <a href="../../kb/api-version-3/prospects#endpoints-for-batch-processing">example</a></p>
+<h2 id="error-code-10000"><a href="#error-code-10000"></a>Error Code: 10000</h2>
+<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
+    ...
+    &lt;err code=&quot;10000&quot; param=&quot;...&quot;&gt;...&lt;/err&gt;
+    ...
+&lt;/rsp&gt;
+</code></pre>
+
+<p><strong>Problem</strong>: An error occurred when processing the
+parameter designated in the <code>param</code> attribute of the
+<code>&lt;err&gt;</code> node. Several <code>&lt;err&gt;</code>
+nodes may be contained within the <code>``
+&lt;rsp&gt;</code> node if
+multiple errors occurred.</p>
+<p><strong>Solution</strong>: The <code>msg</code> attribute of each
+<code>&lt;err&gt;</code> node should contain advice as to how to
+remedy the error(s).</p></div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>

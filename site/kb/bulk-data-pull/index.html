@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://developer.pardot.com/kb/bulk-data-pull/">
+        <link rel="shortcut icon" href="../../favicon.ico">
+        
+
+        <title>Bulk Data Pull - Pardot API Documentation</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Pardot API Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                
+                    <li >
+                        <a href="../..">Overview</a>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../api-version-4/">Version 4</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../object-field-references/">Object Field References</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../error-codes-messages/">Error Codes & Messages</a>
+                            </li>
+                        
+                            <li class="active">
+                                <a href="./">Bulk Data Pull</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../api-version-3/accounts/">Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/campaigns/">Campaigns</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/custom-fields/">Custom Fields</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/custom-redirects/">Custom Redirects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/dynamic-content/">Dynamic Content</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/emails/">Email</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/batch-email-clicks/">Email Clicks</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/email-templates/">Email Templates</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/forms/">Forms</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/lifecycle-histories/">Lifecycle Histories</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/lifecycle-stages/">Lifecycle Stages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/lists/">Lists</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/list-memberships/">List Memberships</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/opportunities/">Opportunities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/prospects/">Prospects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/prospect-accounts/">Prospect Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/tags/">Tags</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/tag-objects/">TagObjects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/users/">Users</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/visitors/">Visitors</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/visitor-activities/">Visitor Activities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-3/visits/">Visits</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../api-version-4/accounts/">Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/campaigns/">Campaigns</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/custom-fields/">Custom Fields</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/custom-redirects/">Custom Redirects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/dynamic-content/">Dynamic Content</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/emails/">Email</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/batch-email-clicks/">Email Clicks</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/email-templates/">Email Templates</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/forms/">Forms</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/lifecycle-histories/">Lifecycle Histories</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/lifecycle-stages/">Lifecycle Stages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/lists/">Lists</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/list-memberships/">List Memberships</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/opportunities/">Opportunities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/prospects/">Prospects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/prospect-accounts/">Prospect Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/tags/">Tags</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/tag-objects/">TagObjects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/users/">Users</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/visitors/">Visitors</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/visitor-activities/">Visitor Activities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../api-version-4/visits/">Visits</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a rel="next" href="../error-codes-messages/">
+                    <i class="fa fa-arrow-left"></i> Error Codes & Messages
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="prev" href="../api-version-3/object-field-references/">
+                    Object field references <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/Pardot/api-docs" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#bulk-data-pull-via-the-pardot-api">Bulk Data Pull via the Pardot API</a></li>
+        
+            <li><a href="#query-the-pardot-api">Query the Pardot API</a></li>
+        
+            <li><a href="#example-of-paging-through-a-large-set-of-results">Example of Paging through a Large Set of Results</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9 main-content" role="main">
+
+
+
+
+<h1 id="bulk-data-pull-via-the-pardot-api">Bulk Data Pull via the Pardot API</h1>
+<p>This document outlines the approach and best practices around pulling a large amount of data out of Pardot via the API, typically for ingestion into a third-party system or internal data warehouse.</p>
+<p>Pulling data from Pardot is a straightforward, two-step process. First, log in with your Pardot user email, password, and user key to acquire an API key. Then, use the query endpoint for each data set to pull the data.</p>
+<h2 id="query-the-pardot-api">Query the Pardot API</h2>
+<p>Before getting started, review the documentation at http://developer.pardot.com and determine which data set you are going to pull. For a data set to be eligible for a bulk data pull, it must have a query operation that supports at least one of the following three sets of search filter criteria parameters:</p>
+<ul>
+<li><code>created_before</code> and <code>created_after</code></li>
+<li><code>updated_before</code> and <code>updated_after</code></li>
+<li><code>id_greater_than</code> and <code>id_less_than</code></li>
+</ul>
+<p>Issue an HTTP GET to the appropriate query endpoint to pull the data back. Include your <code>user_key</code> and <code>api_key</code> as URL parameters. The query response will contain up to 200 rows from the data set you have requested.</p>
+<h3 id="best-practice-1-use-the-bulk-output-format">Best Practice #1 ‐ Use the Bulk Output Format</h3>
+<p>For bulk data pulls, we strongly recommended that you use the <code>bulk</code> output format, which is highly optimized for performance. The <code>bulk</code> output format disables functionality which displays additional data in the API response such as nested object relationships (e.g. campaign name for activities, etc.). Additionally, the bulk output format omits information about the total number of rows that matched your query, which enables the API to return a response more quickly.</p>
+<h3 id="best-practice-2-avoid-offset">Best Practice #2 ‐ Avoid Offset</h3>
+<p>For bulk data pulls, we strongly discourage use of the <code>offset</code> parameter. Instead, iterate through the data set using one of the supported search filter criteria parameters.</p>
+<p>To accomplish this, as you process the query results in your code, store a high water mark value - the largest <code>id</code> or most recent <code>created_at</code> or <code>updated_at</code> value. Then, on your next query, send that high water mark value as the <code>id_greater_than</code>, <code>created_after</code>, or <code>updated_after</code> search filter parameter value.</p>
+<h3 id="bulk-api-request-response-samples">Bulk API Request &amp; Response Samples</h3>
+<p>Example Request &amp; Response (XML)</p>
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=1234567890abcdef1234567890abcdef&amp;api_key=fedcba0987654321fedcba0987654321&amp;output=bulk
+</code></pre>
+
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+    &lt;result&gt;
+        &lt;visitor_activity&gt;
+            &lt;id&gt;23807&lt;/id&gt;
+            &lt;visitor_id&gt;14692&lt;/visitor_id&gt;
+            &lt;prospect_id&gt;621&lt;/prospect_id&gt;
+            &lt;type&gt;1&lt;/type&gt;
+            &lt;type_name&gt;Email Tracker&lt;/type_name&gt;
+            &lt;details&gt;http://www.pardot.com/products/demos/flash-demo.html&lt;/details&gt;
+            &lt;email_id&gt;764&lt;/email_id&gt;
+            &lt;campaign_id&gt;1&lt;/campaign_id&gt;
+            &lt;created_at&gt;2007-08-09 19:29:07&lt;/created_at&gt;
+            &lt;/visitor_activity&gt; &lt;visitor_activity&gt;
+            &lt;id&gt;23815&lt;/id&gt;
+            &lt;visitor_id&gt;14692&lt;/visitor_id&gt;
+            &lt;prospect_id&gt;621&lt;/prospect_id&gt;
+            &lt;type&gt;1&lt;/type&gt;
+            &lt;type_name&gt;Email Tracker&lt;/type_name&gt;
+            &lt;details&gt;http://www.pardot.com/products/demos/flash-demo.html&lt;/details&gt;
+            &lt;email_id&gt;764&lt;/email_id&gt;
+            &lt;campaign_id&gt;1&lt;/campaign_id&gt;
+            &lt;created_at&gt;2007-08-09 20:13:40&lt;/created_at&gt;
+        &lt;/visitor_activity&gt;
+    &lt;/result&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<p>Example Request &amp; Response (JSON)</p>
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=1234567890abcdef1234567890abcdef&amp;api_key=fedcba0987654321fedcba0987654321&amp;output=bulk&amp;format=json
+</code></pre>
+
+<pre><code class="json">{
+    &quot;@attributes&quot;: {
+        &quot;stat&quot;: &quot;ok&quot;,
+        &quot;version&quot;: 1
+    },
+    &quot;result&quot;: {
+        &quot;visitor_activity&quot;: [
+        {
+            &quot;id&quot;: 23807,
+            &quot;visitor_id&quot;: 14692,
+            &quot;prospect_id&quot;: 621,
+            &quot;type&quot;: 1,
+            &quot;type_name&quot;: &quot;Email Tracker&quot;,
+            &quot;details&quot;: &quot;http:\/\/www.pardot.com\/products\/demos\/flash-demo.html&quot;,
+            &quot;email_id&quot;: 764,
+            &quot;campaign_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2007-08-09 19:29:07&quot;
+        }, {
+            &quot;id&quot;: 23815,
+            &quot;visitor_id&quot;: 14692,
+            &quot;prospect_id&quot;: 621,
+            &quot;type&quot;: 1,
+            &quot;type_name&quot;: &quot;Email Tracker&quot;,
+            &quot;details&quot;: &quot;http:\/\/www.pardot.com\/products\/demos\/flash-demo.html&quot;,
+            &quot;email_id&quot;: 764,
+            &quot;campaign_id&quot;: 1,
+            &quot;created_at&quot;: &quot;2007-08-09 20:13:40&quot;
+        }]
+    }
+}
+</code></pre>
+
+<h2 id="example-of-paging-through-a-large-set-of-results">Example of Paging through a Large Set of Results</h2>
+<p>Because using the offset parameter is strongly discouraged, let’s see how you can use a high water mark value to iterate through multiple pages of results instead. In this example, you will query for all visitor activities that occurred yesterday. This is a perfect match for the <code>created_after</code> and <code>created_before</code> search filter criteria parameters.</p>
+<p>To keep things simple, assume there were a total of 5 activities created yesterday (at time of writing, 2016-03-29) at times 02:00, 06:00, 10:00, 14:00, and 18:00. Also assume the API page size limit is 2 rather than 200.</p>
+<p>To iterate over the results in the suggested approach, your API integration process would proceed as follows:
+1. Log in to the Pardot API
+2. Pull all visitor activity created after yesterday at midnight (<code>2016-03-29T00:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</p>
+<p>Example Request &amp; Response (JSON)</p>
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&amp;api_key=Y&amp;output=bulk&amp;format=json&amp;created_after=2016-03-29T00:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending
+</code></pre>
+
+<pre><code class="json">{
+    &quot;@attributes&quot;: {
+        &quot;stat&quot;: &quot;ok&quot;,
+        &quot;version&quot;: 1
+    },
+    &quot;result&quot;: {
+        &quot;visitor_activity&quot;: [
+        {
+            &quot;id&quot;: 23807,
+            &quot;created_at&quot;: &quot;2016-03-29 02:00:00&quot;
+        }, {
+            &quot;id&quot;: 24531,
+            &quot;created_at&quot;: &quot;2016-03-29 06:00:00&quot;
+        }]
+    }
+}
+</code></pre>
+
+<p><em>Note</em>: the above example was edited for brevity</p>
+<ol>
+<li>The API has returned two results - the activities from 02:00 and 06:00. Since you are paging by <code>created_at</code>, set your high water mark value to the <code>created_at</code> value of the last record you pull back, <code>2016-03-30T06:00:00</code>. You have now retrieved all activities up to that time.</li>
+<li>Pull all visitor activity created after your high water mark (<code>2016-03-29T06:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</li>
+</ol>
+<p>Example Request &amp; Response (JSON)</p>
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&amp;api_key=Y&amp;output=bulk&amp;format=json&amp;created_after=2016-03-29T06:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending
+</code></pre>
+
+<pre><code class="json">{
+    &quot;@attributes&quot;: {
+        &quot;stat&quot;: &quot;ok&quot;,
+        &quot;version&quot;: 1
+    },
+    &quot;result&quot;: {
+        &quot;visitor_activity&quot;: [
+        {
+            &quot;id&quot;: 27093,
+            &quot;created_at&quot;: &quot;2016-03-29 10:00:00&quot;
+        },
+        {
+            &quot;id&quot;: 27588,
+            &quot;created_at&quot;: &quot;2016-03-29 14:00:00&quot;
+        }]
+    }
+}
+</code></pre>
+
+<p><em>Note</em>: the above example was edited for brevity</p>
+<ol>
+<li>The API returns two more results back - the activities from 10:00 and 14:00. Since you are paging by <code>created_at</code>, update your high water mark value to the <code>created_at</code> value of the last record you pull back, <code>2016-03-29T14:00:00</code>. You have now retrieved all activities up to that time.</li>
+<li>Pull all visitor activity created after your high water mark (<code>2016-03-29T14:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</li>
+</ol>
+<p>Example Request &amp; Response (JSON)</p>
+<pre><code class="bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&amp;api_key=Y&amp;output=bulk&amp;format=json&amp;created_after=2016-03-29T14:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending
+</code></pre>
+
+<pre><code class="json">{
+    &quot;@attributes&quot;: {
+        &quot;stat&quot;: &quot;ok&quot;,
+        &quot;version&quot;: 1
+    },
+    &quot;result&quot;: {
+        &quot;visitor_activity&quot;: [
+        {
+            &quot;id&quot;: 30017,
+            &quot;created_at&quot;: &quot;2016-03-29 18:00:00&quot;
+        }]
+    }
+}
+</code></pre>
+
+<p><em>Note</em>: the above example was edited for brevity</p>
+<ol>
+<li>The API returns one result back, the activity from 18:00. As the max page size is 2 and the API returned one record, you know you are at the end of the list of records and do not need to query any further. If the API had returned 2 records you would repeat the query process again with a new high water mark. You know it’s safe to stop when the number of records returned by the API is less than the max page size.</li>
+</ol></div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>
