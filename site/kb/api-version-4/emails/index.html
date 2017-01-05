@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="http://developer.pardot.com/kb/api-version-4/emails/">
+        <link rel="shortcut icon" href="../../../favicon.ico">
+        
+
+        <title>Email - Pardot API Documentation</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Pardot API Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                
+                    <li >
+                        <a href="../../..">Overview</a>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../">Version 4</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../object-field-references/">Object Field References</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../error-codes-messages/">Error Codes & Messages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../bulk-data-pull/">Bulk Data Pull</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../../api-version-3/accounts/">Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/campaigns/">Campaigns</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/custom-fields/">Custom Fields</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/custom-redirects/">Custom Redirects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/dynamic-content/">Dynamic Content</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/emails/">Email</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/batch-email-clicks/">Email Clicks</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/email-templates/">Email Templates</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/forms/">Forms</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/lifecycle-histories/">Lifecycle Histories</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/lifecycle-stages/">Lifecycle Stages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/lists/">Lists</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/list-memberships/">List Memberships</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/opportunities/">Opportunities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/prospects/">Prospects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/prospect-accounts/">Prospect Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/tags/">Tags</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/tag-objects/">TagObjects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/users/">Users</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/visitors/">Visitors</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/visitor-activities/">Visitor Activities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../../api-version-3/visits/">Visits</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li >
+                                <a href="../accounts/">Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../campaigns/">Campaigns</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../custom-fields/">Custom Fields</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../custom-redirects/">Custom Redirects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../dynamic-content/">Dynamic Content</a>
+                            </li>
+                        
+                            <li class="active">
+                                <a href="./">Email</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../batch-email-clicks/">Email Clicks</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../email-templates/">Email Templates</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../forms/">Forms</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../lifecycle-histories/">Lifecycle Histories</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../lifecycle-stages/">Lifecycle Stages</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../lists/">Lists</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../list-memberships/">List Memberships</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../opportunities/">Opportunities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../prospects/">Prospects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../prospect-accounts/">Prospect Accounts</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../tags/">Tags</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../tag-objects/">TagObjects</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../users/">Users</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../visitors/">Visitors</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../visitor-activities/">Visitor Activities</a>
+                            </li>
+                        
+                            <li >
+                                <a href="../visits/">Visits</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                
+                <li>
+                    <a rel="next" href="../dynamic-content/">
+                    <i class="fa fa-arrow-left"></i> Dynamic Content
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="prev" href="../batch-email-clicks/">
+                    Email Clicks <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a href="https://github.com/Pardot/api-docs" target="_blank">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#reading-emails">Reading Emails</a></li>
+        
+            <li><a href="#supported-operations">Supported Operations</a></li>
+        
+            <li><a href="#xml-response-format">XML Response Format</a></li>
+        
+    
+        <li class="main "><a href="#sending-one-to-one-emails">Sending One To One Emails</a></li>
+        
+            <li><a href="#supported-operations_1">Supported Operations</a></li>
+        
+            <li><a href="#supported-parameters">Supported Parameters</a></li>
+        
+            <li><a href="#example-requests">Example Requests</a></li>
+        
+            <li><a href="#xml-response-format_1">XML Response Format</a></li>
+        
+    
+        <li class="main "><a href="#sending-list-emails">Sending List Emails</a></li>
+        
+            <li><a href="#supported-operations_2">Supported Operations</a></li>
+        
+            <li><a href="#supported-parameters_1">Supported Parameters</a></li>
+        
+            <li><a href="#example-requests_1">Example Requests</a></li>
+        
+            <li><a href="#xml-response-format_2">XML Response Format</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9 main-content" role="main">
+
+
+
+<a href="../../../kb/api-version-3/emails">Looking for version 3?</a>
+
+
+<h1 id="reading-emails">Reading Emails</h1>
+<h2 id="supported-operations">Supported Operations<a name="71862-supported-operations" id="supported-operations"></a></h2>
+<p>For a complete list of fields involved in user operations, see the <a href="../object-field-references#email">Email</a> section of <a href="../object-field-references">Object Field References</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Required Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>read</code></td>
+<td><code>/api/email/version/4/do/read/id/&lt;email id&gt;?...</code></td>
+<td><code>user_key, api_key, email</code></td>
+<td>Returns the data for the email specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target target email.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xml-response-format">XML Response Format</h2>
+<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+    &lt;email&gt;
+        ...
+    &lt;/email&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th><strong>Tag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;email&gt;</code></td>
+<td>Parent tag. Contains data fields for target email. For complete field listing, see <a href="../object-field-references#email">email</a> in <a href="../object-field-references">Object Field References</a>.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="sending-one-to-one-emails">Sending One To One Emails</h1>
+<h2 id="supported-operations_1"><a href="#supported-operations-a-name-supported-operations-id-supported-operations-a-"></a>Supported Operations<a name="82871-supported-operations" id="supported-operations"></a></h2>
+<p>For a complete list of fields involved in user operations, see the <a href="../object-field-references#email">Email</a> section of <a href="../object-field-references">Object Field References</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Required Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>send</code></td>
+<td><code>/api/email/version/ 3/do/send/prospect_id/&lt;prospect_id&gt;?...</code></td>
+<td><code>user_key, api_key, campaign_id, (email_template_id OR (text_content, name, subject, &amp; ((from_email &amp; from_name) OR from_user_id)))</code></td>
+<td>Sends a one-to-one email to the prospect identified by <code>&lt;prospect_id&gt;</code></td>
+</tr>
+<tr>
+<td><code>send</code></td>
+<td><code>/api/email/version/ 3/do/send/prospect_email/&lt;prospect_email&gt;?...</code></td>
+<td><code>user_key, api_key, campaign_id, (email_template_id OR (text_content, name, subject, &amp; ((from_email &amp; from_name) OR from_user_id)))</code></td>
+<td>Sends a one-to-one email to the prospect identified by <code>&lt;prospect_email&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-parameters"><a href="#supported-parameters-"></a>Supported Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_key</td>
+<td>x</td>
+<td>string</td>
+<td>Your API user key. Required for all API requests.</td>
+</tr>
+<tr>
+<td>api_key</td>
+<td>x</td>
+<td>string</td>
+<td>Your api_key. Provided by authentication request. Required for all API requests.</td>
+</tr>
+<tr>
+<td>campaign_id</td>
+<td>x</td>
+<td>integer</td>
+<td>The id of the campaign you'd like this email associated with.</td>
+</tr>
+<tr>
+<td>prospect_id</td>
+<td>x****</td>
+<td>integer</td>
+<td>The id of the prospect you're sending the email to.</td>
+</tr>
+<tr>
+<td>prospect_email</td>
+<td>x****</td>
+<td>string</td>
+<td>The email of the prospect you're sending the email to.</td>
+</tr>
+<tr>
+<td>from_name</td>
+<td>x**</td>
+<td>string</td>
+<td>The name of the sending user.</td>
+</tr>
+<tr>
+<td>from_email</td>
+<td>x**</td>
+<td>string</td>
+<td>The email of the sending user.</td>
+</tr>
+<tr>
+<td>from_user_id</td>
+<td>x**</td>
+<td>string</td>
+<td>The user id of the sending user.</td>
+</tr>
+<tr>
+<td>replyto_email</td>
+<td></td>
+<td>string</td>
+<td>The email address where replies should be sent.</td>
+</tr>
+<tr>
+<td>tags[]</td>
+<td></td>
+<td>string</td>
+<td>The name of the tag you'd like to create or associate with this email. You can post multiple tags[] for multiple tags.</td>
+</tr>
+<tr>
+<td>operational_email</td>
+<td></td>
+<td>boolean</td>
+<td>When set, the email will be sent to the prospect regardless of opt-out status. Your account must have this feature enabled to use this setting.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>x*</td>
+<td>string</td>
+<td>The name of the email within Pardot.</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>x*</td>
+<td>string</td>
+<td>The subject of the email.</td>
+</tr>
+<tr>
+<td>text_content</td>
+<td>x*</td>
+<td>string</td>
+<td>The text body of the email. This must contain either %%unsubscribe%% or %%email_preference_center%%.</td>
+</tr>
+<tr>
+<td>html_content</td>
+<td></td>
+<td>string</td>
+<td>The html body of the email. This must contain either %%unsubscribe%% or %%email_preference_center%%.</td>
+</tr>
+<tr>
+<td>email_template_id</td>
+<td>x***</td>
+<td>integer</td>
+<td>The id of the email template to use.</td>
+</tr>
+<tr>
+<td>format</td>
+<td></td>
+<td>(xml or json)</td>
+<td>The format which the response will be sent. Xml is default.</td>
+</tr>
+</tbody>
+</table>
+<p>* field is required if an <code>email_template_id</code> is not
+provided.</p>
+<p>** (<code>from_email</code> &amp; <code>from_name</code>) or <code>from_user_id</code> is required if an <code>email_template_id</code> is not provided.</p>
+<p>*** if provided, the email template will be used first, then <code>name</code>, <code>replyto_email</code>, <code>subject</code>, <code>text_content</code>, and <code>html_content</code> will override the template contents if they're provided.</p>
+<p>**** <code>prospect_id</code> or <code>prospect_email</code> is required.</p>
+<h2 id="example-requests"><a href="#example-requests-"></a>Example Requests</h2>
+<p>This API request example made with cURL, will immediately send an email based on a template to a single prospect.</p>
+<pre><code>curl https://pi.pardot.com/api/email/version/4/do/send \
+--data-urlencode user_key={user_key} \
+--data-urlencode api_key={api_key} \
+--data-urlencode campaign_id=54321 \
+--data-urlencode prospect_email=prospect@somecompany.com \
+--data-urlencode email_template_id=6789 \
+--data-urlencode format=json
+</code></pre>
+
+<h2 id="xml-response-format_1"><a href="#xml-response-format-"></a>XML Response Format</h2>
+<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+    &lt;email&gt;
+        ...
+    &lt;/email&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th><strong>Tag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;email&gt;</code></td>
+<td>Parent tag. Contains data fields for target email. For complete field listing, see <a href="../object-field-references#email">email</a> in <a href="../object-field-references">Object Field References</a>.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="sending-list-emails">Sending List Emails</h1>
+<h2 id="supported-operations_2"><a href="#supported-operations-a-name-supported-operations-id-supported-operations-a-"></a>Supported Operations<a name="82871-supported-operations" id="supported-operations"></a></h2>
+<p>For a complete list of fields involved in user operations, see the <a href="../object-field-references#email">Email</a> section of <a href="../object-field-references">Object Field References</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Required Parameters</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>send</code></td>
+<td><code>/api/email/version/4/do/send</code></td>
+<td><code>user_key, api_key, list_ids[], campaign_id, (email_template_id OR (text_content, name, subject, &amp; ((from_email &amp; from_name) OR from_user_id)))</code></td>
+<td>Sends an email to all the prospects in a list identified by <code>list_ids[]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-parameters_1"><a href="#supported-parameters-"></a>Supported Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_key</td>
+<td>x</td>
+<td>string</td>
+<td>Your API user key. Required for all API requests.</td>
+</tr>
+<tr>
+<td>api_key</td>
+<td>x</td>
+<td>string</td>
+<td>Your api_key. Provided by authentication request. Required for all API requests.</td>
+</tr>
+<tr>
+<td>campaign_id</td>
+<td>x</td>
+<td>integer</td>
+<td>The id of the campaign you'd like this email associated with.</td>
+</tr>
+<tr>
+<td>from_name</td>
+<td>x**</td>
+<td>string</td>
+<td>The name of the sending user.</td>
+</tr>
+<tr>
+<td>from_email</td>
+<td>x**</td>
+<td>string</td>
+<td>The email of the sending user.</td>
+</tr>
+<tr>
+<td>from_user_id</td>
+<td>x**</td>
+<td>string</td>
+<td>The user id of the sending user.</td>
+</tr>
+<tr>
+<td>from_assigned_user</td>
+<td></td>
+<td>boolean</td>
+<td>If the prospect has an assigned user, send the email from that user.</td>
+</tr>
+<tr>
+<td>from_account_owner</td>
+<td></td>
+<td>boolean</td>
+<td>If the prospect has an account owner, send the email from that user.</td>
+</tr>
+<tr>
+<td>replyto_email</td>
+<td></td>
+<td>string</td>
+<td>The email address where replies should be sent.</td>
+</tr>
+<tr>
+<td>list_ids[]</td>
+<td>x</td>
+<td>integer</td>
+<td>The id of the list you'd like to mail to. You can post multiple list_ids[] for multiple lists</td>
+</tr>
+<tr>
+<td>suppression_list_ids[]</td>
+<td></td>
+<td>integer</td>
+<td>The id of the list you'd like to suppress mailing to. You can post multiple suppression_list_ids[] for multiple lists.</td>
+</tr>
+<tr>
+<td>tags[]</td>
+<td></td>
+<td>string</td>
+<td>The name of the tag you'd like to create or associate with this email. You can post multiple tags[] for multiple tags.</td>
+</tr>
+<tr>
+<td>operational_email</td>
+<td></td>
+<td>boolean</td>
+<td>When set, the email will be sent to the prospect regardless of opt-out status. Your account must have this feature enabled to use this setting.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>x*</td>
+<td>string</td>
+<td>The name of the email within Pardot.</td>
+</tr>
+<tr>
+<td>subject</td>
+<td>x*</td>
+<td>string</td>
+<td>The subject of the email.</td>
+</tr>
+<tr>
+<td>text_content</td>
+<td>x*</td>
+<td>string</td>
+<td>The text body of the email. This must contain either %%unsubscribe%% or %%email_preference_center%%.</td>
+</tr>
+<tr>
+<td>html_content</td>
+<td></td>
+<td>string</td>
+<td>The html body of the email. This must contain either %%unsubscribe%% or %%email_preference_center%%.</td>
+</tr>
+<tr>
+<td>email_template_id</td>
+<td>x***</td>
+<td>integer</td>
+<td>The id of the email template to use.</td>
+</tr>
+<tr>
+<td>scheduled_time</td>
+<td></td>
+<td>ISO8601 string</td>
+<td>The ISO8601 date and time which the email should be sent.</td>
+</tr>
+<tr>
+<td>format</td>
+<td></td>
+<td>(xml or json)</td>
+<td>The format which the response will be sent. Xml is default.</td>
+</tr>
+</tbody>
+</table>
+<p>* field is required if an <code>email_template_id</code> is not
+provided.</p>
+<p>** (<code>from_email</code> &amp; <code>from_name</code>) or <code>from_user_id</code> is required if an <code>email_template_id</code> is not provided.</p>
+<p>*** if provided, the email template will be used first, then <code>name</code>, <code>from_assigned_user</code>, <code>replyto_email</code>, <code>subject</code>, <code>text_content</code>, and <code>html_content</code> will override the template contents if they're provided.</p>
+<h2 id="example-requests_1"><a href="#example-requests-"></a>Example Requests</h2>
+<p>This API request example made with cURL, will schedule an email based on a template to be sent on October 31st at 5pm GMT-4 to 4 prospect lists with 2 suppression lists. It will be sent from the assigned user, if one is assigned, and it also assigns 3 tags to the email.</p>
+<pre><code>curl https://pi.pardot.com/api/email/version/4/do/send \
+--data-urlencode user_key={user_key} \
+--data-urlencode api_key={api_key} \
+--data-urlencode campaign_id=54321 \
+--data-urlencode from_assigned_user=1 \
+--data-urlencode email_template_id=6789 \
+--data-urlencode list_ids[]=123 \
+--data-urlencode list_ids[]=456 \
+--data-urlencode list_ids[]=789 \
+--data-urlencode list_ids[]=101 \
+--data-urlencode suppression_list_ids[]=987 \
+--data-urlencode suppression_list_ids[]=654 \
+--data-urlencode tags[]=new_prospect_email \
+--data-urlencode tags[]=cart_abandoned \
+--data-urlencode tags[]=subtotal_over_200 \
+--data-urlencode scheduled_time=2013-10-31T17:00:00-0400 \
+--data-urlencode format=json
+</code></pre>
+
+<h2 id="xml-response-format_2"><a href="#xml-response-format-"></a>XML Response Format</h2>
+<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+    &lt;email&gt;
+        ...
+    &lt;/email&gt;
+&lt;/rsp&gt;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th><strong>Tag</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;email&gt;</code></td>
+<td>Parent tag. Contains data fields for target email. For complete field listing, see <a href="../object-field-references#email">email</a> in <a href="../object-field-references">Object Field References</a>.</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script src="../../../js/base.js"></script>
+    </body>
+</html>
