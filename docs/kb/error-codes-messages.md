@@ -1191,6 +1191,18 @@ requests.
 
 **Solution**: Resubmit the request with an array keyed by email addresses. [example](/kb/api-version-3/prospects#endpoints-for-batch-processing)
 
+## [](#error-code-97)Error Code: 97
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="97">Prospect not mailable</err>
+</rsp>
+```
+
+**Problem**: One or more of the recipient prospects cannot receive the email requested (due to opting out, being flagged as "Do Not Email", or for other reasons)
+
+**Solution**: Check that the recipient list is correct, and that the prospect's email preferences are up-to-date.
+
 ## [](#error-code-10000)Error Code: 10000
 
 ```
