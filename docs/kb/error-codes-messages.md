@@ -1191,11 +1191,11 @@ requests.
 
 **Solution**: Resubmit the request with an array keyed by email addresses. [example](/kb/api-version-3/prospects#endpoints-for-batch-processing)
 
-## [](#error-code-97)Error Code: 97
+## [](#error-code-98)Error Code: 98
 
 ```
 <rsp stat="fail" version="1.0">
-    <err code="97">Prospect not mailable</err>
+    <err code="98">Prospect not mailable</err>
 </rsp>
 ```
 
