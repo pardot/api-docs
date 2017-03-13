@@ -33,7 +33,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 |`limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching visitor (according to the specified sorting order) to be returned in the query response. The first `offset` matching visitors will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st visitor matched by the provided criteria. |
 | `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](visitors#xml-response-formats) in [Using Visitors](visitors) for more details. |
-| `sort_by` | `string` | `created_at, id, updated_at` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#14837-supported-sorting-options) for more details. _Default value:_ `id`. |
+| `sort_by` | `string` | `created_at, id, updated_at` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#14837-supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 
 

@@ -30,7 +30,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | `fields` | `array` | `<comma_separated_field_ids>` | Specifies the fields to be returned. **Note:** All default and custom fields will be returned by default; &lt;id&gt; will always be returned. |
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. If a number larger than 200 is specified, 200 will be used. |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching prospect account (according to the specified sorting order) to be returned in the `query` response. The first `offset` matching prospect accounts will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=10` will return the results starting with the 11th prospect account matched by the provided criteria. |
-| `sort_by` | `string` | `created_at, id, name, updated_at` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. _Default value:_ `id`. |
+| `sort_by` | `string` | `created_at, id, name, updated_at` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supporting Sorting Options](#supported-sorting-options) for more details. |
 
 ## [](#supported-sorting-options-)Supported Sorting Options
