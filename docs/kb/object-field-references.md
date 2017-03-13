@@ -1823,6 +1823,26 @@ activity<br>
 visitor activity has an email associated with it</td>
 </tr>
 <tr>
+<td>&lt;email_template_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the email template associated with this visitor
+activity<br>
+<strong><em>Note:</em></strong> This node will only appear if this
+visitor activity has an email associated with it</td>
+</tr>
+<tr>
+<td>&lt;list_email_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the list email associated with this visitor
+activity<br>
+<strong><em>Note:</em></strong> This node will only appear if this
+visitor activity has an email associated with it</td>
+</tr>
+<tr>
 <td>&lt;form_id&gt;</td>
 <td>integer</td>
 <td></td>
