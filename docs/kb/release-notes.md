@@ -6,7 +6,7 @@ Here you'll find the latest updates on what's changed in the Pardot API and API 
 
 ### Visitor Activities 
 
-A few updates where made to the `query` endpoint for both version 3 and 4. These include:
+A few updates were made to the `query` endpoint for both version 3 and 4. These include:
 
 * any email activity that is part of an email list will now include the list_email_id
 * any email activity that belongs to an email which used an email template, will include the email_template_id
