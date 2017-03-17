@@ -24,4 +24,4 @@ This page contains the release notes for the Pardot API and related documentatio
 
 #### Other
 
-Mentions of default value: 'id' for the 'sort_by' query parameter have been removed from API documentation for clarity.
+Mentions of default value: `id` for the `sort_by` query parameter have been removed from API documentation for clarity.
