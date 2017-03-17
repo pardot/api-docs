@@ -5,7 +5,7 @@ Welcome! All up-to-date documentation of Pardot's official API is housed here. A
 * If you have a question about the API, feel free to [open a ticket](https://pardot.desk.com/) with our Support team.
 * To report an inconsistency in the documentation, please [open an issue on GitHub](https://github.com/Pardot/api-docs/issues). [Pull requests](https://github.com/Pardot/api-docs/pulls) are welcome as well!
 * If you've written your own library or wrapper for Pardot's API, submit a [pull request](https://github.com/Pardot/api-docs/pulls) updating the `index.md` file with a link to your repository, and we'll be glad to consider linking it up.
-* If you want to see what's changed recently in the API or the documentation, please go visit the [Release Notes](kb/release-notes).
+* For the latest information on updates to the API and related documentation, refer to the [Release Notes](kb/release-notes).
 
 ## Using the API
 
@@ -78,7 +78,7 @@ The Pardot API supports several output formats, each of which returns different 
 *   `full` -- Returns all supported data for the Pardot object and all objects associated with it.
 *   `simple` -- Returns all supported data for the data for the Pardot object.
 *   `mobile` -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.
-*   `bulk` -- Returns basic data for an object without a total object count. Used for querying [large amounts of data](kb/bulk-data-pull/). 
+*   `bulk` -- Returns basic data for an object (does not provide total object count). Used for querying [large amounts of data](kb/bulk-data-pull/). 
 
 If the output request parameter is not defined, the output format defaults to `full`. See the XML Response Format sections for each object for details about the formats.
 
