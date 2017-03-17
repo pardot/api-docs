@@ -7,7 +7,7 @@ For a complete list of fields involved in user operations, see the [Email](objec
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `read` | `/api/email/version/4/do/read/id/<email id>?...` | `user_key, api_key, email` | Returns the data for the email specified by `<id>`. `<id>` is the Pardot ID of the target target email. |
+| `read` | `/api/email/version/4/do/read/id/<email id>?...` | `user_key, api_key, email` | Returns the data for the email specified by `<id>`. `<id>` is the Pardot ID of the target email. |
 
 ## [](#supported-parameters-)Supported Parameters
 
@@ -37,7 +37,7 @@ For a complete list of fields involved in user operations, see the [Email](objec
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `stats` | `/api/email/version/4/do/stats/id/<list email id>?...` | `user_key, api_key, email` | Returns the statistical data for the list email specified by `<id>`. `<id>` is the Pardot ID of the target target email.
+| `stats` | `/api/email/version/4/do/stats/id/<list email id>?...` | `user_key, api_key, email` | Returns the statistical data for the list email specified by `<id>`. `<id>` is the Pardot ID of the target email.
 
 ## [](#xml-response-format-)XML Response Format
 
