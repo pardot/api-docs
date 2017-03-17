@@ -102,6 +102,7 @@ The Pardot API supports several output formats, each of which returns different 
 *   `full` -- Returns all supported data for the Pardot object and all objects associated with it.
 *   `simple` -- Returns all supported data for the data for the Pardot object.
 *   `mobile` -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.
+*   `bulk` -- Returns basic data for an object (does not provide total object count). Used for querying [large amounts of data](kb/bulk-data-pull/). 
 
 If the output request parameter is not defined, the output format defaults to `full`. See the XML Response Format sections for each object for details about the formats.
 

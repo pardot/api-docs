@@ -10,6 +10,7 @@ pages:
 
 - ['index.md', 'Overview']
 
+- ['kb/release-notes.md', 'API', 'Release Notes']
 - ['kb/api-version-4.md', 'API', 'Version 4']
 - ['kb/object-field-references.md', 'API', 'Object Field References']
 - ['kb/error-codes-messages.md', 'API', 'Error Codes & Messages']
