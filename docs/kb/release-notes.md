@@ -22,6 +22,9 @@ This page contains the release notes for the Pardot API and related documentatio
 
 * when using the `read` end-point, you can exclude the email text and HTML body message from the response by setting [include_message](api-version-4/emails/#supported-parameters) to false.
 
+
+#### Prospect
+* `prospect_account_id` field is now returned by default on `query` API calls. This includes calls made with the `output`=`bulk` parameter.
 #### Other
 
 Mentions of default value: `id` for the `sort_by` query parameter have been removed from API documentation for clarity.
