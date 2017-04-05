@@ -65,14 +65,14 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting lists for the specified query |
 | `<total_results>` | Contains the number of lists selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched lists |
-| `<list>` | The data for an individual list. See [Using Lists](#using-lists) for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](object-field-references#list) in [Object Field References](object-field-references) |
+| `<list>` | The data for an individual list. See [Using Lists](#using-lists) for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](../object-field-references#list) in [Object Field References](../object-field-references) |
 
 # Using Lists
 
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [List](object-field-references#list) section of [Object Field References](object-field-references).
+For a complete list of fields involved in user operations, see the [List](../object-field-references#list) section of [Object Field References](../object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
@@ -102,4 +102,4 @@ For a complete list of fields involved in user operations, see the [List](object
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<list>` | Parent tag. Contains data fields for target list. For complete field listing, see [List](object-field-references#list) in [Object Field References](object-field-references). |
+| `<list>` | Parent tag. Contains data fields for target list. For complete field listing, see [List](../object-field-references#list) in [Object Field References](../object-field-references). |
