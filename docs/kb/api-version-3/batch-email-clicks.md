@@ -7,7 +7,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/emailClick/version/3/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the email clicks matching the specified criteria parameters. Also see [email clicks](object-field-references#email-clicks) in [Object Field References](object-field-references). |
+| `query` | `/api/emailClick/version/3/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the email clicks matching the specified criteria parameters. Also see [email clicks](../object-field-references#email-clicks) in [Object Field References](../object-field-references). |
 
 ## [](#supported-search-criteria-)Supported Search Criteria
 
