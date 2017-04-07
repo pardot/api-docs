@@ -2,6 +2,14 @@
 
 This page contains the release notes for the Pardot API and related documentation.
 
+## April 2017
+
+### Prospects
+
+`read` end-point (v4):
+
+* archived prospects will be excluded from `read` responses when `email` is used to identify the target prospect
+
 ## March 2017
 
 ### Visitor Activities 
