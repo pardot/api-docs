@@ -8,7 +8,7 @@ This page contains the release notes for the Pardot API and related documentatio
 
 `read` end-point (v4):
 
-* archived prospects will be excluded from `read` responses when `email` is used to identify the target prospect
+* This update will bring the v4 read end point into sync with the v3 end point. Archived prospects previously included in `read` responses will now be excluded when `email` is used to identify the target prospect.
 
 ## March 2017
 
