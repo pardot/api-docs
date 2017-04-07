@@ -6,7 +6,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/visit/version/3/do/query?...` | `user_key, api_key, (ids, visitor_ids, prospect_ids)` | Returns the visits matching the specified criteria parameters. See the [Using Visits](visits) section for a complete description of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](object-field-references#visit) in [Object Field References](object-field-references). |
+| `query` | `/api/visit/version/3/do/query?...` | `user_key, api_key, (ids, visitor_ids, prospect_ids)` | Returns the visits matching the specified criteria parameters. See the [Using Visits](visits) section for a complete description of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](../object-field-references#visit) in [Object Field References](../object-field-references). |
 
 ## Supported Search Criteria
 
@@ -49,5 +49,5 @@ Visits are returned in order of ascending IDs.
 | ------- | --------------- |
 | `<result>` | Contains the resulting visits for the specified query. |
 | `<total_results>` | Contains the number of visits selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched visits. |
-| `<visit>` | The data for an individual visit. See [Using Visits](visits) for complete descriptions of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](object-field-references#visit) in [Object Field References](object-field-references). |
+| `<visit>` | The data for an individual visit. See [Using Visits](visits) for complete descriptions of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](../object-field-references#visit) in [Object Field References](../object-field-references). |
 
