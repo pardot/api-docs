@@ -2,6 +2,14 @@
 
 This page contains the release notes for the Pardot API and related documentation.
 
+## April 2017
+
+### Prospects
+
+`read` end-point (v4):
+
+* This update will bring the v4 read end point into sync with the v3 end point. Archived prospects previously included in `read` responses will now be excluded when `email` is used to identify the target prospect.
+
 ## March 2017
 
 ### Visitor Activities 
