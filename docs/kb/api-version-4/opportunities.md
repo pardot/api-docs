@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/opportunity/version/4/do/query?...` | `user_key, api_key` | Returns the opportunities matching the specified criteria parameters. See [Using Opportunities (using-opportunities) for complete descriptions of opportunity [XML Response Formats](opportunities#xml-response-formats). Also see [Opportunity](object-field references#opportunity) in [Object Field References](../object-field-references). |
+| `query` | `/api/opportunity/version/4/do/query?...` | `user_key, api_key` | Returns the opportunities matching the specified criteria parameters. See [Using Opportunities (using-opportunities) for complete descriptions of opportunity [XML Response Formats](opportunities#xml-response-formats). Also see [Opportunity](../object-field-references#opportunity) in [Object Field References](../object-field-references). |
 
 ## Supported Search Criteria
 

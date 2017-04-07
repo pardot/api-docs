@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/prospectAccount/version/3/do/query?...` | `user_key, api_key` | Returns the prospect accounts matching the specified criteria parameters. See the [Using Prospect Accounts](prospect-accounts) section for a complete description of the prospect account [XML Response Format](prospect-accounts#xml-response-format). Also see [Prospect Account](../object-field-references#prospectAccount) in [Object Field References](../object-field-references). |
+| `query` | `/api/prospectAccount/version/3/do/query?...` | `user_key, api_key` | Returns the prospect accounts matching the specified criteria parameters. See the [Using Prospect Accounts](prospect-accounts) section for a complete description of the prospect account [XML Response Format](prospect-accounts#xml-response-format). Also see [Prospect Account](../object-field-references#prospect-account) in [Object Field References](../object-field-references). |
 
 ## [](#supported-search-criteria-)Supported Search Criteria
 
@@ -63,14 +63,14 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting prospect accounts for the specified query. |
 | `<total_results>` | Contains the number of prospect accounts selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched prospect accounts. |
-| `<prospectAccount>` | The data for an individual prospect account. See [Using Prospect Accounts](prospect-accounts) for a complete description of the prospect account [XML Response Format](prospect-accounts#xml-response-format). Also see [Prospect Account](../object-field-references#prospectAccount) in [Object Field References](../object-field-references). |
+| `<prospectAccount>` | The data for an individual prospect account. See [Using Prospect Accounts](prospect-accounts) for a complete description of the prospect account [XML Response Format](prospect-accounts#xml-response-format). Also see [Prospect Account](../object-field-references#prospect-account) in [Object Field References](../object-field-references). |
 
 # Using Prospect Accounts
 
 
 ## [](#supported-operations-a-name-supported-operations-id-supported-operations-a-)Supported Operations<a name="70888-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Prospect Account](../object-field-references#prospectAccount) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Prospect Account](../object-field-references#prospect-account) section of [Object Field References](../object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------
@@ -95,5 +95,5 @@ For a complete list of fields involved in user operations, see the [Prospect Acc
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<prospectAccount>` | Parent tag. Contains data fields for target prospect account. For complete field listing, see [Prospect Account](../object-field-references#prospectAccount) in [Object Field References](../object-field-references). |
+| `<prospectAccount>` | Parent tag. Contains data fields for target prospect account. For complete field listing, see [Prospect Account](../object-field-references#prospect-account) in [Object Field References](../object-field-references). |
 
