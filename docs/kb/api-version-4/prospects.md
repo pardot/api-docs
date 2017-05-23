@@ -336,6 +336,7 @@ If using `batchCreate`, you'll need to provide a valid email address for each pr
 
 **Note:** The return value will either be XML or JSON (XML by default. If you want JSON, then add "&format=json" to your HTTP query).
 
+**Note:** If any errors are found during the batch process, an error array will be returned for only the prospects with issues. The error array will be key/value pairs where the key is the index of the prospect submitted in the request. All other prospects will be processed as expected.
 
 ## [](#updating-field-values-)Updating Field Values
 
