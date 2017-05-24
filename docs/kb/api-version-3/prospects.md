@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query`       | `/api/prospect/version/3/do/query?...`     | `user_key, api_key`     | Returns the prospects matching the specified criteria parameters. See [Using Prospects (using-prospects) for complete descriptions of prospect [XML Response Formats](using-prospects#xml-response-formats). Also see [Prospect](../object-field-references#prospect) in [Object Field References](../object-field-references). |
+| `query`       | `/api/prospect/version/3/do/query?...`     | `user_key, api_key`     | Returns the prospects matching the specified criteria parameters. See [Using Prospects](prospects/#using-prospects) for complete descriptions of prospect [XML Response Formats](prospects/#xml-response-formats). Also see [Prospect](../object-field-references#prospect) in [Object Field References](../object-field-references). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria
@@ -47,7 +47,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | `fields` | `array` | `<comma_separated_field_ids>` | Specifies the fields to be returned. **Note:** If this parameter isn't present, all default fields and custom fields for which the prospect has a value will be returned; &lt;id&gt; will always be returned. |
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching prospect(according to the specified sorting order) to be returned in the query response. The first `offset` matching prospects will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st prospect matched by the provided criteria. |
-| `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](using-prospects#xml-response-formats) in [Using Prospects](using-prospects) for more details. |
+| `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](prospects/#xml-response-formats) in [Using Prospects](prospects/#using-prospects) for more details. |
 | `sort_by` | `string` | `created_at, id, probability, value` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options (#14784-supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 
@@ -78,7 +78,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting prospects for the specified query. |
 | `<total_results>` | Contains the number of prospects selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all matched prospects. |
-| `<prospect>` | The data for an individual Prospect. See [Using Prospects](using-prospects) for complete descriptions of prospect [XML Response Formats](using-prospects#xml-response-formats). Also see [Prospect](../object-field-references#prospect) in [Object Field References](../object-field-references). **_Note:_** Data concerning a prospect's profile criteria matchings, visitors, visitor activities, and list subscriptions will NOT be included in a `query` response. To retrieve this data, submit a `read` request for the prospect of interest. |
+| `<prospect>` | The data for an individual Prospect. See [Using Prospects](prospects/#using-prospects) for complete descriptions of prospect [XML Response Formats](prospects/#xml-response-formats). Also see [Prospect](../object-field-references#prospect) in [Object Field References](../object-field-references). **_Note:_** Data concerning a prospect's profile criteria matchings, visitors, visitor activities, and list subscriptions will NOT be included in a `query` response. To retrieve this data, submit a `read` request for the prospect of interest. |
 
 # Using Prospects
 
@@ -211,7 +211,7 @@ For `output=mobile`:
 | `<visitor_activity>` | Contains data fields for a visitor activity. For complete field listing, see [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
 | `<lists>` | Contains all email list subscriptions for this prospect. Contains only `<list_subscription>` tags. |
 | `<list_subscription>` | Contains data fields for an email list subscription, as well as a `<list>` tag. For complete field listing, see [Email List Subscription](../object-field-references#email-list-subscription) in [Object Field References](../object-field-references). |
-| `<list>` | Contains data fields for an email list. For complete field listing, see [Email List](../object-field-references#email-list) in [Object Field References](.. object-field-references). |
+| `<list>` | Contains data fields for an email list. For complete field listing, see [Email List](../object-field-references#email-list) in [Object Field References](../object-field-references). |
 
 <a name="14833-assigning-and-reassigning-prospects" id="assigning-and-reassigning-prospects"></a>
 
@@ -352,7 +352,7 @@ To modify a prospect's matching status for associated profile criteria, the Pard
 
 _**Example:** Setting a profile criteria for a prospect whose email address is_ `bob@pardot.com` _to_ `match`: /api/prospect/version/3/do/update/email/[bob@pardot.com](mailto:bob@pardot.com)?profile_criteria_8=match&amp;api_key=&amp;user_key=_**Example:** Setting a profile criteria for a prospect with Pardot ID_ `58` _to_ `nomatch`: /api/prospect/version/3/do/update/id/58?profile_criteria_8=nomatch&amp;api_key=&amp;user_key=
 
-Only profile criteria that belong to the profile associated with the prospect can be updated using this method. Requests to update profile criteria not associated with the assigned profile will be ignored. Using any matching status values other than `match`, `nomatch`, or `unknown` will result in an error message. See [Error Codes &amp; Messages](error-codes-and-messages) for details.
+Only profile criteria that belong to the profile associated with the prospect can be updated using this method. Requests to update profile criteria not associated with the assigned profile will be ignored. Using any matching status values other than `match`, `nomatch`, or `unknown` will result in an error message. See [Error Codes &amp; Messages](../error-codes-messages) for details.
 
 <a name="14833-updating-prospect-account-matching-statuses" id="updating-prospect-account-matching-statuses"></a>
 

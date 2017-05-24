@@ -2,6 +2,13 @@
 
 This page contains the release notes for the Pardot API and related documentation.
 
+## May 2017
+
+### Prospects
+* fixed various broken links in the documentation.
+* fixed bug where the error array in the version 4 batch endpoints response was not correctly indexed.
+* added information explaining the error response when using batch actions in v4.
+
 ## April 2017
 
 ### Prospects
