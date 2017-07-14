@@ -6,6 +6,7 @@ This page contains the release notes for the Pardot API and related documentatio
 
 ### Email
 * updated "Reading Emails" section to correctly label the required param `email_id` instead of `email`.
+* updated "Reading Emails" section to correctly label the required param `list_email_id` instead of `email`.
 
 ## May 2017
 
