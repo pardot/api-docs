@@ -8,6 +8,11 @@ This page contains the release notes for the Pardot API and related documentatio
 * updated "Reading Emails" section to correctly label the required param `email_id` instead of `email`.
 * updated "Reading Emails" section to correctly label the required param `list_email_id` instead of `email`.
 
+### Prospects
+* batchCreate endpoint now returns an attributes node for JSON responses.
+* batchUpdate endpoint now returns an attributes node for JSON responses.
+* BatchUpsert endpoint now returns an attributes node for JSON responses.
+
 ## May 2017
 
 ### Prospects
