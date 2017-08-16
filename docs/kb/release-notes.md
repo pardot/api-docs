@@ -6,6 +6,7 @@ This page contains the release notes for the Pardot API and related documentatio
 
 ### Prospects
 * Prospect assignment via `crm_owner_fid` is now available on the `create`/`update`/`upsert`/`batchCreate`/`batchUpdate`/`batchUpsert` endpoints in both v3 and v4 of the API.
+* updated sections to detail how a prospect can be assigned to a user on creation passing in a `user_id`.
 
 ## July 2017
 
