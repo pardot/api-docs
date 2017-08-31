@@ -63,3 +63,8 @@ $("ul.nav a" ).click(function() {
         location.hash='';
     };
 });
+
+/* Focus on search input on search model show */
+$('#mkdocs_search_modal').on('shown.bs.modal', function () {
+    $('#mkdocs-search-query').focus();
+})
