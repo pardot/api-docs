@@ -762,7 +762,7 @@ allowed types.
 **Problem**: IP is not whitelisted.
 
 **Solution**: Whitelist IP address to access the
-API
+API.
 
 ## [](#error-code-54)Error Code: 54
 
@@ -773,7 +773,7 @@ API
 ```
 
 **Problem**: Email address is already being used by
-other prospect
+other prospect.
 
 **Solution**: Use different email address.
 
@@ -904,7 +904,7 @@ same time.
 ```
 
 **Problem**: There is a limit on how many IDs you
-can specify for this query
+can specify for this query.
 
 **Solution**: Lower the amount of IDs you are querying
 for.
@@ -918,10 +918,10 @@ for.
 ```
 
 **Problem**: The content of the email is missing
-required variables
+required variables.
 
 **Solution**: Ensure that all required variables, such
-as unsubscribe link, are present
+as unsubscribe link, are present.
 
 ## [](#error-code-65)Error Code: 65
 
@@ -932,7 +932,7 @@ as unsubscribe link, are present
 ```
 
 **Problem**: Doesn't have all required fields
-present or are not in proper format, such as from address
+present or are not in proper format, such as from address.
 
 **Solution**: Ensure all fields are present,
 populated, and in proper format.
@@ -959,9 +959,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: You have too many of this object type to create more
+**Problem**: You have too many of this object type to create more.
 
-**Solution**: Delete some of the object if you need to make more
+**Solution**: Delete some of the object if you need to make more.
 
 ## [](#error-code-68)Error Code: 68
 
@@ -971,7 +971,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: The template you are trying to access does not exist
+**Problem**: The template you are trying to access does not exist.
 
 **Solution**: Make sure you are using the correct template ID or create a new one to use.
 
@@ -983,9 +983,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: You are requesting to batch more prospects in an operation than we allow
+**Problem**: You are requesting to batch more prospects in an operation than we allow.
 
-**Solution**: Ensure that your batch request has 50 or fewer prospects
+**Solution**: Ensure that your batch request has 50 or fewer prospects.
 
 ## [](#error-code-71)Error Code: 71
 
@@ -995,9 +995,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: You've inputted invalid JSON or XML
+**Problem**: You've inputted invalid JSON or XML.
 
-**Solution**: Ensure that your request is properly formatted
+**Solution**: Ensure that your request is properly formatted.
 
 ## [](#error-code-72)Error Code: 72
 
@@ -1007,9 +1007,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The encoded JSON has been corrupted at some point
+**Problem**: The encoded JSON has been corrupted at some point.
 
-**Solution**: Please ensure that you are sending the correct information
+**Solution**: Please ensure that you are sending the correct information.
 
 ## [](#error-code-73)Error Code: 73
 
@@ -1019,9 +1019,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: Currently there is not an Email Plug-in Campaign associated to successfully track this email
+**Problem**: Currently there is not an Email Plug-in Campaign associated to successfully track this email.
 
-**Solution**: Please contact your Pardot administrator to ensure there is a proper campaign associated with the Account Settings in Pardot
+**Solution**: Please contact your Pardot administrator to ensure there is a proper campaign associated with the Account Settings in Pardot.
 
 ## [](#error-code-74)Error Code: 74
 
@@ -1031,9 +1031,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The email client used is not supported by this API
+**Problem**: The email client used is not supported by this API.
 
-**Solution**: Please use an appropriate email client
+**Solution**: Please use an appropriate email client.
 
 ## [](#error-code-75)Error Code: 75
 
@@ -1043,9 +1043,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: There was an error processing the request for the account variable tags
+**Problem**: There was an error processing the request for the account variable tags.
 
-**Solution**: Please review the variable tags, and resubmit the request
+**Solution**: Please review the variable tags, and resubmit the request.
 
 ## [](#error-code-76)Error Code: 76
 
@@ -1055,9 +1055,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: API access for your account has been disabled
+**Problem**: API access for your account has been disabled.
 
-**Solution**: Contact customer support
+**Solution**: Contact customer support.
 
 ## [](#error-code-77)Error Code: 77
 
@@ -1067,9 +1067,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The provided Prospect FID was invalid
+**Problem**: The provided Prospect FID was invalid.
 
-**Solution**: Please provide a valid Prospect FID
+**Solution**: Please provide a valid Prospect FID.
 
 ## [](#error-code-79)Error Code: 79
 
@@ -1079,9 +1079,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The CRM FID provided is invalid
+**Problem**: The CRM FID provided is invalid.
 
-**Solution**: Please provide a valid CRM FID that can be accessed by your account, or is already attached to a prospect
+**Solution**: Please provide a valid CRM FID that can be accessed by your account, or is already attached to a prospect.
 
 ## [](#error-code-80)Error Code: 80
 
@@ -1091,9 +1091,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The CRM type provided or used is invalid
+**Problem**: The CRM type provided or used is invalid.
 
-**Solution**: Please specify a correct CRM type
+**Solution**: Please specify a correct CRM type.
 
 ## [](#error-code-81)Error Code: 81
 
@@ -1103,9 +1103,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The provided Prospect ID and FID do not match a single prospect
+**Problem**: The provided Prospect ID and FID do not match a single prospect.
 
-**Solution**: Please provide a prospect ID and FID that match a single prospect
+**Solution**: Please provide a prospect ID and FID that match a single prospect.
 
 ## [](#error-code-83)Error Code: 83
 
@@ -1115,9 +1115,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: Your account does not have an available CRM connector
+**Problem**: Your account does not have an available CRM connector.
 
-**Solution**: Please add a CRM connector to your account
+**Solution**: Please add a CRM connector to your account.
 
 ## [](#error-code-85)Error Code: 85
 
@@ -1127,9 +1127,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: For some reason, the prospect was not saved
+**Problem**: For some reason, the prospect was not saved.
 
-**Solution**: Please resubmit the request or review the original request for errors
+**Solution**: Please resubmit the request or review the original request for errors.
 
 ## [](#error-code-86)Error Code: 86
 
@@ -1139,9 +1139,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The template ID provided does not correspond to a template
+**Problem**: The template ID provided does not correspond to a template.
 
-**Solution**: Please provide a template ID that is valid
+**Solution**: Please provide a template ID that is valid.
 
 ## [](#error-code-88)Error Code: 88
 
@@ -1153,7 +1153,7 @@ requests.
 
 **Problem**: You have requested version 3 of the API, but your account must use version 4.
 
-**Solution**: Please make the request using `/version/4` in place of `/version/3`
+**Solution**: Please make the request using `/version/4` in place of `/version/3`.
 
 ## [](#error-code-89)Error Code: 89
 
@@ -1165,7 +1165,7 @@ requests.
 
 **Problem**: You have requested version 4 of the API, but your account must use version 3.
 
-**Solution**: Please make the request using `/version/3` in place of `/version/4`
+**Solution**: Please make the request using `/version/3` in place of `/version/4`.
 
 ## [](#error-code-90)Error Code: 90
 
@@ -1175,7 +1175,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: The prospect array given was not a flat array, and it should have been
+**Problem**: The prospect array given was not a flat array, and it should have been.
 
 **Solution**: Resubmit the request with a flat array. [example](/kb/api-version-4/prospects#endpoints-for-batch-processing)
 
@@ -1187,7 +1187,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: The prospect array given was not keyed by email addresses, but should have been
+**Problem**: The prospect array given was not keyed by email addresses, but should have been.
 
 **Solution**: Resubmit the request with an array keyed by email addresses. [example](/kb/api-version-3/prospects#endpoints-for-batch-processing)
 
@@ -1199,9 +1199,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The prospect record was not found with the provided information
+**Problem**: The prospect record was not found with the provided information.
 
-**Solution**: Resubmit the request with different parameters
+**Solution**: Resubmit the request with different parameters.
 
 ## [](#error-code-93)Error Code: 93
 
@@ -1211,9 +1211,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: Send options are required for the template
+**Problem**: Send options are required for the template.
 
-**Solution**: Resubmit the request with send options
+**Solution**: Resubmit the request with send options.
 
 ## [](#error-code-94)Error Code: 94
 
@@ -1223,9 +1223,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The version number used is not valid
+**Problem**: The version number used is not valid.
 
-**Solution**: Resubmit the request with a valid version number
+**Solution**: Resubmit the request with a valid version number.
 
 ## [](#error-code-95)Error Code: 95
 
@@ -1235,9 +1235,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The name for the folder is not valid
+**Problem**: The name for the folder is not valid.
 
-**Solution**: Resubmit the request with a valid folder name
+**Solution**: Resubmit the request with a valid folder name.
 
 ## [](#error-code-96)Error Code: 96
 
@@ -1247,9 +1247,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The role assigned for this user does not have access to this folder
+**Problem**: The role assigned for this user does not have access to this folder.
 
-**Solution**: Update the users permissions and try again
+**Solution**: Update the users permissions and resubmit the request.
 
 ## [](#error-code-97)Error Code: 97
 
@@ -1259,9 +1259,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: No folder was found for the ID provided
+**Problem**: No folder was found for the ID provided.
 
-**Solution**: Resubmit the request with a different folder ID
+**Solution**: Resubmit the request with a different folder ID.
 
 ## [](#error-code-98)Error Code: 98
 
@@ -1271,7 +1271,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: The provided prospect is unable to receive mail
+**Problem**: The provided prospect is unable to receive email.
 
 ## [](#error-code-99)Error Code: 99
 
@@ -1281,9 +1281,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: A user with the email provided is already in the system
+**Problem**: A user with the email provided is already in the system.
 
-**Solution**: Resubmit the request with a different email address
+**Solution**: Resubmit the request with a different email address.
 
 ## [](#error-code-100)Error Code: 100
 
@@ -1293,9 +1293,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The value provided does not match a valid time zone
+**Problem**: The value provided does not match a valid time zone.
 
-**Solution**: Resubmit the request with a different time zone
+**Solution**: Resubmit the request with a different time zone.
 
 ## [](#error-code-101)Error Code: 101
 
@@ -1305,9 +1305,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The value provided for role is not valid
+**Problem**: The value provided for role is not valid.
 
-**Solution**: Resubmit the request with a different role
+**Solution**: Resubmit the request with a different role.
 
 ## [](#error-code-102)Error Code: 102
 
@@ -1317,9 +1317,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: This CRM username is already in use and cannot be used for another user
+**Problem**: This CRM username is already in use and cannot be used for another user.
 
-**Solution**: Resubmit the request with a different CRM username to apply for the user
+**Solution**: Resubmit the request with a different CRM username to apply for the user.
 
 ## [](#error-code-103)Error Code: 103
 
@@ -1329,9 +1329,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: A CRM connector was not found
+**Problem**: A CRM connector was not found.
 
-**Solution**: Make sure to configure a valid CRM connector and try again
+**Solution**: Make sure to configure a valid CRM connector and try again.
 
 ## [](#error-code-104)Error Code: 104
 
@@ -1341,9 +1341,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The CRM username was not found
+**Problem**: The CRM username was not found.
 
-**Solution**: Verify the CRM username provided is correct and try again
+**Solution**: Verify the CRM username provided is correct and try again.
 
 ## [](#error-code-105)Error Code: 105
 
@@ -1353,7 +1353,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: The activation hash for the provided user was not found
+**Problem**: The activation hash for the provided user was not found.
 
 ## [](#error-code-106)Error Code: 106
 
@@ -1363,7 +1363,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: The user is already activate
+**Problem**: The user is already activate.
 
 ## [](#error-code-107)Error Code: 107
 
@@ -1373,9 +1373,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The submitted password does not meet the password requirements
+**Problem**: The submitted password does not meet the password requirements.
 
-**Solution**: Resubmit the request using a password that meets the [requirements](http://help.pardot.com/customer/portal/articles/2128470-password-faq)
+**Solution**: Resubmit the request using a password that meets the [requirements](http://help.pardot.com/customer/portal/articles/2128470-password-faq).
 
 ## [](#error-code-108)Error Code: 108
 
@@ -1385,9 +1385,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: Unable to delete an asset if it is used in other places
+**Problem**: Unable to delete an asset if it is used in other places.
 
-**Solution**: Remove all dependencies of this asset and try again
+**Solution**: Remove all dependencies of this asset and try again.
 
 ## [](#error-code-109)Error Code: 109
 
@@ -1397,9 +1397,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: Unable to find the requested resource
+**Problem**: Unable to find the requested resource.
 
-**Solution**: Verify the parameters are correct and resubmit the request
+**Solution**: Verify the parameters are correct and resubmit the request.
 
 ## [](#error-code-110)Error Code: 110
 
@@ -1409,9 +1409,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: Invalid account id submitted
+**Problem**: Invalid account id submitted.
 
-**Solution**: Verify the account id is correct and resubmit the request
+**Solution**: Verify the account id is correct and resubmit the request.
 
 ## [](#error-code-111)Error Code: 111
 
@@ -1421,9 +1421,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: Unable to use the submitted username as it is already used
+**Problem**: Unable to use the submitted username as it is already used.
 
-**Solution**: Resubmit the request using a different integration username
+**Solution**: Resubmit the request using a different integration username.
 
 ## [](#error-code-112)Error Code: 112
 
@@ -1433,9 +1433,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The recipient parameter is missing
+**Problem**: The recipient parameter is missing.
 
-**Solution**: Resubmit the request with a valid recipient
+**Solution**: Resubmit the request with a valid recipient.
 
 ## [](#error-code-113)Error Code: 113
 
@@ -1445,9 +1445,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The request is missing required information
+**Problem**: The request is missing required information.
 
-**Solution**: Resubmit the request with a valid CRM ID or email address
+**Solution**: Resubmit the request with a valid CRM ID or email address.
 
 ## [](#error-code-114)Error Code: 114
 
@@ -1457,9 +1457,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The CRM ID or email address is invalid
+**Problem**: The CRM ID or email address is invalid.
 
-**Solution**: Resubmit the request with a valid CRM ID or email address
+**Solution**: Resubmit the request with a valid CRM ID or email address.
 
 ## [](#error-code-115)Error Code: 115
 
@@ -1469,9 +1469,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The number of recipients provided is too large
+**Problem**: The number of recipients provided is too large.
 
-**Solution**: Resubmit the request with less recipients
+**Solution**: Resubmit the request with less recipients.
 
 ## [](#error-code-116)Error Code: 116
 
@@ -1481,9 +1481,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The request time has expired
+**Problem**: The request time has expired.
 
-**Solution**: Resubmit the request
+**Solution**: Resubmit the request.
 
 ## [](#error-code-117)Error Code: 117
 
@@ -1525,7 +1525,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: Unable to verify the Salesforce connector
+**Problem**: Unable to verify the Salesforce connector.
 
 **Solution**: Resubmit the request to try again. If the problem persists, contact support.
 
@@ -1537,7 +1537,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: Unable to sync prospects with Salesforce
+**Problem**: Unable to sync prospects with Salesforce.
 
 **Solution**: Resubmit the request to try again. If the problem persists, contact support.
 
@@ -1549,7 +1549,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: The daily allowed API requests have been met
+**Problem**: The daily allowed API requests have been met.
 
 **Solution**: Wait until the next calendar day for the daily limit to reset and try again.
 
@@ -1561,7 +1561,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: Unable to verify Salesforce username
+**Problem**: Unable to verify Salesforce username.
 
 **Solution**: Verify if the username has already been verified in the system.
 
@@ -1573,7 +1573,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: Unable to set the Salesforce username or id
+**Problem**: Unable to set the Salesforce username or id.
 
 **Solution**: Verify the Salesforce username or ID is correct and resubmit the request.
 
@@ -1585,7 +1585,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: This request only accepts a user_id or crm_owner_fid but not both
+**Problem**: This request only accepts a user_id or crm_owner_fid but not both.
 
 **Solution**: Resubmit the request passing only a user_id or crm_owner_fid.
 
@@ -1597,7 +1597,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: This authentication method has been deprecated
+**Problem**: This authentication method has been deprecated.
 
 **Solution**: Resubmit the request using a valid [authentication](/#authentication) method.
 
