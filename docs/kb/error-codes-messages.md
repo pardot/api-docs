@@ -1191,6 +1191,416 @@ requests.
 
 **Solution**: Resubmit the request with an array keyed by email addresses. [example](/kb/api-version-3/prospects#endpoints-for-batch-processing)
 
+## [](#error-code-92)Error Code: 92
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="92">Prospect record could not be found</err>
+</rsp>
+```
+
+**Problem**: The prospect record was not found with the provided information
+
+**Solution**: Resubmit the request with different parameters
+
+## [](#error-code-93)Error Code: 93
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="93">The selected template is missing send options</err>
+</rsp>
+```
+
+**Problem**: Send options are required for the template
+
+**Solution**: Resubmit the request with send options
+
+## [](#error-code-94)Error Code: 94
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="94">The provided version is not a valid number</err>
+</rsp>
+```
+
+**Problem**: The version number used is not valid
+
+**Solution**: Resubmit the request with a valid version number
+
+## [](#error-code-95)Error Code: 95
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="95">Folder name is invalid</err>
+</rsp>
+```
+
+**Problem**: The name for the folder is not valid
+
+**Solution**: Resubmit the request with a valid folder name
+
+## [](#error-code-96)Error Code: 96
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="96">User does not have access to this folder</err>
+</rsp>
+```
+
+**Problem**: The role assigned for this user does not have access to this folder
+
+**Solution**: Update the users permissions and try again
+
+## [](#error-code-97)Error Code: 97
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="97">The folder ID provided does not exist</err>
+</rsp>
+```
+
+**Problem**: No folder was found for the ID provided
+
+**Solution**: Resubmit the request with a different folder ID
+
+## [](#error-code-98)Error Code: 98
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="98">Prospect not mailable</err>
+</rsp>
+```
+
+**Problem**: The provided prospect is unable to receive mail
+
+## [](#error-code-99)Error Code: 99
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="99">User with the provided email already exists</err>
+</rsp>
+```
+
+**Problem**: A user with the email provided is already in the system
+
+**Solution**: Resubmit the request with a different email address
+
+## [](#error-code-100)Error Code: 100
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="100">The provided time zone is invalid</err>
+</rsp>
+```
+
+**Problem**: The value provided does not match a valid time zone
+
+**Solution**: Resubmit the request with a different time zone
+
+## [](#error-code-101)Error Code: 101
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="101">The provided role is invalid</err>
+</rsp>
+```
+
+**Problem**: The value provided for role is not valid
+
+**Solution**: Resubmit the request with a different role
+
+## [](#error-code-102)Error Code: 102
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="102">The CRM Username specified is currently applied to another user</err>
+</rsp>
+```
+
+**Problem**: This CRM username is already in use and cannot be used for another user
+
+**Solution**: Resubmit the request with a different CRM username to apply for the user
+
+## [](#error-code-103)Error Code: 103
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="103">A CRM connector was not detected</err>
+</rsp>
+```
+
+**Problem**: A CRM connector was not found
+
+**Solution**: Make sure to configure a valid CRM connector and try again
+
+## [](#error-code-104)Error Code: 104
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="104">The CRM Username specified was not detected</err>
+</rsp>
+```
+
+**Problem**: The CRM username was not found
+
+**Solution**: Verify the CRM username provided is correct and try again
+
+## [](#error-code-105)Error Code: 105
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="105">There is no activation hash for the specified user</err>
+</rsp>
+```
+
+**Problem**: The activation hash for the provided user was not found
+
+## [](#error-code-106)Error Code: 106
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="106">User is already active</err>
+</rsp>
+```
+
+**Problem**: The user is already activate
+
+## [](#error-code-107)Error Code: 107
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="107">Password does not meet requirements</err>
+</rsp>
+```
+
+**Problem**: The submitted password does not meet the password requirements
+
+**Solution**: Resubmit the request using a password that meets the [requirements](http://help.pardot.com/customer/portal/articles/2128470-password-faq)
+
+## [](#error-code-108)Error Code: 108
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="108">This Asset cannot be deleted because it is being used in other places.</err>
+</rsp>
+```
+
+**Problem**: Unable to delete an asset if it is used in other places
+
+**Solution**: Remove all dependencies of this asset and try again
+
+## [](#error-code-109)Error Code: 109
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="109">The requested record was not found.</err>
+</rsp>
+```
+
+**Problem**: Unable to find the requested resource
+
+**Solution**: Verify the parameters are correct and resubmit the request
+
+## [](#error-code-110)Error Code: 110
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="110">Invalid Account Id</err>
+</rsp>
+```
+
+**Problem**: Invalid account id submitted
+
+**Solution**: Verify the account id is correct and resubmit the request
+
+## [](#error-code-111)Error Code: 111
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="111">The Integration Username specified is currently applied to another Account</err>
+</rsp>
+```
+
+**Problem**: Unable to use the submitted username as it is already used
+
+**Solution**: Resubmit the request using a different integration username
+
+## [](#error-code-112)Error Code: 112
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="112">Missing recipient to Track With Engage.</err>
+</rsp>
+```
+
+**Problem**: The recipient parameter is missing
+
+**Solution**: Resubmit the request with a valid recipient
+
+## [](#error-code-113)Error Code: 113
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="113">Missing CRM ID or Email Address of recipient.</err>
+</rsp>
+```
+
+**Problem**: The request is missing required information
+
+**Solution**: Resubmit the request with a valid CRM ID or email address
+
+## [](#error-code-114)Error Code: 114
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="114">Invalid CRM ID or Email Address of recipient.</err>
+</rsp>
+```
+
+**Problem**: The CRM ID or email address is invalid
+
+**Solution**: Resubmit the request with a valid CRM ID or email address
+
+## [](#error-code-115)Error Code: 115
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="115">Number of recipients is more than threshold.</err>
+</rsp>
+```
+
+**Problem**: The number of recipients provided is too large
+
+**Solution**: Resubmit the request with less recipients
+
+## [](#error-code-116)Error Code: 116
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="116">Request outdated.</err>
+</rsp>
+```
+
+**Problem**: The request time has expired
+
+**Solution**: Resubmit the request
+
+## [](#error-code-117)Error Code: 117
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="117">There was an error deleting the micro campaign.</err>
+</rsp>
+```
+
+**Problem**: There was an error deleting the micro campaign.
+
+## [](#error-code-118)Error Code: 118
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="118">This API can only be called in a test environment.</err>
+</rsp>
+```
+
+**Problem**: This endpoint can only be called in a test environment.
+
+## [](#error-code-119)Error Code: 119
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="119">Unable to create refresh tokens for Salesforce connector</err>
+</rsp>
+```
+
+**Problem**: Unable to create a refresh token for the Salesforce connector for authentication. 
+
+**Solution**: Resubmit the request to try again. If the problem persists, contact support.
+
+## [](#error-code-120)Error Code: 120
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="120">Unable to verify Salesforce connector</err>
+</rsp>
+```
+
+**Problem**: Unable to verify the Salesforce connector
+
+**Solution**: Resubmit the request to try again. If the problem persists, contact support.
+
+## [](#error-code-121)Error Code: 121
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="121">Unable to sync Prospect with Salesforce</err>
+</rsp>
+```
+
+**Problem**: Unable to sync prospects with Salesforce
+
+**Solution**: Resubmit the request to try again. If the problem persists, contact support.
+
+## [](#error-code-122)Error Code: 122
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="122">Daily API rate limit met</err>
+</rsp>
+```
+
+**Problem**: The daily allowed API requests have been met
+
+**Solution**: Wait until the next calendar day for the daily limit to reset and try again.
+
+## [](#error-code-123)Error Code: 123
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="123">Unable to verify Salesforce username; User may already have a verified Salesforce username.</err>
+</rsp>
+```
+
+**Problem**: Unable to verify Salesforce username
+
+**Solution**: Verify if the username has already been verified in the system.
+
+## [](#error-code-124)Error Code: 124
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="124">Unable to set Salesforce username or id</err>
+</rsp>
+```
+
+**Problem**: Unable to set the Salesforce username or id
+
+**Solution**: Verify the Salesforce username or ID is correct and resubmit the request.
+
+## [](#error-code-125)Error Code: 125
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="125">Cannot accept both user_id and crm_owner_fid.</err>
+</rsp>
+```
+
+**Problem**: This request only accepts a user_id or crm_owner_fid but not both
+
+**Solution**: Resubmit the request passing only a user_id or crm_owner_fid.
+
+## [](#error-code-126)Error Code: 126
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="126">Invalid authentication mechanism</err>
+</rsp>
+```
+
+**Problem**: This authentication method has been deprecated
+
+**Solution**: Resubmit the request using a valid [authentication](/#authentication) method.
+
 ## [](#error-code-10000)Error Code: 10000
 
 ```

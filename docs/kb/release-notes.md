@@ -2,7 +2,10 @@
 
 This page contains the release notes for the Pardot API and related documentation.
 
-##August 2017
+## October 2017
+* added more codes to the list of [error codes](/kb/error-codes-messages/)
+
+## August 2017
 
 ### Prospects
 * Prospect assignment via `crm_owner_fid` is now available on the `create`/`update`/`upsert`/`batchCreate`/`batchUpdate`/`batchUpsert` endpoints in both v3 and v4 of the API.

@@ -124,6 +124,26 @@ Otherwise, the response will contain the following:
 
 Subsequent authentication requests will return either the current valid API key or a newly generated API key if the previous one had expired.
 
+## Rate Limits
+
+We enforce API rate limits in two ways:
+
+* daily requests
+* concurrent requests
+
+### Daily Requests
+
+Pardot Pro customers are allocated 25,000 API requests per day. Pardot Ultimate customers can make up to 100,000 API requests a day. 
+These limits reset at the beginning of the day based on your accounts time zone settings. Any request made exceeding the 
+limits will result in an [error code 122](/kb/error-codes-messages/#error-code-122)
+
+You can check you current daily usages in the accounts "usage and limits" page.
+
+### Concurrent Requests
+
+In order to interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five 
+will result in an [error code 66](/kb/error-codes-messages/#error-code-66) response.
+
 ## API Console
 
 You can explore Pardot's API in the [API Console](http://www.pardot.com/api/). Please note that we're in the process of adding new methods.
