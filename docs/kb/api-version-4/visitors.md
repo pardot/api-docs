@@ -75,7 +75,7 @@ For a complete list of fields involved in visitor operations, see the [Visitor](
 
 | **Operation** | **URL Format**   | **Required Parameters** | **Description**  |
 | ------------- | ---------------- | ----------------------- | -----------------|
-| `assign` | `/api/visitor/version/4/do/assign/id/<id>?...` | `user_key, api_key, id, (prospect_email OR prospect_id)` | Assigns or reassigns the visitor specified by `<id>` to a specified prospect.  One (and only one) of the following parameters must be provided to identify the target prospect: `<prospect_email>` or `<prospect_id>`.  Returns an updated version of the visitor. |
+| `assign` | `/api/visitor/version/4/do/assign/id/<id>?...` | `user_key, api_key, id, prospect_id` | Assigns or reassigns the visitor specified by `<id>` to a specified prospect.  The `<prospect_id>` parameters must be provided to identify the target prospect. |
 | `read` | `/api/visitor/version/4/do/read/id/<id>?...` | `user_key, api_key, id` | Returns the data for the visitor specified by `<id>`, including associated visitor activities, identified company data, and visitor referrers. `<id>` is the Pardot ID for the target visitor. |
 
 <a name="20547-xml-response-formats"></a>
