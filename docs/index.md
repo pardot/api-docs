@@ -2,7 +2,7 @@
 
 Welcome! All up-to-date documentation of Pardot's official API is housed here. A few things of note:
 
-* If you have a question about the API, feel free to [open a ticket](https://pardot.desk.com/) with our Support team.
+* If you have a question about the API, feel free to [open a ticket](http://help.pardot.com/customer/en/portal/articles/2133457-how-do-i-contact-pardot-support-) with our Support team.
 * To report an inconsistency in the documentation, please [open an issue on GitHub](https://github.com/Pardot/api-docs/issues). [Pull requests](https://github.com/Pardot/api-docs/pulls) are welcome as well!
 * If you've written your own library or wrapper for Pardot's API, submit a [pull request](https://github.com/Pardot/api-docs/pulls) updating the `index.md` file with a link to your repository, and we'll be glad to consider linking it up.
 * For the latest information on updates to the API and related documentation, refer to the [Release Notes](kb/release-notes).
