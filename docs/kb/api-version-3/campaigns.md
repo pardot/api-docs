@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/campaign/version/3/do/query?...` | `user_key, api_key` | Returns the campaigns matching the specified criteria parameters. See the [Using Campaigns](#using-campaigns) section for a complete description of the campaign [XML Response Format](#xml-response-format). Also see [Campaign](object-field-references#campaign) in [Object Field References](object-field-references) |
+| `query` | `/api/campaign/version/3/do/query?...` | `user_key, api_key` | Returns the campaigns matching the specified criteria parameters. See the [Using Campaigns](#using-campaigns) section for a complete description of the campaign [XML Response Format](#xml-response-format). Also see [Campaign](../object-field-references#campaign) in [Object Field References](../object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -33,7 +33,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. If a number larger than 200 is specified, 200 will be used |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching campaign (according to the specified sorting order) to be returned in the `query` response. The first `offset` matching campaigns will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=10` will return the results starting with the 11th campaign matched by the provided criteria |
-| `sort_by` | `string` | `created_at, id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. _Default value:_ `id` |
+| `sort_by` | `string` | `created_at, id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details |
 
 ## Supported Sorting Options
@@ -67,19 +67,19 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting campaigns for the specified query |
 | `<total_results>` | Contains the number of campaigns selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched campaigns |
-| `<campaign>` | The data for an individual campaign. See [Using Campaigns](#using-campaigns) for a complete description of the campaign [XML Response Format](#xml-response-format). Also see [Campaign](object-field-references#campaign) in [Object Field References](object-field-references) |
+| `<campaign>` | The data for an individual campaign. See [Using Campaigns](#using-campaigns) for a complete description of the campaign [XML Response Format](#xml-response-format). Also see [Campaign](../object-field-references#campaign) in [Object Field References](../object-field-references) |
 
 # Using Campaigns
 
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Campaign](object-field-references#campaign) section of [Object Field References](object-field-references).
+For a complete list of fields involved in user operations, see the [Campaign](../object-field-references#campaign) section of [Object Field References](../object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `read` | `/api/campaign/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the campaign specified by `<id>`. `<id>` is the Pardot ID of the target campaign. |
-| `update` | `/api/campaign/version/3/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the campaign specified by `<id>`.  `<id>` is the Pardot ID of the campaign. Refer to [Campaign](object-field-references#campaign) in [Object Field References](object-field-references) for more details. Returns the updated version of the campaign. |
+| `update` | `/api/campaign/version/3/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the campaign specified by `<id>`.  `<id>` is the Pardot ID of the campaign. Refer to [Campaign](../object-field-references#campaign) in [Object Field References](../object-field-references) for more details. Returns the updated version of the campaign. |
 | `create` | `/api/campaign/version/3/do/create?...` | `user_key, api_key` | Creates a new campaign using the specified data. |
 
 
@@ -97,4 +97,4 @@ For a complete list of fields involved in user operations, see the [Campaign](ob
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<campaign>` | Parent tag. Contains data fields for target campaign. For complete field listing, see [Campaign](object-field-references#campaign) in [Object Field References](object-field-references). |
+| `<campaign>` | Parent tag. Contains data fields for target campaign. For complete field listing, see [Campaign](../object-field-references#campaign) in [Object Field References](../object-field-references). |

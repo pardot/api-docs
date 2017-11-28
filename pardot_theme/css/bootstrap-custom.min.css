@@ -4492,6 +4492,13 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	}
 }
 
+@media (min-width: 768px) and (max-width: 1200px) {
+	.navbar-nav > li > a {
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+}
+
 @media(min-width:768px) {
 	.navbar-left {
 		float:left!important;

@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/listMembership/version/4/do/query?...` | `user_key, api_key` | Returns the list memberships matching the specified criteria parameters. See the [Using Lists](lists) section for a complete description of the list membership [XML Response Format](list-memberships#xml-response-format). Also see [List Membership](object-field-references#list-membership) in [Object Field References](object-field-references). |
+| `query` | `/api/listMembership/version/4/do/query?...` | `user_key, api_key` | Returns the list memberships matching the specified criteria parameters. See the [Using Lists](lists) section for a complete description of the list membership [XML Response Format](list-memberships#xml-response-format). Also see [List Membership](../object-field-references#list-membership) in [Object Field References](../object-field-references). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria
@@ -32,7 +32,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 |------------------------|------------------|------------------------------------------------------------------------|-------------|
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. If a number larger than 200 is specified, 200 will be used. |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching list membership(according to the specified sorting order) to be returned in the `query` response. The first `offset` matching list memberships will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=10` will return the results starting with the 11th list membership matched by the provided criteria. |
-| `sort_by` | `string` | `created_at, id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. _Default value:_ `id`. |
+| `sort_by` | `string` | `created_at, id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supporting Sorting Options](#supported-sorting-options) for more details. |
 
 
@@ -63,14 +63,14 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting list memberships for the specified query. |
 | `<total_results>` | Contains the number of list memberships selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched list memberships. |
-| `<list_membership>` | The data for an individual list membership. See [Using List Memberships](list-memberships) for a complete description of the list membership [XML Response Format](list-memberships#xml-response-format). Also see [List Membership](object-field-references#list-membership) in [Object Field References](object-field-references). |
+| `<list_membership>` | The data for an individual list membership. See [Using List Memberships](list-memberships) for a complete description of the list membership [XML Response Format](list-memberships#xml-response-format). Also see [List Membership](../object-field-references#list-membership) in [Object Field References](../object-field-references). |
 
 # Using List Memberships
 
 
 ## [](#supported-operations-a-name-supported-operations-id-supported-operations-a-)Supported Operations<a name="85559-supported-operations" id="supported-operations"></a>
 
-List Membership can be controlled on a Prospect and List basis. In additon, the membership can reflect the opted "in" or opted "out" status for that Prospect and List combination. For a complete list of fields involved in list membership operations, see the [ListMembership](object-field-references#list-membership) section of [Object Field References](object-field-references).
+List Membership can be controlled on a Prospect and List basis. In additon, the membership can reflect the opted "in" or opted "out" status for that Prospect and List combination. For a complete list of fields involved in list membership operations, see the [ListMembership](../object-field-references#list-membership) section of [Object Field References](../object-field-references).
 
 | **Operation** | **URL Format**                                                                            | **Required Parameters**                    | **Description**  |
 | ------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------ | -----------------|
@@ -100,4 +100,4 @@ List Membership can be controlled on a Prospect and List basis. In additon, the 
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<list_membership>` | Parent tag. Contains data fields for target list. For complete field listing, see [List Membership](object-field-references#list-membership) in [Object Field References](object-field-references). |
+| `<list_membership>` | Parent tag. Contains data fields for target list. For complete field listing, see [List Membership](../object-field-references#list-membership) in [Object Field References](../object-field-references). |

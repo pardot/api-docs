@@ -47,11 +47,13 @@
             <div class="col-md-9 main-content" role="main">{% include "content.html" %}</div>
         </div>
 
-        {% if include_search %}{% include "search.html" %}{% endif %}
+        {% include "search-modal.html" %}
 
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="{{ base_url }}/js/bootstrap-3.0.3.min.js"></script>
         <script src="{{ base_url }}/js/prettify-1.0.min.js"></script>
+        <script>var base_url = '{{ base_url }}';</script>
+        <script data-main="{{ base_url }}/mkdocs/js/search.js" src="{{ base_url }}/mkdocs/js/require.js"></script>
         <script src="{{ base_url }}/js/base.js"></script>
     </body>
 </html>

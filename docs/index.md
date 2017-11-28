@@ -2,9 +2,10 @@
 
 Welcome! All up-to-date documentation of Pardot's official API is housed here. A few things of note:
 
-* If you have a question about the API, feel free to [open a ticket](https://pardot.desk.com/) with our Support team.
+* If you have a question about the API, feel free to [open a ticket](http://help.pardot.com/customer/en/portal/articles/2133457-how-do-i-contact-pardot-support-) with our Support team.
 * To report an inconsistency in the documentation, please [open an issue on GitHub](https://github.com/Pardot/api-docs/issues). [Pull requests](https://github.com/Pardot/api-docs/pulls) are welcome as well!
 * If you've written your own library or wrapper for Pardot's API, submit a [pull request](https://github.com/Pardot/api-docs/pulls) updating the `index.md` file with a link to your repository, and we'll be glad to consider linking it up.
+* For the latest information on updates to the API and related documentation, refer to the [Release Notes](kb/release-notes).
 
 ## Using the API
 
@@ -77,6 +78,7 @@ The Pardot API supports several output formats, each of which returns different 
 *   `full` -- Returns all supported data for the Pardot object and all objects associated with it.
 *   `simple` -- Returns all supported data for the data for the Pardot object.
 *   `mobile` -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.
+*   `bulk` -- Returns basic data for an object (does not provide total object count). Used for querying [large amounts of data](kb/bulk-data-pull/). 
 
 If the output request parameter is not defined, the output format defaults to `full`. See the XML Response Format sections for each object for details about the formats.
 
@@ -121,6 +123,26 @@ Otherwise, the response will contain the following:
 ```
 
 Subsequent authentication requests will return either the current valid API key or a newly generated API key if the previous one had expired.
+
+## Rate Limits
+
+We enforce API rate limits in two ways:
+
+* daily requests
+* concurrent requests
+
+### Daily Requests
+
+Pardot Pro customers are allocated 25,000 API requests per day. Pardot Ultimate customers can make up to 100,000 API requests a day. 
+These limits reset at the beginning of the day based on your accounts time zone settings. Any request made exceeding the 
+limits will result in an [error code 122](/kb/error-codes-messages/#error-code-122)
+
+You can check you current daily usages in the accounts "usage and limits" page.
+
+### Concurrent Requests
+
+In order to interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five 
+will result in an [error code 66](/kb/error-codes-messages/#error-code-66) response.
 
 ## API Console
 
@@ -213,3 +235,5 @@ echo callPardotApi('https://pi.pardot.com/api/login/version/3',
 ## Supported API wrappers
 
 * [ruby-pardot](https://www.github.com/Pardot/ruby-pardot)
+* [python-pypardot](https://github.com/joshgeller/PyPardot) for version 3 of the API
+* [python-pypardot4](https://github.com/mneedham91/PyPardot4) for version 4 of the API

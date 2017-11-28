@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/customField/version/4/do/query?...` | `user_key, api_key` | Returns the custom fields matching the specified criteria parameters. See the [Using Custom Fields](#using-custom-fields) section for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](object-field-references#custom-field) in [Object Field References](object-field-references) |
+| `query` | `/api/customField/version/4/do/query?...` | `user_key, api_key` | Returns the custom fields matching the specified criteria parameters. See the [Using Custom Fields](#using-custom-fields) section for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](../object-field-references#custom-field) in [Object Field References](../object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -30,7 +30,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. If a number larger than 200 is specified, 200 will be used |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching custom field (according to the specified sorting order) to be returned in the `query` response. The first `offset` matching custom fields will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=10` will return the results starting with the 11th custom field matched by the provided criteria |
-| `sort_by` | `string` | `created_at, id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. _Default value:_ `id` |
+| `sort_by` | `string` | `created_at, id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details |
 
 ## Supported Sorting Options
@@ -61,19 +61,19 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting custom fields for the specified query |
 | `<total_results>` | Contains the number of custom fields selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched custom fields |
-| `<customField>` | The data for an individual custom field. See [Using Custom Fields](#using-custom-fields) for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](object-field-references#custom-field) in [Object Field References](object-field-references) |
+| `<customField>` | The data for an individual custom field. See [Using Custom Fields](#using-custom-fields) for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](../object-field-references#custom-field) in [Object Field References](../object-field-references) |
 
 # Using Custom Fields
 
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Custom Field](object-field-references#custom-field) section of [Object Field References](object-field-references).
+For a complete list of fields involved in user operations, see the [Custom Field](../object-field-references#custom-field) section of [Object Field References](../object-field-references).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `read` | `/api/customField/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the custom field specified by `<id>`. `<id>` is the Pardot ID of the target custom field. |
-| `update` | `/api/customField/version/4/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the custom field specified by `<id>`.  `<id>` is the Pardot ID of the custom field. Refer to [Custom Field](object-field-references#custom-field) in [Object Field References](object-field-references) for more details. Returns the updated version of the custom field. |
+| `update` | `/api/customField/version/4/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the custom field specified by `<id>`.  `<id>` is the Pardot ID of the custom field. Refer to [Custom Field](../object-field-references#custom-field) in [Object Field References](../object-field-references) for more details. Returns the updated version of the custom field. |
 | `create` | `/api/customField/version/4/do/create?...` | `user_key, api_key` | Creates a new custom field using the specified data. |
 | `delete` | `/api/customField/version/4/do/delete/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Deletes the custom field specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Custom Fields may only be deleted using HTTP methods POST or DELETE. |
 
@@ -99,4 +99,4 @@ For a complete list of fields involved in user operations, see the [Custom Field
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<customField>` | Parent tag. Contains data fields for target custom field. For complete field listing, see [Custom Field](object-field-references#custom-field) in [Object Field References](object-field-references). |
+| `<customField>` | Parent tag. Contains data fields for target custom field. For complete field listing, see [Custom Field](../object-field-references#custom-field) in [Object Field References](../object-field-references). |

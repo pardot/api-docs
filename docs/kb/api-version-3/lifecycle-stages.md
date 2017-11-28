@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/lifecycleStage/version/3/do/query?...` | `user_key, api_key` | Returns the lifecycle stage matching the specified criteria parameters. See the [Using Lifecycle Stages](#using-lifecycle-stages) section for a complete description of the lifecycle stage [XML Response Format](#xml-response-format). Also see [Lifecycle Stage](object-field-references#lifecycle-stage) in [Object Field References](object-field-references) |
+| `query` | `/api/lifecycleStage/version/3/do/query?...` | `user_key, api_key` | Returns the lifecycle stage matching the specified criteria parameters. See the [Using Lifecycle Stages](#using-lifecycle-stages) section for a complete description of the lifecycle stage [XML Response Format](#xml-response-format). Also see [Lifecycle Stage](../object-field-references#lifecycle-stage) in [Object Field References](../object-field-references) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -28,7 +28,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. If a number larger than 200 is specified, 200 will be used |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching lifecycle stage (according to the specified sorting order) to be returned in the `query` response. The first `offset` matching lifecycle stage will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=10` will return the results starting with the 11th lifecycle stage matched by the provided criteria |
-| `sort_by` | `string` | `created_at, id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. _Default value:_ `id` |
+| `sort_by` | `string` | `created_at, id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supporting Sorting Options](#supported-sorting-options) for more details |
 
 ## Supported Sorting Options
@@ -58,7 +58,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting lifecycle stages for the specified query |
 | `<total_results>` | Contains the number of lifecycle stages selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched lifecycle stages |
-| `<lifecycleStage>` | The data for an individual lifecycle stage. See [Using Lifecycle Stages](#using-lifecycle-stages) for a complete description of the lifecycle stage [XML Response Format](#xml-response-format). Also see [Lifecycle Stage](object-field-references#lifecycle-stage) in [Object Field References](object-field-references) |
+| `<lifecycleStage>` | The data for an individual lifecycle stage. See [Using Lifecycle Stages](#using-lifecycle-stages) for a complete description of the lifecycle stage [XML Response Format](#xml-response-format). Also see [Lifecycle Stage](../object-field-references#lifecycle-stage) in [Object Field References](../object-field-references) |
 
 
 # Using Lifecycle Stages
@@ -78,4 +78,4 @@ The ordering of the results returned by a `query` request can be changed by spec
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<lifecycleStage>` | Parent tag. Contains data fields for target lifecycle stage. For complete field listing, see [Lifecycle Stage](object-field-references#lifecycle-stage) in [Object Field References](object-field-references). |
+| `<lifecycleStage>` | Parent tag. Contains data fields for target lifecycle stage. For complete field listing, see [Lifecycle Stage](../object-field-references#lifecycle-stage) in [Object Field References](../object-field-references). |

@@ -6,7 +6,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/visit/version/4/do/query?...` | `user_key, api_key, (ids, visitor_ids, prospect_ids)` | Returns the visits matching the specified criteria parameters. See the [Using Visits](visits) section for a complete description of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](object-field-references#visit) in [Object Field References](object-field-references). |
+| `query` | `/api/visit/version/4/do/query?...` | `user_key, api_key, (ids, visitor_ids, prospect_ids)` | Returns the visits matching the specified criteria parameters. See the [Using Visits](visits) section for a complete description of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](../object-field-references#visit) in [Object Field References](../object-field-references). |
 
 ## Supported Search Criteria
 
@@ -49,14 +49,14 @@ Visits are returned in order of ascending IDs.
 | ------- | --------------- |
 | `<result>` | Contains the resulting visits for the specified query. |
 | `<total_results>` | Contains the number of visits selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched visits. |
-| `<visit>` | The data for an individual visit. See [Using Visits](visits) for complete descriptions of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](object-field-references#visit) in [Object Field References](object-field-references). |
+| `<visit>` | The data for an individual visit. See [Using Visits](visits) for complete descriptions of visit [XML Response Formats](visits#xml-response-formats). Also see [Visit](../object-field-references#visit) in [Object Field References](../object-field-references). |
 
 # Using Visits
 
 
 ## Supported Operations<a name="14846-supported-operations"></a>
 
-For a complete list of fields involved in visitor operations, see the [Visit](object-field-references#visit) section of [Object Field References](object-field-references).
+For a complete list of fields involved in visitor operations, see the [Visit](../object-field-references#visit) section of [Object Field References](../object-field-references).
 
 | **Operation** | **URL Format**   | **Required Parameters** | **Description**  |
 | ------------- | ---------------- | ----------------------- | -----------------|
@@ -81,6 +81,6 @@ For a complete list of fields involved in visitor operations, see the [Visit](ob
 
 | **Tag**                    | **Description** |
 |----------------------------|-----------------|
-| `<visit>` | Parent tag. Contains data fields for target visit.  For complete field listing, see [Visit](object-field-references#visit) in [Object Field References](object-field-references). |
+| `<visit>` | Parent tag. Contains data fields for target visit.  For complete field listing, see [Visit](../object-field-references#visit) in [Object Field References](../object-field-references). |
 | `<visitor_page_views>` | Contains all visitor page views associated with this visitor.  Contains only `<visitor_page_view>` tags. |
-| `<visitor_page_view>` | Contains data fields for a visitor page view.  For complete field listing, see [Visitor Page View](object-field-references#visitor-page-view) in [Object Field References](object-field-references). |
+| `<visitor_page_view>` | Contains data fields for a visitor page view.  For complete field listing, see [Visitor Page View](../object-field-references#visitor-page-view) in [Object Field References](../object-field-references). |
