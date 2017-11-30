@@ -1271,7 +1271,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: The provided prospect is unable to receive email.
+**Problem**: One or more of the recipient prospects cannot receive the email requested (due to opting out, being flagged as "Do Not Email", or for other reasons)
+
+**Solution**: Check that the recipient list is correct, and that the prospect's email preferences are up-to-date.
 
 ## [](#error-code-99)Error Code: 99
 
@@ -1600,6 +1602,7 @@ requests.
 **Problem**: This authentication method has been deprecated.
 
 **Solution**: Resubmit the request using a valid [authentication](/#authentication) method.
+
 
 ## [](#error-code-10000)Error Code: 10000
 
