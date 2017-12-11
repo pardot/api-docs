@@ -63,7 +63,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | `created_at` | `descending` | Specifies that the query results should be sorted by the visitor activities' `created_at` timestamps. |
 | `id` | `ascending` | Specifies that the query results should be sorted by the visitor activities' `id` fields. |
 | `prospect_id` | `descending` | Specifies that the query results should be sorted by the visitor activities' related prospects. |
-| `prospect_id` | `descending` | Specifies that the query results should be sorted by the visitor activities' related visitors. |
+| `visitor_id` | `descending` | Specifies that the query results should be sorted by the visitor activities' related visitors. |
 
 
 ## [](#xml-response-format-)XML Response Format
