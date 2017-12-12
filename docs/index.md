@@ -144,10 +144,6 @@ You can check you current daily usages in the accounts "usage and limits" page.
 In order to interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five 
 will result in an [error code 66](/kb/error-codes-messages/#error-code-66) response.
 
-## API Console
-
-You can explore Pardot's API in the [API Console](http://www.pardot.com/api/). Please note that we're in the process of adding new methods.
-
 ## Sample Code
 
 Here's an example of calling the Pardot API using a simple PHP function and the cURL library.
