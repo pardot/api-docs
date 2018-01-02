@@ -103,7 +103,7 @@ message body: email=<email>&password=<password>&user_key=<user_key>
 | ------------- | :------------: | ----------------------------------------------------- |
 | `email`       | X              | The email address of your user account                 |
 | `password`    | X              | The password of your user account                      |
-| `user_key`    | X              | The 32-bit hexadecimal user key for your user account  |
+| `user_key`    | X              | The 32-character hexadecimal user key for your user account  |
 
 If authentication was successful, a 32-character hexadecimal API
 key will be returned in the following format:
