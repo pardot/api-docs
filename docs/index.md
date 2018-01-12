@@ -233,3 +233,4 @@ echo callPardotApi('https://pi.pardot.com/api/login/version/3',
 * [ruby-pardot](https://www.github.com/Pardot/ruby-pardot)
 * [python-pypardot](https://github.com/joshgeller/PyPardot) for version 3 of the API
 * [python-pypardot4](https://github.com/mneedham91/PyPardot4) for version 4 of the API
+* [R-paRdot](https://github.com/demgenman/paRdot) for version 3 of the API
