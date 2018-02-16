@@ -72,7 +72,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 <rsp stat="ok" version="1.0">
     <result>
         <total_results>...</total_results>
-        <visitorActivity>...</visitorActivity>
+        <visitor_activity>...</visitor_activity>
             ...
     </result>
 </rsp>
@@ -82,7 +82,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting visitor activities for the specified query. |
 | `<total_results>` | Contains the number of visitor activities selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched visitor activities. |
-| `<visitorActivity>` | The data for an individual visitor activity. See [Using Visitor Activities](visitors-activities) for complete descriptions of visitor activity [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
+| `<visitor_activity>` | The data for an individual visitor activity. See [Using Visitor Activities](visitors-activities) for complete descriptions of visitor activity [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
 
 # Using Visitor Activities
 
@@ -99,12 +99,12 @@ For a complete list of fields involved in visitor activity operations, see the [
 
 ```
 <rsp stat="ok" version="1.0">
-    <visitorActivity>
+    <visitor_activity>
         ...
-    </visitorActivity>
+    </visitor_activity>
 </rsp>
 ```
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-`<visitorActivity>` | Parent tag. Contains data fields for target visitorActivity. For complete field listing, see [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
+`<visitor_activity>` | Parent tag. Contains data fields for target visitorActivity. For complete field listing, see [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
