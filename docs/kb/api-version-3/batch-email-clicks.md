@@ -58,7 +58,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 <rsp stat="ok" version="1.0">
     <result>
         <total_results>...</total_results>
-        <emailClicks>...</emailClicks>
+        <emailClick>...</emailClick>
             ...
     </result>
 </rsp>
@@ -68,4 +68,4 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | ------- | --------------- |
 | `<result>` | Contains the resulting email clicks for the specified query. |
 | `<total_results>` | Contains the number of email clicks selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched email clicks. |
-| `<emailClicks>` | The data for an individual email click. 
+| `<emailClick>` | The data for an individual email click. 
