@@ -1515,7 +1515,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: Unable to create a refresh token for the Salesforce connector for authentication. 
+**Problem**: Unable to create a refresh token for the Salesforce connector for authentication.
 
 **Solution**: Resubmit the request to try again. If the problem persists, contact support.
 
@@ -1603,6 +1603,17 @@ requests.
 
 **Solution**: Resubmit the request using a valid [authentication](/#authentication) method.
 
+## [](#error-code-131)Error Code: 131
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="131">Your account is locked due to too many failed login attempts. Reset your password at https://pi.pardot.com/user/passwordReset</err>
+</rsp>
+```
+
+**Problem**: Too many invalid api requests have been made.
+
+**Solution**: Reset your password at https://pi.pardot.com/user/passwordReset
 
 ## [](#error-code-10000)Error Code: 10000
 
