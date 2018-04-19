@@ -144,6 +144,13 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <td>Pardot ID for this campaign</td>
 </tr>
 <tr>
+<td>&lt;crm_fid&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Salesforce FID for this campaign</td>
+</tr>
+<tr>
 <td>&lt;name&gt;</td>
 <td>string</td>
 <td></td>
