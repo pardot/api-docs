@@ -79,7 +79,7 @@ For a complete list of fields involved in user operations, see the [Campaign](..
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `read` | `/api/campaign/version/3/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the campaign specified by `<id>`. `<id>` is the Pardot ID of the target campaign. |
-| `read` | `/api/campaign/version/4/do/read/fid/`**_`<fid>`_**`?...` | `user_key, api_key, fid` | Returns the data for the campaign specified by `<fid>`. `<fid>` is the Salesforce ID of the target campaign. |
+| `read` | `/api/campaign/version/3/do/read/fid/`**_`<fid>`_**`?...` | `user_key, api_key, fid` | Returns the data for the campaign specified by `<fid>`. `<fid>` is the Salesforce ID of the target campaign. |
 | `update` | `/api/campaign/version/3/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the campaign specified by `<id>`.  `<id>` is the Pardot ID of the campaign. Refer to [Campaign](../object-field-references#campaign) in [Object Field References](../object-field-references) for more details. Returns the updated version of the campaign. **_Note:_** If the Campaign Alignment feature is enabled, `name` and `cost` are not updateable. |
 | `create` | `/api/campaign/version/3/do/create?...` | `user_key, api_key` | Creates a new campaign using the specified data. **_Note:_** If the Campaign Alignment feature is enabled, the `create` operation is not allowed. |
 
