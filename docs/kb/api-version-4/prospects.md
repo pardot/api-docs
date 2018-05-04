@@ -87,7 +87,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 
 For a complete list of fields involved in Prospect operations, see the [Prospect](../object-field-references#prospect) section of [Object Field References](../object-field-references).
 
-**_Note:_** In order to ensure compliance with GDPR enforcement the following operations will not be available on an **_archived_** prospect: assign, unassign, create and update.
+**_Note:_** In order to ensure compliance with GDPR enforcement the following operations will not be available on an **_archived_** prospect: assign, unassign, create and update.  In order to continue performing these operations you must first undelete the prospect using the **_undelete_** endpoint.
 
 | **Operation** | **URL Format**   | **Required Parameters** | **Description**  |
 | ------------- | ---------------- | ----------------------- | -----------------|
@@ -107,6 +107,8 @@ For a complete list of fields involved in Prospect operations, see the [Prospect
 | `batchUpsert` | `/api/prospect /version/4 /do/batchUpsert? prospects=<data>...` | `user_key, api_key, prospects` | Updates prospects using the provided `<data>` in either XML or JSON. See [Endpoints for Batch Processing](#endpoints-for-batch-processing).**_Note:_** The prospect may be assigned to a user by supplying a value for the optional `<user_id>` parameter.
 | `delete`      | `/api/prospect /version/4 /do/delete/ id/<id>?...` | `user_key, api_key, id` | Deletes the prospect specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Prospects may only be deleted using HTTP methods POST or DELETE. |
 | `delete`      | `/api/prospect /version/4 /do/delete/ fid/<fid>?...` | `user_key, api_key, fid` | Deletes the prospect specified by `<fid>`, where `<fid>` corresponds to the prospect's CRM FID. Returns HTTP 204 No Content on success. **_Note:_** Prospects may only be deleted using HTTP methods POST or DELETE. |
+| `undelete`      | `/api/prospect /version/4 /do/undelete/ id/<id>?...` | `user_key, api_key, id` | Undelete the prospect specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Prospects may only be undeleted using HTTP methods POST. |
+| `undelete`      | `/api/prospect /version/4 /do/undelete/ fid/<fid>?...` | `user_key, api_key, fid` | Undelete the prospect specified by `<fid>`, where `<fid>` corresponds to the prospect's CRM FID. Returns HTTP 204 No Content on success. **_Note:_** Prospects may only be undeleted using HTTP methods POST. |
 
 
 
