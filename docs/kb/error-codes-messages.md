@@ -1615,7 +1615,7 @@ requests.
 
 ```
 <rsp stat="fail" version="1.0">
-    <err code="131">Prospect is archived</err>
+    <err code="132">Prospect is archived</err>
 </rsp>
 ```
 
