@@ -1611,6 +1611,10 @@ requests.
 </rsp>
 ```
 
+**Problem**: Too many invalid api requests have been made.
+
+**Solution**: Reset your password at https://pi.pardot.com/user/passwordReset
+
 ## [](#error-code-132)Error Code: 132
 
 ```
@@ -1619,9 +1623,9 @@ requests.
 </rsp>
 ```
 
-**Problem**: Too many invalid api requests have been made.
+**Problem**: Interacting with an archived prospect is limited.
 
-**Solution**: Reset your password at https://pi.pardot.com/user/passwordReset
+**Solution**: First undelete prospect and then perform the action.
 
 ## [](#error-code-10000)Error Code: 10000
 
