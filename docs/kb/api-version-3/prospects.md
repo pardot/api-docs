@@ -87,6 +87,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 
 For a complete list of fields involved in Prospect operations, see the [Prospect](../object-field-references#prospect) section of [Object Field References](../object-field-references).
 
+**_Note:_** In order to ensure compliance with GDPR enforcement the following operations will not be available on an **_archived_** prospect: assign, unassign, create, read, update
 
 | **Operation** | **URL Format**   | **Required Parameters** | **Description**  |
 | ------------- | ---------------- | ----------------------- | -----------------|

@@ -1611,6 +1611,14 @@ requests.
 </rsp>
 ```
 
+## [](#error-code-132)Error Code: 132
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="131">Prospect is archived</err>
+</rsp>
+```
+
 **Problem**: Too many invalid api requests have been made.
 
 **Solution**: Reset your password at https://pi.pardot.com/user/passwordReset
