@@ -1615,6 +1615,18 @@ requests.
 
 **Solution**: Reset your password at https://pi.pardot.com/user/passwordReset
 
+## [](#error-code-132)Error Code: 132
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="132">Prospect is archived</err>
+</rsp>
+```
+
+**Problem**: Interacting with an archived prospect is limited.
+
+**Solution**: First undelete prospect and then perform the action.
+
 ## [](#error-code-10000)Error Code: 10000
 
 ```
