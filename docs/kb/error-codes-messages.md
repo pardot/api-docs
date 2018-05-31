@@ -547,7 +547,7 @@ names. Also check that the request has been properly formatted.
 ```
 
 **Problem**: Your Pardot account has a SalesForce
-connector. When a SalesForce connector is present, opportunities
+connector. When a SalesForce connector is present, opportunities and prospect account
 cannot be modified by Pardot.
 
 **Solution**: **_(NOT
@@ -845,7 +845,7 @@ already.
 ```
 
 **Problem**: Your Pardot account has a CRM
-connector. When a CRM connector is present, opportunities cannot be
+connector. When a CRM connector is present, opportunities and prospect account cannot be
 modified by Pardot.
 
 **Solution**: **_(NOT
