@@ -272,28 +272,28 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <td>&lt;name&gt;</td>
 <td>string</td>
 <td></td>
-<td></td>
+<td>X</td>
 <td>Custom redirect's name</td>
 </tr>
 <tr>
 <td>&lt;Url&gt;</td>
 <td>string</td>
 <td></td>
-<td></td>
+<td>X</td>
 <td>URL for the custom redirect</td>
 </tr>
 <tr>
 <td>&lt;destination&gt;</td>
 <td>string</td>
 <td></td>
-<td></td>
+<td>X</td>
 <td>URL the custom redirect leads to</td>
 </tr>
 <tr>
 <td>&lt;campaign&gt;</td>
 <td>string</td>
 <td></td>
-<td></td>
+<td>X</td>
 <td>The campaign associated with this custom redirect</td>
 </tr>
 <tr>
