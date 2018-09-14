@@ -2,6 +2,9 @@
 
 This page contains the release notes for the Pardot API and related documentation.
 
+## September 2018
+* added the ability to create and update a custom redirect
+
 ## February 2018
 * fixed a few typos in the docs
 * added information regarding campaign alignment
