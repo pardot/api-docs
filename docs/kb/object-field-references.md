@@ -503,6 +503,54 @@ user's preferred timezone</td>
 </tr>
 </table>
 
+## File
+
+<table>
+<tr>
+<td><strong>Field Name&nbsp;</strong></td>
+<td><strong>Data Type&nbsp;</strong></td>
+<td><strong>Required&nbsp;</strong></td>
+<td><strong>Editable&nbsp;</strong></td>
+<td><strong>Description&nbsp;</strong></td>
+</tr>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this file</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>File's name</td>
+</tr>
+<tr>
+<td>&lt;crm_fid&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Salesforce ID if one exists</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time file was created in Pardot; Time is reported in API user's
+    preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time file was updated; Time is reported in API user's
+    preferred timezone</td>
+</tr>
+</table>
 
 ## Form
 

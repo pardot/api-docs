@@ -4,6 +4,7 @@ This page contains the release notes for the Pardot API and related documentatio
 
 ## September 2018
 * added the ability to create and update a custom redirect
+* added in a new read endpoint for file
 
 ## February 2018
 * fixed a few typos in the docs
