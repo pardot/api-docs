@@ -75,7 +75,7 @@ For a complete list of fields involved in user operations, see the [Custom Redir
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `read` | `/api/customRedirect/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the custom redirect specified by `<id>`. `<id>` is the Pardot ID of the target custom redirect. |
-| `create` | `/api/customRedirect/version/4/do/create?...` | `user_key, api_key` | Creates a new custom redirect using the specified data. |
+| `create` | `/api/customRedirect/version/4/do/create?...` | `user_key, api_key` | Creates a new custom redirect using the specified data. Creates a new custom redirect using the specified data. See [Custom Redirect](../object-field-references#customRedirect) in [Object Field References](../object-field-references) for other field requirements. |
 | `update` | `/api/customRedirect/version/4/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the custom redirect specified by `<id>`.  `<id>` is the Pardot ID of the custom redirect. Refer to [Custom Redirect](../object-field-references#custom-redirect) in [Object Field References](../object-field-references) for more details. Returns the updated version of the custom redirect. |
 
 
