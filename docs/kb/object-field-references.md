@@ -283,6 +283,13 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <td>URL the custom redirect leads to</td>
 </tr>
 <tr>
+<td>&lt;salesforce_fid&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Salesforce ID if one exists</td>
+</tr>    
+<tr>
 <td>&lt;campaign&gt;</td>
 <td>string</td>
 <td></td>
