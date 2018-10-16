@@ -130,41 +130,39 @@ Each field returned by the API maps to a field within the Pardot user interface.
 
 <table>
 <tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
+    <td><strong>Field Name&nbsp;</strong></td>
+    <td><strong>Data Type&nbsp;</strong></td>
+    <td><strong>Required&nbsp;</strong></td>
+    <td><strong>Editable&nbsp;</strong></td>
+    <td><strong>Description&nbsp;</strong></td>
 </tr>
 <tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this campaign</td>
+    <td>&lt;id&gt;</td>
+    <td>integer</td>
+    <td>X</td>
+    <td></td>
+    <td>Pardot ID for this campaign</td>
 </tr>
 <tr>
-<td>&lt;crm_fid&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Salesforce ID for this campaign</td>
+    <td>&lt;crm_fid&gt;</td>
+    <td>integer</td>
+    <td></td>
+    <td></td>
+    <td>Salesforce ID for this campaign</td>
 </tr>
 <tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Campaign's name</td>
+    <td>&lt;name&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td>X</td>
+    <td>Campaign's name</td>
 </tr>
 <tr>
-<td>&lt;cost&gt;</td>
-<td>integer</td>
-<td></td>
-<td>X</td>
-<td>Cost associated to the campaign</td>
-</tr>
-<tr>
+    <td>&lt;cost&gt;</td>
+    <td>integer</td>
+    <td></td>
+    <td>X</td>
+    <td>Cost associated to the campaign</td>
 </tr>
 </table>
 
@@ -172,83 +170,82 @@ Each field returned by the API maps to a field within the Pardot user interface.
 
 <table>
 <tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
+    <td><strong>Field Name&nbsp;</strong></td>
+    <td><strong>Data Type&nbsp;</strong></td>
+    <td><strong>Required&nbsp;</strong></td>
+    <td><strong>Editable&nbsp;</strong></td>
+    <td><strong>Description&nbsp;</strong></td>
 </tr>
 <tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this custom field</td>
+    <td>&lt;id&gt;</td>
+    <td>integer</td>
+    <td>X</td>
+    <td></td>
+    <td>Pardot ID for this custom field</td>
 </tr>
 <tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Custom field's name</td>
+    <td>&lt;name&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td>X</td>
+    <td>Custom field's name</td>
 </tr>
 <tr>
-<td>&lt;field_id&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>API ID for custom field</td>
+    <td>&lt;field_id&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td></td>
+    <td>API ID for custom field</td>
 </tr>
 <tr>
-<td>&lt;type&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>type of field</td>
+    <td>&lt;type&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td>X</td>
+    <td>type of field</td>
 </tr>
 <tr>
-<td>&lt;type_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
+    <td>&lt;type_id&gt;</td>
+    <td>integer</td>
+    <td></td>
+    <td></td>
 <td>Pardot ID for custom field's type</td>
 </tr>
 <tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time custom field was created in Pardot; Time is reported in API user's
+    <td>&lt;created_at&gt;</td>
+    <td>timestamp</td>
+    <td></td>
+    <td></td>
+    <td>Time custom field was created in Pardot; Time is reported in API user's
         preferred timezone</td>
 </tr>
 <tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time custom field was updated; Time is reported in API user's
-        preferred timezone</td>
+    <td>&lt;updated_at&gt;</td>
+    <td>timestamp</td>
+    <td></td>
+    <td></td>
+    <td>Last time custom field was updated; Time is reported in API user's preferred timezone</td>
 </tr>
 <tr>
-<td>&lt;is_record_multiple_responses&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If true, this custom field will record multiple responses</td>
+    <td>&lt;is_record_multiple_responses&gt;</td>
+    <td>boolean</td>
+    <td></td>
+    <td>X</td>
+    <td>If true, this custom field will record multiple responses</td>
 </tr>
 <tr>
-<td>&lt;crm_id&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>The CRM ID of the field you would like to map to this custom field</td>
+    <td>&lt;crm_id&gt;</td>
+    <td>string</td>
+    <td></td>
+    <td>X</td>
+    <td>The CRM ID of the field you would like to map to this custom field</td>
 </tr>
 <tr>
-<td>&lt;is_use_values&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If true, this custom field will use predefined values</td>
+    <td>&lt;is_use_values&gt;</td>
+    <td>boolean</td>
+    <td></td>
+    <td>X</td>
+    <td>If true, this custom field will use predefined values</td>
 </tr>
 </table>
 
@@ -408,6 +405,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
         preferred timezone</td>
 </tr>
 </table>
+
 ## Email
 
 <table>
@@ -461,7 +459,6 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <td>Time the Email Was Created</td>
 </tr>
 </table>
-
 
 ## Email Clicks
 
@@ -645,6 +642,7 @@ user's preferred timezone</td>
 </table>
 
 ## Identified Company
+
 <table>
 <tr>
 <td><strong>Field Name&nbsp;</strong></td>
@@ -712,6 +710,7 @@ user's preferred timezone</td>
 </table>
 
 ## Lifecycle History
+
 <table>
 <tr>
 <td><strong>Field Name&nbsp;</strong></td>
@@ -766,6 +765,7 @@ preferred timezone</td>
 </table>
 
 ## Lifecycle Stage
+
 <table>
 <tr>
 <td><strong>Field Name&nbsp;</strong></td>
@@ -805,6 +805,7 @@ preferred timezone</td>
 </table>
 
 ## List
+
 <table>
 <tr>
 <td><strong>Field Name&nbsp;</strong></td>
@@ -1447,6 +1448,7 @@ user's preferred timezone</td>
 API user's preferred timezone</td>
 </tr>
 </table>
+
 ## Prospect Account
 
 <p>Note: Prospect account fields are fully customizable. To get the
@@ -1475,6 +1477,7 @@ describe operation on the prospectAccount API endpoint.</p>
 <td>The name prospect account</td>
 </tr>
 </table>
+
 ## Tag
 
 <table>
@@ -1564,6 +1567,7 @@ describe operation on the prospectAccount API endpoint.</p>
 preferred timezone</td>
 </tr>
 </table>
+
 ## User
 
 <table>
@@ -1633,6 +1637,7 @@ user's preferred timezone</td>
 API user's preferred timezone</td>
 </tr>
 </table>
+
 ## Visit
 
 <table>
@@ -1748,6 +1753,7 @@ user's preferred timezone</td>
 user's preferred timezone</td>
 </tr>
 </table>
+
 ## Visitor
 
 <table>
@@ -1842,6 +1848,7 @@ user's preferred timezone</td>
 API user's preferred timezone</td>
 </tr>
 </table>
+
 ## Visitor Activity
 
 <table>
@@ -2062,6 +2069,7 @@ Visitor Activities may have the following values for
 <li>34 - Video Watched (≥ 75% watched)</li>
 <li>Other - Unknown</li>
 </ul>
+
 ## Visitor Page View
 
 <table>
@@ -2102,6 +2110,7 @@ Visitor Activities may have the following values for
 preferred timezone</td>
 </tr>
 </table>
+
 ## Visitor Referrer
 
 <table>
