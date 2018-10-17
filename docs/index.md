@@ -1,5 +1,9 @@
 # Official Pardot API Documentation
 
+> **IMPORTANT: Support for passing credentials via querystring is deprecated and will be forbidden in a future version of the API. Please update your API client as soon as possible.**
+>
+> Refer to the [Using the API > Request Format](#using-the-api) section below for further details.
+
 Welcome! All up-to-date documentation of Pardot's official API is housed here. A few things of note:
 
 * If you have a question about the API, feel free to [open a ticket](https://help.salesforce.com/articleView?id=000181929&type=1) with our Support team.
@@ -27,8 +31,6 @@ All requests to the API:
 
 * Must use either HTTP `GET` or `POST`
 * Must pass credentials in an HTTP `Authorization` header - or - in the body of a `POST` request
-
-> NOTE: Support for passing credentials via querystring is deprecated and will be forbidden in a future version of the API. Please update your API client as soon as possible.
 
 #### Sample GET Request
 
