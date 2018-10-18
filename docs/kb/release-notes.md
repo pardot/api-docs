@@ -2,7 +2,7 @@
 
 This page contains the release notes for the Pardot API and related documentation.
 
-## September 2018
+## October 2018
 * added the ability to Create and Update a custom redirect.
 * added a new Read endpoint for file.
 * added a new response parameter 'crm_fid' to Campaign, Custom Redirect, Email, File, and Form.
