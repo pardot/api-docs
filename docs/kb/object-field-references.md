@@ -267,7 +267,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <td>Pardot ID for this custom redirect</td>
 </tr>
 <tr>
-<td>&lt;salesforce_fid&gt;</td>
+<td>&lt;crm_fid&gt;</td>
 <td>integer</td>
 <td>X</td>
 <td></td>
@@ -281,7 +281,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <td>Custom redirect's name</td>
 </tr>
 <tr>
-<td>&lt;Url&gt;</td>
+<td>&lt;url&gt;</td>
 <td>string</td>
 <td>X</td>
 <td>X</td>
@@ -294,13 +294,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <td>X</td>
 <td>URL the custom redirect leads to</td>
 </tr>
-<tr>
-<td>&lt;salesforce_fid&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Salesforce ID if one exists</td>
-</tr>    
+<tr>  
 <tr>
 <td>&lt;campaign&gt;</td>
 <td>string</td>
@@ -424,7 +418,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <td>Pardot ID for this email</td>
 </tr>
 <tr>
-<td>&lt;salesforce_fid&gt;</td>
+<td>&lt;crm_fid&gt;</td>
 <td>integer</td>
 <td></td>
 <td></td>
@@ -596,7 +590,7 @@ user's preferred timezone</td>
 <td>Pardot ID for this form</td>
 </tr>
 <tr>
-<td>&lt;salesforce_fid&gt;</td>
+<td>&lt;crm_fid&gt;</td>
 <td>integer</td>
 <td></td>
 <td></td>

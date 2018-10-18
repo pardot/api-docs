@@ -3,10 +3,11 @@
 This page contains the release notes for the Pardot API and related documentation.
 
 ## September 2018
-* added the ability to create and update a custom redirect
-* added a new read endpoint for file
-* added a new response parameter 'crm_fid' to Campaign.
-* added a new response parameter 'salesforce_fid' to Form, Custom Redirect, and Email.
+* added the ability to Create and Update a custom redirect.
+* added a new Read endpoint for file.
+* added a new response parameter 'crm_fid' to Campaign, Custom Redirect, Email, File, and Form.
+* added the ability to Read a campaign by its crm_fid (Salesforce ID).
+
 
 ## February 2018
 * fixed a few typos in the docs
