@@ -269,7 +269,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <tr>
 <td>&lt;crm_fid&gt;</td>
 <td>integer</td>
-<td>X</td>
+<td></td>
 <td></td>
 <td>Salesforce ID for this custom redirect</td>
 </tr>
@@ -283,9 +283,9 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <tr>
 <td>&lt;url&gt;</td>
 <td>string</td>
-<td>X</td>
-<td>X</td>
-<td>URL for the custom redirect</td>
+<td></td>
+<td></td>
+<td>The tracked URL for the custom redirect</td>
 </tr>
 <tr>
 <td>&lt;destination&gt;</td>
