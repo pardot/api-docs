@@ -243,7 +243,8 @@ echo callPardotApi('https://pi.pardot.com/api/login/version/3',
         'email' => 'your.email@example.com',
         'password' => 'password1234',
         'user_key' => '12345678890abcdef12345678890abcdef' //available from https://pi.pardot.com/account
-    )
+    ),
+    'POST'
 );
 ```
 
