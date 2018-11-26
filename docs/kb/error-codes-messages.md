@@ -725,6 +725,18 @@ in Pardot.
 **Solution**: Verify that the visit ID was typed
 correctly and matches the intended visit in Pardot.
 
+## [](#error-code-49)Error Code: 49
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="49">Access Denied</err>
+</rsp>
+```
+
+**Problem**: User is not authorized to perform the requested operation either due to access restrictions or forbidden method of passing credentials
+
+**Solution**: Verify user has required access to perform the requested operation.  Ensure credentials are passed via a supported method as per the API documentation.  Contact customer support if problem persists.
+
 ## [](#error-code-50)Error Code: 50
 
 ```
