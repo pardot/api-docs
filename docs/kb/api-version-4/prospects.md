@@ -327,7 +327,36 @@ XML Upsert Example:
 </prospects>
 ```
 
-If using `batchCreate`, you'll need to provide a valid email address for each prospect. The `batchUpdate`  endpoints allow the use of prospect IDs and CRM FIDs and `batchUpsert` allows the use of prospect IDs, CRM FIDs, and prospect Email Addresses.
+JSON Update Example
+```
+{
+    "prospects": [
+        {"fid":"1234","first_name":"First name","last_name":"Last name"},
+        {"id":"10","first_name":"First name","last_name":"Last name"}
+    ]
+}
+```
+XML Update Example:
+```
+<prospects>
+    <prospect>
+        <fid>1234</fid>
+        <first_name>New first name</first_name>
+        <last_name>New last name</last_name>
+    </prospect>
+    <prospect>
+        <id>10</id>
+        <first_name>New first name</first_name>
+        <last_name>New last name</last_name>
+    </prospect>
+</prospects>
+```
+
+If using `batchCreate`, you'll need to provide a valid email address for each prospect.
+
+The `batchUpsert` endpoint allows the use of prospect IDs, CRM FIDs, and prospect Email Addresses as valid record identifiers.
+
+The `batchUpdate` endpoint allows the use of prospect IDs and CRM FIDs.  Updating by prospect Email Address is not supported - a prospect ID or CRM FID is required as a valid record identifier.  You may query by email address to get record identifiers.
 
 **_Example:_**
 
