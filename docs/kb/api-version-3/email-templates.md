@@ -12,7 +12,7 @@
 
 | Parameter              | Required         | Type                                                                | Description |
 |------------------------|------------------|------------------------------------------------------------------------|-------------|
-| archived |  | boolean | When set to true, archived and unarchived email templates are returned from the endpoint. _Defaults to_ `false`. |
+| archived |  | boolean | When set to true, archived and unarchived email templates are returned from the endpoint. When false, unarchived templates will be returned and archived templates will not be found (as if no email template exists for the specified ID). _Defaults to_ `false`. |
 
 
 ## XML Response Format
