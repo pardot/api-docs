@@ -1627,6 +1627,186 @@ requests.
 
 **Solution**: Reset your password at https://pi.pardot.com/user/passwordReset
 
+## [](#error-code-150)Error Code: 150
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="150">Input needs to be valid JSON</err>
+</rsp>
+```
+
+**Problem**: The JSON that was submitted was invalid.
+
+**Solution**: Submit valid JSON. A JSON linter may help ensure that the payload is valid before sending.
+
+## [](#error-code-151)Error Code: 151
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="151">Unsupported content-type</err>
+</rsp>
+```
+
+**Problem**: The 'Content-Type' header has an unsupported value for this endpoint.
+
+**Solution**: Check the documentation for the specific endpoint and ensure you are sending the correct Content Type value.
+
+## [](#error-code-152)Error Code: 152
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="152">Request body can't be empty</err>
+</rsp>
+```
+
+**Problem**: The API request has no body.
+
+**Solution**: Ensure that the payload of the request is being sent and is encoded as 'application/json'
+
+## [](#error-code-153)Error Code: 153
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="153">Missing required property in request</err>
+</rsp>
+```
+
+**Problem**: A required field in the request body could not be found.
+
+**Solution**: Check the documentation and ensure that all required fields in the request body are specified.
+
+## [](#error-code-154)Error Code: 154
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="154">Invalid property in request</err>
+</rsp>
+```
+
+**Problem**: A field in the request body has an invalid value.
+
+**Solution**: Check the documentation and ensure that the value that is being passed is supported. Note that several values are not supported at this time.
+
+## [](#error-code-155)Error Code: 155
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="155">Can't update. Import must be in "Open" state.</err>
+</rsp>
+```
+
+**Problem**: The import that is trying to be updated is not in the “Open” state.
+
+**Solution**: This import is no longer eligible to receive updates. Create a new import, or update an existing import in the “Open” state.
+
+## [](#error-code-156)Error Code: 156
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="156">Can't start processing. Import has no associated data.</err>
+</rsp>
+```
+
+**Problem**: The import that is trying to be set to “Ready” has no data associated with it.
+
+**Solution**: Upload a batch of data before setting the import to “Ready”.
+
+## [](#error-code-157)Error Code: 157
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="157">Error processing import request. Please contact your Pardot support representative</err>
+</rsp>
+```
+
+**Problem**: The import has no background processing agent associated with it.
+
+**Solution**: This import was improperly created and is unsalvageable. Create a new import and upload the same batch of data to ensure processing occurs.
+
+## [](#error-code-158)Error Code: 158
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="158">Uploading a file was unsuccessful</err>
+</rsp>
+```
+
+**Problem**: The “files” element of the request body could not be found.
+
+**Solution**: Ensure that the CSV being uploaded belongs to a key named “files”.
+
+## [](#error-code-159)Error Code: 159
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="159">The file is not in a valid CSV format</err>
+</rsp>
+```
+
+**Problem**: The CSV file is invalid.
+
+**Solution**: Ensure that the CSV file is properly formatted. There must be 1 header row, at least 1 data row, and the number of columns in each row must match the number of columns in the header.
+
+## [](#error-code-160)Error Code: 160
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="160">The limit of batches per import has been reached</err>
+</rsp>
+```
+
+**Problem**: Too many batches have been submitted for this import
+
+**Solution**: Create a new import to submit this batch, or submit this batch to an import that has batch capacity.
+
+## [](#error-code-161)Error Code: 161
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="161">The current state of the import does not allow the operation</err>
+</rsp>
+```
+
+**Problem**: A batch was submitted to an import that is not “Open”
+
+**Solution**: Create a new import to submit this batch, or submit this batch to an import that is “Open”. Processing will not be affected for the import associated with the failed request.
+
+## [](#error-code-162)Error Code: 162
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="162">No file was specified or uploaded</err>
+</rsp>
+```
+
+**Problem**: No CSV file was submitted
+
+**Solution**: Submit a CSV file in the body of the request under the “files” key.
+
+## [](#error-code-163)Error Code: 163
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="163">Too many files were specified or uploaded</err>
+</rsp>
+```
+
+**Problem**: Problem: More than 1 file was submitted in a single request
+
+**Solution**: Submit only 1 file per request.
+
+## [](#error-code-164)Error Code: 164
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="164">Daily limit of import batches has been reached</err>
+</rsp>
+```
+
+**Problem**: Too many batches have been submitted over a 24 hour period. The account limit has been reached.
+
+**Solution**: Wait and try again later.
+
 ## [](#error-code-10000)Error Code: 10000
 
 ```
