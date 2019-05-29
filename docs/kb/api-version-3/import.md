@@ -68,7 +68,7 @@ This document assumes that you're already familiar with connecting to the Pardot
 
 /api/import/version/3/do/create
 
-Used to create a new asynchronous import. If a batch of import data is included in this request, the import may be submitted for processing as part of this operation. Otherwise one or more batches may created and associated with this import using the do/batch endpoint and the import may be submitted for processing with the do/update endpoint.
+Used to create a new asynchronous import. If a batch of import data is included in this request, the import can be submitted for processing as part of this operation. Otherwise one or more batches can be created and associated with this import using the do/batch endpoint and the import can be submitted for processing with the do/update endpoint.
 
 ## POST
 
