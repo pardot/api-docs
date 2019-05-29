@@ -34,7 +34,7 @@ Processing data typically consists of the following steps.
 
 1. Create an import that specifies object and action.
 2. Send data to the server as a batch.
-3. Once data has been submitted, set the state of the import to be ready for processing. Once set, no more data can be submitted as part of the import.
+3. After you finish submitting data, set the state of the import to "Ready". When the import state is set to ready for processing, no more data can be added.
 4. Check the status of the import at a reasonable interval. Each status check returns the state of the import.
 5. When the import is complete, statistics become available for creates, updates, and failures. If there are failures, a URI to download them is available.
     1. The URI is an API endpoint, and follows the same authentication rules as other Pardot API endpoints.
