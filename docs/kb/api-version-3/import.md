@@ -123,7 +123,7 @@ A single part with the name "**importFile**" should contain the CSV file for the
 
 /api/import/version/3/do/batch/id/{id}
 
-Allows adding batches of data to an existing import when in the Open state.
+Allows adding batches of data to an existing import when in the "Open" state.
 
 ## POST
 
