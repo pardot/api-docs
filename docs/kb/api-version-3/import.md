@@ -12,7 +12,7 @@ The Import API processes many records asynchronously in batches. Each batch requ
 
 ## What You Can Do with the Import API
 
-The Import API lets you import a CSV file of prospects. Columns in the CSV correspond to Pardot field names. Rows correspond to prospects to be upserted. Each column must match a valid field name, or validation fails and the CSV is rejected.
+The Import API lets you import a CSV file of prospects. Columns in the CSV correspond to Pardot [field names](http://developer.pardot.com/kb/object-field-references/#prospect). Rows correspond to prospects to be upserted. Each column must match a valid field name, or validation fails and the CSV is rejected.
 
 ### Matching and Upsert behavior
 
@@ -139,13 +139,6 @@ A single part with the name "**importFile**" should contain the CSV file for the
 
 Column names must match [Field Names](http://developer.pardot.com/kb/object-field-references/) in Pardot. For example, to set campaign, pass “campaign_id”. Columns that do not match existing field names cause validation to fail on this step. Each batch must contain an identical header (with the same fields in the same order).
 
-### Limits
-
-* Each account can process 1000 batches per day.
-* Each batch must be smaller than 10MB.
-* The daily data limit is 10GB.
-* Each import can contain up to 10 batches.
-
 ### Success
 
 * Status Code: 204
@@ -261,7 +254,7 @@ Download errors associated with the specified import (after it is complete).
 
 ### Success
 
-CSV data with error info for any rows that failed to result in inserts or updates.
+CSV data with error info for any rows that failed to result in inserts or updates. Formatting is described [here](https://pardot.desk.com/customer/en/portal/articles/2127182-importing-prospects?b_id=10745#import-error-csv).
 
 ### Errors
 
