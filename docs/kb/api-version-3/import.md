@@ -2,7 +2,7 @@
 
 The Import API provides a programmatic way to insert or update large amounts of data in Pardot. It uses Pardot's existing API structures, patterns, and terminology. The Import API automates the existing prospect [import feature set](https://help.salesforce.com/articleView?id=pardot_prospects_import.htm&type=0). Only prospect import is supported currently.
 
-The functionality described is available only if your Pardot org has the API Import feature enabled. This feature is **disabled** by default for all accounts & editions.
+The functionality described is available only if your Pardot org has the API Import feature enabled. This feature is **disabled** by default for all accounts and editions.
 
 ## When to Use the Import API
 
@@ -14,7 +14,7 @@ The Import API processes many records asynchronously in batches. Each batch requ
 
 The Import API lets you import a CSV file of prospects. Columns in the CSV correspond to Pardot field names. Rows correspond to prospects to be upserted. Each column must match a valid field name, or validation fails and the CSV is rejected.
 
-### Matching & Upsert behavior
+### Matching and Upsert behavior
 
 If a row in the CSV file matches an existing prospect, all fields specified are updated. A new prospect is created when a matching prospect isn't found. Any blank field is overwritten with NULL. All standard and custom fields are supported.
 
@@ -30,17 +30,15 @@ The order in which individual records, batches, and entire imports are processed
 
 The Import resource is used to create an import, get status for an import, upload data as a batch, and change status for an import. When a batch has completed processing, the result for failed records is available in a result set resource. All other records are assumed to be successful.
 
-Processing data typically consists of the following steps.
+Users create, submit, and retrieve results of imports with the following steps.
 
 1. Create an import that specifies object and action.
-2. Send data to the server as a batch.
-3. After you finish submitting data, set the state of the import to "Ready". When the import state is set to ready for processing, no more data can be added.
-4. Check the status of the import at a reasonable interval. Each status check returns the state of the import.
-5. When the import is complete, statistics become available for creates, updates, and failures. If there are failures, a URI to download them is available.
-    1. The URI is an API endpoint, and follows the same authentication rules as other Pardot API endpoints.
-    2. The failure results include only the records that weren't inserted or updated.
+2. Send data to the server in one or more batches.
+3. Set the state of the import to "Ready" in order to submit the import for processing. After this, no more batches of data can be added and the User cannot abort the import.
+4. Check the status of the import at a reasonable interval. When the results of the status check indicate a complete import, the results will also contain statistics for creates, updates, and failures.
+5. If there were failures, download a log of failures. The log only includes the records that weren't inserted or updated.
 
-Once the import is set to be ready for processing, it cannot be aborted. Any imports left open will be expired after 24 hours.
+Any imports left open will be expired after 24 hours.
 
 ## Limitations
 
@@ -48,15 +46,15 @@ Once the import is set to be ready for processing, it cannot be aborted. Any imp
 * Each batch must be smaller than 10MB.
 * The daily data limit is 10GB.
 * Each import can contain up to 10 batches.
+* The daily Pardot API call limit and the concurrent Pardot API call limit apply to Import API calls just as they would any other Pardot API calls.
 
 ## Expiration
 
-When an import expires, it can't be changed and data about the import is removed.
+Imports expire:
+1. 24 hours after creation if not submitted by setting to the "Ready" state. (No records will be imported in this case even if batches have been added.)
+2. 7 days after completion.
 
-Imports expire in these situations:
-
-* An import is Complete and the last update was 7 days prior. This allows for data to be retrieved 7 days after the completion of an import.
-* The import is has been in the Open state for 24 hours, regardless of whether a batch has been added. An import is open until its state has been updated to “Ready”.
+After an import expires, it cannot be changed, and attempts to check its status or retrieve error results will fail.
 
 # Getting Started
 
@@ -68,7 +66,7 @@ This document assumes that you're already familiar with connecting to the Pardot
 
 /api/import/version/3/do/create
 
-Used to create a new asynchronous import. If a batch of import data is included in this request, the import can be submitted for processing as part of this operation. Otherwise one or more batches can be created and associated with this import using the do/batch endpoint and the import can be submitted for processing with the do/update endpoint.
+Used to create a new asynchronous import. If a batch of import data is included in this request, the import can be submitted for processing as part of this operation. Otherwise one or more batches must be created and associated with this import using the do/batch endpoint and the import must be submitted for processing with the do/update endpoint.
 
 ## POST
 
@@ -103,7 +101,7 @@ A single part with the name "**importFile**" should contain the CSV file for the
 * Output Representation
     * **id**: The ID of the import.
     * **state**: The state of the import, which should always be returned as “Open” or "Waiting". "Waiting" will only be returned if the "Ready" state was specified in the input. See Import State enum.
-    * **isExpired**: Indicates whether results & errors will be available. 
+    * **isExpired**: Indicates that the import has expired. After an import expires, it cannot be changed, and attempts to check its status or retrieve error results will fail.
     * **batchesRef**: (Optional) The full URL path to add batches of data to the import. This will only be included in the response if the import remains in the "Open" state.
 
 ```json
@@ -163,7 +161,7 @@ Column names must match [Field Names](http://developer.pardot.com/kb/object-fiel
 
 /api/import/version/3/do/update/id/{id}
 
-Used to signal that all batches have been added for this import and processing can begin. Moves state from Open to Ready.
+Used to submit the import by changing the state to "Ready". After this no more batches of data can be added to the import and processing of the import will begin.
 
 ## PATCH
 
@@ -218,7 +216,7 @@ Returns the current state of the import. If processing is complete, the output p
 * Output Representation
     * **id**: The ID of the import.
     * **state**: The current state of the import. See Import State enum.
-    * **isExpired**: Indicates whether results & errors will be available. 
+    * **isExpired**: Indicates that the import has expired. After an import expires, it cannot be changed, and attempts to check its status or retrieve error results will fail.
     * When import state is “Open”:
         * **batchesRef**: The full url path to add batches of data to the import.
     * When processing is complete:
