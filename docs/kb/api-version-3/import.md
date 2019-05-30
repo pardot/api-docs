@@ -34,11 +34,11 @@ Users create, submit, and retrieve results of imports with the following steps.
 
 1. Create an import that specifies object and action.
 2. Send data to the server in one or more batches.
-3. Set the state of the import to "Ready" in order to submit the import for processing. After this, no more batches of data can be added and the User cannot abort the import.
-4. Check the status of the import at a reasonable interval. When the results of the status check indicate a complete import, the results will also contain statistics for creates, updates, and failures.
-5. If there were failures, download a log of failures. The log only includes the records that weren't inserted or updated.
+3. To submit the import for processing, set the state of the import to "Ready". After the import is submitted, you can't add more batches of data or abort the import.
+4. Check the status of the import at a reasonable interval. (Waiting at least several minutes between calls is recommended. Calls to check import status count against API call limits.) When the results of the status check indicate a complete import, the results will also contain statistics for creates, updates, and failures.
+5. If there were failures, download a log of failures. The log includes only records that weren't inserted or updated.
 
-Any imports left open will be expired after 24 hours.
+Imports left in the "Open" state expire after 24 hours.
 
 ## Limitations
 
@@ -51,10 +51,10 @@ Any imports left open will be expired after 24 hours.
 ## Expiration
 
 Imports expire:
-1. 24 hours after creation if not submitted by setting to the "Ready" state. (No records will be imported in this case even if batches have been added.)
+1. 24 hours after creation if the import hasn't been submitted. No records are imported in this case, even if batches of data have been added.
 2. 7 days after completion.
 
-After an import expires, it cannot be changed, and attempts to check its status or retrieve error results will fail.
+After an import expires, it can't be changed and attempts to check its status or retrieve error results will fail.
 
 # Getting Started
 
@@ -254,7 +254,7 @@ Download errors associated with the specified import (after it is complete).
 
 ### Success
 
-CSV data with error info for any rows that failed to result in inserts or updates. Formatting is described [here](https://pardot.desk.com/customer/en/portal/articles/2127182-importing-prospects?b_id=10745#import-error-csv).
+CSV data with error info for any rows that failed to result in inserts or updates. For error descriptions, see [Prospect Import Errors](https://help.salesforce.com/articleView?id=pardot_prospect_import_errors.htm&type=5).
 
 ### Errors
 
