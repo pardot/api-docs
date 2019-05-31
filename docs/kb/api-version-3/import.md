@@ -83,13 +83,23 @@ Use multipart/form-data if sending prospect data in the create request. Use appl
     * **object**: The current object to be run the import against. Currently only “Prospect” is available. See Import Object enum for more information.
     * **restoreDeleted**: (Optional) If a record within the CSV file matches a record that is has been moved to the Recycle Bin (usually through a Delete), the record can be restored and updated. If the property is true, then the record will be restored and updated. If false, the record is ignored and an error occurs (which appears in the error document after the import has completed). Default if not specified is false.
     * **state**: (Optional) Specify "Ready" to indicate that the CSV file included in the request contains all prospects for this import. In this case, do/batch and do/update requests are not required and should be omitted.
+    * **columns**: (Optional) If specified, the columns must be a subset of the columns included in the CSV file. If any of the columns do not match then a **400 BAD_REQUEST** failure occurs. The elements for this are:
+      * **field**: (Required) The field name must match one of the columns in the CSV file
+      * **overwrite**: (Optional, default true) When set to true and updating an existing record, the value in the input will modify ("overwrite") the existing value in the database.  When set to false, the existing value in the database will not updated regardless of the value of the input. If the input row is a "Create", then this option is ignored (and the value will be present in the database).
+      * **nullOverwrite**: (Optional default true) When set to true and updating an existing record, if the value in the input is an empty string or a string containing any number of whitespaces then the value in the database will be set to empty string or null. When set to false the empty input value will be ignored and the existing value in the database will not be updated. If the input row is a "Create" then this option is ignored and the empty string or null will be present in the database.
+
+
 
 ```json
 {
     "operation": "Upsert",
     "object": "Prospect",
     "restoreDeleted": boolean,
-    "state": "Ready"
+    "state": "Ready",
+    "columns": [
+        {"field": "field_name", "overwrite": boolean, "nullOverwrite": boolean },
+        ...
+    ]
 }
 ```
 
@@ -280,4 +290,3 @@ CSV data with error info for any rows that failed to result in inserts or update
 ## Object
 
 * "Prospect" : Operate on Prospect
-
