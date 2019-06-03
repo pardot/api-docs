@@ -49,6 +49,7 @@ Imports left in the "Open" state expire after 24 hours.
 ## Expiration
 
 Imports expire:
+
 1. 24 hours after creation if the import hasn't been submitted. No records are imported in this case, even if batches of data have been added.
 2. 7 days after completion.
 
@@ -166,7 +167,7 @@ Used to submit the import by changing the state to "Ready". After this no more b
 
 ## PATCH
 
-Params
+### Params
 
 **{id}**: The ID of the import.
 
