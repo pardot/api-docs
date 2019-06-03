@@ -33,9 +33,9 @@ The Import resource is used to create an import, get status for an import, uploa
 Users create, submit, and retrieve results of imports with the following steps.
 
 1. Create an import that specifies object and action.
-2. Send data to the server in one or more batches.
+2. Upload data to the server in one or more batches.
 3. To submit the import for processing, set the state of the import to "Ready". After the import is submitted, you can't add more batches of data or abort the import.
-4. Check the status of the import at a reasonable interval. (Waiting at least several minutes between calls is recommended. Calls to check import status count against API call limits.) When the results of the status check indicate a complete import, the results will also contain statistics for creates, updates, and failures.
+4. Check the status of the import at a reasonable interval. (We recommend that you wait a few minutes between calls. Calls to check import status count against API call limits.) When the results of the status check indicate a complete import, the results will also contain statistics for creates, updates, and failures.
 5. If there were failures, download a log of failures. The log includes only records that weren't inserted or updated.
 
 Imports left in the "Open" state expire after 24 hours.
