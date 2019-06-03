@@ -2,8 +2,6 @@
 
 The Import API provides a programmatic way to insert or update large amounts of data in Pardot. It uses Pardot's existing API structures, patterns, and terminology. The Import API automates the existing prospect [import feature set](https://help.salesforce.com/articleView?id=pardot_prospects_import.htm&type=0). Only prospect import is supported currently.
 
-The functionality described is available only if your Pardot org has the API Import feature enabled. This feature is **disabled** by default for all accounts and editions.
-
 ## When to Use the Import API
 
 Use the Import API to insert or update large sets of data, when you don't require synchronous completion responses, or when [batch upsert limitations](http://developer.pardot.com/kb/api-version-4/prospects/#upserting-prospects) are too restrictive. Currently, only Prospect upsert is supported.
