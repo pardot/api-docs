@@ -97,7 +97,7 @@ Use multipart/form-data if sending prospect data in the create request. Use appl
     "state": "Ready",
     "columns": [
         {"field": "field1_name", "overwrite": boolean, "nullOverwrite": boolean },
-        {"field": "field2_name"}
+        {"field": "field2_name"},
         ...
     ]
 }
