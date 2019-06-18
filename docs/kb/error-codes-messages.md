@@ -1807,6 +1807,18 @@ requests.
 
 **Solution**: Wait and try again later.
 
+## [](#error-code-165)Error Code: 165
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="164">column options is invalid</err>
+</rsp>
+```
+
+**Problem**: API input was incorrectly formatted.
+
+**Solution**: See documentation for correct input formatting.
+
 ## [](#error-code-10000)Error Code: 10000
 
 ```
