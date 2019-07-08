@@ -14,7 +14,9 @@ The Import API lets you import a CSV file of prospects. Columns in the CSV corre
 
 ### Matching and Upsert behavior
 
-If a row in the CSV file matches an existing prospect, all fields specified are updated. A new prospect is created when a matching prospect isn't found. Any blank field is overwritten with NULL. All standard and custom fields are supported.
+If a row in the CSV file matches an existing prospect, the prospect will be updated. By default all fields specified in the CSV will overwrite existing values for the prospect, including blank (null) values. To modify this behavior see the `columns` param on the [Create](#Create) endpoint.
+
+A new prospect is created when a matching prospect isn't found. All standard and custom fields are supported.
 
 In API Version 3, prospects are matched by email address. If the matched prospect is in the recycle bin, that record won't upsert unless the `restoreDeleted` option was specified during import creation. The rest of the import isn't affected when a record is skipped.
 
