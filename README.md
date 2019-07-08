@@ -28,4 +28,3 @@ If you don't know what you're doing, ask someone to help you out.
 * `git reset --hard && git clean -fd`
 
 See the [mkdocs](http://www.mkdocs.org/user-guide/deploying-your-docs/) website for more information.
-
