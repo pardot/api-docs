@@ -14,7 +14,7 @@ The Import API lets you import a CSV file of prospects. Columns in the CSV corre
 
 ### Matching & Upsert behavior
 
-If a row in the CSV file can be matched to an existing prospect, the prospect will be updated. By default all fields specified in the CSV will overwrite existing values for the prospect, including blank (null) values. To modify this behavior see the `columns` param on the [Create](#Create) endpoint.
+When a row in the CSV file matches an existing prospect, the prospect is updated. Field values in the CSV, including blank (null) values, overwrite existing values for the prospect. To modify this default behavior, see the columns param on the [Create](#create) endpoint.
 
 If a matching prospect cannot be found, a new prospect will be created. All standard and custom fields are supported.
 
