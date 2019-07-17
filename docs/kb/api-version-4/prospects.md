@@ -355,7 +355,7 @@ XML Update Example:
 
 If using `batchCreate`, you'll need to provide a valid email address for each prospect.
 
-The `batchUpsert` endpoint allows the use of prospect IDs, CRM FIDs, and prospect Email Addresses as valid record identifiers.
+The `batchUpsert` endpoint allows the use of prospect IDs and CRM FIDs as valid record identifiers. If the request includes an email address but no ID or CRM FID, a prospect will be created with the email address. 
 
 The `batchUpdate` endpoint allows the use of prospect IDs and CRM FIDs.  Updating by prospect Email Address is not supported - a prospect ID or CRM FID is required as a valid record identifier.  You may query by email address to get record identifiers.
 
