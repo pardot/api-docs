@@ -27,7 +27,7 @@ Some considerations must be taken while performing requests. When performing `up
 
 ### Request Format
 
-All requests to the API: 
+All requests to the API:
 
 * Must use either HTTP `GET` or `POST`
 * Must pass credentials in an HTTP `Authorization` header - or - in the body of a `POST` request
@@ -43,8 +43,9 @@ Authorization: Pardot api_key=<your_api_key>, user_key=<your_user_key>
 
 ```
 POST https://pi.pardot.com/api/<object>/version/3/do/<op>/<id_field>/<id> HTTP/1.1
+Authorization: Pardot api_key=<your_api_key>, user_key=<your_user_key>
 
-api_key=<your_api_key>&user_key=<your_user_key>&<params>
+<params>
 ```
 
 #### Request Parameters
@@ -89,7 +90,7 @@ The Pardot API supports several output formats, each of which returns different 
 *   `full` -- Returns all supported data for the Pardot object and all objects associated with it.
 *   `simple` -- Returns all supported data for the data for the Pardot object.
 *   `mobile` -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.
-*   `bulk` -- Returns basic data for an object (does not provide total object count). Used for querying [large amounts of data](kb/bulk-data-pull/). 
+*   `bulk` -- Returns basic data for an object (does not provide total object count). Used for querying [large amounts of data](kb/bulk-data-pull/).
 
 If the output request parameter is not defined, the output format defaults to `full`. See the XML Response Format sections for each object for details about the formats.
 
@@ -103,11 +104,13 @@ Authentication requests sent to the Pardot API:
 2.  Must use HTTP `POST`
 3.  Must contain the `email`, `password`, and `user_key` for the Pardot user account that will be submitting API requests
 
-Login requests that meet these criteria will be granted an API key. 
+Login requests that meet these criteria will be granted an API key.
 
 API user keys are available in Pardot under **{your email address} > Settings** in the API User Key row. If you need assistance in acquiring your user key, contact your Pardot support representative.
 
-> Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely. 
+Currently Pardot-only users are supported while SSO users remain unsupported. For more information please read [this document](https://help.salesforce.com/articleView?id=pardot_sf_connector_setup_user_sync_considerations.htm&type=5)
+
+> Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely.
 
 #### Sample POST Request
 
@@ -152,15 +155,15 @@ We enforce API rate limits in two ways:
 
 ### Daily Requests
 
-Pardot Pro customers are allocated 25,000 API requests per day. Pardot Ultimate customers can make up to 100,000 API requests a day. 
-These limits reset at the beginning of the day based on your accounts time zone settings. Any request made exceeding the 
+Pardot Pro customers are allocated 25,000 API requests per day. Pardot Ultimate customers can make up to 100,000 API requests a day.
+These limits reset at the beginning of the day based on your accounts time zone settings. Any request made exceeding the
 limits will result in an [error code 122](/kb/error-codes-messages/#error-code-122)
 
 You can check you current daily usages in the accounts "usage and limits" page.
 
 ### Concurrent Requests
 
-In order to interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five 
+In order to interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five
 will result in an [error code 66](/kb/error-codes-messages/#error-code-66) response.
 
 ## Sample Code
