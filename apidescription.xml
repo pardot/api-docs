@@ -155,7 +155,7 @@
           <apigee:tag primary="true">Prospects</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/prospect/version/3/do/read/id/{id}?"/>
+        <apigee:example url="/prospect/version/3/do/read/id/{id}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_read_byid">
 		  Returns the data for the prospect specified by ID.
 	    </doc>
@@ -169,7 +169,7 @@
           <apigee:tag primary="true">Prospects</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/prospect/version/3/do/read/email/{email}?"/>
+        <apigee:example url="/prospect/version/3/do/read/email/{email}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_read_byemail">
 		  Returns the data for the prospect specified by email address.
 	    </doc>
@@ -183,7 +183,7 @@
           <apigee:tag primary="true">Prospects</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/prospect/version/3/do/update/id/{id}?"/>
+        <apigee:example url="/prospect/version/3/do/update/id/{id}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_update_byid">
 		  Updates the provided data for a prospect specified by ID.
 	    </doc>
@@ -197,7 +197,7 @@
           <apigee:tag primary="true">Prospects</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/prospect/version/3/do/update/email/{email}?"/>
+        <apigee:example url="/prospect/version/3/do/update/email/{email}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_update_byemail">
 		  Updates the provided data for a prospect specified by email address.
 	    </doc>
@@ -211,7 +211,7 @@
           <apigee:tag primary="true">Prospects</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/prospect/version/3/do/upsert/id/{id}?"/>
+        <apigee:example url="/prospect/version/3/do/upsert/id/{id}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_upsert_byid">
 		  Updates the provided data for a prospect specified by ID, crates a new prospect if one does not exist.
 	    </doc>
@@ -225,7 +225,7 @@
           <apigee:tag primary="true">Prospects</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/prospect/version/3/do/upsert/email/{email}?"/>
+        <apigee:example url="/prospect/version/3/do/upsert/email/{email}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/prospects/#supported-operations_1" title="prospect_upsert_byemail">
 		  Updates the provided data for a prospect specified by email address, creates a new prospect if one does not exist.
 	    </doc>
@@ -257,7 +257,7 @@
           <apigee:tag primary="true">Users</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/user/version/3/do/read/id/{id}?"/>
+        <apigee:example url="/user/version/3/do/read/id/{id}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/users/#supported-operations_1" title="user_read_byid">
 		  Returns the data for the user specified by ID.
 	    </doc>
@@ -271,7 +271,7 @@
           <apigee:tag primary="true">Users</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/user/version/3/do/read/email/{email}?"/>
+        <apigee:example url="/user/version/3/do/read/email/{email}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/users/#supported-operations_1" title="user_read_byemail">
 		  Returns the data for the user specified by email address.
 	    </doc>
@@ -303,7 +303,7 @@
           <apigee:tag primary="true">Visits</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/visit/version/3/do/read/id/{id}?"/>
+        <apigee:example url="/visit/version/3/do/read/id/{id}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/visits/#supported-operations_1" title="visit_read">
 		  Returns the data for the visit specified by ID.
 	    </doc>
@@ -335,7 +335,7 @@
           <apigee:tag primary="true">Visitors</apigee:tag>
         </apigee:tags>
         <apigee:authentication required="false"/>
-        <apigee:example url="/visitor/version/3/do/read/id/{id}?"/>
+        <apigee:example url="/visitor/version/3/do/read/id/{id}"/>
 	    <doc apigee:url="http://developer.pardot.com/kb/api-version-3/visitors/#supported-operations" title="visitor_read">
 		  Returns the data for the visitor specified by ID.
 	    </doc>
