@@ -351,7 +351,9 @@ Requests that attempt to subscribe a prospect to lists that it is already subscr
 
 To modify a prospect's matching status for associated profile criteria, the Pardot ID of the profile criteria is required. Once the ID is obtained, an `update` is submitted with parameters formatted as `profile_criteria_<profile_criteria_id>=<status>`. The value of `<status>` may be either `match`, `nomatch`, or `unknown`.
 
-_**Example:** Setting a profile criteria for a prospect whose email address is_ `bob@pardot.com` _to_ `match`: /api/prospect/version/3/do/update/email/[bob@pardot.com](mailto:bob@pardot.com)?profile_criteria_8=match_**Example:** Setting a profile criteria for a prospect with Pardot ID_ `58` _to_ `nomatch`: /api/prospect/version/3/do/update/id/58?profile_criteria_8=nomatch
+_**Example:** Setting a profile criteria for a prospect whose email address is_ `bob@pardot.com` _to_ `match`: /api/prospect/version/3/do/update/email/[bob@pardot.com](mailto:bob@pardot.com)?profile_criteria_8=match
+
+_**Example:** Setting a profile criteria for a prospect with Pardot ID_ `58` _to_ `nomatch`: /api/prospect/version/3/do/update/id/58?profile_criteria_8=nomatch
 
 Only profile criteria that belong to the profile associated with the prospect can be updated using this method. Requests to update profile criteria not associated with the assigned profile will be ignored. Using any matching status values other than `match`, `nomatch`, or `unknown` will result in an error message. See [Error Codes &amp; Messages](../error-codes-messages) for details.
 
