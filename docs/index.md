@@ -177,12 +177,13 @@ Note: we strongly recommend **against** using PHP's `file_get_contents` function
  * Call the Pardot API and get the raw XML response back
  *
  * @param string $url the full Pardot API URL to call, e.g. "https://pi.pardot.com/api/prospect/version/3/do/query"
- * @param array $data the data to send to the API - make sure to include your api_key and user_key for authentication
+ * @param array $data the data to send to the API
  * @param string $method the HTTP method, one of "GET", "POST", "DELETE"
+ * @param array $headers array of headers to send to the API - make sure to include your Authorization: header with your api_key and user_key
  * @return string the raw XML response from the Pardot API
  * @throws Exception if we were unable to contact the Pardot API or something went wrong
  */
-function callPardotApi($url, $data, $method = 'GET')
+function callPardotApi($url, $data, $method = 'GET', $headers = null)
 {
     // build out the full url, with the query string attached.
     $queryString = http_build_query($data, null, '&');
@@ -215,6 +216,11 @@ function callPardotApi($url, $data, $method = 'GET')
         curl_setopt($curl_handle, CURLOPT_CUSTOMREQUEST, strtoupper($method));
     }
 
+    // add any headers that were specified
+    if ($headers) {
+        curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+    }
+
     $pardotApiResponse = curl_exec($curl_handle);
     if ($pardotApiResponse === false) {
         // failure - a timeout or other problem. depending on how you want to handle failures,
@@ -240,14 +246,31 @@ function callPardotApi($url, $data, $method = 'GET')
     return $pardotApiResponse;
 }
 
-//this will log in and print your API Key (good for 1 hour) to the console
-echo callPardotApi('https://pi.pardot.com/api/login/version/3',
+//available from https://pi.pardot.com/account
+$userKey = '12345678890abcdef12345678890abcdef';
+
+//this will log in and retrieve your API Key (good for 1 hour)
+$loginResponse = callPardotApi('https://pi.pardot.com/api/login/version/3',
     array(
         'email' => 'your.email@example.com',
         'password' => 'password1234',
-        'user_key' => '12345678890abcdef12345678890abcdef' //available from https://pi.pardot.com/account
+        'user_key' => $userKey,
+        'format' => 'json'
     ),
     'POST'
+);
+$apiKey = json_decode($loginResponse, true)['api_key'];
+
+echo callPardotApi('https://pi.pardot.com/api/prospect/version/3/do/query',
+    array(
+        'limit' => '1',
+        'format' => 'json'
+    ),
+    'GET',
+    array(
+        //create the Authorization header from the user_key and api_key
+        "Authorization: Pardot user_key=$userKey,api_key=$apiKey"
+    )
 );
 ```
 
