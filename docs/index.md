@@ -30,7 +30,7 @@ Some considerations must be taken while performing requests. When performing `up
 All requests to the API:
 
 * Must use either HTTP `GET` or `POST`
-* Must pass credentials in an HTTP `Authorization` header - or - in the body of a `POST` request
+* Must pass credentials in an HTTP `Authorization` header
 
 #### Sample GET Request
 

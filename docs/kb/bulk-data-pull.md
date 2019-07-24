@@ -30,7 +30,7 @@ Example Request & Response (XML)
 
 ```bash
 curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk \
--H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
+-H "Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```xml
@@ -66,7 +66,7 @@ Example Request & Response (JSON)
 
 ```bash
 curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&format=json \
--H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
+-H "Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```json
@@ -116,7 +116,7 @@ Example Request & Response (JSON)
 
 ```bash
 curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&format=json&created_after=2016-03-29T00:00:00&created_before=2016-03-30T00:00:00&sort_by=created_at&sort_order=ascending \
--H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
+-H "Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```json
@@ -146,7 +146,7 @@ Example Request & Response (JSON)
 
 ```bash
 curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&format=json&created_after=2016-03-29T06:00:00&created_before=2016-03-30T00:00:00&sort_by=created_at&sort_order=ascending \
--H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
+-H "Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```json
@@ -178,7 +178,7 @@ Example Request & Response (JSON)
 
 ```bash
 curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&format=json&created_after=2016-03-29T14:00:00&created_before=2016-03-30T00:00:00&sort_by=created_at&sort_order=ascending \
--H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
+-H "Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```json
