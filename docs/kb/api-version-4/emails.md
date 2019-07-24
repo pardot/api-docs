@@ -135,8 +135,7 @@ This API request example made with cURL, will immediately send an email based on
 
 ```
 curl https://pi.pardot.com/api/email/version/4/do/send \
---data-urlencode user_key={user_key} \
---data-urlencode api_key={api_key} \
+-H "Authorization: Pardot user_key={user_key},api_key={api_key}" \
 --data-urlencode campaign_id=54321 \
 --data-urlencode prospect_email=prospect@somecompany.com \
 --data-urlencode email_template_id=6789 \
@@ -206,8 +205,7 @@ This API request example made with cURL, will schedule an email based on a templ
 
 ```
 curl https://pi.pardot.com/api/email/version/4/do/send \
---data-urlencode user_key={user_key} \
---data-urlencode api_key={api_key} \
+-H "Authorization: Pardot user_key={user_key},api_key={api_key}" \
 --data-urlencode campaign_id=54321 \
 --data-urlencode from_assigned_user=1 \
 --data-urlencode email_template_id=6789 \

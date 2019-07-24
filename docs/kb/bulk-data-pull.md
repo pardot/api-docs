@@ -29,7 +29,8 @@ To accomplish this, as you process the query results in your code, store a high 
 Example Request & Response (XML)
 
 ```bash
-curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=1234567890abcdef1234567890abcdef&api_key=fedcba0987654321fedcba0987654321&output=bulk
+curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk \
+-H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```xml
@@ -64,7 +65,8 @@ curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=12345
 Example Request & Response (JSON)
 
 ```bash
-curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=1234567890abcdef1234567890abcdef&api_key=fedcba0987654321fedcba0987654321&output=bulk&format=json
+curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&format=json \
+-H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```json
@@ -113,7 +115,8 @@ To iterate over the results in the suggested approach, your API integration proc
 Example Request & Response (JSON)
 
 ```bash
-curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&api_key=Y&output=bulk&format=json&created_after=2016-03-29T00:00:00&created_before=2016-03-30T00:00:00&sort_by=created_at&sort_order=ascending
+curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&format=json&created_after=2016-03-29T00:00:00&created_before=2016-03-30T00:00:00&sort_by=created_at&sort_order=ascending \
+-H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```json
@@ -142,7 +145,8 @@ curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&api
 Example Request & Response (JSON)
 
 ```bash
-curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&api_key=Y&output=bulk&format=json&created_after=2016-03-29T06:00:00&created_before=2016-03-30T00:00:00&sort_by=created_at&sort_order=ascending
+curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&format=json&created_after=2016-03-29T06:00:00&created_before=2016-03-30T00:00:00&sort_by=created_at&sort_order=ascending \
+-H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```json
@@ -173,7 +177,8 @@ curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&api
 Example Request & Response (JSON)
 
 ```bash
-curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?user_key=X&api_key=Y&output=bulk&format=json&created_after=2016-03-29T14:00:00&created_before=2016-03-30T00:00:00&sort_by=created_at&sort_order=ascending
+curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&format=json&created_after=2016-03-29T14:00:00&created_before=2016-03-30T00:00:00&sort_by=created_at&sort_order=ascending \
+-H "Authorization: user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
 ```
 
 ```json

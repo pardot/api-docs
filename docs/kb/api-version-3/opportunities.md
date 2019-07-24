@@ -160,10 +160,9 @@ Modifying values of opportunity data fields is done by submitting an `update` re
 **_Example:_** _Updating the value of a opportunity (whose Pardot ID is 27):_
 
 ```
-POST: /api/opportunity/version/3/do/update/id/27 message body: value=50000&amp;api_key=&amp;user_key=
+POST: /api/opportunity/version/3/do/update/id/27 message body: value=50000
 
-GET: /api/opportunity/version/3/do/update/id/27?value=50000&api_key=<api_key>&user_key=<user_key>
+GET: /api/opportunity/version/3/do/update/id/27?value=50000
 ```
 
 Only values that are specifically named in the request are updated. All others are left unchanged. To clear a value, submit an `update` request containing a parameter with no specified value, such as `status=`.
-

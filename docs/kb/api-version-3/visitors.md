@@ -150,9 +150,8 @@ To assign/reassign a visitor, both the visitor to be assigned and the target pro
 **_Examples:_**
 
 ```
-/api/visitor/version/3/do/assign/id/<visitor_id>?prospect_email=<prospect_email>&api_key=<api_key>&user_key=<user_key>
-/api/visitor/version/3/do/assign/id/<visitor_id>?prospect_id=<prospect_id>&api_key=<api_key>&user_key=<user_key>
+/api/visitor/version/3/do/assign/id/<visitor_id>?prospect_email=<prospect_email>
+/api/visitor/version/3/do/assign/id/<visitor_id>?prospect_id=<prospect_id>
 ```
 
 XML responses to `assign` requests are identical to `read` requests, but reflect the new visitor assignment in the `<prospect>` node.
-
