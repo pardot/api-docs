@@ -1783,6 +1783,42 @@ requests.
 
 **Solution**: Update the request to send the proper boolean value.
 
+## [](#error-code-166)Error Code: 166
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="166">The input is not in the required format</err>
+</rsp>
+```
+
+**Problem**: The request input was not specified according to the documentation.
+
+**Solution**: Check the documentation for the desired endpoint and ensure the request is formatted properly.
+
+## [](#error-code-168)Error Code: 168
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="168">Background Queue is in an invalid state.</err>
+</rsp>
+```
+
+**Problem**: The background processing system encountered an unexpected state.
+
+**Solution**: Try starting the process over, or contact support.
+
+## [](#error-code-169)Error Code: 169
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="169">Background Queue is an invalid type.</err>
+</rsp>
+```
+
+**Problem**: The background processing system encountered an unexpected state.
+
+**Solution**: Try starting the process over, or contact support.
+
 ## [](#error-code-10000)Error Code: 10000
 
 ```
