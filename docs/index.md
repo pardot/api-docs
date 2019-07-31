@@ -27,10 +27,10 @@ Some considerations must be taken while performing requests. When performing `up
 
 ### Request Format
 
-All requests to the API: 
+All requests to the API:
 
 * Must use either HTTP `GET` or `POST`
-* Must pass credentials in an HTTP `Authorization` header - or - in the body of a `POST` request
+* Must pass credentials in an HTTP `Authorization` header
 
 #### Sample GET Request
 
@@ -43,8 +43,9 @@ Authorization: Pardot api_key=<your_api_key>, user_key=<your_user_key>
 
 ```
 POST https://pi.pardot.com/api/<object>/version/3/do/<op>/<id_field>/<id> HTTP/1.1
+Authorization: Pardot api_key=<your_api_key>, user_key=<your_user_key>
 
-api_key=<your_api_key>&user_key=<your_user_key>&<params>
+<params>
 ```
 
 #### Request Parameters
@@ -89,7 +90,7 @@ The Pardot API supports several output formats, each of which returns different 
 *   `full` -- Returns all supported data for the Pardot object and all objects associated with it.
 *   `simple` -- Returns all supported data for the data for the Pardot object.
 *   `mobile` -- Returns an abbreviated version of the object data. This output format is ideal for mobile applications.
-*   `bulk` -- Returns basic data for an object (does not provide total object count). Used for querying [large amounts of data](kb/bulk-data-pull/). 
+*   `bulk` -- Returns basic data for an object (does not provide total object count). Used for querying [large amounts of data](kb/bulk-data-pull/).
 
 If the output request parameter is not defined, the output format defaults to `full`. See the XML Response Format sections for each object for details about the formats.
 
@@ -103,11 +104,13 @@ Authentication requests sent to the Pardot API:
 2.  Must use HTTP `POST`
 3.  Must contain the `email`, `password`, and `user_key` for the Pardot user account that will be submitting API requests
 
-Login requests that meet these criteria will be granted an API key. 
+Login requests that meet these criteria will be granted an API key.
 
 API user keys are available in Pardot under **{your email address} > Settings** in the API User Key row. If you need assistance in acquiring your user key, contact your Pardot support representative.
 
-> Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely. 
+In accounts with [Salesforce User Sync enabled](https://help.salesforce.com/articleView?id=pardot_sf_connector_setup_user_sync_considerations.htm&type=5), you must authenticate with a Pardot-only user. SSO users aren't supported.
+
+> Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely.
 
 #### Sample POST Request
 
@@ -152,15 +155,15 @@ We enforce API rate limits in two ways:
 
 ### Daily Requests
 
-Pardot Pro customers are allocated 25,000 API requests per day. Pardot Ultimate customers can make up to 100,000 API requests a day. 
-These limits reset at the beginning of the day based on your accounts time zone settings. Any request made exceeding the 
+Pardot Pro customers are allocated 25,000 API requests per day. Pardot Ultimate customers can make up to 100,000 API requests a day.
+These limits reset at the beginning of the day based on your accounts time zone settings. Any request made exceeding the
 limits will result in an [error code 122](/kb/error-codes-messages/#error-code-122)
 
 You can check you current daily usages in the accounts "usage and limits" page.
 
 ### Concurrent Requests
 
-In order to interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five 
+In order to interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five
 will result in an [error code 66](/kb/error-codes-messages/#error-code-66) response.
 
 ## Sample Code
@@ -174,12 +177,13 @@ Note: we strongly recommend **against** using PHP's `file_get_contents` function
  * Call the Pardot API and get the raw XML response back
  *
  * @param string $url the full Pardot API URL to call, e.g. "https://pi.pardot.com/api/prospect/version/3/do/query"
- * @param array $data the data to send to the API - make sure to include your api_key and user_key for authentication
+ * @param array $data the data to send to the API
  * @param string $method the HTTP method, one of "GET", "POST", "DELETE"
+ * @param array $headers array of headers to send to the API - make sure to include your Authorization: header with your api_key and user_key
  * @return string the raw XML response from the Pardot API
  * @throws Exception if we were unable to contact the Pardot API or something went wrong
  */
-function callPardotApi($url, $data, $method = 'GET')
+function callPardotApi($url, $data, $method = 'GET', $headers = null)
 {
     // build out the full url, with the query string attached.
     $queryString = http_build_query($data, null, '&');
@@ -212,6 +216,11 @@ function callPardotApi($url, $data, $method = 'GET')
         curl_setopt($curl_handle, CURLOPT_CUSTOMREQUEST, strtoupper($method));
     }
 
+    // add any headers that were specified
+    if ($headers) {
+        curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+    }
+
     $pardotApiResponse = curl_exec($curl_handle);
     if ($pardotApiResponse === false) {
         // failure - a timeout or other problem. depending on how you want to handle failures,
@@ -237,14 +246,31 @@ function callPardotApi($url, $data, $method = 'GET')
     return $pardotApiResponse;
 }
 
-//this will log in and print your API Key (good for 1 hour) to the console
-echo callPardotApi('https://pi.pardot.com/api/login/version/3',
+//available from https://pi.pardot.com/account
+$userKey = '12345678890abcdef12345678890abcdef';
+
+//this will log in and retrieve your API Key (good for 1 hour)
+$loginResponse = callPardotApi('https://pi.pardot.com/api/login/version/3',
     array(
         'email' => 'your.email@example.com',
         'password' => 'password1234',
-        'user_key' => '12345678890abcdef12345678890abcdef' //available from https://pi.pardot.com/account
+        'user_key' => $userKey,
+        'format' => 'json'
     ),
     'POST'
+);
+$apiKey = json_decode($loginResponse, true)['api_key'];
+
+echo callPardotApi('https://pi.pardot.com/api/prospect/version/3/do/query',
+    array(
+        'limit' => '1',
+        'format' => 'json'
+    ),
+    'GET',
+    array(
+        //create the Authorization header from the user_key and api_key
+        "Authorization: Pardot user_key=$userKey,api_key=$apiKey"
+    )
 );
 ```
 

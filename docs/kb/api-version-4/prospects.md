@@ -29,6 +29,7 @@ Search criteria may be used together in any combination and/or order unless othe
 | `last_activity_before` | `string`         | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects prospects that have been active before the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's `last_activity_at` is before the specified time. See [Prospect](../object-field-references#prospect) in [Object Field References](../object-field-references).                                                                                                    |
 | `last_activity_after`  | `string`         | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects prospects that have been active after the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using GNU Date Input Syntax. Prospects are considered active if a prospect's `last_activity_at` is after the specified time. See [Prospect](../object-field-references#prospect) in [Object Field References](../object-field-references).                                                                                                      |
 | `last_activity_never`  | `boolean`        | `TRUE`                                                                 | Selects prospects that have never been active. Prospects are considered active if a prospect's `last_activity_at` is null. See [Prospect](../object-field-references#prospect) in [Object Field References](../object-field-references).                                                                                                                                                                                                                                                |
+| `limit_related_records`| `boolean`        | `true, false`                                               | limit number of visitor_activity records returned on prospect/read to 2000. . When set to false or not specified the system will return all the available visitor records for the requested prospect, but the operation may timeout if there are too many related records.                                    |
 | `list_id`              | `integer`        | `<any positive integer>`                                               | Selects prospects based on their membership of the list with the given `list_id`.                                                                                                                                                                                                                                                                                                                                  |
 | `new`                  | `boolean`        | `true, false`                                                          | Selects prospects based on whether they are classified as new. Prospects are considered new if they have not been assigned to a user or a queue, have not been marked as reviewed, and have a `last_activity_at` timestamp specified. See [Prospect](../object-field-references#prospect) in [Object Field References](../object-field-references). Note: Using the new criteria overrides the `assigned`, `assigned_to_user`, `last_activity_at`, and `last_activity_before` criteria if specified. |
 | `score_equal_to`       | `integer`        | `<any_integer>`                                                        | Selects prospects that have a score equal to a specified integer.                                                                                                                                                                                                                                                                                                                                                |
@@ -48,7 +49,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching prospect(according to the specified sorting order) to be returned in the query response. The first `offset` matching prospects will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st prospect matched by the provided criteria. |
 | `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](prospects/#xml-response-formats) in [Using Prospects](prospects/#using-prospects) for more details. |
-| `sort_by` | `string` | `created_at, id, probability, value` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options (#14784-supported-sorting-options) for more details. |
+| `sort_by` | `string` | `created_at, id, probability, value` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 
 ## [](#supported-sorting-options-)Supported Sorting Options
@@ -95,7 +96,7 @@ For a complete list of fields involved in Prospect operations, see the [Prospect
 | `unassign`    | `/api/prospect /version/4 /do/unassign/ id/<id>?...`   | `user_key, api_key, id` | Unassigns the prospect specified by `<id>`. Returns an updated version of the prospect. **_Note:_** Prospect assignments and reassignments do not overwrite existing assignments in CRMs. **_Note:_** Prospect assignments and reassignments do not overwrite existing assignments in CRMs. |
 | `unassign`    | `/api/prospect /version/4 /do/unassign/ fid/<fid>?...`   | `user_key, api_key, fid` | Unassigns the prospect specified by `<fid>`. `<fid>` must be a valid CRM FID. Returns an updated version of the prospect. **_Note:_** Prospect assignments and reassignments do not overwrite existing assignments in CRMs. **_Note:_** Prospect assignments and reassignments do not overwrite existing assignments in CRMs. |
 | `create`      | `/api/prospect /version/4 /do/create/ email/<email>?...` | `user_key, api_key, email, (fid)` | Creates a new prospect using the specified data. `<email>` must be a valid email address. May optionally include a crm fid `<fid>`. Email list subscriptions and custom field data may also be added with this request. Refer to the [Updating Email List Subscriptions](#updating-email-list-subscriptions) and [Updating Field Values](#14833-updating-field-values) sections for more details. **_Note:_** The prospect may be assigned to a user by supplying a value for the optional `<user_id>` parameter.
-| `batchCreate` | `/api/prospect /version/4 /do/batchCreate? prospects=<data>...` | `user_key, api_key, prospects` | Creates new prospects using the provided `<data>` in either XML or JSON. See [Endpoints for Batch Processing](#endpoints-for-batch-processing) **_Note:_** The prospect may be assigned to a user by supplying a value for the optional `<user_id>` parameter. 
+| `batchCreate` | `/api/prospect /version/4 /do/batchCreate? prospects=<data>...` | `user_key, api_key, prospects` | Creates new prospects using the provided `<data>` in either XML or JSON. See [Endpoints for Batch Processing](#endpoints-for-batch-processing) **_Note:_** The prospect may be assigned to a user by supplying a value for the optional `<user_id>` parameter.
 | `read`        | `/api/prospect /version/4 /do/read/ email/<email>?...` | `user_key, api_key, email` | Returns data for the prospect(s) specified by `<email>`, including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. `<email>` is the email address of the target prospect. |
 | `read`        | `/api/prospect /version/4 /do/read/ id/<id>?...` | `user_key, api_key, id` | Returns data for the prospect specified by `<id>`, including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. `<id>` is the Pardot ID of the target prospect. |
 | `read`        | `/api/prospect /version/4 /do/read/ fid/<fid>?...` | `user_key, api_key, fid` | Returns data for the prospect specified by `<fid>`. `<fid>` must be a valid CRM FID. This data includes campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. `<id>` is the Pardot ID of the target prospect. |
@@ -222,11 +223,11 @@ To assign/reassign a prospect, both the prospect to be assigned and the target u
 
 **_Examples:_**
 
-/api/prospect/version/4/do/assign/id/?user_email=&amp;api_key=&amp;user_key=
+/api/prospect/version/4/do/assign/id/?user_email
 
-/api/prospect/version/4/do/assign/id/?user_id=&amp;api_key=&amp;user_key=
+/api/prospect/version/4/do/assign/id/?user_id
 
-/api/prospect/version/4/do/assign/id/?group_id=&amp;api_key=&amp;user_key=
+/api/prospect/version/4/do/assign/id/?group_id
 
 XML responses to `assign` requests are identical to `read` requests, but reflect the new prospect assignment in the `<assigned_to>` node.
 
@@ -236,7 +237,7 @@ XML responses to `assign` requests are identical to `read` requests, but reflect
 
 To create a prospect via the API, only a valid email address is required. Values for any other prospect fields may also be provided in the `create` request. Developers are responsible for substituting specific values for parameters denoted by `<carets>`.
 
-_**Example:** Creating a new prospect_/api/prospect/version/4/do/create/email/[new_prospect@pardot.com](mailto:new_prospect@pardot.com)?first_name=New&amp;last_name=Prospect&amp;api_key=&amp;user_key=
+_**Example:** Creating a new prospect_/api/prospect/version/4/do/create/email/new_prospect@pardot.com?first_name=New&amp;last_name=Prospect
 
 XML responses to `create` requests are identical to `update` and `read` requests. If no `campaign_id` value is provided, the new prospect will be automatically assigned to the oldest existing campaign.
 
@@ -354,13 +355,13 @@ XML Update Example:
 
 If using `batchCreate`, you'll need to provide a valid email address for each prospect.
 
-The `batchUpsert` endpoint allows the use of prospect IDs, CRM FIDs, and prospect Email Addresses as valid record identifiers.
+The `batchUpsert` endpoint allows the use of prospect IDs and CRM FIDs as valid record identifiers. If the request includes an email address but no ID or CRM FID, a prospect will be created with the email address. 
 
 The `batchUpdate` endpoint allows the use of prospect IDs and CRM FIDs.  Updating by prospect Email Address is not supported - a prospect ID or CRM FID is required as a valid record identifier.  You may query by email address to get record identifiers.
 
 **_Example:_**
 
-/api/prospect/version/4/do/batchUpdate?prospects={"prospects":{"1337":{"first_name":"New first name","last_name":"New last name"},"1234":{"first_name":"New first name","last_name":"New last name"}}}&api_key=&user_key=
+/api/prospect/version/4/do/batchUpdate?prospects={"prospects":{"1337":{"first_name":"New first name","last_name":"New last name"},"1234":{"first_name":"New first name","last_name":"New last name"}}}
 
 
 **Note:** The return value will either be XML or JSON (XML by default. If you want JSON, then add "&format=json" to your HTTP query).
@@ -371,7 +372,7 @@ The `batchUpdate` endpoint allows the use of prospect IDs and CRM FIDs.  Updatin
 
 Modifying values of prospect data fields is done by submitting an `update` request with parameters for each field to be updated. Each parameter is formatted as `<field_name>=<value>`. Custom field values are updated using the same syntax.
 
-_**Example:** Updating the phone number of a prospect whose Pardot ID is_ `300`: /api/prospect/version/4/do/update/id/300?phone=888-123-4567&amp;api_key=&amp;user_key=
+_**Example:** Updating the phone number of a prospect whose Pardot ID is_ `300`: /api/prospect/version/4/do/update/id/300?phone=888-123-4567
 
 
 Only values that are specifically named in the request are updated. All others are left unchanged. To clear a value, submit an `update` request containing a parameter with no specified value, such as `phone=`.
@@ -384,7 +385,7 @@ Only values that are specifically named in the request are updated. All others a
 
 Modifying values of prospect data fields with predefined values is accomplished through an `update` request with parameters for each field to be updated. Each parameter is formatted as `<field_name>=<value>` where `<value>` matches the predefined field value. Custom field values are updated using the same syntax.
 
-_**Example:** Updating the category of a prospect whose Pardot ID is_ `300` *to the category `consumer`: /api/prospect/version/4/do/update/id/300?category=consumer&amp;api_key=&amp;user_key=
+_**Example:** Updating the category of a prospect whose Pardot ID is_ `300` *to the category `consumer`: /api/prospect/version/4/do/update/id/300?category=consumer
 
 
 <a name="14833-updating-fields-with-multiple-values" id="updating-fields-with-multiple-values"></a>
@@ -393,7 +394,7 @@ _**Example:** Updating the category of a prospect whose Pardot ID is_ `300` *to 
 
 Updating field values with multiple values follows the same convention as fields with predefined values, but requires a different parameter naming scheme to allow multiplicity. An `update` request is submitted with parameters formatted as `<field_name>_<count>=<field_value>` where `<count>` is an integer denoting the current parameter's place in sequence. `<count>` must start at 0 and increase by 1 until all desired values are submitted.
 
-_**Example:** Modifying the values of a custom field with field name_ `past_jobs` _for a prospect with a Pardot ID of_ `5`: /api/prospect/version/4/do/update/id/5?past_jobs_0=janitor&amp;past_jobs_1=security&amp;api_key=&amp;user_key=
+_**Example:** Modifying the values of a custom field with field name_ `past_jobs` _for a prospect with a Pardot ID of_ `5`: /api/prospect/version/4/do/update/id/5?past_jobs_0=janitor&amp;past_jobs_1=security
 
 **Note:** Checkbox and multi-select fields are the only field types that can be updated in this manner. To clear all of the values for a checkbox or multi-select field, use `<field_name>_0=`. To clear specific values, just set the values that should remain in the prospect record using the method above.
 
@@ -403,7 +404,7 @@ _**Example:** Modifying the values of a custom field with field name_ `past_jobs
 
 To modify email list subscriptions for a prospect, the Pardot ID of the email list is required. Once the ID is obtained, an `update` is submitted with parameters formatted as `list_<list_id>=1` to create a subscription and `list_<list_id>=0` to end a subscription.
 
-_**Example:** Adding a prospect whose Pardot ID is_ `300` _to an email list with Pardot ID_ 8`: /api/prospect/version/4/do/update/id/300?list_8=1&amp;api_key=&amp;user_key=
+_**Example:** Adding a prospect whose Pardot ID is_ `300` _to an email list with Pardot ID_ 8`: /api/prospect/version/4/do/update/id/300?list_8=1
 
 
 Requests that attempt to subscribe a prospect to lists that it is already subscribed to are ignored. Unsubscribe requests are handled similarly.
@@ -414,9 +415,9 @@ Requests that attempt to subscribe a prospect to lists that it is already subscr
 
 To modify a prospect's matching status for associated profile criteria, the Pardot ID of the profile criteria is required. Once the ID is obtained, an `update` is submitted with parameters formatted as `profile_criteria_<profile_criteria_id>=<status>`. The value of `<status>` may be either `match`, `nomatch`, or `unknown`.
 
-_**Example:** Setting a profile criteria for a prospect with Pardot ID_ `58` _to_ `match`: /api/prospect/version/4/do/update/id/58?profile_criteria_8=match&amp;api_key=&amp;user_key=
+_**Example:** Setting a profile criteria for a prospect with Pardot ID_ `58` _to_ `match`: /api/prospect/version/4/do/update/id/58?profile_criteria_8=match
 
-_**Example:** Setting a profile criteria for a prospect with Pardot ID_ `58` _to_ `nomatch`: /api/prospect/version/4/do/update/id/58?profile_criteria_8=nomatch&amp;api_key=&amp;user_key=
+_**Example:** Setting a profile criteria for a prospect with Pardot ID_ `58` _to_ `nomatch`: /api/prospect/version/4/do/update/id/58?profile_criteria_8=nomatch
 
 
 Only profile criteria that belong to the profile associated with the prospect can be updated using this method. Requests to update profile criteria not associated with the assigned profile will be ignored. Using any matching status values other than `match`, `nomatch`, or `unknown` will result in an error message. See [Error Codes &amp; Messages](../error-codes-messages) for details.
@@ -427,7 +428,7 @@ Only profile criteria that belong to the profile associated with the prospect ca
 
 To modify a prospect's matching status for associated prospect account, the Pardot ID of the prospect account is required. Once the ID is obtained, an `update` is submitted with parameters formatted as `prospect_account_id=<id>`.
 
-_**Example:** Setting a prospect account for a prospect whose Pardot ID is_ `300` _to_ `match`: /api/prospect/version/4/do/update/id/300?prospect_account_id=&amp;api_key=&amp;user_key=
+_**Example:** Setting a prospect account for a prospect whose Pardot ID is_ `300` _to_ `match`: /api/prospect/version/4/do/update/id/300?prospect_account_id=
 
 
 A prospect account with the id must exist, and can not be set if a CRM connector is set up in the account.
