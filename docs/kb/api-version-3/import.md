@@ -2,7 +2,7 @@
 
 The Import API provides a programmatic way to insert or update large amounts of data in Pardot. It uses Pardot's existing API structures, patterns, and terminology. The Import API automates the existing prospect [import feature set](https://help.salesforce.com/articleView?id=pardot_prospects_import.htm&type=0). Only prospect import is supported currently.
 
-**IMPORTANT** The user's role must have the Prospect Import ability to initiate an API import. For more information refer to [Pardot User Roles](https://help.salesforce.com/articleView?id=pardot_user_roles.htm)
+**IMPORTANT** The user's role must have the Prospect Import ability to start an API import. For more information, see [Pardot User Roles](https://help.salesforce.com/articleView?id=pardot_user_roles.htm)
 
 ## When to Use the Import API
 
