@@ -763,6 +763,18 @@ true.
 **Solution**: Change the object type to one of the
 allowed types.
 
+## [](#error-code-52)Error Code: 52
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="52">Invalid parameter range</err>
+</rsp>
+```
+
+**Problem**: A parameter in the request is outside its acceptable range.
+
+**Solution**: Update the parameter to be within the acceptable range.
+
 ## [](#error-code-53)Error Code: 53
 
 ```
@@ -1615,6 +1627,42 @@ requests.
 
 **Solution**: Resubmit the request using a valid [authentication](/#authentication) method.
 
+## [](#error-code-128)Error Code: 128
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="128">Cannot create campaigns</err>
+</rsp>
+```
+
+**Problem**: Campaigns cannot be created for an account that has [Connected Campaigns](https://www.pardot.com/training/connected-campaigns-faq/) enabled.
+
+**Solution**: Create a campaign in [Salesforce](https://developer.salesforce.com/docs/api-explorer/sobject/Campaign).
+
+## [](#error-code-129)Error Code: 129
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="129">Cannot modify campaign name or cost</err>
+</rsp>
+```
+
+**Problem**: Campaign name and cost cannot be modified via the API.
+
+**Solution**: Remove the name and cost fields from the request.
+
+## [](#error-code-130)Error Code: 130
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="130">One or more of the specified fields are invalid</err>
+</rsp>
+```
+
+**Problem**: One or more of the fields in the CSV is not recognized.
+
+**Solution**: Ensure all of the column headers in the CSV match those in the [field reference](/kb/object-field-references/). Ensure the number of columns in the CSV matches the number of columns in the header row.
+
 ## [](#error-code-131)Error Code: 131
 
 ```
@@ -1626,6 +1674,150 @@ requests.
 **Problem**: Too many invalid api requests have been made.
 
 **Solution**: Reset your password at https://pi.pardot.com/user/passwordReset
+
+## [](#error-code-132)Error Code: 132
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="132">Prospect is archived</err>
+</rsp>
+```
+
+**Problem**: The prospect cannot be read because it is in the recycle bin.
+
+**Solution**: Undelete the prospect via the UI or choose another prospect.
+
+## [](#error-code-133)Error Code: 133
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="133">Up to 2 sort by options are allowed.</err>
+</rsp>
+```
+
+**Problem**: Too many columns were passed into the sort parameter.
+
+**Solution**: Limit sort columns to 2 or fewer.
+
+## [](#error-code-134)Error Code: 134
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="134">Up to 2 sort order options are allowed.</err>
+</rsp>
+```
+
+**Problem**: Too many orders were passed into the sort parameter.
+
+**Solution**: Limit sort orders to 2 or fewer.
+
+## [](#error-code-135)Error Code: 135
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="135">When passing a comma-separated value, one of the two values must be id.</err>
+</rsp>
+```
+
+**Problem**: When sorting by multiple columns, one column must be the ID column.
+
+**Solution**: Add the ID column to the request.
+
+## [](#error-code-137)Error Code: 137
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="137">URL is not valid. Please include a protocol (e.g., http:// or https:// )</err>
+</rsp>
+```
+
+**Problem**: An invalid URL was supplied in the request.
+
+**Solution**: Add one of the requested protocols to the request.
+
+## [](#error-code-138)Error Code: 138
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="138">Name must be 50 characters or less.</err>
+</rsp>
+```
+
+**Problem**: The name supplied was too long.
+
+**Solution**: Reduce the length of the name field.
+
+## [](#error-code-139)Error Code: 139
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="139">The supplied name is not valid.</err>
+</rsp>
+```
+
+**Problem**: The name field has an invalid character.
+
+**Solution**: Remove special characters from the name field.
+
+## [](#error-code-145)Error Code: 145
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="145">Invalid archived parameter specified. Allowed values are true or false.</err>
+</rsp>
+```
+
+**Problem**: The archived parameter only accepts boolean values.
+
+**Solution**: Update the request to send the proper boolean value.
+
+## [](#error-code-146)Error Code: 146
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="146">Invalid archived parameter specified. Allowed values are true or false.</err>
+</rsp>
+```
+
+**Problem**: The archived parameter only accepts boolean values.
+
+**Solution**: Update the request to send the proper boolean value.
+
+## [](#error-code-166)Error Code: 166
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="166">The input is not in the required format</err>
+</rsp>
+```
+
+**Problem**: The request input was not specified according to the documentation.
+
+**Solution**: Check the documentation for the desired endpoint and ensure the request is formatted properly.
+
+## [](#error-code-168)Error Code: 168
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="168">Background Queue is in an invalid state.</err>
+</rsp>
+```
+
+**Problem**: The background processing system encountered an unexpected state.
+
+**Solution**: Try starting the process over, or contact support.
+
+## [](#error-code-169)Error Code: 169
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="169">Background Queue is an invalid type.</err>
+</rsp>
+```
+
+**Problem**: The background processing system encountered an unexpected state.
+
+**Solution**: Try starting the process over, or contact support.
 
 ## [](#error-code-10000)Error Code: 10000
 
