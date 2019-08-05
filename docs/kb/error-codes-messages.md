@@ -1647,7 +1647,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: Campaign name and cost cannot be modified via the API.
+**Problem**: Campaign name and cost can't be modified via the API.
 
 **Solution**: Remove the name and cost fields from the request.
 
@@ -1659,7 +1659,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: One or more of the fields in the CSV is not recognized.
+**Problem**: One or more of the fields in the CSV is not a recognized standard or custom field.
 
 **Solution**: Ensure all of the column headers in the CSV match those in the [field reference](/kb/object-field-references/). Ensure the number of columns in the CSV matches the number of columns in the header row.
 
@@ -1683,7 +1683,7 @@ requests.
 </rsp>
 ```
 
-**Problem**: The prospect cannot be read because it is in the recycle bin.
+**Problem**: The prospect is in the recycle bin and can't be read.
 
 **Solution**: Undelete the prospect via the UI or choose another prospect.
 
@@ -1697,7 +1697,7 @@ requests.
 
 **Problem**: Too many columns were passed into the sort parameter.
 
-**Solution**: Limit sort columns to 2 or fewer.
+**Solution**: Use 2 or fewer sort by columns.
 
 ## [](#error-code-134)Error Code: 134
 
@@ -1709,7 +1709,7 @@ requests.
 
 **Problem**: Too many orders were passed into the sort parameter.
 
-**Solution**: Limit sort orders to 2 or fewer.
+**Solution**: Use 2 or fewer sort orders.
 
 ## [](#error-code-135)Error Code: 135
 
