@@ -30,6 +30,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 
 | **Parameter** | **Datatype**                               | **Options**             | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
+| `fields` | `array` | `<comma_separated_field_ids>` | Specifies the fields to be returned. **Note:** If this parameter isn't present, all fields will be returned; &lt;id&gt; will always be returned. |
 |`limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching visitor (according to the specified sorting order) to be returned in the query response. The first `offset` matching visitors will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st visitor matched by the provided criteria. |
 | `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](visitors#xml-response-formats) in [Using Visitors](visitors) for more details. |
