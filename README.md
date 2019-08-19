@@ -7,15 +7,12 @@
 * [pip](https://pip.pypa.io/en/latest/)
 
 ## Installation
-
-* `pip install mkdocs`
-* `git clone https://github.com/Pardot/api-docs.git`
+We use an old version of MkDocs, which requires specific dependencies. Current Version: 0.15.2. To install:
+* `pip install mkdocs-bootstrap==0.1.1 mkdocs-bootswatch==0.1.0 mkdocs==0.15.3`
+* `git clone git@github.com:pardot/api-docs.git`
 * `cd api-docs`
 * `mkdocs serve`
 * `open http://127.0.0.1:8000/`
-
-Make sure your MkDocs is up-to-date. Current Version: 0.15.2. To upgrade:
-* `pip install -U mkdocs` - or - `pip install -I mkdocs==0.15.2`
 
 See the [mkdocs](http://www.mkdocs.org/#getting-started) website for more information.
 
