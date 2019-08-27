@@ -252,6 +252,9 @@ div.source-links {
 	color: #7e7f80;
 	background-color: #ecf0f3;
 }
+.dropdown-menu > .separator-above {
+	border-top: 1px solid #c8cbce;
+}
 
 .navbar-default .navbar-nav > li > a {
 	color: #999;
