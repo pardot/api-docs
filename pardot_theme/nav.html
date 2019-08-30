@@ -26,8 +26,14 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ nav_item.title }} <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         {% for nav_item in nav_item.children %}
-                            <li {% if nav_item.active %}class="active"{% endif %}>
-                                <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                            <li class="{% if nav_item.active %}active{% endif %} {% if nav_item.title.startswith('--') %}separator-above{% endif %}">
+                                <a href="{{ nav_item.url }}">
+                                    {% if nav_item.title.startswith('--') %}
+                                    {{ nav_item.title[2:] }}
+                                    {% else %}
+                                    {{ nav_item.title }}
+                                    {% endif %}
+                                </a>
                             </li>
                         {% endfor %}
                         </ul>
@@ -49,14 +55,24 @@
                 {% if previous_page and page_title != 'Pardot API Documentation' %}
                 <li>
                     <a rel="next" {% if previous_page %}href="{{ previous_page.url }}"{% endif %}>
-                    <i class="fa fa-arrow-left"></i> {{ previous_page.title }}
+                    <i class="fa fa-arrow-left"></i>
+                    {% if previous_page.title .startswith('--') %}
+                    {{ previous_page.title[2:] }}
+                    {% else %}
+                    {{ previous_page.title }}
+                    {% endif %}
                     </a>
                 </li>
                 {% endif %}
                 {% if next_page %}
                 <li>
                     <a rel="prev" {% if next_page %}href="{{ next_page.url }}"{% endif %}>
-                    {{ next_page.title }} <i class="fa fa-arrow-right"></i>
+                    {% if next_page.title .startswith('--') %}
+                    {{ next_page.title[2:] }}
+                    {% else %}
+                    {{ next_page.title }}
+                    {% endif %}
+                    <i class="fa fa-arrow-right"></i>
                     </a>
                 </li>
                 {% endif %}
