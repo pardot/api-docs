@@ -1882,7 +1882,7 @@ activity<br>
 visitor activity has a landing page associated with it</td>
 </tr>
 <tr>
-<td>&lt;paid_search_id_id&gt;</td>
+<td>&lt;paid_search_ad_id&gt;</td>
 <td>integer</td>
 <td></td>
 <td></td>
