@@ -278,3 +278,4 @@ echo callPardotApi('https://pi.pardot.com/api/prospect/version/3/do/query',
 
 * [ruby-pardot](https://www.github.com/Pardot/ruby-pardot)
 * [python-pypardot4](https://github.com/mneedham91/PyPardot4) for version 4 of the API
+* [pardot-java-client](https://github.com/Crim/pardot-java-client)

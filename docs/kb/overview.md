@@ -110,3 +110,4 @@ If the output request parameter is not defined, the output format defaults to `f
 ## Supported API wrappers
 
 * [ruby-pardot](https://www.github.com/Pardot/ruby-pardot)
+* [pardot-java-client](https://github.com/Crim/pardot-java-client)
