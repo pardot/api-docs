@@ -178,7 +178,7 @@ After sending the request as a `POST`, the response will be the following. From 
 # Read
 
 ```
-/api/export/version/{3|4}/do/read/id/{id}
+/api/export/version/3/do/read/id/{id}
 ```
 
 Used to retrieve the status of the export. Once an export is complete, the links to download the results will also be present in the result body.
@@ -247,9 +247,9 @@ If the export has completed, the `state` property will be "Complete" and contain
     "state": "Complete",
     "isExpired": false,
     "resultRefs": [
-        "https://www.pardot.com/api/export/version/4/do/downloadResults/id/201917/file/20191231.csv",
-        "https://www.pardot.com/api/export/version/4/do/downloadResults/id/201917/file/20200101.csv",
-        "https://www.pardot.com/api/export/version/4/do/downloadResults/id/201917/file/20200102.csv"
+        "https://www.pardot.com/api/export/version/3/do/downloadResults/id/201917/file/20191231.csv",
+        "https://www.pardot.com/api/export/version/3/do/downloadResults/id/201917/file/20200101.csv",
+        "https://www.pardot.com/api/export/version/3/do/downloadResults/id/201917/file/20200102.csv"
     ]
 }
 ```
