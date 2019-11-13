@@ -104,7 +104,7 @@ Input Representation
 		"name": string,
 		"arguments": {
 			"argument name": argument value,
-            // additional arguments...
+			// additional arguments...
 		}
 	}
 }
