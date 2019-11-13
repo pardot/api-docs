@@ -42,6 +42,7 @@ pages:
 - ['kb/api-version-3/visitor-activities.md', 'Version 3', 'Visitor Activities']
 - ['kb/api-version-3/visits.md', 'Version 3', 'Visits']
 - ['kb/api-version-3/import.md', 'Version 3', '--Import API (for Prospects)']
+- ['kb/api-version-3/export.md', 'Version 3', '--Export API (for Visitor Activity)']
 
 - ['kb/api-version-4/accounts.md', 'Version 4', 'Accounts']
 - ['kb/api-version-4/campaigns.md', 'Version 4', 'Campaigns']
@@ -66,5 +67,6 @@ pages:
 - ['kb/api-version-4/visitor-activities.md', 'Version 4', 'Visitor Activities']
 - ['kb/api-version-4/visits.md', 'Version 4', 'Visits']
 - ['kb/api-version-4/import.md', 'Version 4', '--Import API (for Prospects)']
+- ['kb/api-version-4/export.md', 'Version 4', '--Export API (for Visitor Activity)']
 
 theme_dir: 'pardot_theme'
