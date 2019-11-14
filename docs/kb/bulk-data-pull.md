@@ -2,9 +2,95 @@
 
 This document outlines the approach and best practices around pulling a large amount of data out of Pardot via the API, typically for ingestion into a third-party system or internal data warehouse.
 
-Pulling data from Pardot is a straightforward, two-step process. First, log in with your Pardot user email, password, and user key to acquire an API key. Then, use the query endpoint for each data set to pull the data.
+## Visitor Activity with Export API
+
+If you need to get large amounts of Visitor Activity data, it's recommended to use the Export API. If you need a different object, see the [Query the Pardot API](#Query-the-Pardot-API) section for details on how to retrieve the information using the query endpoint.
+
+The Export API is an asynchronous that efficiently scales data retrieval based on available resources. This is different than the query endpoint in that the servers know about capacity, allowing more resources to retrieve the data for an export than what is available for the query endpoint. This results in a faster result without using your accounts concurrency limits and API limits to process all of the queries.
+
+Before getting started, review the documentation for the Export API.
+
+## Best Practive #1 - Polling for Status Updates
+
+Since export is asynchronous and won't complete immediately, you will need to poll the Read endpoint of the Export API to see if the export is done processing. The time an export takes depends on how much data qualifies to be exported and the resources available to process the export. The problem is how to determine the frequency of polling if the time taken can vary. We suggest that you start by setting a reasonable polling interval of 30 seconds to a couple of minutes.
+
+If you run an integration regularly, adjust your polling time to be an average of the time taken for a few runs of your integration. For example, if your integration is run daily and retrieves all Visitor Activity data created for the previous day, start with a reasonable polling frequency of 1 minute. Whenever the export completes, keep track of the export durations for a few days of execution then use the average of those times to find a more clear polling interval. In this example, we notice that over several days our export finishes with an average duration of 15 minutes so polling every minute would be too often (polls 15 times). However if we adjust to a 5 minute polling interval, we will then poll three or four times, which would be a fraction of the once per minute interval previously.
+
+If you run integrations infrequently or with different time ranges, it may be better to increase the polling interval over time. For example, if we keep track of the number of times the integration has polled, we can calculate a gradually increasing polling interval using `ceil(((n * n)/5)+1)`, where `n` is the count of the polls made previously. Using this function to calculate polling interval, we will poll a minute the first time, 2 minutes for the second and continuing to increase at larger intervals each time. By using a function to calculate polling time, the integration can check more frequently after an export is created to catch the quick running exports however limit the number of polls for exports that are long running.
+
+Remember that the Read endpoint of the Export API will consume API limits so using these tips will allow you adjust how much of that limit is used by your integration.
+
+## Best Practive #2 - Specify Limited Date Ranges
+
+Since the results of the export API are only returned after the query has executed, limiting the date range of the export will allow the results to be returned quicker. One way of achieving this is to break large date ranges into several smaller ranges.
+
+For example, it's okay to create an export to retrieve a year's worth of visitor activity within a single export by specifying a year duration, like the following.
+
+```bash
+curl https://pi.pardot.com/api/export/version/3/do/create?format=json \
+-H "Content-Type: application/json" \
+-H "Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321"
+-d '{
+    "object": "visitorActivity",
+    "procedure": {
+        "name": "filter_by_created_at",
+        "arguments": {
+            "created_after": "2019-12-25 00:00:00",
+            "created_before": "2020-12-25 00:00:00"
+        }
+    }
+}'
+```
+
+The issue is that all 12 months of data must be queried in order for the results to be returned. There may be cases where your integration can use a smaller data set up front and be refined later as more data from the export becomes available. For example, an integration may be able to work off the last month of data while waiting on a three month range and then increasing to a twelve month range.
+
+This can be acheived by creating three different exports with the three different ranges:
+
+1. Last month
+    ```
+	{
+		"object": "visitorActivity",
+		"procedure": {
+			"name": "filter_by_created_at",
+			"arguments": {
+				"created_after": "2020-11-25 00:00:00",
+				"created_before": "2020-12-25 00:00:00"
+			}
+		}
+	}
+	```
+2. Three months prior
+    ```
+	{
+		"object": "visitorActivity",
+		"procedure": {
+			"name": "filter_by_created_at",
+			"arguments": {
+				"created_after": "2020-08-25 00:00:00",
+				"created_before": "2020-11-25 00:00:00"
+			}
+		}
+	}
+	```
+2. Twelve months prior
+    ```
+	{
+		"object": "visitorActivity",
+		"procedure": {
+			"name": "filter_by_created_at",
+			"arguments": {
+				"created_after": "2019-12-25 00:00:00",
+				"created_before": "2020-08-25 00:00:00"
+			}
+		}
+	}
+	```
+
+Instead of waiting until all twelve months of data to be exported to see any results, we now have the same data being returned in smaller increments, allowing us to use the newest data.
 
 ## Query the Pardot API
+
+Pulling data from a query endpoint in the Pardot API is a straightforward, two-step process. First, log in with your Pardot user email, password, and user key to acquire an API key. Then, use the query endpoint for each data set to pull the data.
 
 Before getting started, review the documentation at http://developer.pardot.com and determine which data set you are going to pull. For a data set to be eligible for a bulk data pull, it must have a query operation that supports at least one of the following three sets of search filter criteria parameters:
 
@@ -12,7 +98,7 @@ Before getting started, review the documentation at http://developer.pardot.com 
 * `updated_before` and `updated_after`
 * `id_greater_than` and `id_less_than`
 
-Issue an HTTP GET to the appropriate query endpoint to pull the data back. Include your `user_key` and `api_key` as URL parameters. The query response will contain up to 200 rows from the data set you have requested.
+Issue an HTTP GET to the appropriate query endpoint to pull the data back. The query response will contain up to 200 rows from the data set you have requested.
 
 ### Best Practice #1 ‐ Use the Bulk Output Format
 
