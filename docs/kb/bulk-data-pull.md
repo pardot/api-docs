@@ -16,7 +16,14 @@ Since export is asynchronous and won't complete immediately, you will need to po
 
 If you run an integration regularly, adjust your polling time to be an average of the time taken for a few runs of your integration. For example, if your integration is run daily and retrieves all Visitor Activity data created for the previous day, start with a reasonable polling frequency of 1 minute. Whenever the export completes, keep track of the export durations for a few days of execution then use the average of those times to find a more clear polling interval. In this example, we notice that over several days our export finishes with an average duration of 15 minutes so polling every minute would be too often (polls 15 times). However if we adjust to a 5 minute polling interval, we will then poll three or four times, which would be a fraction of the once per minute interval previously.
 
-If you run integrations infrequently or with different time ranges, it may be better to increase the polling interval over time. For example, if we keep track of the number of times the integration has polled, we can calculate a gradually increasing polling interval using `ceil(((n * n)/5)+1)`, where `n` is the count of the polls made previously. Using this function to calculate polling interval, we will poll a minute the first time, 2 minutes for the second and continuing to increase at larger intervals each time. By using a function to calculate polling time, the integration can check more frequently after an export is created to catch the quick running exports however limit the number of polls for exports that are long running.
+If you run integrations infrequently or with different time ranges, it may be better to increase the polling interval over time. For example, if we keep track of the number of times the integration has polled, we can calculate a gradually increasing polling interval using the following function:
+
+```
+ceil(((n * n)/5)+1)
+```
+where `n` is the index of the poll, starting with 0
+
+Using this function to calculate polling interval, we will poll a minute the first time, 2 minutes for the second and continue to increase at larger intervals each time. This allows the integration to check more frequently soon after an export is created to catch the quick running exports however limit the number of polls for exports that are long running.
 
 Remember that the Read endpoint of the Export API will consume API limits so using these tips will allow you adjust how much of that limit is used by your integration.
 
@@ -46,45 +53,26 @@ The issue is that all 12 months of data must be queried in order for the results
 
 This can be acheived by creating three different exports with the three different ranges:
 
-1. Last month
-    ```
-	{
-		"object": "visitorActivity",
-		"procedure": {
-			"name": "filter_by_created_at",
-			"arguments": {
-				"created_after": "2020-11-25 00:00:00",
-				"created_before": "2020-12-25 00:00:00"
-			}
-		}
-	}
-	```
-2. Three months prior
-    ```
-	{
-		"object": "visitorActivity",
-		"procedure": {
-			"name": "filter_by_created_at",
-			"arguments": {
-				"created_after": "2020-08-25 00:00:00",
-				"created_before": "2020-11-25 00:00:00"
-			}
-		}
-	}
-	```
-2. Twelve months prior
-    ```
-	{
-		"object": "visitorActivity",
-		"procedure": {
-			"name": "filter_by_created_at",
-			"arguments": {
-				"created_after": "2019-12-25 00:00:00",
-				"created_before": "2020-08-25 00:00:00"
-			}
-		}
-	}
-	```
+Last month
+    
+```json
+"created_after": "2020-11-25 00:00:00",
+"created_before": "2020-12-25 00:00:00"
+```
+
+Three months prior
+
+```json
+"created_after": "2020-08-25 00:00:00",
+"created_before": "2020-11-25 00:00:00"
+```
+
+Eight months prior
+
+```json
+"created_after": "2019-12-25 00:00:00",
+"created_before": "2020-08-25 00:00:00"
+```
 
 Instead of waiting until all twelve months of data to be exported to see any results, we now have the same data being returned in smaller increments, allowing us to use the newest data sooner.
 

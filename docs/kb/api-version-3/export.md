@@ -93,7 +93,7 @@ Content-Type must be `application/json`.
 Input Representation
 
 * **object**: Specifies which object to export. Currently on "visitorActivity" is available.
-* **procedure**: The procedure to execute. A procedure is a query and execution plan used to effeciently retrieve the associated data. Each object has a different set of procedures. See the [Procedures](#Procedures) section for the list of available procedures.
+* **procedure**: The procedure to execute. A procedure is a query and execution plan used to effeciently retrieve the associated data. Each object has a different set of procedures. See the [Procedures](#procedures) section for the list of available procedures.
     * **name**: The name of the procedure to execute.
     * **arguments**: Arguments used to manipulate the behavior of the procedure. These arguments are specific to the procedure. See the documentation for the procedure to see which arguments apply.
 
@@ -118,7 +118,7 @@ Input Representation
 Output Representation
 
 * **id**: The ID of the export. This ID will be used to check the status of the export.
-* **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#Export-State) enum.
+* **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#export-state) enum.
 * **isExpired**: Indicates that the export has expired. After an export has expired, this will return `false` and no data associated to the export can be downloaded.
 * **resultsRef**: (Optional) This property will appear only when the export has completed and contains a list of URLS to CSV files available for download. If there is no data associated to the export, this property will be absent. If there is only a single CSV file available for download, this will be a `string` containing the URL to download the file. If there are multiple CSV files, this will be an array of URLs.
 * **createdAt**: The date and time the export was created in the timezone of the user making the request.
@@ -200,7 +200,7 @@ Used to retrieve the status of the export. Once an export is complete, the links
 Output Representation
 
 * **id**: The ID of the export. This ID will be used to check the status of the export.
-* **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#Export-State) enum.
+* **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#export-state) enum.
 * **isExpired**: Indicates that the export has expired. After an export has expired, this will return `false` and no data associated to the export can be downloaded.
 * **resultsRef**: (Optional) This property will appear only when the export has completed and contains a list of URLS to CSV files available for download. If there is no data associated to the export, this property will be absent. If there is only a single CSV file available for download, this will be a `string` containing the URL to download the file. If there are multiple CSV files, this will be an array of URLs. The order of the URLs in the array is not significant.
 * **createdAt**: The date and time the export was created in the timezone of the user making the request.
@@ -255,9 +255,9 @@ If the export has completed, the `state` property will be "Complete" and contain
     "state": "Complete",
     "isExpired": false,
     "resultRefs": [
-        "https://www.pardot.com/api/export/version/3/do/downloadResults/id/201917/file/20191231.csv",
-        "https://www.pardot.com/api/export/version/3/do/downloadResults/id/201917/file/20200101.csv",
-        "https://www.pardot.com/api/export/version/3/do/downloadResults/id/201917/file/20200102.csv"
+        "https://www.pardot.com/api/export/version/3/do/downloadResults/id/201917/file/23191",
+        "https://www.pardot.com/api/export/version/3/do/downloadResults/id/201917/file/20201",
+        "https://www.pardot.com/api/export/version/3/do/downloadResults/id/201917/file/20102"
     ]
 }
 ```
@@ -290,11 +290,12 @@ Used by administrators to retrieve a list of exports and their status. A user mu
 * Status Code: 200
 
 Output Representation
+
 * **result**: A collection of exports
     * **total_results**: The total number of results matching the filter.
     * **export**: A collection of exports. If there are not results, this property is omitted. If there is a single result, this is an object. If there are multiple results, this is an array of results.
         * **id**: The ID of the export. This ID will be used to check the status of the export.
-        * **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#Export-State) enum.
+        * **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#export-state) enum.
         * **isExpired**: Indicates that the export has expired. After an export has expired, this will return `false` and no data associated to the export can be downloaded.
         * **createdAt**: The date and time the export was created in the timezone of the user making the request.
         * **updatedAt**: The date and time the export was updated in the timezone of the user making the request.
@@ -328,13 +329,13 @@ Note that the export representation returned in query will not contain a **resul
 
 # Download Results
 
-The URLs retrieved from the Read endpoint can be used to download the results of the export. A failure will occur when attempting to download any results from an expired export. See [Expiration](#Expiration) for more information.
+The URLs retrieved from the Read endpoint can be used to download the results of the export. A failure will occur when attempting to download any results from an expired export. See [Expiration](#expiration) for more information.
 
 ## GET
 
 ### Success
 
-The data represented in CSV format. See the [CSV Format](#CSV-File-Formatting) section for more information.
+The data represented in CSV format. See the [CSV Format](#csv-file-formatting) section for more information.
 
 ### Errors
 
