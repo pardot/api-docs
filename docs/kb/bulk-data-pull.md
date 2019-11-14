@@ -86,7 +86,7 @@ This can be acheived by creating three different exports with the three differen
 	}
 	```
 
-Instead of waiting until all twelve months of data to be exported to see any results, we now have the same data being returned in smaller increments, allowing us to use the newest data.
+Instead of waiting until all twelve months of data to be exported to see any results, we now have the same data being returned in smaller increments, allowing us to use the newest data sooner.
 
 ## Query the Pardot API
 
