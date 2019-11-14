@@ -121,6 +121,8 @@ Output Representation
 * **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#Export-State) enum.
 * **isExpired**: Indicates that the export has expired. After an export has expired, this will return `false` and no data associated to the export can be downloaded.
 * **resultsRef**: (Optional) This property will appear only when the export has completed and contains a list of URLS to CSV files available for download. If there is no data associated to the export, this property will be absent. If there is only a single CSV file available for download, this will be a `string` containing the URL to download the file. If there are multiple CSV files, this will be an array of URLs.
+* **createdAt**: The date and time the export was created in the timezone of the user making the request.
+* **updatedAt**: The date and time the export was updated in the timezone of the user making the request.
 
 ```json
 {
@@ -128,7 +130,9 @@ Output Representation
         "id": int,
         "state": string,
         "isExpired": boolean,
-        "resultsRef": string OR string[]
+        "resultsRef": string OR string[],
+        "createdAt": datetime,
+        "updatedAt": datetime
     }
 }
 ```
@@ -199,6 +203,8 @@ Output Representation
 * **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#Export-State) enum.
 * **isExpired**: Indicates that the export has expired. After an export has expired, this will return `false` and no data associated to the export can be downloaded.
 * **resultsRef**: (Optional) This property will appear only when the export has completed and contains a list of URLS to CSV files available for download. If there is no data associated to the export, this property will be absent. If there is only a single CSV file available for download, this will be a `string` containing the URL to download the file. If there are multiple CSV files, this will be an array of URLs. The order of the URLs in the array is not significant.
+* **createdAt**: The date and time the export was created in the timezone of the user making the request.
+* **updatedAt**: The date and time the export was updated in the timezone of the user making the request.
 
 ```json
 {
@@ -206,7 +212,9 @@ Output Representation
         "id": int,
         "state": string,
         "isExpired": boolean,
-        "resultsRef": string OR string[]
+        "resultsRef": string OR string[],
+        "createdAt": datetime,
+        "updatedAt": datetime
     }
 }
 ```
@@ -253,6 +261,68 @@ If the export has completed, the `state` property will be "Complete" and contain
     ]
 }
 ```
+
+---
+
+# Query
+
+```
+/api/export/version/3/do/query
+```
+
+Used by administrators to retrieve a list of exports and their status. A user must have the “Admin > Exports > View” ability in order to execute this endpoint.
+
+## GET
+
+### Params
+
+* **created_after**: (Optional) Filters the results to return only exports that were created after the specified time.
+* **created_before**: (Optional) Filters the results to return only exports that were created before the specified time.
+* **updated_after**: (Optional) Filters the results to return only exports that were updated after the specified time.
+* **updated_before**: (Optional) Filters the results to return only exports that were updated before the specified time.
+* **status**: (Optional) Filters the results to return exports in the given state. Allowed values are "Complete", "Failed", "Processing", or "Waiting".
+* **object**: (Optional) Filters the results to return exports for the specified object.
+* **sort_by**: (Optional) Sorts the results by the specified property value. Allowed values are "id", "created_at", or "updated_at". If not specified, the results are returned by "id" in "descending" order.
+* **sort_order**: (Optional) Used in conjuntion with **sort_by** and adjusts the direction of the sort. Allowed values are "ascending" or "descending". If not specified, the results are in "descending" order.
+
+### Success
+
+* Status Code: 200
+
+Output Representation
+* **result**: A collection of exports
+    * **total_results**: The total number of results matching the filter.
+    * **export**: A collection of exports. If there are not results, this property is omitted. If there is a single result, this is an object. If there are multiple results, this is an array of results.
+        * **id**: The ID of the export. This ID will be used to check the status of the export.
+        * **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#Export-State) enum.
+        * **isExpired**: Indicates that the export has expired. After an export has expired, this will return `false` and no data associated to the export can be downloaded.
+        * **createdAt**: The date and time the export was created in the timezone of the user making the request.
+        * **updatedAt**: The date and time the export was updated in the timezone of the user making the request.
+
+Note that the export representation returned in query will not contain a **resultRefs** property. Use the read endpoint for the export to get the full export representation.
+
+```json
+{
+    "result": {
+        "total_results": int,
+        "export": [
+            {
+                "id": int,
+                "state": string,
+                "isExpired": boolean,
+                "resultsRef": string OR string[],
+                "createdAt": datetime,
+                "updatedAt": datetime
+            }
+        ]
+    }
+}
+```
+
+### Errors
+
+* Status Code: 4xx
+* Error codes: See [Error Codes](/kb/error-codes-messages)
 
 ---
 
