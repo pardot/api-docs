@@ -1,6 +1,6 @@
 # Export API Overview
 
-The Export API provides a way to retrieve larges volumes of data from Pardot. It uses uses Pardot's existing API
+The Export API provides a way to retrieve large volumes of data from Pardot. It uses Pardot's existing API
 structures, patterns, and terminology. Only visitor activity is supported currently.
 
 # When to Use the Export API
@@ -25,6 +25,7 @@ Data associated to an export will expire after 7 days.
 # Limitations
 
 * The daily Pardot API call limit and the concurrent Pardot API call limit apply to Export API calls just as they would with any other Pardot API calls.
+* Export API calls are executed sequentially for each account, with older exports being processed before newer exports.
 
 # Expiration
 
@@ -68,7 +69,7 @@ OR
 **Arguments**
 
 * **created_after**: Selects visitor activities that were created after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
-* **created_before**: (Optional) Selects visitor activities that were created before the specified time. This value must be after than the value in `created_after`. If this argument is not specified, then no upper boundary is used in the query (and all data after the `created_after` will be returned). The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **created_before**: (Optional) Selects visitor activities that were created before the specified time. This value must be after the value in `created_after`. If this argument is not specified, then no upper boundary is used in the query (and all data after the `created_after` will be returned). The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
 
 # Getting Started
 
@@ -201,7 +202,7 @@ Output Representation
 
 * **id**: The ID of the export. This ID will be used to check the status of the export.
 * **state**: The state of the export. This will display "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#export-state) enum.
-* **isExpired**: Indicates that the export has expired. After an export has expired, this will return `false` and no data associated to the export can be downloaded.
+* **isExpired**: Indicates that the export has expired. After an export has expired, this will return `true` and no data associated to the export can be downloaded.
 * **resultsRef**: (Optional) This property will appear only when the export has completed and contains a list of URLS to CSV files available for download. If there is no data associated to the export, this property will be absent. If there is only a single CSV file available for download, this will be a `string` containing the URL to download the file. If there are multiple CSV files, this will be an array of URLs. The order of the URLs in the array is not significant.
 * **createdAt**: The date and time the export was created in the timezone of the user making the request.
 * **updatedAt**: The date and time the export was updated in the timezone of the user making the request.
