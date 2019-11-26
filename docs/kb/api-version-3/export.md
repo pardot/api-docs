@@ -45,6 +45,14 @@ Retrieves all visitor activity records with a `created_at` value that is equal o
 
 **Abilities**
 
+| Action           | Requirements  |
+| ---------------- | ------------- |
+| Create export    | Prospects > Visitors > View ability |
+| View export      | Prospects > Visitors > View ability and be the same user that created the export |
+| View all exports | Admin > Exports > View ability |
+| Query exports    | Admin > Exports > View ability |
+
+
 To create an export with this procedure, the user must have the following:
 
 * “Prospects > Visitors > View“ ability
