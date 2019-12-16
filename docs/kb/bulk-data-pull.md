@@ -10,7 +10,7 @@ The Export API is asynchronous and efficiently scales data retrieval based on th
 
 Before getting started, review the documentation for the Export API.
 
-## Best Practice #1 - Polling for Status Updates
+### Best Practice #1 - Polling for Status Updates
 
 Because export is asynchronous, you can poll the Read endpoint of the Export API to see if the export is done processing. The time an export takes depends on how much data is being exported and the resources available for processing. Because export times can vary, we recommend that you start by setting a polling interval between 30 seconds and a few minutes.
 
@@ -27,7 +27,7 @@ Using this function to calculate polling interval, you poll a minute the first t
 
 Remember that the Read endpoint of the Export API counts toward API limits, so these tips let you adjust how much of that limit is used by your integration.
 
-## Best Practice #2 - Specify Limited Date Ranges
+### Best Practice #2 - Specify Limited Date Ranges
 
 Because the results of the export API are returned only after the query has executed, limiting the date range of the export returns results faster. One way of achieving this is to break large date ranges into several smaller ranges.
 
