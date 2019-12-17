@@ -71,11 +71,13 @@ OR
 * **created_after**: Selects visitor activities that were created after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
 * **created_before**: (Optional) Selects visitor activities that were created before the specified time. This value must be after the value in `created_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `created_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
 
+__NOTE:__ The span between created_after and created_before cannot exceed 1 year. This is valid even when created_before is not specified, in which case the current date is used to measure the requested interval.
+
 # Using the Export API
 
 ---
 
-# Create 
+# Create
 
 ```
 /api/export/version/4/do/create
