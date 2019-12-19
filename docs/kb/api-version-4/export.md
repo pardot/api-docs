@@ -109,7 +109,6 @@ Input Representation
 		}
 	}
 }
-}
 ```
 
 ### Success
