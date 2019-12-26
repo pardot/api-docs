@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/customField/version/4/do/query?...` | `user_key, api_key` | Returns the custom fields matching the specified criteria parameters. See the [Using Custom Fields](#using-custom-fields) section for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](../object-field-references#custom-field) in [Object Field References](../object-field-references) |
+| `query` | `/api/customField/version/4/do/query?...` | `user_key, api_key` | Returns the custom fields matching the specified criteria parameters. See the [Using Custom Fields](#using-custom-fields) section for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](../object-field-references.md#custom-field.md) in [Object Field References](../object-field-references.md) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -61,19 +61,19 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting custom fields for the specified query |
 | `<total_results>` | Contains the number of custom fields selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched custom fields |
-| `<customField>` | The data for an individual custom field. See [Using Custom Fields](#using-custom-fields) for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](../object-field-references#custom-field) in [Object Field References](../object-field-references) |
+| `<customField>` | The data for an individual custom field. See [Using Custom Fields](#using-custom-fields) for a complete description of the custom field [XML Response Format](#xml-response-format). Also see [Custom Field](../object-field-references.md#custom-field) in [Object Field References](../object-field-references.md) |
 
 # Using Custom Fields
 
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Custom Field](../object-field-references#custom-field) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Custom Field](../object-field-references.md#custom-field) section of [Object Field References](../object-field-references.md).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `read` | `/api/customField/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the custom field specified by `<id>`. `<id>` is the Pardot ID of the target custom field. |
-| `update` | `/api/customField/version/4/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the custom field specified by `<id>`.  `<id>` is the Pardot ID of the custom field. Refer to [Custom Field](../object-field-references#custom-field) in [Object Field References](../object-field-references) for more details. Returns the updated version of the custom field. |
+| `update` | `/api/customField/version/4/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the custom field specified by `<id>`.  `<id>` is the Pardot ID of the custom field. Refer to [Custom Field](../object-field-references.md#custom-field) in [Object Field References](../object-field-references.md) for more details. Returns the updated version of the custom field. |
 | `create` | `/api/customField/version/4/do/create?...` | `user_key, api_key` | Creates a new custom field using the specified data. |
 | `delete` | `/api/customField/version/4/do/delete/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Deletes the custom field specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Custom Fields may only be deleted using HTTP methods POST or DELETE. |
 
@@ -99,4 +99,4 @@ For a complete list of fields involved in user operations, see the [Custom Field
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<customField>` | Parent tag. Contains data fields for target custom field. For complete field listing, see [Custom Field](../object-field-references#custom-field) in [Object Field References](../object-field-references). |
+| `<customField>` | Parent tag. Contains data fields for target custom field. For complete field listing, see [Custom Field](../object-field-references.md#custom-field) in [Object Field References](../object-field-references.md). |

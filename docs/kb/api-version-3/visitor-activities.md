@@ -7,7 +7,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/visitorActivity/version/3/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the visitor activities matching the specified criteria parameters. See the [Using Visitor Activities](visitors) section for a complete description of visitor activities [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
+| `query` | `/api/visitorActivity/version/3/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the visitor activities matching the specified criteria parameters. See the [Using Visitor Activities](visitors) section for a complete description of visitor activities [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria
@@ -21,7 +21,7 @@ Search criteria may be used together in any combination and/or order unless othe
 | `id_greater_than` | `integer` | `<any_positive_integer>` | Selects visitor activities with IDs greater than the specified integer. |
 | `id_less_than` | `integer` | `<any_positive_integer>` | Selects visitor activities with IDs less than the specified integer. |
 | `prospect_only` | `boolean` | `true or false` | Selects visitor activities with associated prospects. |
-| `type` | `array` | `<comma_separated_visitor_activity_types>` | Selects visitor activities of the specified types. See a list of available [Visitor Activity Types](../object-field-references#visitor-activity-types) in [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
+| `type` | `array` | `<comma_separated_visitor_activity_types>` | Selects visitor activities of the specified types. See a list of available [Visitor Activity Types](../object-field-references.md#visitor-activity-types) in [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 | **Object Types***|
 | `custom_url_only` | `boolean` | `true or false` | Selects visitor activities associated to custom urls. |
 | `email_only` | `boolean` | `true or false` | Selects visitor activities associated to emails. |
@@ -55,7 +55,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 
 ## [](#supported-sorting-options-)Supported Sorting Options
 
-The ordering of the results returned by a `query` request can be changed by specifying `sort_by` and `sort_order` parameters. Any of the following values are valid when specifying the `sort_by` parameter. For a complete list of fields involved in visitor activity queries, see [VisitorActivity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references).
+The ordering of the results returned by a `query` request can be changed by specifying `sort_by` and `sort_order` parameters. Any of the following values are valid when specifying the `sort_by` parameter. For a complete list of fields involved in visitor activity queries, see [VisitorActivity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md).
 
 | **Value** | **Default Sort Order** | **Description** |
 | --------- | ---------------------- | --------------- |
@@ -81,14 +81,14 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting visitor activities for the specified query. |
 | `<total_results>` | Contains the number of visitor activities selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched visitor activities. |
-| `<visitor_activity>` | The data for an individual visitor activity. See [Using Visitor Activities](visitors-activities) for complete descriptions of visitor activity [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
+| `<visitor_activity>` | The data for an individual visitor activity. See [Using Visitor Activities](visitors-activities) for complete descriptions of visitor activity [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 
 # Using Visitor Activities
 
 
 ## Supported Operations<a name="25688-supported-operations"></a>
 
-For a complete list of fields involved in visitor activity operations, see the [VisitorActivity](../object-field-references#visitor-activity) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in visitor activity operations, see the [VisitorActivity](../object-field-references.md#visitor-activity) section of [Object Field References](../object-field-references.md).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
@@ -106,4 +106,4 @@ For a complete list of fields involved in visitor activity operations, see the [
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-`<visitor_activity>` | Parent tag. Contains data fields for target visitorActivity. For complete field listing, see [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
+`<visitor_activity>` | Parent tag. Contains data fields for target visitorActivity. For complete field listing, see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |

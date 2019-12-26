@@ -1,6 +1,6 @@
-{% set url = current_page.abs_url.split('/') %}
-{% if 'version-3' in current_page.abs_url %}
+{% set url = page.abs_url.split('/') %}
+{% if 'version-3' in page.abs_url %}
 <a href="{{base_url}}/kb/api-version-4/{{url[3]}}">Looking for version 4?</a>
-{% elif 'version-4' in current_page.abs_url and url[3] %}
+{% elif 'version-4' in page.abs_url and url[3] %}
 <a href="{{base_url}}/kb/api-version-3/{{url[3]}}">Looking for version 3?</a>
 {% endif %}

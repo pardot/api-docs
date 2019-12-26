@@ -6,7 +6,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/visitor/version/3/do/query?...` | `user_key, api_key` | Returns the visitors matching the specified criteria parameters. See the [Using Visitors](visitors) section for a complete description of visitor [XML Response Formats](visitors#xml-response-formats). Also see [Visitor](../object-field-references#visitor) in [Object Field References](../object-field-references). |
+| `query` | `/api/visitor/version/3/do/query?...` | `user_key, api_key` | Returns the visitors matching the specified criteria parameters. See the [Using Visitors](visitors) section for a complete description of visitor [XML Response Formats](visitors#xml-response-formats). Also see [Visitor](../object-field-references.md#visitor) in [Object Field References](../object-field-references.md). |
 
 ## [](#supported-search-criteria-)Supported Search Criteria
 
@@ -40,7 +40,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 
 ## [](#supported-sorting-options-)Supported Sorting Options
 
-The ordering of the results returned by a `query` request can be changed by specifying `sort_by` and `sort_order` parameters. Any of the following values are valid when specifying the `sort_by` parameter. For a complete list of fields involved in visitor queries, see [Visitor](../object-field-references#visitor) in [Object Field References](../object-field-references).
+The ordering of the results returned by a `query` request can be changed by specifying `sort_by` and `sort_order` parameters. Any of the following values are valid when specifying the `sort_by` parameter. For a complete list of fields involved in visitor queries, see [Visitor](../object-field-references.md#visitor) in [Object Field References](../object-field-references.md).
 
 | **Value** | **Default Sort Order** | **Description** |
 | --------- | ---------------------- | --------------- |
@@ -65,14 +65,14 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting visitors for the specified query. |
 | `<total_results>` | Contains the number of visitors selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched visitors. |
-| `<visitor>` | The data for an individual visitor. See [Using Visitors](visitors) for complete descriptions of visitor [XML Response Formats](visitors#xml-response-formats). Also see [Visitor](../object-field-references#visitor) in [Object Field References](../object-field-references). **_Note:_** Data concerning a visitor's identified company, referrers, or activities will NOT be included in a `query` response. To retrieve this data, use a `read` request to retrieve the data for the visitor of interest. |
+| `<visitor>` | The data for an individual visitor. See [Using Visitors](visitors) for complete descriptions of visitor [XML Response Formats](visitors#xml-response-formats). Also see [Visitor](../object-field-references.md#visitor) in [Object Field References](../object-field-references.md). **_Note:_** Data concerning a visitor's identified company, referrers, or activities will NOT be included in a `query` response. To retrieve this data, use a `read` request to retrieve the data for the visitor of interest. |
 
 # Using Visitors
 
 
 ## Supported Operations<a name="20547-supported-operations"></a>
 
-For a complete list of fields involved in visitor operations, see the [Visitor](../object-field-references#visitor) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in visitor operations, see the [Visitor](../object-field-references.md#visitor) section of [Object Field References](../object-field-references.md).
 
 | **Operation** | **URL Format**   | **Required Parameters** | **Description**  |
 | ------------- | ---------------- | ----------------------- | -----------------|
@@ -135,12 +135,12 @@ For `output=mobile`:
 
 | **Tag**                    | **Description** |
 |----------------------------|-----------------|
-| `<visitor>` | Parent tag. Contains data fields for target visitor.  For complete field listing, see [Visitor](../object-field-references#visitor) in [Object Field References](../object-field-references). |
+| `<visitor>` | Parent tag. Contains data fields for target visitor.  For complete field listing, see [Visitor](../object-field-references.md#visitor) in [Object Field References](../object-field-references.md). |
 | `<prospect>` | Contains data about the prospect to which this visitor is assigned.  The prospect's data is returned in `mobile` output format.  See [XML Response Formats](using-prospects#xml-response-formats) in [Using Prospects](using-prospects). |
-| `<identified_company>` | Contains data about the identified company associated with this visitor.  This leaf only appears if an identified company is associated with this visitor.  See [Identified Company](../object-field-references#identified-company) in [Object Field References](../object-field-references). |
-| `<visitor_referrer>` | Contains data about this visitor's referrer.  This leaf only appears if this visitor has an associated visitor referrer.  For complete field listing, see [Visitor Referrer](../object-field-references#visitor-referrer) in [Object Field References](../object-field-references). |
+| `<identified_company>` | Contains data about the identified company associated with this visitor.  This leaf only appears if an identified company is associated with this visitor.  See [Identified Company](../object-field-references.md#identified-company) in [Object Field References](../object-field-references.md). |
+| `<visitor_referrer>` | Contains data about this visitor's referrer.  This leaf only appears if this visitor has an associated visitor referrer.  For complete field listing, see [Visitor Referrer](../object-field-references.md#visitor-referrer) in [Object Field References](../object-field-references.md). |
 | `<visitor_activities>` | Contains all visitor activities associated with this visitor.  Contains only `<visitor_activity>` tags. |
-| `<visitor_activity>` | Contains data fields for a visitor activity.  For complete field listing, see [Visitor Activity](../object-field-references#visitor-activity) in [Object Field References](../object-field-references). |
+| `<visitor_activity>` | Contains data fields for a visitor activity.  For complete field listing, see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 
 <a name="20547-assigning-and-reassigning-visitors"></a>
 

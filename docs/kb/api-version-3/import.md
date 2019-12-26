@@ -129,7 +129,7 @@ A single part with the name "**importFile**" should contain the CSV file for the
 
 ### Errors
 * Status code: 4xx
-* Error codes: See [Error Codes](/kb/error-codes-messages)
+* Error codes: See [Error Codes](../error-codes-messages.md)
 
 ---
 
@@ -160,7 +160,7 @@ Column names must match [Field Names](http://developer.pardot.com/kb/object-fiel
 
 ### Errors
 * Status code: 4xx
-* Error codes: See [Error Codes](/kb/error-codes-messages)
+* Error codes: See [Error Codes](../error-codes-messages.md)
 
 ---
 
@@ -201,7 +201,7 @@ ContentType: application/json
 ### Errors
 
 * Status code: 4xx
-* Error codes: See [Error Codes](/kb/error-codes-messages)
+* Error codes: See [Error Codes](../error-codes-messages.md)
 
 ---
 
@@ -250,7 +250,7 @@ Returns the current state of the import. If processing is complete, the output p
 ### Errors
 
 * Status code: 4xx
-* Error codes: See [Error Codes](/kb/error-codes-messages)
+* Error codes: See [Error Codes](../error-codes-messages.md)
 
 ---
 
@@ -273,7 +273,7 @@ CSV data with error info for any rows that failed to result in inserts or update
 ### Errors
 
 * Status code: 4xx
-* Error codes: See [Error Codes](/kb/error-codes-messages)
+* Error codes: See [Error Codes](../error-codes-messages.md)
 
 ---
 
