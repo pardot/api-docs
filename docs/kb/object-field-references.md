@@ -880,8 +880,8 @@ API user's preferred timezone</td>
 campaign association is returned in a &lt;campaign&gt; node in the
 XML response. However, updates to campaign associations are done by
 providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt;
-request. See <a href="opportunities#xml-response-formats">XML
-Response Formats</a> in <a href="opportunities">Using
+request. See <a href="/kb/api-version-4/opportunities#xml-response-formats">XML
+Response Formats</a> in <a href="/kb/api-version-4/opportunities">Using
 Opportunities</a> for more details.</td>
 </tr>
 <tr>
@@ -1051,8 +1051,8 @@ using the values match, nomatch, or unknown</td>
 campaign association is returned in a &lt;campaign&gt; node in the
 XML response. However, updates to campaign associations are done by
 providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt;
-request. See <a href="prospects#xml-response-formats">XML
-Response Formats</a> in <a href="prospects">Using
+request. See <a href="/kb/api-version-4/prospects/#xml-response-format">XML
+Response Formats</a> in <a href="/kb/api-version-4/prospects">Using
 Prospects</a> for more details.</td>
 </tr>
 <tr>

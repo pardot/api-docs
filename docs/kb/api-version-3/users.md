@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/user/version/3/do/query?...` | `user_key, api_key` | Returns the users matching the specified criteria parameters. See the [Using Users](users) section for a complete description of the user [XML Response Format](users#xml-response-format). Also see [User](../object-field-references#user) in [Object Field References](../object-field-references). |
+| `query` | `/api/user/version/3/do/query?...` | `user_key, api_key` | Returns the users matching the specified criteria parameters. See the [Using Users](users) section for a complete description of the user [XML Response Format](users#xml-response-format). Also see [User](../object-field-references.md#user) in [Object Field References](../object-field-references.md). |
 
 ## Supported Search Criteria
 
@@ -57,14 +57,14 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>`  |  Contains the resulting users for the specified query. |
 | `<total_results>`  |  Contains the number of users selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched users. |
-| `<user>`  |  The data for an individual user. See [Using Users](users) for a complete description of the user [XML Response Format](users#xml-response-format). Also see [User](../object-field-references#user) in [Object Field References](../object-field-references). |
+| `<user>`  |  The data for an individual user. See [Using Users](users) for a complete description of the user [XML Response Format](users#xml-response-format). Also see [User](../object-field-references.md#user) in [Object Field References](../object-field-references.md). |
 
 # Using Users
 
 
 ## Supported Operations<a name="14859-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [User](../object-field-references#user) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [User](../object-field-references.md#user) section of [Object Field References](../object-field-references.md).
 
 | **Operation** | **URL Format** | **Required Parameters** | **Description** |
 | ------------- | -------------- | ----------------------- | --------------- |
@@ -83,5 +83,5 @@ For a complete list of fields involved in user operations, see the [User](../obj
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<user>` | Parent tag. Contains data fields for target user. For complete field listing, see [User](../object-field-references#user) in [Object Field References](object-field references). |
+| `<user>` | Parent tag. Contains data fields for target user. For complete field listing, see [User](../object-field-references.md#user) in [Object Field References](object-field references). |
 

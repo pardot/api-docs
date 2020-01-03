@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/lifecycleHistory/version/4/do/query?...` | `user_key, api_key` | Returns the lifecycle history matching the specified criteria parameters. See the [Using Lifecycle Histories](#using-lifecycle-histories) section for a complete description of the lifecycle history [XML Response Format](#xml-response-format). Also see [Lifecycle History](../object-field-references#lifecycle-history) in [Object Field References](../object-field-references) |
+| `query` | `/api/lifecycleHistory/version/4/do/query?...` | `user_key, api_key` | Returns the lifecycle history matching the specified criteria parameters. See the [Using Lifecycle Histories](#using-lifecycle-histories) section for a complete description of the lifecycle history [XML Response Format](#xml-response-format). Also see [Lifecycle History](../object-field-references.md#lifecycle-history) in [Object Field References](../object-field-references.md) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -60,7 +60,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting lifecycle histories for the specified query |
 | `<total_results>` | Contains the number of lifecycle histories selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched lifecycle histories |
-| `<lifecycleHistory>` | The data for an individual lifecycle history. See [Using Lifecycle Histories](#using-lifecycle-histories) for a complete description of the lifecycle history [XML Response Format](#xml-response-format). Also see [Lifecycle History](../object-field-references#lifecycle-history) in [Object Field References](../object-field-references) |
+| `<lifecycleHistory>` | The data for an individual lifecycle history. See [Using Lifecycle Histories](#using-lifecycle-histories) for a complete description of the lifecycle history [XML Response Format](#xml-response-format). Also see [Lifecycle History](../object-field-references.md#lifecycle-history) in [Object Field References](../object-field-references.md) |
 
 
 # Using Lifecycle Histories
@@ -68,7 +68,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Lifecycle History](../object-field-references#lifecycle-history) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Lifecycle History](../object-field-references.md#lifecycle-history) section of [Object Field References](../object-field-references.md).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
@@ -92,4 +92,4 @@ For a complete list of fields involved in user operations, see the [Lifecycle Hi
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<lifecycleHistory>` | Parent tag. Contains data fields for target lifecycle history. For complete field listing, see [Lifecycle History](../object-field-references#lifecycle-history) in [Object Field References](../object-field-references). |
+| `<lifecycleHistory>` | Parent tag. Contains data fields for target lifecycle history. For complete field listing, see [Lifecycle History](../object-field-references.md#lifecycle-history) in [Object Field References](../object-field-references.md). |

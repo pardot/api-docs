@@ -7,7 +7,7 @@ If your Pardot org does not have this featured enabled, you must use version 3.
 
 To determine if your Pardot org has this feature enabled, [check out this guide.](http://help.pardot.com/customer/portal/articles/2461386-how-can-i-find-out-if-my-account-allows-multiple-prospects-with-the-same-email-address-)
 
-For more information on the API in general, check out the [Overview Page](/).
+For more information on the API in general, check out the [Overview Page](../index.md).
 
 For specific API endpoints, please select from the "Version 4" list above.
 
@@ -64,7 +64,7 @@ GET: https://pi.pardot.com/api/prospect/version/4/read/id/1
 ## Prospect API changes
 
 Most of the changes in version 4 occur around the prospect APIs.
-When you begin using the version 4 APIs, your logic should know about these changes ([full documentation can be found here](/kb/api-version-4/prospects))
+When you begin using the version 4 APIs, your logic should know about these changes ([full documentation can be found here](api-version-4/prospects.md))
 
 * **New reference field:**  Prospects can now be referenced using the Salesforce CRM Identifier, known to the api as the `fid` field.
 This `fid` field refers to the id of the Lead or Contact record in Salesforce.
@@ -81,13 +81,13 @@ This is because there may now be multiple prospects with the same email address.
 Instead, you must use either the Pardot `id` or Salesforce `fid` references.
 * **Upsert:** Upsert query by `email` will *always* create a new prospect.
 Upsert by Pardot `id` or Salesforce `fid` will update or create as needed.
-See [Upserting Prospects](/kb/api-version-4/prospects/#upserting-prospects) for more details.
+See [Upserting Prospects](api-version-4/prospects.md#upserting-prospects) for more details.
 * **Delete:** Delete query must reference by Pardot `id` or Salesforce `fid`.
-* **Batch processing:**  Examples of batch processing can be found [here](/kb/api-version-4/prospects/#endpoints-for-batch-processing)
+* **Batch processing:**  Examples of batch processing can be found [here](api-version-4/prospects.md#endpoints-for-batch-processing)
 
 ## Opportunity API changes
 
-[Full documentation can be found here.](/kb/api-version-4/opportunities/)
+[Full documentation can be found here.](api-version-4/opportunities.md)
 
 * **Create:** Creating an opportunity using a `prospect_email` reference must correspond to an existing prospect.
 If there are multiple prospects with that email address, the prospect with the most recent activity date will be used.

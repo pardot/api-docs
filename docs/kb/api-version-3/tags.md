@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/tag/version/3/do/query?...` | `user_key, api_key` | Returns the tag matching the specified criteria parameters. See the [Using Tags](#using-tags) section for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](../object-field-references#tag) in [Object Field References](../object-field-references) |
+| `query` | `/api/tag/version/3/do/query?...` | `user_key, api_key` | Returns the tag matching the specified criteria parameters. See the [Using Tags](#using-tags) section for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](../object-field-references.md#tag) in [Object Field References](../object-field-references.md) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -65,7 +65,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting tags for the specified query |
 | `<total_results>` | Contains the number of tags selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched tags |
-| `<tag>` | The data for an individual tag. See [Using Tags](#using-tags) for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](../object-field-references#tag) in [Object Field References](../object-field-references) |
+| `<tag>` | The data for an individual tag. See [Using Tags](#using-tags) for a complete description of the tag [XML Response Format](#xml-response-format). Also see [Tag](../object-field-references.md#tag) in [Object Field References](../object-field-references.md) |
 
 
 # Using Tags
@@ -73,7 +73,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [Tag](../object-field-references#tag) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [Tag](../object-field-references.md#tag) section of [Object Field References](../object-field-references.md).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
@@ -95,4 +95,4 @@ For a complete list of fields involved in user operations, see the [Tag](../obje
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<tag>` | Parent tag. Contains data fields for target tag. For complete field listing, see [Tag](../object-field-references#tag) in [Object Field References](../object-field-references). |
+| `<tag>` | Parent tag. Contains data fields for target tag. For complete field listing, see [Tag](../object-field-references.md#tag) in [Object Field References](../object-field-references.md). |
