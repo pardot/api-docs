@@ -220,7 +220,7 @@ Output Representation
 ### Errors
 
 * Status Code: 4xx
-* Error codes: See [Error Codes](/kb/error-codes-messages)
+* Error codes: See [Error Codes](../error-codes-messages.md)
 
 
 ### Example
@@ -320,7 +320,7 @@ Note that the export representation returned in query doesn’t contain `resultR
 ### Errors
 
 * Status Code: 4xx
-* Error codes: See [Error Codes](/kb/error-codes-messages)
+* Error codes: See [Error Codes](../error-codes-messages.md)
 
 ---
 
@@ -337,7 +337,7 @@ The data represented in CSV format. See the [CSV Format](#csv-file-formatting) s
 ### Errors
 
 * Status code: 4xx
-* Error codes: See [Error Codes](/kb/error-codes-messages)
+* Error codes: See [Error Codes](../error-codes-messages.md)
 
 ---
 
