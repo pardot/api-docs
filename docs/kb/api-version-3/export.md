@@ -120,7 +120,7 @@ Output Representation
 * **id**: The ID of the export. ID is used to check the status of the export.
 * **state**: The state of the export. Displays "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#export-state) enum.
 * **isExpired**: Indicates that the export has expired. When an export has expired, this will return `true` and no data associated to the export can be downloaded.
-* **resultsRef**: (Optional) This property appears when an export is complete, and it contains a list of URLS to CSV files available for download. If there is no data associated with the export, this property is absent. If there is only a single CSV file available for download, this property is a string containing the URL to download the file. If there are multiple CSV files, resultRef is an array of URLs.
+* **resultRefs**: (Optional) This property appears when an export is complete, and it contains a list of URLS to CSV files available for download. If there is no data associated with the export, this property is absent. If there is only a single CSV file available for download, this property is a string containing the URL to download the file. If there are multiple CSV files, resultRefs is an array of URLs.
 * **createdAt**: The date and time the export was created in the timezone of the user making the request.
 * **updatedAt**: The date and time the export was updated in the timezone of the user making the request.
 
@@ -130,7 +130,7 @@ Output Representation
         "id": int,
         "state": string,
         "isExpired": boolean,
-        "resultsRef": string OR string[],
+        "resultRefs": string OR string[],
         "createdAt": datetime,
         "updatedAt": datetime
     }
@@ -201,7 +201,7 @@ Output Representation
 * **id**: The ID of the export. This ID is used to check the status of the export.
 * **state**: The state of the export. Displays "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export is completed. See [Export State](#export-state) enum.
 * **isExpired**: Indicates that the export has expired. After an export has expired, this will return true and no data associated with the export can be downloaded.
-* **resultsRef**: (Optional) This property appears only when the export has completed and contains a list of URLS to CSV files available for download. If there is no data associated with the export, this property is absent. If there is only a single CSV file available for download, resultsRef is a string containing the URL to download the file. If there are multiple CSV files, resultsRef is an array of URLs. The order of the URLs in the array is not significant.
+* **resultRefs**: (Optional) This property appears only when the export has completed and contains a list of URLS to CSV files available for download. If there is no data associated with the export, this property is absent. If there is only a single CSV file available for download, resultRefs is a string containing the URL to download the file. If there are multiple CSV files, resultRefs is an array of URLs. The order of the URLs in the array is not significant.
 * **createdAt**: The date and time the export was created in the timezone of the user making the request.
 * **updatedAt**: The date and time the export was updated in the timezone of the user making the request.
 
@@ -211,7 +211,7 @@ Output Representation
         "id": int,
         "state": string,
         "isExpired": boolean,
-        "resultsRef": string OR string[],
+        "resultRefs": string OR string[],
         "createdAt": datetime,
         "updatedAt": datetime
     }
@@ -309,7 +309,7 @@ Note that the export representation returned in query doesn’t contain `resultR
                 "id": int,
                 "state": string,
                 "isExpired": boolean,
-                "resultsRef": string OR string[],
+                "resultRefs": string OR string[],
                 "createdAt": datetime,
                 "updatedAt": datetime
             }
