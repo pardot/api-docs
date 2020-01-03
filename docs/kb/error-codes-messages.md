@@ -54,8 +54,9 @@ accurate.
 ```
 
 **Problem**: Pardot could not find a prospect with the provided email address (for read/update/delete),
-or the prospect email address is too long (> 255 characters) or has invalid syntax
-(does not match `/^[^ @]{1,64}@[^ @]{1,255}\.[^ @]{2,13}$/`) (for create/upsert).
+or the prospect email address is too long (> 255 characters) or has invalid syntax (for create/upsert). See 
+[Allowed Characters in Email Addresses](https://help.salesforce.com/articleView?id=pardot_emails_allowed_characters.htm) for
+email address verification.
 
 **Solution**: If running create/upsert, verify the email address is valid.
 If running read/update/delete, verify the a prospect with this email address exists in your Pardot account.
