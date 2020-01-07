@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/list/version/4/do/query?...` | `user_key, api_key` | Returns the lists matching the specified criteria parameters. See the [Using Lists](#using-lists) section for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](../object-field-references#list) in [Object Field References](../object-field-references) |
+| `query` | `/api/list/version/4/do/query?...` | `user_key, api_key` | Returns the lists matching the specified criteria parameters. See the [Using Lists](#using-lists) section for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](../object-field-references.md#list) in [Object Field References](../object-field-references.md) |
 
 <a name="62781-supported-search-criteria" id="supported-search-criteria"></a>
 
@@ -65,19 +65,19 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting lists for the specified query |
 | `<total_results>` | Contains the number of lists selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched lists |
-| `<list>` | The data for an individual list. See [Using Lists](#using-lists) for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](../object-field-references#list) in [Object Field References](../object-field-references) |
+| `<list>` | The data for an individual list. See [Using Lists](#using-lists) for a complete description of the list [XML Response Format](#xml-response-format). Also see [List](../object-field-references.md#list) in [Object Field References](../object-field-references.md) |
 
 # Using Lists
 
 
 ## Supported Operations<a name="62780-supported-operations" id="supported-operations"></a>
 
-For a complete list of fields involved in user operations, see the [List](../object-field-references#list) section of [Object Field References](../object-field-references).
+For a complete list of fields involved in user operations, see the [List](../object-field-references.md#list) section of [Object Field References](../object-field-references.md).
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `read` | `/api/list/version/4/do/read/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Returns the data for the list specified by `<id>`. `<id>` is the Pardot ID of the target list. |
-| `update` | `/api/list/version/4/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the list specified by `<id>`.  `<id>` is the Pardot ID of the list. Refer to [List](../object-field-references#list) in [Object Field References](../object-field-references) for more details. Returns the updated version of the list. |
+| `update` | `/api/list/version/4/do/update/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Updates the provided data for the list specified by `<id>`.  `<id>` is the Pardot ID of the list. Refer to [List](../object-field-references.md#list) in [Object Field References](../object-field-references.md) for more details. Returns the updated version of the list. |
 | `create` | `/api/list/version/4/do/create?...` | `user_key, api_key` | Creates a new list using the specified data. |
 | `delete` | `/api/list/version/4/do/delete/id/`**_`<id>`_**`?...` | `user_key, api_key, id` | Deletes the list specified by `<id>`. Returns HTTP 204 No Content on success. **_Note:_** Lists may only be deleted using HTTP methods POST or DELETE. |
 
@@ -102,4 +102,4 @@ For a complete list of fields involved in user operations, see the [List](../obj
 
 | **Tag** | **Description** |
 | ------- | --------------- |
-| `<list>` | Parent tag. Contains data fields for target list. For complete field listing, see [List](../object-field-references#list) in [Object Field References](../object-field-references). |
+| `<list>` | Parent tag. Contains data fields for target list. For complete field listing, see [List](../object-field-references.md#list) in [Object Field References](../object-field-references.md). |

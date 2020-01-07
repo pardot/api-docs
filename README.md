@@ -7,8 +7,8 @@
 * [pip](https://pip.pypa.io/en/latest/)
 
 ## Installation
-We use an old version of MkDocs, which requires specific dependencies. Current Version: 0.15.2. To install:
-* `pip install mkdocs-bootstrap==0.1.1 mkdocs-bootswatch==0.1.0 mkdocs==0.15.3`
+This site uses MkDocs version 1.0.4. To install:
+* `pip install mkdocs-bootstrap==0.1.1 mkdocs-bootswatch==0.1.0 mkdocs==1.0.4`
 * `git clone git@github.com:pardot/api-docs.git`
 * `cd api-docs`
 * `mkdocs serve`

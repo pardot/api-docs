@@ -74,9 +74,7 @@ provided search parameters.
 
 **Solution**: Check parameter spellings. Also, ensure
 that the specified search parameter is supported by the API. See
-[Supported
-Search Criteria](prospects#supported-search-criteria) in [Querying
-Prospects](prospects) for more details.
+[Supported Search Criteria](api-version-4/prospects.md#supported-search-criteria) in [Querying Prospects](api-version-4/prospects.md) for more details.
 
 ## [](#error-code-6)Error Code: 6
 
@@ -91,8 +89,7 @@ Prospects](prospects) for more details.
 
 **Solution**: Check for misspellings in the
 `timeframe` value. Also, verify that the provided value
-is supported by the API. See [Supported Search
-Criteria](prospects#supported-search-criteria) in [Prospects](prospects)
+is supported by the API. See [Supported Search Criteria](api-version-4/prospects.md#supported-search-criteria) in [Prospects](api-version-4/prospects.md)
 for supported `timeframe` values.
 
 ## [](#error-code-7)Error Code: 7
@@ -107,10 +104,8 @@ for supported `timeframe` values.
 timestamp.
 
 **Solution**: Verify that the timestamp adheres to GNU
-standards for date and time input. See [
-GNU Date Input Format &amp; Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) for more information. Also,
-ensure all characters in the timestamp are URL safe. See [Supported Search
-Criteria](prospects#supported-search-criteria) in [Prospects](prospects)
+standards for date and time input. See [GNU Date Input Format &amp; Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) for more information. Also,
+ensure all characters in the timestamp are URL safe. See [Supported Search Criteria](api-version-4/prospects.md#supported-search-criteria) in [Prospects](api-version-4/prospects.md)
 for supported values.
 
 ## [](#error-code-8)Error Code: 8
@@ -199,7 +194,7 @@ for this type of request are missing.
 
 **Solution**: Verify that all of the required
 parameters have been provided. Check that all parameter names were
-spelled accurately and as specified in [Object Field References](object-field-references). Ensure the
+spelled accurately and as specified in [Object Field References](object-field-references.md). Ensure the
 proper URL punctuation was used, including `?` before
 parameters and `&` between parameters.
 
@@ -474,8 +469,7 @@ for the prospect's score has been specified.
 `grade` is not one of the allowed options.
 
 **Solution**: Check for typos that may prevent
-`grade` from being interpreted correctly. See [Supported Search
-Criteria](prospects#supported-search-criteria) in [Prospects](prospects)
+`grade` from being interpreted correctly. See [Supported Search Criteria](api-version-4/prospects.md#supported-search-criteria) in [Prospects](api-version-4/prospects.md)
 for supported values. Also, ensure that the specified grades are
 URL-encoded.
 
@@ -693,7 +687,7 @@ requested operation.
 **Solution**: Some API operations are only available
 to users with Administrative permissions. If the requested
 operation has such a requirement, re-authenticate as an
-administrative user and resubmit the request. See the [Authentication](authentication) section for more
+administrative user and resubmit the request. See the [Authentication](../index.md#authentication) section for more
 information.
 
 ## [](#error-code-47)Error Code: 47
@@ -842,10 +836,8 @@ the value.
 field's type of Date, it is an invalid format.
 
 **Solution**: Verify that the timestamp adheres to GNU
-standards for date and time input. See [
-GNU Date Input Format &amp; Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) for more information. Also,
-ensure all characters in the timestamp are URL safe. See [Supported Search
-Criteria](prospects#supported-search-criteria) in [Prospects](prospects)
+standards for date and time input. See [GNU Date Input Format &amp; Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) for more information. Also,
+ensure all characters in the timestamp are URL safe. See [Supported Search Criteria](api-version-4/prospects.md#supported-search-criteria) in [Prospects](api-version-4/prospects.md)
 for supported values.
 
 ## [](#error-code-58)Error Code: 58
@@ -1202,7 +1194,7 @@ requests.
 
 **Problem**: The prospect array given was not a flat array, and it should have been.
 
-**Solution**: Resubmit the request with a flat array. [example](/kb/api-version-4/prospects#endpoints-for-batch-processing)
+**Solution**: Resubmit the request with a flat array. [example](api-version-4/prospects.md#endpoints-for-batch-processing)
 
 ## [](#error-code-91)Error Code: 91
 
@@ -1214,7 +1206,7 @@ requests.
 
 **Problem**: The prospect array given was not keyed by email addresses, but should have been.
 
-**Solution**: Resubmit the request with an array keyed by email addresses. [example](/kb/api-version-3/prospects#endpoints-for-batch-processing)
+**Solution**: Resubmit the request with an array keyed by email addresses. [example](api-version-4/prospects.md#endpoints-for-batch-processing)
 
 ## [](#error-code-92)Error Code: 92
 
@@ -1626,7 +1618,7 @@ requests.
 
 **Problem**: This authentication method has been deprecated.
 
-**Solution**: Resubmit the request using a valid [authentication](/#authentication) method.
+**Solution**: Resubmit the request using a valid [authentication](../index.md#authentication) method.
 
 ## [](#error-code-128)Error Code: 128
 
@@ -1662,7 +1654,7 @@ requests.
 
 **Problem**: One or more of the fields in the CSV is not a recognized standard or custom field.
 
-**Solution**: Ensure all of the column headers in the CSV match those in the [field reference](/kb/object-field-references/). Ensure the number of columns in the CSV matches the number of columns in the header row.
+**Solution**: Ensure all of the column headers in the CSV match those in the [field reference](object-field-references.md). Ensure the number of columns in the CSV matches the number of columns in the header row.
 
 ## [](#error-code-131)Error Code: 131
 
