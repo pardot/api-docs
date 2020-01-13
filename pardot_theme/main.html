@@ -72,8 +72,8 @@
         <script src="{{ base_url }}/js/bootstrap-3.0.3.min.js"></script>
         <script src="{{ base_url }}/js/prettify-1.0.min.js"></script>
         <script>var base_url = '{{ base_url }}';</script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="{{ base_url }}/js/base.js" defer></script>
+        <script src="{{ base_url }}/search/main.js" defer></script>
         {%- for path in config['extra_javascript'] %}
         <script src="{{ path|url }}" defer></script>
         {%- endfor %}

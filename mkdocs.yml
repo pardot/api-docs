@@ -45,6 +45,7 @@ nav:
         - 'Visitor Activities': 'kb/api-version-3/visitor-activities.md'
         - 'Visits': 'kb/api-version-3/visits.md'
         - '--Import API (for Prospects)': 'kb/api-version-3/import.md'
+        - 'Export API (for Visitor Activity)': 'kb/api-version-3/export.md'
     - 'Version 4':
         - 'Accounts': 'kb/api-version-4/accounts.md'
         - 'Campaigns': 'kb/api-version-4/campaigns.md'
@@ -69,3 +70,4 @@ nav:
         - 'Visitor Activities': 'kb/api-version-4/visitor-activities.md'
         - 'Visits': 'kb/api-version-4/visits.md'
         - '--Import API (for Prospects)': 'kb/api-version-4/import.md'
+        - 'Export API (for Visitor Activity)': 'kb/api-version-4/export.md'
