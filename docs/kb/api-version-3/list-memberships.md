@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/listMembership/version/3/do/query?...` | `user_key, api_key` | Returns the list memberships matching the specified criteria parameters. See the [Using Lists](lists) section for a complete description of the list membership [XML Response Format](list-memberships#xml-response-format). Also see [List Membership](../object-field-references.md#list-membership) in [Object Field References](../object-field-references.md). |
+| `query` | `/api/listMembership/version/3/do/query?...` | `user_key, api_key` | Returns the list memberships matching the specified criteria parameters. See the [Using Lists](#using-list-memberships) section for a complete description of the list membership [XML Response Format](#xml-response-format). Also see [List Membership](../object-field-references.md#list-membership) in [Object Field References](../object-field-references.md). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria
@@ -63,7 +63,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting list memberships for the specified query. |
 | `<total_results>` | Contains the number of list memberships selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched list memberships. |
-| `<list_membership>` | The data for an individual list membership. See [Using List Memberships](list-memberships) for a complete description of the list membership [XML Response Format](list-memberships#xml-response-format). Also see [List Membership](../object-field-references.md#list-membership) in [Object Field References](../object-field-references.md). |
+| `<list_membership>` | The data for an individual list membership. See [Using List Memberships](#using-list-memberships) for a complete description of the list membership [XML Response Format](#xml-response-format). Also see [List Membership](../object-field-references.md#list-membership) in [Object Field References](../object-field-references.md). |
 
 # Using List Memberships
 

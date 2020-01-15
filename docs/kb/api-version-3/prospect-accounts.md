@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/prospectAccount/version/3/do/query?...` | `user_key, api_key` | Returns the prospect accounts matching the specified criteria parameters. See the [Using Prospect Accounts](prospect-accounts) section for a complete description of the prospect account [XML Response Format](prospect-accounts#xml-response-format). Also see [Prospect Account](../object-field-references.md#prospect-account) in [Object Field References](../object-field-references.md). |
+| `query` | `/api/prospectAccount/version/3/do/query?...` | `user_key, api_key` | Returns the prospect accounts matching the specified criteria parameters. See the [Using Prospect Accounts](#using-prospect-accounts) section for a complete description of the prospect account [XML Response Format](#xml-response-format). Also see [Prospect Account](../object-field-references.md#prospect-account) in [Object Field References](../object-field-references.md). |
 
 ## [](#supported-search-criteria-)Supported Search Criteria
 
@@ -63,7 +63,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting prospect accounts for the specified query. |
 | `<total_results>` | Contains the number of prospect accounts selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched prospect accounts. |
-| `<prospectAccount>` | The data for an individual prospect account. See [Using Prospect Accounts](prospect-accounts) for a complete description of the prospect account [XML Response Format](prospect-accounts#xml-response-format). Also see [Prospect Account](../object-field-references.md#prospect-account) in [Object Field References](../object-field-references.md). |
+| `<prospectAccount>` | The data for an individual prospect account. See [Using Prospect Accounts](#using-prospect-accounts) for a complete description of the prospect account [XML Response Format](#xml-response-format). Also see [Prospect Account](../object-field-references.md#prospect-account) in [Object Field References](../object-field-references.md). |
 
 # Using Prospect Accounts
 

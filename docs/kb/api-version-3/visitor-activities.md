@@ -7,7 +7,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/visitorActivity/version/3/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the visitor activities matching the specified criteria parameters. See the [Using Visitor Activities](visitors) section for a complete description of visitor activities [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
+| `query` | `/api/visitorActivity/version/3/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the visitor activities matching the specified criteria parameters. See the [Using Visitor Activities](#using-visitor-activities) section for a complete description of visitor activities [XML Response Formats](#xml-response-formats). Also see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria
@@ -49,7 +49,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching visitor (according to the specified sorting order) to be returned in the query response. The first `offset` matching visitors will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st visitor matched by the provided criteria. |
-| `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](visitor-activities#xml-response-formats) in [Using Visitor Activities](visitors) for more details. |
+| `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](#xml-response-formats) in [Using Visitor Activities](#using-visitor-activities) for more details. |
 | `sort_by` | `string` | `created_at, id, prospect_id, visitor_id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 
@@ -81,7 +81,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting visitor activities for the specified query. |
 | `<total_results>` | Contains the number of visitor activities selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched visitor activities. |
-| `<visitor_activity>` | The data for an individual visitor activity. See [Using Visitor Activities](visitors-activities) for complete descriptions of visitor activity [XML Response Formats](visitor-activities#xml-response-formats). Also see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
+| `<visitor_activity>` | The data for an individual visitor activity. See [Using Visitor Activities](#using-visitor-activities) for complete descriptions of visitor activity [XML Response Formats](#xml-response-formats). Also see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 
 # Using Visitor Activities
 
