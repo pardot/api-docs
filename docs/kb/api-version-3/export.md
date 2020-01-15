@@ -140,7 +140,7 @@ Output Representation
 ### Errors
 
 * Status Code: 4xx
-* Error codes: See [Error Codes](/kb/error-codes-messages)
+* Error codes: See [Error Codes](../error-codes-messages.md)
 
 ### Example
 

@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/opportunity/version/4/do/query?...` | `user_key, api_key` | Returns the opportunities matching the specified criteria parameters. See [Using Opportunities (using-opportunities) for complete descriptions of opportunity [XML Response Formats](opportunities#xml-response-formats). Also see [Opportunity](../object-field-references.md#opportunity) in [Object Field References](../object-field-references.md). |
+| `query` | `/api/opportunity/version/4/do/query?...` | `user_key, api_key` | Returns the opportunities matching the specified criteria parameters. See [Using Opportunities](#using-opportunities) for complete descriptions of opportunity [XML Response Formats](#xml-response-formats). Also see [Opportunity](../object-field-references.md#opportunity) in [Object Field References](../object-field-references.md). |
 
 ## Supported Search Criteria
 
@@ -14,7 +14,7 @@ Search criteria may be used together in any combination and/or order unless othe
 
 | **Parameter** | **Datatype**                               | **Options**             | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `created_after` | `string` | `today, yesterday, last_7_days, this_month, last_month,<custom_time>` | Selects opportunities that were created after the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input formats.html). |
+| `created_after` | `string` | `today, yesterday, last_7_days, this_month, last_month,<custom_time>` | Selects opportunities that were created after the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
 | `created_before` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects opportunities that were created before the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
 | `id_greater_than` | `integer` | Selects opportunities with IDs greater than the specified integer. |
 | `id_less_than` | `integer` | Selects opportunities with IDs less than the specified integer. |
@@ -34,7 +34,7 @@ Since `query` result sets are limited to 200 results each, the returned results 
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `limit` | `integer` |  | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. |
 | `offset` | `integer` |  | Specifies the first matching opportunity (according to the specified sorting order) to be returned in the query response. The first `offset` matching opportunities will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st opportunity matched by the provided criteria. |
-| `output` | `simple, mobile` |  | Specifies the format to be used when returning the results of the query. See [XML Response Formats](opportunities#xml-response-formats) in [Using Opportunities](opportunities) for more details. |
+| `output` | `simple, mobile` |  | Specifies the format to be used when returning the results of the query. See [XML Response Formats](#xml-response-formats) in [Using Opportunities](#using-opportunities) for more details. |
 | `sort_by` | `string` | `created_at, id, probability, value` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options (#14770-supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default sorting order varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 
@@ -67,7 +67,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting opportunities for the specified query. |
 | `<total_results>` | Contains the number of opportunities selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all matched opportunities. |
-| `<opportunity>` | The data for an individual Opportunity. See [Using Opportunities](opportunities) for complete descriptions of opportunity [XML Response Formats](opportunities#xml-response-formats). Also see [Opportunity](../object-field-references.md#opportunity) in [Object Field References](../object-field-references.md). **_Note:_** Data concerning an opportunity's activities will NOT be included in a `query` response. To retrieve this data, use a `read` request for individual opportunities of interest. |
+| `<opportunity>` | The data for an individual Opportunity. See [Using Opportunities](#using-opportunities) for complete descriptions of opportunity [XML Response Formats](#xml-response-formats). Also see [Opportunity](../object-field-references.md#opportunity) in [Object Field References](../object-field-references.md). **_Note:_** Data concerning an opportunity's activities will NOT be included in a `query` response. To retrieve this data, use a `read` request for individual opportunities of interest. |
 
 # Using Opportunities
 

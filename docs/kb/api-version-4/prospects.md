@@ -5,7 +5,7 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query`       | `/api/prospect/version/4/do/query?...`     | `user_key, api_key`     | Returns the prospects matching the specified criteria parameters. See [Using Prospects](prospects/#using-prospects) for complete descriptions of prospect [XML Response Formats](prospects/#xml-response-formats). Also see [Prospect](../object-field-references.md#prospect) in [Object Field References](../object-field-references.md). |
+| `query`       | `/api/prospect/version/4/do/query?...`     | `user_key, api_key`     | Returns the prospects matching the specified criteria parameters. See [Using Prospects](#using-prospects) for complete descriptions of prospect [XML Response Formats](#xml-response-formats). Also see [Prospect](../object-field-references.md#prospect) in [Object Field References](../object-field-references.md). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria
@@ -48,7 +48,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | `fields` | `array` | `<comma_separated_field_ids>` | Specifies the fields to be returned. **Note:** If this parameter isn't present, all default fields and custom fields for which the prospect has a value will be returned; &lt;id&gt; will always be returned. |
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching prospect(according to the specified sorting order) to be returned in the query response. The first `offset` matching prospects will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st prospect matched by the provided criteria. |
-| `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](prospects/#xml-response-formats) in [Using Prospects](prospects/#using-prospects) for more details. |
+| `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](#xml-response-formats) in [Using Prospects](#using-prospects) for more details. |
 | `sort_by` | `string` | `created_at, id, probability, value` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 
@@ -79,7 +79,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | ------- | --------------- |
 | `<result>` | Contains the resulting prospects for the specified query. |
 | `<total_results>` | Contains the number of prospects selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all matched prospects. |
-| `<prospect>` | The data for an individual Prospect. See [Using Prospects](prospects/#using-prospects) for complete descriptions of prospect [XML Response Formats](prospects/#xml-response-formats). Also see [Prospect](../object-field-references.md#prospect) in [Object Field References](../object-field-references.md). **_Note:_** Data concerning a prospect's profile criteria matchings, visitors, visitor activities, and list subscriptions will NOT be included in a `query` response. To retrieve this data, submit a `read` request for the prospect of interest. |
+| `<prospect>` | The data for an individual Prospect. See [Using Prospects](#using-prospects) for complete descriptions of prospect [XML Response Formats](#xml-response-formats). Also see [Prospect](../object-field-references.md#prospect) in [Object Field References](../object-field-references.md). **_Note:_** Data concerning a prospect's profile criteria matchings, visitors, visitor activities, and list subscriptions will NOT be included in a `query` response. To retrieve this data, submit a `read` request for the prospect of interest. |
 
 # Using Prospects
 
