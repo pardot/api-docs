@@ -1942,44 +1942,44 @@ user's preferred timezone</td>
 Visitor Activities may have the following values for
 <code>&lt;type&gt;</code>:</p>
 <ul>
-<li>1 - CLICK</li>
-<li>2 - VIEW</li>
-<li>3 - ERROR</li>
-<li>4 - SUCCESS</li>
-<li>5 - VISITOR</li>
-<li>6 - SENT</li>
-<li>7 - SEARCH</li>
-<li>8 - OPPORTUNITY_CREATED</li>
-<li>9 - OPPORTUNITY_WON</li>
-<li>10 - OPPORTUNITY_LOST</li>
-<li>11 - OPEN</li>
-<li>12 - UNSUBSCRIBE_OPEN</li>
-<li>13 - BOUNCE</li>
-<li>14 - SPAM_COMPLAINT</li>
-<li>15 - EMAIL_PREFERENCE_OPEN</li>
-<li>16 - OPT_IN</li>
-<li>17 - THIRD_PARTY_CLICK</li>
-<li>18 - OPPORTUNITY_REOPEN</li>
-<li>19 - OPPORTUNITY_LINKED</li>
-<li>20 - VISIT</li>
-<li>21 - CUSTOM_URL_CLICK</li>
-<li>22 - OLARK_CHAT</li>
-<li>23 - WEBINAR_INVITED</li>
-<li>24 - WEBINAR_ATTENDED</li>
-<li>25 - WEBINAR_REGISTERED</li>
-<li>26 - SOCIAL_POST_CLICK</li>
-<li>27 - VIDEO_VIEW</li>
-<li>28 - EVENT_REGISTERED</li>
-<li>29 - EVENT_CHECKEDIN</li>
-<li>30 - VIDEO_CONVERSION</li>
-<li>31 - USERVOICE_SUGGESTION</li>
-<li>32 - USERVOICE_COMMENT</li>
-<li>33 - USERVOICE_TICKET</li>
-<li>34 - VIDEO_WATCHED_THREEQUARTERS</li>
-<li>35 - INDIRECT_UNSUBSCRIBE_OPEN</li>
-<li>36 - INDIRECT_BOUNCE</li>
-<li>37 - INDIRECT_OPT_IN</li>
-<li>38 - OPPORTUNITY_UNLINKED</li>
+<li>1 - Click</li>
+<li>2 - View</li>
+<li>3 - Error</li>
+<li>4 - Success</li>
+<li>5 - Visitor</li>
+<li>6 - Sent</li>
+<li>7 - Search</li>
+<li>8 - New Opportunity</li>
+<li>9 - Opportunity Won</li>
+<li>10 - Opportunity Lost</li>
+<li>11 - Open</li>
+<li>12 - Unsubscribe Page</li>
+<li>13 - Bounced</li>
+<li>14 - Spam Complaint</li>
+<li>15 - Email Preference Page</li>
+<li>16 - Resubscribed</li>
+<li>17 - Click (Third Party)</li>
+<li>18 - Opportunity Reopened</li>
+<li>19 - Opportunity Linked</li>
+<li>20 - Visit</li>
+<li>21 - Custom Url Click</li>
+<li>22 - Olark Chat</li>
+<li>23 - Invited to Webinar</li>
+<li>24 - Attended to Webinar</li>
+<li>25 - Registered for Webinar</li>
+<li>26 - Social Post Click</li>
+<li>27 - Video View</li>
+<li>28 - Event Registered</li>
+<li>29 - Event Checked In</li>
+<li>30 - Video Conversion</li>
+<li>31 - UserVoice Suggestion</li>
+<li>32 - UserVoice Comment</li>
+<li>33 - UserVoice Ticket</li>
+<li>34 - Video Watched (≥ 75% watched)</li>
+<li>35 - Indirect Unsubscribe Open</li>
+<li>36 - Indirect Bounce</li>
+<li>37 - Indirect Resubscribed</li>
+<li>38 - Opportunity Unlinked</li>
 <li>Other - Unknown</li>
 </ul>
 ## Visitor Page View
