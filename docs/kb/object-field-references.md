@@ -1962,10 +1962,10 @@ Visitor Activities may have the following values for
 <li>18 - Opportunity Reopened</li>
 <li>19 - Opportunity Linked</li>
 <li>20 - Visit</li>
-<li>21 - Custom Url Click</li>
+<li>21 - Custom URL click</li>
 <li>22 - Olark Chat</li>
 <li>23 - Invited to Webinar</li>
-<li>24 - Attended to Webinar</li>
+<li>24 - Attended Webinar</li>
 <li>25 - Registered for Webinar</li>
 <li>26 - Social Post Click</li>
 <li>27 - Video View</li>
