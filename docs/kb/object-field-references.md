@@ -1946,7 +1946,7 @@ Visitor Activities may have the following values for
 <li>2 - View</li>
 <li>3 - Error</li>
 <li>4 - Success</li>
-<li>5 - Visitor</li>
+<li>5 - Session</li>
 <li>6 - Sent</li>
 <li>7 - Search</li>
 <li>8 - New Opportunity</li>
