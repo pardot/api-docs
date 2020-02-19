@@ -1976,6 +1976,10 @@ Visitor Activities may have the following values for
 <li>32 - UserVoice Comment</li>
 <li>33 - UserVoice Ticket</li>
 <li>34 - Video Watched (≥ 75% watched)</li>
+<li>35 - Indirect Unsubscribe Open</li>
+<li>36 - Indirect Bounce</li>
+<li>37 - Indirect Resubscribed</li>
+<li>38 - Opportunity Unlinked</li>
 <li>Other - Unknown</li>
 </ul>
 ## Visitor Page View
