@@ -1,6 +1,6 @@
 # Official Pardot API Documentation
 
-> **IMPORTANT: Support for passing credentials via querystring is deprecated and will be forbidden in a future version of the API. Please update your API client as soon as possible.**
+> **IMPORTANT: Support for passing credentials via querystring is deprecated and will return an error response. Please update your API client as soon as possible.**
 >
 > Refer to the [Using the API > Request Format](#using-the-api) section below for further details.
 
@@ -168,110 +168,149 @@ will result in an [error code 66](/kb/error-codes-messages/#error-code-66) respo
 
 ## Sample Code
 
-Here's an example of calling the Pardot API using a simple PHP function and the cURL library.
+Here's an example of calling the Pardot API using a simple PHP client using the cURL library.
 
 Note: we strongly recommend **against** using PHP's `file_get_contents` function to call the Pardot API, since it makes error handling extremely cumbersome.
 
 ```
+<?php
 /**
- * Call the Pardot API and get the raw XML response back
+ * Class SamplePardotApiClient
  *
- * @param string $url the full Pardot API URL to call, e.g. "https://pi.pardot.com/api/prospect/version/3/do/query"
- * @param array $data the data to send to the API
- * @param string $method the HTTP method, one of "GET", "POST", "DELETE"
- * @param array $headers array of headers to send to the API - make sure to include your Authorization: header with your api_key and user_key
- * @return string the raw XML response from the Pardot API
- * @throws Exception if we were unable to contact the Pardot API or something went wrong
+ * Example PHP client to call the Pardot API
  */
-function callPardotApi($url, $data, $method = 'GET', $headers = null)
+class SamplePardotApiClient
 {
-    // build out the full url, with the query string attached.
-    $queryString = http_build_query($data, null, '&');
-    if (strpos($url, '?') !== false) {
-        $url = $url . '&' . $queryString;
-    } else {
-        $url = $url . '?' . $queryString;
+    const BASE_URL = "https://pi.pardot.com/api/";
+    /** @var int $apiVersion */
+    private $apiVersion;
+    /** @var string $format  */
+    private $format;
+    public function __construct($apiVersion, $format = 'xml')
+    {
+        $this->apiVersion = $apiVersion;
+        $this->format = $format;
     }
-
-    $curl_handle = curl_init($url);
-
-    // wait 5 seconds to connect to the Pardot API, and 30
-    // total seconds for everything to complete
-    curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 5);
-    curl_setopt($curl_handle, CURLOPT_TIMEOUT, 30);
-
-    // https only, please!
-    curl_setopt($curl_handle, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-
-    // ALWAYS verify SSL - this should NEVER be changed. 2 = strict verify
-    curl_setopt($curl_handle, CURLOPT_SSL_VERIFYHOST, 2);
-
-    // return the result from the server as the return value of curl_exec instead of echoing it
-    curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
-
-    if (strcasecmp($method, 'POST') === 0) {
+    /**
+     * @param string $endpoint
+     * @param string $operation
+     * @param array $data
+     * @param array $headers
+     * @param array $queryParams
+     * @return array
+     * @throws Exception
+     */
+    public function post($endpoint, $operation, $data = [], $headers = [], $queryParams = [])
+    {
+        $curl_handle = $this->initRequest($endpoint, $operation, $headers, $queryParams);
         curl_setopt($curl_handle, CURLOPT_POST, true);
-    } elseif (strcasecmp($method, 'GET') !== 0) {
-        // perhaps a DELETE?
-        curl_setopt($curl_handle, CURLOPT_CUSTOMREQUEST, strtoupper($method));
+        // Add POST data if given
+        if (!empty($data)) {
+            curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $data);
+        }
+        return $this->executeCall($curl_handle);
     }
-
-    // add any headers that were specified
-    if ($headers) {
-        curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+    /**
+     * @param string $endpoint
+     * @param string $operation
+     * @param array $headers
+     * @param array $queryParams
+     * @return array
+     * @throws Exception
+     */
+    public function get($endpoint, $operation, $headers = [], $queryParams = [])
+    {
+        $curl_handle = $this->initRequest($endpoint, $operation, $headers, $queryParams);
+        return $this->executeCall($curl_handle);
     }
-
-    $pardotApiResponse = curl_exec($curl_handle);
-    if ($pardotApiResponse === false) {
-        // failure - a timeout or other problem. depending on how you want to handle failures,
-        // you may want to modify this code. Some folks might throw an exception here. Some might
-        // log the error. May you want to return a value that signifies an error. The choice is yours!
-
-        // let's see what went wrong -- first look at curl
-        $humanReadableError = curl_error($curl_handle);
-
-        // you can also get the HTTP response code
-        $httpResponseCode = curl_getinfo($curl_handle, CURLINFO_HTTP_CODE);
-
-        // make sure to close your handle before you bug out!
+    /**
+     * @param string $endpoint
+     * @param string $operation
+     * @param array $headers
+     * @param array $queryParams
+     * @return false|resource
+     */
+    private function initRequest($endpoint, $operation, $headers = [], $queryParams = [])
+    {
+        // Construct our full URL to the Pardot API
+        $url = $this->buildUrl($endpoint, $operation);
+        // Add desired format to any query string params provided
+        $queryParams['format'] = $this->format;
+        // Build query string params into an encoded string
+        $queryString = http_build_query($queryParams, null, '&');
+        // Append query string params to URL
+        $url .= "?{$queryString}";
+        // Init curl handle and set standard curl options: timeouts / require SSL / verify SSL
+        $curl_handle = curl_init($url);
+        curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($curl_handle, CURLOPT_TIMEOUT, 30);
+        curl_setopt($curl_handle, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
+        curl_setopt($curl_handle, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+        // Add any headers passed in such as Authorization header
+        if (!empty($headers)) {
+            curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
+        }
+        return $curl_handle;
+    }
+    /**
+     * @param string $endpoint
+     * @param string $operation
+     * @return string
+     */
+    private function buildUrl($endpoint, $operation = "")
+    {
+        if ($endpoint === 'login') {
+            return self::BASE_URL . "login";
+        }
+        return self::BASE_URL . "{$endpoint}/version/{$this->apiVersion}/do/{$operation}";
+    }
+    /**
+     * @param $curl_handle
+     * @return array
+     * @throws Exception
+     */
+    private function executeCall($curl_handle)
+    {
+        // Execute our call to the Pardot API
+        $rsp = curl_exec($curl_handle);
+        // Gather the HTTP response code and last effective URL called
+        $httpCode = curl_getinfo($curl_handle, CURLINFO_HTTP_CODE);
+        $url = curl_getinfo($curl_handle, CURLINFO_EFFECTIVE_URL);
+        // Handle errors in calls, this could be a log or an exception thrown as written here
+        if (!$rsp) {
+            $errorMessage = curl_error($curl_handle);
+            curl_close($curl_handle);
+            throw new Exception("Error calling Pardot API. HTTP Response Code: {$httpCode}. Message: {$errorMessage}");
+        }
         curl_close($curl_handle);
-
-        throw new Exception("Unable to successfully complete Pardot API call to $url -- curl error: \"".
-                                "$humanReadableError\", HTTP response code was: $httpResponseCode");
+        // Output call info, this data is returned and displayed for informational purposes in this example
+        echo("URL: {$url}" . PHP_EOL);
+        echo("HTTP Response Code: {$httpCode}" . PHP_EOL);
+        echo("Response: {$rsp}" . PHP_EOL . PHP_EOL);
+        return [$httpCode, $rsp];
     }
-
-    // make sure to close your handle before you bug out!
-    curl_close($curl_handle);
-
-    return $pardotApiResponse;
 }
-
-//available from https://pi.pardot.com/account
-$userKey = '12345678890abcdef12345678890abcdef';
-
-//this will log in and retrieve your API Key (good for 1 hour)
-$loginResponse = callPardotApi('https://pi.pardot.com/api/login/version/3',
-    array(
-        'email' => 'your.email@example.com',
-        'password' => 'password1234',
-        'user_key' => $userKey,
-        'format' => 'json'
-    ),
-    'POST'
-);
-$apiKey = json_decode($loginResponse, true)['api_key'];
-
-echo callPardotApi('https://pi.pardot.com/api/prospect/version/3/do/query',
-    array(
-        'limit' => '1',
-        'format' => 'json'
-    ),
-    'GET',
-    array(
-        //create the Authorization header from the user_key and api_key
-        "Authorization: Pardot user_key=$userKey,api_key=$apiKey"
-    )
-);
+// Setup user credentials
+$credentials = [
+    'user_key' => '12345678890abcdef12345678890abcdef',
+    'email' => 'email@example.com',
+    'password' => 'pass1234'
+];
+// Prepare to call version 3 or 4 of the API with JSON or XML responses
+$client = new SamplePardotApiClient(3, 'json');
+// Authenticate to Pardot - Must be a POST with credentials in the message body
+list($httpCode, $rsp) = $client->post('login', '', $credentials, null);
+// Capture the api_key from a successful login response, api_key is good for 1 hour and can be reused on subsequent calls
+$apiKey = json_decode($rsp, true)['api_key'];
+// Create Authorization Header from api_key
+$authHeader = ["Authorization: Pardot user_key={$credentials['user_key']},api_key={$apiKey}"];
+// Call Prospect Query
+list($httpCode, $rsp) = $client->get('prospect', 'query', $authHeader, ['limit' => 1]);
+// Call VisitorActivity Query
+list($httpCode, $rsp) = $client->get('visitorActivity', 'query', $authHeader, ['limit' => 1]);
+// Create a Campaign
+list($httpCode, $rsp) = $client->post('campaign', 'create', ['name' => 'A Campaign', 'cost' => 100], $authHeader);
 ```
 
 ## Supported API wrappers
