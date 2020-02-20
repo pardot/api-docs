@@ -174,6 +174,7 @@ Note: we strongly recommend **against** using PHP's `file_get_contents` function
 
 ```
 <?php
+
 /**
  * Class SamplePardotApiClient
  *
@@ -182,15 +183,19 @@ Note: we strongly recommend **against** using PHP's `file_get_contents` function
 class SamplePardotApiClient
 {
     const BASE_URL = "https://pi.pardot.com/api/";
+
     /** @var int $apiVersion */
     private $apiVersion;
+
     /** @var string $format  */
     private $format;
+
     public function __construct($apiVersion, $format = 'xml')
     {
         $this->apiVersion = $apiVersion;
         $this->format = $format;
     }
+
     /**
      * @param string $endpoint
      * @param string $operation
@@ -208,8 +213,10 @@ class SamplePardotApiClient
         if (!empty($data)) {
             curl_setopt($curl_handle, CURLOPT_POSTFIELDS, $data);
         }
+
         return $this->executeCall($curl_handle);
     }
+
     /**
      * @param string $endpoint
      * @param string $operation
@@ -221,8 +228,10 @@ class SamplePardotApiClient
     public function get($endpoint, $operation, $headers = [], $queryParams = [])
     {
         $curl_handle = $this->initRequest($endpoint, $operation, $headers, $queryParams);
+
         return $this->executeCall($curl_handle);
     }
+
     /**
      * @param string $endpoint
      * @param string $operation
@@ -240,6 +249,7 @@ class SamplePardotApiClient
         $queryString = http_build_query($queryParams, null, '&');
         // Append query string params to URL
         $url .= "?{$queryString}";
+
         // Init curl handle and set standard curl options: timeouts / require SSL / verify SSL
         $curl_handle = curl_init($url);
         curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 5);
@@ -247,12 +257,15 @@ class SamplePardotApiClient
         curl_setopt($curl_handle, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
         curl_setopt($curl_handle, CURLOPT_SSL_VERIFYHOST, 2);
         curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+
         // Add any headers passed in such as Authorization header
         if (!empty($headers)) {
             curl_setopt($curl_handle, CURLOPT_HTTPHEADER, $headers);
         }
+
         return $curl_handle;
     }
+
     /**
      * @param string $endpoint
      * @param string $operation
@@ -263,8 +276,10 @@ class SamplePardotApiClient
         if ($endpoint === 'login') {
             return self::BASE_URL . "login";
         }
+
         return self::BASE_URL . "{$endpoint}/version/{$this->apiVersion}/do/{$operation}";
     }
+
     /**
      * @param $curl_handle
      * @return array
@@ -277,6 +292,7 @@ class SamplePardotApiClient
         // Gather the HTTP response code and last effective URL called
         $httpCode = curl_getinfo($curl_handle, CURLINFO_HTTP_CODE);
         $url = curl_getinfo($curl_handle, CURLINFO_EFFECTIVE_URL);
+
         // Handle errors in calls, this could be a log or an exception thrown as written here
         if (!$rsp) {
             $errorMessage = curl_error($curl_handle);
@@ -284,27 +300,35 @@ class SamplePardotApiClient
             throw new Exception("Error calling Pardot API. HTTP Response Code: {$httpCode}. Message: {$errorMessage}");
         }
         curl_close($curl_handle);
+
         // Output call info, this data is returned and displayed for informational purposes in this example
         echo("URL: {$url}" . PHP_EOL);
         echo("HTTP Response Code: {$httpCode}" . PHP_EOL);
         echo("Response: {$rsp}" . PHP_EOL . PHP_EOL);
+
         return [$httpCode, $rsp];
     }
+
 }
+
 // Setup user credentials
 $credentials = [
     'user_key' => '12345678890abcdef12345678890abcdef',
     'email' => 'email@example.com',
     'password' => 'pass1234'
 ];
+
 // Prepare to call version 3 or 4 of the API with JSON or XML responses
 $client = new SamplePardotApiClient(3, 'json');
+
 // Authenticate to Pardot - Must be a POST with credentials in the message body
 list($httpCode, $rsp) = $client->post('login', '', $credentials, null);
 // Capture the api_key from a successful login response, api_key is good for 1 hour and can be reused on subsequent calls
 $apiKey = json_decode($rsp, true)['api_key'];
+
 // Create Authorization Header from api_key
 $authHeader = ["Authorization: Pardot user_key={$credentials['user_key']},api_key={$apiKey}"];
+
 // Call Prospect Query
 list($httpCode, $rsp) = $client->get('prospect', 'query', $authHeader, ['limit' => 1]);
 // Call VisitorActivity Query
