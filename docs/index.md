@@ -297,11 +297,11 @@ class SamplePardotApiClient
         if (!$rsp) {
             $errorMessage = curl_error($curl_handle);
             curl_close($curl_handle);
-            throw new Exception("Error calling Pardot API. HTTP Response Code: {$httpCode}. Message: {$errorMessage}");
+            throw new Exception("Error calling API. HTTP Code: {$httpCode}. Message: {$errorMessage}");
         }
         curl_close($curl_handle);
 
-        // Output call info, this data is returned and displayed for informational purposes in this example
+        // Output call response for informational purposes
         echo("URL: {$url}" . PHP_EOL);
         echo("HTTP Response Code: {$httpCode}" . PHP_EOL);
         echo("Response: {$rsp}" . PHP_EOL . PHP_EOL);
@@ -323,7 +323,8 @@ $client = new SamplePardotApiClient(3, 'json');
 
 // Authenticate to Pardot - Must be a POST with credentials in the message body
 list($httpCode, $rsp) = $client->post('login', '', $credentials, null);
-// Capture the api_key from a successful login response, api_key is good for 1 hour and can be reused on subsequent calls
+// Capture the api_key from a successful login response
+// api_key is good for 1 hour and can be reused on subsequent calls
 $apiKey = json_decode($rsp, true)['api_key'];
 
 // Create Authorization Header from api_key
@@ -334,7 +335,12 @@ list($httpCode, $rsp) = $client->get('prospect', 'query', $authHeader, ['limit' 
 // Call VisitorActivity Query
 list($httpCode, $rsp) = $client->get('visitorActivity', 'query', $authHeader, ['limit' => 1]);
 // Create a Campaign
-list($httpCode, $rsp) = $client->post('campaign', 'create', ['name' => 'A Campaign', 'cost' => 100], $authHeader);
+list($httpCode, $rsp) = $client->post(
+    'campaign',
+    'create',
+    ['name' => 'A Campaign', 'cost' => 100],
+    $authHeader
+);
 ```
 
 ## Supported API wrappers
