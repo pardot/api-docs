@@ -41,7 +41,7 @@ A procedure is a query and execution plan used to retrieve the data. Each object
 
 ### Fields
 
-Select the visitor activity fields that need to be exported. [Following](../object-field-references#visitor-activity) are the fields that are available for visitor activity. The value for `fields` must be an array of strings of the available fields. 
+Select the visitor activity fields that need to be exported. [Following](../../object-field-references/#visitor-activity) are the fields that are available for visitor activity. The value for `fields` must be an array of strings of the available fields. 
 
 ### filter_by_created_at
 
