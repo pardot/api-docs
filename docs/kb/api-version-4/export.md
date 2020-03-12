@@ -105,15 +105,15 @@ Input Representation
 
 ```json
 {
-	"object": string,
+    "object": string,
     "fields": [string, string, ....],
-	"procedure": {
-		"name": string,
-		"arguments": {
-			"argument name": argument value,
-			// additional arguments...
-		}
-	}
+    "procedure": {
+        "name": string,
+        "arguments": {
+            "argument name": argument value,
+            // additional arguments...
+        }
+    }
 }
 ```
 
