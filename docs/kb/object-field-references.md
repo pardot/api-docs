@@ -1922,6 +1922,15 @@ visitor activity has a visitor page view associated with it</td>
 visitor activity has a file associated with it</td>
 </tr>
 <tr>
+<td>&lt;custom_redirect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the custom redirect associated with this visitor activity<br>
+<strong><em>Note:</em></strong> This node will only appear if this
+visitor activity has a custom redirect associated with it</td>
+</tr>
+<tr>
 <td>&lt;campaign&gt;</td>
 <td>object</td>
 <td></td>
