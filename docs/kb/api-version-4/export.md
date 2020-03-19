@@ -39,11 +39,15 @@ A procedure is a query and execution plan used to retrieve the data. Each object
 
 ## Visitor Activity
 
-## filter_by_created_at
+### Fields
+
+Select the visitor activity fields that need to be exported. [Following](../../object-field-references/#visitor-activity) are the fields that are available for visitor activity. The value for `fields` must be an array of strings of the available fields. 
+
+### filter_by_created_at
 
 Retrieves all visitor activity records with a `created_at` value that is equal or greater than the `created_after` argument and less than or equal to the `created_before` argument.
 
-### Abilities
+#### Abilities
 
 | Action           | Requirements  |
 | ---------------- | ------------- |
@@ -66,7 +70,7 @@ OR
 
 * “Admin > Exports > View”
 
-### Arguments
+#### Arguments
 
 * **created_after**: Selects visitor activities that were created after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
 * **created_before**: (Optional) Selects visitor activities that were created before the specified time. This value must be after the value in `created_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `created_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
@@ -96,20 +100,22 @@ Content-Type must be `application/json`.
 Input Representation
 
 * **object**: Specifies which object to export. Currently only "visitorActivity" is supported.
+* **fields**: Specifies the fields that will be exported. If no `fields` value is given, all available fields will be exported.
 * **procedure**: The procedure to execute. A procedure is a query and execution plan used to retrieve data. Each object has a different set of procedures. See the [Procedures](#procedures) section for available procedures.
     * **name**: The name of the procedure.
     * **arguments**: Arguments used to manipulate the behavior of the procedure. These arguments are specific to the procedure. See the documentation for the procedure to see which arguments apply.
 
 ```json
 {
-	"object": string,
-	"procedure": {
-		"name": string,
-		"arguments": {
-			"argument name": argument value,
-			// additional arguments...
-		}
-	}
+    "object": string,
+    "fields": [string, string, ....],
+    "procedure": {
+        "name": string,
+        "arguments": {
+            "argument name": argument value,
+            // additional arguments...
+        }
+    }
 }
 ```
 
@@ -158,6 +164,7 @@ Authorization: Pardot user_key=U,api_key=A
 ```json
 {
     "object": "visitorActivity",
+    "fields": ["id", "prospect_id", "visitor_id", "type_name", "created_at"],
     "procedure": {
         "name": "filter_by_created_at",
         "arguments": {

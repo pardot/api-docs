@@ -1819,7 +1819,7 @@ site search query, etc.</td>
 <td></td>
 <td>Pardot ID of the email associated with this visitor
 activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has an email associated with it</td>
 </tr>
 <tr>
@@ -1829,7 +1829,7 @@ visitor activity has an email associated with it</td>
 <td></td>
 <td>Pardot ID of the email template associated with this visitor
 activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has an email associated with it</td>
 </tr>
 <tr>
@@ -1839,7 +1839,7 @@ visitor activity has an email associated with it</td>
 <td></td>
 <td>Pardot ID of the list email associated with this visitor
 activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has an email associated with it</td>
 </tr>
 <tr>
@@ -1848,7 +1848,7 @@ visitor activity has an email associated with it</td>
 <td></td>
 <td></td>
 <td>Pardot ID of the form associated with this visitor activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has a form associated with it</td>
 </tr>
 <tr>
@@ -1858,7 +1858,7 @@ visitor activity has a form associated with it</td>
 <td></td>
 <td>Pardot ID of the form handler associated with this visitor
 activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has a form handler associated with it</td>
 </tr>
 <tr>
@@ -1868,7 +1868,7 @@ visitor activity has a form handler associated with it</td>
 <td></td>
 <td>Pardot ID of the site search query associated with this visitor
 activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has a site search query associated with it</td>
 </tr>
 <tr>
@@ -1878,7 +1878,7 @@ visitor activity has a site search query associated with it</td>
 <td></td>
 <td>Pardot ID of the landing page associated with this visitor
 activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has a landing page associated with it</td>
 </tr>
 <tr>
@@ -1888,7 +1888,7 @@ visitor activity has a landing page associated with it</td>
 <td></td>
 <td>Pardot ID of the paid search ad associated with this visitor
 activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has a paid search ad associated with it</td>
 </tr>
 <tr>
@@ -1898,7 +1898,7 @@ visitor activity has a paid search ad associated with it</td>
 <td></td>
 <td>Pardot ID of the multivariate test variation associated with
 this visitor activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has a multivariate test variation associated with
 it</td>
 </tr>
@@ -1909,7 +1909,7 @@ it</td>
 <td></td>
 <td>Pardot ID of the visitor page view associated with this visitor
 activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has a visitor page view associated with it</td>
 </tr>
 <tr>
@@ -1918,8 +1918,17 @@ visitor activity has a visitor page view associated with it</td>
 <td></td>
 <td></td>
 <td>Pardot ID of the file associated with this visitor activity<br>
-<strong><em>Note:</em></strong> This node will only appear if this
+<strong><em>Note:</em></strong> This node appears only if this
 visitor activity has a file associated with it</td>
+</tr>
+<tr>
+<td>&lt;custom_redirect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the custom redirect associated with this visitor activity<br>
+<strong><em>Note:</em></strong> This node appears only if this
+visitor activity has a custom redirect associated with it</td>
 </tr>
 <tr>
 <td>&lt;campaign&gt;</td>
@@ -1976,6 +1985,10 @@ Visitor Activities may have the following values for
 <li>32 - UserVoice Comment</li>
 <li>33 - UserVoice Ticket</li>
 <li>34 - Video Watched (≥ 75% watched)</li>
+<li>35 - Indirect Unsubscribe Open</li>
+<li>36 - Indirect Bounce</li>
+<li>37 - Indirect Resubscribed</li>
+<li>38 - Opportunity Unlinked</li>
 <li>Other - Unknown</li>
 </ul>
 ## Visitor Page View
