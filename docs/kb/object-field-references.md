@@ -160,6 +160,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 <tr>
 </tr>
 </table>
+
 ## Custom Field
 
 <table>
@@ -386,6 +387,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
         preferred timezone</td>
 </tr>
 </table>
+
 ## Email
 
 <table>
@@ -502,7 +504,6 @@ Each field returned by the API maps to a field within the Pardot user interface.
 user's preferred timezone</td>
 </tr>
 </table>
-
 
 ## Form
 
@@ -1363,6 +1364,7 @@ user's preferred timezone</td>
 API user's preferred timezone</td>
 </tr>
 </table>
+
 ## Prospect Account
 
 <p>Note: Prospect account fields are fully customizable. To get the
@@ -1480,6 +1482,7 @@ describe operation on the prospectAccount API endpoint.</p>
 preferred timezone</td>
 </tr>
 </table>
+
 ## User
 
 <table>
@@ -1549,6 +1552,7 @@ user's preferred timezone</td>
 API user's preferred timezone</td>
 </tr>
 </table>
+
 ## Visit
 
 <table>
@@ -1664,6 +1668,7 @@ user's preferred timezone</td>
 user's preferred timezone</td>
 </tr>
 </table>
+
 ## Visitor
 
 <table>
@@ -1758,6 +1763,7 @@ user's preferred timezone</td>
 API user's preferred timezone</td>
 </tr>
 </table>
+
 ## Visitor Activity
 
 <table>
@@ -1991,6 +1997,7 @@ Visitor Activities may have the following values for
 <li>38 - Opportunity Unlinked</li>
 <li>Other - Unknown</li>
 </ul>
+
 ## Visitor Page View
 
 <table>
@@ -2031,6 +2038,7 @@ Visitor Activities may have the following values for
 preferred timezone</td>
 </tr>
 </table>
+
 ## Visitor Referrer
 
 <table>
