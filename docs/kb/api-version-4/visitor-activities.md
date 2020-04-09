@@ -20,6 +20,8 @@ Search criteria may be used together in any combination and/or order unless othe
 | `created_before` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities that were created before the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
 | `id_greater_than` | `integer` | `<any_positive_integer>` | Selects visitor activities with IDs greater than the specified integer. |
 | `id_less_than` | `integer` | `<any_positive_integer>` | Selects visitor activities with IDs less than the specified integer. |
+| `updated_after` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities that were updated after the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
+| `updated_before` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities that were updated before the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
 | `prospect_only` | `boolean` | `true or false` | Selects visitor activities with associated prospects. |
 | `type` | `array` | `<comma_separated_visitor_activity_types>` | Selects visitor activities of the specified types. See a list of available [Visitor Activity Types](../object-field-references.md#visitor-activity-types) in [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 | **Object Types***|
@@ -51,7 +53,7 @@ Since `query` result sets are limited to 200 results each, the results returned 
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. |
 | `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching visitor (according to the specified sorting order) to be returned in the query response. The first `offset` matching visitors will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st visitor matched by the provided criteria. |
 | `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](#xml-response-formats) in [Using Visitor Activities](#using-visitor-activities) for more details. |
-| `sort_by` | `string` | `created_at, id, prospect_id, visitor_id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
+| `sort_by` | `string` | `created_at, id, updated_at, prospect_id, visitor_id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 | `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details. |
 
 ## [](#supported-sorting-options-)Supported Sorting Options
@@ -64,6 +66,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | `id` | `ascending` | Specifies that the query results should be sorted by the visitor activities' `id` fields. |
 | `prospect_id` | `descending` | Specifies that the query results should be sorted by the visitor activities' related prospects. |
 | `visitor_id` | `descending` | Specifies that the query results should be sorted by the visitor activities' related visitors. |
+| `updated_at` | `descending` | Specifies that the query results should be sorted by the visitor activities' `updated_at` timestamps. |
 
 
 ## [](#xml-response-format-)XML Response Format

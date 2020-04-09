@@ -2,2086 +2,436 @@
 
 Each field returned by the API maps to a field within the Pardot user interface. The tables in this section list all fields that can be returned and/or updated via the API. Consider the following limitations:
 
-<ul>
-<li>Fields marked as 'Editable' can be manipulated through <code>create</code>, <code>update</code>, and <code>upsert</code> requests.</li>
-<li>'Required' denotes that the specified field cannot be left without a value during <code>insert</code> and some <code>upsert</code> requests. <code>update</code> requests that clear a required field will be declined.</li>
-<li>During <code>update</code> requests, the parameter names submitted to the API and tag names in the API's response will match field names within the Pardot user interface unless otherwise specified.</li>
-</ul>
++ Fields marked as 'Editable' can be manipulated through `create`, `update`, and `upsert` requests.
++ 'Required' denotes that the specified field cannot be left without a value during `insert` and some `upsert` requests. `update` requests that clear a required field will be declined.
+* During `update` requests, the parameter names submitted to the API and tag names in the API's response will match field names within the Pardot user interface unless otherwise specified.
 
 
 ## Account
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-    <td>&lt;id&gt;</td>
-    <td>integer</td>
-    <td></td>
-    <td></td>
-    <td>Pardot ID for this account</td>
-</tr>
-<tr>
-    <td>&lt;level&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>The level of product for the account</td>
-</tr>
-<tr>
-    <td>&lt;website&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Account website</td>
-</tr>
-<tr>
-    <td>&lt;vanity_domain&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Custom vanity domain name</td>
-</tr>
-<tr>
-    <td>&lt;plugin_campaign_id&gt;</td>
-    <td>integer</td>
-    <td></td>
-    <td></td>
-    <td>Plugin ID for account campaign</td>
-</tr>
-<tr>
-    <td>&lt;tracking_code_template&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Markup and code for use in tracking templates</td>
-</tr>
-<tr>
-    <td>&lt;address1&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Account contact address, line 1</td>
-</tr>
-<tr>
-    <td>&lt;address2&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Account contact address, line 2</td>
-</tr>
-<tr>
-    <td>&lt;city&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Account contact city</td>
-</tr>
-<tr>
-    <td>&lt;state&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Account contact state</td>
-</tr>
-<tr>
-    <td>&lt;territory&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Account contact territory</td>
-</tr>
-<tr>
-    <td>&lt;zip&gt;</td>
-    <td>integer</td>
-    <td></td>
-    <td></td>
-    <td>Account contact zip code</td>
-</tr>
-<tr>
-    <td>&lt;country&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Account contact country (full string)</td>
-</tr>
-<tr>
-    <td>&lt;phone&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Account contact phone number</td>
-</tr>
-<tr>
-    <td>&lt;fax&gt;</td>
-    <td>string</td>
-    <td></td>
-    <td></td>
-    <td>Account contact fax number</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|||Pardot ID for this account|
+|&lt;level&gt;|string|||The level of product for the account|
+|&lt;website&gt;|string|||Account website|
+|&lt;vanity_domain&gt;|string|||Custom vanity domain name|
+|&lt;plugin_campaign_id&gt;|integer|||Plugin ID for account campaign|
+|&lt;tracking_code_template&gt;|string|||Markup and code for use in tracking templates|
+|&lt;address1&gt;|string|||Account contact address, line 1|
+|&lt;address2&gt;|string|||Account contact address, line 2|
+|&lt;city&gt;|string|||Account contact city|
+|&lt;state&gt;|string|||Account contact state|
+|&lt;territory&gt;|string|||Account contact territory|
+|&lt;zip&gt;|integer|||Account contact zip code|
+|&lt;country&gt;|string|||Account contact country (full string)|
+|&lt;phone&gt;|string|||Account contact phone number|
+|&lt;fax&gt;|string|||Account contact fax number|
+
 
 ## Campaign
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this campaign</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Campaign's name</td>
-</tr>
-<tr>
-<td>&lt;cost&gt;</td>
-<td>integer</td>
-<td></td>
-<td>X</td>
-<td>Cost associated to the campaign</td>
-</tr>
-<tr>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this campaign|
+|&lt;name&gt;|string||X|Campaign's name|
+|&lt;cost&gt;|integer||X|Cost associated to the campaign|
 
 ## Custom Field
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this custom field</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Custom field's name</td>
-</tr>
-<tr>
-<td>&lt;field_id&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>API ID for custom field</td>
-</tr>
-<tr>
-<td>&lt;type&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>type of field</td>
-</tr>
-<tr>
-<td>&lt;type_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for custom field's type</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time custom field was created in Pardot; Time is reported in API user's
-        preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time custom field was updated; Time is reported in API user's
-        preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;is_record_multiple_responses&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If true, this custom field will record multiple responses</td>
-</tr>
-<tr>
-<td>&lt;crm_id&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>The CRM ID of the field you would like to map to this custom field</td>
-</tr>
-<tr>
-<td>&lt;is_use_values&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If true, this custom field will use predefined values</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this custom field|
+|&lt;name&gt;|string||X|Custom field's name|
+|&lt;field_id&gt;|string|||API ID for custom field|
+|&lt;type&gt;|string||X|type of field|
+|&lt;type_id&gt;|integer|||Pardot ID for custom field's type|
+|&lt;created_at&gt;|timestamp|||Time custom field was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time custom field was updated; Time is reported in API user's preferred timezone|
+|&lt;is_record_multiple_responses&gt;|boolean||X|If true, this custom field will record multiple responses|
+|&lt;crm_id&gt;|string||X|The CRM ID of the field you would like to map to this custom field|
+|&lt;is_use_values&gt;|boolean||X|If true, this custom field will use predefined values|
+
 
 ## Custom Redirect
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this custom redirect</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Custom redirect's name</td>
-</tr>
-<tr>
-<td>&lt;Url&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>URL for the custom redirect</td>
-</tr>
-<tr>
-<td>&lt;destination&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>URL the custom redirect leads to</td>
-</tr>
-<tr>
-<td>&lt;campaign&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>The campaign associated with this custom redirect</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time custom redirect was created in Pardot; Time is reported in API user's
-        preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time custom redirect was updated; Time is reported in API user's
-        preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this custom redirect|
+|&lt;name&gt;|string|||Custom redirect's name|
+|&lt;Url&gt;|string|||URL for the custom redirect|
+|&lt;destination&gt;|string|||URL the custom redirect leads to|
+|&lt;campaign&gt;|string|||The campaign associated with this custom redirect|
+|&lt;created_at&gt;|timestamp|||Time custom redirect was created in Pardot; Time is reported in API user's  preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time custom redirect was updated; Time is reported in API user's preferred timezone|
+
 
 ## Dynamic Content
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this dynamic content</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Dynamic content's name</td>
-</tr>
-<tr>
-<td>&lt;embedCode&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Code to embed this dynamic content onto your webpage</td>
-</tr>
-<tr>
-<td>&lt;embedUrl&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>URL to embed this dynamic content</td>
-</tr>
-<tr>
-<td>&lt;baseContent&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>The default dynamic content</td>
-</tr>
-<tr>
-<td>&lt;basedOn&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Field that this dynamic content is based on</td>
-</tr>
-<tr>
-<td>&lt;variation&gt;</td>
-<td>node</td>
-<td></td>
-<td></td>
-<td>The variation of content prospect will see based on the field's value<br>
-    <strong><em>Note:</em></strong> Information about a variation is returned in a &lt;variation&gt; node in the
-    XML response.  It contains the value of the field in the &lt;comparison&gt; tag and the content of the variation
-     in the &lt;content&gt; tag</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time dynamic content was created in Pardot; Time is reported in API user's
-        preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time dynamic content was updated; Time is reported in API user's
-        preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this dynamic content|
+|&lt;name&gt;|string|||Dynamic content's name|
+|&lt;embedCode&gt;|string|||Code to embed this dynamic content onto your webpage|
+|&lt;embedUrl&gt;|string|||URL to embed this dynamic content|
+|&lt;baseContent&gt;|string|||The default dynamic content|
+|&lt;basedOn&gt;|string|||Field that this dynamic content is based on|
+|&lt;variation&gt;|node|||The variation of content prospect will see based on the field's value<br>**Note:** Information about a variation is returned in a &lt;variation&gt; node in the XML response.  It contains the value of the field in the &lt;comparison&gt; tag and the content of the variation in the &lt;content&gt; tag|
+|&lt;created_at&gt;|timestamp|||Time dynamic content was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time dynamic content was updated; Time is reported in API user's preferred timezone|
+
 
 ## Email
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this email</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Name of this email</td>
-</tr>
-<tr>
-<td>&lt;subject&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Email Subject</td>
-</tr>
-<tr>
-<td>&lt;message&gt;</td>
-<td>XML Object</td>
-<td></td>
-<td></td>
-<td>Contains text and html elements of different formats</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>Timestamp</td>
-<td></td>
-<td></td>
-<td>Time the Email Was Created</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this email|
+|&lt;name&gt;|string|||Name of this email|
+|&lt;subject&gt;|string|||Email Subject|
+|&lt;message&gt;|XML Object|||Contains text and html elements of different formats|
+|&lt;created_at&gt;|Timestamp|||Time the Email Was Created|
+
 
 
 ## Email Clicks
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this email click</td>
-</tr>
-<tr>
-<td>&lt;prospect_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for the associated prospect</td>
-</tr>
-<tr>
-<td>&lt;url&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>URL of the email click</td>
-</tr>
-<tr>
-<td>&lt;list_email_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for the associated list email. Value not present if null.</td>
-</tr>
-<tr>
-<td>&lt;drip_program_action_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for the associated drip program action. Value not present if null.</td>
-</tr>
-<tr>
-<td>&lt;email_template_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for the associated email template. Value not present if null.</td>
-</tr>
-<tr>
-<td>&lt;tracker_redirect_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for the associated tracker redirect. Value not present if null.</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time that email click occurred; Time is reported in API
-user's preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this email click|
+|&lt;prospect_id&gt;|integer|||Pardot ID for the associated prospect|
+|&lt;url&gt;|string|||URL of the email click|
+|&lt;list_email_id&gt;|integer|||Pardot ID for the associated list email. Value not present if null.|
+|&lt;drip_program_action_id&gt;|integer|||Pardot ID for the associated drip program action. Value not present if null.|
+|&lt;email_template_id&gt;|integer|||Pardot ID for the associated email template. Value not present if null.|
+|&lt;tracker_redirect_id&gt;|integer|||Pardot ID for the associated tracker redirect. Value not present if null.|
+|&lt;created_at&gt;|timestamp|||Time that email click occurred; Time is reported in API user's preferred timezone|
+
 
 ## Form
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this form</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Form's name</td>
-</tr>
-<tr>
-<td>&lt;campaign_id&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the campaign associated with this form</td>
-</tr>
-<tr>
-<td>&lt;embed_code&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>The code used to embed the form on your webpage</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time form was created in Pardot; Time is reported in API user's
-    preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time form was updated; Time is reported in API user's
-    preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this form|
+|&lt;name&gt;|string|||Form's name|
+|&lt;campaign_id&gt;|string|||Pardot ID of the campaign associated with this form|
+|&lt;embed_code&gt;|string|||The code used to embed the form on your webpage|
+|&lt;created_at&gt;|timestamp|||Time form was created in Pardot; Time is reported in API user's    preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time form was updated; Time is reported in API user's    preferred timezone|
+
 
 ## Identified Company
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this identified company</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Identified Company's name</td>
-</tr>
-<tr>
-<td>&lt;street_address&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Identified Company's street address</td>
-</tr>
-<tr>
-<td>&lt;city&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Identified Company's city</td>
-</tr>
-<tr>
-<td>&lt;state&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Identified Company's state</td>
-</tr>
-<tr>
-<td>&lt;postal_code&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Identified Company's postal code</td>
-</tr>
-<tr>
-<td>&lt;country&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Identified Company's country</td>
-</tr>
-<tr>
-<td>&lt;email&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Identified Company's email address</td>
-</tr>
-</table>
+
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this identified company|
+|&lt;name&gt;|string|||Identified Company's name|
+|&lt;street_address&gt;|string|||Identified Company's street address|
+|&lt;city&gt;|string|||Identified Company's city|
+|&lt;state&gt;|string|||Identified Company's state|
+|&lt;postal_code&gt;|string|||Identified Company's postal code|
+|&lt;country&gt;|string|||Identified Company's country|
+|&lt;email&gt;|string|||Identified Company's email address|
+
 
 ## Lifecycle History
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID of this lifecycle history</td>
-</tr>
-<tr>
-<td>&lt;prospect_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot's ID for the prospect in this stage</td>
-</tr>
-<tr>
-<td>&lt;previous_stage_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the stage this prospect was previously in</td>
-</tr>
-<tr>
-<td>&lt;next_stage_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the stage this prospect will be in next</td>
-</tr>
-<tr>
-<td>&lt;seconds_elapsed&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Number of seconds for prospect to get to current stage</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time lifecycle history was created in Pardot; Time is reported in API user's
-preferred timezone</td>
-</tr>
-</table>
+
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID of this lifecycle history|
+|&lt;prospect_id&gt;|integer|||Pardot's ID for the prospect in this stage|
+|&lt;previous_stage_id&gt;|integer|||Pardot ID of the stage this prospect was previously in|
+|&lt;next_stage_id&gt;|integer|||Pardot ID of the stage this prospect will be in next|
+|&lt;seconds_elapsed&gt;|integer|||Number of seconds for prospect to get to current stage|
+|&lt;created_at&gt;|timestamp|||Time lifecycle history was created in Pardot; Time is reported in API user's preferred timezone|
+
 
 ## Lifecycle Stage
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID of this lifecycle stage</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Lifecycle stage's name</td>
-</tr>
-<tr>
-<td>&lt;position&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Lifcycle stage's position in lifecycle</td>
-</tr>
-<tr>
-<td>&lt;is_locked&gt;</td>
-<td>boolean</td>
-<td></td>
-<td></td>
-<td>If true, lifecycle stage is locked</td>
-</tr>
-</table>
+
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID of this lifecycle stage|
+|&lt;name&gt;|string|||Lifecycle stage's name|
+|&lt;position&gt;|integer|||Lifcycle stage's position in lifecycle|
+|&lt;is_locked&gt;|boolean|||If true, lifecycle stage is locked|
+
 
 ## List
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID of this list</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>List's name (internal to Pardot)</td>
-</tr>
-<tr>
-<td>&lt;is_public&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If true, list will show on EPC pages to prospects</td>
-</tr>
-<tr>
-<td>&lt;is_dynamic&gt;</td>
-<td>boolean</td>
-<td></td>
-<td></td>
-<td>If true, list has prospects dynamically added to it via a set of chosen rules</td>
-</tr>
-<tr>
-<td>&lt;title&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>List's title (visible to subscribers)</td>
-</tr>
-<tr>
-<td>&lt;description&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>List's description</td>
-</tr>
-<tr>
-<td>&lt;is_crm_visible&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If true, list will be visible in CRM to add or remove from</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time list was created in Pardot; Time is reported in API user's
-preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time list was updated; Time is reported in API user's
-preferred timezone</td>
-</tr>
-</table>
+
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID of this list|
+|&lt;name&gt;|string||X|List's name (internal to Pardot)|
+|&lt;is_public&gt;|boolean||X|If true, list will show on EPC pages to prospects|
+|&lt;is_dynamic&gt;|boolean|||If true, list has prospects dynamically added to it via a set of chosen rules|
+|&lt;title&gt;|string||X|List's title (visible to subscribers)|
+|&lt;description&gt;|string||X|List's description|
+|&lt;is_crm_visible&gt;|boolean||X|If true, list will be visible in CRM to add or remove from|
+|&lt;created_at&gt;|timestamp|||Time list was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time list was updated; Time is reported in API user's preferred timezone|
+
 
 ## List Membership
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this list membership</td>
-</tr>
-<tr>
-<td>&lt;list_id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID of the list for this membership</td>
-</tr>
-<tr>
-<td>&lt;prospect_id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID of the prospect for this membership</td>
-</tr>
-<tr>
-<td>&lt;opted_out&gt;</td>
-<td>integer</td>
-<td></td>
-<td>X</td>
-<td>If value is 1, the prospect is unsubscribed from receiving
-emails from this list</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time that this membership was created in Pardot; Time is
-reported in API user's preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time that this membership was updated; Time is reported in
-API user's preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this list membership|
+|&lt;list_id&gt;|integer|X||Pardot ID of the list for this membership|
+|&lt;prospect_id&gt;|integer|X||Pardot ID of the prospect for this membership|
+|&lt;opted_out&gt;|integer||X|If value is 1, the prospect is unsubscribed from receiving emails from this list|
+|&lt;created_at&gt;|timestamp|||Time that this membership was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time that this membership was updated; Time is reported in API user's preferred timezone|
 
 ## Opportunity
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this opportunity</td>
-</tr>
-<tr>
-<td>&lt;campaign_id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td>X</td>
-<td>Pardot ID of the campaign associated with this opportunity<br>
-<strong><em>Note:</em></strong> Information about an opportunity's
-campaign association is returned in a &lt;campaign&gt; node in the
-XML response. However, updates to campaign associations are done by
-providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt;
-request. See <a href="/kb/api-version-4/opportunities#xml-response-formats">XML
-Response Formats</a> in <a href="/kb/api-version-4/opportunities">Using
-Opportunities</a> for more details.</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td>X</td>
-<td>X</td>
-<td>Opportunity's name</td>
-</tr>
-<tr>
-<td>&lt;value&gt;</td>
-<td>float</td>
-<td>X</td>
-<td>X</td>
-<td>Opportunity's value<br>
-<strong><em>Restrictions:</em></strong> value must be a positive
-numeric value</td>
-</tr>
-<tr>
-<td>&lt;probability&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td>X</td>
-<td>Opportunity's probability<br>
-<strong><em>Restrictions:</em></strong> value must be a positive
-numeric value between 0 and 100 inclusive</td>
-</tr>
-<tr>
-<td>&lt;type&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Opportunity's type</td>
-</tr>
-<tr>
-<td>&lt;stage&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Opportunity's stage</td>
-</tr>
-<tr>
-<td>&lt;status&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Opportunity's status<br>
-<strong><em>Restrictions:</em></strong> status must be either won,
-lost, or open</td>
-</tr>
-<tr>
-<td>&lt;closed_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td>X</td>
-<td>Opportunity's closed date<br>
-<strong><em>Note:</em></strong> if this is left blank, the
-closed_at timestamp (Closed Date within the app) will not be set,
-even when the Opportunity's stage, status or probability are set to
-indicate opportunity closure</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time opportunity was created in Pardot; Time is reported in API
-user's preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time opportunity was updated in Pardot; Time is reported
-in API user's preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this opportunity|
+|&lt;campaign_id&gt;|integer|X|X|Pardot ID of the campaign associated with this opportunity<br>**Note**: Information about an opportunity's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are done by providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt; request. See [XML Response Formats](/kb/api-version-4/opportunities#xml-response-formats) in [Using Opportunities](/kb/api-version-4/opportunities#using-opportunities) for more details.|
+|&lt;name&gt;|string|X|X|Opportunity's name|
+|&lt;value&gt;|float|X|X|Opportunity's value <br>**Restrictions**: value must be a positive numeric value|
+|&lt;probability&gt;|integer|X|X|Opportunity's probability <br>**Restrictions**: value must be a positive numeric value between 0 and 100 inclusive|
+|&lt;type&gt;|string||X|Opportunity's type|
+|&lt;stage&gt;|string||X|Opportunity's stage|
+|&lt;status&gt;|string||X|Opportunity's status <br>**Restrictions**: status must be either won, lost, or open|
+|&lt;closed_at&gt;|timestamp||X|Opportunity's closed date<br>**Note**: if this is left blank, the closed_at timestamp (Closed Date within the app) will not be set, even when the Opportunity's stage, status or probability are set to indicate opportunity closure|
+|&lt;created_at&gt;|timestamp|||Time opportunity was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time opportunity was updated in Pardot; Time is reported in API user's preferred timezone|
 
 
 ## Profile
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this profile</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Profile's name</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this profile|
+|&lt;name&gt;|string|||Profile's name|
+
 
 ## Profile Criteria
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this profile criteria</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Profile criteria's name</td>
-</tr>
-<tr>
-<td>&lt;matches&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>The matching status of this profile criteria with the current
-prospect<br>
-<strong><em>Restrictions:</em></strong> Updates may be performed by
-using the values match, nomatch, or unknown</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this profile criteria|
+|&lt;name&gt;|string|||Profile criteria's name|
+|&lt;matches&gt;|string||X|The matching status of this profile criteria with the current prospect<br>**Restrictions:** Updates may be performed by using the values match, nomatch, or unknown|
+
 
 ## Prospect
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this prospect</td>
-</tr>
-<tr>
-<td>&lt;campaign_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td>X</td>
-<td>Pardot ID of the campaign associated with this prospect<br>
-<strong><em>Note:</em></strong> Information about a prospect's
-campaign association is returned in a &lt;campaign&gt; node in the
-XML response. However, updates to campaign associations are done by
-providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt;
-request. See <a href="/kb/api-version-4/prospects/#xml-response-format">XML
-Response Formats</a> in <a href="/kb/api-version-4/prospects">Using
-Prospects</a> for more details.</td>
-</tr>
-<tr>
-<td>&lt;salutation&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's formal prefix</td>
-</tr>
-<tr>
-<td>&lt;first_name&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's first name</td>
-</tr>
-<tr>
-<td>&lt;last_name&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's last name</td>
-</tr>
-<tr>
-<td>&lt;email&gt;</td>
-<td>string</td>
-<td>X</td>
-<td>X</td>
-<td>Prospect's email address</td>
-</tr>
-<tr>
-<td>&lt;password&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's password</td>
-</tr>
-<tr>
-<td>&lt;company&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's company</td>
-</tr>
-<tr>
-<td>&lt;prospect_account_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td>X</td>
-<td>Prospect's account ID</td>
-</tr>
-<tr>
-<td>&lt;website&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's website URL</td>
-</tr>
-<tr>
-<td>&lt;job_title&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's job title</td>
-</tr>
-<tr>
-<td>&lt;department&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's department</td>
-</tr>
-<tr>
-<td>&lt;country&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's country</td>
-</tr>
-<tr>
-<td>&lt;address_one&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's address, line 1</td>
-</tr>
-<tr>
-<td>&lt;address_two&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's address, line 2</td>
-</tr>
-<tr>
-<td>&lt;city&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's city</td>
-</tr>
-<tr>
-<td>&lt;state&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's US state</td>
-</tr>
-<tr>
-<td>&lt;territory&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's territory</td>
-</tr>
-<tr>
-<td>&lt;zip&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's postal code</td>
-</tr>
-<tr>
-<td>&lt;phone&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's phone number</td>
-</tr>
-<tr>
-<td>&lt;fax&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's fax number</td>
-</tr>
-<tr>
-<td>&lt;source&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's source</td>
-</tr>
-<tr>
-<td>&lt;annual_revenue&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's annual revenue</td>
-</tr>
-<tr>
-<td>&lt;employees&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's number of employees</td>
-</tr>
-<tr>
-<td>&lt;industry&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's industry</td>
-</tr>
-<tr>
-<td>&lt;years_in_business&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Prospect's number of years in business</td>
-</tr>
-<tr>
-<td>&lt;comments&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Comments about this prospect</td>
-</tr>
-<tr>
-<td>&lt;notes&gt;</td>
-<td>string</td>
-<td></td>
-<td>X</td>
-<td>Notes about this prospect</td>
-</tr>
-<tr>
-<td>&lt;score&gt;</td>
-<td>integer</td>
-<td></td>
-<td>X</td>
-<td>Prospect's score</td>
-</tr>
-<tr>
-<td>&lt;grade&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Prospect's letter grade</td>
-</tr>
-<tr>
-<td>&lt;last_activity_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time stamp of this prospect's latest visitor activity; Time is
-reported in API user's preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;recent_interaction&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Describes the prospect's most recent interaction with
-Pardot</td>
-</tr>
-<tr>
-<td>&lt;crm_lead_fid&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Prospect's lead ID in a supported CRM system</td>
-</tr>
-<tr>
-<td>&lt;crm_contact_fid&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Prospect's contact ID in a supported CRM system</td>
-</tr>
-<tr>
-<td>&lt;crm_owner_fid&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Prospect's owner ID in a supported CRM system</td>
-</tr>
-<tr>
-<td>&lt;crm_account_fid&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Account ID in a supported CRM system</td>
-</tr>
-<tr>
-<td>&lt;crm_last_sync&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time this prospect was synced with a supported CRM
-system</td>
-</tr>
-<tr>
-<td>&lt;crm_url&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>URL to view the prospect within the CRM system</td>
-</tr>
-<tr>
-<td>&lt;is_do_not_email&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If value is 1, prospect prefers not to be emailed</td>
-</tr>
-<tr>
-<td>&lt;is_do_not_call&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If value is 1, prospect prefers not to be called</td>
-</tr>
-<tr>
-<td>&lt;opted_out&gt;</td>
-<td>boolean</td>
-<td></td>
-<td></td>
-<td>If value is 1, prospect has opted out of marketing
-communications</td>
-</tr>
-<tr>
-<td>&lt;is_reviewed&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If value is 1, prospect has been reviewed</td>
-</tr>
-<tr>
-<td>&lt;is_starred&gt;</td>
-<td>boolean</td>
-<td></td>
-<td>X</td>
-<td>If value is 1, prospect has been starred</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time prospect was created in Pardot; Time is reported in API
-user's preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time prospect was updated in Pardot; Time is reported in
-API user's preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this prospect|
+|&lt;campaign_id&gt;|integer||X|Pardot ID of the campaign associated with this prospect<br>**Note**: Information about a prospect's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are done by providing campaign_id=&lt;campaign_id&gt; during an &lt;UPDATE&gt; request. See [XML Response Formats](/kb/api-version-4/prospects/#xml-response-format) in [Using Prospects](/kb/api-version-4/prospects#using-prospects) for more details.|
+|&lt;salutation&gt;|string||X|Prospect's formal prefix|
+|&lt;first_name&gt;|string||X|Prospect's first name|
+|&lt;last_name&gt;|string||X|Prospect's last name|
+|&lt;email&gt;|string|X|X|Prospect's email address|
+|&lt;password&gt;|string||X|Prospect's password|
+|&lt;company&gt;|string||X|Prospect's company|
+|&lt;prospect_account_id&gt;|integer||X|Prospect's account ID|
+|&lt;website&gt;|string||X|Prospect's website URL|
+|&lt;job_title&gt;|string||X|Prospect's job title|
+|&lt;department&gt;|string||X|Prospect's department|
+|&lt;country&gt;|string||X|Prospect's country|
+|&lt;address_one&gt;|string||X|Prospect's address, line 1|
+|&lt;address_two&gt;|string||X|Prospect's address, line 2|
+|&lt;city&gt;|string||X|Prospect's city|
+|&lt;state&gt;|string||X|Prospect's US state|
+|&lt;territory&gt;|string||X|Prospect's territory|
+|&lt;zip&gt;|string||X|Prospect's postal code|
+|&lt;phone&gt;|string||X|Prospect's phone number|
+|&lt;fax&gt;|string||X|Prospect's fax number|
+|&lt;source&gt;|string||X|Prospect's source|
+|&lt;annual_revenue&gt;|string||X|Prospect's annual revenue|
+|&lt;employees&gt;|string||X|Prospect's number of employees|
+|&lt;industry&gt;|string||X|Prospect's industry|
+|&lt;years_in_business&gt;|string||X|Prospect's number of years in business|
+|&lt;comments&gt;|string||X|Comments about this prospect|
+|&lt;notes&gt;|string||X|Notes about this prospect|
+|&lt;score&gt;|integer||X|Prospect's score|
+|&lt;grade&gt;|string|||Prospect's letter grade|
+|&lt;last_activity_at&gt;|timestamp|||Time stamp of this prospect's latest visitor activity; Time is reported in API user's preferred timezone|
+|&lt;recent_interaction&gt;|string|||Describes the prospect's most recent interaction with Pardot|
+|&lt;crm_lead_fid&gt;|string|||Prospect's lead ID in a supported CRM system|
+|&lt;crm_contact_fid&gt;|string|||Prospect's contact ID in a supported CRM system|
+|&lt;crm_owner_fid&gt;|string|||Prospect's owner ID in a supported CRM system|
+|&lt;crm_account_fid&gt;|string|||Account ID in a supported CRM system|
+|&lt;crm_last_sync&gt;|timestamp|||Last time this prospect was synced with a supported CRM system|
+|&lt;crm_url&gt;|string|||URL to view the prospect within the CRM system|
+|&lt;is_do_not_email&gt;|boolean||X|If value is 1, prospect prefers not to be emailed|
+|&lt;is_do_not_call&gt;|boolean||X|If value is 1, prospect prefers not to be called|
+|&lt;opted_out&gt;|boolean|||If value is 1, prospect has opted out of marketing communications|
+|&lt;is_reviewed&gt;|boolean||X|If value is 1, prospect has been reviewed|
+|&lt;is_starred&gt;|boolean||X|If value is 1, prospect has been starred|
+|&lt;created_at&gt;|timestamp|||Time prospect was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time prospect was updated in Pardot; Time is reported in API user's preferred timezone|
+
 
 ## Prospect Account
 
-<p>Note: Prospect account fields are fully customizable. To get the
+**Note:** Prospect account fields are fully customizable. To get the
 most accurate field metadata for your Pardot account, use the
-describe operation on the prospectAccount API endpoint.</p>
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID of the prospect account</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td>X</td>
-<td></td>
-<td>The name prospect account</td>
-</tr>
-</table>
+describe operation on the prospectAccount API endpoint.
+
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID of the prospect account|
+|&lt;name&gt;|string|X||The name prospect account|
+
 ## Tag
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this tag</td>
-</tr>
-<tr>
-<td>&lt;name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Tag's name</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time tag was created in Pardot; Time is reported in API user's
-        preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time tag was updated; Time is reported in API user's
-        preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this tag|
+|&lt;name&gt;|string|||Tag's name|
+|&lt;created_at&gt;|timestamp|||Time tag was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time tag was updated; Time is reported in API user's        preferred timezone|
+
 
 ## Tag Object
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID of the tag object</td>
-</tr>
-<tr>
-<td>&lt;tag_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>The Pardot ID of the tag</td>
-</tr>
-<tr>
-<td>&lt;type&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>The type of object associated with the tag</td>
-</tr>
-<tr>
-<td>&lt;object_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>The Pardot ID of the object</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time tag was associated with the object in Pardot; Time is reported in API user's
-preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID of the tag object|
+|&lt;tag_id&gt;|integer|||The Pardot ID of the tag|
+|&lt;type&gt;|string|||The type of object associated with the tag|
+|&lt;object_id&gt;|integer|||The Pardot ID of the object|
+|&lt;created_at&gt;|timestamp|||Time tag was associated with the object in Pardot; Time is reported in API user's preferred timezone|
+
 
 ## User
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID of the user</td>
-</tr>
-<tr>
-<td>&lt;email&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>User's email address</td>
-</tr>
-<tr>
-<td>&lt;first_name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>User's first name</td>
-</tr>
-<tr>
-<td>&lt;last_name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>User's last name</td>
-</tr>
-<tr>
-<td>&lt;job_title&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>User's job title</td>
-</tr>
-<tr>
-<td>&lt;role&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>User's role</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time user was created in Pardot; Time is reported in the API
-user's preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time user was updated in Pardot; Time is reported in the
-API user's preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID of the user|
+|&lt;email&gt;|string|||User's email address|
+|&lt;first_name&gt;|string|||User's first name|
+|&lt;last_name&gt;|string|||User's last name|
+|&lt;job_title&gt;|string|||User's job title|
+|&lt;role&gt;|string|||User's role|
+|&lt;created_at&gt;|timestamp|||Time user was created in Pardot; Time is reported in the API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time user was updated in Pardot; Time is reported in the API user's preferred timezone|
+
 
 ## Visit
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for this visit</td>
-</tr>
-<tr>
-<td>&lt;visitor_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for the associated visitor</td>
-</tr>
-<tr>
-<td>&lt;prospect_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for the associated prospect</td>
-</tr>
-<tr>
-<td>&lt;visitor_page_view_count&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Number of page views for this visit</td>
-</tr>
-<tr>
-<td>&lt;first_visitor_page_view_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time of first page view for this visit; Time is reported in API
-user's preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;last_visitor_page_view_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time of last page view for this visit; Time is reported in API
-user's preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;duration_in_seconds&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Length of this visit</td>
-</tr>
-<tr>
-<td>&lt;campaign_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visit's campaign parameter utm_campaign from Google
-Analytics</td>
-</tr>
-<tr>
-<td>&lt;medium_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visit's medium parameter utm_medium from Google Analytics</td>
-</tr>
-<tr>
-<td>&lt;source_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visit's source parameter utm_source from Google Analytics</td>
-</tr>
-<tr>
-<td>&lt;content_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visit's content parameter utm_content from Google
-Analytics</td>
-</tr>
-<tr>
-<td>&lt;term_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visit's term parameter utm_term from Google Analytics</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time visit was created in Pardot; Time is reported in API
-user's preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time visit was updated in Pardot; Time is reported in API
-user's preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|||Pardot ID for this visit|
+|&lt;visitor_id&gt;|integer|||Pardot ID for the associated visitor|
+|&lt;prospect_id&gt;|integer|||Pardot ID for the associated prospect|
+|&lt;visitor_page_view_count&gt;|integer|||Number of page views for this visit|
+|&lt;first_visitor_page_view_at&gt;|timestamp|||Time of first page view for this visit; Time is reported in API user's preferred timezone|
+|&lt;last_visitor_page_view_at&gt;|timestamp|||Time of last page view for this visit; Time is reported in API user's preferred timezone|
+|&lt;duration_in_seconds&gt;|integer|||Length of this visit|
+|&lt;campaign_parameter&gt;|string|||Visit's campaign parameter utm_campaign from Google Analytics|
+|&lt;medium_parameter&gt;|string|||Visit's medium parameter utm_medium from Google Analytics|
+|&lt;source_parameter&gt;|string|||Visit's source parameter utm_source from Google Analytics|
+|&lt;content_parameter&gt;|string|||Visit's content parameter utm_content from Google Analytics|
+|&lt;term_parameter&gt;|string|||Visit's term parameter utm_term from Google Analytics|
+|&lt;created_at&gt;|timestamp|||Time visit was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time visit was updated in Pardot; Time is reported in API user's preferred timezone|
 
 ## Visitor
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this visitor</td>
-</tr>
-<tr>
-<td>&lt;page_view_count&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Number of page views by this visitor</td>
-</tr>
-<tr>
-<td>&lt;ip_address&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's IP address</td>
-</tr>
-<tr>
-<td>&lt;hostname&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's hostname</td>
-</tr>
-<tr>
-<td>&lt;campaign_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's campaign parameter utm_campaign from Google
-Analytics</td>
-</tr>
-<tr>
-<td>&lt;medium_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's medium parameter utm_medium from Google
-Analytics</td>
-</tr>
-<tr>
-<td>&lt;source_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's source parameter utm_source from Google
-Analytics</td>
-</tr>
-<tr>
-<td>&lt;content_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's content parameter utm_content from Google
-Analytics</td>
-</tr>
-<tr>
-<td>&lt;term_parameter&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor's term parameter utm_term from Google Analytics</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time visitor was created in Pardot; Time is reported in API
-user's preferred timezone</td>
-</tr>
-<tr>
-<td>&lt;updated_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Last time visitor was updated in Pardot; Time is reported in
-API user's preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this visitor|
+|&lt;page_view_count&gt;|integer|||Number of page views by this visitor|
+|&lt;ip_address&gt;|string|||Visitor's IP address|
+|&lt;hostname&gt;|string|||Visitor's hostname|
+|&lt;campaign_parameter&gt;|string|||Visitor's campaign parameter utm_campaign from Google Analytics|
+|&lt;medium_parameter&gt;|string|||Visitor's medium parameter utm_medium from Google Analytics|
+|&lt;source_parameter&gt;|string|||Visitor's source parameter utm_source from Google Analytics|
+|&lt;content_parameter&gt;|string|||Visitor's content parameter utm_content from Google Analytics|
+|&lt;term_parameter&gt;|string|||Visitor's term parameter utm_term from Google Analytics|
+|&lt;created_at&gt;|timestamp|||Time visitor was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Last time visitor was updated in Pardot; Time is reported in API user's preferred timezone|
+
 
 ## Visitor Activity
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this visitor activity</td>
-</tr>
-<tr>
-<td>&lt;prospect_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for the associated prospect</td>
-</tr>
-<tr>
-<td>&lt;visitor_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for the associated visitor</td>
-</tr>
-<tr>
-<td>&lt;type&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Visitor activity's type number; See listing below</td>
-</tr>
-<tr>
-<td>&lt;type_name&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Visitor activity's type name; See listing below</td>
-</tr>
-<tr>
-<td>&lt;details&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Details about this visitor activity such as the name of the
-object associated with this activity, the search phrase used in a
-site search query, etc.</td>
-</tr>
-<tr>
-<td>&lt;email_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the email associated with this visitor
-activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has an email associated with it</td>
-</tr>
-<tr>
-<td>&lt;email_template_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the email template associated with this visitor
-activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has an email associated with it</td>
-</tr>
-<tr>
-<td>&lt;list_email_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the list email associated with this visitor
-activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has an email associated with it</td>
-</tr>
-<tr>
-<td>&lt;form_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the form associated with this visitor activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has a form associated with it</td>
-</tr>
-<tr>
-<td>&lt;form_handler_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the form handler associated with this visitor
-activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has a form handler associated with it</td>
-</tr>
-<tr>
-<td>&lt;site_search_query_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the site search query associated with this visitor
-activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has a site search query associated with it</td>
-</tr>
-<tr>
-<td>&lt;landing_page_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the landing page associated with this visitor
-activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has a landing page associated with it</td>
-</tr>
-<tr>
-<td>&lt;paid_search_ad_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the paid search ad associated with this visitor
-activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has a paid search ad associated with it</td>
-</tr>
-<tr>
-<td>&lt;multivariate_test_variation_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the multivariate test variation associated with
-this visitor activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has a multivariate test variation associated with
-it</td>
-</tr>
-<tr>
-<td>&lt;visitor_page_view_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the visitor page view associated with this visitor
-activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has a visitor page view associated with it</td>
-</tr>
-<tr>
-<td>&lt;file_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the file associated with this visitor activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has a file associated with it</td>
-</tr>
-<tr>
-<td>&lt;custom_redirect_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the custom redirect associated with this visitor activity<br>
-<strong><em>Note:</em></strong> This node appears only if this
-visitor activity has a custom redirect associated with it</td>
-</tr>
-<tr>
-<td>&lt;campaign&gt;</td>
-<td>object</td>
-<td></td>
-<td></td>
-<td>Campaign information including id, name, and cost.</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time that visitor activity occurred; Time is reported in API
-user's preferred timezone</td>
-</tr>
-</table>
-<p><a name="visitor-activity-types" id=
-"visitor-activity-types"></a><br>
-Visitor Activities may have the following values for
-<code>&lt;type&gt;</code>:</p>
-<ul>
-<li>1 - Click</li>
-<li>2 - View</li>
-<li>3 - Error</li>
-<li>4 - Success</li>
-<li>5 - Session</li>
-<li>6 - Sent</li>
-<li>7 - Search</li>
-<li>8 - New Opportunity</li>
-<li>9 - Opportunity Won</li>
-<li>10 - Opportunity Lost</li>
-<li>11 - Open</li>
-<li>12 - Unsubscribe Page</li>
-<li>13 - Bounced</li>
-<li>14 - Spam Complaint</li>
-<li>15 - Email Preference Page</li>
-<li>16 - Resubscribed</li>
-<li>17 - Click (Third Party)</li>
-<li>18 - Opportunity Reopened</li>
-<li>19 - Opportunity Linked</li>
-<li>20 - Visit</li>
-<li>21 - Custom URL click</li>
-<li>22 - Olark Chat</li>
-<li>23 - Invited to Webinar</li>
-<li>24 - Attended Webinar</li>
-<li>25 - Registered for Webinar</li>
-<li>26 - Social Post Click</li>
-<li>27 - Video View</li>
-<li>28 - Event Registered</li>
-<li>29 - Event Checked In</li>
-<li>30 - Video Conversion</li>
-<li>31 - UserVoice Suggestion</li>
-<li>32 - UserVoice Comment</li>
-<li>33 - UserVoice Ticket</li>
-<li>34 - Video Watched (≥ 75% watched)</li>
-<li>35 - Indirect Unsubscribe Open</li>
-<li>36 - Indirect Bounce</li>
-<li>37 - Indirect Resubscribed</li>
-<li>38 - Opportunity Unlinked</li>
-<li>Other - Unknown</li>
-</ul>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this visitor activity|
+|&lt;prospect_id&gt;|integer|||Pardot ID for the associated prospect|
+|&lt;visitor_id&gt;|integer|||Pardot ID for the associated visitor|
+|&lt;type&gt;|integer|||Visitor activity's type number; See listing below|
+|&lt;type_name&gt;|string|||Visitor activity's type name; See listing below|
+|&lt;details&gt;|string|||Details about this visitor activity such as the name of the object associated with this activity, the search phrase used in a site search query, etc.|
+|&lt;email_id&gt;|integer|||Pardot ID of the email associated with this visitor activity<br>**Note:** This node appears only if this visitor activity has an email associated with it|
+|&lt;email_template_id&gt;|integer|||Pardot ID of the email template associated with this visitor activity<br>**Note:** This node appears only if this visitor activity has an email associated with it|
+|&lt;list_email_id&gt;|integer|||Pardot ID of the list email associated with this visitor activity<br>**Note:** This node appears only if this visitor activity has an email associated with it|
+|&lt;form_id&gt;|integer|||Pardot ID of the form associated with this visitor activity<br>**Note:** This node appears only if this visitor activity has a form associated with it|
+|&lt;form_handler_id&gt;|integer|||Pardot ID of the form handler associated with this visitor activity<br>**Note:** This node appears only if this visitor activity has a form handler associated with it|
+|&lt;site_search_query_id&gt;|integer|||Pardot ID of the site search query associated with this visitor activity<br>**Note:** This node appears only if this visitor activity has a site search query associated with it|
+|&lt;landing_page_id&gt;|integer|||Pardot ID of the landing page associated with this visitor activity<br>**Note:** This node appears only if this visitor activity has a landing page associated with it|
+|&lt;paid_search_ad_id&gt;|integer|||Pardot ID of the paid search ad associated with this visitor activity <br>**Note:** This node appears only if this visitor activity has a paid search ad associated with it|
+|&lt;multivariate_test_variation_id&gt;|integer|||Pardot ID of the multivariate test variation associated with this visitor activity<br>**Note:** This node appears only if this visitor activity has a multivariate test variation associated with it|
+|&lt;visitor_page_view_id&gt;|integer|||Pardot ID of the visitor page view associated with this visitoractivity<br>**Note:** This node appears only if this visitor activity has a visitor page view associated with it|
+|&lt;file_id&gt;|integer|||Pardot ID of the file associated with this visitor activity<br>**Note:** This node appears only if this visitor activity has a file associated with it|
+|&lt;custom_redirect_id&gt;|integer|||Pardot ID of the custom redirect associated with this visitor activity Note: This node appears only if this visitor activity has a custom redirect associated with it|
+|&lt;campaign&gt;|object|||Campaign information including id, name, and cost.|
+|&lt;created_at&gt;|timestamp|||Time that visitor activity occurred; Time is reported in API user's preferred timezone|
+|&lt;updated_at&gt;|timestamp|||Time that visitor activity update occurred; Time is reported in API user's preferred timezone|
+
+<a name="visitor-activity-types" id="visitor-activity-types"></a>Visitor Activities may have the following values for
+`&lt;type&gt;`:
+
++ 1 - Click
++ 2 - View
++ 3 - Error
++ 4 - Success
++ 5 - Session
++ 6 - Sent
++ 7 - Search
++ 8 - New Opportunity
++ 9 - Opportunity Won
++ 10 - Opportunity Lost
++ 11 - Open
++ 12 - Unsubscribe Page
++ 13 - Bounced
++ 14 - Spam Complaint
++ 15 - Email Preference Page
++ 16 - Resubscribed
++ 17 - Click (Third Party)
++ 18 - Opportunity Reopened
++ 19 - Opportunity Linked
++ 20 - Visit
++ 21 - Custom URL click
++ 22 - Olark Chat
++ 23 - Invited to Webinar
++ 24 - Attended Webinar
++ 25 - Registered for Webinar
++ 26 - Social Post Click
++ 27 - Video View
++ 28 - Event Registered
++ 29 - Event Checked In
++ 30 - Video Conversion
++ 31 - UserVoice Suggestion
++ 32 - UserVoice Comment
++ 33 - UserVoice Ticket
++ 34 - Video Watched (≥ 75% watched)
++ 35 - Indirect Unsubscribe Open
++ 36 - Indirect Bounce
++ 37 - Indirect Resubscribed
++ 38 - Opportunity Unlinked
++ Other - Unknown
+
 
 ## Visitor Page View
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID for this visitor page view</td>
-</tr>
-<tr>
-<td>&lt;url&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Page view URL</td>
-</tr>
-<tr>
-<td>&lt;title&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Page title</td>
-</tr>
-<tr>
-<td>&lt;created_at&gt;</td>
-<td>timestamp</td>
-<td></td>
-<td></td>
-<td>Time page view occurred; Time is reported in API user's
-preferred timezone</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|||Pardot ID for this visitor page view|
+|&lt;url&gt;|string|||Page view URL|
+|&lt;title&gt;|string|||Page title|
+|&lt;created_at&gt;|timestamp|||Time page view occurred; Time is reported in API user's preferred timezone|
 
 ## Visitor Referrer
 
-<table>
-<tr>
-<td><strong>Field Name&nbsp;</strong></td>
-<td><strong>Data Type&nbsp;</strong></td>
-<td><strong>Required&nbsp;</strong></td>
-<td><strong>Editable&nbsp;</strong></td>
-<td><strong>Description&nbsp;</strong></td>
-</tr>
-<tr>
-<td>&lt;id&gt;</td>
-<td>integer</td>
-<td>X</td>
-<td></td>
-<td>Pardot ID for this visitor referrer</td>
-</tr>
-<tr>
-<td>&lt;referrer&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Referrer's URL</td>
-</tr>
-<tr>
-<td>&lt;vendor&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Referrer's vendor (such as 'Google' or 'Yahoo')</td>
-</tr>
-<tr>
-<td>&lt;type&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Referrer's type (such as 'Natural Search')</td>
-</tr>
-<tr>
-<td>&lt;query&gt;</td>
-<td>string</td>
-<td></td>
-<td></td>
-<td>Referrer's search query</td>
-</tr>
-</table>
+|Field Name|Data Type|Required|Editable|Description|
+|--- |--- |--- |--- |--- |
+|&lt;id&gt;|integer|X||Pardot ID for this visitor referrer|
+|&lt;referrer&gt;|string|||Referrer's URL|
+|&lt;vendor&gt;|string|||Referrer's vendor (such as 'Google' or 'Yahoo')|
+|&lt;type&gt;|string|||Referrer's type (such as 'Natural Search')|
+|&lt;query&gt;|string|||Referrer's search query|
