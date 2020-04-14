@@ -301,6 +301,9 @@ class SamplePardotApiClient
         return [$httpCode, $rsp];
     }
 
+    /**
+     * Use Pardot API using Api Key and User Key.
+     */
     public function executeRequestsWithApiKeys()
     {
         // Setup user credentials
@@ -332,6 +335,10 @@ class SamplePardotApiClient
         );
     }
 
+    /**
+     * Use Pardot API with a SSO user.
+     * Getting the access token and using that to use the Pardot API.
+     */
     public function executeRequestsWithSalesforceOAuth()
     {
         // Setup user credentials
