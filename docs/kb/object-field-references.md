@@ -374,7 +374,7 @@ describe operation on the prospectAccount API endpoint.
 |&lt;updated_at&gt;|timestamp|||Time that visitor activity update occurred; Time is reported in API user's preferred timezone|
 
 <a name="visitor-activity-types" id="visitor-activity-types"></a>Visitor Activities may have the following values for
-`&lt;type&lt;`:
+<code>&lt;type&gt;</code>
 
 + 1 - Click
 + 2 - View
