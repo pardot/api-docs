@@ -21,7 +21,7 @@ The Pardot API allows your application to access current data within Pardot. Thr
 *   `update` -- Updates elements of an existing object.
 *   `upsert` -- Updates elements of an existing object if it exists.  If the object does not exist, one is created using the supplied parameters.
 
-Developers must authenticate with the API before issuing requests.  Refer to the [Authentication](kb/authentication) section for details about this procedure.
+Developers must authenticate using a Salesforce OAuth endpoint or the Pardot API login endpoint before issuing Pardot API requests. Refer to the [Authentication](kb/authentication) section for details about this procedure.
 
 Some considerations must be taken while performing requests. When performing `update` requests, only the fields specified in the request are updated, and all others are left unchanged. If a required field is cleared during an `update`, the request will be declined.
 
@@ -30,18 +30,19 @@ Some considerations must be taken while performing requests. When performing `up
 All requests to the API:
 
 * Must use either HTTP `GET` or `POST`
-* Must pass credentials in an HTTP `Authorization` header
+* Must pass access token or user key and api key in an HTTP `Authorization` header.
+* Must pass Pardot Business Unit ID in an HTTP `Pardot-Business-Unit-Id` header if using Salesforce OAuth to authenticate.
 
 #### Sample GET Request
 
-##### With User Key and API Key
+##### With User Key and API Key (obtained through Pardot API login endpoint)
 
 ```
 GET https://pi.pardot.com/api/<object>/version/3/do/<op>/<id_field>/<id>?<params> HTTP/1.1
 Authorization: Pardot api_key=<your_api_key>, user_key=<your_user_key>
 ```
 
-##### With Salesforce OAuth
+##### With Salesforce OAuth Access Token (obtained through Salesforce OAuth endpoint)
 
 ```
 GET https://pi.pardot.com/api/<object>/version/3/do/<op>/<id_field>/<id>?<params> HTTP/1.1

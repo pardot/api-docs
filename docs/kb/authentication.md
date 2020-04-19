@@ -1,15 +1,18 @@
 # Authentication
 
+When accessing the Pardot API with an SSO enabled user (including users synced from Salesforce), you must use a Salesforce OAuth endpoint for authentication. When accessing the Pardot API with a Pardot-only user (created within Pardot and not synced to Salesforce), you must use the Pardot API login endpoint for authentication. These options are described below.
+
 ## Via Salesforce OAuth
 
 Prerequisites:
 
-1. Must have [Salesforce OAuth setup](https://developer.salesforce.com/docs/atlas.en-us.api_streaming.meta/api_streaming/code_sample_auth_oauth.htm) in the org.
-2. Should have the Pardot Business Unit ID with which you are trying to authenticate with. [Pardot Business Unit ID](https://login.salesforce.com/lightning/setup/PardotAccountSetup/home) can be found here for your org.
+1. Must have [Salesforce OAuth setup](https://developer.salesforce.com/docs/atlas.en-us.api_streaming.meta/api_streaming/code_sample_auth_oauth.htm) in the org. When setting up a connected app for OAuth, the "pardot_api" scope must be one of the selected OAuth scopes. Without this, OAuth flows other than username/password flow will not be usable with the Pardot API.
+
+2. Must have the Pardot Business Unit ID with which you are trying to authenticate with. [Pardot Business Unit ID](https://login.salesforce.com/lightning/setup/PardotAccountSetup/home) can be found here for your org.
 
 ### Obtain Salesforce Access Token
 
-To use Pardot API with an SSO user, you must first get a salesforce access token.
+To use Pardot API with an SSO user, you must first get a salesforce access token. The example below uses the username/password OAuth flow to obtain an access token for simplicity. Any OAuth flow may be used to obtain an access token. In many use cases, other OAuth flows are more appropriate than username/password flow. For example, a web app with user interaction would likely use either user agent flow or web server flow. See [Salesforce OAuth setup](https://developer.salesforce.com/docs/atlas.en-us.api_streaming.meta/api_streaming/code_sample_auth_oauth.htm) for details.
 
 #### Sample POST Request for OAuth Token
 
@@ -33,11 +36,11 @@ password=<password>
 | `username`	 | X              | The email address of the SSO user account 					 |
 | `password`	 | X              | The password of the SSO user account 						 |
 
-If authentication was successful, a access token will be returned.
+If authentication was successful, a access token will be returned. See [Salesforce OAuth documentation](https://developer.salesforce.com/docs/atlas.en-us.api_streaming.meta/api_streaming/code_sample_auth_oauth.htm) for the response format.
 
 ### Using Access Token with Pardot
 
-Once you have the access token and the Pardot business Unit ID, both of these can be used to call any endpoint within Pardot.
+Once you have obtained the access token, you must pass it and the Pardot Business Unit ID using the `Authorization` and `Pardot-Business-Unit-Id` headers.
 
 #### Sample Request
 
@@ -58,7 +61,7 @@ Pardot-Business-Unit-Id: <business_unit_id>
 
 If a valid access token if provided with a valid business unit ID, the Pardot endpoint should work as expected. 
 
-## Via API Keys
+## Via Pardot API login endpoint
 
 ### Request Format
 
@@ -92,7 +95,7 @@ email=<email>&password=<password>&user_key=<user_key>
 | `password`    | X              | The password of your user account                            |
 | `user_key`    | X              | The 32-character hexadecimal user key for your user account  |
 
-If authentication was successful, a 32-character hexadecimal API key will be returned in the following format:
+If authentication was successful, an API key will be returned in the following format:
 
 ```
 <rsp stat="ok" version="1.0">
