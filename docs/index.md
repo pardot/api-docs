@@ -31,7 +31,7 @@ All requests to the API:
 
 * Must use either HTTP `GET` or `POST`
 * Must pass access token or user key and api key in an HTTP `Authorization` header.
-* Must pass Pardot Business Unit ID in an HTTP `Pardot-Business-Unit-Id` header if using Salesforce OAuth to authenticate.
+* Must pass Pardot Business Unit ID in an HTTP `Pardot-Business-Unit-Id` header if using an access token (obtained using Salesforce OAuth) to authenticate.
 
 #### Sample GET Request
 

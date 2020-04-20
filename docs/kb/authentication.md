@@ -6,13 +6,13 @@ When accessing the Pardot API with an SSO enabled user (including users synced f
 
 Prerequisites:
 
-1. Must have [Salesforce OAuth setup](https://developer.salesforce.com/docs/atlas.en-us.api_streaming.meta/api_streaming/code_sample_auth_oauth.htm) in the org. When setting up a connected app for OAuth, the "pardot_api" scope must be one of the selected OAuth scopes. Without this, OAuth flows other than username/password flow will not be usable with the Pardot API.
+1. Must have [Salesforce OAuth setup](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm) in the org. When setting up a connected app for OAuth, the "pardot_api" scope must be one of the selected OAuth scopes. Without this, OAuth flows other than username/password flow will not be usable with the Pardot API.
 
 2. Must have the Pardot Business Unit ID with which you are trying to authenticate with. [Pardot Business Unit ID](https://login.salesforce.com/lightning/setup/PardotAccountSetup/home) can be found here for your org.
 
 ### Obtain Salesforce Access Token
 
-To use Pardot API with an SSO user, you must first get a salesforce access token. The example below uses the username/password OAuth flow to obtain an access token for simplicity. Any OAuth flow may be used to obtain an access token. In many use cases, other OAuth flows are more appropriate than username/password flow. For example, a web app with user interaction would likely use either user agent flow or web server flow. See [Salesforce OAuth setup](https://developer.salesforce.com/docs/atlas.en-us.api_streaming.meta/api_streaming/code_sample_auth_oauth.htm) for details.
+To use Pardot API with an SSO user, you must first get a salesforce access token. The example below uses the username/password OAuth flow to obtain an access token for simplicity. Any OAuth flow may be used to obtain an access token. In many use cases, other OAuth flows are more appropriate than username/password flow. For example, a web app with user interaction would likely use either user agent flow or web server flow. See [Salesforce OAuth setup](https://help.salesforce.com/articleView?id=remoteaccess_oauth_flows.htm) for details.
 
 #### Sample POST Request for OAuth Token
 
@@ -36,7 +36,7 @@ password=<password>
 | `username`	 | X              | The email address of the SSO user account 					 |
 | `password`	 | X              | The password of the SSO user account 						 |
 
-If authentication was successful, a access token will be returned. See [Salesforce OAuth documentation](https://developer.salesforce.com/docs/atlas.en-us.api_streaming.meta/api_streaming/code_sample_auth_oauth.htm) for the response format.
+If authentication was successful, an access token will be returned. See [Salesforce OAuth documentation](https://help.salesforce.com/articleView?id=remoteaccess_oauth_username_password_flow.htm) for the response format.
 
 ### Using Access Token with Pardot
 
