@@ -267,7 +267,7 @@ Used by administrators to retrieve a list of imports and their status. A user mu
 * **created_before**: (Optional) Filters the results to return only imports that were created before the specified time.
 * **updated_after**: (Optional) Filters the results to return only imports that were updated after the specified time.
 * **updated_before**: (Optional) Filters the results to return only imports that were updated before the specified time.
-* **status**: (Optional) Filters the results to return imports in the given state. Allowed values are those of the [Import State](#import-state) enum.
+* **status**: (Optional) Filters the results to return imports in the given state. Allowed values are those of the [Import State](#import-state) enum. If it is not specified, all statuses are returned. 
 * **origin**: (Optional) Filters the result to return only imports initiated from the wizard or through the api, or both, The possible values are: "ui", "api", "all"
 * **sort_by**: (Optional) Sorts the results by the specified property value. Allowed values are "id", "created_at", or "updated_at". If not specified, the results are sorted by "created_at".
 * **sort_order**: (Optional) Used with `sort_by`. Adjusts the direction of the sort using the values "ascending" or "descending". If not specified, the results are in "descending" order.
