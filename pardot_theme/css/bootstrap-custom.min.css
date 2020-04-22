@@ -1,30 +1,30 @@
 @font-face {
     font-family: 'Proxima Nova';
-    src: url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-reg-webfont.eot');
-    src: url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-reg-webfont.eot?#iefix') format('embedded-opentype'),
-    url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-reg-webfont.woff') format('woff'),
-    url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-reg-webfont.ttf') format('truetype'),
-    url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-reg-webfont.svg#ProximaNovaRegular') format('svg');
+    src: url('../fonts/ProximaNova-Regular.eot?v=4.0.3');
+    src: url('../fonts/ProximaNova-Regular.eot?#iefix&v=4.0.3') format('embedded-opentype'),
+    url('../fonts/ProximaNova-Regular.woff?v=4.0.3') format('woff'),
+    url('../fonts/ProximaNova-Regular.ttf?v=4.0.3') format('truetype'),
+    url('../fonts/ProximaNova-Regular.svg?v=4.0.3#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'ProximaNovaLight';
-    src: url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-light-webfont.eot');
-    src: url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
-    url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-light-webfont.woff') format('woff'),
-    url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-light-webfont.ttf') format('truetype'),
-    url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-light-webfont.svg#ProximaNovaLight') format('svg');
+    src: url('../fonts/ProximaNova-Light.eot?v=4.0.3');
+    src: url('../fonts/ProximaNova-Light.eot?#iefix&v=4.0.3') format('embedded-opentype'),
+    url('../fonts/ProximaNova-Light.woff?v=4.0.3') format('woff'),
+    url('../fonts/ProximaNova-Light.ttf?v=4.0.3') format('truetype'),
+    url('../fonts/ProximaNova-Light.svg?v=4.0.3#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'ProximaNovaSemiBold';
-    src: url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-sbold-webfont.eot');
-    src: url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-sbold-webfont.eot?#iefix') format('embedded-opentype'),
-    url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-sbold-webfont.woff') format('woff'),
-    url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-sbold-webfont.ttf') format('truetype'),
-    url('http://www.sfdcstatic.com/cdn/fonts/ProximaNova/proximanova-sbold-webfont.svg#ProximaNovaSemiBold') format('svg');
+    src: url('../fonts/ProximaNova-Semibold.eot?v=4.0.3');
+    src: url('../fonts/ProximaNova-Semibold.eot?#iefix&v=4.0.3') format('embedded-opentype'),
+    url('../fonts/ProximaNova-Semibold.woff?v=4.0.3') format('woff'),
+    url('../fonts/ProximaNova-Semibold.ttf?v=4.0.3') format('truetype'),
+    url('../fonts/ProximaNova-Semibold.svg?v=4.0.3#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
