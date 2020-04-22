@@ -77,7 +77,79 @@ Retrieves all visitor activity records with a `created_at` value that is equal o
 * **type**: (Optional) Selects visitor activities of the specified types. If this argument is not specified, then all of the visitor activities belonging to any type is returned. See a list of available [Visitor Activity Types](../object-field-references.md#visitor-activity-types) in [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md).
 * **prospectOnly**: (Optional) Selects only those visitor activities associated with a prospect. When this field is set to `false`, all visitor activities with and without a prospect are returned. The values can be `true` or `false`.
 
-__NOTE:__ The range between created_after and created_before cannot exceed 1 year. When created_before is not specified, the current date is used to gauge the interval.
+## List Membership
+
+### filter_by_created_at
+
+Retrieves all list membership records with a `created_at` value that is equal or greater than the `created_after` argument and less than or equal to the `created_before` argument.
+
+#### Abilities
+
+| Action           | Requirements  |
+| ---------------- | ------------- |
+| Create export    | Marketing > Segmentation > Lists > View ability `and` Prospects > Visitors > View ability |
+| View export      | Marketing > Segmentation > Lists > View ability `and` Prospects > Visitors > View ability and ability `and` be the same user that created the export |
+| View all exports | Admin > Exports > View ability |
+| Query exports    | Admin > Exports > View ability |
+
+
+To create an export with this procedure, the user must have the following:
+
+* “Marketing > Segmentation > Lists > View“ ability AND
+* “Prospects > Visitors > View“ ability
+
+To view an export with this procedure, the user must have the following:
+
+* “Marketing > Segmentation > Lists > View“ ability AND
+* “Prospects > Visitors > View“ ability AND
+* The user must be the same as the user that created the export
+
+OR
+
+* “Admin > Exports > View”
+
+#### Arguments
+
+* **created_after**: Selects list membership that were created after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **created_before**: (Optional) Selects list membership that were created before the specified time. This value must be after the value in `created_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `created_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **deleted**: (Optional) Selects list membership based on if it is deleted or not. The value can be `true`, `false`, or `all`.
+
+### filter_by_updated_at
+
+Retrieves all list membership records with a `updated_at` value that is equal or greater than the `updated_after` argument and less than or equal to the `updated_before` argument.
+
+#### Abilities
+
+| Action           | Requirements  |
+| ---------------- | ------------- |
+| Create export    | Marketing > Segmentation > Lists > View ability `and` Prospects > Visitors > View ability |
+| View export      | Marketing > Segmentation > Lists > View ability `and` Prospects > Visitors > View ability and ability `and` be the same user that created the export |
+| View all exports | Admin > Exports > View ability |
+| Query exports    | Admin > Exports > View ability |
+
+
+To create an export with this procedure, the user must have the following:
+
+* “Marketing > Segmentation > Lists > View“ ability AND
+* “Prospects > Visitors > View“ ability
+
+To view an export with this procedure, the user must have the following:
+
+* “Marketing > Segmentation > Lists > View“ ability AND
+* “Prospects > Visitors > View“ ability AND
+* The user must be the same as the user that created the export
+
+OR
+
+* “Admin > Exports > View”
+
+#### Arguments
+
+* **updated_after**: Selects list membership that were created after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **updated_before**: (Optional) Selects list membership that were created before the specified time. This value must be after the value in `updated_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `updated_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **deleted**: (Optional) Selects list membership based on if it is deleted or not. The value can be `true`, `false`, or `all`.
+
+__NOTE:__ The range between created_after and created_before or updated_after and updated_before cannot exceed 1 year. When created_before is not specified, the current date is used to gauge the interval.
 
 ### filter_by_updated_at
 
