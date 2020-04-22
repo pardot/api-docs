@@ -66,9 +66,9 @@ This document assumes that you're already familiar with connecting to the Pardot
 ---
 
 # Create
-
+```
 /api/import/version/4/do/create
-
+```
 Used to create a new asynchronous import. If a batch of import data is included in this request, the import can be submitted for processing as part of this operation. Otherwise one or more batches must be created and associated with this import using the do/batch endpoint and the import must be submitted for processing with the do/update endpoint.
 
 ## POST
@@ -134,9 +134,9 @@ A single part with the name "**importFile**" should contain the CSV file for the
 ---
 
 # Add Batch
-
+```
 /api/import/version/4/do/batch/id/{id}
-
+```
 Allows adding batches of data to an existing import when in the "Open" state.
 
 ## POST
@@ -165,9 +165,9 @@ Column names must match [Field Names](http://developer.pardot.com/kb/object-fiel
 ---
 
 # Update
-
+```
 /api/import/version/4/do/update/id/{id}
-
+```
 Used to submit the import by changing the state to "Ready". After this no more batches of data can be added to the import and processing of the import will begin.
 
 ## PATCH
@@ -206,9 +206,9 @@ ContentType: application/json
 ---
 
 # Read
-
+```
 /api/import/version/4/do/read/id/{id}
-
+```
 Returns the current state of the import. If processing is complete, the output provides path to the results of the operation along with any statistics about the operation.
 
 ## GET
@@ -267,7 +267,7 @@ Used by administrators to retrieve a list of imports and their status. A user mu
 * **created_before**: (Optional) Filters the results to return only imports that were created before the specified time.
 * **updated_after**: (Optional) Filters the results to return only imports that were updated after the specified time.
 * **updated_before**: (Optional) Filters the results to return only imports that were updated before the specified time.
-* **status**: (Optional) Filters the results to return imports in the given state. Allowed values are those of the [Import State](#import-state) enum. If it is not specified, all statuses are returned. 
+* **status**: (Optional) Filters the results to return imports in the given state. Allowed values are those of the [Import State](#import-state) enum. If it is not specified, all statuses are returned.
 * **origin**: (Optional) Filters the result to return only imports initiated from the wizard or through the api, or both, The possible values are: "ui", "api", "all"
 * **sort_by**: (Optional) Sorts the results by the specified property value. Allowed values are "id", "created_at", or "updated_at". If not specified, the results are sorted by "created_at".
 * **sort_order**: (Optional) Used with `sort_by`. Adjusts the direction of the sort using the values "ascending" or "descending". If not specified, the results are in "descending" order.
@@ -320,9 +320,9 @@ Note that the import representation returned in query doesn’t contain `resultR
 ---
 
 # Download Errors
-
+```
 /api/import/version/4/do/downloadErrors/id/{id}
-
+```
 Download errors associated with the specified import (after it is complete).
 
 ## GET
@@ -359,3 +359,7 @@ CSV data with error info for any rows that failed to result in inserts or update
 ## Object
 
 * "Prospect" : Operate on Prospect
+
+## Import Origin
+* "UI"               : The import request was initiated through the wizard
+* "API"              : The import request was initiated through an api call
