@@ -12,6 +12,7 @@ theme:
 nav:
     - Overview: 'index.md'
     - API:
+        - 'Authentication': 'kb/authentication.md'
         - 'Release Notes': 'kb/release-notes.md'
         - 'Version 4': 'kb/api-version-4.md'
         - 'Object Field References': 'kb/object-field-references.md'
