@@ -177,6 +177,46 @@ Retrieves all visitor activity records with an `updated_at` value that is equal 
 
 __NOTE:__ The range between updated_after and updated_before cannot exceed 1 year. When updated_before is not specified, the current date is used to gauge the interval.
 
+## Prospect
+
+### Fields
+
+Select the prospect fields that need to be exported. [Following](../../object-field-references/#prospect) are the fields that are available for prospect. The value for `fields` must be an array of strings of the available fields. 
+
+### filter_by_updated_at
+
+Retrieves all prospect records with a `updated_at` value that is equal or greater than the `updated_after` argument and less than or equal to the `updated_before` argument.
+
+#### Abilities
+
+| Action           | Requirements  |
+| ---------------- | ------------- |
+| Create export    | Prospects > Visitors > View ability |
+| View export      | Prospects > Visitors > View ability and be the same user that created the export |
+| View all exports | Admin > Exports > View ability |
+| Query exports    | Admin > Exports > View ability |
+
+To create an export with this procedure, the user must have the following:
+
+* “Prospects > Visitors > View“ ability
+
+To view an export with this procedure, the user must have the following:
+
+* “Prospects > Visitors > View“ ability AND
+* The user must be the same as the user that created the export
+
+OR
+
+* “Admin > Exports > View”
+
+#### Arguments
+
+* **updated_after**: Selects prospects that were updated after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **updated_before**: (Optional) Selects prospects that were created before the specified time. This value must be after the value in `updated_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `updated_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **deleted**: Includes deleted prospects. This argument must be set to `all`. Both deleted and not deleted prospects are returned.
+
+__NOTE:__ The range between updated_after and updated_before cannot exceed 1 year. When updated_before is not specified, the current date is used to gauge the interval.
+
 # Using the Export API
 
 ---
