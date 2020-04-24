@@ -165,24 +165,11 @@ OR
 
 __NOTE:__ The range between created_after and created_before or updated_after and updated_before cannot exceed 1 year. When created_before is not specified, the current date is used to gauge the interval.
 
-### filter_by_updated_at
-
-Retrieves all visitor activity records with an `updated_at` value that is equal or greater than the `updated_after` argument and less than or equal to the `updated_before` argument.
-
-#### Arguments
-
-* **updated_after**: Selects visitor activities that were updated after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
-* **updated_before**: (Optional) Selects visitor activities that were updated before the specified time. This value must be after the value in `updated_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `updated_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
-* **type**: (Optional) Selects visitor activities of the specified types. If this argument is not specified, then all of the visitor activities belonging to any type is returned. See a list of available [Visitor Activity Types](../object-field-references.md#visitor-activity-types) in [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md).
-* **prospectOnly**: (Optional) Selects only those visitor activities associated with a prospect. When this field is set to `false`, all visitor activities with and without a prospect are returned. The values can be `true` or `false`.
-
-__NOTE:__ The range between updated_after and updated_before cannot exceed 1 year. When updated_before is not specified, the current date is used to gauge the interval.
-
 ## Prospect
 
 ### Fields
 
-Select the prospect fields that need to be exported. [Following](../../object-field-references/#prospect) are the fields that are available for prospect. The value for `fields` must be an array of strings of the available fields. 
+Select the prospect fields that need to be exported. [Following](../../object-field-references/#prospect) are the fields that are available for prospect. The value for `fields` must be an array of strings of the available fields.
 
 ### filter_by_updated_at
 
@@ -214,7 +201,7 @@ OR
 
 * **updated_after**: Selects prospects that were updated after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
 * **updated_before**: (Optional) Selects prospects that were created before the specified time. This value must be after the value in `updated_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `updated_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
-* **deleted**: Includes deleted prospects. This argument must be set to `all`. Both deleted and not deleted prospects are returned. 
+* **deleted**: Includes deleted prospects. This argument must be set to `all`. Both deleted and not deleted prospects are returned.
 
 __NOTE:__ The range between updated_after and updated_before cannot exceed 1 year. When updated_before is not specified, the current date is used to gauge the interval.
 
