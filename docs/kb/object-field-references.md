@@ -3,8 +3,8 @@
 Each field returned by the API maps to a field within the Pardot user interface. The tables in this section list all fields that can be returned and/or updated via the API. Consider the following limitations:
 
 + Fields marked as 'Editable' can be manipulated through `create`, `update`, and `upsert` requests.
-+ 'Required' denotes that the specified field cannot be left without a value during `insert` and some `upsert` requests. `update` requests that clear a required field will be declined.
-* During `update` requests, the parameter names submitted to the API and tag names in the API's response will match field names within the Pardot user interface unless otherwise specified.
++ 'Required' denotes that the specified field can't be left without a value during `insert` and some `upsert` requests. `update` requests that clear a required field are declined.
+* During `update` requests, the parameter names submitted to the API and tag names in the API's response match field names within the Pardot user interface unless otherwise specified.
 
 
 ## Account
@@ -45,11 +45,11 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;field_id&gt;|string|||API ID for custom field|
 |&lt;type&gt;|string||X|type of field|
 |&lt;type_id&gt;|integer|||Pardot ID for custom field's type|
-|&lt;created_at&gt;|timestamp|||Time custom field was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time custom field is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time custom field was updated; Time is reported in API user's preferred timezone|
 |&lt;is_record_multiple_responses&gt;|boolean||X|If true, this custom field will record multiple responses|
-|&lt;crm_id&gt;|string||X|The CRM ID of the field you would like to map to this custom field|
-|&lt;is_use_values&gt;|boolean||X|If true, this custom field will use predefined values|
+|&lt;crm_id&gt;|string||X|The CRM ID of the field you want to map to this custom field|
+|&lt;is_use_values&gt;|boolean||X|If true, this custom field uses predefined values|
 
 
 ## Custom Redirect
@@ -61,7 +61,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;Url&gt;|string|||URL for the custom redirect|
 |&lt;destination&gt;|string|||URL the custom redirect leads to|
 |&lt;campaign&gt;|string|||The campaign associated with this custom redirect|
-|&lt;created_at&gt;|timestamp|||Time custom redirect was created in Pardot; Time is reported in API user's  preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time custom redirect is created in Pardot; Time is reported in API user's  preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time custom redirect was updated; Time is reported in API user's preferred timezone|
 
 
@@ -76,7 +76,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;baseContent&gt;|string|||The default dynamic content|
 |&lt;basedOn&gt;|string|||Field that this dynamic content is based on|
 |&lt;variation&gt;|node|||The variation of content prospect will see based on the field's value<br>**Note:** Information about a variation is returned in a &lt;variation&gt; node in the XML response.  It contains the value of the field in the &lt;comparison&gt; tag and the content of the variation in the &lt;content&gt; tag|
-|&lt;created_at&gt;|timestamp|||Time dynamic content was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time dynamic content is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time dynamic content was updated; Time is reported in API user's preferred timezone|
 
 
@@ -88,7 +88,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;name&gt;|string|||Name of this email|
 |&lt;subject&gt;|string|||Email Subject|
 |&lt;message&gt;|XML Object|||Contains text and html elements of different formats|
-|&lt;created_at&gt;|Timestamp|||Time the Email Was Created|
+|&lt;created_at&gt;|Timestamp|||Time the Email is created|
 
 
 
@@ -103,7 +103,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;drip_program_action_id&gt;|integer|||Pardot ID for the associated drip program action. Value not present if null.|
 |&lt;email_template_id&gt;|integer|||Pardot ID for the associated email template. Value not present if null.|
 |&lt;tracker_redirect_id&gt;|integer|||Pardot ID for the associated tracker redirect. Value not present if null.|
-|&lt;created_at&gt;|timestamp|||Time that email click occurred; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time that email click occurs; Time is reported in API user's preferred timezone|
 
 
 ## Form
@@ -114,7 +114,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;name&gt;|string|||Form's name|
 |&lt;campaign_id&gt;|string|||Pardot ID of the campaign associated with this form|
 |&lt;embed_code&gt;|string|||The code used to embed the form on your webpage|
-|&lt;created_at&gt;|timestamp|||Time form was created in Pardot; Time is reported in API user's    preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time form is created in Pardot; Time is reported in API user's    preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time form was updated; Time is reported in API user's    preferred timezone|
 
 
@@ -138,10 +138,10 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |--- |--- |--- |--- |--- |
 |&lt;id&gt;|integer|X||Pardot ID of this lifecycle history|
 |&lt;prospect_id&gt;|integer|||Pardot's ID for the prospect in this stage|
-|&lt;previous_stage_id&gt;|integer|||Pardot ID of the stage this prospect was previously in|
-|&lt;next_stage_id&gt;|integer|||Pardot ID of the stage this prospect will be in next|
+|&lt;previous_stage_id&gt;|integer|||Pardot ID of the stage this prospect previously was in|
+|&lt;next_stage_id&gt;|integer|||Pardot ID of the stage this prospect is in next|
 |&lt;seconds_elapsed&gt;|integer|||Number of seconds for prospect to get to current stage|
-|&lt;created_at&gt;|timestamp|||Time lifecycle history was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time lifecycle history is created in Pardot; Time is reported in API user's preferred timezone|
 
 
 ## Lifecycle Stage
@@ -164,8 +164,8 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;is_dynamic&gt;|boolean|||If true, list has prospects dynamically added to it via a set of chosen rules|
 |&lt;title&gt;|string||X|List's title (visible to subscribers)|
 |&lt;description&gt;|string||X|List's description|
-|&lt;is_crm_visible&gt;|boolean||X|If true, list will be visible in CRM to add or remove from|
-|&lt;created_at&gt;|timestamp|||Time list was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;is_crm_visible&gt;|boolean||X|If true, list is visible in CRM to add or remove from|
+|&lt;created_at&gt;|timestamp|||Time list is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time list was updated; Time is reported in API user's preferred timezone|
 
 
@@ -177,7 +177,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;list_id&gt;|integer|X||Pardot ID of the list for this membership|
 |&lt;prospect_id&gt;|integer|X||Pardot ID of the prospect for this membership|
 |&lt;opted_out&gt;|integer||X|If value is 1, the prospect is unsubscribed from receiving emails from this list|
-|&lt;created_at&gt;|timestamp|||Time that this membership was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time that this membership is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time that this membership was updated; Time is reported in API user's preferred timezone|
 
 ## Opportunity
@@ -185,15 +185,15 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |Field Name|Data Type|Required|Editable|Description|
 |--- |--- |--- |--- |--- |
 |&lt;id&gt;|integer|X||Pardot ID for this opportunity|
-|&lt;campaign_id&gt;|integer|X|X|Pardot ID of the campaign associated with this opportunity<br>**Note**: Information about an opportunity's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are done by providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt; request. See [XML Response Formats](/kb/api-version-4/opportunities#xml-response-formats) in [Using Opportunities](/kb/api-version-4/opportunities#using-opportunities) for more details.|
+|&lt;campaign_id&gt;|integer|X|X|Pardot ID of the campaign associated with this opportunity<br>**Note**: Information about an opportunity's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are made by providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt; request. See [XML Response Formats](/kb/api-version-4/opportunities#xml-response-formats) in [Using Opportunities](/kb/api-version-4/opportunities#using-opportunities) for more details.|
 |&lt;name&gt;|string|X|X|Opportunity's name|
 |&lt;value&gt;|float|X|X|Opportunity's value <br>**Restrictions**: value must be a positive numeric value|
 |&lt;probability&gt;|integer|X|X|Opportunity's probability <br>**Restrictions**: value must be a positive numeric value between 0 and 100 inclusive|
 |&lt;type&gt;|string||X|Opportunity's type|
 |&lt;stage&gt;|string||X|Opportunity's stage|
 |&lt;status&gt;|string||X|Opportunity's status <br>**Restrictions**: status must be either won, lost, or open|
-|&lt;closed_at&gt;|timestamp||X|Opportunity's closed date<br>**Note**: if this is left blank, the closed_at timestamp (Closed Date within the app) will not be set, even when the Opportunity's stage, status or probability are set to indicate opportunity closure|
-|&lt;created_at&gt;|timestamp|||Time opportunity was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;closed_at&gt;|timestamp||X|Opportunity's closed date<br>**Note**: if this is left blank, the closed_at timestamp (Closed Date within the app) is not set, even when the Opportunity's stage, status or probability are set to indicate opportunity closure|
+|&lt;created_at&gt;|timestamp|||Time opportunity is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time opportunity was updated in Pardot; Time is reported in API user's preferred timezone|
 
 
@@ -211,7 +211,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |--- |--- |--- |--- |--- |
 |&lt;id&gt;|integer|X||Pardot ID for this profile criteria|
 |&lt;name&gt;|string|||Profile criteria's name|
-|&lt;matches&gt;|string||X|The matching status of this profile criteria with the current prospect<br>**Restrictions:** Updates may be performed by using the values match, nomatch, or unknown|
+|&lt;matches&gt;|string||X|The matching status of this profile criteria with the current prospect<br>**Restrictions:** Updates can be performed by using the values match, nomatch, or unknown|
 
 
 ## Prospect
@@ -219,7 +219,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |Field Name|Data Type|Required|Editable|Description|
 |--- |--- |--- |--- |--- |
 |&lt;id&gt;|integer|X||Pardot ID for this prospect|
-|&lt;campaign_id&gt;|integer||X|Pardot ID of the campaign associated with this prospect<br>**Note**: Information about a prospect's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are done by providing campaign_id=&lt;campaign_id&gt; during an &lt;UPDATE&gt; request. See [XML Response Formats](/kb/api-version-4/prospects/#xml-response-format) in [Using Prospects](/kb/api-version-4/prospects#using-prospects) for more details.|
+|&lt;campaign_id&gt;|integer||X|Pardot ID of the campaign associated with this prospect<br>**Note**: Information about a prospect's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are made by providing campaign_id=&lt;campaign_id&gt; during an &lt;UPDATE&gt; request. See [XML Response Formats](/kb/api-version-4/prospects/#xml-response-format) in [Using Prospects](/kb/api-version-4/prospects#using-prospects) for more details.|
 |&lt;salutation&gt;|string||X|Prospect's formal prefix|
 |&lt;first_name&gt;|string||X|Prospect's first name|
 |&lt;last_name&gt;|string||X|Prospect's last name|
@@ -261,7 +261,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;opted_out&gt;|boolean|||If value is 1, prospect has opted out of marketing communications|
 |&lt;is_reviewed&gt;|boolean||X|If value is 1, prospect has been reviewed|
 |&lt;is_starred&gt;|boolean||X|If value is 1, prospect has been starred|
-|&lt;created_at&gt;|timestamp|||Time prospect was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time prospect is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time prospect was updated in Pardot; Time is reported in API user's preferred timezone|
 
 
@@ -282,7 +282,7 @@ describe operation on the prospectAccount API endpoint.
 |--- |--- |--- |--- |--- |
 |&lt;id&gt;|integer|X||Pardot ID for this tag|
 |&lt;name&gt;|string|||Tag's name|
-|&lt;created_at&gt;|timestamp|||Time tag was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time tag is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time tag was updated; Time is reported in API user's        preferred timezone|
 
 
@@ -294,7 +294,7 @@ describe operation on the prospectAccount API endpoint.
 |&lt;tag_id&gt;|integer|||The Pardot ID of the tag|
 |&lt;type&gt;|string|||The type of object associated with the tag|
 |&lt;object_id&gt;|integer|||The Pardot ID of the object|
-|&lt;created_at&gt;|timestamp|||Time tag was associated with the object in Pardot; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time tag is associated with the object in Pardot; Time is reported in API user's preferred timezone|
 
 
 ## User
@@ -307,7 +307,7 @@ describe operation on the prospectAccount API endpoint.
 |&lt;last_name&gt;|string|||User's last name|
 |&lt;job_title&gt;|string|||User's job title|
 |&lt;role&gt;|string|||User's role|
-|&lt;created_at&gt;|timestamp|||Time user was created in Pardot; Time is reported in the API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time user is created in Pardot; Time is reported in the API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time user was updated in Pardot; Time is reported in the API user's preferred timezone|
 
 
@@ -327,7 +327,7 @@ describe operation on the prospectAccount API endpoint.
 |&lt;source_parameter&gt;|string|||Visit's source parameter utm_source from Google Analytics|
 |&lt;content_parameter&gt;|string|||Visit's content parameter utm_content from Google Analytics|
 |&lt;term_parameter&gt;|string|||Visit's term parameter utm_term from Google Analytics|
-|&lt;created_at&gt;|timestamp|||Time visit was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time visit is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time visit was updated in Pardot; Time is reported in API user's preferred timezone|
 
 ## Visitor
@@ -343,7 +343,7 @@ describe operation on the prospectAccount API endpoint.
 |&lt;source_parameter&gt;|string|||Visitor's source parameter utm_source from Google Analytics|
 |&lt;content_parameter&gt;|string|||Visitor's content parameter utm_content from Google Analytics|
 |&lt;term_parameter&gt;|string|||Visitor's term parameter utm_term from Google Analytics|
-|&lt;created_at&gt;|timestamp|||Time visitor was created in Pardot; Time is reported in API user's preferred timezone|
+|&lt;created_at&gt;|timestamp|||Time visitor is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time visitor was updated in Pardot; Time is reported in API user's preferred timezone|
 
 

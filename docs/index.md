@@ -1,19 +1,20 @@
 # Official Pardot API Documentation
 
-> **IMPORTANT: Support for passing credentials via querystring is deprecated and will return an error response. Please update your API client as soon as possible.**
+> **IMPORTANT: Support for passing credentials via querystring is deprecated and returns an error response. Please update your API client as soon as you can.**
 >
-> Refer to the [Using the API > Request Format](#using-the-api) section below for further details.
+> Refer to the [Using the API > Request Format](#using-the-api) section below for details.
 
-Welcome! All up-to-date documentation of Pardot's official API is housed here. A few things of note:
+Welcome! All up-to-date documentation of Pardot's official API is housed here. A few things to note:
 
-* If you have a question about the API, feel free to [open a ticket](https://help.salesforce.com/articleView?id=000181929&type=1) with our Support team.
-* To report an inconsistency in the documentation, please [open an issue on GitHub](https://github.com/Pardot/api-docs/issues). [Pull requests](https://github.com/Pardot/api-docs/pulls) are welcome as well!
-* If you've written your own library or wrapper for Pardot's API, submit a [pull request](https://github.com/Pardot/api-docs/pulls) updating the `index.md` file with a link to your repository, and we'll be glad to consider linking it up.
+* To get answers to your  questions about the API, you can open a ticket with our Support team: https://help.salesforce.com/articleView? id=000181929&type=1.
+* To report an inconsistency in the documentation, you can open an issue on GitHub: https://github.com/Pardot/api-docs/issues. Pull requests are welcome: https://github.com/Pardot/api-docs/pulls
+* If you write your own library or wrapper for Pardot's API, you can submit a pull request  to https://github.com/Pardot/api-docs/pulls to update the `index.md` file with a link to your repository, and can consider linking it up.
 * For the latest information on updates to the API and related documentation, refer to the [Release Notes](kb/release-notes).
+
 
 ## Using the API
 
-The Pardot API allows your application to access current data within Pardot. Through the API, several common operations can be performed on Pardot objects. Operations include:
+The Pardot API lets your application access current data within Pardot. Through the API, you can perform several common operations on Pardot objects including the following:
 
 *   `create` -- Creates a new object with the specified parameters.
 *   `read` -- Retrieves information about the specified object.
@@ -23,7 +24,7 @@ The Pardot API allows your application to access current data within Pardot. Thr
 
 Developers must authenticate using a Salesforce OAuth endpoint or the Pardot API login endpoint before issuing Pardot API requests. Refer to the [Authentication](kb/authentication) section for details about this procedure.
 
-Some considerations must be taken while performing requests. When performing `update` requests, only the fields specified in the request are updated, and all others are left unchanged. If a required field is cleared during an `update`, the request will be declined.
+Keep in mind a few considerations when you perform requests. For `update` requests, only the fields specified in the request are updated. All others are left unchanged. If a required field is cleared during an `update`, the request is declined.
 
 ### Request Format
 
@@ -65,14 +66,14 @@ Authorization: Pardot api_key=<your_api_key>, user_key=<your_user_key>
 
 | **Parameter**            | **Required**   | **Description**                                                                               |
 | ------------------------ | -------------- | ----------------------------------------------------------------------------------------------|
-| `object`                 | X              | The object type to be returned by the API request                                             |
-| `op`                     | X              | The operation to be performed on the specified object type                                    |
-| `id_field`               | X              | The field to be used as the identifier for the specified object                               |
-| `id`                     | X              | The identifier for the specified object(s)                                                    |
-| `your_api_key`           | X              | The API key that was obtained during [Authentication](kb/authentication)                      |
-| `your_user_key`          | X              | The user key that was used during [Authentication](kb/authentication)                         |
-| `format`                 |                | The API data format. Either xml or json (xml is default)                                      |
-| `params`                 |                | Parameters specific to your request; See individual methods for details                       |
+| `object`                 | X | The object type to be returned by the API request |
+| `op`                     | X | The operation to be performed on the specified object type |
+| `id_field`               | X | The field to be used as the identifier for the specified object |
+| `id`                     | X | The identifier for the specified object(s) |
+| `your_api_key`           | X | The API key obtained during [Authentication](kb/authentication) |
+| `your_user_key`          | X | The user key used during [Authentication](kb/authentication) |
+| `format`                 | | The API data format: either xml (default) or json  |
+| `params`                 | | Parameters specific to your request; See individual methods for details |
 
 ##### With Salesforce OAuth
 
@@ -88,40 +89,38 @@ Pardot-Business-Unit-Id: <pardot_business_unit_id>
 
 | **Parameter**            | **Required**   | **Description**                                                                               |
 | ------------------------ | -------------- | ----------------------------------------------------------------------------------------------|
-| `object`                 | X              | The object type to be returned by the API request                                             |
-| `op`                     | X              | The operation to be performed on the specified object type                                    |
-| `id_field`               | X              | The field to be used as the identifier for the specified object                               |
-| `id`                     | X              | The identifier for the specified object(s)                                                    |
-| `access_token`           | X              | The access token that was obtained during [Authentication](kb/authentication)                 |
-| `pardot_business_unit_id`| X              | The pardot business unit. More details can be found in [Authentication](kb/authentication)    |
-| `format`                 |                | The API data format. Either xml or json (xml is default)                                      |
-| `params`                 |                | Parameters specific to your request; See individual methods for details                       |
+| `object`                 | X | The object type to be returned by the API request |
+| `op`                     | X | The operation to be performed on the specified object type |
+| `id_field`               | X | The field to be used as the identifier for the specified object |
+| `id`                     | X | The identifier for the specified object(s) |
+| `access_token`           | X | The access token obtained during [Authentication](kb/authentication) |
+| `pardot_business_unit_id`| X | The pardot business unit. For details see [Authentication](kb/authentication)    |
+| `format`                 | | The API data format: either xml (default) or json  |
+| `params`                 | | Parameters specific to your request; See individual methods for details |
 
 The ordering of parameters is arbitrary. Parameters are passed using conventional HTML parameter syntax, with `'?'` indicating the start of the parameter string (for GET requests only) and `'&'` as the separator between parameters. With the exception of `<format>` and `<params>`, all components are required. Data returned from the API is formatted using JSON or XML 1.0 with UTF-8 character encoding. Keep in mind that some characters in the response may be encoded as HTML entities, requiring client-side decoding. Also, keep in mind that all parameters specified in an API request MUST be URL-encoded before they are submitted.
 
-In general, the API will return XML or JSON containing a current version of the target object's data. However, unsuccessful requests will return a short response containing an error code and message. See [Error Codes &amp; Messages](kb/api-version-3/error-codes-messages) for error descriptions and suggested remedies.
+In general, the API returns XML or JSON containing a current version of the target object's data. But unsuccessful requests return a short response containing an error code and message. See Error Codes &amp; Messages for error descriptions and suggested remedies: [kb/error-codes-messages](kb/error-codes-messages)
 
 <a name="14767-changing-xml-response-format" id="changing-xml-response-format"></a>
 
 ## Version 3 and Version 4 differences
 
-In order to accommodate a new feature related to prospects,
-we have created a new version of our APIs - version 4.
-We are now allowing multiple prospects to share an email address on some Pardot accounts.
-Eventually this will be available for all Pardot accounts.
-If your account has this feature active now, then you MUST use version 4.
-Everyone else can continue using version 3.
-Version 4 may use slightly different input syntax where prospects are involved,
-and may return multiple prospects where version 3 returned one.
-Please check out the appropriate version's documentation for more exact usage details.
+To accommodate a new feature for prospects, we created a new version of our APIs: version 4.
+Now multiple prospects can share an email address on some Pardot accounts.
+Eventually all Pardot accounts will be able to do so.
+If your account has this feature active now, then you must use version 4. All others
+can continue to use version 3. Version 4 sometime uses slightly different input syntax with prospects,
+and can return multiple prospects where version 3 returns one.
+Please check out the appropriate version's documentation for usage details.
 
-If your account uses v4, then upon login to the APIs,
-a data tag will be returned as such: `<version>4</version>`.
+If your account uses version 4, then upon login to the APIs, the following data tag is returned:
+`<version>4</version>`.
 If your account requires version 3, you will not see this tag.
 
 ## Changing the API Response Format
 
-The Pardot API supports several output formats, each of which returns different levels of detail in the XML or JSON response. Output formats are defined by specifying the `output` request parameter. Supported output formats include:
+The Pardot API supports several output formats, and each returns different levels of detail in the XML or JSON response. Output formats are defined by specifying the `output` request parameter. Supported output formats include:
 
 *   `full` -- Returns all supported data for the Pardot object and all objects associated with it.
 *   `simple` -- Returns all supported data for the data for the Pardot object.
@@ -139,22 +138,23 @@ We enforce API rate limits in two ways:
 
 ### Daily Requests
 
-Pardot Pro customers are allocated 25,000 API requests per day. Pardot Ultimate customers can make up to 100,000 API requests a day.
-These limits reset at the beginning of the day based on your accounts time zone settings. Any request made exceeding the
-limits will result in an [error code 122](/kb/error-codes-messages/#error-code-122)
+Pardot Pro customers are allocated 25,000 API requests a day. Pardot Ultimate customers can make up to 100,000 API requests a day.
+These limits reset at the beginning of the day based on your account time zone settings. Any request made exceeding the
+limits result in an [error code 122](/kb/error-codes-messages/#error-code-122)
 
-You can check you current daily usages in the accounts "usage and limits" page.
+You can check your current daily usage on the "usage and limits" page.
 
 ### Concurrent Requests
 
-In order to interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five
-will result in an [error code 66](/kb/error-codes-messages/#error-code-66) response.
+To interact with our API more efficiently, you can have up to five concurrent API requests. Any connection over five
+results in an [error code 66](/kb/error-codes-messages/#error-code-66) response.
 
 ## Sample Code
 
 Here's an example of calling the Pardot API using a simple PHP client using the cURL library.
 
-Note: we strongly recommend **against** using PHP's `file_get_contents` function to call the Pardot API, since it makes error handling extremely cumbersome.
+Note: We strongly recommend **against** using PHP's `file_get_contents` function to call the Pardot API because
+it makes error handling extremely cumbersome.
 
 ```
 <?php
