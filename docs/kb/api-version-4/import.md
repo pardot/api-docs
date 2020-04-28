@@ -20,7 +20,9 @@ When a row in the CSV file matches an existing prospect, the prospect is updated
 
 A new prospect is created when a matching prospect isn't found. All standard and custom fields are supported.
 
-In API Version 3, prospects are matched by email address. If the matched prospect is in the recycle bin, that record won't upsert unless the `restoreDeleted` option was specified during import creation. The rest of the import isn't affected when a record is skipped.
+In API Version 4, you must specify either the "prospect_id" or "salesforce_fid" identifier (Salesforce ID of a synced
+prospect). If you don't specify an identifier, or the prospect that is matched is in the recycle bin, that record isn't upserted unless the `restoreDeleted` option is specified during import creation. The rest of the import isn't
+affected when a record is skipped.
 
 ## How the Import API Works
 
