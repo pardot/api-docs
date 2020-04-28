@@ -169,7 +169,9 @@ __NOTE:__ The range between created_after and created_before or updated_after an
 
 ### Fields
 
-Select the prospect fields that you want to export. [Following](../../object-field-references/#prospect) are the fields that are available for prospect. The value for `fields` must be an array of strings of the available fields.
+Select the prospect fields that you want to export. Following are the fields that are available for prospect: [/kb/object-field-references/#prospect](/kb/object-field-references/#prospect) The value for `fields` must be an array of strings of the available fields.
+
+_**Note**_: The `grade` and `notes` fields are not available through this api.
 
 ### filter_by_updated_at
 
