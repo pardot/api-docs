@@ -7,21 +7,21 @@
 
 | **Operation** | **URL Format**                             | **Required Parameters** | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `query` | `/api/visitorActivity/version/4/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the visitor activities matching the specified criteria parameters. See the [Using Visitor Activities](#using-visitor-activities) section for a complete description of visitor activities [XML Response Formats](#xml-response-formats). Also see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
+| `query` | `/api/visitorActivity/version/4/do/query?...` | `user_key, api_key, search_criteria, result_set_criteria` | Returns the visitor activities that match the specified criteria parameters. See the [Using Visitor Activities](#using-visitor-activities) section for a complete description of visitor activities [XML Response Formats](#xml-response-formats). Also see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 
 
 ## [](#supported-search-criteria-)Supported Search Criteria
 
-Search criteria may be used together in any combination and/or order unless otherwise specified. 200 visitor activities will be returned with each query request.
+Search criteria can be used together in any combination and/or order unless otherwise specified. 200 visitor activities will be returned with each query request.
 
 | **Parameter** | **Datatype**                               | **Options**             | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
-| `created_after` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities that were created after the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
-| `created_before` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities that were created before the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
+| `created_after` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities created after the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
+| `created_before` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities created before the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
 | `id_greater_than` | `integer` | `<any_positive_integer>` | Selects visitor activities with IDs greater than the specified integer. |
 | `id_less_than` | `integer` | `<any_positive_integer>` | Selects visitor activities with IDs less than the specified integer. |
-| `updated_after` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities that were updated after the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
-| `updated_before` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities that were updated before the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
+| `updated_after` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities updated after the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
+| `updated_before` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities updated before the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
 | `prospect_only` | `boolean` | `true or false` | Selects visitor activities with associated prospects. |
 | `type` | `array` | `<comma_separated_visitor_activity_types>` | Selects visitor activities of the specified types. See a list of available [Visitor Activity Types](../object-field-references.md#visitor-activity-types) in [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 | **Object Types***|
@@ -46,15 +46,15 @@ Search criteria may be used together in any combination and/or order unless othe
 
 ## [](#manipulating-the-result-set-)Manipulating the Result Set
 
-Since `query` result sets are limited to 200 results each, the results returned may not include all the visitor activities matched by the query. To retrieve the remaining results, the following criteria can be used to navigate through the result set.
+Since `query` result sets are limited to 200 results each, the results returned can't include all the visitor activities matched by the query. To retrieve the remaining results, the following criteria can be used to navigate through the result set.
 
 | **Parameter** | **Datatype**                               | **Options**             | **Description**  |
 | ------------- | ------------------------------------------ | ----------------------- | -----------------|
 | `limit` | `integer` | `<any_positive_integer>` | Specifies the number of results to be returned. _Default value:_ `200`. **_Note:_** This number cannot be larger than 200. |
-| `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching visitor (according to the specified sorting order) to be returned in the query response. The first `offset` matching visitors will be omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st visitor matched by the provided criteria. |
+| `offset` | `integer` | `<any_positive_integer>` | Specifies the first matching visitor according to the specified sorting order to be returned in the query response. The first `offset` matching visitors are omitted from the response. _Default value:_ `0`. **_Example:_** Specifying `offset=400` will return the results starting with the 401st visitor matched by the provided criteria. |
 | `output` | `string` | `simple, mobile` | Specifies the format to be used when returning the results of the query. See [XML Response Formats](#xml-response-formats) in [Using Visitor Activities](#using-visitor-activities) for more details. |
-| `sort_by` | `string` | `created_at, id, updated_at, prospect_id, visitor_id` | Specifies the field that should be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
-| `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for more details. |
+| `sort_by` | `string` | `created_at, id, updated_at, prospect_id, visitor_id` | Specifies the field to be used to sort the results of the query. See [Supported Sorting Options](#supported-sorting-options) for more details. |
+| `sort_order` | `string` | `ascending, descending` | Specifies the ordering to be used when sorting the results of the query. The default value varies based on the value of the `sort_by` parameter. See [Supported Sorting Options](#supported-sorting-options) for details. |
 
 ## [](#supported-sorting-options-)Supported Sorting Options
 
@@ -84,7 +84,7 @@ The ordering of the results returned by a `query` request can be changed by spec
 | **Tag** | **Description** |
 | ------- | --------------- |
 | `<result>` | Contains the resulting visitor activities for the specified query. |
-| `<total_results>` | Contains the number of visitor activities selected by this query. If this value is higher than 200, then several query requests may be necessary to retrieve all of the matched visitor activities. |
+| `<total_results>` | Contains the number of visitor activities selected by this query. If this value is higher than 200, then several query requests are sometimes necessary to retrieve all of the matched visitor activities. |
 | `<visitor_activity>` | The data for an individual visitor activity. See [Using Visitor Activities](#using-visitor-activities) for complete descriptions of visitor activity [XML Response Formats](#xml-response-formats). Also see [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
 
 # Using Visitor Activities
