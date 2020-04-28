@@ -24,7 +24,7 @@ Search criteria can be used together in any combination and/or order unless othe
 | `updated_before` | `string` | `today, yesterday, last_7_days, this_month, last_month, <custom_time>` | Selects visitor activities updated before the specified time. If a `<custom_time>` is used, ensure that the specified date is formatted using [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html). |
 | `prospect_only` | `boolean` | `true or false` | Selects visitor activities with associated prospects. |
 | `type` | `array` | `<comma_separated_visitor_activity_types>` | Selects visitor activities of the specified types. See a list of available [Visitor Activity Types](../object-field-references.md#visitor-activity-types) in [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md). |
-| **Object Types***|
+| **Object Types**|
 | `custom_url_only` | `boolean` | `true or false` | Selects visitor activities associated to custom urls. |
 | `email_only` | `boolean` | `true or false` | Selects visitor activities associated to emails. |
 | `file_only` | `boolean` | `true or false` | Selects visitor activities associated to files. |
