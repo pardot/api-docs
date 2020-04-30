@@ -41,8 +41,7 @@ A procedure is a query and execution plan used to retrieve the data. Each object
 
 ### Fields
 
-Select the visitor activity fields you want to export. Following are the fields that are available for visitor activity: [../../object-field-references/#visitor-activity](../../object-field-references/#visitor-activity). The value for `fields` must be an array of strings of the available fields.
-
+Select the visitor activity fields you want to export. [Following](../../object-field-references/#visitor-activity) are the fields that are available for visitor activity. The value for `fields` must be an array of strings of the available fields.
 
 #### Abilities
 
@@ -96,8 +95,7 @@ __NOTE:__ The range between updated_after and updated_before cannot exceed 1 yea
 
 ### Fields
 
-Select the prospect fields that you want to export. Following are the fields that are available for prospect: [../../object-field-references/#list-membership](../../object-field-references/#list-membership) The value for `fields` must be an array of strings of the available fields.
-
+Select the prospect fields that you want to export. [Following](../../object-field-references/#list-membership) are the fields that are available for prospect. The value for `fields` must be an array of strings of the available fields.
 
 ### Abilities
 
@@ -150,8 +148,7 @@ __NOTE:__ The range between created_after and created_before or updated_after an
 
 ### Fields
 
-Select the prospect fields that you want to export. Following are the fields that are available for prospect: [/../object-field-references/#prospect](../../object-field-references/#prospect) The value for `fields` must be an array of strings of the available fields.
-
+Select the prospect fields that you want to export. [Following](../../object-field-references/#prospect) are the fields that are available for prospect.  The value for `fields` must be an array of strings of the available fields.
 
 _**Note**_: The `grade` and `notes` fields are not available through this api.
 
