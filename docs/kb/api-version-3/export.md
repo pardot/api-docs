@@ -68,7 +68,7 @@ OR
 
 ### filter_by_created_at
 
-Retrieves all visitor activity records with a `created_at` value that is equal or greater than the `created_after` argument and less than or equal to the `created_before` argument.
+Retrieves all visitor activity records with a `created_at` value that is greater than the `created_after` argument and less than the `created_before` argument.
 
 
 #### Arguments
@@ -80,7 +80,7 @@ Retrieves all visitor activity records with a `created_at` value that is equal o
 
 ### filter_by_updated_at
 
-Retrieves all visitor activity records with an `updated_at` value that is equal or greater than the `updated_after` argument and less than or equal to the `updated_before` argument.
+Retrieves all visitor activity records with an `updated_at` value that is greater than the `updated_after` argument and less than the `updated_before` argument.
 
 #### Arguments
 
@@ -124,7 +124,7 @@ OR
 
 ### filter_by_created_at
 
-Retrieves all list membership records with a `created_at` value that is equal or greater than the `created_after` argument and less than or equal to the `created_before` argument.
+Retrieves all list membership records with a `created_at` value that is greater than the `created_after` argument and less than the `created_before` argument.
 
 #### Arguments
 
@@ -134,7 +134,7 @@ Retrieves all list membership records with a `created_at` value that is equal or
 
 ### filter_by_updated_at
 
-Retrieves all list membership records with a `updated_at` value that is equal or greater than the `updated_after` argument and less than or equal to the `updated_before` argument.
+Retrieves all list membership records with a `updated_at` value that is greater than the `updated_after` argument and less than the `updated_before` argument.
 
 #### Arguments
 
@@ -154,7 +154,7 @@ _**Note**_: The `grade` and `notes` fields are not available through this api.
 
 ### filter_by_updated_at
 
-Retrieves all prospect records with a `updated_at` value that is equal or greater than the `updated_after` argument and less than or equal to the `updated_before` argument.
+Retrieves all prospect records with a `updated_at` value that is greater than the `updated_after` argument and less than the `updated_before` argument.
 
 #### Abilities
 
