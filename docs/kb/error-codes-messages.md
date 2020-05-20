@@ -2004,6 +2004,18 @@ requests.
 
 **Solution**: Try starting the process over, or contact support.
 
+## [](#error-code-190)Error Code: 190
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="190">Email sending is blocked for this account.</err>
+</rsp>
+```
+
+**Problem**: The account has email sending blocked, and an email is being sent.
+
+**Solution**: Contact support.
+
 ## [](#error-code-10000)Error Code: 10000
 
 ```
