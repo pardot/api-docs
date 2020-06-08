@@ -22,7 +22,7 @@ The Pardot API lets your application access current data within Pardot. Through 
 *   `update` -- Updates elements of an existing object.
 *   `upsert` -- Updates elements of an existing object if it exists.  If the object does not exist, one is created using the supplied parameters.
 
-Developers must authenticate using a Salesforce OAuth endpoint or the Pardot API login endpoint before issuing Pardot API requests. Refer to the [Authentication](kb/authentication) section for details about this procedure.
+Developers must authenticate using the Pardot API login endpoint before issuing Pardot API requests. Refer to the [Authentication](kb/authentication) section for details about this procedure.
 
 Keep in mind a few considerations when you perform requests. For `update` requests, only the fields specified in the request are updated. All others are left unchanged. If a required field is cleared during an `update`, the request is declined.
 
