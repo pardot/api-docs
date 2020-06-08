@@ -4,6 +4,8 @@ To access the Pardot API with an SSO enabled user (including users synced from S
 
 ## Via Salesforce OAuth
 
+_**Available from July 20th, 2020**_
+
 Prerequisites:
 
 1. You must have [Salesforce OAuth setup](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm) in the org. To setup up a connected app for OAuth, the "pardot_api" scope must be one of the selected OAuth scopes. Otherwise, OAuth flows other than username/password flow will not be usable with the Pardot API.
