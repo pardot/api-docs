@@ -1348,6 +1348,13 @@ communications</td>
 <td>If value is 1, prospect has been starred</td>
 </tr>
 <tr>
+<td>&lt;is_archived&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If value is 1, prospect has been archived</td>
+</tr>
+<tr>
 <td>&lt;created_at&gt;</td>
 <td>timestamp</td>
 <td></td>
