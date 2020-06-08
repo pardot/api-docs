@@ -2051,17 +2051,6 @@ requests.
 **Problem**: An invalid value has been provided for a procedure argument.
 
 **Solution**: Check the the values provided for the procedure arguments are correct.
-## [](#error-code-190)Error Code: 190
-
-```
-<rsp stat="fail" version="1.0">
-    <err code="190">Email sending is blocked for this account.</err>
-</rsp>
-```
-
-**Problem**: The account has email sending blocked, and an email is being sent.
-
-**Solution**: Contact support.
 
 ## [](#error-code-10000)Error Code: 10000
 

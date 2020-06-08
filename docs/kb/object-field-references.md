@@ -261,6 +261,7 @@ Each field returned by the API maps to a field within the Pardot user interface.
 |&lt;opted_out&gt;|boolean|||If value is 1, prospect has opted out of marketing communications|
 |&lt;is_reviewed&gt;|boolean||X|If value is 1, prospect has been reviewed|
 |&lt;is_starred&gt;|boolean||X|If value is 1, prospect has been starred|
+|&lt;is_archived&gt;|boolean||X|If value is 1, prospect has been archived|
 |&lt;created_at&gt;|timestamp|||Time prospect is created in Pardot; Time is reported in API user's preferred timezone|
 |&lt;updated_at&gt;|timestamp|||Last time prospect was updated in Pardot; Time is reported in API user's preferred timezone|
 
