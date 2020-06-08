@@ -54,7 +54,7 @@ accurate.
 ```
 
 **Problem**: Pardot could not find a prospect with the provided email address (for read/update/delete),
-or the prospect email address is too long (> 255 characters) or has invalid syntax (for create/upsert). See 
+or the prospect email address is too long (> 255 characters) or has invalid syntax (for create/upsert). See
 [Allowed Characters in Email Addresses](https://help.salesforce.com/articleView?id=pardot_emails_allowed_characters.htm) for
 email address verification.
 
@@ -2051,6 +2051,17 @@ requests.
 **Problem**: An invalid value has been provided for a procedure argument.
 
 **Solution**: Check the the values provided for the procedure arguments are correct.
+## [](#error-code-190)Error Code: 190
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="190">Email sending is blocked for this account.</err>
+</rsp>
+```
+
+**Problem**: The account has email sending blocked, and an email is being sent.
+
+**Solution**: Contact support.
 
 ## [](#error-code-10000)Error Code: 10000
 
