@@ -54,7 +54,7 @@ accurate.
 ```
 
 **Problem**: Pardot could not find a prospect with the provided email address (for read/update/delete),
-or the prospect email address is too long (> 255 characters) or has invalid syntax (for create/upsert). See 
+or the prospect email address is too long (> 255 characters) or has invalid syntax (for create/upsert). See
 [Allowed Characters in Email Addresses](https://help.salesforce.com/articleView?id=pardot_emails_allowed_characters.htm) for
 email address verification.
 
@@ -2004,17 +2004,53 @@ requests.
 
 **Solution**: Try starting the process over, or contact support.
 
-## [](#error-code-190)Error Code: 190
+## [](#error-code-174)Error Code: 174
 
 ```
 <rsp stat="fail" version="1.0">
-    <err code="190">Email sending is blocked for this account.</err>
+    <err code="174">Unknown procedure name.</err>
 </rsp>
 ```
 
-**Problem**: The account has email sending blocked, and an email is being sent.
+**Problem**: The provided procedure name does not exist.
 
-**Solution**: Contact support.
+**Solution**: Check procedure name is spelled correctly or try another procedure name.
+
+## [](#error-code-175)Error Code: 175
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="175">Unknown procedure argument.</err>
+</rsp>
+```
+
+**Problem**: An unsupported argument was included in the procedure arguments.
+
+**Solution**: Check arguments are spelled correctly or remove unsupported argument.
+
+## [](#error-code-176)Error Code: 176
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="176">Missing required argument.</err>
+</rsp>
+```
+
+**Problem**: The export procedure is missing a requirement argument.
+
+**Solution**: Include the required argument in your procedure definition.
+
+## [](#error-code-177)Error Code: 177
+
+```
+<rsp stat="fail" version="1.0">
+    <err code="177">Invalid procedure argument.</err>
+</rsp>
+```
+
+**Problem**: An invalid value has been provided for a procedure argument.
+
+**Solution**: Check the the values provided for the procedure arguments are correct.
 
 ## [](#error-code-10000)Error Code: 10000
 

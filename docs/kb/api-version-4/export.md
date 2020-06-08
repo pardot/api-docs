@@ -41,11 +41,7 @@ A procedure is a query and execution plan used to retrieve the data. Each object
 
 ### Fields
 
-Select the visitor activity fields that need to be exported. [Following](../../object-field-references/#visitor-activity) are the fields that are available for visitor activity. The value for `fields` must be an array of strings of the available fields. 
-
-### filter_by_created_at
-
-Retrieves all visitor activity records with a `created_at` value that is equal or greater than the `created_after` argument and less than or equal to the `created_before` argument.
+Select the visitor activity fields you want to export. [Following](../../object-field-references/#visitor-activity) are the fields that are available for visitor activity. The value for `fields` must be an array of strings of the available fields.
 
 #### Abilities
 
@@ -70,14 +66,125 @@ OR
 
 * “Admin > Exports > View”
 
+### filter_by_created_at
+
+Retrieves all visitor activity records with a `created_at` value that is greater than the `created_after` argument and less than the `created_before` argument.
+
 #### Arguments
 
 * **created_after**: Selects visitor activities that were created after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
 * **created_before**: (Optional) Selects visitor activities that were created before the specified time. This value must be after the value in `created_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `created_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
-* **type**: (Optional) Selects visitor activities of the specified types. If this argument is not specified, then all of the visitor activities belonging to any type is returned. See a list of available [Visitor Activity Types](../object-field-references.md#visitor-activity-types) in [Visitor Activity](../object-field-references.md#visitor-activity) in [Object Field References](../object-field-references.md).
+* **type**: (Optional) Selects visitor activities of the specified types. If this argument is not specified, then all of the visitor activities belonging to any type is returned. See a list of available [Visitor Activity Types](../../object-field-references#visitor-activity-types) in [Visitor Activity](../../object-field-references#visitor-activity) in [Object Field References](../../object-field-references).
 * **prospectOnly**: (Optional) Selects only those visitor activities associated with a prospect. When this field is set to `false`, all visitor activities with and without a prospect are returned. The values can be `true` or `false`.
 
-__NOTE:__ The range between created_after and created_before cannot exceed 1 year. When created_before is not specified, the current date is used to gauge the interval.
+### filter_by_updated_at
+
+Retrieves all visitor activity records with an `updated_at` value that is greater than the `updated_after` argument and less than the `updated_before` argument.
+
+#### Arguments
+
+* **updated_after**: Selects visitor activities that were updated after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **updated_before**: (Optional) Selects visitor activities that were updated before the specified time. This value must be after the value in `updated_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `updated_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **type**: (Optional) Selects visitor activities of the specified types. If this argument is not specified, then all visitor activities belonging to any type are returned. See a list of available [Visitor Activity Types](../../object-field-references#visitor-activity-types) in [Visitor Activity](../../object-field-references#visitor-activity) in [Object Field References](../../object-field-references).
+* **prospectOnly**: (Optional) Selects only those visitor activities associated with a prospect. When this field is set to `false`, all visitor activities with and without a prospect are returned. The values can be `true` or `false`.
+
+__NOTE:__ The range between updated_after and updated_before cannot exceed 1 year. When updated_before is not specified, the current date is used to gauge the interval.
+
+## List Membership
+
+
+### Fields
+
+Select the prospect fields that you want to export. [Following](../../object-field-references/#list-membership) are the fields that are available for prospect. The value for `fields` must be an array of strings of the available fields.
+
+### Abilities
+
+| Action           | Requirements  |
+| ---------------- | ------------- |
+| Create export    | Marketing > Segmentation > Lists > View ability `and` Prospects > Visitors > View ability |
+| View export      | Marketing > Segmentation > Lists > View ability `and` Prospects > Visitors > View ability and ability `and` be the same user that created the export |
+| View all exports | Admin > Exports > View ability |
+| Query exports    | Admin > Exports > View ability |
+
+
+To create an export with this procedure, the user must have the following:
+
+* “Marketing > Segmentation > Lists > View“ ability AND
+* “Prospects > Visitors > View“ ability
+
+To view an export with this procedure, the user must have the following:
+
+* “Marketing > Segmentation > Lists > View“ ability AND
+* “Prospects > Visitors > View“ ability AND
+* The user must be the same as the user that created the export
+
+OR
+
+* “Admin > Exports > View”
+
+### filter_by_created_at
+
+Retrieves all list membership records with a `created_at` value that is greater than the `created_after` argument and less than the `created_before` argument.
+
+#### Arguments
+
+* **created_after**: Selects list membership that were created after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **created_before**: (Optional) Selects list membership that were created before the specified time. This value must be after the value in `created_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `created_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **deleted**: (Optional) Selects list membership based on if it is deleted or not. The value can be `true`, `false`, or `all`.
+
+### filter_by_updated_at
+
+Retrieves all list membership records with a `updated_at` value that is greater than the `updated_after` argument and less than the `updated_before` argument.
+
+#### Arguments
+
+* **updated_after**: Selects list membership that were created after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **updated_before**: (Optional) Selects list membership that were created before the specified time. This value must be after the value in `updated_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `updated_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **deleted**: (Optional) Selects list membership based on if it is deleted or not. The value can be `true`, `false`, or `all`.
+
+__NOTE:__ The range between created_after and created_before or updated_after and updated_before cannot exceed 1 year. When created_before is not specified, the current date is used to gauge the interval.
+
+## Prospect
+
+### Fields
+
+Select the prospect fields that you want to export. [Following](../../object-field-references/#prospect) are the fields that are available for prospect.  The value for `fields` must be an array of strings of the available fields.
+
+_**Note**_: The `grade` and `notes` fields are not available through this api.
+
+### filter_by_updated_at
+
+Retrieves all prospect records with a `updated_at` value that is greater than the `updated_after` argument and less than the `updated_before` argument.
+
+#### Abilities
+
+| Action           | Requirements  |
+| ---------------- | ------------- |
+| Create export    | Prospects > Visitors > View ability |
+| View export      | Prospects > Visitors > View ability and be the same user that created the export |
+| View all exports | Admin > Exports > View ability |
+| Query exports    | Admin > Exports > View ability |
+
+To create an export with this procedure, the user must have the following:
+
+* “Prospects > Visitors > View“ ability
+
+To view an export with this procedure, the user must have the following:
+
+* “Prospects > Visitors > View“ ability AND
+* The user must be the same as the user that created the export
+
+OR
+
+* “Admin > Exports > View”
+
+#### Arguments
+
+* **updated_after**: Selects prospects that were updated after the specified time. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **updated_before**: (Optional) Selects prospects that were created before the specified time. This value must be after the value in `updated_after`. If this argument is not specified, then no upper boundary is used in the query, and all data after the `updated_after` is returned. The value can be `today`, `yesterday`, `last_7_days`, `this_month`, `last_month`, or a custom time specified in [GNU Date Input Syntax](http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html) format.
+* **deleted**: Includes deleted prospects. This argument must be set to `all`. Both deleted and not deleted prospects are returned.
+
+__NOTE:__ The range between updated_after and updated_before cannot exceed 1 year. When updated_before is not specified, the current date is used to gauge the interval.
 
 # Using the Export API
 
@@ -152,7 +259,7 @@ Output Representation
 
 ### Example
 
-This is a request to execute the visitor activity procedure named `filter_by_created_at`, which retrieves all visitor activity data where the `created_at` value is between two dates. In this example, the data will be retrieved from December 25, 2019 to December 25, 2020.
+Here is a request to execute the visitor activity procedure named `filter_by_created_at`, which retrieves all visitor activity data where the `created_at` value is between two dates. In this example, the data is retrieved from December 25, 2019 to December 25, 2020.
 
 ```
 POST /api/export/version/4/do/create
@@ -175,7 +282,7 @@ Authorization: Pardot user_key=U,api_key=A
 }
 ```
 
-After sending the request as a `POST`, the response will be the following. From this response, the export has been queued for execution but has not started nor completed. We suggest waiting a few minutes before checking the Read endpoint for the new status.
+After sending the request as a `POST`, the response is as follows. From this response we know the export is queued for execution but hasn't started or completed. We suggest waiting a few minutes before checking the Read endpoint for the new status.
 
 ```json
 {
@@ -235,7 +342,7 @@ Output Representation
 
 ### Example
 
-After calling the Create endpoint, the ID of the export will be given in the response. This ID is used in the URL to call the Read endpoint.
+After calling the Create endpoint, the ID of the export is given in the response. This ID is used in the URL to call the Read endpoint.
 
 ```
 GET /api/export/version/4/do/read/id/201917
@@ -244,7 +351,7 @@ Content-Type: application/json
 Authorization: Pardot user_key=U,api_key=A
 ```
 
-If the export is waiting to be processed, `state` is "Waiting", like the following example.
+If the export is waiting to be processed, `state` is "Waiting", as in the following example.
 
 ```json
 {
@@ -300,7 +407,7 @@ Output Representation
 
 * **result**: A collection of exports
     * **total_results**: The total number of results matching the filter.
-    * **export**: A collection of exports. If there are no results, this property is omitted. If there is a single result, this is an object. If there are multiple results, this is an array of results.
+    * **export**: A collection of exports. If there are no results, this property is omitted. If there's a single result, it's an object. If there are multiple results, it's an array of results.
         * **id**: The ID of the export. This ID is used to check the status of the export.
         * **state**: The state of the export. Displays "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See [Export State](#export-state) enum.
         * **isExpired**: Indicates that the export has expired. After an export has expired, this will return `true` and no data associated with the export can be downloaded.
