@@ -1,5 +1,7 @@
 # Pardot API Docs
 
+_**This repository has been deprecated**_
+
 ## Prerequisites
 
 * [Git](http://git-scm.com/)
