@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Official documentation for the Pardot API">
+        
+        <link rel="canonical" href="http://developer.pardot.com/kb/api-version-5/layout-template/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Layout Templates - Pardot API Documentation</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            // Current page data
+            var mkdocs_page_name = "Layout Templates";
+            var mkdocs_page_input_path = "kb/api-version-5/layout-template.md";
+            var mkdocs_page_url = "/kb/api-version-5/layout-template/";
+        </script>
+        
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Pardot API Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../../..">
+                                    
+                                    Official Pardot API Documentation
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../../version3and4overview/">
+                                    
+                                    Overview (v3/v4)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../authentication/">
+                                    
+                                    Authentication
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../object-field-references/">
+                                    
+                                    Object Field References (v3/v4)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/">
+                                    
+                                    Transitioning to Version 4
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../release-notes/">
+                                    
+                                    Release Notes
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../error-codes-messages/">
+                                    
+                                    Error Codes & Messages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../bulk-data-pull/">
+                                    
+                                    Bulk Data Pull
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/accounts/">
+                                    
+                                    Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/campaigns/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/custom-fields/">
+                                    
+                                    Custom Fields
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/custom-redirects/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/dynamic-content/">
+                                    
+                                    Dynamic Content
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/emails/">
+                                    
+                                    Email
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/batch-email-clicks/">
+                                    
+                                    Email Clicks
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/email-templates/">
+                                    
+                                    Email Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/forms/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/lifecycle-histories/">
+                                    
+                                    Lifecycle Histories
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/lifecycle-stages/">
+                                    
+                                    Lifecycle Stages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/lists/">
+                                    
+                                    Lists
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/list-memberships/">
+                                    
+                                    List Memberships
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/opportunities/">
+                                    
+                                    Opportunities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/prospects/">
+                                    
+                                    Prospects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/prospect-accounts/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/tags/">
+                                    
+                                    Tags
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/tag-objects/">
+                                    
+                                    TagObjects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/users/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/visitors/">
+                                    
+                                    Visitors
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/visitor-activities/">
+                                    
+                                    Visitor Activities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/visits/">
+                                    
+                                    Visits
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../../api-version-3/import/">
+                                    
+                                    Import API (for Prospects)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/export/">
+                                    
+                                    Export API
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/accounts/">
+                                    
+                                    Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/campaigns/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/custom-fields/">
+                                    
+                                    Custom Fields
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/custom-redirects/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/dynamic-content/">
+                                    
+                                    Dynamic Content
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/emails/">
+                                    
+                                    Email
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/batch-email-clicks/">
+                                    
+                                    Email Clicks
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/email-templates/">
+                                    
+                                    Email Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/forms/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/lifecycle-histories/">
+                                    
+                                    Lifecycle Histories
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/lifecycle-stages/">
+                                    
+                                    Lifecycle Stages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/lists/">
+                                    
+                                    Lists
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/list-memberships/">
+                                    
+                                    List Memberships
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/opportunities/">
+                                    
+                                    Opportunities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/prospects/">
+                                    
+                                    Prospects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/prospect-accounts/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/tags/">
+                                    
+                                    Tags
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/tag-objects/">
+                                    
+                                    TagObjects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/users/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/visitors/">
+                                    
+                                    Visitors
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/visitor-activities/">
+                                    
+                                    Visitor Activities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/visits/">
+                                    
+                                    Visits
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../../api-version-4/import/">
+                                    
+                                    Import API (for Prospects)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/export/">
+                                    
+                                    Export API
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 5 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../version5overview/">
+                                    
+                                    Overview
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../campaign/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../custom-redirect/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../file/">
+                                    
+                                    Files
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../folder/">
+                                    
+                                    Folders
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../form/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class="active ">
+                                <a href="./">
+                                    
+                                    Layout Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../prospect-account/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../tracker-domain/">
+                                    
+                                    Tracker Domains
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../user/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="#mkdocs_search_modal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
+                </li>
+                
+                
+                <li>
+                    <a rel="next" href="../form/">
+                    <i class="fa fa-arrow-left"></i>
+                    
+                    Forms
+                    
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="prev" href="../prospect-account/">
+                    
+                    Prospect Accounts
+                    
+                    <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#layout-templates">Layout Templates</a></li>
+        <li class="main "><a href="#supported-operations">Supported Operations</a></li>
+        <li class="main "><a href="#fields">Fields</a></li>
+            <li><a href="#required-editable-fields">Required Editable Fields</a></li>
+            <li><a href="#optional-editable-fields">Optional Editable Fields</a></li>
+            <li><a href="#read-only-fields">Read-Only Fields</a></li>
+            <li><a href="#defaults">Defaults</a></li>
+        <li class="main "><a href="#layout-template-creation">Layout Template Creation</a></li>
+        <li class="main "><a href="#layout-template-update">Layout Template Update</a></li>
+        <li class="main "><a href="#layout-template-deletion">Layout Template Deletion</a></li>
+        <li class="main "><a href="#layout-template-query">Layout Template Query</a></li>
+            <li><a href="#sortable-fields">Sortable Fields</a></li>
+            <li><a href="#filtering-results">Filtering Results</a></li>
+    </ul>
+</div></div>
+            <div class="col-md-9 main-content" role="main">
+                
+                    <h1 id="layout-templates">Layout Templates</h1>
+<p>The API to access the Layout Templates object follows the conventions described in <a href="../version5overview/">Version 5 Overview</a>.</p>
+<h1 id="supported-operations">Supported Operations</h1>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>HTTP Verb</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Ability Requirements</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read</td>
+<td><code>GET</code></td>
+<td><code>https://pi.pardot.com/api/v5/objects/layout-templates/&lt;id&gt;?&lt;params&gt;</code></td>
+<td>Marketing &gt; Landing Pages &gt; Layout Templates &gt; View ability</td>
+</tr>
+<tr>
+<td>Create</td>
+<td><code>POST</code></td>
+<td><code>https://pi.pardot.com/api/v5/objects/layout-templates?&lt;params&gt;</code></td>
+<td>Marketing &gt; Landing Pages &gt; Layout Templates &gt; Create/Edit ability</td>
+</tr>
+<tr>
+<td>Update</td>
+<td><code>PATCH</code></td>
+<td><code>https://pi.pardot.com/api/v5/objects/layout-templates/&lt;id&gt;?&lt;params&gt;</code></td>
+<td>Marketing &gt; Landing Pages &gt; Layout Templates &gt; Create/Edit ability</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td><code>DELETE</code></td>
+<td><code>https://pi.pardot.com/api/v5/objects/layout-templates/&lt;id&gt;</code></td>
+<td>Marketing &gt; Landing Pages &gt; Layout Templates &gt; Delete ability</td>
+</tr>
+<tr>
+<td>Query</td>
+<td><code>GET</code></td>
+<td><code>https://pi.pardot.com/api/v5/objects/layout-templates?&lt;params&gt;</code></td>
+<td>Marketing &gt; Landing Pages &gt; Layout Templates &gt; View ability</td>
+</tr>
+</tbody>
+</table>
+<h1 id="fields">Fields</h1>
+<h4 id="required-editable-fields">Required Editable Fields</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>Name of the object for identification in Pardot.</td>
+</tr>
+<tr>
+<td><code>layoutContent</code></td>
+<td>String</td>
+<td>HTML content of this layout template encoded as JSON string.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="optional-editable-fields">Optional Editable Fields</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>formContent</code></td>
+<td>String</td>
+<td>HTML content encoded as JSON string that controls <a href="https://help.salesforce.com/articleView?id=pardot_forms_layout_template_form_code.htm&amp;type=0">form display logic</a>. Uses <a href="#formcontent">default</a> values if not provided.</td>
+</tr>
+<tr>
+<td><code>siteSearchContent</code></td>
+<td>String</td>
+<td>HTML content encoded as JSON string that controls the site search content. Uses <a href="#sitesearchcontent">default</a> values if not provided.</td>
+</tr>
+<tr>
+<td><code>isIncludeDefaultCss</code></td>
+<td>Boolean</td>
+<td>True if not supplying custom CSS styling.</td>
+</tr>
+<tr>
+<td><code>folderId</code></td>
+<td>Integer</td>
+<td>ID of the folder containing this object. Uses the asset type's uncategorized folder if not specified on create.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="read-only-fields">Read-Only Fields</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>ID of this object.</td>
+</tr>
+<tr>
+<td><code>isDeleted</code></td>
+<td>Boolean</td>
+<td>True if this object is in the recycle bin in Pardot.</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td>DateTime</td>
+<td>Creation time of this object.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td>DateTime</td>
+<td>Last updated time for the object.</td>
+</tr>
+<tr>
+<td><code>createdById</code></td>
+<td>Integer</td>
+<td>ID of the user who created the object.</td>
+</tr>
+<tr>
+<td><code>updatedById</code></td>
+<td>Integer</td>
+<td>ID of the user who last updated the object.</td>
+</tr>
+<tr>
+<td><code>createdBy</code></td>
+<td><a href="../user/">User</a></td>
+<td>User object representing the user who created the object.</td>
+</tr>
+<tr>
+<td><code>updatedBy</code></td>
+<td><a href="../user/">User</a></td>
+<td>User object representing the user who last updated the object.</td>
+</tr>
+<tr>
+<td><code>folder</code></td>
+<td><a href="../folder/">Folder</a></td>
+<td>Folder object representing the folder containing this object.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="defaults">Defaults</h4>
+<h5 id="formcontent">formContent</h5>
+<pre><code>&lt;form method=&quot;post&quot; action=&quot;%%form-action-url%%&quot; class=&quot;form&quot;&gt;
+    %%form-opening-general-content%%
+
+   %%form-if-thank-you%%
+       %%form-javascript-focus%%
+       %%form-thank-you-content%%
+       %%form-thank-you-code%%
+   %%form-end-if-thank-you%%
+
+   %%form-if-display-form%%
+
+       %%form-before-form-content%%
+           %%form-if-error%%
+               &lt;p class=&quot;errors&quot;&gt;Please correct the errors below:&lt;/p&gt;
+           %%form-end-if-error%%
+
+           %%form-start-loop-fields%%
+               &lt;p class=&quot;%%form-field-css-classes%% %%form-field-class-required%% %%form-field-class-hidden%% %%form-field-class-no-label%% %%form-field-class-error%%&quot;&gt;
+                   %%form-if-field-label%%
+                       &lt;label for=&quot;%%form-field-id%%&quot;&gt;%%form-field-label%%&lt;/label&gt;
+                   %%form-end-if-field-label%%
+
+                   %%form-field-input%%
+                   %%form-if-field-description%%
+                       &lt;span class=&quot;description&quot;&gt;%%form-field-description%%&lt;/span&gt;
+                   %%form-end-if-field-description%%
+               &lt;/p&gt;
+               &lt;div id=&quot;error_for_%%form-field-id%%&quot; style=&quot;display:none&quot;&gt;&lt;/div&gt;
+               %%form-field-if-error%%
+                   &lt;p class=&quot;error no-label&quot;&gt;%%form-field-error-message%%&lt;/p&gt;
+               %%form-field-end-if-error%%
+           %%form-end-loop-fields%%
+
+           &lt;p class=&quot;submit&quot;&gt;
+               &lt;input type=&quot;submit&quot; accesskey=&quot;s&quot; value=&quot;%%form-submit-button-text%%&quot; onclick=&quot;%%form-submit-indicator-on-click%%&quot;/&gt;
+               %%form-submit-indicator-tag%%
+           &lt;/p&gt;
+
+           %%form-spam-trap-field%%
+           %%form-javascript-first-input-focus%%
+       %%form-after-form-content%%
+
+   %%form-end-if-display-form%%
+
+   %%form-javascript-link-target-top%%
+&lt;/form&gt;
+</code></pre>
+<h5 id="sitesearchcontent">siteSearchContent</h5>
+<pre><code>&lt;form method=&quot;get&quot; action=&quot;%%search-action-url%%&quot; class=&quot;form&quot; id=&quot;pardot-form&quot;&gt;
+    &lt;p class=&quot;full-width&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&quot;q&quot; value=&quot;%%search-query%%&quot; size=&quot;40&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Search&quot; /&gt;
+    &lt;/p&gt;
+    &lt;h2&gt;Search results for: %%search-query%%&lt;/h2&gt;
+
+    %%search-if-results%%
+    &lt;ol start=&quot;%%search-result-start-position%%&quot;&gt;
+        %%search-start-loop-results%%
+        &lt;li&gt;
+            &lt;strong&gt;&lt;a href=&quot;%%search-result-url%%&quot;&gt;%%search-result-title%%&lt;/a&gt;&lt;/strong&gt;&lt;br/&gt;
+            %%search-result-description%%&lt;br/&gt;
+            &lt;em&gt;%%search-result-url-abbreviation%%&lt;/em&gt; %%search-result-file-size%% KB
+        &lt;/li&gt;
+        %%search-end-loop-results%%
+    &lt;/ol&gt;
+
+    &lt;p class=&quot;pager&quot;&gt;
+        &lt;strong&gt;
+        %%search-if-previous-page-available%%
+        &lt;a href=&quot;%%search-previous-page-url%%&quot;&gt;
+            Previous (page %%search-previous-page-number%%)
+        &lt;/a&gt;
+        %%search-else-previous-page-not-available%%
+            Previous
+        %%search-end-if-previous-page-available%% |
+
+        Page %%search-this-page-number%% of %%search-total-pages-number%% |
+
+        %%search-if-next-page-available%%
+            &lt;a href=&quot;%%search-next-page-url%%&quot;&gt;
+            Next (page %%search-next-page-number%%)&lt;/a&gt;
+        %%search-else-next-page-not-available%%
+            Next
+        %%search-end-if-next-page-available%%
+        &lt;/strong&gt;
+    &lt;/p&gt;
+    %%search-else-no-results%%
+        %%search-no-results-content%%
+    %%search-end-if-results%%
+&lt;/form&gt;
+</code></pre>
+<h1 id="layout-template-creation">Layout Template Creation</h1>
+<p>A Layout Template POST request must have a JSON body with all of the required fields specified. Note that all HTML content must be JSON escaped.</p>
+<p>Example request:</p>
+<pre><code>POST /api/v5/objects/layout-templates?fields=id,name,layoutContent,isIncludeDefaultCss,createdBy.username,updatedBy.username,createdAt,updatedAt HTTP/1.1
+Host: pi.pardot.com
+Authorization: Bearer &lt;access-token&gt;
+Content-Type: application/json
+
+{
+    &quot;name&quot;:&quot;my template&quot;,
+    &quot;layoutContent&quot;:&quot;&lt;html&gt;&lt;/html&gt;&quot;,
+    &quot;isIncludeDefaultCss&quot;:true,
+    &quot;folderId&quot;: 1769
+}
+</code></pre>
+<p>Example response:</p>
+<p>This example does not show all the headers, and whitespace has been added to make it easier to read.</p>
+<pre><code>HTTP/1.1 201 Created
+Content-Type: application/json
+https://pi.pardot.com/api/v5/objects/layout-templates/6?fields=id,name,layoutContent,isIncludeDefaultCss,createdBy.username,updatedBy.username,createdAt,updatedAt
+
+{
+    &quot;id&quot;: 4983,
+    &quot;name&quot;: &quot;my template&quot;,
+    &quot;layoutContent&quot;: &quot;&lt;html&gt;&lt;/html&gt;&quot;,
+    &quot;isIncludeDefaultCss&quot;: true,
+    &quot;createdAt&quot;: &quot;2020-09-29T09:36:56-04:00&quot;,
+    &quot;updatedAt&quot;: &quot;2020-09-29T09:36:56-04:00&quot;,
+    &quot;createdBy&quot;: {
+        &quot;username&quot;: &quot;jsmith@example.com&quot;
+    },
+    &quot;updatedBy&quot;: {
+        &quot;username&quot;: &quot;jsmith@example.com&quot;
+    }
+}
+</code></pre>
+<p>Examples include extra spaces for readability and don't always include headers. The fields in the response body and <code>Location</code> header match the fields specified on the example request.</p>
+<h1 id="layout-template-update">Layout Template Update</h1>
+<p>Updating a layout template follows the conventions described in the <a href="../version5overview/#update-using-patch">Version 5 Overview</a>.</p>
+<h1 id="layout-template-deletion">Layout Template Deletion</h1>
+<p>Deleting a layout template follows the conventions described in the <a href="../version5overview/#delete-using-delete">Version 5 Overview</a>. Layout templates that are in use on Forms and Landing Pages can't be deleted. To successfully delete, remove all usages.</p>
+<h1 id="layout-template-query">Layout Template Query</h1>
+<p>Retrieving a collection of layout templates follows the conventions described in <a href="../version5overview/#query-using-get">Version 5 Overview</a>.</p>
+<h4 id="sortable-fields">Sortable Fields</h4>
+<p>When executing a query, the following fields can be specified in the <code>orderBy</code> parameter. See the conventions for query described in the <a href="../version5overview/#query-using-get">Version 5 Overview</a>.</p>
+<ul>
+<li><code>id</code></li>
+</ul>
+<p>Example request:</p>
+<pre><code>GET /api/v5/objects/layout-templates?fields=id,name,layoutContent,isIncludeDefaultCss,createdBy.username,updatedBy.username,createdAt,updatedAt&amp;orderBy=id
+Host: pi.pardot.com
+Authorization: Bearer &lt;access-token&gt;
+</code></pre>
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/json
+{
+    &quot;values&quot;: [
+        {
+            &quot;id&quot;: 4983,
+            &quot;name&quot;: &quot;my template&quot;,
+            &quot;layoutContent&quot;: &quot;&lt;html&gt;&lt;/html&gt;&quot;,
+            &quot;isIncludeDefaultCss&quot;: true,
+            &quot;createdAt&quot;: &quot;2020-09-29T09:36:56-04:00&quot;,
+            &quot;updatedAt&quot;: &quot;2020-09-29T09:36:56-04:00&quot;,
+            &quot;createdBy&quot;: {
+                &quot;username&quot;: &quot;jsmith@example.com&quot;
+            },
+            &quot;updatedBy&quot;: {
+                &quot;username&quot;: &quot;jsmith@example.com&quot;
+            }
+        }
+    ]
+}
+
+</code></pre>
+<h3 id="filtering-results">Filtering Results</h3>
+<p>When executing a query, the following parameters can be used to filter the returned results. These parameters can be specified in the request along with any shared parameters defined in <a href="../version5overview/#query-using-get">Version 5 Overview</a>. When specifying more than one parameter, all parameters must match the record in order for it to be returned in the results.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Returns any layout templates where ID is equal to the given integer value.</td>
+</tr>
+<tr>
+<td><code>idGreaterThan</code></td>
+<td>Returns any layout templates where ID is greater than the specified value, non-inclusive.</td>
+</tr>
+<tr>
+<td><code>idGreaterThanOrEqualTo</code></td>
+<td>Returns any layout templates where ID is greater than or equal to the specified value.</td>
+</tr>
+<tr>
+<td><code>idLessThan</code></td>
+<td>Returns any layout templates where ID is less than the specified value, non-inclusive.</td>
+</tr>
+<tr>
+<td><code>idLessThanOrEqualTo</code></td>
+<td>Returns any layout templates where ID is less than or equal to the specified value.</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<pre><code>GET /api/v5/objects/layout-templates?fields=id,name&amp;orderBy=id desc&amp;idGreaterThan=5100&amp;idLessThan=5200
+Host: pi.pardot.com
+Authorization: Bearer &lt;access-token&gt;
+</code></pre>
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/json
+{
+    &quot;values&quot;: [
+        {
+            &quot;id&quot;: 5196,
+            &quot;name&quot;: &quot;Winter Sale Template&quot;
+        },
+        {
+            &quot;id&quot;: 5149,
+            &quot;name&quot;: &quot;Spring Sale Template&quot;
+        },
+        {
+            &quot;id&quot;: 5132,
+            &quot;name&quot;: &quot;Promotion Template&quot;
+        }
+    ]
+}
+
+</code></pre>
+                
+            </div>
+        </div>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form id="content_search">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" name="q" autocomplete="off" autofocus>
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+    </body>
+</html>

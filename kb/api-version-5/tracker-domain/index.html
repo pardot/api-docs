@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Official documentation for the Pardot API">
+        
+        <link rel="canonical" href="http://developer.pardot.com/kb/api-version-5/tracker-domain/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Tracker Domains - Pardot API Documentation</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            // Current page data
+            var mkdocs_page_name = "Tracker Domains";
+            var mkdocs_page_input_path = "kb/api-version-5/tracker-domain.md";
+            var mkdocs_page_url = "/kb/api-version-5/tracker-domain/";
+        </script>
+        
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Pardot API Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../../..">
+                                    
+                                    Official Pardot API Documentation
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../../version3and4overview/">
+                                    
+                                    Overview (v3/v4)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../authentication/">
+                                    
+                                    Authentication
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../object-field-references/">
+                                    
+                                    Object Field References (v3/v4)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/">
+                                    
+                                    Transitioning to Version 4
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../release-notes/">
+                                    
+                                    Release Notes
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../error-codes-messages/">
+                                    
+                                    Error Codes & Messages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../bulk-data-pull/">
+                                    
+                                    Bulk Data Pull
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/accounts/">
+                                    
+                                    Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/campaigns/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/custom-fields/">
+                                    
+                                    Custom Fields
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/custom-redirects/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/dynamic-content/">
+                                    
+                                    Dynamic Content
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/emails/">
+                                    
+                                    Email
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/batch-email-clicks/">
+                                    
+                                    Email Clicks
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/email-templates/">
+                                    
+                                    Email Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/forms/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/lifecycle-histories/">
+                                    
+                                    Lifecycle Histories
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/lifecycle-stages/">
+                                    
+                                    Lifecycle Stages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/lists/">
+                                    
+                                    Lists
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/list-memberships/">
+                                    
+                                    List Memberships
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/opportunities/">
+                                    
+                                    Opportunities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/prospects/">
+                                    
+                                    Prospects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/prospect-accounts/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/tags/">
+                                    
+                                    Tags
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/tag-objects/">
+                                    
+                                    TagObjects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/users/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/visitors/">
+                                    
+                                    Visitors
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/visitor-activities/">
+                                    
+                                    Visitor Activities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/visits/">
+                                    
+                                    Visits
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../../api-version-3/import/">
+                                    
+                                    Import API (for Prospects)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/export/">
+                                    
+                                    Export API
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/accounts/">
+                                    
+                                    Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/campaigns/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/custom-fields/">
+                                    
+                                    Custom Fields
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/custom-redirects/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/dynamic-content/">
+                                    
+                                    Dynamic Content
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/emails/">
+                                    
+                                    Email
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/batch-email-clicks/">
+                                    
+                                    Email Clicks
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/email-templates/">
+                                    
+                                    Email Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/forms/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/lifecycle-histories/">
+                                    
+                                    Lifecycle Histories
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/lifecycle-stages/">
+                                    
+                                    Lifecycle Stages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/lists/">
+                                    
+                                    Lists
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/list-memberships/">
+                                    
+                                    List Memberships
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/opportunities/">
+                                    
+                                    Opportunities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/prospects/">
+                                    
+                                    Prospects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/prospect-accounts/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/tags/">
+                                    
+                                    Tags
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/tag-objects/">
+                                    
+                                    TagObjects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/users/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/visitors/">
+                                    
+                                    Visitors
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/visitor-activities/">
+                                    
+                                    Visitor Activities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/visits/">
+                                    
+                                    Visits
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../../api-version-4/import/">
+                                    
+                                    Import API (for Prospects)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-4/export/">
+                                    
+                                    Export API
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 5 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../version5overview/">
+                                    
+                                    Overview
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../campaign/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../custom-redirect/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../file/">
+                                    
+                                    Files
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../folder/">
+                                    
+                                    Folders
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../form/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../layout-template/">
+                                    
+                                    Layout Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../prospect-account/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class="active ">
+                                <a href="./">
+                                    
+                                    Tracker Domains
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../user/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="#mkdocs_search_modal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
+                </li>
+                
+                
+                <li>
+                    <a rel="next" href="../prospect-account/">
+                    <i class="fa fa-arrow-left"></i>
+                    
+                    Prospect Accounts
+                    
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="prev" href="../user/">
+                    
+                    Users
+                    
+                    <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#tracker-domains">Tracker Domains</a></li>
+        <li class="main "><a href="#supported-operations">Supported Operations</a></li>
+        <li class="main "><a href="#fields">Fields</a></li>
+            <li><a href="#required-editable-fields">Required Editable Fields</a></li>
+            <li><a href="#optional-editable-fields">Optional Editable Fields</a></li>
+            <li><a href="#read-only-fields">Read-Only Fields</a></li>
+        <li class="main "><a href="#tracker-domain-read">Tracker Domain Read</a></li>
+        <li class="main "><a href="#tracker-domain-query">Tracker Domain Query</a></li>
+            <li><a href="#sortable-fields">Sortable Fields</a></li>
+            <li><a href="#filtering-results">Filtering Results</a></li>
+    </ul>
+</div></div>
+            <div class="col-md-9 main-content" role="main">
+                
+                    <h1 id="tracker-domains">Tracker Domains</h1>
+<p>The API to access the Tracker Domain object collection follows the conventions described in <a href="../version5overview/">Version 5 Overview</a>.</p>
+<h1 id="supported-operations">Supported Operations</h1>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>HTTP Verb</strong></th>
+<th><strong>URL Format</strong></th>
+<th><strong>Ability Requirements</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read</td>
+<td><code>GET</code></td>
+<td><code>https://pi.pardot.com/api/v5/objects/tracker-domains/&lt;id&gt;?&lt;params&gt;</code></td>
+<td>Marketing &gt; Content &gt; Files &gt; View ability <strong>OR</strong> Marketing &gt; Content &gt; Custom Redirects &gt; View ability <strong>OR</strong> Marketing &gt; Forms &gt; Forms &gt; View ability <strong>OR</strong> Marketing &gt; Forms &gt; Form Handlers &gt; View ability <strong>OR</strong> Marketing &gt; Landing Pages &gt; Landing Pages &gt; View ability</td>
+</tr>
+<tr>
+<td>Query</td>
+<td><code>GET</code></td>
+<td><code>https://pi.pardot.com/api/v5/objects/tracker-domains?&lt;params&gt;</code></td>
+<td>Marketing &gt; Content &gt; Files &gt; View ability <strong>OR</strong> Marketing &gt; Content &gt; Custom Redirects &gt; View ability <strong>OR</strong> Marketing &gt; Forms &gt; Forms &gt; View ability <strong>OR</strong> Marketing &gt; Forms &gt; Form Handlers &gt; View ability <strong>OR</strong> Marketing &gt; Landing Pages &gt; Landing Pages &gt; View ability</td>
+</tr>
+</tbody>
+</table>
+<h1 id="fields">Fields</h1>
+<h3 id="required-editable-fields">Required Editable Fields</h3>
+<p>None.</p>
+<h3 id="optional-editable-fields">Optional Editable Fields</h3>
+<p>None.</p>
+<h3 id="read-only-fields">Read-Only Fields</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Integer</td>
+<td>ID of the object.</td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td>String</td>
+<td>Hostname where links using this tracker domain will be resolved.</td>
+</tr>
+<tr>
+<td><code>isPrimary</code></td>
+<td>Boolean</td>
+<td>True if the tracker domain is primary tracker domain for the account. Only one tracker domain can be designated as the primary and must be unique across all Pardot accounts.</td>
+</tr>
+<tr>
+<td><code>isDeleted</code></td>
+<td>Boolean</td>
+<td>True if the object is in the recycle bin in Pardot.</td>
+</tr>
+<tr>
+<td><code>defaultCampaignId</code></td>
+<td>Integer</td>
+<td>The ID of the default campaign for this tracker domain.</td>
+</tr>
+<tr>
+<td><code>httpsStatus</code></td>
+<td>String</td>
+<td>Identify if this tracker domain is using http or https.</td>
+</tr>
+<tr>
+<td><code>sslStatus</code></td>
+<td>String</td>
+<td>Status of SSL for this vanity tracker domain.</td>
+</tr>
+<tr>
+<td><code>sslStatusDetails</code></td>
+<td>String</td>
+<td>Extra information for the status of SSL for this vanity tracker domain.</td>
+</tr>
+<tr>
+<td><code>sslRequestedById</code></td>
+<td>Integer</td>
+<td>ID of the User who manually requested enabling SSL for this tracker domain.</td>
+</tr>
+<tr>
+<td><code>validationStatus</code></td>
+<td>String</td>
+<td>The status can be default, validated or not validated</td>
+</tr>
+<tr>
+<td><code>validatedAt</code></td>
+<td>DateTime</td>
+<td>Time when this tracker domain validation became <strong>validated</strong>.</td>
+</tr>
+<tr>
+<td><code>vanityUrlStatus</code></td>
+<td>String</td>
+<td>Indicates whether this tracker domain can serve vanity urls.</td>
+</tr>
+<tr>
+<td><code>trackingCode</code></td>
+<td>String</td>
+<td>The tracking code for this object encoded as JSON string. A default campaign is required before generating tracking codes as well as enabling first party tracking in account settings. For more information read <a href="https://releasenotes.docs.salesforce.com/en-us/summer20/release-notes/rn_sales_pardot_first_party_cookie_tracking.htm">here</a></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td>DateTime</td>
+<td>Creation time of the object.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td>DateTime</td>
+<td>Last update time of the object.</td>
+</tr>
+<tr>
+<td><code>createdById</code></td>
+<td>Integer</td>
+<td>ID of the user who created this object.</td>
+</tr>
+<tr>
+<td><code>updatedById</code></td>
+<td>Integer</td>
+<td>ID of the user who last updated this object.</td>
+</tr>
+<tr>
+<td><code>createdBy</code></td>
+<td><a href="../user/">User</a></td>
+<td>User object representing the user who created this object.</td>
+</tr>
+<tr>
+<td><code>updatedBy</code></td>
+<td><a href="../user/">User</a></td>
+<td>User object representing the user who last updated this object.</td>
+</tr>
+<tr>
+<td><code>sslRequestedBy</code></td>
+<td><a href="../user/">User</a></td>
+<td>User object representing the User who manually requested enabling SSL for this tracker domain.</td>
+</tr>
+<tr>
+<td><code>defaultCampaign</code></td>
+<td><a href="../campaign/">Campaign</a></td>
+<td>Campaign object representing the default campaign for this tracker domain.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="tracker-domain-read">Tracker Domain Read</h1>
+<p>Retrieve a single tracker domain object following the conventions described in the <a href="../version5overview/#read-using-get">Version 5 Overview</a>.</p>
+<p>Example request:</p>
+<pre><code>GET /api/v5/objects/tracker-domains/101?fields=id,domain,isPrimary,isDeleted
+Host: pi.pardot.com
+Authorization: Bearer &lt;access-token&gt;
+</code></pre>
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/json
+{
+    &quot;id&quot;: 101,
+    &quot;domain&quot;: &quot;tracked.example.com&quot;,
+    &quot;isPrimary&quot;: &quot;true&quot;,
+    &quot;isDeleted&quot;: &quot;false&quot;
+}
+</code></pre>
+<h1 id="tracker-domain-query">Tracker Domain Query</h1>
+<p>Retrieving a collection of tracker domains follows the conventions described in <a href="../version5overview/#query-using-get">Version 5 Overview</a>.</p>
+<h4 id="sortable-fields">Sortable Fields</h4>
+<p>When executing a query, the following fields can be specified in the <code>orderBy</code> parameter. See the conventions for query described in the <a href="../version5overview/#query-using-get">Version 5 Overview</a>.</p>
+<ul>
+<li><code>id</code></li>
+</ul>
+<p>Example request:</p>
+<pre><code>GET /api/v5/objects/tracker-domains?fields=id,domain,isPrimary,isDeleted&amp;orderBy=id
+Host: pi.pardot.com
+Authorization: Bearer &lt;access-token&gt;
+</code></pre>
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/json
+{
+    &quot;values&quot;: [
+        {
+            &quot;id&quot;: 101,
+            &quot;domain&quot;: &quot;tracked.example.com&quot;,
+            &quot;isPrimary&quot;: &quot;true&quot;,
+            &quot;isDeleted&quot;: &quot;false&quot;
+        }
+    ]
+}
+
+</code></pre>
+<h3 id="filtering-results">Filtering Results</h3>
+<p>When executing a query, the following parameters can be used to filter the returned results. These parameters can be specified in the request along with any shared parameters defined in <a href="../version5overview/#query-using-get">Version 5 Overview</a>. When specifying more than one parameter, all parameters must match the record in order for it to be returned in the results.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Returns any tracker domains where ID is equal to the given integer value.</td>
+</tr>
+<tr>
+<td><code>idGreaterThan</code></td>
+<td>Returns any tracker domains where ID is greater than the specified value, non-inclusive.</td>
+</tr>
+<tr>
+<td><code>idGreaterThanOrEqualTo</code></td>
+<td>Returns any tracker domains where ID is greater than or equal to the specified value.</td>
+</tr>
+<tr>
+<td><code>idLessThan</code></td>
+<td>Returns any tracker domains where ID is less than the specified value, non-inclusive.</td>
+</tr>
+<tr>
+<td><code>idLessThanOrEqualTo</code></td>
+<td>Returns any tracker domains where ID is less than or equal to the specified value.</td>
+</tr>
+</tbody>
+</table>
+<p>Example request:</p>
+<pre><code>GET /api/v5/objects/tracker-domains?fields=id,domain&amp;orderBy=id desc&amp;idGreaterThan=200&amp;idLessThan=300
+Host: pi.pardot.com
+Authorization: Bearer &lt;access-token&gt;
+</code></pre>
+<p>Example response:</p>
+<pre><code>HTTP/1.1 200 OK
+Content-Type: application/json
+{
+    &quot;values&quot;: [
+        {
+            &quot;id&quot;: 282,
+            &quot;domain&quot;: &quot;flyers.example.com&quot;
+        },
+        {
+            &quot;id&quot;: 225,
+            &quot;domain&quot;: &quot;promotions.example.com&quot;
+        },
+        {
+            &quot;id&quot;: 207,
+            &quot;domain&quot;: &quot;tracked.example.com&quot;
+        }
+    ]
+}
+
+</code></pre>
+                
+            </div>
+        </div>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form id="content_search">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" name="q" autocomplete="off" autofocus>
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+    </body>
+</html>

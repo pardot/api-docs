@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Official documentation for the Pardot API">
+        
+        <link rel="canonical" href="http://developer.pardot.com/kb/api-version-4/import/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Import API (for Prospects) - Pardot API Documentation</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            // Current page data
+            var mkdocs_page_name = "--Import API (for Prospects)";
+            var mkdocs_page_input_path = "kb/api-version-4/import.md";
+            var mkdocs_page_url = "/kb/api-version-4/import/";
+        </script>
+        
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">Pardot API Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../../..">
+                                    
+                                    Official Pardot API Documentation
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../../version3and4overview/">
+                                    
+                                    Overview (v3/v4)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../authentication/">
+                                    
+                                    Authentication
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../object-field-references/">
+                                    
+                                    Object Field References (v3/v4)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../">
+                                    
+                                    Transitioning to Version 4
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../release-notes/">
+                                    
+                                    Release Notes
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../error-codes-messages/">
+                                    
+                                    Error Codes & Messages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../bulk-data-pull/">
+                                    
+                                    Bulk Data Pull
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/accounts/">
+                                    
+                                    Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/campaigns/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/custom-fields/">
+                                    
+                                    Custom Fields
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/custom-redirects/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/dynamic-content/">
+                                    
+                                    Dynamic Content
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/emails/">
+                                    
+                                    Email
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/batch-email-clicks/">
+                                    
+                                    Email Clicks
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/email-templates/">
+                                    
+                                    Email Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/forms/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/lifecycle-histories/">
+                                    
+                                    Lifecycle Histories
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/lifecycle-stages/">
+                                    
+                                    Lifecycle Stages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/lists/">
+                                    
+                                    Lists
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/list-memberships/">
+                                    
+                                    List Memberships
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/opportunities/">
+                                    
+                                    Opportunities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/prospects/">
+                                    
+                                    Prospects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/prospect-accounts/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/tags/">
+                                    
+                                    Tags
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/tag-objects/">
+                                    
+                                    TagObjects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/users/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/visitors/">
+                                    
+                                    Visitors
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/visitor-activities/">
+                                    
+                                    Visitor Activities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/visits/">
+                                    
+                                    Visits
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../../api-version-3/import/">
+                                    
+                                    Import API (for Prospects)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-3/export/">
+                                    
+                                    Export API
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../accounts/">
+                                    
+                                    Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../campaigns/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../custom-fields/">
+                                    
+                                    Custom Fields
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../custom-redirects/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../dynamic-content/">
+                                    
+                                    Dynamic Content
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../emails/">
+                                    
+                                    Email
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../batch-email-clicks/">
+                                    
+                                    Email Clicks
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../email-templates/">
+                                    
+                                    Email Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../forms/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../lifecycle-histories/">
+                                    
+                                    Lifecycle Histories
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../lifecycle-stages/">
+                                    
+                                    Lifecycle Stages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../lists/">
+                                    
+                                    Lists
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../list-memberships/">
+                                    
+                                    List Memberships
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../opportunities/">
+                                    
+                                    Opportunities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../prospects/">
+                                    
+                                    Prospects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../prospect-accounts/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../tags/">
+                                    
+                                    Tags
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../tag-objects/">
+                                    
+                                    TagObjects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../users/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../visitors/">
+                                    
+                                    Visitors
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../visitor-activities/">
+                                    
+                                    Visitor Activities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../visits/">
+                                    
+                                    Visits
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class="active separator-above">
+                                <a href="./">
+                                    
+                                    Import API (for Prospects)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../export/">
+                                    
+                                    Export API
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 5 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../../api-version-5/version5overview/">
+                                    
+                                    Overview
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../../api-version-5/campaign/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-5/custom-redirect/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-5/file/">
+                                    
+                                    Files
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-5/folder/">
+                                    
+                                    Folders
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-5/form/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-5/layout-template/">
+                                    
+                                    Layout Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-5/prospect-account/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-5/tracker-domain/">
+                                    
+                                    Tracker Domains
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../api-version-5/user/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="#mkdocs_search_modal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
+                </li>
+                
+                
+                <li>
+                    <a rel="next" href="../visits/">
+                    <i class="fa fa-arrow-left"></i>
+                    
+                    Visits
+                    
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="prev" href="../export/">
+                    
+                    Export API
+                    
+                    <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#import-api-overview">Import API Overview</a></li>
+            <li><a href="#when-to-use-the-import-api">When to Use the Import API</a></li>
+            <li><a href="#what-you-can-do-with-the-import-api">What You Can Do with the Import API</a></li>
+            <li><a href="#how-the-import-api-works">How the Import API Works</a></li>
+            <li><a href="#limitations">Limitations</a></li>
+            <li><a href="#expiration">Expiration</a></li>
+        <li class="main "><a href="#getting-started">Getting Started</a></li>
+        <li class="main "><a href="#create">Create</a></li>
+            <li><a href="#post">POST</a></li>
+        <li class="main "><a href="#add-batch">Add Batch</a></li>
+            <li><a href="#post_1">POST</a></li>
+        <li class="main "><a href="#update">Update</a></li>
+            <li><a href="#patch">PATCH</a></li>
+        <li class="main "><a href="#read">Read</a></li>
+            <li><a href="#get">GET</a></li>
+        <li class="main "><a href="#query">Query</a></li>
+            <li><a href="#get_1">GET</a></li>
+        <li class="main "><a href="#download-errors">Download Errors</a></li>
+            <li><a href="#get_2">GET</a></li>
+        <li class="main "><a href="#enums">Enums</a></li>
+            <li><a href="#import-state">Import State</a></li>
+            <li><a href="#import-operation">Import Operation</a></li>
+            <li><a href="#object">Object</a></li>
+            <li><a href="#import-origin">Import Origin</a></li>
+    </ul>
+</div></div>
+            <div class="col-md-9 main-content" role="main">
+                
+                    <h1 id="import-api-overview">Import API Overview</h1>
+<p>The Import API provides a programmatic way to insert or update large amounts of data in Pardot. It uses Pardot's existing API structures, patterns, and terminology. The Import API automates the existing prospect <a href="https://help.salesforce.com/articleView?id=pardot_prospects_import.htm&amp;type=0">import feature set</a>. Only prospect import is supported currently.</p>
+<p><strong>IMPORTANT</strong> The user's role must have the Prospect Import ability to start an API import. For more information, see <a href="https://help.salesforce.com/articleView?id=pardot_user_roles.htm">Pardot User Roles</a></p>
+<h2 id="when-to-use-the-import-api">When to Use the Import API</h2>
+<p>Use the Import API to insert or update large sets of data, when you don't require synchronous completion responses, or when batch upsert limitations are too restrictive: <a href="http://developer.pardot.com/kb/api-version-4/prospects/#upserting-prospects">http://developer.pardot.com/kb/api-version-4/prospects/#upserting-prospects</a>.  Currently, only Prospect upsert is supported.</p>
+<p>The Import API processes many records asynchronously in batches. Each batch requires a minimum amount of system resources to run, so larger batches are generally more efficient. Small batches may result in slower performance.</p>
+<h2 id="what-you-can-do-with-the-import-api">What You Can Do with the Import API</h2>
+<p>The Import API lets you import a CSV file of prospects. Columns in the CSV correspond to Pardot <a href="http://developer.pardot.com/kb/object-field-references/#prospect">field names</a>. Rows correspond to prospects to be upserted. Each column must match a valid field name, or validation fails and the CSV is rejected.</p>
+<h3 id="matching-and-upsert-behavior">Matching and Upsert behavior</h3>
+<p>When a row in the CSV file matches an existing prospect, the prospect is updated. Field values in the CSV, including blank (null) values, overwrite existing values for the prospect. To modify this default behavior, see the <code>columns</code> param on the <a href="#create">Create</a> endpoint.</p>
+<p>A new prospect is created when a matching prospect isn't found. All standard and custom fields are supported.</p>
+<p>In API Version 4, you must specify either the "prospect_id" or "salesforce_fid" identifier (Salesforce ID of a synced
+prospect). If you don't specify an identifier, or the prospect that is matched is in the recycle bin, that record isn't upserted unless the <code>restoreDeleted</code> option is specified during import creation. The rest of the import isn't
+affected when a record is skipped.</p>
+<h2 id="how-the-import-api-works">How the Import API Works</h2>
+<p>An import contains a set of records divided into one or more batches of data. A batch is a set of records sent to the server in an HTTP POST request. The import specifies which object is processed and what type of operation is used. The Import API currently supports only the Prospect object and the Upsert operation.</p>
+<p>Batches are processed in parallel, and batches are subdivided into smaller groups of objects for processing.</p>
+<p>The order in which individual records, batches, and entire imports are processed is not guaranteed.</p>
+<p>The Import resource is used to create an import, get status for an import, upload data as a batch, and change status for an import. When a batch finishes processing, the result for failed records is available in a result set resource. All other records are assumed to be successful.</p>
+<p>Users create, submit, and retrieve results of imports with the following steps.</p>
+<ol>
+<li>Create an import that specifies object and action.</li>
+<li>Upload data to the server in one or more batches.</li>
+<li>To submit the import for processing, set the state of the import to "Ready". After the import is submitted, you can't add more batches of data or abort the import.</li>
+<li>Check the status of the import at a reasonable interval. We recommend that you wait a few minutes between calls. Calls to check import status count against API call limits. When the results of the status check indicate a complete import, the results will also contain statistics for creates, updates, and failures.</li>
+<li>If there are failures, download a log of failures. The log includes only records not inserted or updated.</li>
+</ol>
+<p>Imports left in the "Open" state expire after 24 hours.</p>
+<h2 id="limitations">Limitations</h2>
+<ul>
+<li>Each account can process 1000 batches per day.</li>
+<li>Each batch must be smaller than 10MB.</li>
+<li>The daily data limit is 10GB.</li>
+<li>Each import can contain up to 10 batches.</li>
+<li>The daily Pardot API call limit and the concurrent Pardot API call limit apply to Import API calls just as they would any other Pardot API calls.</li>
+</ul>
+<h2 id="expiration">Expiration</h2>
+<p>Imports expire:</p>
+<ol>
+<li>24 hours after creation if the import isn't submitted. No records are imported in this case, even if batches of data have been added.</li>
+<li>7 days after completion.</li>
+</ol>
+<p>After an import expires, it can't be changed and attempts to check its status or retrieve error results will fail.</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>This document assumes that you're familiar with connecting to the Pardot API, managing prospects, and creating CSV files. You can import data by using these endpoints.</p>
+<hr />
+<h1 id="create">Create</h1>
+<pre><code>/api/import/version/4/do/create
+</code></pre>
+<p>Used to create a new asynchronous import. If a batch of import data is included in this request, the import can be submitted for processing as part of this operation. Otherwise one or more batches must be created and associated with this import using the do/batch endpoint and the import must be submitted for processing with the do/update endpoint.</p>
+<h2 id="post">POST</h2>
+<h3 id="params">Params</h3>
+<h3 id="request-body">Request Body</h3>
+<p>ContentType: application/json or multipart/form-data</p>
+<p>Use multipart/form-data if sending prospect data in the create request. Use application/json if subsequent do/batch requests will be made with prospect data.</p>
+<ul>
+<li>Input Representation (sent as "<strong>importInput</strong>" if ContentType is multipart/form-data):<ul>
+<li><strong>operation</strong>: The operation to be executed. Currently only “Upsert” is available. See Import Operation enum for more information.</li>
+<li><strong>object</strong>: The current object to be run the import against. Currently only “Prospect” is available. See Import Object enum for more information.</li>
+<li><strong>restoreDeleted</strong>: (Optional) If a record within the CSV file matches a record that was moved to the Recycle Bin, usually through a Delete, the record can be restored and updated. If the property is true, then the record will be restored and updated. If false, the record is ignored and an error occurs The error appears in the error document after the import is completed. Default if not specified is false.</li>
+<li><strong>state</strong>: (Optional) Specify "Ready" to indicate that the CSV file included in the request contains all prospects for this import. In this case, do/batch and do/update requests aren't required and should be omitted.</li>
+<li><strong>columns</strong>: (Optional) If specified, the columns must include the same number of fields as the CSV file does. If they don't match then a <strong>400 BAD_REQUEST</strong> failure occurs. The elements for this are:</li>
+<li><strong>field</strong>: (Required) The field name must match one of the columns in the CSV file</li>
+<li><strong>overwrite</strong>: (Optional, default true) When set to true and updating an existing record, the value in the input will modify ("overwrite") the existing value in the database.  When set to false, the existing value in the database will not update regardless of the value of the input. If the input row is a "Create", then this option is ignored and the value will be present in the database.</li>
+<li><strong>nullOverwrite</strong>: (Optional, default true) When set to true and updating an existing record, if the value in the input is an empty string or a string containing any number of whitespaces then the value in the database is set to empty string or null. When set to false the empty input value is ignored and the existing value in the database isn't updated. If the input row is a "Create" then this option is ignored and the empty string or null is present in the database.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;operation&quot;: &quot;Upsert&quot;,
+    &quot;object&quot;: &quot;Prospect&quot;,
+    &quot;restoreDeleted&quot;: boolean,
+    &quot;state&quot;: &quot;Ready&quot;,
+    &quot;columns&quot;: [
+        {&quot;field&quot;: &quot;field1_name&quot;, &quot;overwrite&quot;: boolean, &quot;nullOverwrite&quot;: boolean },
+        {&quot;field&quot;: &quot;field2_name&quot;},
+        ...
+    ]
+}
+</code></pre>
+<p>A single part with the name "<strong>importFile</strong>" should contain the CSV file for the batch. The file should contain a header row.</p>
+<h3 id="success">Success</h3>
+<ul>
+<li>Status Code: 200</li>
+<li>Output Representation<ul>
+<li><strong>id</strong>: The ID of the import.</li>
+<li><strong>state</strong>: The state of the import, which should always be returned as “Open” or "Waiting". "Waiting" is only returned if the "Ready" state is specified in the input. See <a href="#import-state">Import State</a> enum.</li>
+<li><strong>isExpired</strong>: Indicates that the import has expired. After an import expires, it cannot be changed, and attempts to check its status or retrieve error results will fail.</li>
+<li><strong>batchesRef</strong>: (Optional) The full URL path to add batches of data to the import. This will only be included in the response if the import remains in the "Open" state.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;id&quot;: int,
+    &quot;state&quot;: string,
+    &quot;isExpired&quot;: boolean,
+    &quot;batchesRef&quot;: string : &quot;https://pi.pardot.com/api/import/version/4/do/batch/id/{id}&quot;
+}
+</code></pre>
+<h3 id="errors">Errors</h3>
+<ul>
+<li>Status code: 4xx</li>
+<li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
+</ul>
+<hr />
+<h1 id="add-batch">Add Batch</h1>
+<pre><code>/api/import/version/4/do/batch/id/{id}
+</code></pre>
+<p>Allows adding batches of data to an existing import when in the "Open" state.</p>
+<h2 id="post_1">POST</h2>
+<h3 id="params_1">Params</h3>
+<p><strong>{id}</strong>: The ID of the import.</p>
+<h3 id="body">Body</h3>
+<p>ContentType: multipart/form-data</p>
+<p>A single part with the name "<strong>importFile</strong>" should contain the CSV file for the batch. The file should contain a header row.</p>
+<p>Column names must match Filed Names in Pardot <a href="http://developer.pardot.com/kb/object-field-references/">http://developer.pardot.com/kb/object-field-references/</a>. For example, to set campaign, pass “campaign_id”. Columns that don't match existing field names cause validation to fail on this step. Each batch must contain an identical header with the same fields in the same order.</p>
+<h3 id="success_1">Success</h3>
+<ul>
+<li>Status Code: 204</li>
+<li>Output Representation: Empty Body</li>
+</ul>
+<h3 id="errors_1">Errors</h3>
+<ul>
+<li>Status code: 4xx</li>
+<li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
+</ul>
+<hr />
+<h1 id="update">Update</h1>
+<pre><code>/api/import/version/4/do/update/id/{id}
+</code></pre>
+<p>Used to submit the import by changing the state to "Ready". After this step, no more batches of data can be added, and processing of the import begins.</p>
+<h2 id="patch">PATCH</h2>
+<h3 id="params_2">Params</h3>
+<p><strong>{id}</strong>: The ID of the import.</p>
+<h3 id="body_1">Body</h3>
+<p>ContentType: application/json</p>
+<pre><code class="language-json">{
+    &quot;state&quot;: &quot;Ready&quot; // see State enum
+}
+</code></pre>
+<h3 id="success_2">Success</h3>
+<ul>
+<li>Status Code: 200</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;id&quot;: {id},
+    &quot;state&quot;: &quot;Waiting&quot;,
+    &quot;isExpired&quot;: boolean
+}
+</code></pre>
+<h3 id="errors_2">Errors</h3>
+<ul>
+<li>Status code: 4xx</li>
+<li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
+</ul>
+<hr />
+<h1 id="read">Read</h1>
+<pre><code>/api/import/version/4/do/read/id/{id}
+</code></pre>
+<p>Returns the current state of the import. If processing is complete, the output provides a path to the results of the operation along with any statistics about the operation.</p>
+<h2 id="get">GET</h2>
+<h3 id="params_3">Params</h3>
+<p><strong>{id}</strong>: The ID of the import.</p>
+<h3 id="success_3">Success</h3>
+<ul>
+<li>Status Code: 200</li>
+<li>Output Representation<ul>
+<li><strong>id</strong>: The ID of the import.</li>
+<li><strong>state</strong>: The current state of the import. See Import State enum.</li>
+<li><strong>isExpired</strong>: Indicates that the import expired. After an import expires, it can't be changed, and attempts to check its status or retrieve error results will fail.</li>
+<li>When import state is “Open”:<ul>
+<li><strong>batchesRef</strong>: The full url path to add batches of data to the import.</li>
+</ul>
+</li>
+<li>When processing is complete:<ul>
+<li><strong>createdCount</strong>: Count of prospects created.</li>
+<li><strong>updatedCount</strong>: Count of prospects updated.</li>
+<li>If <strong>isExpired</strong> is false:<ul>
+<li>If there are errors:<ul>
+<li><strong>errorsRef</strong>: The full URL path to retrieve errors CSV.</li>
+<li><strong>errorCount</strong>: Count of error operations.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;id&quot;: int,
+    &quot;state&quot;: string,
+    &quot;isExpired&quot;: int
+    // if state is &quot;Complete&quot;
+    &quot;createdCount&quot;: int,
+    &quot;updatedCount&quot;: int,
+    &quot;errorsRef&quot;: string : &quot;https://pi.pardot.com/api/import/version/4/do/downloadErrors/id/{id}&quot;,
+    &quot;errorCount&quot;: int
+}
+</code></pre>
+<h3 id="errors_3">Errors</h3>
+<ul>
+<li>Status code: 4xx</li>
+<li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
+</ul>
+<hr />
+<h1 id="query">Query</h1>
+<pre><code>/api/import/version/4/do/query
+</code></pre>
+<p>Used by administrators to retrieve a list of imports and their status. A user must have the “Admin &gt; Imports &gt; View” ability to execute this endpoint.</p>
+<h2 id="get_1">GET</h2>
+<h3 id="params_4">Params</h3>
+<ul>
+<li><strong>created_after</strong>: (Optional) Filters the results to return only imports created after the specified time.</li>
+<li><strong>created_before</strong>: (Optional) Filters the results to return only imports created before the specified time.</li>
+<li><strong>updated_after</strong>: (Optional) Filters the results to return only imports updated after the specified time.</li>
+<li><strong>updated_before</strong>: (Optional) Filters the results to return only imports updated before the specified time.</li>
+<li><strong>status</strong>: (Optional) Filters the results to return imports in the given state. Allowed values are those of the <a href="#import-state">Import State</a> enum. If not specified, all statuses are returned.</li>
+<li><strong>origin</strong>: (Optional) Filters the result to return only imports initiated from the wizard or through the api, or both, The possible values are: "ui", "api", "all"</li>
+<li><strong>sort_by</strong>: (Optional) Sorts the results by the specified property value. Allowed values are "id", "created_at", or "updated_at". If not specified, the results are sorted by "created_at".</li>
+<li><strong>sort_order</strong>: (Optional) Used with <code>sort_by</code>. Adjusts the direction of the sort using the values "ascending" or "descending". If not specified, the results are in "descending" order.</li>
+<li><strong>limit</strong>: (Optional) Specifies the number of results to be returned. Default value: 20. <strong><em>Note:</em></strong> This number can't be larger than 100.</li>
+<li><strong>offset</strong>: (Optional) Specifies the first matching record according to the specified sorting order to be returned in the query response. The first offset matching record is omitted from the response. Default value: 0. Example: Specifying offset=400 returns the results starting with the 401st record matched by the provided criteria.</li>
+<li><strong>format</strong>: (Optional) Specifies the output format generated by the api. The possible values are "json" or "xml", when not specified it defaults to "xml".</li>
+</ul>
+<p>For date representation in the parameters above the value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</p>
+<h3 id="success_4">Success</h3>
+<p>Status Code: 200</p>
+<p>Output Representation</p>
+<ul>
+<li><strong>result</strong>: A collection of imports<ul>
+<li><strong>total_results</strong>: The total number of results in the output.</li>
+<li><strong>import</strong>: A collection of imports. If there are no results, this property is omitted. If there's a single result, it is an object. If there are multiple results, it is an array of results.<ul>
+<li><strong>id</strong>: The ID of the import. This ID is used to check the status of the import.</li>
+<li><strong>state</strong>: The state of the import. Displays "Waiting" when the import is queued for processing, "Processing" when the server is working on the import and "Complete" when the import has completed. See <a href="#import-state">Import State</a> enum.</li>
+<li><strong>origin</strong>: How the import was initiated. See <a href="#import-origin">Import Origin</a> enum.</li>
+<li><strong>isExpired</strong>: Indicates that the import expired. After an import expires, <code>true</code> is returned and no data associated with the import can be downloaded.</li>
+<li><strong>createdAt</strong>: The date and time the import is created in the timezone of the user making the request.</li>
+<li><strong>updatedAt</strong>: The date and time the import is updated in the timezone of the user making the request.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Note that the import representation returned in query doesn’t contain <code>resultRefs</code>. Use the read endpoint for the import to get the full import representation.</p>
+<pre><code class="language-json">{
+    &quot;result&quot;: {
+        &quot;total_results&quot;: int,
+        &quot;import&quot;: [
+            {
+                &quot;id&quot;: int,
+                &quot;state&quot;: string,
+                &quot;isExpired&quot;: boolean,
+                &quot;origin&quot;: string,
+                &quot;createdAt&quot;: datetime,
+                &quot;updatedAt&quot;: datetime
+            }
+        ]
+    }
+}
+</code></pre>
+<h3 id="errors_4">Errors</h3>
+<ul>
+<li>Status Code: 4xx</li>
+<li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
+</ul>
+<hr />
+<h1 id="download-errors">Download Errors</h1>
+<pre><code>/api/import/version/4/do/downloadErrors/id/{id}
+</code></pre>
+<p>Download errors associated with the specified import (after it is complete).</p>
+<h2 id="get_2">GET</h2>
+<h3 id="params_5">Params</h3>
+<p><strong>{id}</strong>: The ID of the import.</p>
+<h3 id="success_5">Success</h3>
+<p>CSV data with error info for any rows that failed to result in inserts or updates. For error descriptions, see <a href="https://help.salesforce.com/articleView?id=pardot_prospect_import_errors.htm&amp;type=5">Prospect Import Errors</a>.</p>
+<h3 id="errors_5">Errors</h3>
+<ul>
+<li>Status code: 4xx</li>
+<li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
+</ul>
+<hr />
+<h1 id="enums">Enums</h1>
+<h2 id="import-state">Import State</h2>
+<ul>
+<li>"Open"              : The import is created and can have batches added</li>
+<li>"Ready"             : All imports are added and ready to be processed</li>
+<li>"Waiting"           : The import is waiting to be picked up by a processing agent.</li>
+<li>"Processing"        : The import batches are being processed</li>
+<li>"Complete"          : All batches completed and results are ready to be consumed</li>
+</ul>
+<h2 id="import-operation">Import Operation</h2>
+<ul>
+<li>"Upsert"            : Upsert objects</li>
+</ul>
+<h2 id="object">Object</h2>
+<ul>
+<li>"Prospect"         : Operate on Prospect</li>
+</ul>
+<h2 id="import-origin">Import Origin</h2>
+<ul>
+<li>"UI"               : The import request is initiated through the wizard</li>
+<li>"API"              : The import request is initiated through an api call</li>
+</ul>
+                
+            </div>
+        </div>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form id="content_search">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" name="q" autocomplete="off" autofocus>
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/prettify-1.0.min.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+    </body>
+</html>

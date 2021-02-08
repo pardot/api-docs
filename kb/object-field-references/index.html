@@ -1,0 +1,2879 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Official documentation for the Pardot API">
+        
+        <link rel="canonical" href="http://developer.pardot.com/kb/object-field-references/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Object Field References (v3/v4) - Pardot API Documentation</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            // Current page data
+            var mkdocs_page_name = "Object Field References (v3/v4)";
+            var mkdocs_page_input_path = "kb/object-field-references.md";
+            var mkdocs_page_url = "/kb/object-field-references/";
+        </script>
+        
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">Pardot API Documentation</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">API <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../..">
+                                    
+                                    Official Pardot API Documentation
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../../version3and4overview/">
+                                    
+                                    Overview (v3/v4)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../authentication/">
+                                    
+                                    Authentication
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class="active ">
+                                <a href="./">
+                                    
+                                    Object Field References (v3/v4)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/">
+                                    
+                                    Transitioning to Version 4
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../release-notes/">
+                                    
+                                    Release Notes
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../error-codes-messages/">
+                                    
+                                    Error Codes & Messages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../bulk-data-pull/">
+                                    
+                                    Bulk Data Pull
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 3 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/accounts/">
+                                    
+                                    Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/campaigns/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/custom-fields/">
+                                    
+                                    Custom Fields
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/custom-redirects/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/dynamic-content/">
+                                    
+                                    Dynamic Content
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/emails/">
+                                    
+                                    Email
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/batch-email-clicks/">
+                                    
+                                    Email Clicks
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/email-templates/">
+                                    
+                                    Email Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/forms/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/lifecycle-histories/">
+                                    
+                                    Lifecycle Histories
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/lifecycle-stages/">
+                                    
+                                    Lifecycle Stages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/lists/">
+                                    
+                                    Lists
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/list-memberships/">
+                                    
+                                    List Memberships
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/opportunities/">
+                                    
+                                    Opportunities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/prospects/">
+                                    
+                                    Prospects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/prospect-accounts/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/tags/">
+                                    
+                                    Tags
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/tag-objects/">
+                                    
+                                    TagObjects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/users/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/visitors/">
+                                    
+                                    Visitors
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/visitor-activities/">
+                                    
+                                    Visitor Activities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/visits/">
+                                    
+                                    Visits
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../api-version-3/import/">
+                                    
+                                    Import API (for Prospects)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-3/export/">
+                                    
+                                    Export API
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 4 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/accounts/">
+                                    
+                                    Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/campaigns/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/custom-fields/">
+                                    
+                                    Custom Fields
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/custom-redirects/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/dynamic-content/">
+                                    
+                                    Dynamic Content
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/emails/">
+                                    
+                                    Email
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/batch-email-clicks/">
+                                    
+                                    Email Clicks
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/email-templates/">
+                                    
+                                    Email Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/forms/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/lifecycle-histories/">
+                                    
+                                    Lifecycle Histories
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/lifecycle-stages/">
+                                    
+                                    Lifecycle Stages
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/lists/">
+                                    
+                                    Lists
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/list-memberships/">
+                                    
+                                    List Memberships
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/opportunities/">
+                                    
+                                    Opportunities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/prospects/">
+                                    
+                                    Prospects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/prospect-accounts/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/tags/">
+                                    
+                                    Tags
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/tag-objects/">
+                                    
+                                    TagObjects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/users/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/visitors/">
+                                    
+                                    Visitors
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/visitor-activities/">
+                                    
+                                    Visitor Activities
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/visits/">
+                                    
+                                    Visits
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../api-version-4/import/">
+                                    
+                                    Import API (for Prospects)
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-4/export/">
+                                    
+                                    Export API
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version 5 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            <li class=" ">
+                                <a href="../api-version-5/version5overview/">
+                                    
+                                    Overview
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" separator-above">
+                                <a href="../api-version-5/campaign/">
+                                    
+                                    Campaigns
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-5/custom-redirect/">
+                                    
+                                    Custom Redirects
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-5/file/">
+                                    
+                                    Files
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-5/folder/">
+                                    
+                                    Folders
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-5/form/">
+                                    
+                                    Forms
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-5/layout-template/">
+                                    
+                                    Layout Templates
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-5/prospect-account/">
+                                    
+                                    Prospect Accounts
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-5/tracker-domain/">
+                                    
+                                    Tracker Domains
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
+                                <a href="../api-version-5/user/">
+                                    
+                                    Users
+                                    
+                                </a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li>
+                    <a href="#mkdocs_search_modal" data-toggle="modal"><i class="fa fa-search"></i> Search</a>
+                </li>
+                
+                
+                <li>
+                    <a rel="next" href="../authentication/">
+                    <i class="fa fa-arrow-left"></i>
+                    
+                    Authentication
+                    
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="prev" href="../api-version-4/">
+                    
+                    Transitioning to Version 4
+                    
+                    <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#object-field-references">Object Field References</a></li>
+            <li><a href="#account">Account</a></li>
+            <li><a href="#campaign">Campaign</a></li>
+            <li><a href="#custom-field">Custom Field</a></li>
+            <li><a href="#custom-redirect">Custom Redirect</a></li>
+            <li><a href="#dynamic-content">Dynamic Content</a></li>
+            <li><a href="#email">Email</a></li>
+            <li><a href="#email-clicks">Email Clicks</a></li>
+            <li><a href="#form">Form</a></li>
+            <li><a href="#identified-company">Identified Company</a></li>
+            <li><a href="#lifecycle-history">Lifecycle History</a></li>
+            <li><a href="#lifecycle-stage">Lifecycle Stage</a></li>
+            <li><a href="#list">List</a></li>
+            <li><a href="#list-membership">List Membership</a></li>
+            <li><a href="#opportunity">Opportunity</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#profile-criteria">Profile Criteria</a></li>
+            <li><a href="#prospect">Prospect</a></li>
+            <li><a href="#prospect-account">Prospect Account</a></li>
+            <li><a href="#tag">Tag</a></li>
+            <li><a href="#tag-object">Tag Object</a></li>
+            <li><a href="#user">User</a></li>
+            <li><a href="#visit">Visit</a></li>
+            <li><a href="#visitor">Visitor</a></li>
+            <li><a href="#visitor-activity">Visitor Activity</a></li>
+            <li><a href="#visitor-page-view">Visitor Page View</a></li>
+            <li><a href="#visitor-referrer">Visitor Referrer</a></li>
+    </ul>
+</div></div>
+            <div class="col-md-9 main-content" role="main">
+                
+                    <h1 id="object-field-references">Object Field References</h1>
+<p>Each field returned by the API maps to a field within the Pardot user interface. The tables in this section list all fields that can be returned and/or updated via the API. Consider the following limitations:</p>
+<ul>
+<li>Fields marked as 'Editable' can be manipulated through <code>create</code>, <code>update</code>, and <code>upsert</code> requests.</li>
+<li>'Required' denotes that the specified field can't be left without a value during <code>insert</code> and some <code>upsert</code> requests. <code>update</code> requests that clear a required field are declined.</li>
+<li>During <code>update</code> requests, the parameter names submitted to the API and tag names in the API's response match field names within the Pardot user interface unless otherwise specified.</li>
+</ul>
+<h2 id="account">Account</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for this account</td>
+</tr>
+<tr>
+<td>&lt;level&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>The level of product for the account</td>
+</tr>
+<tr>
+<td>&lt;website&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account website</td>
+</tr>
+<tr>
+<td>&lt;vanity_domain&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Custom vanity domain name</td>
+</tr>
+<tr>
+<td>&lt;plugin_campaign_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Plugin ID for account campaign</td>
+</tr>
+<tr>
+<td>&lt;tracking_code_template&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Markup and code for use in tracking templates</td>
+</tr>
+<tr>
+<td>&lt;address1&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account contact address, line 1</td>
+</tr>
+<tr>
+<td>&lt;address2&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account contact address, line 2</td>
+</tr>
+<tr>
+<td>&lt;city&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account contact city</td>
+</tr>
+<tr>
+<td>&lt;state&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account contact state</td>
+</tr>
+<tr>
+<td>&lt;territory&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account contact territory</td>
+</tr>
+<tr>
+<td>&lt;zip&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Account contact zip code</td>
+</tr>
+<tr>
+<td>&lt;country&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account contact country (full string)</td>
+</tr>
+<tr>
+<td>&lt;phone&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account contact phone number</td>
+</tr>
+<tr>
+<td>&lt;fax&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account contact fax number</td>
+</tr>
+</tbody>
+</table>
+<h2 id="campaign">Campaign</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this campaign</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Campaign's name</td>
+</tr>
+<tr>
+<td>&lt;cost&gt;</td>
+<td>integer</td>
+<td></td>
+<td>X</td>
+<td>Cost associated to the campaign</td>
+</tr>
+</tbody>
+</table>
+<h2 id="custom-field">Custom Field</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this custom field</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Custom field's name</td>
+</tr>
+<tr>
+<td>&lt;field_id&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>API ID for custom field</td>
+</tr>
+<tr>
+<td>&lt;type&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Type of field</td>
+</tr>
+<tr>
+<td>&lt;type_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for custom field's type</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time custom field is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time custom field was updated; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;is_record_multiple_responses&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If true, this custom field will record multiple responses</td>
+</tr>
+<tr>
+<td>&lt;crm_id&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>The CRM ID of the field you want to map to this custom field</td>
+</tr>
+<tr>
+<td>&lt;is_use_values&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If true, this custom field uses predefined values</td>
+</tr>
+<tr>
+<td>&lt;is_analytics_synced&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If true, this custom field is marked to sync with Tableau CRM</td>
+</tr>
+</tbody>
+</table>
+<h2 id="custom-redirect">Custom Redirect</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this custom redirect</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Custom redirect's name</td>
+</tr>
+<tr>
+<td>&lt;Url&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>URL for the custom redirect</td>
+</tr>
+<tr>
+<td>&lt;destination&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>URL the custom redirect leads to</td>
+</tr>
+<tr>
+<td>&lt;campaign&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>The campaign associated with this custom redirect</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time custom redirect is created in Pardot; Time is reported in API user's  preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time custom redirect was updated; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dynamic-content">Dynamic Content</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this dynamic content</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Dynamic content's name</td>
+</tr>
+<tr>
+<td>&lt;embedCode&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Code to embed this dynamic content onto your webpage</td>
+</tr>
+<tr>
+<td>&lt;embedUrl&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>URL to embed this dynamic content</td>
+</tr>
+<tr>
+<td>&lt;baseContent&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>The default dynamic content</td>
+</tr>
+<tr>
+<td>&lt;basedOn&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Field that this dynamic content is based on</td>
+</tr>
+<tr>
+<td>&lt;variation&gt;</td>
+<td>node</td>
+<td></td>
+<td></td>
+<td>The variation of content prospect will see based on the field's value<br><strong>Note:</strong> Information about a variation is returned in a &lt;variation&gt; node in the XML response.  It contains the value of the field in the &lt;comparison&gt; tag and the content of the variation in the &lt;content&gt; tag</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time dynamic content is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time dynamic content was updated; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="email">Email</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this email</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Name of this email</td>
+</tr>
+<tr>
+<td>&lt;subject&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Email Subject</td>
+</tr>
+<tr>
+<td>&lt;message&gt;</td>
+<td>XML Object</td>
+<td></td>
+<td></td>
+<td>Contains text and html elements of different formats</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>Timestamp</td>
+<td></td>
+<td></td>
+<td>Time the Email is created</td>
+</tr>
+</tbody>
+</table>
+<h2 id="email-clicks">Email Clicks</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this email click</td>
+</tr>
+<tr>
+<td>&lt;prospect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated prospect</td>
+</tr>
+<tr>
+<td>&lt;url&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>URL of the email click</td>
+</tr>
+<tr>
+<td>&lt;list_email_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated list email. Value not present if null.</td>
+</tr>
+<tr>
+<td>&lt;drip_program_action_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated drip program action. Value not present if null.</td>
+</tr>
+<tr>
+<td>&lt;email_template_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated email template. Value not present if null.</td>
+</tr>
+<tr>
+<td>&lt;tracker_redirect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated tracker redirect. Value not present if null.</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time that email click occurs; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="form">Form</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this form</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Form's name</td>
+</tr>
+<tr>
+<td>&lt;campaign_id&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the campaign associated with this form</td>
+</tr>
+<tr>
+<td>&lt;embed_code&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>The code used to embed the form on your webpage</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time form is created in Pardot; Time is reported in API user's    preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time form was updated; Time is reported in API user's    preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identified-company">Identified Company</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this identified company</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Identified Company's name</td>
+</tr>
+<tr>
+<td>&lt;street_address&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Identified Company's street address</td>
+</tr>
+<tr>
+<td>&lt;city&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Identified Company's city</td>
+</tr>
+<tr>
+<td>&lt;state&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Identified Company's state</td>
+</tr>
+<tr>
+<td>&lt;postal_code&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Identified Company's postal code</td>
+</tr>
+<tr>
+<td>&lt;country&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Identified Company's country</td>
+</tr>
+<tr>
+<td>&lt;email&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Identified Company's email address</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lifecycle-history">Lifecycle History</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of this lifecycle history</td>
+</tr>
+<tr>
+<td>&lt;prospect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot's ID for the prospect in this stage</td>
+</tr>
+<tr>
+<td>&lt;previous_stage_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the stage this prospect previously was in</td>
+</tr>
+<tr>
+<td>&lt;next_stage_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the stage this prospect is in next</td>
+</tr>
+<tr>
+<td>&lt;seconds_elapsed&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Number of seconds for prospect to get to current stage</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time lifecycle history is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lifecycle-stage">Lifecycle Stage</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of this lifecycle stage</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Lifecycle stage's name</td>
+</tr>
+<tr>
+<td>&lt;position&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Lifcycle stage's position in lifecycle</td>
+</tr>
+<tr>
+<td>&lt;is_locked&gt;</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>If true, lifecycle stage is locked</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">List</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of this list</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>List's name (internal to Pardot)</td>
+</tr>
+<tr>
+<td>&lt;is_public&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If true, list will show on EPC pages to prospects</td>
+</tr>
+<tr>
+<td>&lt;is_dynamic&gt;</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>If true, list has prospects dynamically added to it via a set of chosen rules</td>
+</tr>
+<tr>
+<td>&lt;title&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>List's title (visible to subscribers)</td>
+</tr>
+<tr>
+<td>&lt;description&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>List's description</td>
+</tr>
+<tr>
+<td>&lt;is_crm_visible&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If true, list is visible in CRM to add or remove from</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time list is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time list was updated; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-membership">List Membership</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this list membership</td>
+</tr>
+<tr>
+<td>&lt;list_id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of the list for this membership</td>
+</tr>
+<tr>
+<td>&lt;prospect_id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of the prospect for this membership</td>
+</tr>
+<tr>
+<td>&lt;opted_out&gt;</td>
+<td>integer</td>
+<td></td>
+<td>X</td>
+<td>If value is 1, the prospect is unsubscribed from receiving emails from this list</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time that this membership is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time that this membership was updated; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="opportunity">Opportunity</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this opportunity</td>
+</tr>
+<tr>
+<td>&lt;campaign_id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td>X</td>
+<td>Pardot ID of the campaign associated with this opportunity<br><strong>Note</strong>: Information about an opportunity's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are made by providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt; request. See <a href="/kb/api-version-4/opportunities#xml-response-formats">XML Response Formats</a> in <a href="/kb/api-version-4/opportunities#using-opportunities">Using Opportunities</a> for more details.</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td>X</td>
+<td>X</td>
+<td>Opportunity's name</td>
+</tr>
+<tr>
+<td>&lt;value&gt;</td>
+<td>float</td>
+<td>X</td>
+<td>X</td>
+<td>Opportunity's value <br><strong>Restrictions</strong>: value must be a positive numeric value</td>
+</tr>
+<tr>
+<td>&lt;probability&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td>X</td>
+<td>Opportunity's probability <br><strong>Restrictions</strong>: value must be a positive numeric value between 0 and 100 inclusive</td>
+</tr>
+<tr>
+<td>&lt;type&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Opportunity's type</td>
+</tr>
+<tr>
+<td>&lt;stage&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Opportunity's stage</td>
+</tr>
+<tr>
+<td>&lt;status&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Opportunity's status <br><strong>Restrictions</strong>: status must be either won, lost, or open</td>
+</tr>
+<tr>
+<td>&lt;closed_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td>X</td>
+<td>Opportunity's closed date<br><strong>Note</strong>: if this is left blank, the closed_at timestamp (Closed Date within the app) is not set, even when the Opportunity's stage, status or probability are set to indicate opportunity closure</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time opportunity is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time opportunity was updated in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="profile">Profile</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this profile</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Profile's name</td>
+</tr>
+</tbody>
+</table>
+<h2 id="profile-criteria">Profile Criteria</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this profile criteria</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Profile criteria's name</td>
+</tr>
+<tr>
+<td>&lt;matches&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>The matching status of this profile criteria with the current prospect<br><strong>Restrictions:</strong> Updates can be performed by using the values match, nomatch, or unknown</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prospect">Prospect</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this prospect</td>
+</tr>
+<tr>
+<td>&lt;campaign_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td>X</td>
+<td>Pardot ID of the campaign associated with this prospect<br><strong>Note</strong>: Information about a prospect's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are made by providing campaign_id=&lt;campaign_id&gt; during an &lt;UPDATE&gt; request. See <a href="/kb/api-version-4/prospects/#xml-response-format">XML Response Formats</a> in <a href="/kb/api-version-4/prospects#using-prospects">Using Prospects</a> for more details.</td>
+</tr>
+<tr>
+<td>&lt;salutation&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's formal prefix</td>
+</tr>
+<tr>
+<td>&lt;first_name&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's first name</td>
+</tr>
+<tr>
+<td>&lt;last_name&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's last name</td>
+</tr>
+<tr>
+<td>&lt;email&gt;</td>
+<td>string</td>
+<td>X</td>
+<td>X</td>
+<td>Prospect's email address</td>
+</tr>
+<tr>
+<td>&lt;password&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's password</td>
+</tr>
+<tr>
+<td>&lt;company&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's company</td>
+</tr>
+<tr>
+<td>&lt;prospect_account_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td>X</td>
+<td>Prospect's account ID</td>
+</tr>
+<tr>
+<td>&lt;website&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's website URL</td>
+</tr>
+<tr>
+<td>&lt;job_title&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's job title</td>
+</tr>
+<tr>
+<td>&lt;department&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's department</td>
+</tr>
+<tr>
+<td>&lt;country&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's country</td>
+</tr>
+<tr>
+<td>&lt;address_one&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's address, line 1</td>
+</tr>
+<tr>
+<td>&lt;address_two&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's address, line 2</td>
+</tr>
+<tr>
+<td>&lt;city&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's city</td>
+</tr>
+<tr>
+<td>&lt;state&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's US state</td>
+</tr>
+<tr>
+<td>&lt;territory&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's territory</td>
+</tr>
+<tr>
+<td>&lt;zip&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's postal code</td>
+</tr>
+<tr>
+<td>&lt;phone&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's phone number</td>
+</tr>
+<tr>
+<td>&lt;fax&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's fax number</td>
+</tr>
+<tr>
+<td>&lt;source&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's source</td>
+</tr>
+<tr>
+<td>&lt;annual_revenue&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's annual revenue</td>
+</tr>
+<tr>
+<td>&lt;employees&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's number of employees</td>
+</tr>
+<tr>
+<td>&lt;industry&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's industry</td>
+</tr>
+<tr>
+<td>&lt;years_in_business&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Prospect's number of years in business</td>
+</tr>
+<tr>
+<td>&lt;comments&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Comments about this prospect</td>
+</tr>
+<tr>
+<td>&lt;notes&gt;</td>
+<td>string</td>
+<td></td>
+<td>X</td>
+<td>Notes about this prospect<br><strong>Note</strong>: Available for export, but only exported if selected via <code>fields</code> parameter specified in export <code>create</code> request</td>
+</tr>
+<tr>
+<td>&lt;score&gt;</td>
+<td>integer</td>
+<td></td>
+<td>X</td>
+<td>Prospect's score</td>
+</tr>
+<tr>
+<td>&lt;grade&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Prospect's letter grade<br><strong>Note</strong>: Available for export, but only exported if selected via <code>fields</code> parameter specified in export <code>create</code> request</td>
+</tr>
+<tr>
+<td>&lt;last_activity_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time stamp of this prospect's latest visitor activity; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;recent_interaction&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Describes the prospect's most recent interaction with Pardot</td>
+</tr>
+<tr>
+<td>&lt;crm_lead_fid&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Prospect's lead ID in a supported CRM system</td>
+</tr>
+<tr>
+<td>&lt;crm_contact_fid&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Prospect's contact ID in a supported CRM system</td>
+</tr>
+<tr>
+<td>&lt;crm_owner_fid&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Prospect's owner ID in a supported CRM system</td>
+</tr>
+<tr>
+<td>&lt;crm_account_fid&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Account ID in a supported CRM system</td>
+</tr>
+<tr>
+<td>&lt;crm_last_sync&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time this prospect was synced with a supported CRM system</td>
+</tr>
+<tr>
+<td>&lt;crm_url&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>URL to view the prospect within the CRM system</td>
+</tr>
+<tr>
+<td>&lt;is_do_not_email&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If value is 1, prospect prefers not to be emailed</td>
+</tr>
+<tr>
+<td>&lt;is_do_not_call&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If value is 1, prospect prefers not to be called</td>
+</tr>
+<tr>
+<td>&lt;opted_out&gt;</td>
+<td>boolean</td>
+<td></td>
+<td></td>
+<td>If value is 1, prospect has opted out of marketing communications</td>
+</tr>
+<tr>
+<td>&lt;is_reviewed&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If value is 1, prospect has been reviewed</td>
+</tr>
+<tr>
+<td>&lt;is_starred&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If value is 1, prospect has been starred</td>
+</tr>
+<tr>
+<td>&lt;is_archived&gt;</td>
+<td>boolean</td>
+<td></td>
+<td>X</td>
+<td>If value is 1, prospect has been archived</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time prospect is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time prospect was updated in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h3 id="additional-prospect-fields-available-for-export">Additional prospect fields available for Export</h3>
+<p>When using the <a href="/kb/api-version-3/export#prospect">v3 Export API</a> or <a href="/kb/api-version-4/export#prospect">v4 Export API</a> to export prospects, the following prospect fields are selectable for export in addition to the <a href="#prospect">prospect fields</a> listed above.<br><strong>Note</strong>: The following fields are only available via the Export API and are only exported if selected via <code>fields</code> parameter specified in export <code>create</code> request.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;converted_at&gt;</td>
+<td>timestamp</td>
+<td>Time when prospect was converted from visitor; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;converted_from_object_type&gt;</td>
+<td>string</td>
+<td>Type of object associated with visitor activity that resulted in prospect being converted from visitor.  Supported values include 'Form', 'FormHandler', 'LandingPage', 'MultivariateTestVariation', and 'Video'</td>
+</tr>
+<tr>
+<td>&lt;converted_from_object_name&gt;</td>
+<td>string</td>
+<td>Name of object associated with visitor activity that resulted in prospect being converted from visitor</td>
+</tr>
+<tr>
+<td>&lt;is_email_hard_bounced&gt;</td>
+<td>boolean</td>
+<td>if value is 1, prospect email address has hard bounced</td>
+</tr>
+<tr>
+<td>&lt;email_bounced_at&gt;</td>
+<td>timestamp</td>
+<td>Time when prospect email address hard bounced; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;email_bounced_reason&gt;</td>
+<td>string</td>
+<td>Reason why prospect email address hard bounced</td>
+</tr>
+<tr>
+<td>&lt;first_assigned_at&gt;</td>
+<td>timestamp</td>
+<td>Time prospect was first assigned to a user; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;first_activity_at&gt;</td>
+<td>timestamp</td>
+<td>Time when first visitor activity occurred for this prospect; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;first_referrer_url&gt;</td>
+<td>string</td>
+<td>First referrer's URL</td>
+</tr>
+<tr>
+<td>&lt;first_referrer_type&gt;</td>
+<td>string</td>
+<td>First referrer's vendor and type (such as 'Google Natural Search')</td>
+</tr>
+<tr>
+<td>&lt;first_referrer_query&gt;</td>
+<td>string</td>
+<td>First referrer's search query</td>
+</tr>
+<tr>
+<td>&lt;campaign_parameter&gt;</td>
+<td>string</td>
+<td>Prospect's campaign parameter utm_campaign from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;medium_parameter&gt;</td>
+<td>string</td>
+<td>Prospect's medium parameter utm_medium from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;source_parameter&gt;</td>
+<td>string</td>
+<td>Prospect's source parameter utm_source from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;content_parameter&gt;</td>
+<td>string</td>
+<td>Prospect's content parameter utm_content from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;term_parameter&gt;</td>
+<td>string</td>
+<td>Prospect's term parameter utm_term from Google Analytics</td>
+</tr>
+</tbody>
+</table>
+<h2 id="prospect-account">Prospect Account</h2>
+<p><strong>Note:</strong> Prospect account fields are fully customizable. To get the
+most accurate field metadata for your Pardot account, use the
+describe operation on the prospectAccount API endpoint.</p>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of the prospect account</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td>X</td>
+<td></td>
+<td>The name of the prospect account</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tag">Tag</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this tag</td>
+</tr>
+<tr>
+<td>&lt;name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Tag's name</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time tag is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time tag was updated; Time is reported in API user's        preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tag-object">Tag Object</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of the tag object</td>
+</tr>
+<tr>
+<td>&lt;tag_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>The Pardot ID of the tag</td>
+</tr>
+<tr>
+<td>&lt;type&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>The type of object associated with the tag</td>
+</tr>
+<tr>
+<td>&lt;object_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>The Pardot ID of the object</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time tag is associated with the object in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="user">User</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID of the user</td>
+</tr>
+<tr>
+<td>&lt;email&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>User's email address</td>
+</tr>
+<tr>
+<td>&lt;first_name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>User's first name</td>
+</tr>
+<tr>
+<td>&lt;last_name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>User's last name</td>
+</tr>
+<tr>
+<td>&lt;job_title&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>User's job title</td>
+</tr>
+<tr>
+<td>&lt;role&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>User's role</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time user is created in Pardot; Time is reported in the API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time user was updated in Pardot; Time is reported in the API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="visit">Visit</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for this visit</td>
+</tr>
+<tr>
+<td>&lt;visitor_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated visitor</td>
+</tr>
+<tr>
+<td>&lt;prospect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated prospect</td>
+</tr>
+<tr>
+<td>&lt;visitor_page_view_count&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Number of page views for this visit</td>
+</tr>
+<tr>
+<td>&lt;first_visitor_page_view_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time of first page view for this visit; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;last_visitor_page_view_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time of last page view for this visit; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;duration_in_seconds&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Length of this visit</td>
+</tr>
+<tr>
+<td>&lt;campaign_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visit's campaign parameter utm_campaign from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;medium_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visit's medium parameter utm_medium from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;source_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visit's source parameter utm_source from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;content_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visit's content parameter utm_content from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;term_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visit's term parameter utm_term from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time visit is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time visit was updated in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="visitor">Visitor</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this visitor</td>
+</tr>
+<tr>
+<td>&lt;page_view_count&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Number of page views by this visitor</td>
+</tr>
+<tr>
+<td>&lt;ip_address&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visitor's IP address</td>
+</tr>
+<tr>
+<td>&lt;hostname&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visitor's hostname</td>
+</tr>
+<tr>
+<td>&lt;campaign_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visitor's campaign parameter utm_campaign from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;medium_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visitor's medium parameter utm_medium from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;source_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visitor's source parameter utm_source from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;content_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visitor's content parameter utm_content from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;term_parameter&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visitor's term parameter utm_term from Google Analytics</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time visitor is created in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Last time visitor was updated in Pardot; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="visitor-activity">Visitor Activity</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this visitor activity</td>
+</tr>
+<tr>
+<td>&lt;prospect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated prospect</td>
+</tr>
+<tr>
+<td>&lt;visitor_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for the associated visitor</td>
+</tr>
+<tr>
+<td>&lt;type&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Visitor activity's type number; See listing below</td>
+</tr>
+<tr>
+<td>&lt;type_name&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Visitor activity's type name; See listing below</td>
+</tr>
+<tr>
+<td>&lt;details&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Details about this visitor activity such as the name of the object associated with this activity, the search phrase used in a site search query, etc.</td>
+</tr>
+<tr>
+<td>&lt;email_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the email associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has an email associated with it</td>
+</tr>
+<tr>
+<td>&lt;email_template_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the email template associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has an email associated with it</td>
+</tr>
+<tr>
+<td>&lt;list_email_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the list email associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has an email associated with it</td>
+</tr>
+<tr>
+<td>&lt;form_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the form associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has a form associated with it</td>
+</tr>
+<tr>
+<td>&lt;form_handler_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the form handler associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has a form handler associated with it</td>
+</tr>
+<tr>
+<td>&lt;site_search_query_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the site search query associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has a site search query associated with it</td>
+</tr>
+<tr>
+<td>&lt;landing_page_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the landing page associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has a landing page associated with it</td>
+</tr>
+<tr>
+<td>&lt;paid_search_ad_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the paid search ad associated with this visitor activity <br><strong>Note:</strong> This node appears only if this visitor activity has a paid search ad associated with it</td>
+</tr>
+<tr>
+<td>&lt;multivariate_test_variation_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the multivariate test variation associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has a multivariate test variation associated with it</td>
+</tr>
+<tr>
+<td>&lt;visitor_page_view_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the visitor page view associated with this visitoractivity<br><strong>Note:</strong> This node appears only if this visitor activity has a visitor page view associated with it</td>
+</tr>
+<tr>
+<td>&lt;file_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the file associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has a file associated with it</td>
+</tr>
+<tr>
+<td>&lt;custom_redirect_id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID of the custom redirect associated with this visitor activity Note: This node appears only if this visitor activity has a custom redirect associated with it</td>
+</tr>
+<tr>
+<td>&lt;campaign&gt;</td>
+<td>object</td>
+<td></td>
+<td></td>
+<td>Campaign information including id, name, and cost.</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time that visitor activity occurred; Time is reported in API user's preferred timezone</td>
+</tr>
+<tr>
+<td>&lt;updated_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time that visitor activity update occurred; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<p><a name="visitor-activity-types" id="visitor-activity-types"></a>Visitor Activities may have the following values for
+<code>&lt;type&gt;</code></p>
+<ul>
+<li>1 - Click</li>
+<li>2 - View</li>
+<li>3 - Error</li>
+<li>4 - Success</li>
+<li>5 - Session</li>
+<li>6 - Sent</li>
+<li>7 - Search</li>
+<li>8 - New Opportunity</li>
+<li>9 - Opportunity Won</li>
+<li>10 - Opportunity Lost</li>
+<li>11 - Open</li>
+<li>12 - Unsubscribe Page</li>
+<li>13 - Bounced</li>
+<li>14 - Spam Complaint</li>
+<li>15 - Email Preference Page</li>
+<li>16 - Resubscribed</li>
+<li>17 - Click (Third Party)</li>
+<li>18 - Opportunity Reopened</li>
+<li>19 - Opportunity Linked</li>
+<li>20 - Visit</li>
+<li>21 - Custom URL click</li>
+<li>22 - Olark Chat</li>
+<li>23 - Invited to Webinar</li>
+<li>24 - Attended Webinar</li>
+<li>25 - Registered for Webinar</li>
+<li>26 - Social Post Click</li>
+<li>27 - Video View</li>
+<li>28 - Event Registered</li>
+<li>29 - Event Checked In</li>
+<li>30 - Video Conversion</li>
+<li>31 - UserVoice Suggestion</li>
+<li>32 - UserVoice Comment</li>
+<li>33 - UserVoice Ticket</li>
+<li>34 - Video Watched (≥ 75% watched)</li>
+<li>35 - Indirect Unsubscribe Open</li>
+<li>36 - Indirect Bounce</li>
+<li>37 - Indirect Resubscribed</li>
+<li>38 - Opportunity Unlinked</li>
+<li>Other - Unknown</li>
+</ul>
+<h2 id="visitor-page-view">Visitor Page View</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td></td>
+<td></td>
+<td>Pardot ID for this visitor page view</td>
+</tr>
+<tr>
+<td>&lt;url&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Page view URL</td>
+</tr>
+<tr>
+<td>&lt;title&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Page title</td>
+</tr>
+<tr>
+<td>&lt;created_at&gt;</td>
+<td>timestamp</td>
+<td></td>
+<td></td>
+<td>Time page view occurred; Time is reported in API user's preferred timezone</td>
+</tr>
+</tbody>
+</table>
+<h2 id="visitor-referrer">Visitor Referrer</h2>
+<table>
+<thead>
+<tr>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Required</th>
+<th>Editable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;id&gt;</td>
+<td>integer</td>
+<td>X</td>
+<td></td>
+<td>Pardot ID for this visitor referrer</td>
+</tr>
+<tr>
+<td>&lt;referrer&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Referrer's URL</td>
+</tr>
+<tr>
+<td>&lt;vendor&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Referrer's vendor (such as 'Google' or 'Yahoo')</td>
+</tr>
+<tr>
+<td>&lt;type&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Referrer's type (such as 'Natural Search')</td>
+</tr>
+<tr>
+<td>&lt;query&gt;</td>
+<td>string</td>
+<td></td>
+<td></td>
+<td>Referrer's search query</td>
+</tr>
+</tbody>
+</table>
+                
+            </div>
+        </div>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form id="content_search">
+                    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" name="q" autocomplete="off" autofocus>
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+    </body>
+</html>
