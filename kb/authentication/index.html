@@ -103,14 +103,6 @@
                             </li>
                         
                             <li class=" ">
-                                <a href="../release-notes/">
-                                    
-                                    Release Notes
-                                    
-                                </a>
-                            </li>
-                        
-                            <li class=" ">
                                 <a href="../error-codes-messages/">
                                     
                                     Error Codes & Messages
@@ -667,15 +659,14 @@
             <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#authentication">Authentication</a></li>
-            <li><a href="#via-salesforce-oauth">Via Salesforce OAuth</a></li>
-            <li><a href="#via-pardot-api-login-endpoint">Via Pardot API login endpoint</a></li>
+            <li><a href="#obtain-salesforce-access-token">Obtain Salesforce Access Token</a></li>
+            <li><a href="#oauth-authentication-domain-by-account-type">Oauth Authentication Domain by Account Type</a></li>
+            <li><a href="#using-access-token-with-pardot">Using Access Token with Pardot</a></li>
     </ul>
 </div></div>
             <div class="col-md-9 main-content" role="main">
                 
                     <h1 id="authentication">Authentication</h1>
-<p>To access the Pardot API with an SSO enabled user (including users synced from Salesforce), you must use a Salesforce OAuth endpoint for authentication. To access the Pardot API with a Pardot-only user (created within Pardot and not synced to Salesforce), you must use the Pardot API login endpoint for authentication. These options are described below.</p>
-<h2 id="via-salesforce-oauth">Via Salesforce OAuth</h2>
 <p>Prerequisites:</p>
 <ol>
 <li>
@@ -728,6 +719,7 @@ client_secret=&lt;client_secret&gt;
 username=&lt;username&gt;
 password=&lt;password&gt;
 </code></pre>
+
 <h4 id="request-parameters">Request Parameters</h4>
 <table>
 <thead>
@@ -775,6 +767,7 @@ Host: pi.pardot.com
 Authorization: Bearer &lt;access_token&gt;
 Pardot-Business-Unit-Id: &lt;business_unit_id&gt;
 </code></pre>
+
 <h4 id="request-parameters_1">Request Parameters</h4>
 <table>
 <thead>
@@ -799,103 +792,6 @@ Pardot-Business-Unit-Id: &lt;business_unit_id&gt;
 </table>
 <p>If a valid access token is provided with a valid business unit ID, the Pardot endpoint should work as expected.</p>
 <p>Note: The Pardot API does not enforce IP address restrictions that are configured using the Salesforce option "Enforce login IP ranges on every request".</p>
-<h2 id="via-pardot-api-login-endpoint">Via Pardot API login endpoint</h2>
-<p><strong>Note:</strong> In the Spring '21 and later releases of the Pardot API, authentication with the API key / user key will not be supported.</p>
-<h3 id="request-format">Request Format</h3>
-<p>Authentication requests sent to the Pardot API:</p>
-<ol>
-<li>Must be made via SSL encrypted connection</li>
-<li>Must use HTTP <code>POST</code></li>
-<li>Must contain the <code>email</code>, <code>password</code>, and <code>user_key</code> for the Pardot user account that will be submitting API requests</li>
-</ol>
-<p>Login requests that meet these criteria are granted an API key.</p>
-<p>API user keys are available in Pardot under <strong>{your email address} &gt; Settings</strong> in the API User Key row. For assistance in acquiring your user key, contact your Pardot support representative.</p>
-<p>In accounts with <a href="https://help.salesforce.com/articleView?id=pardot_sf_connector_setup_user_sync_considerations.htm&amp;type=5">Salesforce User Sync enabled</a>, you must authenticate with a Pardot-only user. SSO users aren't supported with this authentication type. <a href="#via-salesforce-oauth">OAuth</a> authentication must be used for SSO users.</p>
-<blockquote>
-<p>Both User and API keys are unique to individual users. API keys are valid for 60 minutes. In contrast, user keys are valid indefinitely.</p>
-</blockquote>
-<h4 id="sample-post-request">Sample POST Request</h4>
-<p>Request must be made using HTTPS.</p>
-<pre><code>POST /api/login/version/3 HTTP/1.1
-Host: pi.pardot.com
-
-email=&lt;email&gt;&amp;password=&lt;password&gt;&amp;user_key=&lt;user_key&gt;
-</code></pre>
-<h4 id="request-parameters_2">Request Parameters</h4>
-<table>
-<thead>
-<tr>
-<th><strong>Parameter</strong></th>
-<th><strong>Required</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>email</code></td>
-<td>X</td>
-<td>User account email address</td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td>X</td>
-<td>User account password</td>
-</tr>
-<tr>
-<td><code>user_key</code></td>
-<td>X</td>
-<td>User account 32-character hexadecimal user key</td>
-</tr>
-</tbody>
-</table>
-<p>If authentication was successful, an API key will be returned in the following format:</p>
-<p>For accounts with the setting "Allow Multiple Prospects with the Same Email Address" disabled:</p>
-<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
-    &lt;api_key&gt;5a1698a233e73d7c8ccd60d775fbc68a&lt;/api_key&gt;
-&lt;/rsp&gt;
-</code></pre>
-<p>For accounts with the setting "Allow Multiple Prospects with the Same Email Address" enabled:</p>
-<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
-    &lt;api_key&gt;5a1698a233e73d7c8ccd60d775fbc68a&lt;/api_key&gt;
-    &lt;version&gt;4&lt;/version&gt;
-&lt;/rsp&gt;
-</code></pre>
-<p>Otherwise, the response will contain the following:</p>
-<pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
-    &lt;err code=&quot;15&quot;&gt;Login failed&lt;/err&gt;
-&lt;/rsp&gt;
-</code></pre>
-<p>Subsequent authentication requests return either the current valid API key or a newly generated API key if the previous one expired.</p>
-<h3 id="using-api-key-with-pardot">Using API Key with Pardot</h3>
-<p>After you get the API Key, you must pass it and the User Key using the <code>Authorization</code> header.</p>
-<h4 id="sample-request_1">Sample Request</h4>
-<p>Request must be made using HTTPS.</p>
-<pre><code>POST /api/&lt;object&gt;/version/&lt;version&gt;/do/&lt;op&gt; HTTP/1.1
-Host: pi.pardot.com
-Authorization: Pardot api_key=&lt;api_key&gt;, user_key=&lt;user_key&gt;
-</code></pre>
-<h4 id="request-parameters_3">Request Parameters</h4>
-<table>
-<thead>
-<tr>
-<th><strong>Parameter</strong></th>
-<th><strong>Required</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>api_key</code></td>
-<td>X</td>
-<td>API Key obtained from Pardot login endpoint</td>
-</tr>
-<tr>
-<td><code>user_key</code></td>
-<td>X</td>
-<td>User account 32-character hexadecimal user key</td>
-</tr>
-</tbody>
-</table>
                 
             </div>
         </div>

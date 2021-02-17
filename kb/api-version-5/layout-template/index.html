@@ -103,14 +103,6 @@
                             </li>
                         
                             <li class=" ">
-                                <a href="../../release-notes/">
-                                    
-                                    Release Notes
-                                    
-                                </a>
-                            </li>
-                        
-                            <li class=" ">
                                 <a href="../../error-codes-messages/">
                                     
                                     Error Codes & Messages
@@ -826,17 +818,17 @@
 <tr>
 <td><code>createdBy</code></td>
 <td><a href="../user/">User</a></td>
-<td>User object representing the user who created the object.</td>
+<td>User object representing the user who created the object. See documentation for User for fields.</td>
 </tr>
 <tr>
 <td><code>updatedBy</code></td>
 <td><a href="../user/">User</a></td>
-<td>User object representing the user who last updated the object.</td>
+<td>User object representing the user who last updated the object. See documentation for User for fields.</td>
 </tr>
 <tr>
 <td><code>folder</code></td>
 <td><a href="../folder/">Folder</a></td>
-<td>Folder object representing the folder containing this object.</td>
+<td>Folder object representing the folder containing this object. See documentation for Folder for fields.</td>
 </tr>
 </tbody>
 </table>
@@ -889,6 +881,7 @@
    %%form-javascript-link-target-top%%
 &lt;/form&gt;
 </code></pre>
+
 <h5 id="sitesearchcontent">siteSearchContent</h5>
 <pre><code>&lt;form method=&quot;get&quot; action=&quot;%%search-action-url%%&quot; class=&quot;form&quot; id=&quot;pardot-form&quot;&gt;
     &lt;p class=&quot;full-width&quot;&gt;
@@ -933,6 +926,7 @@
     %%search-end-if-results%%
 &lt;/form&gt;
 </code></pre>
+
 <h1 id="layout-template-creation">Layout Template Creation</h1>
 <p>A Layout Template POST request must have a JSON body with all of the required fields specified. Note that all HTML content must be JSON escaped.</p>
 <p>Example request:</p>
@@ -948,6 +942,7 @@ Content-Type: application/json
     &quot;folderId&quot;: 1769
 }
 </code></pre>
+
 <p>Example response:</p>
 <p>This example does not show all the headers, and whitespace has been added to make it easier to read.</p>
 <pre><code>HTTP/1.1 201 Created
@@ -969,6 +964,7 @@ https://pi.pardot.com/api/v5/objects/layout-templates/6?fields=id,name,layoutCon
     }
 }
 </code></pre>
+
 <p>Examples include extra spaces for readability and don't always include headers. The fields in the response body and <code>Location</code> header match the fields specified on the example request.</p>
 <h1 id="layout-template-update">Layout Template Update</h1>
 <p>Updating a layout template follows the conventions described in the <a href="../version5overview/#update-using-patch">Version 5 Overview</a>.</p>
@@ -986,6 +982,7 @@ https://pi.pardot.com/api/v5/objects/layout-templates/6?fields=id,name,layoutCon
 Host: pi.pardot.com
 Authorization: Bearer &lt;access-token&gt;
 </code></pre>
+
 <p>Example response:</p>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json
@@ -1009,6 +1006,7 @@ Content-Type: application/json
 }
 
 </code></pre>
+
 <h3 id="filtering-results">Filtering Results</h3>
 <p>When executing a query, the following parameters can be used to filter the returned results. These parameters can be specified in the request along with any shared parameters defined in <a href="../version5overview/#query-using-get">Version 5 Overview</a>. When specifying more than one parameter, all parameters must match the record in order for it to be returned in the results.</p>
 <table>
@@ -1046,6 +1044,7 @@ Content-Type: application/json
 Host: pi.pardot.com
 Authorization: Bearer &lt;access-token&gt;
 </code></pre>
+
 <p>Example response:</p>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json

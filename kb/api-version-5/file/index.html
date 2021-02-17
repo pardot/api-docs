@@ -103,14 +103,6 @@
                             </li>
                         
                             <li class=" ">
-                                <a href="../../release-notes/">
-                                    
-                                    Release Notes
-                                    
-                                </a>
-                            </li>
-                        
-                            <li class=" ">
                                 <a href="../../error-codes-messages/">
                                     
                                     Error Codes & Messages
@@ -860,7 +852,7 @@
 <tr>
 <td><code>trackerDomain</code></td>
 <td><a href="../tracker-domain/">TrackerDomain</a></td>
-<td>Tracker Domain object representing the tracker domain that was set on Create. See documentation for tracker domain for fields.</td>
+<td>Tracker Domain object representing the tracker domain that was set on Create. See documentation for Tracker Domain for fields. A <code>null</code> value indicates that the object will use the default tracker domain for the account.</td>
 </tr>
 <tr>
 <td><code>campaign</code></td>
@@ -870,7 +862,7 @@
 <tr>
 <td><code>folder</code></td>
 <td><a href="../folder/">Folder</a></td>
-<td>JSON object representing the folder for this object. See documentation for folder for fields.</td>
+<td>JSON object representing the folder for this object. See documentation for Folder for fields.</td>
 </tr>
 </tbody>
 </table>
@@ -896,6 +888,7 @@ Content-Disposition: form-data; name=&quot;input&quot;
 }
 ----boundary-marker
 </code></pre>
+
 <p>Example response:</p>
 <p>This example does not show all the headers, and whitespace has been added to make it easier to read.</p>
 <pre><code>HTTP/1.1 201 Created
@@ -912,6 +905,7 @@ Location: https://pi.pardot.com/api/v5/objects/files/8736?fields=id,name,url,cre
     }
 }
 </code></pre>
+
 <p>The fields in the response body and <code>Location</code> header are the same as the fields specified on the example request.</p>
 <h1 id="file-update">File Update</h1>
 <p>A file update PATCH request can be a multipart request as described in <a href="../version5overview/#update-using-patch">Version 5 Overview</a>. It can also be a simple request that has a JSON body with fields to update.</p>
@@ -930,6 +924,7 @@ Location: https://pi.pardot.com/api/v5/objects/files/8736?fields=id,name,url,cre
 Host: pi.pardot.com
 Authorization: Bearer &lt;access-token&gt;
 </code></pre>
+
 <p>Example response:</p>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json
@@ -948,6 +943,7 @@ Content-Type: application/json
 }
 
 </code></pre>
+
 <h3 id="filtering-results">Filtering Results</h3>
 <p>When executing a query, the following parameters can be used to filter the returned results. These parameters can be specified in the request along with any shared parameters defined in <a href="../version5overview/#query-using-get">Version 5 Overview</a>. When specifying more than one parameter, all parameters must match the record in order for it to be returned in the results.</p>
 <table>
@@ -985,6 +981,7 @@ Content-Type: application/json
 Host: pi.pardot.com
 Authorization: Bearer &lt;access-token&gt;
 </code></pre>
+
 <p>Example response:</p>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json

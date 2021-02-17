@@ -103,14 +103,6 @@
                             </li>
                         
                             <li class=" ">
-                                <a href="../../release-notes/">
-                                    
-                                    Release Notes
-                                    
-                                </a>
-                            </li>
-                        
-                            <li class=" ">
                                 <a href="../../error-codes-messages/">
                                     
                                     Error Codes & Messages
@@ -704,6 +696,7 @@
 Host: pi.pardot.com
 Authorization: Bearer &lt;access-token&gt;
 </code></pre>
+
 <h4 id="parameters">Parameters</h4>
 <p>Below are the parameters shared across all objects. The object reference defines the parameters specific to the object.</p>
 <table>
@@ -776,12 +769,14 @@ Authorization: Bearer &lt;access-token&gt;
 }
 
 </code></pre>
+
 <h2 id="read-using-get">Read (using GET)</h2>
 <p>Read requests are formatted as follows:</p>
 <pre><code>GET /api/v5/objects/&lt;object-collection&gt;/&lt;id&gt;?&lt;params&gt; HTTP/1.1
 Host: pi.pardot.com
 Authorization: Bearer &lt;access-token&gt;
 </code></pre>
+
 <h4 id="parameters_1">Parameters</h4>
 <table>
 <thead>
@@ -838,6 +833,7 @@ Content-Type: &lt;content-type&gt;
 
 &lt;input-representation&gt; or &lt;multi-part-request-body&gt;
 </code></pre>
+
 <p>Unless sending a file as part of the request (see below), the content type must be <code>application-json</code>.</p>
 <h4 id="parameters_2">Parameters</h4>
 <table>
@@ -869,6 +865,7 @@ Content-Type: &lt;content-type&gt;
   ...
 }
 </code></pre>
+
 <h4 id="response_2">Response</h4>
 <p>Responses include, but are not limited to:</p>
 <table>
@@ -896,6 +893,7 @@ Content-Type: &lt;content-type&gt;
 
 &lt;input-representation&gt; or &lt;multi-part-request-body&gt;
 </code></pre>
+
 <p>Unless sending a file as part of the request (see below), the content type must be <code>application-json</code>.</p>
 <h4 id="parameters_3">Parameters</h4>
 <table>
@@ -928,6 +926,7 @@ Content-Type: &lt;content-type&gt;
   ...
 }
 </code></pre>
+
 <p>Fields that are omitted will be left unchanged.</p>
 <h4 id="response_3">Response</h4>
 <p>Responses include, but are not limited to:</p>
@@ -960,6 +959,7 @@ Content-Type: &lt;content-type&gt;
 Host: pi.pardot.com
 Authorization: Bearer &lt;access-token&gt;
 </code></pre>
+
 <h4 id="response_4">Response</h4>
 <p>Responses include, but are not limited to:</p>
 <table>
@@ -994,6 +994,7 @@ Authorization: Bearer &lt;access-token&gt;
   }
 }
 </code></pre>
+
 <p>As shown above, fields that are references to other objects have a JSON object with fields of the referenced object as their values. These are requested using dot delimited notation in the <code>fields</code> URL parameter.</p>
 <h3 id="response-headers">Response headers:</h3>
 <table>

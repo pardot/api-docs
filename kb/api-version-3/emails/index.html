@@ -103,14 +103,6 @@
                             </li>
                         
                             <li class=" ">
-                                <a href="../../release-notes/">
-                                    
-                                    Release Notes
-                                    
-                                </a>
-                            </li>
-                        
-                            <li class=" ">
                                 <a href="../../error-codes-messages/">
                                     
                                     Error Codes & Messages
@@ -728,12 +720,13 @@
 </tbody>
 </table>
 <h2 id="xml-response-format">XML Response Format</h2>
-<pre><code class="language-xml">&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+<pre><code class="xml">&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;email&gt;
         ...
     &lt;/email&gt;
 &lt;/rsp&gt;
 </code></pre>
+
 <table>
 <thead>
 <tr>
@@ -792,6 +785,7 @@
     &lt;/stats&gt;
 &lt;/rsp&gt;
 </code></pre>
+
 <table>
 <thead>
 <tr>
@@ -1023,20 +1017,22 @@ provided.</p>
 <p>**** <code>prospect_id</code> or <code>prospect_email</code> is required.</p>
 <h2 id="example-requests">Example Requests</h2>
 <p>This API request example made with cURL, will immediately send an email based on a template to a single prospect.</p>
-<pre><code class="language-bash">curl https://pi.pardot.com/api/email/version/3/do/send \
+<pre><code class="bash">curl https://pi.pardot.com/api/email/version/3/do/send \
 -H &quot;Authorization: Pardot user_key={user_key},api_key={api_key}&quot; \
 --data-urlencode campaign_id=54321 \
 --data-urlencode prospect_email=prospect@somecompany.com \
 --data-urlencode email_template_id=6789 \
 --data-urlencode format=json
 </code></pre>
+
 <h2 id="xml-response-format_2">XML Response Format</h2>
-<pre><code class="language-xml">&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+<pre><code class="xml">&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;email&gt;
         ...
     &lt;/email&gt;
 &lt;/rsp&gt;
 </code></pre>
+
 <table>
 <thead>
 <tr>
@@ -1211,7 +1207,7 @@ provided.</p>
 <p>*** if provided, the email template will be used first, then <code>name</code>, <code>from_assigned_user</code>, <code>replyto_email</code>, <code>subject</code>, <code>text_content</code>, and <code>html_content</code> will override the template contents if they're provided.</p>
 <h2 id="example-requests_1">Example Requests</h2>
 <p>This API request example made with cURL, will schedule an email based on a template to be sent on October 31st at 5pm GMT-4 to 4 prospect lists with 2 suppression lists. It will be sent from the assigned user, if one is assigned, and it also assigns 3 tags to the email.</p>
-<pre><code class="language-bash">curl https://pi.pardot.com/api/email/version/3/do/send \
+<pre><code class="bash">curl https://pi.pardot.com/api/email/version/3/do/send \
 -H &quot;Authorization: Pardot user_key={user_key},api_key={api_key}&quot; \
 --data-urlencode campaign_id=54321 \
 --data-urlencode from_assigned_user=1 \
@@ -1228,13 +1224,15 @@ provided.</p>
 --data-urlencode scheduled_time=2013-10-31T17:00:00-0400 \
 --data-urlencode format=json
 </code></pre>
+
 <h2 id="xml-response-format_3">XML Response Format</h2>
-<pre><code class="language-xml">&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
+<pre><code class="xml">&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;email&gt;
         ...
     &lt;/email&gt;
 &lt;/rsp&gt;
 </code></pre>
+
 <table>
 <thead>
 <tr>

@@ -103,14 +103,6 @@
                             </li>
                         
                             <li class=" ">
-                                <a href="../../release-notes/">
-                                    
-                                    Release Notes
-                                    
-                                </a>
-                            </li>
-                        
-                            <li class=" ">
                                 <a href="../../error-codes-messages/">
                                     
                                     Error Codes & Messages
@@ -741,6 +733,7 @@
 <h1 id="create">Create</h1>
 <pre><code>/api/import/version/3/do/create
 </code></pre>
+
 <p>Used to create a new asynchronous import. If a batch of import data is included in this request, the import can be submitted for processing as part of this operation. Otherwise one or more batches must be created and associated with this import using the do/batch endpoint and the import must be submitted for processing with the do/update endpoint.</p>
 <h2 id="post">POST</h2>
 <h3 id="params">Params</h3>
@@ -760,7 +753,7 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-json">{
+<pre><code class="json">{
     &quot;operation&quot;: &quot;Upsert&quot;,
     &quot;object&quot;: &quot;Prospect&quot;,
     &quot;restoreDeleted&quot;: boolean,
@@ -772,6 +765,7 @@
     ]
 }
 </code></pre>
+
 <p>A single part with the name "<strong>importFile</strong>" should contain the CSV file for the batch. The file should contain a header row.</p>
 <h3 id="success">Success</h3>
 <ul>
@@ -784,13 +778,14 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-json">{
+<pre><code class="json">{
     &quot;id&quot;: int,
     &quot;state&quot;: string,
     &quot;isExpired&quot;: boolean,
     &quot;batchesRef&quot;: string : &quot;https://pi.pardot.com/api/import/version/3/do/batch/id/{id}&quot;
 }
 </code></pre>
+
 <h3 id="errors">Errors</h3>
 <ul>
 <li>Status code: 4xx</li>
@@ -800,6 +795,7 @@
 <h1 id="add-batch">Add Batch</h1>
 <pre><code>/api/import/version/3/do/batch/id/{id}
 </code></pre>
+
 <p>Allows adding batches of data to an existing import when in the "Open" state.</p>
 <h2 id="post_1">POST</h2>
 <h3 id="params_1">Params</h3>
@@ -822,26 +818,29 @@
 <h1 id="update">Update</h1>
 <pre><code>/api/import/version/3/do/update/id/{id}
 </code></pre>
+
 <p>Used to submit the import by changing the state to "Ready". After this step, no more batches of data can be added, and processing of the import begins.</p>
 <h2 id="patch">PATCH</h2>
 <h3 id="params_2">Params</h3>
 <p><strong>{id}</strong>: The ID of the import.</p>
 <h3 id="body_1">Body</h3>
 <p>ContentType: application/json</p>
-<pre><code class="language-json">{
+<pre><code class="json">{
     &quot;state&quot;: &quot;Ready&quot; // see State enum
 }
 </code></pre>
+
 <h3 id="success_2">Success</h3>
 <ul>
 <li>Status Code: 200</li>
 </ul>
-<pre><code class="language-json">{
+<pre><code class="json">{
     &quot;id&quot;: {id},
     &quot;state&quot;: &quot;Waiting&quot;,
     &quot;isExpired&quot;: boolean
 }
 </code></pre>
+
 <h3 id="errors_2">Errors</h3>
 <ul>
 <li>Status code: 4xx</li>
@@ -851,6 +850,7 @@
 <h1 id="read">Read</h1>
 <pre><code>/api/import/version/3/do/read/id/{id}
 </code></pre>
+
 <p>Returns the current state of the import. If processing is complete, the output provides a path to the results of the operation along with any statistics about the operation.</p>
 <h2 id="get">GET</h2>
 <h3 id="params_3">Params</h3>
@@ -882,7 +882,7 @@
 </ul>
 </li>
 </ul>
-<pre><code class="language-json">{
+<pre><code class="json">{
     &quot;id&quot;: int,
     &quot;state&quot;: string,
     &quot;isExpired&quot;: int
@@ -893,6 +893,7 @@
     &quot;errorCount&quot;: int
 }
 </code></pre>
+
 <h3 id="errors_3">Errors</h3>
 <ul>
 <li>Status code: 4xx</li>
@@ -902,6 +903,7 @@
 <h1 id="query">Query</h1>
 <pre><code>/api/import/version/3/do/query
 </code></pre>
+
 <p>Used by administrators to retrieve a list of imports and their status. A user must have the “Admin &gt; Imports &gt; View” ability to execute this endpoint.</p>
 <h2 id="get_1">GET</h2>
 <h3 id="params_4">Params</h3>
@@ -938,7 +940,7 @@
 </li>
 </ul>
 <p>Note that the import representation returned in query doesn’t contain <code>resultRefs</code>. Use the read endpoint for the import to get the full import representation.</p>
-<pre><code class="language-json">{
+<pre><code class="json">{
     &quot;result&quot;: {
         &quot;total_results&quot;: int,
         &quot;import&quot;: [
@@ -954,6 +956,7 @@
     }
 }
 </code></pre>
+
 <h3 id="errors_4">Errors</h3>
 <ul>
 <li>Status Code: 4xx</li>
@@ -963,6 +966,7 @@
 <h1 id="download-errors">Download Errors</h1>
 <pre><code>/api/import/version/3/do/downloadErrors/id/{id}
 </code></pre>
+
 <p>Download errors associated with the specified import (after it is complete).</p>
 <h2 id="get_2">GET</h2>
 <h3 id="params_5">Params</h3>

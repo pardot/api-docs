@@ -103,14 +103,6 @@
                             </li>
                         
                             <li class=" ">
-                                <a href="../kb/release-notes/">
-                                    
-                                    Release Notes
-                                    
-                                </a>
-                            </li>
-                        
-                            <li class=" ">
                                 <a href="../kb/error-codes-messages/">
                                     
                                     Error Codes & Messages
@@ -693,89 +685,27 @@
 <p>All requests to the API:</p>
 <ul>
 <li>Must use either HTTP <code>GET</code> or <code>POST</code></li>
-<li>Must pass access token or user key and api key in an HTTP <code>Authorization</code> header.</li>
-<li>Must pass Pardot Business Unit ID in an HTTP <code>Pardot-Business-Unit-Id</code> header if using an access token (obtained using Salesforce OAuth) to authenticate.</li>
+<li>Must pass the access token.</li>
+<li>Must pass Pardot Business Unit ID in an HTTP <code>Pardot-Business-Unit-Id</code> header (obtained using Salesforce OAuth) to authenticate.</li>
 <li>Must use the correct URL for your Pardot environment. See <a href="/#test-and-production-environments">Test and Production Environments</a>.</li>
 </ul>
 <h2 id="sample-get-request">Sample GET Request</h2>
 <p>These examples use a production environment, so the domain is <code>pi.demo.pardot.com</code>. If you are using
 a test environment, your domain is <code>pi.demo.pardot.com</code>. See <a href="/#test-and-production-environments">Test and Production Environments</a>.</p>
-<h4 id="with-user-key-and-api-key-obtained-through-pardot-api-login-endpoint">With User Key and API Key (obtained through Pardot API login endpoint)</h4>
-<pre><code>GET https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;op&gt;/&lt;id_field&gt;/&lt;id&gt;?&lt;params&gt; HTTP/1.1
-Authorization: Pardot api_key=&lt;your_api_key&gt;, user_key=&lt;your_user_key&gt;
-</code></pre>
-<h4 id="with-salesforce-oauth-access-token-obtained-through-salesforce-oauth-endpoint">With Salesforce OAuth Access Token (obtained through Salesforce OAuth endpoint)</h4>
 <pre><code>GET https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;op&gt;/&lt;id_field&gt;/&lt;id&gt;?&lt;params&gt; HTTP/1.1
 Authorization: Bearer &lt;access_token&gt;
 Pardot-Business-Unit-Id: &lt;pardot_business_unit_id&gt;
 </code></pre>
+
 <h2 id="sample-post-request">Sample POST Request</h2>
-<h4 id="with-user-key-and-api-key">With User Key and API Key</h4>
-<pre><code>POST https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;op&gt;/&lt;id_field&gt;/&lt;id&gt; HTTP/1.1
-Authorization: Pardot api_key=&lt;your_api_key&gt;, user_key=&lt;your_user_key&gt;
-
-&lt;params&gt;
-</code></pre>
-<h5 id="request-parameters">Request Parameters</h5>
-<table>
-<thead>
-<tr>
-<th><strong>Parameter</strong></th>
-<th><strong>Required</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>object</code></td>
-<td>X</td>
-<td>The object type to be returned by the API request</td>
-</tr>
-<tr>
-<td><code>op</code></td>
-<td>X</td>
-<td>The operation to be performed on the specified object type</td>
-</tr>
-<tr>
-<td><code>id_field</code></td>
-<td>X</td>
-<td>The field to be used as the identifier for the specified object</td>
-</tr>
-<tr>
-<td><code>id</code></td>
-<td>X</td>
-<td>The identifier for the specified object(s)</td>
-</tr>
-<tr>
-<td><code>your_api_key</code></td>
-<td>X</td>
-<td>The API key obtained during <a href="/kb/authentication">Authentication</a></td>
-</tr>
-<tr>
-<td><code>your_user_key</code></td>
-<td>X</td>
-<td>The user key used during <a href="/kb/authentication">Authentication</a></td>
-</tr>
-<tr>
-<td><code>format</code></td>
-<td></td>
-<td>The API data format: either xml (default) or json</td>
-</tr>
-<tr>
-<td><code>params</code></td>
-<td></td>
-<td>Parameters specific to your request; See individual methods for details</td>
-</tr>
-</tbody>
-</table>
-<h4 id="with-salesforce-oauth">With Salesforce OAuth</h4>
 <pre><code>POST https://pi.pardot.com/api/&lt;object&gt;/version/3/do/&lt;op&gt;/&lt;id_field&gt;/&lt;id&gt; HTTP/1.1
 Authorization: Bearer &lt;access_token&gt;
 Pardot-Business-Unit-Id: &lt;pardot_business_unit_id&gt;
 
 &lt;params&gt;
 </code></pre>
-<h5 id="request-parameters_1">Request Parameters</h5>
+
+<h5 id="request-parameters">Request Parameters</h5>
 <table>
 <thead>
 <tr>
@@ -844,7 +774,6 @@ Pardot-Business-Unit-Id: &lt;pardot_business_unit_id&gt;
 <p>Note: We strongly recommend <strong>against</strong> using PHP's <code>file_get_contents</code> function to call the Pardot API because
 it makes error handling extremely cumbersome.</p>
 <pre><code>&lt;?php
-
 /**
  * Class SamplePardotApiClient
  *
@@ -856,12 +785,17 @@ class SamplePardotApiClient
     const SALESFORCE_OAUTH_TOKEN_URL = &quot;https://login.salesforce.com/services/oauth2/token&quot;;
 
     /** @var int $apiVersion */
-    private $apiVersion;
+    private int $apiVersion;
 
     /** @var string $format  */
-    private $format;
+    private string $format;
 
-    public function __construct($apiVersion, $format = 'xml')
+    /**
+     * SamplePardotApiClient constructor.
+     * @param int $apiVersion
+     * @param string $format
+     */
+    public function __construct(int $apiVersion, string $format = 'xml')
     {
         $this-&gt;apiVersion = $apiVersion;
         $this-&gt;format = $format;
@@ -873,13 +807,12 @@ class SamplePardotApiClient
      * @param array $data
      * @param array $headers
      * @param array $queryParams
-     * @param bool $useSalesforceOAuth
      * @return array
      * @throws Exception
      */
-    public function post($endpoint, $operation, $data = [], $headers = [], $queryParams = [], $useSalesforceOAuth = true)
+    public function post(string $endpoint, string $operation, $data = [], $headers = [], $queryParams = [])
     {
-        $curl_handle = $this-&gt;initRequest($endpoint, $operation, $headers, $queryParams, $useSalesforceOAuth);
+        $curl_handle = $this-&gt;initRequest($endpoint, $operation, $headers, $queryParams);
         curl_setopt($curl_handle, CURLOPT_POST, true);
         // Add POST data if given
         if (!empty($data)) {
@@ -894,13 +827,12 @@ class SamplePardotApiClient
      * @param string $operation
      * @param array $headers
      * @param array $queryParams
-     * @param bool $useSalesforceOAuth
      * @return array
      * @throws Exception
      */
-    public function get($endpoint, $operation, $headers = [], $queryParams = [], $useSalesforceOAuth = true)
+    public function get(string $endpoint, string $operation, $headers = [], $queryParams = [])
     {
-        $curl_handle = $this-&gt;initRequest($endpoint, $operation, $headers, $queryParams, $useSalesforceOAuth);
+        $curl_handle = $this-&gt;initRequest($endpoint, $operation, $headers, $queryParams);
 
         return $this-&gt;executeCall($curl_handle);
     }
@@ -910,17 +842,16 @@ class SamplePardotApiClient
      * @param string $operation
      * @param array $headers
      * @param array $queryParams
-     * @param bool $useSalesforceOAuth
      * @return false|resource
      */
-    private function initRequest($endpoint, $operation, $headers = [], $queryParams = [], $useSalesforceOAuth = true)
+    private function initRequest(string $endpoint, string $operation, $headers = [], $queryParams = [])
     {
         // Construct our full URL to the Pardot API
-        $url = $this-&gt;buildUrl($endpoint, $operation, $useSalesforceOAuth);
+        $url = $this-&gt;buildUrl($endpoint, $operation);
         // Add desired format to any query string params provided
         $queryParams['format'] = $this-&gt;format;
         // Build query string params into an encoded string
-        $queryString = http_build_query($queryParams, null, '&amp;');
+        $queryString = http_build_query($queryParams, null);
         // Append query string params to URL
         $url .= &quot;?{$queryString}&quot;;
 
@@ -943,17 +874,12 @@ class SamplePardotApiClient
     /**
      * @param string $endpoint
      * @param string $operation
-     * @param bool $useSalesforceOAuth
      * @return string
      */
-    private function buildUrl($endpoint, $operation = &quot;&quot;, $useSalesforceOAuth = true)
+    private function buildUrl(string $endpoint, $operation = &quot;&quot;)
     {
         if ($endpoint === 'login') {
-            if ($useSalesforceOAuth) {
-                return self::SALESFORCE_OAUTH_TOKEN_URL;
-            } else {
-                return self::BASE_URL . &quot;login&quot;;
-            }
+            return self::SALESFORCE_OAUTH_TOKEN_URL;
         }
 
         return self::BASE_URL . &quot;{$endpoint}/version/{$this-&gt;apiVersion}/do/{$operation}&quot;;
@@ -989,44 +915,10 @@ class SamplePardotApiClient
     }
 
     /**
-     * Use Pardot API using Api Key and User Key.
-     */
-    public function executeRequestsWithApiKeys()
-    {
-        // Setup user credentials
-        $credentials = [
-            'user_key' =&gt; '&lt;your_user_key&gt;',
-            'email' =&gt; '&lt;your_pardot_user_email&gt;',
-            'password' =&gt; '&lt;your_password&gt;'
-        ];
-
-        // Authenticate to Pardot - Must be a POST with credentials in the message body
-        list($httpCode, $rsp) = $this-&gt;post('login', '', $credentials, null, [], false);
-        // Capture the api_key from a successful login response
-        // api_key is good for 1 hour and can be reused on subsequent calls
-        $apiKey = json_decode($rsp, true)['api_key'];
-
-        // Create Authorization Header from api_key
-        $authHeader = [&quot;Authorization: Pardot user_key={$credentials['user_key']},api_key={$apiKey}&quot;];
-
-        // Call Prospect Query
-        list($httpCode, $rsp) = $this-&gt;get('prospect', 'query', $authHeader, ['limit' =&gt; 1]);
-        // Call VisitorActivity Query
-        list($httpCode, $rsp) = $this-&gt;get('visitorActivity', 'query', $authHeader, ['limit' =&gt; 1]);
-        // Create a Campaign
-        list($httpCode, $rsp) = $this-&gt;post(
-            'campaign',
-            'create',
-            ['name' =&gt; 'A Campaign', 'cost' =&gt; 100],
-            $authHeader
-        );
-    }
-
-    /**
      * Use Pardot API with a SSO user.
      * Getting the access token and using that to use the Pardot API.
      */
-    public function executeRequestsWithSalesforceOAuth()
+    public function executeRequests()
     {
         // Setup user credentials
         $credentials = [
@@ -1064,11 +956,8 @@ class SamplePardotApiClient
 // Prepare to call version 3 or 4 of the API with JSON or XML responses
 $client = new SamplePardotApiClient(4, 'json');
 
-// Authenticate to Pardot - Using API Keys
-$client-&gt;executeRequestsWithApiKeys();
-
 // Authenticate to Pardot - Using Salesforce OAuth
-$client-&gt;executeRequestsWithSalesforceOAuth();
+$client-&gt;executeRequests();
 </code></pre>
                 
             </div>
