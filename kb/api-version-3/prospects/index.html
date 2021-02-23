@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../../getting-started/">
+                                    
+                                    Getting Started
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../../authentication/">
                                     
                                     Authentication
@@ -938,7 +946,6 @@
     &lt;/result&gt;
 &lt;/rsp&gt;
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -1120,7 +1127,6 @@
     &lt;/prospect&gt;
 &lt;/rsp&gt;
 </code></pre>
-
 <p>For <code>output=simple</code>:</p>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;prospect&gt;
@@ -1137,7 +1143,6 @@
     &lt;/prospect&gt;
 &lt;/rsp&gt;
 </code></pre>
-
 <p>For <code>output=mobile</code>:</p>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;prospect&gt;
@@ -1149,7 +1154,6 @@
     &lt;/prospect&gt;
 &lt;/rsp&gt;
 </code></pre>
-
 <table>
 <thead>
 <tr>
@@ -1265,7 +1269,6 @@
     }
 }
 </code></pre>
-
 <p>XML Example:</p>
 <pre><code>&lt;prospects&gt;
     &lt;prospect identifier=&quot;1234&quot;&gt;
@@ -1282,7 +1285,6 @@
     &lt;/prospect&gt;
 &lt;/prospects&gt;
 </code></pre>
-
 <p>If using <code>batchCreate</code>, you'll need to provide a valid and unique email address for each prospect. The <code>batchUpdate</code> and <code>batchUpsert</code> endpoints allow the use of a prospect ID or prospect email address.</p>
 <p><strong><em>Example:</em></strong></p>
 <p>/api/prospect/version/3/do/batchUpdate?prospects={"prospects":{"some@email.com":{"first_name":"New first name","last_name":"New last name"},"1234":{"first_name":"New first name","last_name":"New last name"}}}</p>

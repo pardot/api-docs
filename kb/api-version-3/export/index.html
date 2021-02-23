@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../../getting-started/">
+                                    
+                                    Getting Started
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../../authentication/">
                                     
                                     Authentication
@@ -1020,7 +1028,6 @@
 <h1 id="create">Create</h1>
 <pre><code>/api/export/version/3/do/create
 </code></pre>
-
 <p>Used to create an export of an object and procedure.</p>
 <h2 id="post">POST</h2>
 <h3 id="request-body">Request Body</h3>
@@ -1035,7 +1042,7 @@
 </ul>
 </li>
 </ul>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;object&quot;: string,
     &quot;fields&quot;: [string, string, ....],
     &quot;procedure&quot;: {
@@ -1047,7 +1054,6 @@
     }
 }
 </code></pre>
-
 <h3 id="success">Success</h3>
 <p>Status Code: 200</p>
 <p>Output Representation</p>
@@ -1059,7 +1065,7 @@
 <li><strong>createdAt</strong>: The date and time the export was created in the timezone of the user making the request.</li>
 <li><strong>updatedAt</strong>: The date and time the export was updated in the timezone of the user making the request.</li>
 </ul>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;export&quot;: {
         &quot;id&quot;: int,
         &quot;state&quot;: string,
@@ -1070,7 +1076,6 @@
     }
 }
 </code></pre>
-
 <h3 id="errors">Errors</h3>
 <ul>
 <li>Status Code: 4xx</li>
@@ -1083,8 +1088,7 @@ HOST: pi.pardot.com
 Content-Type: application/json
 Authorization: Pardot user_key=U,api_key=A
 </code></pre>
-
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;object&quot;: &quot;visitorActivity&quot;,
     &quot;fields&quot;: [&quot;id&quot;, &quot;prospect_id&quot;, &quot;visitor_id&quot;, &quot;type_name&quot;, &quot;created_at&quot;],
     &quot;procedure&quot;: {
@@ -1096,20 +1100,17 @@ Authorization: Pardot user_key=U,api_key=A
     }
 }
 </code></pre>
-
 <p>After sending the request as a <code>POST</code>, the response is as follows. From this response we know the export is queued for execution but hasn't started or completed. We suggest waiting a few minutes before checking the Read endpoint for the new status.</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;id&quot;: 201917,
     &quot;state&quot;: &quot;Waiting&quot;,
     &quot;isExpired&quot;: false
 }
 </code></pre>
-
 <hr />
 <h1 id="read">Read</h1>
 <pre><code>/api/export/version/3/do/read/id/{id}
 </code></pre>
-
 <p>Used to retrieve the status of the export. Once an export is complete, the links to download the results are available in the result body.</p>
 <h2 id="get">GET</h2>
 <h3 id="params">Params</h3>
@@ -1125,7 +1126,7 @@ Authorization: Pardot user_key=U,api_key=A
 <li><strong>createdAt</strong>: The date and time the export was created in the timezone of the user making the request.</li>
 <li><strong>updatedAt</strong>: The date and time the export was updated in the timezone of the user making the request.</li>
 </ul>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;export&quot;: {
         &quot;id&quot;: int,
         &quot;state&quot;: string,
@@ -1136,7 +1137,6 @@ Authorization: Pardot user_key=U,api_key=A
     }
 }
 </code></pre>
-
 <h3 id="errors_1">Errors</h3>
 <ul>
 <li>Status Code: 4xx</li>
@@ -1149,17 +1149,15 @@ HOST: pi.pardot.com
 Content-Type: application/json
 Authorization: Pardot user_key=U,api_key=A
 </code></pre>
-
 <p>If the export is waiting to be processed, <code>state</code> is "Waiting", as in the following example.</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;id&quot;: 201917,
     &quot;state&quot;: &quot;Waiting&quot;,
     &quot;isExpired&quot;: false
 }
 </code></pre>
-
 <p>If the export is finished, <code>state</code> is "Complete" and <code>resultRefs</code> contains URLs to download the CSV files.</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;id&quot;: 201917,
     &quot;state&quot;: &quot;Complete&quot;,
     &quot;isExpired&quot;: false,
@@ -1170,12 +1168,10 @@ Authorization: Pardot user_key=U,api_key=A
     ]
 }
 </code></pre>
-
 <hr />
 <h1 id="query">Query</h1>
 <pre><code>/api/export/version/3/do/query
 </code></pre>
-
 <p>Used by administrators to retrieve a list of exports and their status. A user must have the “Admin &gt; Exports &gt; View” ability to execute this endpoint.</p>
 <h2 id="get_1">GET</h2>
 <h3 id="params_1">Params</h3>
@@ -1207,7 +1203,7 @@ Authorization: Pardot user_key=U,api_key=A
 </li>
 </ul>
 <p>Note that the export representation returned in query doesn’t contain <code>resultRefs</code>. Use the read endpoint for the export to get the full export representation.</p>
-<pre><code class="json">{
+<pre><code class="language-json">{
     &quot;result&quot;: {
         &quot;total_results&quot;: int,
         &quot;export&quot;: [
@@ -1223,7 +1219,6 @@ Authorization: Pardot user_key=U,api_key=A
     }
 }
 </code></pre>
-
 <h3 id="errors_2">Errors</h3>
 <ul>
 <li>Status Code: 4xx</li>

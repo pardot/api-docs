@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Official documentation for the Pardot API">
         
-        <link rel="canonical" href="http://developer.pardot.com/kb/bulk-data-pull/">
+        <link rel="canonical" href="http://developer.pardot.com/kb/getting-started/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Bulk Data Pull - Pardot API Documentation</title>
+        <title>Getting Started - Pardot API Documentation</title>
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
         <link href="../../css/prettify-1.0.css" rel="stylesheet">
@@ -23,9 +23,9 @@
         
         <script>
             // Current page data
-            var mkdocs_page_name = "Bulk Data Pull";
-            var mkdocs_page_input_path = "kb/bulk-data-pull.md";
-            var mkdocs_page_url = "/kb/bulk-data-pull/";
+            var mkdocs_page_name = "Getting Started";
+            var mkdocs_page_input_path = "kb/getting-started.md";
+            var mkdocs_page_url = "/kb/getting-started/";
         </script>
         
 
@@ -78,8 +78,8 @@
                                 </a>
                             </li>
                         
-                            <li class=" ">
-                                <a href="../getting-started/">
+                            <li class="active ">
+                                <a href="./">
                                     
                                     Getting Started
                                     
@@ -118,8 +118,8 @@
                                 </a>
                             </li>
                         
-                            <li class="active ">
-                                <a href="./">
+                            <li class=" ">
+                                <a href="../bulk-data-pull/">
                                     
                                     Bulk Data Pull
                                     
@@ -639,19 +639,19 @@
                 
                 
                 <li>
-                    <a rel="next" href="../error-codes-messages/">
+                    <a rel="next" href="../../version3and4overview/">
                     <i class="fa fa-arrow-left"></i>
                     
-                    Error Codes & Messages
+                    Overview (v3/v4)
                     
                     </a>
                 </li>
                 
                 
                 <li>
-                    <a rel="prev" href="../api-version-3/accounts/">
+                    <a rel="prev" href="../authentication/">
                     
-                    Accounts
+                    Authentication
                     
                     <i class="fa fa-arrow-right"></i>
                     </a>
@@ -666,223 +666,288 @@
         <div class="container">
             <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#bulk-data-pull-via-the-pardot-api">Bulk Data Pull via the Pardot API</a></li>
-            <li><a href="#visitor-activity-with-export-api">Visitor Activity with Export API</a></li>
-            <li><a href="#query-the-pardot-api">Query the Pardot API</a></li>
-            <li><a href="#example-of-paging-through-a-large-set-of-results">Example of Paging through a Large Set of Results</a></li>
+        <li class="main active"><a href="#getting-started-with-pardot-apis">Getting Started with Pardot APIs</a></li>
+        <li class="main "><a href="#authentication">Authentication</a></li>
+            <li><a href="#step-1-create-the-connected-app">Step 1: Create the Connected App</a></li>
+            <li><a href="#step-2-gather-important-information">Step 2: Gather Important Information</a></li>
+            <li><a href="#step-3-implement-oauth-flow">Step 3: Implement OAuth Flow</a></li>
+        <li class="main "><a href="#working-with-the-api">Working with the API</a></li>
+            <li><a href="#request-format">Request Format</a></li>
+            <li><a href="#our-first-get-request">Our First GET Request</a></li>
+            <li><a href="#our-first-post-request">Our First POST Request</a></li>
+            <li><a href="#going-further">Going Further</a></li>
+            <li><a href="#whats-next">What's Next</a></li>
     </ul>
 </div></div>
             <div class="col-md-9 main-content" role="main">
                 
-                    <h1 id="bulk-data-pull-via-the-pardot-api">Bulk Data Pull via the Pardot API</h1>
-<p>This document outlines the approach and best practices for pulling large amounts of data out of Pardot via the API.</p>
-<h2 id="visitor-activity-with-export-api">Visitor Activity with Export API</h2>
-<p>When you need large amounts of visitor activity data, use the Export API. If you need a different object, see <a href="#query-the-pardot-api">Query the Pardot API</a> for details on how to retrieve the information using the query endpoint.</p>
-<p>The Export API is asynchronous and efficiently scales data retrieval based on the available resources. There are more server resources available for the Export API than the query endpoint, which provides faster results without hitting concurrency and API limits to process multiple queries.</p>
-<p>Before getting started, review the documentation for the Export API.</p>
-<h3 id="best-practice-1-polling-for-status-updates">Best Practice #1 - Polling for Status Updates</h3>
-<p>Because export is asynchronous, you can poll the Read endpoint of the Export API to see if the export is done processing. The time an export takes depends on how much data is being exported and the resources available for processing. Because export times can vary, we recommend that you start by setting a polling interval between 30 seconds and a few minutes.</p>
-<p>If you run an integration regularly, set your polling intervals to the average of the time taken for a few runs of your integration. For example, if your integration runs daily and retrieves all visitor activity data for the previous day, start with a polling frequency of 1 minute. Note the export durations for a few days of execution, then average those times to find a clearer polling interval. In the example, over a few days you notice that your export finishes with an average duration of 15 minutes. Polling every minute would be too often— it polls 15 times. If you set the polling interval to 5 minutes, it polls three or four times.</p>
-<p>If you run integrations sporadically or infrequently, try increasing the polling interval over time. For example, if you track the number of times the integration has polled, you can calculate a gradually increasing polling interval using this function:</p>
-<pre><code>ceil(((n * n)/5)+1)
-</code></pre>
-<p>where <code>n</code> is the index of the poll, starting with 0</p>
-<p>Using this function to calculate polling interval, you poll a minute the first time, 2 minutes for the second and continue to increase at larger intervals each time. This allows the integration to check more frequently soon after an export is created to catch the quick running exports however limit the number of polls for exports that are long running.</p>
-<p>Remember that the Read endpoint of the Export API counts toward API limits, so these tips let you adjust how much of that limit is used by your integration.</p>
-<h3 id="best-practice-2-specify-limited-date-ranges">Best Practice #2 - Specify Limited Date Ranges</h3>
-<p>Because the results of the export API are returned only after the query has executed, limiting the date range of the export returns results faster. One way of achieving this is to break large date ranges into several smaller ranges.</p>
-<p>For example, it's okay to create an export to retrieve a year's worth of visitor activity within a single export by specifying a year duration, like the following.</p>
-<pre><code class="language-bash">curl https://pi.pardot.com/api/export/version/3/do/create?format=json \
--H &quot;Content-Type: application/json&quot; \
--H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
--d '{
-    &quot;object&quot;: &quot;visitorActivity&quot;,
-    &quot;procedure&quot;: {
-        &quot;name&quot;: &quot;filter_by_created_at&quot;,
-        &quot;arguments&quot;: {
-            &quot;created_after&quot;: &quot;2019-12-25 00:00:00&quot;,
-            &quot;created_before&quot;: &quot;2020-12-25 00:00:00&quot;
-        }
-    }
-}'
-</code></pre>
-<p>The issue is that all 12 months of data must be queried in order for the results to be returned. There may be cases where your integration can use a smaller data set up front and be refined later as more data from the export becomes available. For example, an integration may be able to work off the last month of data while waiting on a three-month range and then increasing to a twelve-month range.</p>
-<p>In this example, you could create three different exports with the three different ranges:</p>
-<p>Last month</p>
-<pre><code class="language-json">&quot;created_after&quot;: &quot;2020-11-25 00:00:00&quot;,
-&quot;created_before&quot;: &quot;2020-12-25 00:00:00&quot;
-</code></pre>
-<p>Three months prior</p>
-<pre><code class="language-json">&quot;created_after&quot;: &quot;2020-08-25 00:00:00&quot;,
-&quot;created_before&quot;: &quot;2020-11-25 00:00:00&quot;
-</code></pre>
-<p>Eight months prior</p>
-<pre><code class="language-json">&quot;created_after&quot;: &quot;2019-12-25 00:00:00&quot;,
-&quot;created_before&quot;: &quot;2020-08-25 00:00:00&quot;
-</code></pre>
-<p>Instead of waiting for all twelve months of data to be exported at once, the same data is returned in smaller increments, so you can see the newest data sooner.</p>
-<h2 id="query-the-pardot-api">Query the Pardot API</h2>
-<p>Pulling data from a query endpoint in the Pardot API is a straightforward, two-step process. First, log in with your Pardot user email, password, and user key to acquire an API key. Then, use the query endpoint for each data set to pull the data.</p>
-<p>Before getting started, review the documentation at http://developer.pardot.com and determine which data set you are going to pull. For a data set to be eligible for a bulk data pull, it must have a query operation that supports at least one of the following three sets of search filter criteria parameters:</p>
+                    <h1 id="getting-started-with-pardot-apis">Getting Started with Pardot APIs</h1>
+<p>Getting started with Pardot's APIs can be daunting, especially if you're not an experienced developer. This tutorial walks you through a few real-life tasks so you can start automating and extending Pardot. </p>
+<p>In this guide:</p>
 <ul>
-<li><code>created_before</code> and <code>created_after</code></li>
-<li><code>updated_before</code> and <code>updated_after</code></li>
-<li><code>id_greater_than</code> and <code>id_less_than</code></li>
+<li>We implement authentication using an OAuth2.0 flow.</li>
+<li>Make some example calls and complete a basic task. </li>
 </ul>
-<p>Issue an HTTP GET to the appropriate query endpoint to pull the data back. The query response will contain up to 200 rows from the data set you have requested.</p>
-<h3 id="best-practice-1-use-the-bulk-output-format">Best Practice #1 ‐ Use the Bulk Output Format</h3>
-<p>For bulk data pulls, we strongly recommended that you use the <code>bulk</code> output format, which is highly optimized for performance. The <code>bulk</code> output format disables functionality which displays additional data in the API response such as nested object relationships (e.g. campaign name for activities, etc.). Additionally, the bulk output format omits information about the total number of rows that matched your query, which enables the API to return a response more quickly.</p>
-<h3 id="best-practice-2-avoid-offset">Best Practice #2 ‐ Avoid Offset</h3>
-<p>For bulk data pulls, we strongly discourage use of the <code>offset</code> parameter. Instead, iterate through the data set using one of the supported search filter criteria parameters.</p>
-<p>To accomplish this, as you process the query results in your code, store a high water mark value - the largest <code>id</code> or most recent <code>created_at</code> or <code>updated_at</code> value. Then, on your next query, send that high water mark value as the <code>id_greater_than</code>, <code>created_after</code>, or <code>updated_after</code> search filter parameter value.</p>
-<h3 id="bulk-api-request-response-samples">Bulk API Request &amp; Response Samples</h3>
-<p>Example Request &amp; Response (XML)</p>
-<pre><code class="language-bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk \
--H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
-</code></pre>
-<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
-    &lt;result&gt;
-        &lt;visitor_activity&gt;
-            &lt;id&gt;23807&lt;/id&gt;
-            &lt;visitor_id&gt;14692&lt;/visitor_id&gt;
-            &lt;prospect_id&gt;621&lt;/prospect_id&gt;
-            &lt;type&gt;1&lt;/type&gt;
-            &lt;type_name&gt;Email Tracker&lt;/type_name&gt;
-            &lt;details&gt;http://www.pardot.com/products/demos/flash-demo.html&lt;/details&gt;
-            &lt;email_id&gt;764&lt;/email_id&gt;
-            &lt;campaign_id&gt;1&lt;/campaign_id&gt;
-            &lt;created_at&gt;2007-08-09 19:29:07&lt;/created_at&gt;
-            &lt;/visitor_activity&gt; &lt;visitor_activity&gt;
-            &lt;id&gt;23815&lt;/id&gt;
-            &lt;visitor_id&gt;14692&lt;/visitor_id&gt;
-            &lt;prospect_id&gt;621&lt;/prospect_id&gt;
-            &lt;type&gt;1&lt;/type&gt;
-            &lt;type_name&gt;Email Tracker&lt;/type_name&gt;
-            &lt;details&gt;http://www.pardot.com/products/demos/flash-demo.html&lt;/details&gt;
-            &lt;email_id&gt;764&lt;/email_id&gt;
-            &lt;campaign_id&gt;1&lt;/campaign_id&gt;
-            &lt;created_at&gt;2007-08-09 20:13:40&lt;/created_at&gt;
-        &lt;/visitor_activity&gt;
-    &lt;/result&gt;
-&lt;/rsp&gt;
-</code></pre>
-<p>Example Request &amp; Response (JSON)</p>
-<pre><code class="language-bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json \
--H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
-</code></pre>
-<pre><code class="language-json">{
-    &quot;@attributes&quot;: {
-        &quot;stat&quot;: &quot;ok&quot;,
-        &quot;version&quot;: 1
-    },
-    &quot;result&quot;: {
-        &quot;visitor_activity&quot;: [
-        {
-            &quot;id&quot;: 23807,
-            &quot;visitor_id&quot;: 14692,
-            &quot;prospect_id&quot;: 621,
-            &quot;type&quot;: 1,
-            &quot;type_name&quot;: &quot;Email Tracker&quot;,
-            &quot;details&quot;: &quot;http:\/\/www.pardot.com\/products\/demos\/flash-demo.html&quot;,
-            &quot;email_id&quot;: 764,
-            &quot;campaign_id&quot;: 1,
-            &quot;created_at&quot;: &quot;2007-08-09 19:29:07&quot;
-        }, {
-            &quot;id&quot;: 23815,
-            &quot;visitor_id&quot;: 14692,
-            &quot;prospect_id&quot;: 621,
-            &quot;type&quot;: 1,
-            &quot;type_name&quot;: &quot;Email Tracker&quot;,
-            &quot;details&quot;: &quot;http:\/\/www.pardot.com\/products\/demos\/flash-demo.html&quot;,
-            &quot;email_id&quot;: 764,
-            &quot;campaign_id&quot;: 1,
-            &quot;created_at&quot;: &quot;2007-08-09 20:13:40&quot;
-        }]
-    }
-}
-</code></pre>
-<h2 id="example-of-paging-through-a-large-set-of-results">Example of Paging through a Large Set of Results</h2>
-<p>Because using the offset parameter is strongly discouraged, let’s see how you can use a high water mark value to iterate through multiple pages of results instead. In this example, you will query for all visitor activities that occurred yesterday. This is a perfect match for the <code>created_after</code> and <code>created_before</code> search filter criteria parameters.</p>
-<p>To keep things simple, assume there were a total of 5 activities created yesterday (at time of writing, 2016-03-29) at times 02:00, 06:00, 10:00, 14:00, and 18:00. Also assume the API page size limit is 2 rather than 200.</p>
-<p>To iterate over the results in the suggested approach, your API integration process would proceed as follows:
-1. Log in to the Pardot API
-2. Pull all visitor activity created after yesterday at midnight (<code>2016-03-29T00:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</p>
-<p>Example Request &amp; Response (JSON)</p>
-<pre><code class="language-bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json&amp;created_after=2016-03-29T00:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending \
--H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
-</code></pre>
-<pre><code class="language-json">{
-    &quot;@attributes&quot;: {
-        &quot;stat&quot;: &quot;ok&quot;,
-        &quot;version&quot;: 1
-    },
-    &quot;result&quot;: {
-        &quot;visitor_activity&quot;: [
-        {
-            &quot;id&quot;: 23807,
-            &quot;created_at&quot;: &quot;2016-03-29 02:00:00&quot;
-        }, {
-            &quot;id&quot;: 24531,
-            &quot;created_at&quot;: &quot;2016-03-29 06:00:00&quot;
-        }]
-    }
-}
-</code></pre>
-<p><em>Note</em>: the above example was edited for brevity</p>
+<p>Before you begin, make sure you have:</p>
+<ul>
+<li>A Salesforce admin to create a connected app and gather information.</li>
+<li>A Salesforce user with SSO enabled for Pardot.</li>
+<li>A configured Pardot Business Unit.</li>
+<li>Selected which OAuth flow works best for your case. This tutorial uses the Web Server OAuth flow.</li>
+</ul>
+<p>This tutorial requires background knowledge of connected apps and authentication. If you're unfamiliar with these topics, we <strong>strongly</strong> recommend that you check out these resources first:</p>
+<ul>
+<li>Salesforce Help: <a href="https://help.salesforce.com/articleView?id=sf.remoteaccess_terminology.htm">Connected App and OAuth Terminology</a></li>
+<li>Trailhead module: <a href="https://trailhead.salesforce.com/en/content/learn/modules/connected-app-basics">Connected App Basics</a></li>
+<li>Trailhead module: <a href="https://trailhead.salesforce.com/content/learn/projects/build-a-connected-app-for-api-integration">Build a Connected App for API Integration</a></li>
+</ul>
+<p>After you familiarize yourself with the basics, come back to this tutorial.</p>
+<p><strong>Warning</strong> </p>
+<p>The calls you make during this tutorial have the potential to impact both your Salesforce and Pardot settings and data. If you’re just testing the API, make sure that you’re using a sandbox account. If you’re using this tutorial to set up your production account, use caution. </p>
+<h1 id="authentication">Authentication</h1>
+<p>To authenticate to use Pardot APIs, you must use an SSO-enabled Salesforce user who has Pardot access, and an OAuth flow with a connected app. Implementing authentication can be tricky, so we walk through an example here.</p>
+<h2 id="step-1-create-the-connected-app">Step 1: Create the Connected App</h2>
+<p>The first step in authentication is creating a connected app. A connected app is a framework that enables an external application to integrate with Salesforce using APIs and standard protocols like OAuth. Connected apps use these protocols to authenticate, authorize, and provide single sign-on (SSO) for external apps. To put it simply, a connected app represents an integration.</p>
+<p>To set up a connected app, have a Salesforce admin follow these steps:</p>
 <ol>
-<li>The API has returned two results - the activities from 02:00 and 06:00. Since you are paging by <code>created_at</code>, set your high water mark value to the <code>created_at</code> value of the last record you pull back, <code>2016-03-30T06:00:00</code>. You have now retrieved all activities up to that time.</li>
-<li>Pull all visitor activity created after your high water mark (<code>2016-03-29T06:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</li>
+<li>From Salesforce Setup, in the Quick Find box, enter <strong>App Manager</strong>, and then select <strong>App Manager</strong>.</li>
+<li>Click <strong>New Connected App</strong>.</li>
+<li>Name the connected app, and enter contact details for the app owner.</li>
+<li>In the API section, select the <strong>Enable OAuth Flows</strong>.</li>
+<li>Enter a Callback URL. The callback URL is used to redirect users after authentication in browser-based flows. In this example, we use <code>https://my.example.com/myapp</code>. If you’re using a browser-based flow (such as Web Server Flow or User Agent Flow), the URL must match the URL you pass as a callback to OAuth endpoints. If you aren’t using a browser-based flow, the URL entered isn't used.</li>
+<li>Under <strong>Selected OAuth Scopes</strong>, add <strong>Access Pardot services</strong>, which give the app access to Pardot. For more complex scenarios, such as using refresh tokens, select other scopes as well.</li>
+<li>Save the connected app.</li>
 </ol>
-<p>Example Request &amp; Response (JSON)</p>
-<pre><code class="language-bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json&amp;created_after=2016-03-29T06:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending \
--H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
+<p>This just scratches the surface of connected apps. If you’d like to learn more, like how to restrict access to certain users, check out these resources:</p>
+<ul>
+<li><a href="https://help.salesforce.com/articleView?id=sf.connected_app_overview.htm">Connected App Salesforce Help</a></li>
+<li><a href="https://trailhead.salesforce.com/en/content/learn/modules/connected-app-basics">Connected App Trailhead</a></li>
+</ul>
+<h2 id="step-2-gather-important-information">Step 2: Gather Important Information</h2>
+<p>Now that you have a connected app, let’s gather some important information you need handy to finish setting up authentication.</p>
+<p>The primary details are:</p>
+<ul>
+<li>Connected App Consumer Key: a unique identifier for your connected app.</li>
+<li>Connected App Consumer Secret: a password for the connected app.</li>
+<li>Business Unit IDs: Because a Salesforce org can have multiple business units, the ID routes the API request to the correct business unit. You need the ID even if you have only one business unit.</li>
+<li>Salesforce User: A Salesforce user with SSO enabled for Pardot.</li>
+</ul>
+<p>Since all this information is sensitive, carefully consider how to securely share these details with other team members.</p>
+<h3 id="find-the-consumer-key-and-secret">Find the Consumer Key and Secret</h3>
+<ol>
+<li>From Salesforce Setup, in the Quick Find box, enter <strong>App Manager</strong>, and then select <strong>App Manager</strong>.</li>
+<li>Go to your connected app and select <strong>View</strong>.</li>
+<li>Copy your consumer key.</li>
+<li>Reveal and copy your consumer secret.</li>
+</ol>
+<h3 id="find-the-pardot-business-unit-ids">Find the Pardot Business Unit IDs</h3>
+<ol>
+<li>From Marketing Setup, in the Quick Find box, enter <strong>Pardot</strong>, and then select <strong>Pardot Account Setup</strong>.</li>
+<li>Copy the business unit ID for the Pardot instance you want to use. </li>
+</ol>
+<h3 id="choose-the-integration-user">Choose the Integration User</h3>
+<p>For the integration user, we recommend that you create a unique user for each specific app integration. The user must be SSO-enabled and have access to Pardot. </p>
+<h2 id="step-3-implement-oauth-flow">Step 3: Implement OAuth Flow</h2>
+<p>Salesforce has several OAuth flows to meet your unique security and integration needs. In this tutorial, we use the <a href="https://help.salesforce.com/articleView?id=sf.remoteaccess_oauth_web_server_flow.htm">Web Server OAuth flow</a>. This flow is ideal for when you don't want to store the end user's credentials in your system. To learn more about your options and how to choose the best OAuth flow for your integration, check out <a href="https://help.salesforce.com/articleView?id=sf.remoteaccess_authenticate.htm">Salesforce OAuth Help Documentation</a>.</p>
+<ol>
+<li>
+<p>Have your integration direct the user to Salesforce’s OAuth authorization endpoint:</p>
+<pre><code>https://login.salesforce.com/services/oauth2/authorize?response_type=code&amp;client_id=CLIENT_ID&amp;redirect_uri=https://my.example.com/myapp
 </code></pre>
-<pre><code class="language-json">{
+<ul>
+<li>Replace <code>CLIENT_ID</code> with your connected app consumer key.</li>
+<li>Replace <code>https://my.example.com/myapp</code> with your redirect URI.</li>
+</ul>
+</li>
+<li>
+<p>If the user doesn't have an active session, they’re prompted to log into Salesforce. </p>
+</li>
+<li>The user grants the app permission.</li>
+<li>After the user has logged in and allowed the app, Salesforce redirects you back to the redirect_uri passed in to the authorize endpoint:<code>https://my.example.com/myapp?code=&lt;CODE&gt;</code></li>
+<li>
+<p>Your server-side code exchanges this code for an access token by making a POST request to the Salesforce OAuth token endpoint:</p>
+<pre><code>POST /services/oauth2/token HTTP/1.1
+Host: login.salesforce.com
+Content-type: application/x-www-form-urlencoded
+
+grant_type=authorization_code&amp;
+code=&lt;CODE&gt;&amp;
+client_id=&lt;CLIENT_ID&gt;&amp;
+client_secret=&lt;CONSUMER_SECRET&gt;&amp;
+redirect_uri=https://my.example.com/myapp
+</code></pre>
+</li>
+<li>
+<p>After Salesforce validates the connected app credentials and authorization code, the endpoint responds with an access token:</p>
+<pre><code>{
+  "Access_token": "&lt;ACCESS TOKEN&gt;",
+  "signature": "&lt;SIGNATURE&gt;",
+  "instance_url": "https://example.salesforce.com",
+  "id": "https://login.salesforce.com/id/00000000000/0000000000",
+  "token_type": "Bearer",
+  "issued_at": "1558553873237"
+}
+</code></pre>
+</li>
+</ol>
+<p>The access token can be used to make calls to the Pardot API. The code was exchanged for the access token on the server side and not from the user’s browser. Because of how the code was exchanged, there's no opportunity for malicious JavaScript to steal the access token.</p>
+<p>After you've implemented authorization, you can start working with Pardot APIs. </p>
+<h1 id="working-with-the-api">Working with the API</h1>
+<p>The Pardot API lets your application access current data within Pardot. Through the API, you can perform several common operations on Pardot objects including the following:</p>
+<ul>
+<li><code>create</code>: Creates an instance of the object with the specified parameters.</li>
+<li><code>read</code>: Retrieves information about the specified object.</li>
+<li><code>query</code>: Retrieves objects that match specified criteria.</li>
+<li><code>update</code>: Updates elements of an existing object.</li>
+<li><code>upsert</code>: Updates elements of an existing object if it exists. If the object doesn’t exist, one is created using the supplied parameters.</li>
+</ul>
+<p>Developers must authenticate using a Salesforce OAuth endpoint or the Pardot API login endpoint before issuing Pardot API requests. Refer to the Authentication section for details about this procedure.</p>
+<p>Keep in mind a few considerations when you perform requests. For update requests, only the fields specified in the request are updated. All others are left unchanged. If a required field is cleared during an update, the request is declined.</p>
+<h2 id="request-format">Request Format</h2>
+<p>All requests to the API must: </p>
+<ul>
+<li>Use either HTTP GET or POST. Version 5 also supports PUT and DELETE requests. </li>
+<li>Pass access token in an HTTP Authorization header.</li>
+<li>Pass Pardot Business Unit ID in an HTTP Pardot-Business-Unit-Id header.</li>
+<li>Use the correct URL for your Pardot environment. </li>
+</ul>
+<h2 id="our-first-get-request">Our First GET Request</h2>
+<p>In this example, we want to get a list of all custom fields in a business unit.</p>
+<p>Before you begin, make sure you've authenticated and have a valid access token. For simplicity in this example, these calls are written in HTTP.  </p>
+<pre><code>GET /api/customField/version/4/do/query?format=json HTTP/1.1
+Host: pi.pardot.com
+Authorization: Bearer &lt;ACCESS TOKEN&gt;
+Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;
+</code></pre>
+<h3 id="breaking-down-the-request">Breaking Down the Request</h3>
+<p>Let's break down the call and identify its parts, starting with the uniform resource identifier (URI). 
+<code>GET 'https://&lt;ENVIRONMENT_URL&gt;/api/&lt;OBJECT&gt;/version/&lt;API_VERSION&gt;/do/&lt;OPERATION&gt;?format=&lt;FORMAT&gt;</code></p>
+<ul>
+<li><strong>Environment URL</strong>: In the example, we use pi.pardot.com, but you use the URL that matches your environment type. Demos, developer orgs, and sandbox environments are hosted on the domain pi.demo.pardot.com. Training and production environments are hosted on the domain pi.pardot.com.</li>
+<li><strong>Object</strong>: The object we're requesting data for. In our example, we're querying the CustomField object. </li>
+<li><strong>API version</strong>: The version of the API you're using. Here, we use v4.</li>
+<li><strong>Operation</strong>: The operation you're performing. Here, we use <code>query</code>. </li>
+<li><strong>Format</strong>: The output format, either XML or JSON. Here, we use <code>json</code>. </li>
+</ul>
+<p>Now that we've explained the URI, let's examine the header lines in the call. </p>
+<ul>
+<li><code>'Authorization: Bearer &lt;ACCESS TOKEN&gt;'</code> lets Pardot know that you’ve authenticated and have permission to access data. </li>
+<li><code>'Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;'</code> lets Pardot know which business unit you want data from.</li>
+<li><code>Host</code>: The URL for your Pardot environment. </li>
+</ul>
+<h3 id="breaking-down-the-response">Breaking Down the Response</h3>
+<p>The call returns the business unit's custom fields and their metadata.</p>
+<pre><code>{
+   &quot;@attributes&quot; : {
+      &quot;version&quot; : 1,
+      &quot;stat&quot; : &quot;ok&quot;
+   },
+   &quot;result&quot; : {
+      &quot;customField&quot; : [
+         {
+            &quot;id&quot; : 14141,
+            &quot;is_use_values&quot; : false,
+            &quot;crm_id&quot; : null,
+            &quot;is_record_multiple_responses&quot; : false,
+            &quot;field_id&quot; : &quot;Attended_Event&quot;,
+            &quot;type_id&quot; : 1,
+            &quot;updated_at&quot; : &quot;2020-08-04 05:45:36&quot;,
+            &quot;is_analytics_synced&quot; : false,
+            &quot;type&quot; : &quot;Text&quot;,
+            &quot;created_at&quot; : &quot;2020-08-04 05:45:36&quot;,
+            &quot;name&quot; : &quot;Attended Event?&quot;
+         },
+         {
+            &quot;id&quot; : 14143,
+            &quot;is_use_values&quot; : false,
+            &quot;crm_id&quot; : null,
+            &quot;is_record_multiple_responses&quot; : false,
+            &quot;field_id&quot; : &quot;Birthday&quot;,
+            &quot;type_id&quot; : 12,
+            &quot;is_analytics_synced&quot; : false,
+            &quot;updated_at&quot; : &quot;2020-08-04 05:45:56&quot;,
+            &quot;created_at&quot; : &quot;2020-08-04 05:45:56&quot;,
+            &quot;name&quot; : &quot;Birthday&quot;,
+            &quot;type&quot; : &quot;Date&quot;
+         },
+
+      ],
+      &quot;total_results&quot; : 2
+   }
+}
+
+</code></pre>
+<p>Learn more about each object's fields in the <a href="../object-field-references/">Object Field Reference documentation</a>.</p>
+<h2 id="our-first-post-request">Our First POST Request</h2>
+<p><strong>Warning:</strong> If you’re following along with your Pardot account, this next example creates a list in your account. Either use a sandbox account, or tailor the example to fit your needs. </p>
+<p>In this example, we create a list for a spring nurturing campaign.</p>
+<p>Before you begin, make sure you've authenticated and have a valid access token.</p>
+<pre><code>POST /api/list/version/4/do/create?format=json HTTP/1.1
+Host: pi.pardot.com
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer &lt;ACCESS TOKEN&gt;
+Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;
+
+name=Spring Leads Nurture&amp;title=Spring Leads title&amp;description=A list to nurture spring leads
+</code></pre>
+<h3 id="breaking-down-the-request_1">Breaking Down the Request</h3>
+<p>We went over the URI and the authorization and business unit headers in the GET example. Let's cover the other components: </p>
+<ul>
+<li><code>Content-Type: application/x-www-form-urlencoded</code>: Lets the server know what kind of data the request includes. </li>
+<li><code>name=Spring Leads Nurture</code>: Sets the list's internal name to "Spring Leads Nurture".</li>
+<li><code>title=Spring Leads</code>: Titles the list "Spring Leads".</li>
+<li><code>description=A list to nurture spring leads</code>: Adds a text description to the list.</li>
+</ul>
+<h3 id="breaking-down-the-response_1">Breaking Down the Response</h3>
+<p>When we send this request to the server, Pardot responds by creating a list with the criteria that we specified. The response looks like this:</p>
+<pre><code>{
     &quot;@attributes&quot;: {
         &quot;stat&quot;: &quot;ok&quot;,
         &quot;version&quot;: 1
     },
-    &quot;result&quot;: {
-        &quot;visitor_activity&quot;: [
-        {
-            &quot;id&quot;: 27093,
-            &quot;created_at&quot;: &quot;2016-03-29 10:00:00&quot;
-        },
-        {
-            &quot;id&quot;: 27588,
-            &quot;created_at&quot;: &quot;2016-03-29 14:00:00&quot;
-        }]
+    &quot;list&quot;: {
+        &quot;id&quot;: 1000,
+        &quot;name&quot;: &quot;Spring Leads Nurture&quot;,
+        &quot;is_public&quot;: false,
+        &quot;is_dynamic&quot;: false,
+        &quot;title&quot;: &quot;Spring Leads&quot;,
+        &quot;description&quot;: &quot;A list to nurture spring leads &quot;,
+        &quot;is_crm_visible&quot;: false,
+        &quot;created_at&quot;: &quot;2021-02-12 08:09:10&quot;,
+        &quot;updated_at&quot;: &quot;2021-02-12 08:09:10&quot;
     }
 }
 </code></pre>
-<p><em>Note</em>: the above example was edited for brevity</p>
-<ol>
-<li>The API returns two more results back - the activities from 10:00 and 14:00. Since you are paging by <code>created_at</code>, update your high water mark value to the <code>created_at</code> value of the last record you pull back, <code>2016-03-29T14:00:00</code>. You have now retrieved all activities up to that time.</li>
-<li>Pull all visitor activity created after your high water mark (<code>2016-03-29T14:00:00</code>) and before tonight at midnight (<code>2016-03-30T00:00:00</code>):</li>
-</ol>
-<p>Example Request &amp; Response (JSON)</p>
-<pre><code class="language-bash">curl https://pi.pardot.com/api/visitorActivity/version/3/do/query?output=bulk&amp;format=json&amp;created_after=2016-03-29T14:00:00&amp;created_before=2016-03-30T00:00:00&amp;sort_by=created_at&amp;sort_order=ascending \
--H &quot;Authorization: Pardot user_key=1234567890abcdef1234567890abcdef, api_key=fedcba0987654321fedcba0987654321&quot;
+<h2 id="going-further">Going Further</h2>
+<p>Let's take the example a step further and add a prospect to our new list. Remember that completing this task changes data in Pardot, so proceed with caution. </p>
+<p>Before you begin, make sure you've authorized and have a valid access token. For simplicity in this example, we make these calls in our command-line interface using cURL. </p>
+<p>First, copy the list ID for the list you want to add a prospect to. Then, find the IDs for the prospect you want to add to the list. You can use <code>query</code> on the Prospect object to get ID. </p>
+<ul>
+<li>List ID: 1000</li>
+<li>Prospect ID: XXXXX</li>
+</ul>
+<pre><code>POST /api/prospect/version/4/do/update/id/XXXXX?format=json HTTP/1.1
+Host: pi.pardot.com
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer &lt;ACCESS TOKEN&gt;
+Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;
+
+list_&lt;ID&gt;=1000
 </code></pre>
-<pre><code class="language-json">{
-    &quot;@attributes&quot;: {
-        &quot;stat&quot;: &quot;ok&quot;,
-        &quot;version&quot;: 1
-    },
-    &quot;result&quot;: {
-        &quot;visitor_activity&quot;: [
-        {
-            &quot;id&quot;: 30017,
-            &quot;created_at&quot;: &quot;2016-03-29 18:00:00&quot;
-        }]
-    }
-}
-</code></pre>
-<p><em>Note</em>: the above example was edited for brevity</p>
-<ol>
-<li>The API returns one result back, the activity from 18:00. As the max page size is 2 and the API returned one record, you know you are at the end of the list of records and do not need to query any further. If the API had returned 2 records you would repeat the query process again with a new high water mark. You know it’s safe to stop when the number of records returned by the API is less than the max page size.</li>
-</ol>
+<p>Notice that the URI includes the prospect's ID: XXXXX. When we send this request, Pardot adds that prospect to the list with the ID 1000.</p>
+<h2 id="whats-next">What's Next</h2>
+<p>That's a wrap! Now that you've made some basic calls, we hope you feel confident about using Pardot APIs to extend and automate your business!</p>
+<h3 id="more-resources">More Resources</h3>
+<p><strong>Salesforce Documentation:</strong></p>
+<ul>
+<li><a href="https://help.salesforce.com/articleView?id=sf.connected_app_overview.htm">Connected Apps</a></li>
+<li><a href="https://help.salesforce.com/articleView?id=sf.remoteaccess_authenticate.htm">Authorize Apps with OAuth</a></li>
+<li><a href="https://help.salesforce.com/articleView?id=sf.remoteaccess_terminology.htm">Connected App and OAuth Terminology</a></li>
+</ul>
+<p><strong>More Help</strong></p>
+<ul>
+<li>Find a <a href="https://trailblazercommunitygroups.com/">Trailblazer Community Group</a> near you and talk with other Pardot developers about how they use APIs.</li>
+</ul>
                 
             </div>
         </div>
