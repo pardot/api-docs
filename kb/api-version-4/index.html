@@ -668,7 +668,6 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#what-is-version-4">What is Version 4?</a></li>
         <li class="main "><a href="#transitioning-from-version-3-to-version-4">Transitioning from version 3 to version 4</a></li>
-            <li><a href="#determining-when-these-changes-are-applicable">Determining when these changes are applicable</a></li>
             <li><a href="#request-path-changes">Request Path Changes</a></li>
             <li><a href="#prospect-api-changes">Prospect API changes</a></li>
             <li><a href="#opportunity-api-changes">Opportunity API changes</a></li>
@@ -682,34 +681,13 @@
 we have created a new version of our APIs - version 4.
 If your Pardot org has this feature enabled now, then you must use version 4.
 If your Pardot org does not have this featured enabled, you must use version 3.</p>
-<p>To determine if your Pardot org has this feature enabled, <a href="http://help.pardot.com/customer/portal/articles/2461386-how-can-i-find-out-if-my-account-allows-multiple-prospects-with-the-same-email-address-">check out this guide.</a></p>
+<p>To determine if your Pardot org has this feature enabled, <a href="https://help.salesforce.com/articleView?id=sf.pardot_admin_ampsea_parent.htm&amp;type=5">check out this guide.</a></p>
 <p>For more information on the API in general, check out the <a href="../..">Overview Page</a>.</p>
 <p>For specific API endpoints, please select from the "Version 4" list above.</p>
 <h1 id="transitioning-from-version-3-to-version-4">Transitioning from version 3 to version 4</h1>
 <p>If you are going to
-<a href="http://help.pardot.com/customer/portal/articles/2518686-enabling-multiple-prospects-with-the-same-email-address">upgrade your Pardot org to allow multiple prospects with the same email address,</a>
+<a href="https://help.salesforce.com/articleView?id=sf.pardot_admin_ampsea_parent.htm&amp;type=5">upgrade your Pardot org to allow multiple prospects with the same email address,</a>
 and you use the api, you will need to follow the guidelines below.</p>
-<h2 id="determining-when-these-changes-are-applicable">Determining when these changes are applicable</h2>
-<p>As soon your Pardot org is upgraded to allow multiple prospects with the same email address, your current API session will be cleared and you must log in again.
-Upon logging in, a new field will be returned in the login response.
-This will be your indication that you may no longer use version 3 (or any other previous version), and must now use the version 4 syntax.
-Here's what that will look like:</p>
-<p>Request:</p>
-<pre><code>POST: https://pi.pardot.com/api/login/version/3
-message body: email=&lt;email&gt;&amp;password=&lt;password&gt;&amp;user_key=&lt;user_key&gt;
-</code></pre>
-<p>Response (Before transition):</p>
-<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
-  &lt;api_key&gt;1234abcd&lt;/api_key&gt;
-&lt;/rsp&gt;
-</code></pre>
-<p>Response (After transition):</p>
-<pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
-  &lt;api_key&gt;5678qwertyuiop&lt;/api_key&gt;
-  &lt;version&gt;4&lt;/version&gt;
-&lt;/rsp&gt;
-</code></pre>
-<p><em>Note: Using version 3 to login will continue to work, even though all other endpoints will require version 4</em></p>
 <h2 id="request-path-changes">Request Path Changes</h2>
 <p>You will need to modify your request to use the <code>/version/4</code> path. For example:</p>
 <p>Before transition:</p>
