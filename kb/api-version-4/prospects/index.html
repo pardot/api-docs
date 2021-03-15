@@ -947,6 +947,7 @@
     &lt;/result&gt;
 &lt;/rsp&gt;
 </code></pre>
+
 <table>
 <thead>
 <tr>
@@ -1128,6 +1129,7 @@
     &lt;/prospect&gt;
 &lt;/rsp&gt;
 </code></pre>
+
 <p>For <code>output=simple</code>:</p>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;prospect&gt;
@@ -1144,6 +1146,7 @@
     &lt;/prospect&gt;
 &lt;/rsp&gt;
 </code></pre>
+
 <p>For <code>output=mobile</code>:</p>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;prospect&gt;
@@ -1155,6 +1158,7 @@
     &lt;/prospect&gt;
 &lt;/rsp&gt;
 </code></pre>
+
 <table>
 <thead>
 <tr>
@@ -1278,6 +1282,7 @@
     ]
 }
 </code></pre>
+
 <p>XML Create Example:</p>
 <pre><code>&lt;prospects&gt;
     &lt;prospect&gt;
@@ -1297,6 +1302,7 @@
     &lt;/prospect&gt;
 &lt;/prospects&gt;
 </code></pre>
+
 <p>JSON Upsert Example</p>
 <pre><code>{
     &quot;prospects&quot;: [
@@ -1306,6 +1312,7 @@
     ]
 }
 </code></pre>
+
 <p>XML Upsert Example:</p>
 <pre><code>&lt;prospects&gt;
     &lt;prospect&gt;
@@ -1325,6 +1332,7 @@
     &lt;/prospect&gt;
 &lt;/prospects&gt;
 </code></pre>
+
 <p>JSON Update Example</p>
 <pre><code>{
     &quot;prospects&quot;: [
@@ -1333,6 +1341,7 @@
     ]
 }
 </code></pre>
+
 <p>XML Update Example:</p>
 <pre><code>&lt;prospects&gt;
     &lt;prospect&gt;
@@ -1347,6 +1356,7 @@
     &lt;/prospect&gt;
 &lt;/prospects&gt;
 </code></pre>
+
 <p>If using <code>batchCreate</code>, you'll need to provide a valid email address for each prospect.</p>
 <p>The <code>batchUpsert</code> endpoint allows the use of prospect IDs and CRM FIDs as valid record identifiers. If the request includes an email address but no ID or CRM FID, a prospect will be created with the email address.</p>
 <p>The <code>batchUpdate</code> endpoint allows the use of prospect IDs and CRM FIDs.  Updating by prospect Email Address is not supported - a prospect ID or CRM FID is required as a valid record identifier.  You may query by email address to get record identifiers.</p>

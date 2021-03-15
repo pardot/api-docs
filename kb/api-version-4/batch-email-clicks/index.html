@@ -758,12 +758,15 @@
 <h3 id="return-email-clicks-since-yesterday">Return email clicks since yesterday</h3>
 <pre><code>POST /api/emailClick/version/4/do/query?created_after=yesterday
 </code></pre>
+
 <h3 id="return-all-email-clicks-of-a-list-email">Return all email clicks of a list email</h3>
 <pre><code>POST /api/emailClick/version/4/do/query?list_email_id=&lt;id&gt;
 </code></pre>
+
 <h3 id="return-email-clicks-of-a-list-email-since-january-1st-after-the-last-id">Return email clicks of a list email since January 1st after the last id</h3>
 <pre><code>POST /api/emailClick/version/4/do/query?created_after=2016-01-01&amp;ist_email_id=&lt;id&gt;&amp;greater_than_id=&lt;id&gt;
 </code></pre>
+
 <h2 id="manipulating-the-result-set">Manipulating the Result Set</h2>
 <p>Since <code>query</code> result sets are limited to 200 results each, the results returned may not include all the email clicks matched by the query. To retrieve the remaining results, the following criteria can be used to navigate through the result set.</p>
 <table>
@@ -799,6 +802,7 @@
     &lt;/result&gt;
 &lt;/rsp&gt;
 </code></pre>
+
 <table>
 <thead>
 <tr>

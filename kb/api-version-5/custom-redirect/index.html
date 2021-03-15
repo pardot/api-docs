@@ -930,6 +930,7 @@ Authorization: Bearer &lt;access-token&gt;
 }
 
 </code></pre>
+
 <p>Example response</p>
 <p>This example does not show all headers, and whitespace has been added to make it easier to read.</p>
 <pre><code>HTTP/1.1 201 Created
@@ -968,6 +969,7 @@ Location: https://pi.pardot.com/api/v5/objects/custom-redirects/8736?fields=id,f
 }
 
 </code></pre>
+
 <p>The fields in the response body and <code>Location</code> header are the same as the fields specified on the example request.</p>
 <h1 id="custom-redirect-update">Custom Redirect Update</h1>
 <p>Updating a custom redirect follows the conventions described in the <a href="../version5overview/#update-using-patch">Version 5 Overview</a>.</p>
@@ -985,6 +987,7 @@ Location: https://pi.pardot.com/api/v5/objects/custom-redirects/8736?fields=id,f
 Host: pi.pardot.com
 Authorization: Bearer &lt;access-token&gt;
 </code></pre>
+
 <p>Example response:</p>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json
@@ -1024,6 +1027,7 @@ Content-Type: application/json
 }
 
 </code></pre>
+
 <h3 id="filtering-results">Filtering Results</h3>
 <p>When executing a query, the following parameters can be used to filter the returned results. These parameters can be specified in the request along with any shared parameters defined in <a href="../version5overview/#query-using-get">Version 5 Overview</a>. When specifying more than one parameter, all parameters must match the record in order for it to be returned in the results.</p>
 <table>
@@ -1061,6 +1065,7 @@ Content-Type: application/json
 Host: pi.pardot.com
 Authorization: Bearer &lt;access-token&gt;
 </code></pre>
+
 <p>Example response:</p>
 <pre><code>HTTP/1.1 200 OK
 Content-Type: application/json

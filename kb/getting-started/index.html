@@ -819,6 +819,7 @@ Host: pi.pardot.com
 Authorization: Bearer &lt;ACCESS TOKEN&gt;
 Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;
 </code></pre>
+
 <h3 id="breaking-down-the-request">Breaking Down the Request</h3>
 <p>Let's break down the call and identify its parts, starting with the uniform resource identifier (URI). 
 <code>GET 'https://&lt;ENVIRONMENT_URL&gt;/api/&lt;OBJECT&gt;/version/&lt;API_VERSION&gt;/do/&lt;OPERATION&gt;?format=&lt;FORMAT&gt;</code></p>
@@ -877,6 +878,7 @@ Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;
 }
 
 </code></pre>
+
 <p>Learn more about each object's fields in the <a href="../object-field-references/">Object Field Reference documentation</a>.</p>
 <h2 id="our-first-post-request">Our First POST Request</h2>
 <p><strong>Warning:</strong> If you’re following along with your Pardot account, this next example creates a list in your account. Either use a sandbox account, or tailor the example to fit your needs. </p>
@@ -890,6 +892,7 @@ Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;
 
 name=Spring Leads Nurture&amp;title=Spring Leads title&amp;description=A list to nurture spring leads
 </code></pre>
+
 <h3 id="breaking-down-the-request_1">Breaking Down the Request</h3>
 <p>We went over the URI and the authorization and business unit headers in the GET example. Let's cover the other components: </p>
 <ul>
@@ -918,6 +921,7 @@ name=Spring Leads Nurture&amp;title=Spring Leads title&amp;description=A list to
     }
 }
 </code></pre>
+
 <h2 id="going-further">Going Further</h2>
 <p>Let's take the example a step further and add a prospect to our new list. Remember that completing this task changes data in Pardot, so proceed with caution. </p>
 <p>Before you begin, make sure you've authorized and have a valid access token. For simplicity in this example, we make these calls in our command-line interface using cURL. </p>
@@ -934,6 +938,7 @@ Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;
 
 list_&lt;ID&gt;=1000
 </code></pre>
+
 <p>Notice that the URI includes the prospect's ID: XXXXX. When we send this request, Pardot adds that prospect to the list with the ID 1000.</p>
 <h2 id="whats-next">What's Next</h2>
 <p>That's a wrap! Now that you've made some basic calls, we hope you feel confident about using Pardot APIs to extend and automate your business!</p>
