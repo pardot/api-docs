@@ -728,11 +728,12 @@
 <p>Request must be made using HTTPS.</p>
 <pre><code>POST /services/oauth2/token HTTP/1.1
 Host: login.salesforce.com
+Content-type: application/x-www-form-urlencoded
 
-grant_type=password
-client_id=&lt;client_id&gt;
-client_secret=&lt;client_secret&gt;
-username=&lt;username&gt;
+grant_type=password&amp;
+client_id=&lt;client_id&gt;&amp;
+client_secret=&lt;client_secret&gt;&amp;
+username=&lt;username&gt;&amp;
 password=&lt;password&gt;
 </code></pre>
 

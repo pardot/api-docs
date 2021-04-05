@@ -836,6 +836,7 @@
             <li><a href="#error-code-192">Error Code: 192</a></li>
             <li><a href="#error-code-193">Error Code: 193</a></li>
             <li><a href="#error-code-194">Error Code: 194</a></li>
+            <li><a href="#error-code-199">Error Code: 199</a></li>
             <li><a href="#error-code-201">Error Code: 201</a></li>
             <li><a href="#error-code-10000">Error Code: 10000</a></li>
     </ul>
@@ -1710,6 +1711,10 @@ requests.</p>
 <p><strong>Message</strong>: Invalid MIME type.</p>
 <p><strong>Problem</strong>: The uploaded file is not of an allowed type.</p>
 <p><strong>Solution</strong>: Upload a file of an allowed type. Make sure the extension of the file is appropriate for its type.</p>
+<h3 id="error-code-199">Error Code: <code>199</code></h3>
+<p><strong>Message</strong>: Authentication using an api_key is no longer supported. Use Salesforce OAuth access token instead. See https://developer.pardot.com/kb/authentication/ for details.</p>
+<p><strong>Problem</strong>: The Pardot API doesn't support api_key based authentication.</p>
+<p><strong>Solution</strong>: Salesforce OAuth endpoints should be used to retrieve an access token. See https://developer.pardot.com/kb/authentication/ for details.</p>
 <h3 id="error-code-201">Error Code: <code>201</code></h3>
 <p><strong>Message</strong>: Business Unit specified in Pardot-Business-Unit-Id header not found or inactive.</p>
 <p><strong>Problem</strong>: The Business Unit ID is invalid or the business unit isn't active. This error is also returned when you use the wrong hostname (pi.pardot.com or pi.demo.pardot.com).</p>
