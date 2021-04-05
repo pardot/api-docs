@@ -674,19 +674,27 @@
 </div></div>
             <div class="col-md-9 main-content" role="main">
                 
-                    <h1 id="authentication">Authentication</h1>
+                    <!-- Script for vidyard embed-->
+
+<script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
+
+<h1 id="authentication">Authentication</h1>
 <p>Prerequisites:</p>
-<ol>
-<li>
-<p>You must have <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm">Salesforce OAuth setup</a> in the org. To setup up a connected app for OAuth, the "pardot_api" scope must be one of the selected OAuth scopes. Otherwise, OAuth flows other than username/password flow will not be usable with the Pardot API.</p>
-</li>
+<ul>
+<li>You must have <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm">Salesforce OAuth setup</a> in the org. To setup up a connected app for OAuth, the "pardot_api" scope must be one of the selected OAuth scopes. Otherwise, OAuth flows other than username/password flow will not be usable with the Pardot API.</li>
+</ul>
+<p>Check out this video for an example of how to implement OAuth. </p>
+<!-- vidyard embed-->
+
+<p><img style="width: 100%; margin: auto; display: block;" alt="Vidyard Video" class="vidyard-player-embed" src="https://play.vidyard.com/Bd9bUbJ8x1SezACaqnpPFB.jpg" data-uuid="Bd9bUbJ8x1SezACaqnpPFB" data-v="4" data-type="inline"/></p>
+<ul>
 <li>
 <p>You must have the Pardot Business Unit ID that you are trying to authenticate with. To find the Pardot Business Unit ID, use Setup in Salesforce. From Setup, enter "Pardot Account Setup" in the Quick Find box. Your Pardot Business Unit ID begins with "0Uv" and is 18 characters long. If you cannot access the Pardot Account Setup information, ask your Salesforce Administrator to provide you with the Pardot Business Unit ID.</p>
 </li>
 <li>
 <p>Authenticate with a user that is SSO enabled. An SSO enabled user is one who can log in to the Pardot user interface (https://pi.pardot.com) using "Log In with Salesforce" or who can access Pardot using the Pardot Lightning App.</p>
 </li>
-</ol>
+</ul>
 <h3 id="obtain-salesforce-access-token">Obtain Salesforce Access Token</h3>
 <p>To use Pardot API with an SSO user, you must first get a salesforce access token. The example below uses the username/password OAuth flow to obtain an access token for simplicity. Any OAuth flow can be used to obtain an access token. In many use cases, other OAuth flows are more appropriate than username/password flow. For example, a web app with user interaction would likely use either user agent flow or web server flow. See <a href="https://help.salesforce.com/articleView?id=remoteaccess_oauth_flows.htm">Salesforce OAuth setup</a> for details.</p>
 <h3 id="oauth-authentication-domain-by-account-type">Oauth Authentication Domain by Account Type</h3>
