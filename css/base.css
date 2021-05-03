@@ -263,7 +263,7 @@ div.source-links {
 }
 
 .navbar>.container .navbar-brand {
-	background: url('http://go.pardot.com/l/69702/2021-04-06/h9rlpd/69702/1617744685Lzs7JM6L/pardot_logo.png') no-repeat center left;
+	background: url('../img/pardot-logo.png') no-repeat center left;
 	text-indent: -9999px;
 	width: 115px;
 	background-size: 100px;
