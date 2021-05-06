@@ -134,6 +134,14 @@
                                 </a>
                             </li>
                         
+                            <li class=" ">
+                                <a href="../salesforce-endpoints/">
+                                    
+                                    Related Salesforce Endpoints
+                                    
+                                </a>
+                            </li>
+                        
                         </ul>
                     </li>
                 
@@ -844,7 +852,11 @@
             <li><a href="#error-code-192">Error Code: 192</a></li>
             <li><a href="#error-code-193">Error Code: 193</a></li>
             <li><a href="#error-code-194">Error Code: 194</a></li>
+            <li><a href="#error-code-196">Error Code: 196</a></li>
+            <li><a href="#error-code-197">Error Code: 197</a></li>
+            <li><a href="#error-code-198">Error Code: 198</a></li>
             <li><a href="#error-code-199">Error Code: 199</a></li>
+            <li><a href="#error-code-200">Error Code: 200</a></li>
             <li><a href="#error-code-201">Error Code: 201</a></li>
             <li><a href="#error-code-203">Error Code: 203</a></li>
             <li><a href="#error-code-10000">Error Code: 10000</a></li>
@@ -1715,10 +1727,26 @@ requests.</p>
 <p><strong>Message</strong>: Invalid MIME type.</p>
 <p><strong>Problem</strong>: The uploaded file is not of an allowed type.</p>
 <p><strong>Solution</strong>: Upload a file of an allowed type. Make sure the extension of the file is appropriate for its type.</p>
+<h3 id="error-code-196">Error Code: <code>196</code></h3>
+<p><strong>Message</strong>: Invalid authentication mechanism.</p>
+<p><strong>Problem</strong>: This authentication method doesn't apply for this action.</p>
+<p><strong>Solution</strong>: This action requires authentication from Salesforce.  </p>
+<h3 id="error-code-197">Error Code: <code>197</code></h3>
+<p><strong>Message</strong>: Import missing required field.</p>
+<p><strong>Problem</strong>: A required field for import is missing.</p>
+<p><strong>Solution</strong>: Include the required field for import.</p>
+<h3 id="error-code-198">Error Code: <code>198</code></h3>
+<p><strong>Message</strong>: Endpoint not found.</p>
+<p><strong>Problem</strong>: The endpoint can't be found.</p>
+<p><strong>Solution</strong>: Check the documentation for the list of available endpoints.</p>
 <h3 id="error-code-199">Error Code: <code>199</code></h3>
 <p><strong>Message</strong>: Authentication using an api_key is no longer supported. Use Salesforce OAuth access token instead. See https://developer.pardot.com/kb/authentication/ for details.</p>
 <p><strong>Problem</strong>: The Pardot API doesn't support api_key based authentication.</p>
 <p><strong>Solution</strong>: Salesforce OAuth endpoints should be used to retrieve an access token. See https://developer.pardot.com/kb/authentication/ for details.</p>
+<h3 id="error-code-200">Error Code: <code>200</code></h3>
+<p><strong>Message</strong>: Unable to delete asset.</p>
+<p><strong>Problem</strong>: The asset can't be deleted.</p>
+<p><strong>Solution</strong>: Check to make sure the asset has been published. Only published assets can be deleted.</p>
 <h3 id="error-code-201">Error Code: <code>201</code></h3>
 <p><strong>Message</strong>: Business Unit specified in Pardot-Business-Unit-Id header not found or inactive.</p>
 <p><strong>Problem</strong>: The Business Unit ID is invalid or the business unit isn't active. This error is also returned when you use the wrong hostname (pi.pardot.com or pi.demo.pardot.com).</p>
