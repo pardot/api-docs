@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../use-cases/">
+                                    
+                                    Use Cases for Pardot APIs
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../getting-started/">
                                     
                                     Getting Started
@@ -680,23 +688,24 @@
 
 <h1 id="authentication">Authentication</h1>
 <p>Prerequisites:</p>
-<ul>
-<li>You must have <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm">Salesforce OAuth setup</a> in the org. To setup up a connected app for OAuth, the "pardot_api" scope must be one of the selected OAuth scopes. Otherwise, OAuth flows other than username/password flow will not be usable with the Pardot API.</li>
-</ul>
-<p>Check out this video for an example of how to implement OAuth. </p>
+<ol>
+<li>You must have <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_oauth_and_connected_apps.htm">Salesforce OAuth implemented</a> for the org. To set up a connected app for OAuth, the "pardot_api" scope must be one of the selected OAuth scopes. Otherwise, only the username-password OAuth flow can be used with the Pardot API.</li>
+</ol>
+<p>Check out this video for an example of how to implement OAuth.</p>
 <!-- vidyard embed-->
 
 <p><img style="width: 100%; margin: auto; display: block;" alt="Vidyard Video" class="vidyard-player-embed" src="https://play.vidyard.com/Bd9bUbJ8x1SezACaqnpPFB.jpg" data-uuid="Bd9bUbJ8x1SezACaqnpPFB" data-v="4" data-type="inline"/></p>
-<ul>
+<ol>
 <li>
-<p>You must have the Pardot Business Unit ID that you are trying to authenticate with. To find the Pardot Business Unit ID, use Setup in Salesforce. From Setup, enter "Pardot Account Setup" in the Quick Find box. Your Pardot Business Unit ID begins with "0Uv" and is 18 characters long. If you cannot access the Pardot Account Setup information, ask your Salesforce Administrator to provide you with the Pardot Business Unit ID.</p>
+<p>You must have the Pardot Business Unit ID that you are trying to authenticate with. From Marketing Setup, in the Quick Find box, enter <strong>Pardot</strong>, and then select <strong>Pardot Account Setup</strong>. Your business unit ID begins with "0Uv" and is 18 characters long. If you can't access Pardot Account Setup, ask your Salesforce Administrator to give you the Pardot Business Unit ID.</p>
 </li>
 <li>
-<p>Authenticate with a user that is SSO enabled. An SSO enabled user is one who can log in to the Pardot user interface (https://pi.pardot.com) using "Log In with Salesforce" or who can access Pardot using the Pardot Lightning App.</p>
+<p>Authenticate with a user that is SSO-enabled. An SSO-enabled user is one who can log in to the Pardot user interface (https://pi.pardot.com) using "Log In with Salesforce" or who can access Pardot using the Pardot Lightning App.</p>
 </li>
-</ul>
+</ol>
+<p>For more help with authentication, see our <a href="../getting-started/">Getting Started</a> guide.</p>
 <h3 id="obtain-salesforce-access-token">Obtain Salesforce Access Token</h3>
-<p>To use Pardot API with an SSO user, you must first get a salesforce access token. The example below uses the username/password OAuth flow to obtain an access token for simplicity. Any OAuth flow can be used to obtain an access token. In many use cases, other OAuth flows are more appropriate than username/password flow. For example, a web app with user interaction would likely use either user agent flow or web server flow. See <a href="https://help.salesforce.com/articleView?id=remoteaccess_oauth_flows.htm">Salesforce OAuth setup</a> for details.</p>
+<p>To use Pardot APIs with an SSO user, you must first get a Salesforce access token. For simplicity, our example uses the username-password OAuth flow, but OAuth flow can be used to obtain an access token. In many use cases, other OAuth flows are more appropriate than username-password flow. For example, a web app with user interaction would likely use either user agent flow or web server flow. See <a href="https://help.salesforce.com/articleView?id=remoteaccess_oauth_flows.htm">Salesforce OAuth setup</a> for details.</p>
 <h3 id="oauth-authentication-domain-by-account-type">Oauth Authentication Domain by Account Type</h3>
 <table>
 <thead>
@@ -774,7 +783,7 @@ password=&lt;password&gt;
 </tr>
 </tbody>
 </table>
-<p>If authentication is successful, an access token is be returned. See <a href="https://help.salesforce.com/articleView?id=remoteaccess_oauth_username_password_flow.htm">Salesforce OAuth documentation</a> for the response format.</p>
+<p>If authentication is successful, an access token is returned. See <a href="https://help.salesforce.com/articleView?id=remoteaccess_oauth_username_password_flow.htm">Salesforce OAuth documentation</a> for the response format.</p>
 <h3 id="using-access-token-with-pardot">Using Access Token with Pardot</h3>
 <p>After you get the access token, you must pass it and the Pardot Business Unit ID using the <code>Authorization</code> and <code>Pardot-Business-Unit-Id</code> headers.</p>
 <h4 id="sample-request">Sample Request</h4>
@@ -807,7 +816,7 @@ Pardot-Business-Unit-Id: &lt;business_unit_id&gt;
 </tr>
 </tbody>
 </table>
-<p>If a valid access token is provided with a valid business unit ID, the Pardot endpoint should work as expected.</p>
+<p>If a valid access token is provided with a valid business unit ID, the Pardot endpoint works as expected.</p>
 <p>Note: The Pardot API does not enforce IP address restrictions that are configured using the Salesforce option "Enforce login IP ranges on every request".</p>
                 
             </div>

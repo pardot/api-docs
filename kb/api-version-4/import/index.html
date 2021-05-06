@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../../use-cases/">
+                                    
+                                    Use Cases for Pardot APIs
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../../getting-started/">
                                     
                                     Getting Started
@@ -698,11 +706,11 @@
 <p>The Import API provides a programmatic way to insert or update large amounts of data in Pardot. It uses Pardot's existing API structures, patterns, and terminology. The Import API automates the existing prospect <a href="https://help.salesforce.com/articleView?id=pardot_prospects_import.htm&amp;type=0">import feature set</a>. Only prospect import is supported currently.</p>
 <p><strong>IMPORTANT</strong> The user's role must have the Prospect Import ability to start an API import. For more information, see <a href="https://help.salesforce.com/articleView?id=pardot_user_roles.htm">Pardot User Roles</a></p>
 <h2 id="when-to-use-the-import-api">When to Use the Import API</h2>
-<p>Use the Import API to insert or update large sets of data, when you don't require synchronous completion responses, or when batch upsert limitations are too restrictive: <a href="http://developer.pardot.com/kb/api-version-4/prospects/#upserting-prospects">http://developer.pardot.com/kb/api-version-4/prospects/#upserting-prospects</a>.  Currently, only Prospect upsert is supported.</p>
-<p>The Import API processes many records asynchronously in batches. Each batch requires a minimum amount of system resources to run, so larger batches are generally more efficient. Small batches may result in slower performance.</p>
+<p>Use the Import API to insert or update large sets of data, when you don't require synchronous completion responses, or when batch upsert limitations are too restrictive. Currently, only Prospect upsert is supported.</p>
+<p>The Import API processes many records asynchronously in batches. Each batch requires a minimum amount of system resources to run, so larger batches are more efficient. Small batches may result in slower performance.</p>
 <h2 id="what-you-can-do-with-the-import-api">What You Can Do with the Import API</h2>
 <p>The Import API lets you import a CSV file of prospects. Columns in the CSV correspond to Pardot <a href="http://developer.pardot.com/kb/object-field-references/#prospect">field names</a>. Rows correspond to prospects to be upserted. Each column must match a valid field name, or validation fails and the CSV is rejected.</p>
-<h3 id="matching-and-upsert-behavior">Matching and Upsert behavior</h3>
+<h3 id="matching-and-upsert-behavior">Matching and Upsert Behavior</h3>
 <p>When a row in the CSV file matches an existing prospect, the prospect is updated. Field values in the CSV, including blank (null) values, overwrite existing values for the prospect. To modify this default behavior, see the <code>columns</code> param on the <a href="#create">Create</a> endpoint.</p>
 <p>A new prospect is created when a matching prospect isn't found. All standard and custom fields are supported.</p>
 <p>In API Version 4, you must specify either the "prospect_id" or "salesforce_fid" identifier (Salesforce ID of a synced
@@ -711,22 +719,22 @@ affected when a record is skipped.</p>
 <h2 id="how-the-import-api-works">How the Import API Works</h2>
 <p>An import contains a set of records divided into one or more batches of data. A batch is a set of records sent to the server in an HTTP POST request. The import specifies which object is processed and what type of operation is used. The Import API currently supports only the Prospect object and the Upsert operation.</p>
 <p>Batches are processed in parallel, and batches are subdivided into smaller groups of objects for processing.</p>
-<p>The order in which individual records, batches, and entire imports are processed is not guaranteed.</p>
+<p>The order in which individual records, batches, and entire imports are processed isn’t guaranteed.</p>
 <p>The Import resource is used to create an import, get status for an import, upload data as a batch, and change status for an import. When a batch finishes processing, the result for failed records is available in a result set resource. All other records are assumed to be successful.</p>
 <p>Users create, submit, and retrieve results of imports with the following steps.</p>
 <ol>
 <li>Create an import that specifies object and action.</li>
 <li>Upload data to the server in one or more batches.</li>
 <li>To submit the import for processing, set the state of the import to "Ready". After the import is submitted, you can't add more batches of data or abort the import.</li>
-<li>Check the status of the import at a reasonable interval. We recommend that you wait a few minutes between calls. Calls to check import status count against API call limits. When the results of the status check indicate a complete import, the results will also contain statistics for creates, updates, and failures.</li>
+<li>Check the status of the import at a reasonable interval. We recommend that you wait a few minutes between calls. Calls to check import status count against API call limits. When the results of the status check indicate a complete import, the results also contain statistics for creates, updates, and failures.</li>
 <li>If there are failures, download a log of failures. The log includes only records not inserted or updated.</li>
 </ol>
 <p>Imports left in the "Open" state expire after 24 hours.</p>
 <h2 id="limitations">Limitations</h2>
 <ul>
 <li>Each account can process 1000 batches per day.</li>
-<li>Each batch must be smaller than 10MB.</li>
-<li>The daily data limit is 10GB.</li>
+<li>Each batch must be smaller than 10 MB.</li>
+<li>The daily data limit is 10 GB.</li>
 <li>Each import can contain up to 10 batches.</li>
 <li>The daily Pardot API call limit and the concurrent Pardot API call limit apply to Import API calls just as they would any other Pardot API calls.</li>
 </ul>
@@ -749,17 +757,19 @@ affected when a record is skipped.</p>
 <h3 id="params">Params</h3>
 <h3 id="request-body">Request Body</h3>
 <p>ContentType: application/json or multipart/form-data</p>
-<p>Use multipart/form-data if sending prospect data in the create request. Use application/json if subsequent do/batch requests will be made with prospect data.</p>
+<p>Use multipart/form-data if sending prospect data in the create request. Use application/json if subsequent do/batch requests are made with prospect data.</p>
 <ul>
 <li>Input Representation (sent as "<strong>importInput</strong>" if ContentType is multipart/form-data):<ul>
 <li><strong>operation</strong>: The operation to be executed. Currently only “Upsert” is available. See Import Operation enum for more information.</li>
 <li><strong>object</strong>: The current object to be run the import against. Currently only “Prospect” is available. See Import Object enum for more information.</li>
-<li><strong>restoreDeleted</strong>: (Optional) If a record within the CSV file matches a record that was moved to the Recycle Bin, usually through a Delete, the record can be restored and updated. If the property is true, then the record will be restored and updated. If false, the record is ignored and an error occurs The error appears in the error document after the import is completed. Default if not specified is false.</li>
+<li><strong>restoreDeleted</strong>: (Optional) If a record within the CSV file matches a record that was moved to the Recycle Bin, usually through a Delete, the record can be restored and updated. If the property is true, then the record is restored and updated. If false, the record is ignored and an error occurs The error appears in the error document after the import is completed. Default if not specified is false.</li>
 <li><strong>state</strong>: (Optional) Specify "Ready" to indicate that the CSV file included in the request contains all prospects for this import. In this case, do/batch and do/update requests aren't required and should be omitted.</li>
-<li><strong>columns</strong>: (Optional) If specified, the columns must include the same number of fields as the CSV file does. If they don't match then a <strong>400 BAD_REQUEST</strong> failure occurs. The elements for this are:</li>
+<li><strong>columns</strong>: (Optional) If specified, the columns must include the same number of fields as the CSV file does. If they don't match then a <strong>400 BAD_REQUEST</strong> failure occurs. The elements for this are:<ul>
 <li><strong>field</strong>: (Required) The field name must match one of the columns in the CSV file</li>
-<li><strong>overwrite</strong>: (Optional, default true) When set to true and updating an existing record, the value in the input will modify ("overwrite") the existing value in the database.  When set to false, the existing value in the database will not update regardless of the value of the input. If the input row is a "Create", then this option is ignored and the value will be present in the database.</li>
-<li><strong>nullOverwrite</strong>: (Optional, default true) When set to true and updating an existing record, if the value in the input is an empty string or a string containing any number of whitespaces then the value in the database is set to empty string or null. When set to false the empty input value is ignored and the existing value in the database isn't updated. If the input row is a "Create" then this option is ignored and the empty string or null is present in the database.</li>
+<li><strong>overwrite</strong>: (Optional, default true) When set to true and updating an existing record, the value in the input modifies ("overwrite") the existing value in the database. When set to false, the existing value in the database won’t update regardless of the value of the input. If the input row is a "Create", then this option is ignored and the value is present in the database.</li>
+<li><strong>nullOverwrite</strong>: (Optional, default true) When set to true and updating an existing record, if the value in the input is an empty string or a string containing whitespaces then the value in the database is set to empty string or null. When set to false the empty input value is ignored and the existing value in the database isn't updated. If the input row is a "Create" then this option is ignored and the empty string or null is present in the database.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -776,15 +786,15 @@ affected when a record is skipped.</p>
 }
 </code></pre>
 
-<p>A single part with the name "<strong>importFile</strong>" should contain the CSV file for the batch. The file should contain a header row.</p>
+<p>A single part with the name "<strong>importFile</strong>" contains the CSV file for the batch. The file must contain a header row.</p>
 <h3 id="success">Success</h3>
 <ul>
 <li>Status Code: 200</li>
 <li>Output Representation<ul>
 <li><strong>id</strong>: The ID of the import.</li>
 <li><strong>state</strong>: The state of the import, which should always be returned as “Open” or "Waiting". "Waiting" is only returned if the "Ready" state is specified in the input. See <a href="#import-state">Import State</a> enum.</li>
-<li><strong>isExpired</strong>: Indicates that the import has expired. After an import expires, it cannot be changed, and attempts to check its status or retrieve error results will fail.</li>
-<li><strong>batchesRef</strong>: (Optional) The full URL path to add batches of data to the import. This will only be included in the response if the import remains in the "Open" state.</li>
+<li><strong>isExpired</strong>: Indicates that the import has expired. After an import expires, it can’t be changed, and attempts to check its status or retrieve error results will fail.</li>
+<li><strong>batchesRef</strong>: (Optional) The full URL path to add batches of data to the import. This included in the response only if the import remains in the "Open" state.</li>
 </ul>
 </li>
 </ul>
@@ -812,7 +822,7 @@ affected when a record is skipped.</p>
 <p><strong>{id}</strong>: The ID of the import.</p>
 <h3 id="body">Body</h3>
 <p>ContentType: multipart/form-data</p>
-<p>A single part with the name "<strong>importFile</strong>" should contain the CSV file for the batch. The file should contain a header row.</p>
+<p>A single part with the name "<strong>importFile</strong>" contains the CSV file for the batch. The file should contain a header row.</p>
 <p>Column names must match Filed Names in Pardot <a href="http://developer.pardot.com/kb/object-field-references/">http://developer.pardot.com/kb/object-field-references/</a>. For example, to set campaign, pass “campaign_id”. Columns that don't match existing field names cause validation to fail on this step. Each batch must contain an identical header with the same fields in the same order.</p>
 <h3 id="success_1">Success</h3>
 <ul>
@@ -937,7 +947,7 @@ affected when a record is skipped.</p>
 <ul>
 <li><strong>result</strong>: A collection of imports<ul>
 <li><strong>total_results</strong>: The total number of results in the output.</li>
-<li><strong>import</strong>: A collection of imports. If there are no results, this property is omitted. If there's a single result, it is an object. If there are multiple results, it is an array of results.<ul>
+<li><strong>import</strong>: A collection of imports. If there are no results, this property is omitted. If there's a single result, it’s an object. If there are multiple results, it’s an array of results.<ul>
 <li><strong>id</strong>: The ID of the import. This ID is used to check the status of the import.</li>
 <li><strong>state</strong>: The state of the import. Displays "Waiting" when the import is queued for processing, "Processing" when the server is working on the import and "Complete" when the import has completed. See <a href="#import-state">Import State</a> enum.</li>
 <li><strong>origin</strong>: How the import was initiated. See <a href="#import-origin">Import Origin</a> enum.</li>
@@ -949,7 +959,7 @@ affected when a record is skipped.</p>
 </ul>
 </li>
 </ul>
-<p>Note that the import representation returned in query doesn’t contain <code>resultRefs</code>. Use the read endpoint for the import to get the full import representation.</p>
+<p>The import representation returned in query doesn’t contain <code>resultRefs</code>. Use the read endpoint for the import to get the full import representation.</p>
 <pre><code class="json">{
     &quot;result&quot;: {
         &quot;total_results&quot;: int,
@@ -977,7 +987,7 @@ affected when a record is skipped.</p>
 <pre><code>/api/import/version/4/do/downloadErrors/id/{id}
 </code></pre>
 
-<p>Download errors associated with the specified import (after it is complete).</p>
+<p>Download errors associated with the specified import (after it’s complete).</p>
 <h2 id="get_2">GET</h2>
 <h3 id="params_5">Params</h3>
 <p><strong>{id}</strong>: The ID of the import.</p>

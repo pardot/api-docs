@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../../use-cases/">
+                                    
+                                    Use Cases for Pardot APIs
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../../getting-started/">
                                     
                                     Getting Started
@@ -666,58 +674,100 @@
         <div class="container">
             <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#reading-email-templates">Reading Email Templates</a></li>
-            <li><a href="#supported-operations">Supported Operations</a></li>
-            <li><a href="#supported-parameters">Supported Parameters</a></li>
-            <li><a href="#xml-response-format">XML Response Format</a></li>
-        <li class="main "><a href="#list-one-to-one-email-templates">List One to One Email Templates</a></li>
-            <li><a href="#supported-operations_1">Supported Operations</a></li>
-            <li><a href="#supported-parameters_1">Supported Parameters</a></li>
-            <li><a href="#xml-response-format_1">XML Response Format</a></li>
+        <li class="main active"><a href="#email-template-resources">Email Template Resources</a></li>
+        <li class="main "><a href="#email-template-read">Email Template Read</a></li>
+            <li><a href="#uri">URI</a></li>
+            <li><a href="#parameters-to-select-a-template">Parameters to Select a Template</a></li>
+        <li class="main "><a href="#one-to-one-email-templates">One-to-One Email Templates</a></li>
+            <li><a href="#uri_1">URI</a></li>
+            <li><a href="#parameters-to-select-one-to-one-email-templates">Parameters to Select One-to-One Email Templates</a></li>
+        <li class="main "><a href="#xml-response">XML Response</a></li>
+            <li><a href="#xml-response-for-an-email-template-read">XML Response for an Email Template Read</a></li>
+            <li><a href="#xml-response-for-one-to-one-email-templates">XML Response for One-to-One Email Templates</a></li>
     </ul>
 </div></div>
             <div class="col-md-9 main-content" role="main">
                 
-                    <h1 id="reading-email-templates">Reading Email Templates</h1>
-<h2 id="supported-operations">Supported Operations</h2>
+                    <h1 id="email-template-resources">Email Template Resources</h1>
+<p>Use an email template to design a reusable email layout for your engagement programs, autoresponders, one-to-one emails, and list emails. Learn about email templates in <a href="https://help.salesforce.com/articleView?id=sf.pardot_email_templates.htm">Salesforce Help</a>.</p>
+<p><strong>Note:</strong> Include the authentication header with every request. For information on how to authenticate, see <a href="../../authentication/">Authentication</a>.</p>
 <table>
 <thead>
 <tr>
-<th><strong>Operation</strong></th>
-<th><strong>URL Format</strong></th>
-<th><strong>Required Parameters</strong></th>
-<th><strong>Description</strong></th>
+<th align="left">Resource Name</th>
+<th>Operation</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>read</code></td>
-<td><code>/api/emailTemplate/version/4/do/read/id/&lt;email template id&gt;</code></td>
-<td><code>user_key, api_key, emailTemplateId</code></td>
-<td>Returns the data for the email template specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the target email template.</td>
+<td align="left"><a href="#email-template-read">Email Template Read</a></td>
+<td><code>GET</code></td>
+<td align="left">Request information about a single email template.</td>
+</tr>
+<tr>
+<td align="left"><a href="#one-to-one-email-templates">One-to-One Email Templates</a></td>
+<td><code>GET</code></td>
+<td align="left">Request information about the email templates that are used in one-to-one emails.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="supported-parameters">Supported Parameters</h2>
+<h1 id="email-template-read">Email Template Read</h1>
+<p>Request information about a single email template.</p>
+<h2 id="uri">URI</h2>
+<pre><code>/api/emailTemplate/version/4/do/read/id/&lt;ID&gt;
+</code></pre>
+
+<p>Replace <code>&lt;ID&gt;</code> with the Pardot ID of the email template.</p>
+<h2 id="parameters-to-select-a-template">Parameters to Select a Template</h2>
+<p>Use this parameter to specify the email templates to return.</p>
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>Required</th>
 <th>Type</th>
+<th>Possible Values</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>archived</td>
-<td></td>
-<td>boolean</td>
-<td>When set to true, archived and unarchived email templates are returned from the endpoint. When false, unarchived templates will be returned and archived templates will not be found (as if no email template exists for the specified ID). <em>Defaults to</em> <code>false</code>.</td>
+<td><code>archived</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td>If <code>true</code>, the request returns archived and unarchived templates. If <code>false</code>, only unarchived templates are returned. Default value is <code>false</code>.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="xml-response-format">XML Response Format</h2>
+<h1 id="one-to-one-email-templates">One-to-One Email Templates</h1>
+<p>Request the email templates that are enabled for one-to-one emails.</p>
+<h2 id="uri_1">URI</h2>
+<pre><code>/api/emailTemplate/version/4/do/listOneToOne
+</code></pre>
+
+<h2 id="parameters-to-select-one-to-one-email-templates">Parameters to Select One-to-One Email Templates</h2>
+<p>Use this parameter to specify which one-to-one email templates to return.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Possible Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>archived</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code>, <code>false</code></td>
+<td>If <code>true</code>, the request returns both archived and unarchived templates. If <code>false</code>, only unarchived templates are returned. Default is <code>false</code>.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="xml-response">XML Response</h1>
+<p>Use the XML response for read requests and one-to-one requests to learn more about your email templates.</p>
+<h2 id="xml-response-for-an-email-template-read">XML Response for an Email Template Read</h2>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;emailTemplate&gt;
         &lt;error&gt;&lt;/error&gt;
@@ -752,7 +802,7 @@
 <tbody>
 <tr>
 <td><code>&lt;emailTemplate&gt;</code></td>
-<td>Parent tag. Contains data fields for target email template.</td>
+<td>Parent tag. Contains data fields for a single email template.</td>
 </tr>
 <tr>
 <td><code>&lt;error&gt;</code></td>
@@ -764,15 +814,15 @@
 </tr>
 <tr>
 <td><code>&lt;errorMessage&gt;</code></td>
-<td>The error description.</td>
+<td>Description of the error.</td>
 </tr>
 <tr>
 <td><code>&lt;sendOptions&gt;</code></td>
-<td>The associated send options object. Contains sender specific data.</td>
+<td>The associated send options object, including sender-specific data.</td>
 </tr>
 <tr>
 <td><code>&lt;replyToAddress&gt;</code></td>
-<td>The email address set for the email's Reply-To header.</td>
+<td>The email address in the email's Reply-To header.</td>
 </tr>
 <tr>
 <td><code>&lt;sendFromData&gt;</code></td>
@@ -796,7 +846,7 @@
 </tr>
 <tr>
 <td><code>&lt;isDripEmail&gt;</code></td>
-<td>Flag if the template is available for use in drip programs.</td>
+<td>Flag if the template is available for use in engagement programs.</td>
 </tr>
 <tr>
 <td><code>&lt;isListEmail&gt;</code></td>
@@ -808,52 +858,13 @@
 </tr>
 </tbody>
 </table>
-<h1 id="list-one-to-one-email-templates">List One to One Email Templates</h1>
-<h2 id="supported-operations_1">Supported Operations<a name="71862-supported-operations" id="supported-operations"></a></h2>
-<table>
-<thead>
-<tr>
-<th><strong>Operation</strong></th>
-<th><strong>URL Format</strong></th>
-<th><strong>Required Parameters</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>listOneToOne</code></td>
-<td><code>/api/emailTemplate/version/4/do/listOneToOne</code></td>
-<td><code>user_key, api_key</code></td>
-<td>Returns a list of email templates which are enabled for use in one to one emails.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="supported-parameters_1">Supported Parameters</h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>archived</td>
-<td></td>
-<td>boolean</td>
-<td>When set to true, archived and unarchived email templates are returned from the endpoint. <em>Defaults to</em> <code>false</code>.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="xml-response-format_1">XML Response Format</h2>
+<h2 id="xml-response-for-one-to-one-email-templates">XML Response for One-to-One Email Templates</h2>
 <pre><code>&lt;rsp stat=&quot;ok&quot; version=&quot;1.0&quot;&gt;
     &lt;emailTemplates&gt;
         &lt;templates&gt;
             &lt;id&gt;&lt;/id&gt;
             &lt;name&gt;&lt;/name&gt;
-            &lt;isOneToOneEmail&gt;&lt;/isOneToOneEmail&gt;
+            &lt;isOneToOneEmail&gt;1&lt;/isOneToOneEmail&gt;
             &lt;isArchived&gt;&lt;/isArchived&gt;
             &lt;isAutoResponderEmail&gt;&lt;/isAutoResponderEmail&gt;
             &lt;isDripEmail&gt;&lt;/isDripEmail&gt;
@@ -880,7 +891,7 @@
 </tr>
 <tr>
 <td><code>&lt;templates&gt;</code></td>
-<td>Individual template parent tag.</td>
+<td>Parent tag for each template.</td>
 </tr>
 <tr>
 <td><code>&lt;id&gt;</code></td>
@@ -892,11 +903,11 @@
 </tr>
 <tr>
 <td><code>&lt;isOneToOneEmail&gt;</code></td>
-<td>Flag if the email template is available for use in one to one emails (always true).</td>
+<td>Flag if the email template is available for use in one-to-one emails (always true).</td>
 </tr>
 <tr>
 <td><code>&lt;isArchived&gt;</code></td>
-<td>Flag if the email template is currently in the Recycle Bin in Pardot.</td>
+<td>Flag if the email template is in the Recycle Bin in Pardot.</td>
 </tr>
 <tr>
 <td><code>&lt;isAutoResponderEmail&gt;</code></td>
@@ -904,11 +915,11 @@
 </tr>
 <tr>
 <td><code>&lt;isDripEmail&gt;</code></td>
-<td>Flag if the email template is available for use in a drip program.</td>
+<td>Flag if the email template is available for use in engagement programs.</td>
 </tr>
 <tr>
 <td><code>&lt;isListEmail&gt;</code></td>
-<td>Flag if the email template is available for use in a list email.</td>
+<td>Flag if the email template is available for use in list emails.</td>
 </tr>
 <tr>
 <td><code>&lt;subject&gt;</code></td>

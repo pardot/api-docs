@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../../use-cases/">
+                                    
+                                    Use Cases for Pardot APIs
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../../getting-started/">
                                     
                                     Getting Started
@@ -687,6 +695,8 @@
             <li><a href="#get_1">GET</a></li>
         <li class="main "><a href="#download-results">Download Results</a></li>
             <li><a href="#get_2">GET</a></li>
+        <li class="main "><a href="#cancel">Cancel</a></li>
+            <li><a href="#post_1">POST</a></li>
         <li class="main "><a href="#enums">Enums</a></li>
             <li><a href="#export-state">Export State</a></li>
     </ul>
@@ -699,13 +709,12 @@
 <p>Use the Export API to retrieve large sets of data when you don't need synchronous completion responses or when query limitations are too restrictive. Currently, only visitor activity is supported.</p>
 <h1 id="how-the-export-api-works">How the Export API Works</h1>
 <p>An export is associated with a query and a data set in Pardot. When you create an export, the query is split into smaller queries, which return smaller sets of data. These smaller queries are processed in parallel, and the retrieved data is saved in CSV files. When the export is complete, the CSV files are available to download.</p>
-<p>The order of the records returned in the CSV files is not guaranteed. The number of records in each CSV file varies, and all of the files associated with an export make up the full data set for the query.</p>
+<p>The order of the records returned in the CSV files isn’t guaranteed. The number of records in each CSV file varies, and all of the files associated with an export make up the full data set for the query.</p>
 <p>The Export resource is used to create an export and get the status of an export. When the export is complete, the links to the CSV files containing the data are available in the resource.</p>
 <h1 id="limitations">Limitations</h1>
 <ul>
 <li>The Export API is subject to the daily Pardot API call limit and the concurrent Pardot API call limit for your account.</li>
 <li>Export API calls are executed sequentially for each account, with older exports being processed before newer exports.</li>
-<li>The number of fields specified in the Export API calls can't exceed 150.</li>
 </ul>
 <h1 id="expiration">Expiration</h1>
 <p>The data associated with an export expires after 7 days. When data expires, the Export resource removes links to the CSV files and shows that the export has expired. Attempts to retrieve the data after an export expires fail.</p>
@@ -720,6 +729,13 @@
 </li>
 <li>Dates are returned in the standard Pardot API date format of <code>YYYY-MM-DD HH:mm:SS</code>.</li>
 <li>Fields with null values are represented as an empty value in CSV.</li>
+<li>String field values are wrapped in double quotes.</li>
+<li>Field values containing commas, \n, \r are wrapped with double quotes.</li>
+<li>Field values containing double quotes have those double quotes escaped with an additional double quote <code>"""</code> and are wrapped in double quotes. </li>
+<li>Example value: The output of <code>The "Widget Co" CEO</code> is <code>"The ""Widget Co"" CEO"</code>.</li>
+<li>Field values containing only whitespace are wrapped in double quotes.</li>
+<li>Field values starting with the values: =, +, @ have these characters escaped with a backslash.</li>
+<li>Example value: The output of <code>@mysocialmediahandle</code> is <code>"\@mysocialmediahandle"</code></li>
 </ul>
 <h1 id="procedures">Procedures</h1>
 <p>A procedure is a query and execution plan used to retrieve the data. Each object has a different set of procedures.</p>
@@ -771,23 +787,23 @@
 <h4 id="arguments">Arguments</h4>
 <ul>
 <li><strong>created_after</strong>: Selects visitor activities that were created after the specified time. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
-<li><strong>created_before</strong>: (Optional) Selects visitor activities that were created before the specified time. This value must be after the value in <code>created_after</code>. If this argument is not specified, then no upper boundary is used in the query, and all data after the <code>created_after</code> is returned. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
-<li><strong>type</strong>: (Optional) Selects visitor activities of the specified types. If this argument is not specified, then all of the visitor activities belonging to any type is returned. See a list of available <a href="../../object-field-references#visitor-activity-types">Visitor Activity Types</a> in <a href="../../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../object-field-references">Object Field References</a>.</li>
-<li><strong>prospect_only</strong>: (Optional) Selects only those visitor activities associated with a prospect. When this field is set to <code>false</code>, all visitor activities are returned. The values can be <code>true</code> or <code>false</code>.</li>
+<li><strong>created_before</strong>: (Optional) Selects visitor activities that were created before the specified time. This value must be after the value in <code>created_after</code>. If this argument isn’t specified, then no upper boundary is used in the query, and all data after the <code>created_after</code> is returned. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
+<li><strong>type</strong>: (Optional) Selects visitor activities of the specified types. If this argument isn’t specified, then all of the visitor activities belonging to any type is returned. See a list of available <a href="../../object-field-references#visitor-activity-types">Visitor Activity Types</a> in <a href="../../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../object-field-references">Object Field References</a>.</li>
+<li><strong>prospect_only</strong>: (Optional) Selects only those visitor activities associated with a prospect. When this field is set to <code>false</code>, all visitor activities with and without a prospect are returned. The values can be <code>true</code> or <code>false</code>.</li>
 </ul>
 <h3 id="filter_by_updated_at">filter_by_updated_at</h3>
 <p>Retrieves all visitor activity records with an <code>updated_at</code> value that is greater than the <code>updated_after</code> argument and less than the <code>updated_before</code> argument.</p>
 <h4 id="arguments_1">Arguments</h4>
 <ul>
 <li><strong>updated_after</strong>: Selects visitor activities that were updated after the specified time. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
-<li><strong>updated_before</strong>: (Optional) Selects visitor activities that were updated before the specified time. This value must be after the value in <code>updated_after</code>. If this argument is not specified, then no upper boundary is used in the query, and all data after the <code>updated_after</code> is returned. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
-<li><strong>type</strong>: (Optional) Selects visitor activities of the specified types. If this argument is not specified, then all visitor activities belonging to any type are returned. See a list of available <a href="../../object-field-references#visitor-activity-types">Visitor Activity Types</a> in <a href="../../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../object-field-references">Object Field References</a>.</li>
-<li><strong>prospect_only</strong>: (Optional) Selects only those visitor activities associated with a prospect. When this field is set to <code>false</code>, all visitor activities are returned. The values can be <code>true</code> or <code>false</code>.</li>
+<li><strong>updated_before</strong>: (Optional) Selects visitor activities that were updated before the specified time. This value must be after the value in <code>updated_after</code>. If this argument isn’t specified, then no upper boundary is used in the query, and all data after the <code>updated_after</code> is returned. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
+<li><strong>type</strong>: (Optional) Selects visitor activities of the specified types. If this argument isn’t specified, then all visitor activities belonging to any type are returned. See a list of available <a href="../../object-field-references#visitor-activity-types">Visitor Activity Types</a> in <a href="../../object-field-references#visitor-activity">Visitor Activity</a> in <a href="../../object-field-references">Object Field References</a>.</li>
+<li><strong>prospect_only</strong>: (Optional) Selects only those visitor activities associated with a prospect. When this field is set to <code>false</code>, all visitor activities with and without a prospect are returned. The values can be <code>true</code> or <code>false</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> The range between updated_after and updated_before cannot exceed 1 year. When updated_before is not specified, the current date is used to gauge the interval.</p>
+<p><strong>NOTE:</strong> The range between updated_after and updated_before can’t exceed 1 year. When updated_before isn’t specified, the current date is used to gauge the interval.</p>
 <h2 id="list-membership">List Membership</h2>
 <h3 id="fields_1">Fields</h3>
-<p>Select the list membership fields that you want to export. <a href="../../object-field-references/#list-membership">Following</a> are the fields that are available for list membership. The value for <code>fields</code> must be an array of strings of the available fields.</p>
+<p>Select the prospect fields that you want to export. <a href="../../object-field-references/#list-membership">Following</a> are the fields that are available for prospect. The value for <code>fields</code> must be an array of strings of the available fields.</p>
 <h3 id="abilities_1">Abilities</h3>
 <table>
 <thead>
@@ -835,22 +851,22 @@
 <h4 id="arguments_2">Arguments</h4>
 <ul>
 <li><strong>created_after</strong>: Selects list membership that were created after the specified time. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
-<li><strong>created_before</strong>: (Optional) Selects list memberships that were created before the specified time. This value must be after the value in <code>created_after</code>. If this argument is not specified, then no upper boundary is used in the query, and all data after the <code>created_after</code> is returned. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
-<li><strong>deleted</strong>: (Optional) Selects list membership based on if it is deleted or not. The value can be <code>true</code>, <code>false</code>, or <code>all</code>.</li>
+<li><strong>created_before</strong>: (Optional) Selects list membership that were created before the specified time. This value must be after the value in <code>created_after</code>. If this argument isn’t specified, then no upper boundary is used in the query, and all data after the <code>created_after</code> is returned. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
+<li><strong>deleted</strong>: (Optional) Selects list membership based on whether it’s deleted or not. The value can be <code>true</code>, <code>false</code>, or <code>all</code>.</li>
 </ul>
 <h3 id="filter_by_updated_at_1">filter_by_updated_at</h3>
 <p>Retrieves all list membership records with a <code>updated_at</code> value that is greater than the <code>updated_after</code> argument and less than the <code>updated_before</code> argument.</p>
 <h4 id="arguments_3">Arguments</h4>
 <ul>
 <li><strong>updated_after</strong>: Selects list membership that were created after the specified time. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
-<li><strong>updated_before</strong>: (Optional) Selects list membership that were created before the specified time. This value must be after the value in <code>updated_after</code>. If this argument is not specified, then no upper boundary is used in the query, and all data after the <code>updated_after</code> is returned. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
-<li><strong>deleted</strong>: (Optional) Selects list membership based on if it is deleted or not. The value can be <code>true</code>, <code>false</code>, or <code>all</code>.</li>
+<li><strong>updated_before</strong>: (Optional) Selects list membership that were created before the specified time. This value must be after the value in <code>updated_after</code>. If this argument isn’t specified, then no upper boundary is used in the query, and all data after the <code>updated_after</code> is returned. The value can be <code>today</code>, <code>yesterday</code>, <code>last_7_days</code>, <code>this_month</code>, <code>last_month</code>, or a custom time specified in <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Syntax</a> format.</li>
+<li><strong>deleted</strong>: (Optional) Selects list membership based on whether it’s deleted or not. The value can be <code>true</code>, <code>false</code>, or <code>all</code>.</li>
 </ul>
-<p><strong>NOTE:</strong> The range between created_after and created_before or updated_after and updated_before cannot exceed 1 year. When created_before is not specified, the current date is used to gauge the interval.</p>
+<p><strong>NOTE:</strong> The range between created_after and created_before or updated_after and updated_before can’t exceed 1 year. When created_before isn’t specified, the current date is used to gauge the interval.</p>
 <h2 id="prospect">Prospect</h2>
 <h3 id="fields_2">Fields</h3>
-<p>Select the prospect fields that you want to export. <a href="../../object-field-references/#prospect">Following</a> and <a href="../../object-field-references/#additional-prospect-fields-available-for-export">additional exportable fields</a> are the standard fields that are available for prospect.  The value for <code>fields</code> must be an array of strings of the available fields.</p>
-<p>In addition to the standard fields, custom fields can also be exported. To include the most recent value in custom fields, provide the &lt;field_id&gt; in the field array. Multi-select field values export separated by semi-colons.</p>
+<p>Select the prospect fields that you want to export. <a href="../../object-field-references/#prospect">Following</a> are the fields that are available for prospect. The value for <code>fields</code> must be an array of strings of the available fields.</p>
+<p><em><strong>Note</strong></em>: The <code>grade</code> and <code>notes</code> fields aren’t available through this api.</p>
 <h3 id="filter_by_updated_at_2">filter_by_updated_at</h3>
 <p>Retrieves all prospect records with a <code>updated_at</code> value that is greater than the <code>updated_after</code> argument and less than the <code>updated_before</code> argument.</p>
 <h4 id="abilities_2">Abilities</h4>
@@ -1035,10 +1051,10 @@
 <p>Input Representation</p>
 <ul>
 <li><strong>object</strong>: Specifies which object to export. Currently only "visitorActivity" is supported.</li>
-<li><strong>fields</strong>: Specifies the fields that will be exported. If no <code>fields</code> value is given, all available fields will be exported.</li>
+<li><strong>fields</strong>: Specifies the fields that will be exported. If no <code>fields</code> value is given, all available fields are exported.</li>
 <li><strong>procedure</strong>: The procedure to execute. A procedure is a query and execution plan used to retrieve data. Each object has a different set of procedures. See the <a href="#procedures">Procedures</a> section for available procedures.<ul>
 <li><strong>name</strong>: The name of the procedure.</li>
-<li><strong>arguments</strong>: Arguments used to manipulate the behavior of the procedure. These arguments are specific to the procedure. See the documentation for the procedure to see which arguments apply. <em>If duplicate argument names are provided the latter value will be used</em>.</li>
+<li><strong>arguments</strong>: Arguments used to manipulate the behavior of the procedure. These arguments are specific to the procedure. See the documentation for the procedure to see which arguments apply. <em>If duplicate argument names are provided the latter value is used.</em></li>
 </ul>
 </li>
 </ul>
@@ -1061,8 +1077,8 @@
 <ul>
 <li><strong>id</strong>: The ID of the export. ID is used to check the status of the export.</li>
 <li><strong>state</strong>: The state of the export. Displays "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export has completed. See <a href="#export-state">Export State</a> enum.</li>
-<li><strong>isExpired</strong>: Indicates that the export has expired. When an export has expired, this will return <code>true</code> and no data associated to the export can be downloaded.</li>
-<li><strong>resultRefs</strong>: (Optional) This property appears when an export is complete, and it contains a list of URLS to CSV files available for download. If there is no data associated with the export, this property is absent. If there is only a single CSV file available for download, this property is a string containing the URL to download the file. If there are multiple CSV files, resultRefs is an array of URLs.</li>
+<li><strong>isExpired</strong>: Indicates that the export has expired. When an export has expired, this returns <code>true</code> and no data related to the export can be downloaded.</li>
+<li><strong>resultRefs</strong>: (Optional) This property appears when an export is complete, and it contains a list of URLS to CSV files available for download. If there’s no data associated with the export, this property is absent. If there’s only a single CSV file available for download, this property is a string containing the URL to download the file. If there are multiple CSV files, resultRefs is an array of URLs.</li>
 <li><strong>createdAt</strong>: The date and time the export was created in the timezone of the user making the request.</li>
 <li><strong>updatedAt</strong>: The date and time the export was updated in the timezone of the user making the request.</li>
 </ul>
@@ -1081,14 +1097,15 @@
 <h3 id="errors">Errors</h3>
 <ul>
 <li>Status Code: 4xx</li>
-<li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
+<li>Error codes: See <a href="../../error-codes-messages/">Error Codes</a></li>
 </ul>
 <h3 id="example">Example</h3>
-<p>Here is a request to execute the visitor activity procedure named <code>filter_by_created_at</code>, which retrieves all visitor activity data where the <code>created_at</code> value is between two dates. In this example, the data is retrieved from December 25, 2019 to December 25, 2020.</p>
+<p>Here’s a request to execute the visitor activity procedure named <code>filter_by_created_at</code>, which retrieves all visitor activity data where the <code>created_at</code> value is between two dates. In this example, the data is retrieved from December 25, 2019 to December 25, 2020.</p>
 <pre><code>POST /api/export/version/3/do/create
-HOST: pi.pardot.com
-Content-Type: application/json
-Authorization: Pardot user_key=U,api_key=A
+Host: pi.pardot.com
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer &lt;ACCESS TOKEN&gt;
+Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;
 </code></pre>
 
 <pre><code class="json">{
@@ -1117,7 +1134,7 @@ Authorization: Pardot user_key=U,api_key=A
 <pre><code>/api/export/version/3/do/read/id/{id}
 </code></pre>
 
-<p>Used to retrieve the status of the export. Once an export is complete, the links to download the results are available in the result body.</p>
+<p>Used to retrieve the status of the export. When an export is complete, the links to download the results are available in the result body.</p>
 <h2 id="get">GET</h2>
 <h3 id="params">Params</h3>
 <p><strong>{id}</strong>: The ID of the export.</p>
@@ -1128,7 +1145,7 @@ Authorization: Pardot user_key=U,api_key=A
 <li><strong>id</strong>: The ID of the export. This ID is used to check the status of the export.</li>
 <li><strong>state</strong>: The state of the export. Displays "Waiting" when the export has been queued for processing, "Processing" when the server is working on the export and "Complete" when the export is completed. See <a href="#export-state">Export State</a> enum.</li>
 <li><strong>isExpired</strong>: Indicates that the export has expired. After an export has expired, this will return true and no data associated with the export can be downloaded.</li>
-<li><strong>resultRefs</strong>: (Optional) This property appears only when the export has completed and contains a list of URLS to CSV files available for download. If there is no data associated with the export, this property is absent. If there is only a single CSV file available for download, resultRefs is a string containing the URL to download the file. If there are multiple CSV files, resultRefs is an array of URLs. The order of the URLs in the array is not significant.</li>
+<li><strong>resultRefs</strong>: (Optional) This property appears only when the export has completed and contains a list of URLS to CSV files available for download. If there’s no data associated with the export, this property is absent. If there’s only a single CSV file available for download, resultRefs is a string containing the URL to download the file. If there are multiple CSV files, resultRefs is an array of URLs. The order of the URLs in the array isn’t significant.</li>
 <li><strong>createdAt</strong>: The date and time the export was created in the timezone of the user making the request.</li>
 <li><strong>updatedAt</strong>: The date and time the export was updated in the timezone of the user making the request.</li>
 </ul>
@@ -1147,14 +1164,15 @@ Authorization: Pardot user_key=U,api_key=A
 <h3 id="errors_1">Errors</h3>
 <ul>
 <li>Status Code: 4xx</li>
-<li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
+<li>Error codes: See <a href="../../error-codes-messages/">Error Codes</a></li>
 </ul>
 <h3 id="example_1">Example</h3>
 <p>After calling the Create endpoint, the ID of the export is given in the response. This ID is used in the URL to call the Read endpoint.</p>
 <pre><code>GET /api/export/version/3/do/read/id/201917
-HOST: pi.pardot.com
-Content-Type: application/json
-Authorization: Pardot user_key=U,api_key=A
+Host: pi.pardot.com
+Content-Type: application/x-www-form-urlencoded
+Authorization: Bearer &lt;ACCESS TOKEN&gt;
+Pardot-Business-Unit-Id: &lt;BUSINESS UNIT ID&gt;
 </code></pre>
 
 <p>If the export is waiting to be processed, <code>state</code> is "Waiting", as in the following example.</p>
@@ -1213,7 +1231,7 @@ Authorization: Pardot user_key=U,api_key=A
 </ul>
 </li>
 </ul>
-<p>Note that the export representation returned in query doesn’t contain <code>resultRefs</code>. Use the read endpoint for the export to get the full export representation.</p>
+<p>The export representation returned in query doesn’t contain <code>resultRefs</code>. Use the read endpoint for the export to get the full export representation.</p>
 <pre><code class="json">{
     &quot;result&quot;: {
         &quot;total_results&quot;: int,
@@ -1234,7 +1252,7 @@ Authorization: Pardot user_key=U,api_key=A
 <h3 id="errors_2">Errors</h3>
 <ul>
 <li>Status Code: 4xx</li>
-<li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
+<li>Error codes: See <a href="../../error-codes-messages/">Error Codes</a></li>
 </ul>
 <hr />
 <h1 id="download-results">Download Results</h1>
@@ -1245,8 +1263,58 @@ Authorization: Pardot user_key=U,api_key=A
 <h3 id="errors_3">Errors</h3>
 <ul>
 <li>Status code: 4xx</li>
+<li>Error codes: See <a href="../../error-codes-messages/">Error Codes</a></li>
+</ul>
+<hr />
+<h1 id="cancel">Cancel</h1>
+<pre><code>/api/export/version/3/do/cancel/id/{id}
+</code></pre>
+
+<p>Used to cancel the export. If the export is already completed or failed, it can't be canceled.</p>
+<h2 id="post_1">POST</h2>
+<h3 id="params_2">Params</h3>
+<p><strong>{id}</strong>: The ID of the export.</p>
+<h3 id="success_4">Success</h3>
+<p>Status Code: 200</p>
+<p>Output Representation</p>
+<ul>
+<li><strong>id</strong>: The ID of the export. This ID is used to check the status of the export.</li>
+<li><strong>state</strong>: The state of the export. See <a href="#export-state">Export State</a> enum.</li>
+<li><strong>isExpired</strong>: Indicates that the export has expired. After an export has expired, this returns true and no data associated with the export can be downloaded.</li>
+<li><strong>createdAt</strong>: The date and time the export was created in the timezone of the user making the request.</li>
+<li><strong>updatedAt</strong>: The date and time the export was updated in the timezone of the user making the request.</li>
+</ul>
+<pre><code class="json">{
+    &quot;export&quot;: {
+        &quot;id&quot;: int,
+        &quot;state&quot;: string,
+        &quot;createdAt&quot;: datetime,
+        &quot;updatedAt&quot;: datetime
+    }
+}
+</code></pre>
+
+<h3 id="errors_4">Errors</h3>
+<ul>
+<li>Status Code: 4xx</li>
 <li>Error codes: See <a href="/kb/error-codes-messages">Error Codes &amp; Messages</a></li>
 </ul>
+<h3 id="example_2">Example</h3>
+<p>After calling the Create endpoint, the ID of the export is given in the response. This ID is used in the URL to call the Cancel endpoint.</p>
+<pre><code>POST /api/export/version/3/do/cancel/id/201917
+HOST: pi.pardot.com
+Content-Type: application/json
+Authorization: Bearer &lt;access-token&gt;
+Pardot-Business-Unit-Id: &lt;business-unit-id&gt;
+</code></pre>
+
+<p>If the export is not already completed or failed, it is canceled.</p>
+<pre><code class="json">{
+    &quot;id&quot;: 201917,
+    &quot;state&quot;: &quot;Canceled&quot;
+}
+</code></pre>
+
 <hr />
 <h1 id="enums">Enums</h1>
 <h2 id="export-state">Export State</h2>
@@ -1255,6 +1323,7 @@ Authorization: Pardot user_key=U,api_key=A
 <li>"Processing": A server has started processing the export.</li>
 <li>"Complete": The export is complete and the results are available for download.</li>
 <li>"Failed": A fatal error has occurred and the data can’t be retrieved. Try executing the export again. If the error occurs again, contact support.</li>
+<li>"Canceled": The export is canceled and can not be restarted.</li>
 </ul>
                 
             </div>

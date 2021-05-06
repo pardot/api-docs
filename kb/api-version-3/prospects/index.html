@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../../use-cases/">
+                                    
+                                    Use Cases for Pardot APIs
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../../getting-started/">
                                     
                                     Getting Started
@@ -688,7 +696,8 @@
 </div></div>
             <div class="col-md-9 main-content" role="main">
                 
-                    <h1 id="querying-prospects">Querying Prospects</h1>
+                    <p>Learn more about prospects in <a href="https://help.salesforce.com/articleView?id=sf.pardot_prospects.htm">Salesforce Help</a>.</p>
+<h1 id="querying-prospects">Querying Prospects</h1>
 <h2 id="supported-operations">Supported Operations</h2>
 <table>
 <thead>
@@ -703,7 +712,7 @@
 <tr>
 <td><code>query</code></td>
 <td><code>/api/prospect/version/3/do/query?...</code></td>
-<td><code>user_key, api_key</code></td>
+<td>-</td>
 <td>Returns the prospects matching the specified criteria parameters. See <a href="#using-prospects">Using Prospects</a> for complete descriptions of prospect <a href="#xml-response-formats">XML Response Formats</a>. Also see <a href="/kb/object-field-references#prospect">Prospect</a> in <a href="/kb/object-field-references">Object Field References</a>.</td>
 </tr>
 </tbody>
@@ -985,97 +994,97 @@
 <tr>
 <td><code>assign</code></td>
 <td><code>/api/prospect /version/3 /do/assign/ email/&lt;email&gt;?...</code></td>
-<td><code>user_key, api_key, email, (user_email OR user_id OR group_id)</code></td>
+<td><code>email, (user_email OR user_id OR group_id)</code></td>
 <td>Assigns or reassigns the prospect specified by <code>&lt;email&gt;</code> to a specified Pardot user or group. One (and only one) of the following parameters must be provided to identify the target user or group: <code>&lt;user_email&gt;</code>, <code>&lt;user_id&gt;</code>, or <code>&lt;group_id&gt;</code>. Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
 </tr>
 <tr>
 <td><code>assign</code></td>
 <td><code>/api/prospect /version/3 /do/assign/ id/&lt;id&gt;?...</code></td>
-<td><code>user_key, api_key, id, (user_email OR user_id OR group_id)</code></td>
+<td><code>id, (user_email OR user_id OR group_id)</code></td>
 <td>Assigns or reassigns the prospect specified by <code>&lt;id&gt;</code> to a specified Pardot user or group. One (and only one) of the following parameters must be provided to identify the target user or group: <code>&lt;user_email&gt;</code>, <code>&lt;user_id&gt;</code>, or <code>&lt;group_id&gt;</code>. Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
 </tr>
 <tr>
 <td><code>unassign</code></td>
 <td><code>/api/prospect /version/3 /do/unassign/ email/&lt;email&gt;?...</code></td>
-<td><code>user_key, api_key, email</code></td>
+<td><code>email</code></td>
 <td>Unassigns the prospect specified by <code>&lt;email&gt;</code>. Returns an updated version of the prospect. <strong><em>Note:</em></strong>Prospect assignments and reassignments do not overwrite existing assignments in CRMs. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
 </tr>
 <tr>
 <td><code>unassign</code></td>
 <td><code>/api/prospect /version/3 /do/unassign/ id/&lt;id&gt;?...</code></td>
-<td><code>user_key, api_key, id</code></td>
+<td><code>id</code></td>
 <td>Unassigns the prospect specified by <code>&lt;id&gt;</code>. Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs. <strong><em>Note:</em></strong> Prospect assignments and reassignments do not overwrite existing assignments in CRMs.</td>
 </tr>
 <tr>
 <td><code>create</code></td>
 <td><code>/api/prospect /version/3 /do/create/ email/&lt;email&gt;?...</code></td>
-<td><code>user_key, api_key, email</code></td>
+<td><code>email</code></td>
 <td>Creates a new prospect using the specified data. <code>&lt;email&gt;</code> must be a unique email address. Email list subscriptions and custom field data may also be added with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. <strong><em>Note:</em></strong> The prospect may be assigned to a user by supplying a value for the optional <code>&lt;user_id&gt;</code> parameter.</td>
 </tr>
 <tr>
 <td><code>batchCreate</code></td>
 <td><code>/api/prospect /version/3 /do/batchCreate? prospects=&lt;data&gt;...</code></td>
-<td><code>user_key, api_key, prospects</code></td>
+<td><code>prospects</code></td>
 <td>Creates new prospects using the provided <code>&lt;data&gt;</code> in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a> <strong><em>Note:</em></strong> The prospect may be assigned to a user by supplying a value for the optional <code>&lt;user_id&gt;</code> parameter.</td>
 </tr>
 <tr>
 <td><code>read</code></td>
 <td><code>/api/prospect /version/3 /do/read/ email/&lt;email&gt;?...</code></td>
-<td><code>user_key, api_key, email</code></td>
+<td><code>email</code></td>
 <td>Returns data for the prospect specified by <code>&lt;email&gt;</code>, including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. <code>&lt;email&gt;</code> is the email address of the target prospect.</td>
 </tr>
 <tr>
 <td><code>read</code></td>
 <td><code>/api/prospect /version/3 /do/read/ id/&lt;id&gt;?...</code></td>
-<td><code>user_key, api_key, id</code></td>
+<td><code>id</code></td>
 <td>Returns data for the prospect specified by <code>&lt;id&gt;</code>, including campaign assignment, profile criteria matching statuses, associated visitor activities, email list subscriptions, and custom field data. <code>&lt;id&gt;</code> is the Pardot ID of the target prospect.</td>
 </tr>
 <tr>
 <td><code>update</code></td>
 <td><code>/api/prospect /version/3 /do/update/ email/&lt;email&gt;?...</code></td>
-<td><code>user_key, api_key, email</code></td>
+<td><code>email</code></td>
 <td>Updates the provided data for a prospect specified by <code>&lt;email&gt;</code>. <code>&lt;email&gt;</code> is the email address of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect. <strong><em>Note:</em></strong> Prospect email addresses cannot be updated using this method.</td>
 </tr>
 <tr>
 <td><code>update</code></td>
 <td><code>/api/prospect /version/3 /do/update/ id/&lt;id&gt;?...</code></td>
-<td><code>user_key, api_key, id</code></td>
+<td><code>id</code></td>
 <td>Updates the provided data for a prospect specified by <code>&lt;id&gt;</code>. <code>&lt;id&gt;</code> is the Pardot ID of the prospect. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect.</td>
 </tr>
 <tr>
 <td><code>batchUpdate</code></td>
 <td><code>/api/prospect /version/3 /do/batchUpdate? prospects=&lt;data&gt;...</code></td>
-<td><code>user_key, api_key, prospects</code></td>
+<td><code>prospects</code></td>
 <td>Updates prospects using the provided <code>&lt;data&gt;</code> in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a></td>
 </tr>
 <tr>
 <td><code>upsert</code></td>
 <td><code>/api/prospect /version/3 /do/upsert/ email/&lt;email&gt;?...</code></td>
-<td><code>user_key, api_key, email</code></td>
+<td><code>email</code></td>
 <td>Updates the provided data for the prospect specified by <code>&lt;email&gt;</code>. If a prospect with the provided email address does not yet exist, a new prospect is created using the <code>&lt;email&gt;</code> value. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect. <strong><em>Note:</em></strong> The prospect may be assigned to a user by supplying a value for the optional <code>&lt;user_id&gt;</code> parameter.</td>
 </tr>
 <tr>
 <td><code>upsert</code></td>
 <td><code>/api/prospect /version/3 /do/upsert/ id/&lt;id&gt;?...</code></td>
-<td><code>user_key, api_key, (id OR email)</code></td>
+<td><code>(id OR email)</code></td>
 <td>Updates the provided data for the prospect specified by <code>&lt;id&gt;</code>. If an <code>&lt;email&gt;</code> value is provided, it is used to update the prospect's email address. If a prospect with the provided ID is not found, Pardot searches for a prospect identified by <code>&lt;email&gt;</code>. If a prospect with the provided email address does not yet exist, a new prospect is created using <code>&lt;email&gt;</code> value. Fields that are not updated by the request remain unchanged. Email list subscriptions and custom field data may also be updated with this request. Refer to the <a href="#updating-email-list-subscriptions">Updating Email List Subscriptions</a> and <a href="#14833-updating-field-values">Updating Field Values</a> sections for more details. Returns an updated version of the prospect. <strong><em>Note:</em></strong> The prospect may be assigned to a user by supplying a value for the optional <code>&lt;user_id&gt;</code> parameter.</td>
 </tr>
 <tr>
 <td><code>batchUpsert</code></td>
 <td><code>/api/prospect /version/3 /do/batchUpsert? prospects=&lt;data&gt;...</code></td>
-<td><code>user_key, api_key, prospects</code></td>
+<td><code>prospects</code></td>
 <td>Updates prospects using the provided <code>&lt;data&gt;</code> in either XML or JSON. See <a href="#endpoints-for-batch-processing">Endpoints for Batch Processing</a>. <strong><em>Note:</em></strong> The prospect may be assigned to a user by supplying a value for the optional <code>&lt;user_id&gt;</code> parameter.</td>
 </tr>
 <tr>
 <td><code>delete</code></td>
 <td><code>/api/prospect /version/3 /do/delete/ email/&lt;email&gt;?...</code></td>
-<td><code>user_key, api_key, email</code></td>
+<td><code>email</code></td>
 <td>Deletes the prospect specified by <code>&lt;email&gt;</code>. Returns HTTP 204 No Content on success. <strong><em>Note:</em></strong> Prospects may only be deleted using HTTP methods POST or DELETE.</td>
 </tr>
 <tr>
 <td><code>delete</code></td>
 <td><code>/api/prospect /version/3 /do/delete/ id/&lt;id&gt;?...</code></td>
-<td><code>user_key, api_key, id</code></td>
+<td><code>id</code></td>
 <td>Deletes the prospect specified by <code>&lt;id&gt;</code>. Returns HTTP 204 No Content on success. <strong><em>Note:</em></strong> Prospects may only be deleted using HTTP methods POST or DELETE.</td>
 </tr>
 </tbody>

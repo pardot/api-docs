@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../use-cases/">
+                                    
+                                    Use Cases for Pardot APIs
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../getting-started/">
                                     
                                     Getting Started
@@ -838,6 +846,7 @@
             <li><a href="#error-code-194">Error Code: 194</a></li>
             <li><a href="#error-code-199">Error Code: 199</a></li>
             <li><a href="#error-code-201">Error Code: 201</a></li>
+            <li><a href="#error-code-203">Error Code: 203</a></li>
             <li><a href="#error-code-10000">Error Code: 10000</a></li>
     </ul>
 </div></div>
@@ -874,7 +883,7 @@
 <h1 id="error-codes-and-messages">Error Codes and Messages</h1>
 <h3 id="error-code-1">Error Code: <code>1</code></h3>
 <p><strong>Message</strong>: Invalid API key or user key</p>
-<p><strong>Problem</strong>: Either the user and/or API keys are
+<p><strong>Problem</strong>: Either the user or API keys are
 incorrect, or the API key has expired.</p>
 <p><strong>Solution</strong>: Check the user and API keys in the
 request. If the user key was entered accurately, then submit a
@@ -894,35 +903,34 @@ provided prospect ID.</p>
 accurate.</p>
 <h3 id="error-code-4">Error Code: <code>4</code></h3>
 <p><strong>Message</strong>: Invalid prospect email address</p>
-<p><strong>Problem</strong>: Pardot could not find a prospect with the provided email address (for read/update/delete),
+<p><strong>Problem</strong>: Pardot could not find a prospect with the provided email address (for read, update, or delete),
 or the prospect email address is too long (&gt; 255 characters) or has invalid syntax (for create/upsert). See
 <a href="https://help.salesforce.com/articleView?id=pardot_emails_allowed_characters.htm">Allowed Characters in Email Addresses</a> for
 email address verification.</p>
-<p><strong>Solution</strong>: If running create/upsert, verify the email address is valid.
-If running read/update/delete, verify the a prospect with this email address exists in your Pardot account.</p>
+<p><strong>Solution</strong>: If running create or upsert, verify the email address is valid.
+If running read, update, or delete, verify that a prospect with this email address exists in your Pardot account.</p>
 <h3 id="error-code-5">Error Code: <code>5</code></h3>
 <p><strong>Message</strong>: Invalid query parameters</p>
 <p><strong>Problem</strong>: Pardot did not recognize any of the
 provided search parameters.</p>
 <p><strong>Solution</strong>: Check parameter spellings. Also, ensure
 that the specified search parameter is supported by the API. See
-<a href="../api-version-4/prospects/#supported-search-criteria">Supported Search Criteria</a> in <a href="../api-version-4/prospects/">Querying Prospects</a> for more details.</p>
+<a href="../api-version-4/prospects/#parameters-to-select-prospects">Parameters to Select Prospects</a> for more details.</p>
 <h3 id="error-code-6">Error Code: <code>6</code></h3>
 <p><strong>Message</strong>: Invalid time frame</p>
 <p><strong>Problem</strong>: The value of the
 <code>timeframe</code> search parameter was not recognized.</p>
 <p><strong>Solution</strong>: Check for misspellings in the
 <code>timeframe</code> value. Also, verify that the provided value
-is supported by the API. See <a href="../api-version-4/prospects/#supported-search-criteria">Supported Search Criteria</a> in <a href="../api-version-4/prospects/">Prospects</a>
-for supported <code>timeframe</code> values.</p>
+is supported by the API. See
+<a href="../api-version-4/prospects/#parameters-to-select-prospects">Parameters to Select Prospects</a> for more for supported <code>timeframe</code> values.</p>
 <h3 id="error-code-7">Error Code: <code>7</code></h3>
 <p><strong>Message</strong>: Invalid timestamp</p>
 <p><strong>Problem</strong>: Pardot could not decipher a specified
 timestamp.</p>
 <p><strong>Solution</strong>: Verify that the timestamp adheres to GNU
 standards for date and time input. See <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Format &amp; Syntax</a> for more information. Also,
-ensure all characters in the timestamp are URL safe. See <a href="../api-version-4/prospects/#supported-search-criteria">Supported Search Criteria</a> in <a href="../api-version-4/prospects/">Prospects</a>
-for supported values.</p>
+ensure all characters in the timestamp are URL safe. See <a href="../api-version-4/prospects/#parameters-to-select-prospects">Parameters to Select Prospects</a> for supported values.</p>
 <h3 id="error-code-8">Error Code: <code>8</code></h3>
 <p><strong>Message</strong>: Invalid time range</p>
 <p><strong>Problem</strong>: The provided start timestamp is later
@@ -931,7 +939,7 @@ than the end timestamp.</p>
 <h3 id="error-code-9">Error Code: <code>9</code></h3>
 <p><strong>Message</strong>: A prospect with the specified email address already exists</p>
 <p><strong>Problem</strong>: The provided email address is already
-assigned to a prospect within Pardot. This can occur if a
+assigned to a prospect within Pardot. This error can occur when a
 <code>create</code> request with the same email address is
 submitted more than once.</p>
 <p><strong>Solution</strong>: Check the existing prospect record to
@@ -971,8 +979,7 @@ parameters and <code>&amp;</code> between parameters.</p>
 <p><strong>Problem</strong>: The ID provided for the
 <code>upsert</code> was not valid, and no email address was
 provided for a new prospect to be created.</p>
-<p><strong>Solution</strong>: Verify the provided ID. If creating a
-new prospect was intended, ensure that an email address was
+<p><strong>Solution</strong>: Verify the provided ID. If creating a prospect was intended, ensure that an email address was
 provided.</p>
 <h3 id="error-code-15">Error Code: <code>15</code></h3>
 <p><strong>Message</strong>: Login failed</p>
@@ -1017,7 +1024,7 @@ used.</p>
 <p><strong>Message</strong>: Invalid value specified for offset</p>
 <p><strong>Problem</strong>: The provided value for
 <code>offset</code> could not be interpreted as an integer.</p>
-<p><strong>Solution</strong>: Check for typos that may prevent the
+<p><strong>Solution</strong>: Check for typos that can prevent the
 value from being interpreted.</p>
 <h3 id="error-code-22">Error Code: <code>22</code></h3>
 <p><strong>Message</strong>:
@@ -1069,7 +1076,7 @@ Parameter is_starred must be true or false</p>
 <p><strong>Message</strong>: Invalid value specified for score</p>
 <p><strong>Problem</strong>: The value specified for
 <code>score</code> could not be interpreted as an integer.</p>
-<p><strong>Solution</strong>: Check for typos that may prevent the
+<p><strong>Solution</strong>: Check for typos that can prevent the
 value from being interpreted correctly.</p>
 <h3 id="error-code-30">Error Code: <code>30</code></h3>
 <p><strong>Message</strong>: Invalid score range specified</p>
@@ -1090,9 +1097,7 @@ for the prospect's score has been specified.</p>
 <p><strong>Problem</strong>: The value specified for
 <code>grade</code> is not one of the allowed options.</p>
 <p><strong>Solution</strong>: Check for typos that may prevent
-<code>grade</code> from being interpreted correctly. See <a href="../api-version-4/prospects/#supported-search-criteria">Supported Search Criteria</a> in <a href="../api-version-4/prospects/">Prospects</a>
-for supported values. Also, ensure that the specified grades are
-URL-encoded.</p>
+<code>grade</code> from being interpreted correctly. See<a href="../api-version-4/prospects/#parameters-to-select-prospects">Parameters to Select Prospects</a> for supported values. Also, ensure that the specified grades are URL-encoded.</p>
 <h3 id="error-code-33">Error Code: <code>33</code></h3>
 <p><strong>Message</strong>: Invalid grade range specified</p>
 <p><strong>Problem</strong>: The provided grade range is not
@@ -1122,16 +1127,16 @@ request.</p>
 been included. In addition, check from typos in the parameter
 names. Also check that the request has been properly formatted.</p>
 <h3 id="error-code-37">Error Code: <code>37</code></h3>
-<p><strong>Message</strong>: A SalesForce connector was detected</p>
-<p><strong>Problem</strong>: Your Pardot account has a SalesForce
-connector. When a SalesForce connector is present, opportunities and prospect account
+<p><strong>Message</strong>: A Salesforce connector was detected</p>
+<p><strong>Problem</strong>: Your Pardot account has a Salesforce
+connector. When a Salesforce connector is present, opportunities and prospect account
 cannot be modified by Pardot.</p>
 <p><strong>Solution</strong>: <strong><em>(NOT
-RECOMMENDED)</em></strong> Deleting the SalesForce connector will
-allow for opportunity modification to be done through the API.
-However, doing so will disable synchronization with SalesForce. If
-a SalesForce connector is present, modifications to opportunities
-must be done within SalesForce.</p>
+RECOMMENDED)</em></strong> Deleting the Salesforce connector
+allows for opportunity modification to be done through the API.
+However, doing so disables synchronization with Salesforce. If
+a Salesforce connector is present, modifications to opportunities
+must be done within Salesforce.</p>
 <h3 id="error-code-38">Error Code: <code>38</code></h3>
 <p><strong>Message</strong>: Invalid campaign ID</p>
 <p><strong>Problem</strong>: Pardot could not find a match for the
@@ -1149,13 +1154,13 @@ accurate.</p>
 <p><strong>Problem</strong>: The value specified for
 <code>probability</code> is not valid.</p>
 <p><strong>Solution</strong>: Ensure that the specified value is a
-number between 0 and 100 inclusive.</p>
+number from 0 through 100 inclusive.</p>
 <h3 id="error-code-41">Error Code: <code>41</code></h3>
 <p><strong>Message</strong>: Invalid probability range specified</p>
 <p><strong>Problem</strong>: The specified probability range is not
 valid.</p>
 <p><strong>Solution</strong>: Ensure that the specified values are
-numbers between 0 and 100 inclusive. It may also be necessary to
+numbers from 0 through 100, inclusive. It might be necessary to
 swap the values of the specified probabilities.</p>
 <h3 id="error-code-42">Error Code: <code>42</code></h3>
 <p><strong>Message</strong>: Invalid opportunity value</p>
@@ -1168,7 +1173,7 @@ non-negative number.</p>
 <p><strong>Problem</strong>: The specified value range is not
 valid.</p>
 <p><strong>Solution</strong>: Ensure that the specified values are
-non-negative numbers. It may also be necessary to swap the
+non-negative numbers. It might be necessary to swap the
 specified values.</p>
 <h3 id="error-code-44">Error Code: <code>44</code></h3>
 <p><strong>Message</strong>: The provided prospect_id and prospect_email parameters do not match</p>
@@ -1176,9 +1181,9 @@ specified values.</p>
 <code>prospect_email</code> and <code>prospect_id</code> parameters
 do not correspond to the same prospect.</p>
 <p><strong>Solution</strong>: Ensure that the specified email address
-and the ID both correspond to the desired prospect. (Note:
+and the ID both correspond to the desired prospect. Note:
 Typically, only one of these parameters is required. Consider
-omitting one of them.)</p>
+omitting one of them.</p>
 <h3 id="error-code-45">Error Code: <code>45</code></h3>
 <p><strong>Message</strong>: The provided user_id and user_email parameters do not match</p>
 <p><strong>Problem</strong>: The specified <code>user_id</code> and
@@ -1191,18 +1196,18 @@ them.)</p>
 <h3 id="error-code-46">Error Code: <code>46</code></h3>
 <p><strong>Message</strong>: This API user lacks sufficient permissions for the requested operation</p>
 <p><strong>Problem</strong>: The currently authenticated API user
-has does not have the necessary permissions to perform the
+doesn't have the necessary permissions to perform the
 requested operation.</p>
 <p><strong>Solution</strong>: Some API operations are only available
 to users with Administrative permissions. If the requested
-operation has such a requirement, re-authenticate as an
+operation has such a requirement, reauthenticate as an
 administrative user and resubmit the request. See the <a href="../authentication/">Authentication</a> section for more
 information.</p>
 <h3 id="error-code-47">Error Code: <code>47</code></h3>
 <p><strong>Message</strong>: Multiple assignment targets were specified</p>
 <p><strong>Problem</strong>: More than one object was specified as
 a target for this <code>ASSIGN</code> request. For example, both a
-group and user may have been specified as targets of a prospect
+group and user were specified as targets of a prospect
 assignment.</p>
 <p><strong>Solution</strong>: Ensure that only one target is specified
 when submitting an <code>ASSIGN</code> request.</p>
@@ -1215,7 +1220,7 @@ correctly and matches the intended visit in Pardot.</p>
 <h3 id="error-code-49">Error Code: <code>49</code></h3>
 <p><strong>Message</strong>: Access Denied</p>
 <p><strong>Problem</strong>: User is not authorized to perform the requested operation either due to access restrictions or forbidden method of passing credentials</p>
-<p><strong>Solution</strong>: Verify user has required access to perform the requested operation.  Ensure credentials are passed via a supported method as per the API documentation.  Contact customer support if problem persists.</p>
+<p><strong>Solution</strong>: Verify user has required access to perform the requested operation. Ensure that credentials are passed via a supported method as per the API documentation. Contact customer support if problem persists.</p>
 <h3 id="error-code-50">Error Code: <code>50</code></h3>
 <p><strong>Message</strong>: Invalid boolean</p>
 <p><strong>Problem</strong>: Need a valid boolean value, like
@@ -1257,10 +1262,9 @@ the value.</p>
 field's type of Date, it is an invalid format.</p>
 <p><strong>Solution</strong>: Verify that the timestamp adheres to GNU
 standards for date and time input. See <a href="http://www.gnu.org/software/tar/manual/html_node/Date-input-formats.html">GNU Date Input Format &amp; Syntax</a> for more information. Also,
-ensure all characters in the timestamp are URL safe. See <a href="../api-version-4/prospects/#supported-search-criteria">Supported Search Criteria</a> in <a href="../api-version-4/prospects/">Prospects</a>
-for supported values.</p>
+ensure all characters in the timestamp are URL safe. See <a href="../api-version-4/prospects/#prospect-query">Supported Search Criteria</a> in <a href="../api-version-4/prospects/">Prospects</a> for supported values.</p>
 <h3 id="error-code-58">Error Code: <code>58</code></h3>
-<p><strong>Message</strong>: That prospect is already a memeber of that list. Update the membership instead.</p>
+<p><strong>Message</strong>: That prospect is already a member of that list. Update the membership instead.</p>
 <p><strong>Problem</strong>: The prospect is a member of the list
 already.</p>
 <p><strong>Solution</strong>: Update the membership.</p>
@@ -1270,9 +1274,9 @@ already.</p>
 connector. When a CRM connector is present, opportunities and prospect account cannot be
 modified by Pardot.</p>
 <p><strong>Solution</strong>: <strong><em>(NOT
-RECOMMENDED)</em></strong> Deleting the CRM connector will allow
+RECOMMENDED)</em></strong> Deleting the CRM connector allows
 for opportunity modification to be done through the API. However,
-doing so will disable synchronization with your CRM. If a CRM
+doing so disables synchronization with your CRM. If a CRM
 connector is present, modifications to opportunities must be done
 within your CRM.</p>
 <h3 id="error-code-60">Error Code: <code>60</code></h3>
@@ -1284,7 +1288,7 @@ within your CRM.</p>
 <p><strong>Problem</strong>: Prospect Account ID was incorrect or
 doesn't exist.</p>
 <p><strong>Solution</strong>: Verify that the prospect account ID was
-typed correctly and matches the intended Propsect Account in
+typed correctly and matches the intended Prospect Account in
 Pardot.</p>
 <h3 id="error-code-62">Error Code: <code>62</code></h3>
 <p><strong>Message</strong>: Conflicting Update</p>
@@ -1295,7 +1299,7 @@ same time.</p>
 <p><strong>Message</strong>: Too many IDs specified</p>
 <p><strong>Problem</strong>: There is a limit on how many IDs you
 can specify for this query.</p>
-<p><strong>Solution</strong>: Lower the amount of IDs you are querying
+<p><strong>Solution</strong>: Lower the number of IDs you are querying
 for.</p>
 <h3 id="error-code-64">Error Code: <code>64</code></h3>
 <p><strong>Message</strong>: Email content missing required variables</p>
@@ -1304,25 +1308,25 @@ required variables.</p>
 <p><strong>Solution</strong>: Ensure that all required variables, such
 as unsubscribe link, are present.</p>
 <h3 id="error-code-65">Error Code: <code>65</code></h3>
-<p><strong>Message</strong>: Invalide email format</p>
+<p><strong>Message</strong>: Invalid email format</p>
 <p><strong>Problem</strong>: Doesn't have all required fields
 present or are not in proper format, such as from address.</p>
 <p><strong>Solution</strong>: Ensure all fields are present,
 populated, and in proper format.</p>
 <h3 id="error-code-66">Error Code: <code>66</code></h3>
-<p><strong>Message</strong>: You have exceeded your concurrent request limit.  Please wait, before trying again</p>
+<p><strong>Message</strong>: You have exceeded your concurrent request limit. Please wait, before trying again</p>
 <p><strong>Problem</strong>: Have made too many requests in this
 time period.</p>
 <p><strong>Solution</strong>: Wait a little before making more
 requests.</p>
 <h3 id="error-code-67">Error Code: <code>67</code></h3>
 <p><strong>Message</strong>: You have reached or exceeded the limit of how many of this type of object you may have.</p>
-<p><strong>Problem</strong>: You have too many of this object type to create more.</p>
-<p><strong>Solution</strong>: Delete some of the object if you need to make more.</p>
+<p><strong>Problem</strong>: You have too many of the specified object type to create more.</p>
+<p><strong>Solution</strong>: Delete some of the object if you must make more.</p>
 <h3 id="error-code-68">Error Code: <code>68</code></h3>
 <p><strong>Message</strong>: Template with this id does not exist.</p>
 <p><strong>Problem</strong>: The template you are trying to access does not exist.</p>
-<p><strong>Solution</strong>: Make sure you are using the correct template ID or create a new one to use.</p>
+<p><strong>Solution</strong>: Make sure you are using the correct template ID or create a one to use.</p>
 <h3 id="error-code-70">Error Code: <code>70</code></h3>
 <p><strong>Message</strong>: Batch processing is limited to 50 prospects at once.</p>
 <p><strong>Problem</strong>: You are requesting to batch more prospects in an operation than we allow.</p>
@@ -1334,19 +1338,19 @@ requests.</p>
 <h3 id="error-code-72">Error Code: <code>72</code></h3>
 <p><strong>Message</strong>: JSON has been corrupted, hash does not match</p>
 <p><strong>Problem</strong>: The encoded JSON has been corrupted at some point.</p>
-<p><strong>Solution</strong>: Please ensure that you are sending the correct information.</p>
+<p><strong>Solution</strong>: Ensure that you are sending the correct information.</p>
 <h3 id="error-code-73">Error Code: <code>73</code></h3>
 <p><strong>Message</strong>: Currently there is not an Email Plug-in Campaign associated to successfully track this email. Please contact your Pardot administrator to ensure there is a proper campaign associated with the Account Settings in Pardot.</p>
 <p><strong>Problem</strong>: Currently there is not an Email Plug-in Campaign associated to successfully track this email.</p>
-<p><strong>Solution</strong>: Please contact your Pardot administrator to ensure there is a proper campaign associated with the Account Settings in Pardot.</p>
+<p><strong>Solution</strong>: Contact your Pardot administrator to ensure there is a proper campaign associated with the Account Settings in Pardot.</p>
 <h3 id="error-code-74">Error Code: <code>74</code></h3>
 <p><strong>Message</strong>: The email client is not supported by the plugin API</p>
 <p><strong>Problem</strong>: The email client used is not supported by this API.</p>
-<p><strong>Solution</strong>: Please use an appropriate email client.</p>
+<p><strong>Solution</strong>: Use an appropriate email client.</p>
 <h3 id="error-code-75">Error Code: <code>75</code></h3>
 <p><strong>Message</strong>: There was an error processing the request for the account variable tags</p>
 <p><strong>Problem</strong>: There was an error processing the request for the account variable tags.</p>
-<p><strong>Solution</strong>: Please review the variable tags, and resubmit the request.</p>
+<p><strong>Solution</strong>: Review the variable tags, and resubmit the request.</p>
 <h3 id="error-code-76">Error Code: <code>76</code></h3>
 <p><strong>Message</strong>: API access was disabled</p>
 <p><strong>Problem</strong>: API access for your account has been disabled.</p>
@@ -1354,49 +1358,49 @@ requests.</p>
 <h3 id="error-code-77">Error Code: <code>77</code></h3>
 <p><strong>Message</strong>: Invalid prospect fid</p>
 <p><strong>Problem</strong>: The provided Prospect FID was invalid.</p>
-<p><strong>Solution</strong>: Please provide a valid Prospect FID.</p>
+<p><strong>Solution</strong>: Provide a valid Prospect FID.</p>
 <h3 id="error-code-79">Error Code: <code>79</code></h3>
 <p><strong>Message</strong>: Invalid CRM_FID</p>
 <p><strong>Problem</strong>: The CRM FID provided is invalid.</p>
-<p><strong>Solution</strong>: Please provide a valid CRM FID that can be accessed by your account, or is already attached to a prospect.</p>
+<p><strong>Solution</strong>: Provide a valid CRM FID that can be accessed by your account, or is already attached to a prospect.</p>
 <h3 id="error-code-80">Error Code: <code>80</code></h3>
 <p><strong>Message</strong>: Invalid CRM_TYPE</p>
 <p><strong>Problem</strong>: The CRM type provided or used is invalid.</p>
-<p><strong>Solution</strong>: Please specify a correct CRM type.</p>
+<p><strong>Solution</strong>: Specify a correct CRM type.</p>
 <h3 id="error-code-81">Error Code: <code>81</code></h3>
 <p><strong>Message</strong>: Prospect ID and FID do not match</p>
 <p><strong>Problem</strong>: The provided Prospect ID and FID do not match a single prospect.</p>
-<p><strong>Solution</strong>: Please provide a prospect ID and FID that match a single prospect.</p>
+<p><strong>Solution</strong>: Provide a prospect ID and FID that match a single prospect.</p>
 <h3 id="error-code-83">Error Code: <code>83</code></h3>
 <p><strong>Message</strong>: No valid CRM connectors available</p>
 <p><strong>Problem</strong>: Your account does not have an available CRM connector.</p>
-<p><strong>Solution</strong>: Please add a CRM connector to your account.</p>
+<p><strong>Solution</strong>: Add a CRM connector to your account.</p>
 <h3 id="error-code-84">Error Code: <code>84</code></h3>
 <p>An error has occurred for which no reason is provided.</p>
 <h3 id="error-code-85">Error Code: <code>85</code></h3>
 <p><strong>Message</strong>: Unable to save the prospect</p>
 <p><strong>Problem</strong>: For some reason, the prospect was not saved.</p>
-<p><strong>Solution</strong>: Please resubmit the request or review the original request for errors.</p>
+<p><strong>Solution</strong>: Resubmit the request or review the original request for errors.</p>
 <h3 id="error-code-86">Error Code: <code>86</code></h3>
 <p><strong>Message</strong>: Invalid Template id</p>
 <p><strong>Problem</strong>: The template ID provided does not correspond to a template.</p>
-<p><strong>Solution</strong>: Please provide a template ID that is valid.</p>
+<p><strong>Solution</strong>: Provide a template ID that is valid.</p>
 <h3 id="error-code-88">Error Code: <code>88</code></h3>
 <p><strong>Message</strong>: Your account must use version 4 of the API.</p>
 <p><strong>Problem</strong>: You have requested version 3 of the API, but your account must use version 4.</p>
-<p><strong>Solution</strong>: Please make the request using <code>/version/4</code> in place of <code>/version/3</code>.</p>
+<p><strong>Solution</strong>: Make the request using <code>/version/4</code> in place of <code>/version/3</code>.</p>
 <h3 id="error-code-89">Error Code: <code>89</code></h3>
 <p><strong>Message</strong>: Your account is unable to use version 4 of the API.</p>
 <p><strong>Problem</strong>: You have requested version 4 of the API, but your account must use version 3.</p>
-<p><strong>Solution</strong>: Please make the request using <code>/version/3</code> in place of <code>/version/4</code>.</p>
+<p><strong>Solution</strong>: Make the request using <code>/version/3</code> in place of <code>/version/4</code>.</p>
 <h3 id="error-code-90">Error Code: <code>90</code></h3>
 <p><strong>Message</strong>: Prospect array should be a flat array of attributes</p>
 <p><strong>Problem</strong>: The prospect array given was not a flat array, and it should have been.</p>
-<p><strong>Solution</strong>: Resubmit the request with a flat array. <a href="../api-version-4/prospects/#endpoints-for-batch-processing">example</a></p>
+<p><strong>Solution</strong>: Resubmit the request with a flat array. See the Prospect Batch sections of the <a href="../api-version-4/prospects/">Prospect object documentation</a> for examples.</p>
 <h3 id="error-code-91">Error Code: <code>91</code></h3>
 <p><strong>Message</strong>: Prospect array must be keyed by email address</p>
 <p><strong>Problem</strong>: The prospect array given was not keyed by email addresses, but should have been.</p>
-<p><strong>Solution</strong>: Resubmit the request with an array keyed by email addresses. <a href="../api-version-4/prospects/#endpoints-for-batch-processing">example</a></p>
+<p><strong>Solution</strong>: Resubmit the request with an array keyed by email addresses. See the Prospect Batch sections of the <a href="../api-version-4/prospects/">Prospect object documentation</a> for examples.</p>
 <h3 id="error-code-92">Error Code: <code>92</code></h3>
 <p><strong>Message</strong>: Prospect record could not be found</p>
 <p><strong>Problem</strong>: The prospect record was not found with the provided information.</p>
@@ -1424,7 +1428,7 @@ requests.</p>
 <h3 id="error-code-98">Error Code: <code>98</code></h3>
 <p><strong>Message</strong>: Prospect not mailable</p>
 <p><strong>Problem</strong>: One or more of the recipient prospects cannot receive the email requested (due to opting out, being flagged as "Do Not Email", or for other reasons)</p>
-<p><strong>Solution</strong>: Check that the recipient list is correct, and that the prospect's email preferences are up-to-date.</p>
+<p><strong>Solution</strong>: Check that the recipient list is correct, and that the prospect's email preferences are up to date.</p>
 <h3 id="error-code-99">Error Code: <code>99</code></h3>
 <p><strong>Message</strong>: User with the provided email already exists</p>
 <p><strong>Problem</strong>: A user with the email provided is already in the system.</p>
@@ -1490,7 +1494,7 @@ requests.</p>
 <h3 id="error-code-115">Error Code: <code>115</code></h3>
 <p><strong>Message</strong>: Number of recipients is more than threshold.</p>
 <p><strong>Problem</strong>: The number of recipients provided is too large.</p>
-<p><strong>Solution</strong>: Resubmit the request with less recipients.</p>
+<p><strong>Solution</strong>: Resubmit the request with fewer recipients.</p>
 <h3 id="error-code-116">Error Code: <code>116</code></h3>
 <p><strong>Message</strong>: Request outdated.</p>
 <p><strong>Problem</strong>: The request time has expired.</p>
@@ -1544,7 +1548,7 @@ requests.</p>
 <h3 id="error-code-130">Error Code: <code>130</code></h3>
 <p><strong>Message</strong>: One or more of the specified fields are invalid</p>
 <p><strong>Problem</strong>: One or more of the fields in the CSV is not a recognized standard or custom field.</p>
-<p><strong>Solution</strong>: Ensure all of the column headers in the CSV match those in the <a href="../object-field-references/">field reference</a>. Ensure the number of columns in the CSV matches the number of columns in the header row.</p>
+<p><strong>Solution</strong>: Ensure all of the column headers in the CSV match the headers in the <a href="../object-field-references/">field reference</a>. Ensure the number of columns in the CSV matches the number of columns in the header row.</p>
 <h3 id="error-code-131">Error Code: <code>131</code></h3>
 <p><strong>Message</strong>: Your account is locked due to too many failed login attempts. Reset your password at https://pi.pardot.com/user/passwordReset</p>
 <p><strong>Problem</strong>: Too many invalid api requests have been made.</p>
@@ -1604,11 +1608,11 @@ requests.</p>
 <h3 id="error-code-154">Error Code: <code>154</code></h3>
 <p><strong>Message</strong>: Invalid property in request</p>
 <p><strong>Problem</strong>: A field in the request body has an invalid value.</p>
-<p><strong>Solution</strong>: Check the documentation and ensure that the value that is being passed is supported. Note that several values are not supported at this time.</p>
+<p><strong>Solution</strong>: Check the documentation and ensure that the value that is being passed is supported. Several values are not supported at this time.</p>
 <h3 id="error-code-155">Error Code: <code>155</code></h3>
 <p><strong>Message</strong>: Can't update. Import must be in "Open" state.</p>
 <p><strong>Problem</strong>: The import that is trying to be updated is not in the “Open” state.</p>
-<p><strong>Solution</strong>: This import is no longer eligible to receive updates. Create a new import, or update an existing import in the “Open” state.</p>
+<p><strong>Solution</strong>: This import is no longer eligible to receive updates. Create an import, or update an existing import in the “Open” state.</p>
 <h3 id="error-code-156">Error Code: <code>156</code></h3>
 <p><strong>Message</strong>: Can't start processing. Import has no associated data.</p>
 <p><strong>Problem</strong>: The import that is trying to be set to “Ready” has no data associated with it.</p>
@@ -1616,7 +1620,7 @@ requests.</p>
 <h3 id="error-code-157">Error Code: <code>157</code></h3>
 <p><strong>Message</strong>: Error processing import request. Please contact your Pardot support representative</p>
 <p><strong>Problem</strong>: The import has no background processing agent associated with it.</p>
-<p><strong>Solution</strong>: This import was improperly created and is unsalvageable. Create a new import and upload the same batch of data to ensure processing occurs.</p>
+<p><strong>Solution</strong>: This import was improperly created and is unsalvageable. Create an import and upload the same batch of data to ensure processing occurs.</p>
 <h3 id="error-code-158">Error Code: <code>158</code></h3>
 <p><strong>Message</strong>: Uploading a file was unsuccessful</p>
 <p><strong>Problem</strong>: The “files” element of the request body could not be found.</p>
@@ -1628,11 +1632,11 @@ requests.</p>
 <h3 id="error-code-160">Error Code: <code>160</code></h3>
 <p><strong>Message</strong>: The limit of batches per import has been reached</p>
 <p><strong>Problem</strong>: Too many batches have been submitted for this import</p>
-<p><strong>Solution</strong>: Create a new import to submit this batch, or submit this batch to an import that has batch capacity.</p>
+<p><strong>Solution</strong>: Create an import to submit this batch, or submit this batch to an import that has batch capacity.</p>
 <h3 id="error-code-161">Error Code: <code>161</code></h3>
 <p><strong>Message</strong>: The current state of the import does not allow the operation</p>
 <p><strong>Problem</strong>: A batch was submitted to an import that is not “Open”</p>
-<p><strong>Solution</strong>: Create a new import to submit this batch, or submit this batch to an import that is “Open”. Processing will not be affected for the import associated with the failed request.</p>
+<p><strong>Solution</strong>: Create an import to submit this batch, or submit this batch to an import that is “Open”. Processing is not affected for the import associated with the failed request.</p>
 <h3 id="error-code-162">Error Code: <code>162</code></h3>
 <p><strong>Message</strong>: No file was specified or uploaded</p>
 <p><strong>Problem</strong>: No CSV file was submitted</p>
@@ -1643,7 +1647,7 @@ requests.</p>
 <p><strong>Solution</strong>: Submit only 1 file per request.</p>
 <h3 id="error-code-164">Error Code: <code>164</code></h3>
 <p><strong>Message</strong>: Daily limit of import batches has been reached</p>
-<p><strong>Problem</strong>: Too many batches have been submitted over a 24 hour period. The account limit has been reached.</p>
+<p><strong>Problem</strong>: Too many batches have been submitted over a 24-hour period. The account limit has been reached.</p>
 <p><strong>Solution</strong>: Wait and try again later.</p>
 <h3 id="error-code-165">Error Code: <code>165</code></h3>
 <p><strong>Message</strong>: column options is invalid</p>
@@ -1668,10 +1672,10 @@ requests.</p>
 <h3 id="error-code-177">Error Code: <code>177</code></h3>
 <p><strong>Message</strong>: Invalid procedure argument.</p>
 <p><strong>Problem</strong>: An invalid value has been provided for a procedure argument.</p>
-<p><strong>Solution</strong>: Check the the values provided for the procedure arguments are correct.</p>
+<p><strong>Solution</strong>: Check the values provided for the procedure arguments are correct.</p>
 <h3 id="error-code-178">Error Code: <code>178</code></h3>
 <p><strong>Message</strong>: The current state of the export does not allow the operation</p>
-<p><strong>Problem</strong>: The operation is not possible because of the state of the export.  This may be because the export has expired or has not completed.</p>
+<p><strong>Problem</strong>: The operation is not possible because of the state of the export. Possible reasons are that the export is expired or is still running.</p>
 <p><strong>Solution</strong>: If the export has not completed, wait until the read endpoint indicates that the export is complete before retrying the operation.</p>
 <h3 id="error-code-180">Error Code: <code>180</code></h3>
 <p><strong>Message</strong>: One or more of the specified fields are invalid</p>
@@ -1704,7 +1708,7 @@ requests.</p>
 <h3 id="error-code-192">Error Code: <code>192</code></h3>
 <p><strong>Message</strong>: Object specified does not exist</p>
 <p><strong>Problem</strong>: The object ID specified in the API request does not correspond to an object that exists. The object may have been deleted or the object ID passed in may never have been valid.</p>
-<p><strong>Solution</strong>: Pass in a valid ID for an object that is not deleted or change the request to request a deleted object (one that is in the Pardot recycle bin). (In v5 the deleted=true parameter allows this.)</p>
+<p><strong>Solution</strong>: Pass in a valid ID for an object that is not deleted or change the request to request a deleted object (one that is in the Pardot recycle bin). Use the deleted=true paramter in v5.</p>
 <h3 id="error-code-193">Error Code: <code>193</code></h3>
 <p><strong>Description</strong>: Too many subfields have been requested for one of the fields in the <code>fields</code> URL parameter for the API call. Pardot limits the number of fields that can be traversed when constructing an API response.</p>
 <h3 id="error-code-194">Error Code: <code>194</code></h3>
@@ -1719,6 +1723,10 @@ requests.</p>
 <p><strong>Message</strong>: Business Unit specified in Pardot-Business-Unit-Id header not found or inactive.</p>
 <p><strong>Problem</strong>: The Business Unit ID is invalid or the business unit isn't active. This error is also returned when you use the wrong hostname (pi.pardot.com or pi.demo.pardot.com).</p>
 <p><strong>Solution</strong>: Make sure that you're using a valid Business Unit ID for an active business unit, and that your URL contains the correct hostname.</p>
+<h3 id="error-code-203">Error Code: <code>203</code></h3>
+<p><strong>Message</strong>: An admin user for the account not found. Ensure a user with the default admin role exists.</p>
+<p><strong>Problem</strong>: There are no users with the default admin role.</p>
+<p><strong>Solution</strong>: Make sure there is at least 1 user with the default admin role in Pardot.</p>
 <h3 id="error-code-10000">Error Code: 10000</h3>
 <pre><code>&lt;rsp stat=&quot;fail&quot; version=&quot;1.0&quot;&gt;
     ...
@@ -1735,7 +1743,7 @@ nodes may be contained within the <code>``
 multiple errors occurred.</p>
 <p><strong>Solution</strong>: The <code>msg</code> attribute of each
 <code>&lt;err&gt;</code> node should contain advice as to how to
-remedy the error(s).</p>
+remedy the error.</p>
                 
             </div>
         </div>

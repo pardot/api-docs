@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../use-cases/">
+                                    
+                                    Use Cases for Pardot APIs
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../getting-started/">
                                     
                                     Getting Started
@@ -666,75 +674,69 @@
         <div class="container">
             <div class="col-md-3"><div class="bs-sidebar hidden-print well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#what-is-version-4">What is Version 4?</a></li>
-        <li class="main "><a href="#transitioning-from-version-3-to-version-4">Transitioning from version 3 to version 4</a></li>
+        <li class="main active"><a href="#what-is-version-4">What Is Version 4?</a></li>
+        <li class="main "><a href="#transitioning-from-version-3-to-version-4">Transitioning from Version 3 to Version 4</a></li>
             <li><a href="#request-path-changes">Request Path Changes</a></li>
-            <li><a href="#prospect-api-changes">Prospect API changes</a></li>
-            <li><a href="#opportunity-api-changes">Opportunity API changes</a></li>
-            <li><a href="#visitor-api-changes">Visitor API changes</a></li>
+            <li><a href="#prospect-api-changes">Prospect API Changes</a></li>
+            <li><a href="#opportunity-api-changes">Opportunity API Changes</a></li>
+            <li><a href="#visitor-api-changes">Visitor API Changes</a></li>
     </ul>
 </div></div>
             <div class="col-md-9 main-content" role="main">
                 
-                    <h1 id="what-is-version-4">What is Version 4?</h1>
-<p>In order to accommodate multiple prospects with the same email address,
-we have created a new version of our APIs - version 4.
-If your Pardot org has this feature enabled now, then you must use version 4.
-If your Pardot org does not have this featured enabled, you must use version 3.</p>
-<p>To determine if your Pardot org has this feature enabled, <a href="https://help.salesforce.com/articleView?id=sf.pardot_admin_ampsea_parent.htm&amp;type=5">check out this guide.</a></p>
-<p>For more information on the API in general, check out the <a href="../..">Overview Page</a>.</p>
-<p>For specific API endpoints, please select from the "Version 4" list above.</p>
-<h1 id="transitioning-from-version-3-to-version-4">Transitioning from version 3 to version 4</h1>
-<p>If you are going to
-<a href="https://help.salesforce.com/articleView?id=sf.pardot_admin_ampsea_parent.htm&amp;type=5">upgrade your Pardot org to allow multiple prospects with the same email address,</a>
-and you use the api, you will need to follow the guidelines below.</p>
+                    <h1 id="what-is-version-4">What Is Version 4?</h1>
+<p>Version 4 was created to accommodate multiple prospects with the same email address.
+If your Pardot org has the allow multiple prospects with the same email address (AMPSEA) feature enabled, then use version 4.
+If your Pardot org doesn’t have AMPSEA enabled, use version 3.</p>
+<p>To determine if your Pardot org has AMPSEA enabled, <a href="https://help.salesforce.com/articleView?id=sf.pardot_admin_ampsea_parent.htm&amp;">check out this guide.</a></p>
+<h1 id="transitioning-from-version-3-to-version-4">Transitioning from Version 3 to Version 4</h1>
+<p>If you want to enable AMPSEA in your Pardot account, use the following guidelines to keep using Pardot APIs.</p>
 <h2 id="request-path-changes">Request Path Changes</h2>
-<p>You will need to modify your request to use the <code>/version/4</code> path. For example:</p>
-<p>Before transition:</p>
+<p>Update your requests to use the <code>/version/4</code> path. For example:</p>
+<p>Before:</p>
 <pre><code>GET: https://pi.pardot.com/api/prospect/version/3/read/id/1
 </code></pre>
 
-<p>After transition:</p>
+<p>After:</p>
 <pre><code>GET: https://pi.pardot.com/api/prospect/version/4/read/id/1
 </code></pre>
 
-<h2 id="prospect-api-changes">Prospect API changes</h2>
-<p>Most of the changes in version 4 occur around the prospect APIs.
-When you begin using the version 4 APIs, your logic should know about these changes (<a href="prospects/">full documentation can be found here</a>)</p>
+<h2 id="prospect-api-changes">Prospect API Changes</h2>
+<p>Most of the differences between version 3 and version 4 are in the prospect APIs. </p>
 <ul>
-<li><strong>New reference field:</strong>  Prospects can now be referenced using the Salesforce CRM Identifier, known to the api as the <code>fid</code> field.
-This <code>fid</code> field refers to the id of the Lead or Contact record in Salesforce.
-You can find the lead id (begins with 00Q) or the contact id (begins with 003) in the URL when viewing a lead or contact as seen below.
-Or, you can get multiple contacts or lead ids from Salesforce using the export tool.
+<li><strong>New reference field:</strong>  Prospects can be referenced using the Salesforce CRM Identifier, the <code>fid</code> field.
+This <code>fid</code> field refers to the ID of the Lead or Contact record in Salesforce.
+You can find the lead ID (begins with 00Q) or the contact ID (begins with 003) in the URL when viewing a lead or contact record.
+Or, you can get multiple contacts or lead ID from Salesforce using the export tool.
 <img src="/img/lead_identifier_example.png" width="100%" alt="lead_identifier_example"></li>
 <li><strong>Create:</strong> Prospects can still be created with a referenced <code>email</code> address.
-If you call the create api with the same email address multiple times, each call will create a new prospect.
+If you call the create API with the same email address multiple times, each call creates a prospect.
 Previously, you would get an error.</li>
-<li><strong>Read:</strong> When making a read query, querying by <code>email</code> will return all prospects that share that email address.
-Querying by Pardot <code>id</code> or Salesforce <code>fid</code> will only return the one matching prospect.</li>
-<li><strong>Update:</strong> Prospects can no longer be updated when referenced via <code>email</code> alone.
-This is because there may now be multiple prospects with the same email address.
-Instead, you must use either the Pardot <code>id</code> or Salesforce <code>fid</code> references.</li>
-<li><strong>Upsert:</strong> Upsert query by <code>email</code> will <em>always</em> create a new prospect.
-Upsert by Pardot <code>id</code> or Salesforce <code>fid</code> will update or create as needed.
-See <a href="prospects/#upserting-prospects">Upserting Prospects</a> for more details.</li>
+<li><strong>Read:</strong> When making a read query, querying by <code>email</code> returns all prospects that share that email address.
+Querying by Pardot <code>id</code> or Salesforce <code>fid</code> only returns the one matching prospect.</li>
+<li><strong>Update:</strong> Because there can be multiple prospects with the same email address, prospects can no longer be updated when referenced via <code>email</code> alone.
+Instead, use either the Pardot <code>id</code> or Salesforce <code>fid</code> references.</li>
+<li><strong>Upsert:</strong> Upsert query by <code>email</code> <em>always</em> creates a prospect.
+Upsert by Pardot <code>id</code> or Salesforce <code>fid</code> updates or creates as needed.
+See <a href="prospects/#prospect-upsert">Upserting Prospects</a> for more details.</li>
 <li><strong>Delete:</strong> Delete query must reference by Pardot <code>id</code> or Salesforce <code>fid</code>.</li>
-<li><strong>Batch processing:</strong>  Examples of batch processing can be found <a href="prospects/#endpoints-for-batch-processing">here</a></li>
+<li><strong>Batch processing:</strong>  See examples of batch processing in the Prospect object documentation.</li>
 </ul>
-<h2 id="opportunity-api-changes">Opportunity API changes</h2>
-<p><a href="opportunities/">Full documentation can be found here.</a></p>
+<p>See the <a href="prospects/">Prospect object documentation</a>.</p>
+<h2 id="opportunity-api-changes">Opportunity API Changes</h2>
 <ul>
 <li><strong>Create:</strong> Creating an opportunity using a <code>prospect_email</code> reference must correspond to an existing prospect.
-If there are multiple prospects with that email address, the prospect with the most recent activity date will be used.
-If you want to apply the opportunity to a specific prospect, then you must reference the prospect using <code>prospect_id</code>.</li>
-<li><strong>Query:</strong> If you query using a <code>prospect_email</code> reference, you will receive opportunities that correspond with any prospects that share that email address.
+If there are multiple prospects with that email address, the prospect with the most recent activity date is used.
+If you want to apply the opportunity to a specific prospect, then reference the prospect using <code>prospect_id</code>.</li>
+<li><strong>Query:</strong> If you query using a <code>prospect_email</code> reference, you receive opportunities that correspond with any prospects that share that email address.
 if you want a specific prospect then query by the <code>prospect_id</code>.</li>
 </ul>
-<h2 id="visitor-api-changes">Visitor API changes</h2>
-<p><a href="/kb/api-version-4/visitors/">Full documentation can be found here.</a></p>
+<p>See the <a href="opportunities/">Opportunity Object documentation</a>.</p>
+<h2 id="visitor-api-changes">Visitor API Changes</h2>
 <ul>
-<li><strong>Assign:</strong> Assigning by <code>prospect_email</code> alone (no <code>prospect_id</code>) will return an error.</li>
+<li><strong>Assign:</strong> Assigning by <code>prospect_email</code> alone (no <code>prospect_id</code>) returns an error.</li>
 </ul>
+<p>See the <a href="/kb/api-version-4/visitors/">Visitor Object documentation</a>.</p>
                 
             </div>
         </div>

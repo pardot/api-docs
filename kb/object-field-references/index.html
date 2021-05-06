@@ -79,6 +79,14 @@
                             </li>
                         
                             <li class=" ">
+                                <a href="../use-cases/">
+                                    
+                                    Use Cases for Pardot APIs
+                                    
+                                </a>
+                            </li>
+                        
+                            <li class=" ">
                                 <a href="../getting-started/">
                                     
                                     Getting Started
@@ -1589,7 +1597,7 @@
 <td>integer</td>
 <td>X</td>
 <td>X</td>
-<td>Pardot ID of the campaign associated with this opportunity<br><strong>Note</strong>: Information about an opportunity's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are made by providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt; request. See <a href="/kb/api-version-4/opportunities#xml-response-formats">XML Response Formats</a> in <a href="/kb/api-version-4/opportunities#using-opportunities">Using Opportunities</a> for more details.</td>
+<td>Pardot ID of the campaign associated with this opportunity<br><strong>Note</strong>: Information about an opportunity's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are made by providing campaign_id=&lt;campaign_id&gt; during an UPDATE&gt; request. See <a href="/kb/api-version-4/opportunities#xml-response">XML Response</a> in the Campaign documentation for more details.</td>
 </tr>
 <tr>
 <td>&lt;name&gt;</td>
@@ -1743,7 +1751,7 @@
 <td>integer</td>
 <td></td>
 <td>X</td>
-<td>Pardot ID of the campaign associated with this prospect<br><strong>Note</strong>: Information about a prospect's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are made by providing campaign_id=&lt;campaign_id&gt; during an &lt;UPDATE&gt; request. See <a href="/kb/api-version-4/prospects/#xml-response-format">XML Response Formats</a> in <a href="/kb/api-version-4/prospects#using-prospects">Using Prospects</a> for more details.</td>
+<td>Pardot ID of the campaign associated with this prospect<br><strong>Note</strong>: Information about a prospect's campaign association is returned in a &lt;campaign&gt; node in the XML response. However, updates to campaign associations are made by providing campaign_id=&lt;campaign_id&gt; during an &lt;UPDATE&gt; request. See <a href="/kb/api-version-4/prospects/#xml-response-format">XML Response Formats</a> in <a href="/kb/api-version-4/prospects">Prospects</a> for more details.</td>
 </tr>
 <tr>
 <td>&lt;salutation&gt;</td>
@@ -2661,13 +2669,6 @@ describe operation on the prospectAccount API endpoint.</p>
 <td>Pardot ID of the multivariate test variation associated with this visitor activity<br><strong>Note:</strong> This node appears only if this visitor activity has a multivariate test variation associated with it</td>
 </tr>
 <tr>
-<td>&lt;visitor_page_view_id&gt;</td>
-<td>integer</td>
-<td></td>
-<td></td>
-<td>Pardot ID of the visitor page view associated with this visitoractivity<br><strong>Note:</strong> This node appears only if this visitor activity has a visitor page view associated with it</td>
-</tr>
-<tr>
 <td>&lt;file_id&gt;</td>
 <td>integer</td>
 <td></td>
@@ -2711,7 +2712,7 @@ describe operation on the prospectAccount API endpoint.</p>
 <li>2 - View</li>
 <li>3 - Error</li>
 <li>4 - Success</li>
-<li>5 - Session</li>
+<li>5 - Session (Omitted from Synchronous and Export endpoints)</li>
 <li>6 - Sent</li>
 <li>7 - Search</li>
 <li>8 - New Opportunity</li>
