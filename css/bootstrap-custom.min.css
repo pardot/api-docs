@@ -5240,9 +5240,9 @@ a.thumbnail:hover,a.thumbnail:focus,a.thumbnail.active {
 }
 
 .alert-warning {
-	color:#fff;
-	background-color:#f39c12;
-	border-color:#f39c12;
+	color:#080707;
+	background-color:#fa9339;
+	border-color:#fa9339;
 }
 
 .alert-warning hr {
